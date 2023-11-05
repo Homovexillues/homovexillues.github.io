@@ -1,407 +1,467 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <meta name="keywords" content="">
   
-  <title>红石门</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+    <meta property="og:type" content="website">
 <meta property="og:title" content="红石门">
 <meta property="og:url" content="https://homovexillues.github.io/index.html">
 <meta property="og:site_name" content="红石门">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="红石门" type="application/atom+xml">
+<meta property="article:author" content="Homo vexillues">
+<meta name="twitter:card" content="summary_large_image">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
   
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>红石门</title>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
   
 <meta name="generator" content="Hexo 7.0.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">红石门</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">Annon edhellen, edro hi ammen!</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://homovexillues.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-你好，朋友" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/04/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9C%8B%E5%8F%8B/" class="article-date">
-  <time class="dt-published" datetime="2023-11-04T14:59:07.023Z" itemprop="datePublished">2023-11-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/04/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9C%8B%E5%8F%8B/">你好，朋友</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>欢迎来到我的博客 <a href="https://homovexillues.github.io/">红石门</a>！</p>
-<p>这是我的第一个博客，用hexo搭建在github上，用来放一些我写的文章，笔记，小说还有一些共享资源什么的。</p>
-<img src="https://s2.loli.net/2023/11/05/bm9Kk7B345FWTLQ.jpg" alt="IMG_0271.JPG" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p>PS.博客名字来自于一本赛博朋克小说<a target="_blank" rel="noopener" href="https://www.qidian.com/book/1018180913/">《赛博英雄传》</a> 中的一个黑客团体。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://homovexillues.github.io/2023/11/04/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9C%8B%E5%8F%8B/" data-id="clokdb9r00000i0uk7eqh8twn" data-title="你好，朋友" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hexo+GitHub搭建博客记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/05/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/" class="article-date">
-  <time class="dt-published" datetime="2023-11-05T05:55:32.686Z" itemprop="datePublished">2023-11-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/05/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/">hexo+Github搭建博客记录</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸）</p>
-<h2 id="①环境"><a href="#①环境" class="headerlink" title="①环境"></a>①环境</h2><p>node.js下载安装后npm安装hexo博客，代码使用如下</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后运行</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<p>来确认安装情况，出现如下报错：</p>
-<h6 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h6><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无法加载文件C:\Users\Administrator\AppData\Roaming\npm\hexo.ps1，因为在此系统中禁止执行脚本。有关详细信息，请参阅 &quot;get-<span class="built_in">help</span> about_signing&quot;。</span><br></pre></td></tr></table></figure>
-
-<h6 id="解决方法如下"><a href="#解决方法如下" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><p>管理员权限运行Powershell，执行</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">get-ExecutionPolicy</span></span><br><span class="line">返回状态：Restricted表示状态是禁止的</span><br><span class="line">执行命令</span><br><span class="line"><span class="built_in">set-ExcecutionPolicy</span> RemoteSigned来开启</span><br><span class="line">选择Y</span><br></pre></td></tr></table></figure>
-
-<p>选定位置，用</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="literal">-init</span> blog</span><br></pre></td></tr></table></figure>
-
-<h6 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! Error: EPERM: operation not permitted, mkdir <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h6><p>权限不够</p>
-<h6 id="解决方法如下-1"><a href="#解决方法如下-1" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><img src="change_the_authority.png" alt="改变文件夹控制权限" />
-
-<p>在属性中将文件夹的用户完全控制权限打开，重新执行命令。</p>
-<p>创建blog文件夹并初始化，此时可以尝试</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="literal">-g</span> 静态部署</span><br><span class="line">hexo <span class="literal">-s</span> 开始本地服务器</span><br></pre></td></tr></table></figure>
-
-<h6 id="出现问题-1"><a href="#出现问题-1" class="headerlink" title="出现问题"></a>出现问题</h6><p>打开<a href="http://localhost:4000的尝试以失败告终">http://localhost:4000的尝试以失败告终</a></p>
-<h6 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h6><p>4000端口被占用了，用</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server <span class="literal">-p</span> <span class="number">5000</span></span><br></pre></td></tr></table></figure>
-
-<p>来更改端口号后重试，成功打开<a target="_blank" rel="noopener" href="http://localhost:5000/">http://localhost:5000</a></p>
-<h2 id="②部署"><a href="#②部署" class="headerlink" title="②部署"></a>②部署</h2><p>本地部分完成后，将其部署到Github上的自建库里</p>
-<p>这里首先要新建一个GitHub库，命名为“用户名.github.io”的公共库，创建后会默认自动启动HTTPS</p>
-<p>然后安装<strong>hexo-deployer-git</strong>插件：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<p>安装成功后修改**_config.yml**文件内的URL部分和Deployment部分：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://用户名.github.io</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	<span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">	<span class="attr">repostory:</span> <span class="string">git@github.com:用户名/用户名.github.io.git</span></span><br><span class="line">	<span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-
-<p>然后运行<code>hexo d</code>将网站部署到Github页面</p>
-<p>这样访问https:&#x2F;&#x2F;用户名.github.io就能看到刚才做好的Hexo网站了</p>
-<h2 id="③解决图床问题"><a href="#③解决图床问题" class="headerlink" title="③解决图床问题"></a>③解决图床问题</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://homovexillues.github.io/2023/11/05/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/" data-id="clol6snf60000xguk1k9g3qca" data-title="hexo+Github搭建博客记录" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2077V震天同人随笔" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/04/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/" class="article-date">
-  <time class="dt-published" datetime="2023-11-04T15:10:29.031Z" itemprop="datePublished">2023-11-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/04/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/">2077V震天同人随笔</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>“无名小卒？还是名扬天下？”</p>
-<p>200多斤的大黑胖子在黑色高级轿车里对着面前的佣兵问出了这个问题，事实上，他现在心里已经有点发毛了。</p>
-<p>他旁边坐着的这个人从刚才上车开始就一言不发，脸上始终挂着那“爽朗”的露出所有牙齿的微笑，只见这人：</p>
-<p>身躯凛凛，脸板堂堂。一双歧路司光射寒星，两弯眉浑如刷漆。胸板横阔，有万夫难敌之威风；骨健筋强，似亚当重锤临座上；如同天上降魔主，真是人间太岁神。</p>
-<p>德克斯特从V上车开始就开始和V絮絮叨叨，无非是套话吹逼之类，但V就好像全没听见一样，一双眼睛幽光莹莹，隔着黑色高级轿车的防弹玻璃盯着沿途的一台台自动贩卖机，所有自动贩卖机但凡被他一看，顿时就哗哗地落下大量的小商品来，引得周围的流浪汉和市民一阵哄抢。要是有看到的帮派份子，更是直接浑身抽抽着倒在地上，眼看是不活了。当然，这一切是在车里还戴着墨镜的德克斯特和他的那个保镖没有注意到的。</p>
-<p>听到德克斯特此言，V好像才终于将注意力放在了这个大黑胖子身上一样，脸上还是那个“和善”的笑容，就问了一句话：</p>
-<p>“说，去哪儿，杀谁”</p>
-<p>德克斯特心里已经开始发慌了，心说自己这莫不是招来了个赛博精神病，但是为了不刺激眼前的这个疯子，他只能绷着一种比较淡定的语气陈述了他所知道的情报，并掏出了数据芯片，谁成想这芯片刚从兜里掏出来就消失了，耳边传来的还有“砰”的一声，他赶紧抱头缩起身子，过了好一会儿，他才意识到自己身边的那个疯子消失了。</p>
-<p>活见了鬼了！这他妈可是一辆在路上全速行驶的轿车里！</p>
-<p>“哔”</p>
-<p>他接收到了一条新的语音消息，打开一看，正是刚才那个据称“V”的佣兵给他发过来的。</p>
-<p>“回家等电话！有事通知你！”</p>
-<p>他回到他的安全屋好久之后才反应过来，那个疯子是看到了自己拿出数据芯片之后直接开启了义体“基安威斯坦”从自己手中夺走了数据芯片，然后打开车门跳出去了的动静。</p>
-<p>“妈的，这个疯子，就不能…”话还没说完，他的通讯器又传来了“哔”的一声。</p>
-<p>“又怎么了”他烦躁的打开聊天界面，今天雇了个疯子佣兵的事已经让他够闹心的了，如果这时候还有些什么别的破事儿……</p>
-<p>结果是那个叫V的家伙发来的一个视频文件。</p>
-<p>“草？他什么时候黑的我？”</p>
-<p>大黑胖子突然发现自己通讯录里对那个佣兵的备注不知道什么时候被改成了“&gt;&gt;&gt;大名鼎鼎的V&lt;&lt;&lt;”，甚至还加上了符号特效。</p>
-<p>“哈，大名鼎鼎…”大黑胖子不屑的冷笑着，点开了视频。</p>
-<p>视频内容是刚才见到的那个佣兵V，脸上挂着那个有些神经质的露全齿微笑，左手搂着那个叫梅瑞斯托特的公司女的，右手搂着杰克小子，脚下还踩着一个军用科技的箱子，摆着一个拍照常用的老土pose，身边都是军用科技的特工在为他们鼓掌，身后是烧着熊熊大火正在疯狂冒烟的全食品工厂。</p>
-<p>由于视频内容过于劲爆，德克斯特的大脑短路了将近一分钟才缓过来，然后他的第一反应就是特效。</p>
-<p>“都，都是假的，吓不倒我的”他将视频转发给了自己的手下，让他帮忙检查一下视频的编辑痕迹，结果手下的消息窗口显示了将近一分钟的“对方正在输入中”，然后发过来一句话“老大，看新闻。”</p>
-<p>“搅什么了？不知所谓的小子？”德克斯特这么想着，但还是打开了电视，一般情况下他都是一个很听劝的人，听人劝，吃饱饭嘛，从他的体型就看的出，他经常听人劝。</p>
-<p>新闻54台在播报一条重要新闻，今天晚间，漩涡帮被除名了，一个不剩的全都杀了个干净，而这笔功劳被算在了那个叫梅瑞斯托特的女人头上，剩下的就是一些车轱辘话，展现了军用科技的权威啊，打破平衡啊，公司战争的序曲啊之类的。</p>
-<p>不过这些屁话已经穿不进德克斯特的耳朵里了，现在他脑子里只有一件事——“我特么这是招了个什么活阎王啊。”</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://homovexillues.github.io/2023/11/04/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/" data-id="clok6lk7i0000oguk8rr163wq" data-title="2077V震天同人随笔" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/11/05/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/">hexo+Github搭建博客记录</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/2023/11/04/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/">2077V震天同人随笔</a>
-          </li>
         
-          <li>
-            <a href="/2023/11/04/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9C%8B%E5%8F%8B/">你好，朋友</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
   
-</aside>
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="以后不会再有葬礼了，这是人类最后一场葬礼。"></span>
+          
+        </div>
+
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+
       
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
   </div>
-</footer>
+</div>
 
-    </div>
-    <nav id="mobile-nav">
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/11/05/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/" target="_self">
+          hexo+Github搭建博客记录
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/11/05/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/" target="_self">
+        <div>
+          温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸） ①环境node.js下载安装后npm安装hexo博客，代码使用如下 1npm install -g hexo-cli  安装完成后运行 1hexo -v  来确认安装情况，出现如下报错： 报错1无法加载文件C:\Users\Administrator\AppData\Ro
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-11-05 13:55" pubdate>
+              2023-11-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-    <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
   
-</nav>
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">#Hexo</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/11/04/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/" target="_self">
+          2077V震天同人随笔
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/11/04/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/" target="_self">
+        <div>
+          “无名小卒？还是名扬天下？” 200多斤的大黑胖子在黑色高级轿车里对着面前的佣兵问出了这个问题，事实上，他现在心里已经有点发毛了。 他旁边坐着的这个人从刚才上车开始就一言不发，脸上始终挂着那“爽朗”的露出所有牙齿的微笑，只见这人： 身躯凛凛，脸板堂堂。一双歧路司光射寒星，两弯眉浑如刷漆。胸板横阔，有万夫难敌之威风；骨健筋强，似亚当重锤临座上；如同天上降魔主，真是人间太岁神。 德克斯特从V上车开始就
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-11-04 23:10" pubdate>
+              2023-11-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%B0%8F%E8%AF%B4/" class="category-chain-item">小说</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B/">#赛博朋克</a>
+            
+              <a href="/tags/2077/">#2077</a>
+            
+              <a href="/tags/%E5%90%8C%E4%BA%BA/">#同人</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
