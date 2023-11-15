@@ -4,6 +4,202 @@
   
   
   <entry>
+    <title>安卓笔记</title>
+    <link href="/2023/11/16/%E5%AE%89%E5%8D%93%E7%AC%94%E8%AE%B0/"/>
+    <url>/2023/11/16/%E5%AE%89%E5%8D%93%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<h4 id="如何将视频资源放进apk中播放"><a href="#如何将视频资源放进apk中播放" class="headerlink" title="如何将视频资源放进apk中播放"></a>如何将视频资源放进apk中播放</h4><ol><li>将视频文件放到项目工程的 res&#x2F;raw 文件下</li><li>视频文件必须是Android支持的视频格式3gp, wmv, mp4, 且命名必须是小写字母，数字，下划线</li><li>在代码中引用这个资源文件时，必须使用R statics类，同时去除文件的后缀名—— R.name</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Android</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>计算机技能树</title>
+    <link href="/2023/11/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E8%83%BD%E6%A0%91/"/>
+    <url>/2023/11/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E8%83%BD%E6%A0%91/</url>
+    
+    <content type="html"><![CDATA[<h3 id="计算机科学的基础理论"><a href="#计算机科学的基础理论" class="headerlink" title="计算机科学的基础理论"></a>计算机科学的基础理论</h3><p>机老图灵真人，可计算性之判定</p><h3 id="计算机工程"><a href="#计算机工程" class="headerlink" title="计算机工程"></a>计算机工程</h3><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>搭建骰子机器人的过程</title>
+    <link href="/2023/11/14/%E6%90%AD%E5%BB%BA%E9%AA%B0%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%87%E7%A8%8B/"/>
+    <url>/2023/11/14/%E6%90%AD%E5%BB%BA%E9%AA%B0%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>从GitHub上下载release到服务器上，用tar解压并安装为系统服务，开始运行服务，</p></li><li><p>出现问题：在浏览器用公网ip无法找到开启的UI界面</p></li><li><p>解决问题：没打开服务所需的对应端口</p></li><li><p>出现问题：无法直接用骰子机器人对接QQ账号，需要签名服务器</p></li><li><p>解决问题：暂时未能解决</p></li><li><p>成功将骰子机器人部署到KooK平台</p></li><li><h2 id="根据官方引导下载-js插件-定时任务2-0-0-每日新闻与历史上的今天"><a href="#根据官方引导下载-js插件-定时任务2-0-0-每日新闻与历史上的今天" class="headerlink" title="根据官方引导下载.js插件:- 定时任务2.0.0- 每日新闻与历史上的今天"></a>根据官方引导下载.js插件:<br>- 定时任务2.0.0<br>- 每日新闻与历史上的今天</h2></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>sealdice</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Linux有趣小工具记录</title>
+    <link href="/2023/11/14/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/"/>
+    <url>/2023/11/14/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h4 id="cmatrix"><a href="#cmatrix" class="headerlink" title="cmatrix"></a>cmatrix</h4><p>使用任何包管理器都可以直接下载的工具，堪称“抖音黑客风”之典范，安装完成后可直接用“cmatrix”命令来将终端界面变成尼奥视角，非常有“科幻感”和“骇入感”</p><h4 id="sl"><a href="#sl" class="headerlink" title="sl"></a>sl</h4><p>因为打ls的时候经常会打错，于是出现了这么个非常整蛊的工具，只要你打错成sl并回车了的话，一辆字符小火车就会从屏幕上开过…</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>解压tar.gz文件</title>
+    <link href="/2023/11/14/%E8%A7%A3%E5%8E%8Btar.gz%E6%96%87%E4%BB%B6/"/>
+    <url>/2023/11/14/%E8%A7%A3%E5%8E%8Btar.gz%E6%96%87%E4%BB%B6/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">gzip -d filename.gz 这个命令将会将文件解压缩并删除原有压缩文件，如果想要保留原有压缩文件，使用:<br>gzip -dk filename.gz<br>.tar.gz 即是用gzip压缩的.tar归档文件<br>tar -xf filename.tar.gz 使用该命令可以直接解压.tar.gz文件<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vim基础配置</title>
+    <link href="/2023/11/14/Vim%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"/>
+    <url>/2023/11/14/Vim%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs text">-- 开启语法高亮<br>vim.o.syntax = &quot;enable&quot;<br>-- 显示相对行号<br>vim.o.relativenumber = true<br>-- 显示行号<br>vim.o.number = true<br>-- 高亮所在行<br>vim.o.cursorline = true<br>-- 自动换行<br>vim.o.wrap = true<br>-- 显示光标位置<br>vim.o.ruler = true<br>-- 边输入边搜索<br>vim.o.incsearch = true<br>-- 开启搜索匹配高亮<br>vim.o.hlsearch = true<br>-- 搜索时自行判断是否需要忽略大小写<br>vim.o.smartcase = true<br><br>-- tab键转换为 4 个空格<br>vim.o.tabstop = 4<br>vim.o.softtabstop = 4<br>vim.o.shiftwidth = 4<br>-- 新行对齐当前行，tab转换为空格<br>vim.o.expandtab = true<br>vim.bo.expandtab = true<br>vim.o.autoindent = true<br>vim.bo.autoindent = true<br>vim.o.smartindent = true<br><br>-- &lt;&lt; &gt;&gt; 缩进时移动的长度<br>vim.o.shiftwidth = 4<br>vim.bo.shiftwidth = 4<br><br>-- 使用jk移动光标时，上下方保留8行<br>vim.o.scrolloff = 8<br>vim.o.sidescrolloff = 8<br><br>-- 设置自动折叠<br>vim.o.smartindent = true<br>-- 历史命令最多保存1000条<br>vim.o.history = 1000<br>-- 显示空白字符<br>vim.o.list = true<br>-- 样式<br>vim.o.background = &quot;dark&quot;<br>vim.o.termguicolors = true<br>vim.opt.termguicolors = true<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>与门</title>
+    <link href="/2023/11/12/%E4%B8%8E%E9%97%A8%E7%AC%94%E8%AE%B0/"/>
+    <url>/2023/11/12/%E4%B8%8E%E9%97%A8%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>第一章 非门</p><ul><li><p>任务要求</p><ul><li>输入0输出1</li><li>输入1输出0</li></ul></li><li><p>实现</p><ul><li>添加一个非门——输入通电输出不通电，输入不通电输出通电</li></ul></li></ul></li><li><p>第二章 与门</p><ul><li><p>任务要求</p><ul><li>输入0 0 输出0</li><li>输入0 1输出0</li><li>输入1 0输出0</li><li>输入1 1输处1</li></ul></li><li><p>实现</p><ul><li>添加一个与门——只有两个输入都通电时才通电</li></ul></li></ul></li><li><h2 id="第三章-或门-任务要求"><a href="#第三章-或门-任务要求" class="headerlink" title="第三章 或门- 任务要求"></a>第三章 或门<br>- 任务要求</h2></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>逻辑门</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>基于Typora的LaTex使用</title>
+    <link href="/2023/11/10/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/"/>
+    <url>/2023/11/10/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<p>使用前需要先配置好[Typora](<a href="https://typora.io/">Typora — a markdown editor, markdown reader.</a>)及<a href="https://github.com/jgm/pandoc/releases/latest">pandoc</a>以便能将写好的内容导出为LaTex形式</p><p>用$$以创建公式段</p><h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><ul><li>\\或者\newline</li></ul><p>$$<br>a\b\newline c<br>$$</p><h4 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h4><ul><li>a^2</li><li>a^{2222}</li></ul><p>$$<br>a^2<br>a^{2222}<br>$$</p><h4 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h4><ul><li>a_2</li><li>a_{2222}</li></ul><p>$$<br>a_2<br>a_{2222}<br>$$</p><h4 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h4><ul><li>\overline{}</li><li>\underline{}</li></ul><h1 id="overline-a-b-c"><a href="#overline-a-b-c" class="headerlink" title="$$\overline{a+b+c}"></a>$$<br>\overline{a+b+c}</h1><p>\underline{a+b+c}<br>$$</p><h4 id="平方根"><a href="#平方根" class="headerlink" title="平方根"></a>平方根</h4><ul><li>\sqrt[n]{a+b+c}</li></ul><p>$$<br>\sqrt[n]{a+b+c}<br>$$</p><h4 id="水平大括号"><a href="#水平大括号" class="headerlink" title="水平大括号"></a>水平大括号</h4><ul><li>\overbrace{2,3,4,\cdots,100}^{99}</li><li>\underbrace{2,3,4,…,100}^{99}</li></ul><p>$$<br>\overbrace{2,3,4,…,100}^{99}<br>\\underbrace{2,3,4,…,100}^{99}<br>$$</p><h4 id="分数"><a href="#分数" class="headerlink" title="分数"></a>分数</h4><ul><li>\frac{1}{2}</li></ul><p>$$<br>\frac{1}{2}<br>$$</p><h4 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h4><ul><li>\int_{a}^{b}</li></ul><p>$$<br>\int_{a}^{b}<br>$$</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LaTex</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>代码相关单词</title>
     <link href="/2023/11/08/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/"/>
     <url>/2023/11/08/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/</url>
@@ -29,9 +225,9 @@
   
   
   <entry>
-    <title>Vim使用</title>
-    <link href="/2023/11/08/Vim%E4%BD%BF%E7%94%A8/"/>
-    <url>/2023/11/08/Vim%E4%BD%BF%E7%94%A8/</url>
+    <title>Vim基本键位</title>
+    <link href="/2023/11/08/Vim%E5%9F%BA%E6%9C%AC%E9%94%AE%E4%BD%8D/"/>
+    <url>/2023/11/08/Vim%E5%9F%BA%E6%9C%AC%E9%94%AE%E4%BD%8D/</url>
     
     <content type="html"><![CDATA[<ul><li><p>x键删除字符</p></li><li><p>dw删除整个单词</p><ul><li>d2w删除接下来的两个单词</li></ul></li><li><p>d$删除到行尾</p></li><li><p>w到下一个单词头</p></li><li><p>e到下一个单词尾</p></li><li><p>$到行尾</p></li><li><p>u撤回</p><ul><li>Ctrl+R反撤回</li></ul></li><li><p>0到行首，包括空格</p></li><li><p>^到行首，不包括空格</p></li><li><p>G到文本最好一行首</p></li><li><p>gg到文本首行</p></li><li><p>number motion执行几次行动</p><ul><li>38j向下移动38次</li></ul></li><li><p>dd删除一整行</p></li><li><p>p在光标处粘贴先前删除的文本</p></li><li><p>r以替换光标处的字符</p><ul><li>移动光标到第一个错误，键入r和要更正的字符</li></ul></li><li><p>ce删除直到单词末尾的内容并进入编辑模式</p><ul><li>cw删除整个单词并进入编辑模式</li><li>c$删除直到行末并进入编辑模式</li></ul></li><li><p>Ctrl+G显示你在文档中的位置</p></li><li><p>number+G前往第数字行</p></li><li><p>&#x2F;+搜索的单词</p><ul><li>向下搜索下一个单词n</li><li>向上搜索下一个单词N</li></ul></li><li><p>？+向上搜索的单词</p></li><li><p>Ctrl+O回到之前的那个位置，Ctrl+I前进位置</p></li><li><p>%将光标移动到它对应的匹配括号上</p></li><li><p>:&#x2F;s&#x2F;old&#x2F;new&#x2F;g将一行中的old替换为new</p></li><li><p>:&#x2F;#,#s&#x2F;old&#x2F;new&#x2F;g其中#,#是更改的行号范围</p></li><li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;g更改全文件的old内容</p></li><li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;gc更改全文及的old内容，并给出替换与否的提示</p></li><li><p>:! 执行外部命令，如:!ls或者:!dir</p></li><li><p>:w Filename.**保存文件并更改文件名或者类型</p></li><li><p>v按住以选择</p></li><li><p>o光标下插入新的一行</p></li><li><p>O光标上插入新的一行</p></li><li><p>A在一句的末尾开始插入内容</p></li><li><p>R插入不止一句内容</p></li><li><p>y复制用v的选中内容，用p粘贴内容</p></li><li><p>选中后U将内容变成大写，u将内容变成小写，~将大小翻转</p></li><li><p>:e ~&#x2F;.vimrc 编辑Unix依赖</p></li><li><p>:e $VIM&#x2F;_vimrc编辑Windows依赖</p></li></ul>]]></content>
     
@@ -43,6 +239,12 @@
     </categories>
     
     
+    <tags>
+      
+      <tag>Vim</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -52,7 +254,7 @@
     <link href="/2023/11/08/Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"/>
     <url>/2023/11/08/Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</url>
     
-    <content type="html"><![CDATA[<h3 id="一切皆文件"><a href="#一切皆文件" class="headerlink" title="一切皆文件"></a>一切皆文件</h3><p>Linux文件系统会为每个文件分配两个数据结构<strong>索引节点(index node)</strong> 和 **目录项(directory entry)**，用来记录文件的元信息和目录层次结构</p><ul><li><p>bin<br>binaries n.二进制<br>command binaries n.二进制命令文件<br>cat-concatenate v.连接 adj.连接的</p><p>可以用可以用sudo cp ls homovexillues将ls的二进制执行文件复制到homovexillues，然后用sudo rm -r 删除ls命令，</p></li><li><p>sbin</p></li><li><p>usr</p></li><li><p>home</p></li><li><p>root</p></li><li><p>etc</p></li><li><p>dev</p></li><li><p>media</p></li><li><p>mnt</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>Linux文件系统会为每个文件分配两个数据结构<strong>索引节点(index node)</strong> 和 **目录项(directory entry)**，用来记录文件的元信息和目录层次结构</p><ul><li><p>bin<br>binaries n.二进制<br>command binaries n.二进制命令文件<br>cat-concatenate v.连接 adj.连接的</p><p>可以用可以用sudo cp ls homovexillues将ls的二进制执行文件复制到homovexillues，然后用sudo rm -r 删除ls命令，</p></li><li><p>sbin</p></li><li><p>usr</p></li><li><p>home</p></li><li><p>root</p></li><li><p>etc</p></li><li><p>dev</p></li><li><p>media</p></li><li><p>mnt</p></li></ul>]]></content>
     
     
     <categories>
@@ -127,7 +329,7 @@
     <link href="/2023/11/07/%E6%9D%82%E8%AE%B0/"/>
     <url>/2023/11/07/%E6%9D%82%E8%AE%B0/</url>
     
-    <content type="html"><![CDATA[<ul><li><p>阿克琉斯值剑就是科幻小说</p></li><li><p>主人公和父亲置气，爬上了一棵树并发誓不下来，直到他垂垂老矣，一个热气球为了采集气象信息，抛下了一根锚，他看到这根从热气球上垂下来的绳子，就扑上去抓住它，最后随着热气球飞走了。</p></li><li><p>记录一个地狱笑话</p><ul><li>Level 1 Installing Arch While Parents are Arguing</li><li>Level 2 Install Gentoo in family court</li><li>Level 3 Open bsd in the orphanage</li><li>Level 4 Temple OS in the depression clinic</li></ul></li><li><p>日本女排吉村志惠</p></li><li><p>美是生活，你没办法去越过它去创造一种你没见识过的生活</p></li><li><p>叙事就是会在人的身上留下痕迹，时间不到痕迹不够重</p></li><li><p>很急的音乐配上慢动作的画面就很有冲击力</p></li><li><p>管乐开场，抒情的地方用弦乐，就非常大场面，温柔的瞬间，勇敢的地方，运动会的感觉</p></li><li><p>教堂的钟声，号角，风笛，史诗感就出现了</p></li><li><p>钟声加合唱加交响乐</p></li><li><p>转调就是一下子从一个调就转到另一个调</p></li><li><p>小提琴＋钢琴算是孤独组合了</p></li><li><p>鼓点代表前进的步伐，表示一直在推进的行军，很有压迫感</p></li><li><p>塔防特别考验音乐，因为大部分时间都在看着</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li><p>阿克琉斯值剑就是科幻小说</p></li><li><p>主人公和父亲置气，爬上了一棵树并发誓不下来，直到他垂垂老矣，一个热气球为了采集气象信息，抛下了一根锚，他看到这根从热气球上垂下来的绳子，就扑上去抓住它，最后随着热气球飞走了。</p></li><li><p>记录一个地狱笑话</p><ul><li>Level 1 Installing Arch While Parents are Arguing</li><li>Level 2 Install Gentoo in family court</li><li>Level 3 Open bsd in the orphanage</li><li>Level 4 Temple OS in the depression clinic</li></ul></li><li><p>日本女排吉村志惠</p></li><li><p>美是生活，你没办法去越过它去创造一种你没见识过的生活</p></li><li><p>叙事就是会在人的身上留下痕迹，时间不到痕迹不够重</p></li><li><p>很急的音乐配上慢动作的画面就很有冲击力</p></li><li><p>管乐开场，抒情的地方用弦乐，就非常大场面，温柔的瞬间，勇敢的地方，运动会的感觉</p></li><li><p>教堂的钟声，号角，风笛，史诗感就出现了</p></li><li><p>钟声加合唱加交响乐</p></li><li><p>转调就是一下子从一个调就转到另一个调</p></li><li><p>小提琴＋钢琴算是孤独组合了</p></li><li><p>鼓点代表前进的步伐，表示一直在推进的行军，很有压迫感</p></li><li><p>塔防特别考验音乐，因为大部分时间都在看着</p></li><li><p>ToB目标用户是企业的业务，一般分为传统软件和SaaS两种模式；ToC个人相关的业务，如常用的地图App，聊天App等</p></li></ul>]]></content>
     
     
     <categories>
