@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Python-jupyter</title>
+    <link href="/2023/11/17/Python-jupyter/"/>
+    <url>/2023/11/17/Python-jupyter/</url>
+    
+    <content type="html"><![CDATA[<h4 id="Jupyter-notebook转markdown"><a href="#Jupyter-notebook转markdown" class="headerlink" title="Jupyter notebook转markdown"></a>Jupyter notebook转markdown</h4><p>需要的库是<code>nbconbert</code> ，它依赖库<code>pandoc</code> </p><blockquote><p><em>Ps.我看到这个库名的时候脑子里第一反应是”牛逼的转换器“（捂脸），什么牛逼哄哄的能量瓶小伙啊</em></p><p><em>Ps.Ps. 用这个<a href="https://github.com/pyppeteer/pyppeteer">pyppeteer&#x2F;pyppeteer</a>库可以转换为pdf</em></p></blockquote><p>命令为：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">jupyter nbconvert xxx<span class="hljs-selector-class">.ipynb</span> <span class="hljs-attr">--to</span> markdown<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>库</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>程序员笑话集</title>
     <link href="/2023/11/16/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%AC%91%E8%AF%9D%E9%9B%86/"/>
     <url>/2023/11/16/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%AC%91%E8%AF%9D%E9%9B%86/</url>
