@@ -4,6 +4,102 @@
   
   
   <entry>
+    <title>Edge浏览器手势</title>
+    <link href="/2023/11/17/Edge%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%8B%E5%8A%BF/"/>
+    <url>/2023/11/17/Edge%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%8B%E5%8A%BF/</url>
+    
+    <content type="html"><![CDATA[<p>微软的老毛病——这个功能真不错！现在让我们在下一次更新之后把它砍了！</p><p>在又一次的更新完系统之后发现鼠标手势控制消失之后，上网找到了解决方案</p><ol><li>在浏览器地址栏中输入<code>edge://flags/</code>进入实验功能配置页面，搜索出Mouse Gesture后将Default选项改为Enable</li><li>在最新的版本中可以去设置-外观里打开鼠标手势控制选项</li></ol><p>不确定究竟是哪个操作具体生效的，但是也懒得折腾了，记录一下</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vim基本键位</title>
+    <link href="/2023/11/17/Vim%E5%9F%BA%E6%9C%AC%E9%94%AE%E4%BD%8D/"/>
+    <url>/2023/11/17/Vim%E5%9F%BA%E6%9C%AC%E9%94%AE%E4%BD%8D/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p><strong>x键删除字符</strong></p></li><li><p>dw删除整个单词</p><ul><li>d2w删除接下来的两个单词</li></ul></li><li><p>d$删除到行尾</p></li><li><p>w到下一个单词头</p></li><li><p>e到下一个单词尾</p></li><li><p>$到行尾</p></li><li><p>u撤回</p><ul><li>Ctrl+R反撤回</li></ul></li><li><p>0到行首，包括空格</p></li><li><p>^到行首，不包括空格</p></li><li><p>G到文本最好一行首</p></li><li><p>gg到文本首行</p></li><li><p>number motion执行几次行动</p><ul><li>38j向下移动38次</li></ul></li><li><p>dd删除一整行</p></li><li><p>p在光标处粘贴先前删除的文本</p></li><li><p>r以替换光标处的字符</p><ul><li>移动光标到第一个错误，键入r和要更正的字符</li></ul></li><li><p>ce删除直到单词末尾的内容并进入编辑模式</p><ul><li>cw删除整个单词并进入编辑模式</li><li>c$删除直到行末并进入编辑模式</li></ul></li><li><p>Ctrl+G显示你在文档中的位置</p></li><li><p>number+G前往第数字行</p></li><li><p>&#x2F;+搜索的单词</p><ul><li>向下搜索下一个单词n</li><li>向上搜索下一个单词N</li></ul></li><li><p>？+向上搜索的单词</p></li><li><p>Ctrl+O回到之前的那个位置，Ctrl+I前进位置</p></li><li><p>%将光标移动到它对应的匹配括号上</p></li><li><p>:&#x2F;s&#x2F;old&#x2F;new&#x2F;g将一行中的old替换为new</p></li><li><p>:&#x2F;#,#s&#x2F;old&#x2F;new&#x2F;g其中#,#是更改的行号范围</p></li><li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;g更改全文件的old内容</p></li><li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;gc更改全文及的old内容，并给出替换与否的提示</p></li><li><p>:! 执行外部命令，如:!ls或者:!dir</p></li><li><p>:w Filename.**保存文件并更改文件名或者类型</p></li><li><p>v按住以选择</p></li><li><p>o光标下插入新的一行</p></li><li><p>O光标上插入新的一行</p></li><li><p>A在一句的末尾开始插入内容</p></li><li><p>R插入不止一句内容</p></li><li><p><strong>y复制用v的选中内容</strong>，用p粘贴内容**</p></li><li><p>选中后U将内容变成大写，u将内容变成小写，~将大小翻转</p></li><li><p>:e ~&#x2F;.vimrc 编辑Unix依赖</p></li><li><p>:e $VIM&#x2F;_vimrc编辑Windows依赖</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>搭建骰子机器人的过程</title>
+    <link href="/2023/11/17/%E6%90%AD%E5%BB%BA%E9%AA%B0%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%87%E7%A8%8B/"/>
+    <url>/2023/11/17/%E6%90%AD%E5%BB%BA%E9%AA%B0%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<ul><li>从GitHub上下载release到服务器上，用tar解压并安装为系统服务，开始运行服务，</li><li>出现问题：在浏览器用公网ip无法找到开启的UI界面</li><li>解决问题：没打开服务所需的对应端口</li><li>出现问题：无法直接用骰子机器人对接QQ账号，需要签名服务器</li><li>解决问题：暂时未能解决</li><li>成功将骰子机器人部署到KooK平台</li><li>根据官方引导下载.js插件:<ul><li>定时任务2.0.0</li><li>每日新闻与历史上的今天</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>sealdice</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>线性表的增删改查</title>
+    <link href="/2023/11/17/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"/>
+    <url>/2023/11/17/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</url>
+    
+    <content type="html"><![CDATA[<h4 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python-jupyter</title>
     <link href="/2023/11/17/Python-jupyter/"/>
     <url>/2023/11/17/Python-jupyter/</url>
@@ -221,33 +317,6 @@
   
   
   <entry>
-    <title>搭建骰子机器人的过程</title>
-    <link href="/2023/11/14/%E6%90%AD%E5%BB%BA%E9%AA%B0%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%87%E7%A8%8B/"/>
-    <url>/2023/11/14/%E6%90%AD%E5%BB%BA%E9%AA%B0%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
-    
-    <content type="html"><![CDATA[<ul><li><p>从GitHub上下载release到服务器上，用tar解压并安装为系统服务，开始运行服务，</p></li><li><p>出现问题：在浏览器用公网ip无法找到开启的UI界面</p></li><li><p>解决问题：没打开服务所需的对应端口</p></li><li><p>出现问题：无法直接用骰子机器人对接QQ账号，需要签名服务器</p></li><li><p>解决问题：暂时未能解决</p></li><li><p>成功将骰子机器人部署到KooK平台</p></li><li><h2 id="根据官方引导下载-js插件-定时任务2-0-0-每日新闻与历史上的今天"><a href="#根据官方引导下载-js插件-定时任务2-0-0-每日新闻与历史上的今天" class="headerlink" title="根据官方引导下载.js插件:- 定时任务2.0.0- 每日新闻与历史上的今天"></a>根据官方引导下载.js插件:<br>- 定时任务2.0.0<br>- 每日新闻与历史上的今天</h2></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-      <tag>sealdice</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Linux有趣小工具记录</title>
     <link href="/2023/11/14/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/"/>
     <url>/2023/11/14/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/</url>
@@ -348,6 +417,75 @@
   
   
   <entry>
+    <title>Linux命令</title>
+    <link href="/2023/11/12/Linux%E5%91%BD%E4%BB%A4/"/>
+    <url>/2023/11/12/Linux%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>ssh</p></li><li><p>ls</p><ul><li>ls -l<br>  查看文件列表，包括属性</li><li>ls -al<br>  查看隐藏文件</li></ul></li><li><p>pwd<br>我在哪儿，显示目前的位置</p></li><li><p>cd<br>  更改目录并进入</p><ul><li>cd ..<br>  回到上一个目录</li><li>cd<br>  回到home文件夹</li></ul></li><li><p>touch<br>创建一个文件</p></li><li><p>echo<br>输出一些内容或向文件中添加内容</p></li><li><p>cat<br>显示文件内容</p></li><li><p>mkdir<br>创建新的文件夹</p></li><li><p>cp<br>复制文件到新的文件夹或者将一个文件复制到另一个文件</p></li><li><p>mv<br>移动文件</p></li><li><p>rm<br>  删除文件</p><ul><li>rm -r<br>  删除非空文件夹</li></ul></li><li><p>ln<br>链接文件</p></li><li><p>clear<br>清理屏幕</p></li><li><p>whoami<br>输出我的用户名</p></li><li><p>useradd&#x2F;adduser<br>添加一个新用户&#x2F;添加一个用户，可以指定密码等参数</p></li><li><p>sudo<br>以管理员权限执行命令</p></li><li><p>su<br>  切换用户</p><ul><li>su cyber_eye</li><li>exit<br>  退出用户</li></ul></li><li><p>passwd<br>  更改密码</p><ul><li>sudo passwd nick<br>  修改密码</li></ul></li><li><p>which<br>找到命令的位置</p></li><li><p>whereis<br>所有命令所在文件夹</p></li><li><p>wget<br>从网络下载文件</p></li><li><p>curl<br>  从网络下载文件</p><ul><li>curl [] -&gt; []</li></ul></li><li><p>zip<br>  创建压缩文件</p><ul><li>zip [] []</li></ul></li><li><p>unzip<br>解压缩文件</p></li><li><p>less<br>只看文档的一页</p></li><li><p>head<br>只看文档的开头</p></li><li><p>tail<br>只看文档的末尾</p></li><li><p>cmp<br>比较两个文件的异同</p></li><li><p>diff<br>比较两个文件的异同并告诉我们差异之处</p></li><li><p>sort<br>将文件按字母顺序对内容进行排序</p></li><li><p>find<br>  查找文件</p><ul><li>find &#x2F;bin -name “hello*”<br>  找到bin文件夹下所有以“hello”开头的文件</li></ul></li><li><p>neofetch<br>显示系统字符图像和系统信息</p></li><li><p>cal<br>输出一个简单的日历</p></li><li><p>free<br>输出内存状况</p></li><li><p>df<br>内存占用情况</p></li><li><p>ps<br>  查看系统进程</p><ul><li>ps -aux<br>  查看系统所有进程</li></ul></li><li><p>top<br>查看正在消耗系统性能的进程</p></li><li><p>htop<br>用一种更花哨的方式看系统性能的进程</p></li><li><p>kill<br>  结束系统进程</p><ul><li>ps -aux | grep thisbash<br>  显示所有进程，并抓取内容中含有“thisbash”内容的进程，然后查看process ID，也就是PID</li><li>kill -9 6599</li></ul></li><li><p>pkill<br>  不需要知道PID</p><ul><li>pkill -f thisbash<br>  直接结束含有thisbash的进程</li></ul></li><li><p>systemctl</p></li><li><p>history<br>查看所有执行过的历史记录</p></li><li><p>reboot<br>重启</p></li><li><p>shutdown<br>  关机，默认60s</p><ul><li>shutdown now<br>  立刻关机</li></ul></li><li><p>more</p><p>将要查看的文件内容直接输出在终端上</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vim使用</title>
+    <link href="/2023/11/12/Vim%E4%BD%BF%E7%94%A8/"/>
+    <url>/2023/11/12/Vim%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>x键删除字符</p></li><li><p>dw删除整个单词</p><ul><li>d2w删除接下来的两个单词</li></ul></li><li><p>d$删除到行尾</p></li><li><p>w到下一个单词头</p></li><li><p>e到下一个单词尾</p></li><li><p>$到行尾</p></li><li><p>u撤回</p><ul><li>Ctrl+R反撤回</li></ul></li><li><p>0到行首，包括空格</p></li><li><p>^到行首，不包括空格</p></li><li><p>G到文本最好一行首</p></li><li><p>gg到文本首行</p></li><li><p>number motion执行几次行动</p><ul><li>38j向下移动38次</li></ul></li><li><p>dd删除一整行</p></li><li><p>p在光标处粘贴先前删除的文本</p></li><li><p>r以替换光标处的字符</p><ul><li>移动光标到第一个错误，键入r和要更正的字符</li></ul></li><li><p>ce删除直到单词末尾的内容并进入编辑模式</p><ul><li>cw删除整个单词并进入编辑模式</li><li>c$删除直到行末并进入编辑模式</li></ul></li><li><p>Ctrl+G显示你在文档中的位置</p></li><li><p>number+G前往第数字行</p></li><li><p>&#x2F;+搜索的单词</p><ul><li>向下搜索下一个单词n</li><li>向上搜索下一个单词N</li></ul></li><li><p>？+向上搜索的单词</p></li><li><p>Ctrl+O回到之前的那个位置，Ctrl+I前进位置</p></li><li><p>%将光标移动到它对应的匹配括号上</p></li><li><p>:&#x2F;s&#x2F;old&#x2F;new&#x2F;g将一行中的old替换为new</p></li><li><p>:&#x2F;#,#s&#x2F;old&#x2F;new&#x2F;g其中#,#是更改的行号范围</p></li><li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;g更改全文件的old内容</p></li><li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;gc更改全文及的old内容，并给出替换与否的提示</p></li><li><p>:! 执行外部命令，如:!ls或者:!dir</p></li><li><p>:w Filename.**保存文件并更改文件名或者类型</p></li><li><p>v按住以选择</p></li><li><p>o光标下插入新的一行</p></li><li><p>O光标上插入新的一行</p></li><li><p>A在一句的末尾开始插入内容</p></li><li><p>R插入不止一句内容</p></li><li><p>y复制用v的选中内容，用p粘贴内容</p></li><li><p>选中后U将内容变成大写，u将内容变成小写，~将大小翻转</p></li><li><p>:e ~&#x2F;.vimrc 编辑Unix依赖</p></li><li><p>:e $VIM&#x2F;_vimrc编辑Windows依赖</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>杂记</title>
+    <link href="/2023/11/12/%E6%9D%82%E8%AE%B0/"/>
+    <url>/2023/11/12/%E6%9D%82%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>阿克琉斯值剑就是科幻小说</p></li><li><p>主人公和父亲置气，爬上了一棵树并发誓不下来，直到他垂垂老矣，一个热气球为了采集气象信息，抛下了一根锚，他看到这根从热气球上垂下来的绳子，就扑上去抓住它，最后随着热气球飞走了。</p></li><li><p>记录一个地狱笑话</p><ul><li>Level 1 Installing Arch While Parents are Arguing</li><li>Level 2 Install Gentoo in family court</li><li>Level 3 Open bsd in the orphanage</li><li>Level 4 Temple OS in the depression clinic</li></ul></li><li><p>日本女排吉村志惠</p></li><li><p>美是生活，你没办法去越过它去创造一种你没见识过的生活</p></li><li><p>叙事就是会在人的身上留下痕迹，时间不到痕迹不够重</p></li><li><p>很急的音乐配上慢动作的画面就很有冲击力</p></li><li><p>管乐开场，抒情的地方用弦乐，就非常大场面，温柔的瞬间，勇敢的地方，运动会的感觉</p></li><li><p>教堂的钟声，号角，风笛，史诗感就出现了</p></li><li><p>钟声加合唱加交响乐</p></li><li><p>转调就是一下子从一个调就转到另一个调</p></li><li><p>小提琴＋钢琴算是孤独组合了</p></li><li><p>鼓点代表前进的步伐，表示一直在推进的行军，很有压迫感</p></li><li><p>塔防特别考验音乐，因为大部分时间都在看着</p></li><li><p>ToB目标用户是企业的业务，一般分为传统软件和SaaS两种模式；ToC个人相关的业务，如常用的地图App，聊天App等</p></li><li><p>void函数的返回值可以写成return;</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>基于Typora的LaTex使用</title>
     <link href="/2023/11/10/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/"/>
     <url>/2023/11/10/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/</url>
@@ -398,31 +536,6 @@
   
   
   <entry>
-    <title>Vim基本键位</title>
-    <link href="/2023/11/08/Vim%E5%9F%BA%E6%9C%AC%E9%94%AE%E4%BD%8D/"/>
-    <url>/2023/11/08/Vim%E5%9F%BA%E6%9C%AC%E9%94%AE%E4%BD%8D/</url>
-    
-    <content type="html"><![CDATA[<ul><li><p>x键删除字符</p></li><li><p>dw删除整个单词</p><ul><li>d2w删除接下来的两个单词</li></ul></li><li><p>d$删除到行尾</p></li><li><p>w到下一个单词头</p></li><li><p>e到下一个单词尾</p></li><li><p>$到行尾</p></li><li><p>u撤回</p><ul><li>Ctrl+R反撤回</li></ul></li><li><p>0到行首，包括空格</p></li><li><p>^到行首，不包括空格</p></li><li><p>G到文本最好一行首</p></li><li><p>gg到文本首行</p></li><li><p>number motion执行几次行动</p><ul><li>38j向下移动38次</li></ul></li><li><p>dd删除一整行</p></li><li><p>p在光标处粘贴先前删除的文本</p></li><li><p>r以替换光标处的字符</p><ul><li>移动光标到第一个错误，键入r和要更正的字符</li></ul></li><li><p>ce删除直到单词末尾的内容并进入编辑模式</p><ul><li>cw删除整个单词并进入编辑模式</li><li>c$删除直到行末并进入编辑模式</li></ul></li><li><p>Ctrl+G显示你在文档中的位置</p></li><li><p>number+G前往第数字行</p></li><li><p>&#x2F;+搜索的单词</p><ul><li>向下搜索下一个单词n</li><li>向上搜索下一个单词N</li></ul></li><li><p>？+向上搜索的单词</p></li><li><p>Ctrl+O回到之前的那个位置，Ctrl+I前进位置</p></li><li><p>%将光标移动到它对应的匹配括号上</p></li><li><p>:&#x2F;s&#x2F;old&#x2F;new&#x2F;g将一行中的old替换为new</p></li><li><p>:&#x2F;#,#s&#x2F;old&#x2F;new&#x2F;g其中#,#是更改的行号范围</p></li><li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;g更改全文件的old内容</p></li><li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;gc更改全文及的old内容，并给出替换与否的提示</p></li><li><p>:! 执行外部命令，如:!ls或者:!dir</p></li><li><p>:w Filename.**保存文件并更改文件名或者类型</p></li><li><p>v按住以选择</p></li><li><p>o光标下插入新的一行</p></li><li><p>O光标上插入新的一行</p></li><li><p>A在一句的末尾开始插入内容</p></li><li><p>R插入不止一句内容</p></li><li><p>y复制用v的选中内容，用p粘贴内容</p></li><li><p>选中后U将内容变成大写，u将内容变成小写，~将大小翻转</p></li><li><p>:e ~&#x2F;.vimrc 编辑Unix依赖</p></li><li><p>:e $VIM&#x2F;_vimrc编辑Windows依赖</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Vim</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Linux文件系统</title>
     <link href="/2023/11/08/Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"/>
     <url>/2023/11/08/Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</url>
@@ -453,56 +566,6 @@
     <url>/2023/11/08/pacman%E5%91%BD%E4%BB%A4/</url>
     
     <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S [软件名]<br>sudo pacman -Sy <span class="hljs-comment">#更新Arch软件源</span><br>sudo pacman -Syy <span class="hljs-comment">#强制更新Arch软件源</span><br>sudo pacman -Su <span class="hljs-comment">#更新软件</span><br>sudo pcaman -Syu <span class="hljs-comment">#更新软件源并更新软件</span><br>sudo pacman -Syyu <span class="hljs-comment">#强制更新软件源并更新软件</span><br>sudo pacman -Ss vim <span class="hljs-comment">#查询软件源里所有名字里带vim的软件</span><br>sudo pacman -Ss ^vim <span class="hljs-comment">#支持正则表达式，查询所有以vim开头的软件</span><br>sudo pacman -R [软件名] <span class="hljs-comment">#卸载软件</span><br>sudo pacman -Rns [软件名] <span class="hljs-comment">#彻底卸载软件</span><br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Linux命令</title>
-    <link href="/2023/11/07/Linux%E5%91%BD%E4%BB%A4/"/>
-    <url>/2023/11/07/Linux%E5%91%BD%E4%BB%A4/</url>
-    
-    <content type="html"><![CDATA[<ul><li>ssh</li><li>ls<ul><li>ls -l<br>  查看文件列表，包括属性</li><li>ls -al<br>  查看隐藏文件</li></ul></li><li>pwd<br>我在哪儿，显示目前的位置</li><li>cd<br>  更改目录并进入<ul><li>cd ..<br>  回到上一个目录</li><li>cd<br>  回到home文件夹</li></ul></li><li>touch<br>创建一个文件</li><li>echo<br>输出一些内容或向文件中添加内容</li><li>cat<br>显示文件内容</li><li>mkdir<br>创建新的文件夹</li><li>cp<br>复制文件到新的文件夹或者将一个文件复制到另一个文件</li><li>mv<br>移动文件</li><li>rm<br>  删除文件<ul><li>rm -r<br>  删除非空文件夹</li></ul></li><li>ln<br>链接文件</li><li>clear<br>清理屏幕</li><li>whoami<br>输出我的用户名</li><li>useradd&#x2F;adduser<br>添加一个新用户&#x2F;添加一个用户，可以指定密码等参数</li><li>sudo<br>以管理员权限执行命令</li><li>su<br>  切换用户<ul><li>su cyber_eye</li><li>exit<br>  退出用户</li></ul></li><li>passwd<br>  更改密码<ul><li>sudo passwd nick<br>  修改密码</li></ul></li><li>which<br>找到命令的位置</li><li>whereis<br>所有命令所在文件夹</li><li>wget<br>从网络下载文件</li><li>curl<br>  从网络下载文件<ul><li>curl [] -&gt; []</li></ul></li><li>zip<br>  创建压缩文件<ul><li>zip [] []</li></ul></li><li>unzip<br>解压缩文件</li><li>less<br>只看文档的一页</li><li>head<br>只看文档的开头</li><li>tail<br>只看文档的末尾</li><li>cmp<br>比较两个文件的异同</li><li>diff<br>比较两个文件的异同并告诉我们差异之处</li><li>sort<br>将文件按字母顺序对内容进行排序</li><li>find<br>  查找文件<ul><li>find &#x2F;bin -name “hello*”<br>  找到bin文件夹下所有以“hello”开头的文件</li></ul></li><li>neofetch<br>显示系统字符图像和系统信息</li><li>cal<br>输出一个简单的日历</li><li>free<br>输出内存状况</li><li>df<br>内存占用情况</li><li>ps<br>  查看系统进程<ul><li>ps -aux<br>  查看系统所有进程</li></ul></li><li>top<br>查看正在消耗系统性能的进程</li><li>htop<br>用一种更花哨的方式看系统性能的进程</li><li>kill<br>  结束系统进程<ul><li>ps -aux | grep thisbash<br>  显示所有进程，并抓取内容中含有“thisbash”内容的进程，然后查看process ID，也就是PID</li><li>kill -9 6599</li></ul></li><li>pkill<br>  不需要知道PID<ul><li>pkill -f thisbash<br>  直接结束含有thisbash的进程</li></ul></li><li>systemctl</li><li>history<br>查看所有执行过的历史记录</li><li>reboot<br>重启</li><li>shutdown<br>  关机，默认60s<ul><li>shutdown now<br>  立刻关机</li></ul></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>杂记</title>
-    <link href="/2023/11/07/%E6%9D%82%E8%AE%B0/"/>
-    <url>/2023/11/07/%E6%9D%82%E8%AE%B0/</url>
-    
-    <content type="html"><![CDATA[<ul><li><p>阿克琉斯值剑就是科幻小说</p></li><li><p>主人公和父亲置气，爬上了一棵树并发誓不下来，直到他垂垂老矣，一个热气球为了采集气象信息，抛下了一根锚，他看到这根从热气球上垂下来的绳子，就扑上去抓住它，最后随着热气球飞走了。</p></li><li><p>记录一个地狱笑话</p><ul><li>Level 1 Installing Arch While Parents are Arguing</li><li>Level 2 Install Gentoo in family court</li><li>Level 3 Open bsd in the orphanage</li><li>Level 4 Temple OS in the depression clinic</li></ul></li><li><p>日本女排吉村志惠</p></li><li><p>美是生活，你没办法去越过它去创造一种你没见识过的生活</p></li><li><p>叙事就是会在人的身上留下痕迹，时间不到痕迹不够重</p></li><li><p>很急的音乐配上慢动作的画面就很有冲击力</p></li><li><p>管乐开场，抒情的地方用弦乐，就非常大场面，温柔的瞬间，勇敢的地方，运动会的感觉</p></li><li><p>教堂的钟声，号角，风笛，史诗感就出现了</p></li><li><p>钟声加合唱加交响乐</p></li><li><p>转调就是一下子从一个调就转到另一个调</p></li><li><p>小提琴＋钢琴算是孤独组合了</p></li><li><p>鼓点代表前进的步伐，表示一直在推进的行军，很有压迫感</p></li><li><p>塔防特别考验音乐，因为大部分时间都在看着</p></li><li><p>ToB目标用户是企业的业务，一般分为传统软件和SaaS两种模式；ToC个人相关的业务，如常用的地图App，聊天App等</p></li></ul>]]></content>
     
     
     <categories>

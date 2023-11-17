@@ -16,22 +16,22 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta name="description" content="x键删除字符  dw删除整个单词  d2w删除接下来的两个单词   d$删除到行尾  w到下一个单词头  e到下一个单词尾  $到行尾  u撤回  Ctrl+R反撤回   0到行首，包括空格  ^到行首，不包括空格  G到文本最好一行首  gg到文本首行  number motion执行几次行动  38j向下移动38次   dd删除一整行  p在光标处粘贴先前删除的文本  r以替换光标处的字符">
+    <meta name="description" content="使用前需要先配置好[Typora](Typora — a markdown editor, markdown reader.)及pandoc以便能将写好的内容导出为LaTex形式 用$$以创建公式段 换行 \\或者\newline  $$a\b\newline c$$ 上标 a^2 a^{2222}  $$a^2a^{2222}$$ 下标 a_2 a_{2222}  $$a_2a_{2222}$$">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vim基本键位">
-<meta property="og:url" content="https://homovexillues.github.io/2023/11/08/Vim%E5%9F%BA%E6%9C%AC%E9%94%AE%E4%BD%8D/index.html">
+<meta property="og:title" content="基于Typora的LaTex使用">
+<meta property="og:url" content="https://homovexillues.github.io/2023/11/12/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="x键删除字符  dw删除整个单词  d2w删除接下来的两个单词   d$删除到行尾  w到下一个单词头  e到下一个单词尾  $到行尾  u撤回  Ctrl+R反撤回   0到行首，包括空格  ^到行首，不包括空格  G到文本最好一行首  gg到文本首行  number motion执行几次行动  38j向下移动38次   dd删除一整行  p在光标处粘贴先前删除的文本  r以替换光标处的字符">
+<meta property="og:description" content="使用前需要先配置好[Typora](Typora — a markdown editor, markdown reader.)及pandoc以便能将写好的内容导出为LaTex形式 用$$以创建公式段 换行 \\或者\newline  $$a\b\newline c$$ 上标 a^2 a^{2222}  $$a^2a^{2222}$$ 下标 a_2 a_{2222}  $$a_2a_{2222}$$">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-08T09:45:23.166Z">
-<meta property="article:modified_time" content="2023-11-14T15:15:36.584Z">
+<meta property="article:published_time" content="2023-11-11T17:07:51.864Z">
+<meta property="article:modified_time" content="2023-11-17T06:11:26.010Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="Vim">
+<meta property="article:tag" content="LaTex">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Vim基本键位 - 红石门</title>
+  <title>基于Typora的LaTex使用 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Vim基本键位"></span>
+            <span id="subtitle" data-typed-text="基于Typora的LaTex使用"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-08 17:45" pubdate>
-          2023年11月8日 下午
+        <time datetime="2023-11-12 01:07" pubdate>
+          2023年11月12日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          734 字
+          465 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          7 分钟
+          4 分钟
         
       </span>
     
@@ -268,107 +268,49 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Vim基本键位</h1>
+            <h1 id="seo-header">基于Typora的LaTex使用</h1>
             
             
               <div class="markdown-body">
                 
-                <ul>
-<li><p>x键删除字符</p>
-</li>
-<li><p>dw删除整个单词</p>
-<ul>
-<li>d2w删除接下来的两个单词</li>
+                <p>使用前需要先配置好[Typora](<a target="_blank" rel="noopener" href="https://typora.io/">Typora — a markdown editor, markdown reader.</a>)及<a target="_blank" rel="noopener" href="https://github.com/jgm/pandoc/releases/latest">pandoc</a>以便能将写好的内容导出为LaTex形式</p>
+<p>用$$以创建公式段</p>
+<h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><ul>
+<li>\\或者\newline</li>
 </ul>
-</li>
-<li><p>d$删除到行尾</p>
-</li>
-<li><p>w到下一个单词头</p>
-</li>
-<li><p>e到下一个单词尾</p>
-</li>
-<li><p>$到行尾</p>
-</li>
-<li><p>u撤回</p>
-<ul>
-<li>Ctrl+R反撤回</li>
+<p>$$<br>a\b\newline c<br>$$</p>
+<h4 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h4><ul>
+<li>a^2</li>
+<li>a^{2222}</li>
 </ul>
-</li>
-<li><p>0到行首，包括空格</p>
-</li>
-<li><p>^到行首，不包括空格</p>
-</li>
-<li><p>G到文本最好一行首</p>
-</li>
-<li><p>gg到文本首行</p>
-</li>
-<li><p>number motion执行几次行动</p>
-<ul>
-<li>38j向下移动38次</li>
+<p>$$<br>a^2<br>a^{2222}<br>$$</p>
+<h4 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h4><ul>
+<li>a_2</li>
+<li>a_{2222}</li>
 </ul>
-</li>
-<li><p>dd删除一整行</p>
-</li>
-<li><p>p在光标处粘贴先前删除的文本</p>
-</li>
-<li><p>r以替换光标处的字符</p>
-<ul>
-<li>移动光标到第一个错误，键入r和要更正的字符</li>
+<p>$$<br>a_2<br>a_{2222}<br>$$</p>
+<h4 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h4><ul>
+<li>\overline{}</li>
+<li>\underline{}</li>
 </ul>
-</li>
-<li><p>ce删除直到单词末尾的内容并进入编辑模式</p>
-<ul>
-<li>cw删除整个单词并进入编辑模式</li>
-<li>c$删除直到行末并进入编辑模式</li>
+<h1 id="overline-a-b-c"><a href="#overline-a-b-c" class="headerlink" title="$$\overline{a+b+c}"></a>$$<br>\overline{a+b+c}</h1><p>\underline{a+b+c}<br>$$</p>
+<h4 id="平方根"><a href="#平方根" class="headerlink" title="平方根"></a>平方根</h4><ul>
+<li>\sqrt[n]{a+b+c}</li>
 </ul>
-</li>
-<li><p>Ctrl+G显示你在文档中的位置</p>
-</li>
-<li><p>number+G前往第数字行</p>
-</li>
-<li><p>&#x2F;+搜索的单词</p>
-<ul>
-<li>向下搜索下一个单词n</li>
-<li>向上搜索下一个单词N</li>
+<p>$$<br>\sqrt[n]{a+b+c}<br>$$</p>
+<h4 id="水平大括号"><a href="#水平大括号" class="headerlink" title="水平大括号"></a>水平大括号</h4><ul>
+<li>\overbrace{2,3,4,\cdots,100}^{99}</li>
+<li>\underbrace{2,3,4,…,100}^{99}</li>
 </ul>
-</li>
-<li><p>？+向上搜索的单词</p>
-</li>
-<li><p>Ctrl+O回到之前的那个位置，Ctrl+I前进位置</p>
-</li>
-<li><p>%将光标移动到它对应的匹配括号上</p>
-</li>
-<li><p>:&#x2F;s&#x2F;old&#x2F;new&#x2F;g将一行中的old替换为new</p>
-</li>
-<li><p>:&#x2F;#,#s&#x2F;old&#x2F;new&#x2F;g其中#,#是更改的行号范围</p>
-</li>
-<li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;g更改全文件的old内容</p>
-</li>
-<li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;gc更改全文及的old内容，并给出替换与否的提示</p>
-</li>
-<li><p>:! 执行外部命令，如:!ls或者:!dir</p>
-</li>
-<li><p>:w Filename.**保存文件并更改文件名或者类型</p>
-</li>
-<li><p>v按住以选择</p>
-</li>
-<li><p>o光标下插入新的一行</p>
-</li>
-<li><p>O光标上插入新的一行</p>
-</li>
-<li><p>A在一句的末尾开始插入内容</p>
-</li>
-<li><p>R插入不止一句内容</p>
-</li>
-<li><p>y复制用v的选中内容，用p粘贴内容</p>
-</li>
-<li><p>选中后U将内容变成大写，u将内容变成小写，~将大小翻转</p>
-</li>
-<li><p>:e ~&#x2F;.vimrc 编辑Unix依赖</p>
-</li>
-<li><p>:e $VIM&#x2F;_vimrc编辑Windows依赖</p>
-</li>
+<p>$$<br>\overbrace{2,3,4,…,100}^{99}<br>\\underbrace{2,3,4,…,100}^{99}<br>$$</p>
+<h4 id="分数"><a href="#分数" class="headerlink" title="分数"></a>分数</h4><ul>
+<li>\frac{1}{2}</li>
 </ul>
+<p>$$<br>\frac{1}{2}<br>$$</p>
+<h4 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h4><ul>
+<li>\int_{a}^{b}</li>
+</ul>
+<p>$$<br>\int_{a}^{b}<br>$$</p>
 
                 
               </div>
@@ -402,7 +344,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Vim/" class="print-no-link">#Vim</a>
+        <a href="/tags/LaTex/" class="print-no-link">#LaTex</a>
       
     </div>
   
@@ -414,8 +356,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Vim基本键位</div>
-      <div>https://homovexillues.github.io/2023/11/08/Vim基本键位/</div>
+      <div>基于Typora的LaTex使用</div>
+      <div>https://homovexillues.github.io/2023/11/12/基于Typora的Latex使用/</div>
     </div>
     <div class="license-meta">
       
@@ -427,7 +369,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月8日</div>
+          <div>2023年11月12日</div>
         </div>
       
       
@@ -459,18 +401,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/08/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/" title="代码相关单词">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">代码相关单词</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/08/Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" title="Linux文件系统">
-                        <span class="hidden-mobile">Linux文件系统</span>
+                      <a href="/2023/11/08/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/" title="代码相关单词">
+                        <span class="hidden-mobile">代码相关单词</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
