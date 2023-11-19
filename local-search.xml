@@ -4,11 +4,36 @@
   
   
   <entry>
+    <title>梗与解构主义</title>
+    <link href="/2023/11/19/%E6%A2%97%E4%B8%8E%E8%A7%A3%E6%9E%84%E4%B8%BB%E4%B9%89/"/>
+    <url>/2023/11/19/%E6%A2%97%E4%B8%8E%E8%A7%A3%E6%9E%84%E4%B8%BB%E4%B9%89/</url>
+    
+    <content type="html"><![CDATA[<p>网络用语和梗是一种新时代的切口和赛博黑话，而这种梗的创作是新时代的个体对新时代话语权的争夺和对权威的消解，<br>而梗小鬼和烂梗和云的出现正是年轻的个体急于融入互联网团体又东施效颦的写照,本文旨在收集整理一些日常生活中可能会用到的梗和一些有趣的使用场景，以达到信手拈来的目的。</p><ul><li>刃牙道</li><li>海虎</li><li>尚未分类</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>梗</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux操作</title>
     <link href="/2023/11/19/Linux%E6%93%8D%E4%BD%9C/"/>
     <url>/2023/11/19/Linux%E6%93%8D%E4%BD%9C/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h4 id="Linux换源"><a href="#Linux换源" class="headerlink" title="Linux换源"></a>Linux换源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /etc/apt/sources.list<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -542,31 +567,6 @@
   
   
   <entry>
-    <title>代码相关单词</title>
-    <link href="/2023/11/12/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/"/>
-    <url>/2023/11/12/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/</url>
-    
-    <content type="html"><![CDATA[<ul><li><p>approximate adj.大概的</p><ul><li>The approximate time required to complete the tutor is 25-30minutes</li></ul></li><li><p>execute v.执行</p><ul><li>execute command</li></ul></li><li><p>hint n.暗示，提示</p></li><li><p>prompt v.(计算机上)提示</p><ul><li>shell prompt shell提示</li></ul></li><li><p>If you have these steps memorized and confident</p><p>如果你已经记住这些步骤并有信心了</p></li><li><p>discard v.弃置，扔掉</p><ul><li><p>XX discards any changes you made</p><p>XX 会取消你对文本所作的任何改动</p></li></ul></li><li><p>combination n.结合体，组合</p></li><li><p>glitch n.小故障，失灵，短时脉冲波干扰</p></li><li><p>daemon n.守护进程，后台程序</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>单词</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>杂记</title>
     <link href="/2023/11/12/%E6%9D%82%E8%AE%B0/"/>
     <url>/2023/11/12/%E6%9D%82%E8%AE%B0/</url>
@@ -584,6 +584,31 @@
     <tags>
       
       <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>代码相关单词</title>
+    <link href="/2023/11/12/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/"/>
+    <url>/2023/11/12/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>approximate adj.大概的</p><ul><li>The approximate time required to complete the tutor is 25-30minutes</li></ul></li><li><p>execute v.执行</p><ul><li>execute command</li></ul></li><li><p>hint n.暗示，提示</p></li><li><p>prompt v.(计算机上)提示</p><ul><li>shell prompt shell提示</li></ul></li><li><p>If you have these steps memorized and confident</p><p>如果你已经记住这些步骤并有信心了</p></li><li><p>discard v.弃置，扔掉</p><ul><li><p>XX discards any changes you made</p><p>XX 会取消你对文本所作的任何改动</p></li></ul></li><li><p>combination n.结合体，组合</p></li><li><p>glitch n.小故障，失灵，短时脉冲波干扰</p></li><li><p>daemon n.守护进程，后台程序</p></li><li><p>prior adj.在先的，在前的，先前的，更重要的</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>单词</tag>
       
     </tags>
     
