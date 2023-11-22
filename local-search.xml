@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>npm命令</title>
+    <link href="/2023/11/22/npm%E5%91%BD%E4%BB%A4/"/>
+    <url>/2023/11/22/npm%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>npm install xxx</p><ul><li><p>-s相当于-S，即–save</p><p>局部安装，会写进package.json文件中的dependencie里</p><p>dependencies: 表示生产环境下的依赖管理；</p></li><li><p>-g全局安装</p></li><li><p>-d相当于-D，即–save-dev<br>  局部安装，会写进package.json中的devDenpencies里<br>  devDependencies: 表示开发环境下的依赖管理<br>  如果安装这些库是用来打包的或者解析代码的，就可以用这个来安装</p></li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Javascript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>笑话收集</title>
     <link href="/2023/11/21/%E7%AC%91%E8%AF%9D%E6%94%B6%E9%9B%86/"/>
     <url>/2023/11/21/%E7%AC%91%E8%AF%9D%E6%94%B6%E9%9B%86/</url>
@@ -407,9 +434,9 @@
   
   
   <entry>
-    <title>编程中遇到的非常好的各种文章</title>
-    <link href="/2023/11/17/%E7%BC%96%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%9D%9E%E5%B8%B8%E5%A5%BD%E7%9A%84%E5%90%84%E7%A7%8D%E6%96%87%E7%AB%A0/"/>
-    <url>/2023/11/17/%E7%BC%96%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%9D%9E%E5%B8%B8%E5%A5%BD%E7%9A%84%E5%90%84%E7%A7%8D%E6%96%87%E7%AB%A0/</url>
+    <title>编程中遇到的非常好的各种文章和网站</title>
+    <link href="/2023/11/17/%E7%BC%96%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%9D%9E%E5%B8%B8%E5%A5%BD%E7%9A%84%E5%90%84%E7%A7%8D%E6%96%87%E7%AB%A0%E5%92%8C%E7%BD%91%E7%AB%99/"/>
+    <url>/2023/11/17/%E7%BC%96%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%9D%9E%E5%B8%B8%E5%A5%BD%E7%9A%84%E5%90%84%E7%A7%8D%E6%96%87%E7%AB%A0%E5%92%8C%E7%BD%91%E7%AB%99/</url>
     
     <content type="html"><![CDATA[<h4 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h4><ul><li><p><strong><a href="https://www.zhihu.com/column/c_1527964562929893376">从零开始配置vim</a></strong> 来自知乎<a href="https://www.zhihu.com/people/jeccica-20">Masimaro</a></p></li><li><p><strong><a href="https://www.zhihu.com/column/c_1497149473017442304">vim使用技巧 </a></strong> 来自知乎<a href="https://www.zhihu.com/people/jeccica-20">Masimaro</a></p></li></ul><h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><ul><li><a href="https://xiaolincoding.com/os/6_file_system/file_system.html#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90">7.1 文件系统全家桶 </a>来自博客<a href="https://xiaolincoding.com/">小林coding</a></li></ul>]]></content>
     
@@ -655,31 +682,6 @@
   
   
   <entry>
-    <title>hexo+Github搭建博客记录</title>
-    <link href="/2023/11/12/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/"/>
-    <url>/2023/11/12/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
-    
-    <content type="html"><![CDATA[<p>温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸）</p><h2 id="①环境"><a href="#①环境" class="headerlink" title="①环境"></a>①环境</h2><p>node.js下载安装后npm安装hexo博客，代码使用如下</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure><p>安装完成后运行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo -v<br></code></pre></td></tr></table></figure><p>来确认安装情况，出现如下报错：</p><h6 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h6><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">无法加载文件C:\Users\Administrator\AppData\Roaming\npm\hexo.ps1，因为在此系统中禁止执行脚本。有关详细信息，请参阅 &quot;get-<span class="hljs-built_in">help</span> about_signing&quot;。<br></code></pre></td></tr></table></figure><h6 id="解决方法如下"><a href="#解决方法如下" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><p>管理员权限运行Powershell，执行</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">get-ExecutionPolicy</span><br>返回状态：Restricted表示状态是禁止的<br>执行命令<br><span class="hljs-built_in">set-ExcecutionPolicy</span> RemoteSigned来开启<br>选择Y<br></code></pre></td></tr></table></figure><p>选定位置，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-init</span> blog<br></code></pre></td></tr></table></figure><h6 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm ERR! Error: EPERM: operation not permitted, mkdir <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure><h6 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h6><p>权限不够</p><h6 id="解决方法如下-1"><a href="#解决方法如下-1" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><img src="https://raw.githubusercontent.com/Homovexillues/image_bed/main/image/change_the_authority.png" /><p>在属性中将文件夹的用户完全控制权限打开，重新执行命令。</p><p>创建blog文件夹并初始化，此时可以尝试</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-g</span> 静态部署<br>hexo <span class="hljs-literal">-s</span> 开始本地服务器<br></code></pre></td></tr></table></figure><h6 id="出现问题-1"><a href="#出现问题-1" class="headerlink" title="出现问题"></a>出现问题</h6><p>打开<a href="http://localhost:4000的尝试以失败告终">http://localhost:4000的尝试以失败告终</a></p><h6 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h6><p>4000端口被占用了，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo server <span class="hljs-literal">-p</span> <span class="hljs-number">5000</span><br></code></pre></td></tr></table></figure><p>来更改端口号后重试，成功打开<a href="http://localhost:5000/">http://localhost:5000</a></p><h2 id="②部署"><a href="#②部署" class="headerlink" title="②部署"></a>②部署</h2><p>本地部分完成后，将其部署到Github上的自建库里</p><p>这里首先要新建一个GitHub库，命名为“用户名.github.io”的公共库，创建后会默认自动启动HTTPS</p><p>然后安装<strong>hexo-deployer-git</strong>插件：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install hexo<span class="hljs-literal">-deployer-git</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></figure><p>安装成功后修改**_config.yml**文件内的URL部分和Deployment部分：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://用户名.github.io</span><br><br><span class="hljs-attr">deploy:</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br><span class="hljs-attr">repostory:</span> <span class="hljs-string">git@github.com:用户名/用户名.github.io.git</span><br><span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure><p>上传之前别忘了先连接github并配置ssh密匙:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Github用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;Github邮箱&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;Github邮箱&quot;</span><br></code></pre></td></tr></table></figure><p>再将C:\Users\用户名\.ssh下的id_rsa.pub文件中的密匙添加到GitHub上的个人设置-ssh keys中，配置好后可以用<code>ssh -T git@github.com</code>来验证是否连接成功</p><p>然后运行<code>hexo d</code>将网站部署到Github页面</p><p>这样访问https:&#x2F;&#x2F;用户名.github.io就能看到刚才做好的Hexo网站了</p><h2 id="③解决图床问题"><a href="#③解决图床问题" class="headerlink" title="③解决图床问题"></a>③解决图床问题</h2><p>建立一个新的Github库用来存放图片，下载并安装工具<a href="https://github.com/Molunerfinn/PicGo">PicGo</a>用于快速上传图片到Github图床库并获取图片URL链接</p><p>在Github的Setting最下方的Developer Settings，Personal access tokens生成一个token，只选repo那栏就成，在PicGo中设置好之后直接拖拽上传就成了</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Hexo</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Vim使用</title>
     <link href="/2023/11/12/Vim%E4%BD%BF%E7%94%A8/"/>
     <url>/2023/11/12/Vim%E4%BD%BF%E7%94%A8/</url>
@@ -791,6 +793,31 @@
     <tags>
       
       <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hexo+Github搭建博客记录</title>
+    <link href="/2023/11/12/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/"/>
+    <url>/2023/11/12/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<p>温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸）</p><h2 id="①环境"><a href="#①环境" class="headerlink" title="①环境"></a>①环境</h2><p>node.js下载安装后npm安装hexo博客，代码使用如下</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure><p>安装完成后运行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo -v<br></code></pre></td></tr></table></figure><p>来确认安装情况，出现如下报错：</p><h6 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h6><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">无法加载文件C:\Users\Administrator\AppData\Roaming\npm\hexo.ps1，因为在此系统中禁止执行脚本。有关详细信息，请参阅 &quot;get-<span class="hljs-built_in">help</span> about_signing&quot;。<br></code></pre></td></tr></table></figure><h6 id="解决方法如下"><a href="#解决方法如下" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><p>管理员权限运行Powershell，执行</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">get-ExecutionPolicy</span><br>返回状态：Restricted表示状态是禁止的<br>执行命令<br><span class="hljs-built_in">set-ExcecutionPolicy</span> RemoteSigned来开启<br>选择Y<br></code></pre></td></tr></table></figure><p>选定位置，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-init</span> blog<br></code></pre></td></tr></table></figure><h6 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm ERR! Error: EPERM: operation not permitted, mkdir <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure><h6 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h6><p>权限不够</p><h6 id="解决方法如下-1"><a href="#解决方法如下-1" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><img src="https://raw.githubusercontent.com/Homovexillues/image_bed/main/image/change_the_authority.png" /><p>在属性中将文件夹的用户完全控制权限打开，重新执行命令。</p><p>创建blog文件夹并初始化，此时可以尝试</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-g</span> 静态部署<br>hexo <span class="hljs-literal">-s</span> 开始本地服务器<br></code></pre></td></tr></table></figure><h6 id="出现问题-1"><a href="#出现问题-1" class="headerlink" title="出现问题"></a>出现问题</h6><p>打开<a href="http://localhost:4000的尝试以失败告终">http://localhost:4000的尝试以失败告终</a></p><h6 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h6><p>4000端口被占用了，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo server <span class="hljs-literal">-p</span> <span class="hljs-number">5000</span><br></code></pre></td></tr></table></figure><p>来更改端口号后重试，成功打开<a href="http://localhost:5000/">http://localhost:5000</a></p><h2 id="②部署"><a href="#②部署" class="headerlink" title="②部署"></a>②部署</h2><p>本地部分完成后，将其部署到Github上的自建库里</p><p>这里首先要新建一个GitHub库，命名为“用户名.github.io”的公共库，创建后会默认自动启动HTTPS</p><p>然后安装<strong>hexo-deployer-git</strong>插件：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install hexo<span class="hljs-literal">-deployer-git</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></figure><p>安装成功后修改**_config.yml**文件内的URL部分和Deployment部分：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://用户名.github.io</span><br><br><span class="hljs-attr">deploy:</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br><span class="hljs-attr">repostory:</span> <span class="hljs-string">git@github.com:用户名/用户名.github.io.git</span><br><span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure><p>上传之前别忘了先连接github并配置ssh密匙:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Github用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;Github邮箱&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;Github邮箱&quot;</span><br></code></pre></td></tr></table></figure><p>再将</p><p>Windows：C:\Users\用户名\.ssh下的id_rsa.pub</p><p>Linux： &#x2F;root&#x2F;.ssh&#x2F;id_rsa</p><p>文件中的密匙添加到GitHub上的个人设置-ssh keys中，配置好后可以用<code>ssh -T git@github.com</code>来验证是否连接成功</p><p>然后运行<code>hexo d</code>将网站部署到Github页面</p><p>这样访问https:&#x2F;&#x2F;用户名.github.io就能看到刚才做好的Hexo网站了</p><h2 id="③解决图床问题"><a href="#③解决图床问题" class="headerlink" title="③解决图床问题"></a>③解决图床问题</h2><p>建立一个新的Github库用来存放图片，下载并安装工具<a href="https://github.com/Molunerfinn/PicGo">PicGo</a>用于快速上传图片到Github图床库并获取图片URL链接</p><p>在Github的Setting最下方的Developer Settings，Personal access tokens生成一个token，只选repo那栏就成，在PicGo中设置好之后直接拖拽上传就成了</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
       
     </tags>
     
