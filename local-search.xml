@@ -453,6 +453,31 @@
   
   
   <entry>
+    <title>Linux有趣小工具记录</title>
+    <link href="/2023/11/17/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/"/>
+    <url>/2023/11/17/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h4 id="cmatrix"><a href="#cmatrix" class="headerlink" title="cmatrix"></a>cmatrix</h4><p>使用任何包管理器都可以直接下载的工具，堪称“抖音黑客风”之典范，安装完成后可直接用“cmatrix”命令来将终端界面变成尼奥视角，非常有“科幻感”和“骇入感”</p><h4 id="sl"><a href="#sl" class="headerlink" title="sl"></a>sl</h4><p>因为打ls的时候经常会打错，于是出现了这么个非常整蛊的工具，只要你打错成sl并回车了的话，一辆字符小火车就会从屏幕上开过…</p><h4 id="cool-retro-term"><a href="#cool-retro-term" class="headerlink" title="cool retro term"></a><a href="https://github.com/Swordfish90/cool-retro-term">cool retro term</a></h4><p>一个非常有趣的终端主题，可以将终端样式变为crt显示器的样子，就是有点吃配置，核显可能会有点卡</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python-jupyter</title>
     <link href="/2023/11/17/Python-jupyter/"/>
     <url>/2023/11/17/Python-jupyter/</url>
@@ -599,31 +624,6 @@
     <tags>
       
       <tag>Android</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Linux有趣小工具记录</title>
-    <link href="/2023/11/14/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/"/>
-    <url>/2023/11/14/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/</url>
-    
-    <content type="html"><![CDATA[<h4 id="cmatrix"><a href="#cmatrix" class="headerlink" title="cmatrix"></a>cmatrix</h4><p>使用任何包管理器都可以直接下载的工具，堪称“抖音黑客风”之典范，安装完成后可直接用“cmatrix”命令来将终端界面变成尼奥视角，非常有“科幻感”和“骇入感”</p><h4 id="sl"><a href="#sl" class="headerlink" title="sl"></a>sl</h4><p>因为打ls的时候经常会打错，于是出现了这么个非常整蛊的工具，只要你打错成sl并回车了的话，一辆字符小火车就会从屏幕上开过…</p><h4 id="cool-retro-term-Swordfish90-cool-retro-term-A-good-looking-terminal-emulator-which-mimics-the-old-cathode-display…-github-com"><a href="#cool-retro-term-Swordfish90-cool-retro-term-A-good-looking-terminal-emulator-which-mimics-the-old-cathode-display…-github-com" class="headerlink" title="[cool retro term](Swordfish90&#x2F;cool-retro-term: A good looking terminal emulator which mimics the old cathode display… (github.com))"></a>[cool retro term](<a href="https://github.com/Swordfish90/cool-retro-term">Swordfish90&#x2F;cool-retro-term: A good looking terminal emulator which mimics the old cathode display… (github.com)</a>)</h4><p>一个非常有趣的终端主题，可以将终端样式变为crt显示器的样子，就是有点吃配置，核显可能会有点卡</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
       
     </tags>
     
