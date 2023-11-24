@@ -16,24 +16,23 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta name="description" content="温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸） ①环境node.js下载安装后npm安装hexo博客，代码使用如下 1npm install -g hexo-cli  安装完成后运行 1hexo -v  来确认安装情况，出现如下报错： 报错1无法加载文件C:\Users\Administrator\AppData\Ro">
+    <meta name="description" content="Linux换源1234567891011sudo vim &#x2F;etc&#x2F;apt&#x2F;sources.list#中科大deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;kali kali-rolling main non-free contribdeb-src http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;kali kali-rolling main non-free contrib#阿">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo+Github搭建博客记录">
-<meta property="og:url" content="https://homovexillues.github.io/2023/11/12/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="Linux操作">
+<meta property="og:url" content="https://homovexillues.github.io/2023/11/24/Linux%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸） ①环境node.js下载安装后npm安装hexo博客，代码使用如下 1npm install -g hexo-cli  安装完成后运行 1hexo -v  来确认安装情况，出现如下报错： 报错1无法加载文件C:\Users\Administrator\AppData\Ro">
+<meta property="og:description" content="Linux换源1234567891011sudo vim &#x2F;etc&#x2F;apt&#x2F;sources.list#中科大deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;kali kali-rolling main non-free contribdeb-src http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;kali kali-rolling main non-free contrib#阿">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/Homovexillues/image_bed/main/image/change_the_authority.png">
-<meta property="article:published_time" content="2023-11-11T17:02:19.779Z">
-<meta property="article:modified_time" content="2023-11-22T12:38:13.880Z">
+<meta property="article:published_time" content="2023-11-24T08:53:43.371Z">
+<meta property="article:modified_time" content="2023-11-24T08:46:08.000Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="WSL">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Homovexillues/image_bed/main/image/change_the_authority.png">
   
   
   
-  <title>hexo+Github搭建博客记录 - 红石门</title>
+  <title>Linux操作 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hexo+Github搭建博客记录"></span>
+            <span id="subtitle" data-typed-text="Linux操作"></span>
           
         </div>
 
@@ -210,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-12 01:02" pubdate>
-          2023年11月12日 凌晨
+        <time datetime="2023-11-24 16:53" pubdate>
+          2023年11月24日 下午
         </time>
       </span>
     
@@ -222,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1.8k 字
         
       </span>
     
@@ -233,7 +232,7 @@
         
         
         
-          13 分钟
+          15 分钟
         
       </span>
     
@@ -270,60 +269,35 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">hexo+Github搭建博客记录</h1>
+            <h1 id="seo-header">Linux操作</h1>
             
             
               <div class="markdown-body">
                 
-                <p>温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸）</p>
-<h2 id="①环境"><a href="#①环境" class="headerlink" title="①环境"></a>①环境</h2><p>node.js下载安装后npm安装hexo博客，代码使用如下</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+                <h4 id="Linux换源"><a href="#Linux换源" class="headerlink" title="Linux换源"></a>Linux换源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /etc/apt/sources.list<br><br><span class="hljs-comment">#中科大</span><br>deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib<br>deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib<br><span class="hljs-comment">#阿里云</span><br>deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib<br>deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib<br><span class="hljs-comment">#清华大学</span><br>deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free<br>deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free<br></code></pre></td></tr></table></figure>
 
-<p>安装完成后运行</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo -v<br></code></pre></td></tr></table></figure>
+<h4 id="kali安装工具集"><a href="#kali安装工具集" class="headerlink" title="kali安装工具集"></a>kali安装工具集</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install kali-linux-default<br>包含了Kali linux默认的工具集，大概有9GB左右<br>sudo apt install kali-linux-everything<br>包含了所有的kali工具，大小非常大，约11GB左右<br></code></pre></td></tr></table></figure>
 
-<p>来确认安装情况，出现如下报错：</p>
-<h6 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h6><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">无法加载文件C:\Users\Administrator\AppData\Roaming\npm\hexo.ps1，因为在此系统中禁止执行脚本。有关详细信息，请参阅 &quot;get-<span class="hljs-built_in">help</span> about_signing&quot;。<br></code></pre></td></tr></table></figure>
+<h4 id="转移WSL下安装的linux系统位置"><a href="#转移WSL下安装的linux系统位置" class="headerlink" title="转移WSL下安装的linux系统位置"></a>转移WSL下安装的linux系统位置</h4><p>常见的教程是手写命令行，比较麻烦，可以直接用GitHub上写好的<a target="_blank" rel="noopener" href="https://github.com/pxlrbt/move-wsl">powershell脚本</a></p>
+<h4 id="Linux命令后台运行"><a href="#Linux命令后台运行" class="headerlink" title="Linux命令后台运行"></a>Linux命令后台运行</h4><ul>
+<li>在执行程序时命令的最后加&amp;</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">./test.py &amp;<br><span class="hljs-comment"># 在后台执行文件</span><br>ps -ef|grep <span class="hljs-built_in">test</span><br><span class="hljs-comment"># 查看是否在后台运行</span><br>killall <span class="hljs-built_in">test</span><br></code></pre></td></tr></table></figure>
 
-<h6 id="解决方法如下"><a href="#解决方法如下" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><p>管理员权限运行Powershell，执行</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">get-ExecutionPolicy</span><br>返回状态：Restricted表示状态是禁止的<br>执行命令<br><span class="hljs-built_in">set-ExcecutionPolicy</span> RemoteSigned来开启<br>选择Y<br></code></pre></td></tr></table></figure>
+<p><strong>缺点：</strong> 此方法查看运行日志不方便</p>
+<h4 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h4><p>经过了<strong>一整天</strong>的折腾之后，事实证明用linux自带的sendmail和mailx发邮件是相当愚蠢的，而且我也没有在网上找到21年之后有什么相关的技术博客，所以最终我选择使用python的yagmail库，问题迎刃而解了，mad人生苦短</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install yagmail<br></code></pre></td></tr></table></figure>
 
-<p>选定位置，用</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-init</span> blog<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> yagmail<br>mail=yagmail.SMTP(<span class="hljs-string">&#x27;发送邮箱的账号&#x27;</span>，<span class="hljs-string">&#x27;发送邮箱的授权码&#x27;</span>，<span class="hljs-string">&#x27;smtp163.com&#x27;</span>)<br>mail.send(<span class="hljs-string">&#x27;接受邮件的账号&#x27;</span>，<span class="hljs-string">&quot;(标题)测试邮件&quot;</span>,<span class="hljs-string">&quot;邮件文本&quot;</span>)<br>mail.close()<br><br><span class="hljs-comment">#多个收件人</span><br>receiver=[<span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<span class="hljs-string">&quot;xxx@163.com&quot;</span>]<br><span class="hljs-comment">#文本内容</span><br>text=<span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">Dear Toph,\n\n</span><br><span class="hljs-string">	这是一段文本内容</span><br><span class="hljs-string">&quot;&quot;&quot;</span><span class="hljs-string">&quot;</span><br></code></pre></td></tr></table></figure>
 
-<h6 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm ERR! Error: EPERM: operation not permitted, mkdir <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure>
+<h4 id="将命令添加到环境变量中"><a href="#将命令添加到环境变量中" class="headerlink" title="将命令添加到环境变量中"></a>将命令添加到环境变量中</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 以miniconda举例</span><br><span class="hljs-comment"># 已将miniconda3安装到/home/homovexillues/miniconda3</span><br><span class="hljs-comment"># 使用的是bash shell，配置~/.bashrc，如果是别的shell也可以配置~/.zshrc 或 ~/.cshrc</span><br>vim ~/.bashrc<br><span class="hljs-comment"># 在配置文件中添加如下内容</span><br><span class="hljs-built_in">export</span> PATH=/home/homovexillues/miniconda3/conda/bin:<span class="hljs-variable">$PATH</span><br><span class="hljs-comment"># 然后关闭并保存配置文件，运行</span><br><span class="hljs-built_in">source</span> ~/.bashrc<br><span class="hljs-comment"># 重新加载配置文件以使之生效</span><br></code></pre></td></tr></table></figure>
 
-<h6 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h6><p>权限不够</p>
-<h6 id="解决方法如下-1"><a href="#解决方法如下-1" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><img src="https://raw.githubusercontent.com/Homovexillues/image_bed/main/image/change_the_authority.png" srcset="/img/loading.gif" lazyload />
+<h4 id="重启bash"><a href="#重启bash" class="headerlink" title="重启bash"></a>重启bash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.bashrc <span class="hljs-comment">#可以使bash读取最新配置文件，但不会改变当前的进程ID和环境变量</span><br><span class="hljs-built_in">exec</span> bash <span class="hljs-comment"># 启动一个新的bash进程，同时继承当前的进程ID和环境变量</span><br></code></pre></td></tr></table></figure>
 
-<p>在属性中将文件夹的用户完全控制权限打开，重新执行命令。</p>
-<p>创建blog文件夹并初始化，此时可以尝试</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-g</span> 静态部署<br>hexo <span class="hljs-literal">-s</span> 开始本地服务器<br></code></pre></td></tr></table></figure>
+<h4 id="添加一个用户"><a href="#添加一个用户" class="headerlink" title="添加一个用户"></a>添加一个用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">adduser homojupyter <span class="hljs-comment"># 添加一个用户</span><br>su homojupyter <span class="hljs-comment"># 切换到此用户</span><br></code></pre></td></tr></table></figure>
 
-<h6 id="出现问题-1"><a href="#出现问题-1" class="headerlink" title="出现问题"></a>出现问题</h6><p>打开<a href="http://localhost:4000的尝试以失败告终">http://localhost:4000的尝试以失败告终</a></p>
-<h6 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h6><p>4000端口被占用了，用</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo server <span class="hljs-literal">-p</span> <span class="hljs-number">5000</span><br></code></pre></td></tr></table></figure>
+<h4 id="赋予sudo权限"><a href="#赋予sudo权限" class="headerlink" title="赋予sudo权限"></a>赋予sudo权限</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 编辑/etc/sudoers配置文件</span><br><span class="hljs-comment">## Allow root to run any commands anywhere</span><br>root    ALL=(ALL)       ALL<br>homojupyter  ALL=(ALL)       ALL<br></code></pre></td></tr></table></figure>
 
-<p>来更改端口号后重试，成功打开<a target="_blank" rel="noopener" href="http://localhost:5000/">http://localhost:5000</a></p>
-<h2 id="②部署"><a href="#②部署" class="headerlink" title="②部署"></a>②部署</h2><p>本地部分完成后，将其部署到Github上的自建库里</p>
-<p>这里首先要新建一个GitHub库，命名为“用户名.github.io”的公共库，创建后会默认自动启动HTTPS</p>
-<p>然后安装<strong>hexo-deployer-git</strong>插件：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install hexo<span class="hljs-literal">-deployer-git</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></figure>
-
-<p>安装成功后修改**_config.yml**文件内的URL部分和Deployment部分：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://用户名.github.io</span><br><br><span class="hljs-attr">deploy:</span><br>	<span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>	<span class="hljs-attr">repostory:</span> <span class="hljs-string">git@github.com:用户名/用户名.github.io.git</span><br>	<span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
-
-<p>上传之前别忘了先连接github并配置ssh密匙:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Github用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;Github邮箱&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;Github邮箱&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>再将</p>
-<p>Windows：C:\Users\用户名\.ssh下的id_rsa.pub</p>
-<p>Linux： &#x2F;root&#x2F;.ssh&#x2F;id_rsa</p>
-<p>文件中的密匙添加到GitHub上的个人设置-ssh keys中，配置好后可以用<code>ssh -T git@github.com</code>来验证是否连接成功</p>
-<p>然后运行<code>hexo d</code>将网站部署到Github页面</p>
-<p>这样访问https:&#x2F;&#x2F;用户名.github.io就能看到刚才做好的Hexo网站了</p>
-<h2 id="③解决图床问题"><a href="#③解决图床问题" class="headerlink" title="③解决图床问题"></a>③解决图床问题</h2><p>建立一个新的Github库用来存放图片，下载并安装工具<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">PicGo</a>用于快速上传图片到Github图床库并获取图片URL链接</p>
-<p>在Github的Setting最下方的Developer Settings，Personal access tokens生成一个token，只选repo那栏就成，在PicGo中设置好之后直接拖拽上传就成了</p>
 
                 
               </div>
@@ -357,7 +331,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+        <a href="/tags/WSL/" class="print-no-link">#WSL</a>
       
     </div>
   
@@ -369,8 +345,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo+Github搭建博客记录</div>
-      <div>https://homovexillues.github.io/2023/11/12/hexo+GitHub搭建博客记录/</div>
+      <div>Linux操作</div>
+      <div>https://homovexillues.github.io/2023/11/24/Linux操作/</div>
     </div>
     <div class="license-meta">
       
@@ -382,7 +358,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月12日</div>
+          <div>2023年11月24日</div>
         </div>
       
       
@@ -414,9 +390,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/12/Linux%E5%91%BD%E4%BB%A4/" title="Linux命令">
+                      <a href="/2023/11/24/Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter%E6%9C%8D%E5%8A%A1/" title="Linux服务器安装Jupyter服务">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux命令</span>
+                        <span class="hidden-mobile">Linux服务器安装Jupyter服务</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -424,8 +400,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/10/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/" title="基于Typora的LaTex使用">
-                        <span class="hidden-mobile">基于Typora的LaTex使用</span>
+                      <a href="/2023/11/24/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/" title="代码相关单词">
+                        <span class="hidden-mobile">代码相关单词</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
