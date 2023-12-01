@@ -4,6 +4,106 @@
   
   
   <entry>
+    <title>hexo+Github搭建博客记录</title>
+    <link href="/2023/12/01/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/"/>
+    <url>/2023/12/01/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<p>温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸）</p><h2 id="①环境"><a href="#①环境" class="headerlink" title="①环境"></a>①环境</h2><p>node.js下载安装后npm安装hexo博客，代码使用如下</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure><p>安装完成后运行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo -v<br></code></pre></td></tr></table></figure><p>来确认安装情况，出现如下报错：</p><h6 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h6><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">无法加载文件C:\Users\Administrator\AppData\Roaming\npm\hexo.ps1，因为在此系统中禁止执行脚本。有关详细信息，请参阅 &quot;get-<span class="hljs-built_in">help</span> about_signing&quot;。<br></code></pre></td></tr></table></figure><h6 id="解决方法如下"><a href="#解决方法如下" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><p>管理员权限运行Powershell，执行</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">get-ExecutionPolicy</span><br>返回状态：Restricted表示状态是禁止的<br>执行命令<br><span class="hljs-built_in">set-ExecutionPolicy</span> RemoteSigned来开启<br>选择Y<br></code></pre></td></tr></table></figure><p>选定位置，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-init</span> blog<br></code></pre></td></tr></table></figure><h6 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm ERR! Error: EPERM: operation not permitted, mkdir <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure><h6 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h6><p>权限不够</p><h6 id="解决方法如下-1"><a href="#解决方法如下-1" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><img src="https://raw.githubusercontent.com/Homovexillues/image_bed/main/image/change_the_authority.png" /><p>在属性中将文件夹的用户完全控制权限打开，重新执行命令。</p><p>创建blog文件夹并初始化，此时可以尝试</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-g</span> 静态部署<br>hexo <span class="hljs-literal">-s</span> 开始本地服务器<br></code></pre></td></tr></table></figure><h6 id="出现问题-1"><a href="#出现问题-1" class="headerlink" title="出现问题"></a>出现问题</h6><p>打开<a href="http://localhost:4000的尝试以失败告终">http://localhost:4000的尝试以失败告终</a></p><h6 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h6><p>4000端口被占用了，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo server <span class="hljs-literal">-p</span> <span class="hljs-number">5000</span><br></code></pre></td></tr></table></figure><p>来更改端口号后重试，成功打开<a href="http://localhost:5000/">http://localhost:5000</a></p><h2 id="②部署"><a href="#②部署" class="headerlink" title="②部署"></a>②部署</h2><p>本地部分完成后，将其部署到Github上的自建库里</p><p>这里首先要新建一个GitHub库，命名为“用户名.github.io”的公共库，创建后会默认自动启动HTTPS</p><p>然后安装<strong>hexo-deployer-git</strong>插件：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install hexo<span class="hljs-literal">-deployer-git</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></figure><p>安装成功后修改**_config.yml**文件内的URL部分和Deployment部分：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://用户名.github.io</span><br><br><span class="hljs-attr">deploy:</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br><span class="hljs-attr">repostory:</span> <span class="hljs-string">git@github.com:用户名/用户名.github.io.git</span><br><span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure><p>上传之前别忘了先连接github并配置ssh密匙:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Github用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;Github邮箱&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;Github邮箱&quot;</span><br></code></pre></td></tr></table></figure><p>再将</p><p>Windows：C:\Users\用户名\.ssh下的id_rsa.pub</p><p>Linux： &#x2F;root&#x2F;.ssh&#x2F;id_rsa</p><p>文件中的密匙添加到GitHub上的个人设置-ssh keys中，配置好后可以用<code>ssh -T git@github.com</code>来验证是否连接成功</p><p>然后运行<code>hexo d</code>将网站部署到Github页面</p><p>这样访问https:&#x2F;&#x2F;用户名.github.io就能看到刚才做好的Hexo网站了</p><h2 id="③解决图床问题"><a href="#③解决图床问题" class="headerlink" title="③解决图床问题"></a>③解决图床问题</h2><p>建立一个新的Github库用来存放图片，下载并安装工具<a href="https://github.com/Molunerfinn/PicGo">PicGo</a>用于快速上传图片到Github图床库并获取图片URL链接</p><p>在Github的Setting最下方的Developer Settings，Personal access tokens生成一个token，只选repo那栏就成，在PicGo中设置好之后直接拖拽上传就成了</p><h2 id="将hexo文件夹同步并自动上传"><a href="#将hexo文件夹同步并自动上传" class="headerlink" title="将hexo文件夹同步并自动上传"></a>将hexo文件夹同步并自动上传</h2><p>将hexo文件夹放到OneDrive上以便Windows多端方便对其进行编辑，并在服务器上安装<a href="https://github.com/abraunegg/onedrive">OneDrive</a>(非官方)以便在手机上通过ssh进行编辑和设置定时上传到GitHub功能</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>树和森林</title>
+    <link href="/2023/12/01/%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97/"/>
+    <url>/2023/12/01/%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97/</url>
+    
+    <content type="html"><![CDATA[<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是有序树，注意，度为二的有序树和二叉树是有区别的，度为二的有序树是家里真的有两个孩子，二叉树是开放二孩政策但是你生不生看你自己，度为二的有序树未必就是二叉树，万一人家是三叉树让生三个但就生了俩呢？</p><h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4><p>高度为h且含有2^h-1个结点的二叉树，理想条件了属于是</p><h4 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h4><p>当且仅当每个结点都与高度为h的满二叉树中编号1~n的结点一一对应时，称为完全二叉树</p><p>编制是满的，但是人还没满也可以，但是完全二叉树只能去掉较大的结点，否则中间抽一个去掉的话会造成编号无法对应</p><h5 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h5><ol><li>只有最后两层可能有叶子结点</li><li>最多只有一个度为1的结点</li><li>i&lt;&#x3D;[n&#x2F;2]为分支结点，i&gt;[n&#x2F;2]是叶子结点</li><li>如果某一个结点有一个孩子的话，那这一定是左孩子，否则不构成完全二叉树了</li></ol><h4 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h4><p>一棵二叉树或者是空二叉树，或是具有如下性质的二叉树：</p><ul><li><strong>左子树</strong>上的所有结点的关键字都<strong>小于</strong>根结点的关键字</li><li><strong>右子树</strong>上所有结点的关键字都<strong>大于</strong>根结点的关键字</li><li>左子树和右子树单独拿出来又是一棵二叉排序树</li></ul><h4 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h4><p>树上任一左子树和右子树的深度之差不超过1</p><ul><li>平衡二叉树有更高的搜索效率</li></ul><h4 id="常见考点"><a href="#常见考点" class="headerlink" title="常见考点"></a>常见考点</h4><p>设非空二叉树中度为0，1，和2的结点分别为n0,n1,n2,则n0&#x3D;n2+1,树中总结点为n，则</p><p>n&#x3D;n0+n1+n2</p><p>n&#x3D;n1+2n2+1</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>上古互联网笑话</title>
+    <link href="/2023/12/01/%E4%B8%8A%E5%8F%A4%E4%BA%92%E8%81%94%E7%BD%91%E7%AC%91%E8%AF%9D/"/>
+    <url>/2023/12/01/%E4%B8%8A%E5%8F%A4%E4%BA%92%E8%81%94%E7%BD%91%E7%AC%91%E8%AF%9D/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>很久以前，那还是我用win98的时候有次我系统崩溃了，因为我是电脑白吃，我朋友给我介绍了一个高手来帮我修电脑。 他看了一下电脑，问我有没有98的盘，我说没有。 他想了一下，叫我把固定电话拿给他，我想修电脑要电话干什么，但人家是高手，我也不好说什么，就把电话拔下来给他了。 他把电话线空着的一头接在电脑的一个插孔内，然后进入了dos，然后就开始在电话上不停的按着键，他按键的速度非常快，但是只按0，1两个键，我搞不懂这有什么用，但也不敢问，看了半个多小时，他还是不停的按这两个键，我渐渐的有些困，我问他这东西要搞多久，他说要几个小时，我给他倒了杯茶，就一个人去隔壁睡觉了。 醒来的时候，一看已经过了4个多小时，我起身到隔壁，看见他正在98里面调试，过了一会儿，他说，你试试，我坐上椅子用了一下，真的好了，我当时也不懂电脑，谢过人家就走了。 后来我慢慢对电脑有了了解，终于了解，原来当时那位高手是用机器语言编了一个98系统，我后来问我朋友那位高手的下落，我朋友说前几年去了美国之后，杳无音讯….</p></li><li><p>很久以前，那还是我用winXP的时候有次我系统崩溃了，因为我是电脑白吃，我朋友给我介绍了一个高手来帮我修电脑。 他看了一下电脑，问我有没有XP的安装盘，我说没有。 他想了一下，叫我把一张空的DVD刻录盘和一根针拿给他，我想修电脑要刻录盘和针干什么，但人家是高手，我也不好说什么，就把DVD刻录盘拿一张来给他了。 他把针头对着刻录盘戳，他戳的速度非常快，但是只戳深或浅，我搞不懂这有什么用，但也不敢问，看了半个多小时，他还是不停的戳着DVD刻录盘，我渐渐的有些困，我问他这东西要搞多久，他说要几个小时，我给他倒了杯茶，就一个人去隔壁睡觉了。 醒来的时候，一看已经过了4个多小时，我起身到隔壁，看见他正在Xp里面调试，还装上了office、photoshop、迅雷、魔兽世界等软件……过了一会儿，他说，你试试，我坐上椅子用了一下，真的好了，我当时也不懂电脑，谢过人家就走了。 后来我慢慢对电脑有了了解，终于了解，原来当时那位高手是针头刻了一个单面双层的DVD，在里面刻上了Xp、office、photoshop、魔兽世界的安装程序，我后来问我朋友那位高手的下落，我朋友说前几年去了美国之后，杳无音讯….</p></li><li><p>很久以前，那还是我用winXP的时候有次我不小心把D盘格了，因为我是电脑白吃，我朋友给我介绍了一个高手来帮我恢复数据。 他看了一下电脑，问我有没有备份过Ghost，我说没有。 他想了一下，叫我把一块磁铁拿给他，还问我D盘里有什么东西，我想修电脑要磁铁干什么，但人家是高手，我也不好说什么，就把磁铁给他了，还告诉他我D盘里全是火影忍者的动画。 他把硬盘拆了，用磁铁在上面画圈，他画圈的速度非常快，但是只有碰到或不碰到，我搞不懂这有什么用，但也不敢问，看了半个多小时，他还是不停的在硬盘上画着圈，我渐渐的有些困，我问他这东西要搞多久，他说要几个小时，我给他倒了杯茶，就一个人去隔壁睡觉了。 醒来的时候，一看已经过了4个多小时，我起身到隔壁，看见他正在D盘里面调试，里面全是火影忍者的动画片，过了一会儿，他说，你试试，我坐上椅子用了一下，真的好了，我当时也不懂电脑，谢过人家就走了。 后来我慢慢对电脑有了了解，终于了解，原来当时那位高手是用磁铁直接在硬盘上写数据，凭着惊人的记忆力将火影忍者的动画片都写入了硬盘，我后来问我朋友那位高手的下落，我朋友说前几年去了美国之后，杳无音讯….</p></li><li><p>很久以前，那还是我在玩WOW的时候有次我不小心把60级T1的人物删了，因为我是游戏白吃，我朋友给我介绍了一个高手来帮我找回任务。 他看了一下电脑，问我有没有找过客服，我说没有。 他想了一下，叫我把一块石头给他，还问我人物什么职业，我想修复人物要石头干什么，但人家是高手，我也不好说什么，就把石头给他了，还告诉他我的人物已经有全套的T1。 他把硬盘拆了，并把石头放上去用手在上面搓，他搓的速度非常快，但是只有搓到和搓不到，我搞不懂这有什么用，但也不敢问，看了半个多小时，他还是不停的在石头上搓，我渐渐的有些困，我问他这东西要搞多久，他说要几个小时，我给他倒了杯茶，就一个人去隔壁睡觉了。 醒来的时候，一看已经过了4个多小时，我起身到隔壁，看见他正在打黑龙公主，身上已经有T2了，过了一会儿，他说，你试试，我坐上椅子用了一下，真的NB，我当时也不懂电脑，谢过人家就走了。 后来我慢慢对电脑有了了解，终于了解，原来当时那位高手是用手搓炉石回档呢，凭着惊人的速度搓热了炉石恢复了人物，我后来问我朋友那位高手的下落，我朋友说前几年去了暴雪之后，杳无音讯….</p></li><li><p>很久以前，那还是我用电脑的时候有次我不小心把cpu烧坏了了，因为我是电脑白吃，我朋友给我介绍了一个高手来帮我修电脑。 他看了一下电脑，问我有没有买新的cpu，我说没有。 他想了一下，叫我把一张香烟纸拿给他，还问我cpu是多少的，我想修电脑要香烟纸干什么，但人家是高手，我也不好说什么，就把香烟纸给他了，还告诉他我cpu是inter2.8g的。 他把cpu拆了，把香烟纸上的金属溥弄成一丝一丝的往cpu上粘，他粘的速度非常快，但是只有长的短的，我搞不懂这有什么用，但也不敢问，看了半个多小时，他还是不停的在cpu上贴香烟纸，我渐渐的有些困，我问他这东西要搞多久，他说要几个小时，我给他倒了杯茶，就一个人去隔壁睡觉了。 醒来的时候，一看已经过了4个多小时，我起身到隔壁，看见他正在调试，居然cpu已经弄到4.0g，过了一会儿，他说，你试试，我坐上椅子用了一下，真的好了，那个速度才叫速度，以前的简直叫蚂蚁爬，我当时也不懂电脑，谢过人家就走了。 后来我慢慢对电脑有了了解，终于了解，原来当时那位高手是用锡纸直接在cpu上做电路，凭着惊人的记忆力将烧掉的cpu重新排了一个微电路，我后来问我朋友那位高手的下落，我朋友说前几年去了美国之后，杳无音信…</p></li><li><p>很久以前，那还是我用普通照相机的时候有次我照相机坏了，找出来的照片不清楚。因为我是照相机白吃，我朋友给我介绍了一个高手来帮我修照相机。<br>他看了一下照相机，问我有没有维修手册，我说没有。<br>他想了一下，叫我把一块窗户玻璃拿给他，我想修照相机要玻璃干什么，但人家是高手，我也不好说什么，就把玻璃摘下来给他了。<br>他把玻璃敲碎了，拿起一小块，然后打开了照相机，然后就开始在地上不停的磨着玻璃，他磨的速度非常快，但是只有左右两下动作，我搞不懂这有什么用，但也不敢问，看了半个多小时，他还是不停的磨这两个玻璃，我渐渐的有些困，我问他这东西要搞多久，他说要几个小时，我给他倒了杯茶，就一个人去隔壁睡觉了。<br>醒来的时候，一看已经过了4个多小时，我起身到隔壁，看见他正在调试照相机，过了一会儿，他说，你试试，我拿过来用了一下，真的好了，我当时也不懂照相机，谢过人家就走了。<br>后来我慢慢对照相机有了了解，终于了解，原来当时我的镜头坏了，那位高手是用玻璃磨了一组镜头，我后来问我朋友那位高手的下落，我朋友说前几年去了美国之后，杳无音讯….</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>笑话</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>C/C++指针</title>
+    <link href="/2023/11/29/C&amp;C++%E6%8C%87%E9%92%88/"/>
+    <url>/2023/11/29/C&amp;C++%E6%8C%87%E9%92%88/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C/C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>C/C++数据结构</title>
     <link href="/2023/11/29/C&amp;C++%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     <url>/2023/11/29/C&amp;C++%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
@@ -167,31 +267,6 @@
     <tags>
       
       <tag>单词</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>hexo+Github搭建博客记录</title>
-    <link href="/2023/11/23/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/"/>
-    <url>/2023/11/23/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
-    
-    <content type="html"><![CDATA[<p>温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸）</p><h2 id="①环境"><a href="#①环境" class="headerlink" title="①环境"></a>①环境</h2><p>node.js下载安装后npm安装hexo博客，代码使用如下</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure><p>安装完成后运行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo -v<br></code></pre></td></tr></table></figure><p>来确认安装情况，出现如下报错：</p><h6 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h6><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">无法加载文件C:\Users\Administrator\AppData\Roaming\npm\hexo.ps1，因为在此系统中禁止执行脚本。有关详细信息，请参阅 &quot;get-<span class="hljs-built_in">help</span> about_signing&quot;。<br></code></pre></td></tr></table></figure><h6 id="解决方法如下"><a href="#解决方法如下" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><p>管理员权限运行Powershell，执行</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">get-ExecutionPolicy</span><br>返回状态：Restricted表示状态是禁止的<br>执行命令<br><span class="hljs-built_in">set-ExcecutionPolicy</span> RemoteSigned来开启<br>选择Y<br></code></pre></td></tr></table></figure><p>选定位置，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-init</span> blog<br></code></pre></td></tr></table></figure><h6 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm ERR! Error: EPERM: operation not permitted, mkdir <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure><h6 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h6><p>权限不够</p><h6 id="解决方法如下-1"><a href="#解决方法如下-1" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><img src="https://raw.githubusercontent.com/Homovexillues/image_bed/main/image/change_the_authority.png" /><p>在属性中将文件夹的用户完全控制权限打开，重新执行命令。</p><p>创建blog文件夹并初始化，此时可以尝试</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-g</span> 静态部署<br>hexo <span class="hljs-literal">-s</span> 开始本地服务器<br></code></pre></td></tr></table></figure><h6 id="出现问题-1"><a href="#出现问题-1" class="headerlink" title="出现问题"></a>出现问题</h6><p>打开<a href="http://localhost:4000的尝试以失败告终">http://localhost:4000的尝试以失败告终</a></p><h6 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h6><p>4000端口被占用了，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo server <span class="hljs-literal">-p</span> <span class="hljs-number">5000</span><br></code></pre></td></tr></table></figure><p>来更改端口号后重试，成功打开<a href="http://localhost:5000/">http://localhost:5000</a></p><h2 id="②部署"><a href="#②部署" class="headerlink" title="②部署"></a>②部署</h2><p>本地部分完成后，将其部署到Github上的自建库里</p><p>这里首先要新建一个GitHub库，命名为“用户名.github.io”的公共库，创建后会默认自动启动HTTPS</p><p>然后安装<strong>hexo-deployer-git</strong>插件：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install hexo<span class="hljs-literal">-deployer-git</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></figure><p>安装成功后修改**_config.yml**文件内的URL部分和Deployment部分：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://用户名.github.io</span><br><br><span class="hljs-attr">deploy:</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br><span class="hljs-attr">repostory:</span> <span class="hljs-string">git@github.com:用户名/用户名.github.io.git</span><br><span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure><p>上传之前别忘了先连接github并配置ssh密匙:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Github用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;Github邮箱&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;Github邮箱&quot;</span><br></code></pre></td></tr></table></figure><p>再将</p><p>Windows：C:\Users\用户名\.ssh下的id_rsa.pub</p><p>Linux： &#x2F;root&#x2F;.ssh&#x2F;id_rsa</p><p>文件中的密匙添加到GitHub上的个人设置-ssh keys中，配置好后可以用<code>ssh -T git@github.com</code>来验证是否连接成功</p><p>然后运行<code>hexo d</code>将网站部署到Github页面</p><p>这样访问https:&#x2F;&#x2F;用户名.github.io就能看到刚才做好的Hexo网站了</p><h2 id="③解决图床问题"><a href="#③解决图床问题" class="headerlink" title="③解决图床问题"></a>③解决图床问题</h2><p>建立一个新的Github库用来存放图片，下载并安装工具<a href="https://github.com/Molunerfinn/PicGo">PicGo</a>用于快速上传图片到Github图床库并获取图片URL链接</p><p>在Github的Setting最下方的Developer Settings，Personal access tokens生成一个token，只选repo那栏就成，在PicGo中设置好之后直接拖拽上传就成了</p><h2 id="将hexo文件夹同步并自动上传"><a href="#将hexo文件夹同步并自动上传" class="headerlink" title="将hexo文件夹同步并自动上传"></a>将hexo文件夹同步并自动上传</h2><p>将hexo文件夹放到OneDrive上以便Windows多端方便对其进行编辑，并在服务器上安装<a href="https://github.com/abraunegg/onedrive">OneDrive</a>(非官方)以便在手机上通过ssh进行编辑和设置定时上传到GitHub功能</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Hexo</tag>
       
     </tags>
     
