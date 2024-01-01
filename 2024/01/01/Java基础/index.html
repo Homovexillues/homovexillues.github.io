@@ -16,22 +16,22 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta name="description" content="查找在数据集合中寻找满足某种条件的数据元素的过程 查找表（查找结构）用于查找的数据集合称为查找表，由同一类型的数据元素（或记录）组成 可以是线性结构，树形结构或图状结构 关键字数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的 如每个人的学号 静态查找表仅关注查找速度 动态查找表除了查找速度，也要关注插&#x2F;删操作是否方便实现 ASL平均查找长度——所有查找">
+    <meta name="description" content="问题&amp;回答 JDK和OpenJDK有什么区别？安装哪个？安装过程？  区别就像是google的pixel和开源的安卓系统，openjdk可以被任何公司拿过来魔改自己的版本，就像linux，但是Oracle收购了sun因此可以用java的商标，它的版本有以下私有类库  在Linux中运行snap install openjdk后无法直接使用，在终端运行openjdk，将输出OpenJDK的配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="查找">
-<meta property="og:url" content="https://homovexillues.github.io/2023/12/13/%E6%9F%A5%E6%89%BE/index.html">
+<meta property="og:title" content="Java基础">
+<meta property="og:url" content="https://homovexillues.github.io/2024/01/01/Java%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="查找在数据集合中寻找满足某种条件的数据元素的过程 查找表（查找结构）用于查找的数据集合称为查找表，由同一类型的数据元素（或记录）组成 可以是线性结构，树形结构或图状结构 关键字数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的 如每个人的学号 静态查找表仅关注查找速度 动态查找表除了查找速度，也要关注插&#x2F;删操作是否方便实现 ASL平均查找长度——所有查找">
+<meta property="og:description" content="问题&amp;回答 JDK和OpenJDK有什么区别？安装哪个？安装过程？  区别就像是google的pixel和开源的安卓系统，openjdk可以被任何公司拿过来魔改自己的版本，就像linux，但是Oracle收购了sun因此可以用java的商标，它的版本有以下私有类库  在Linux中运行snap install openjdk后无法直接使用，在终端运行openjdk，将输出OpenJDK的配">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-13T11:47:00.905Z">
-<meta property="article:modified_time" content="2023-12-13T14:31:08.303Z">
+<meta property="article:published_time" content="2024-01-01T15:27:30.072Z">
+<meta property="article:modified_time" content="2024-01-01T16:27:22.118Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>查找 - 红石门</title>
+  <title>Java基础 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="查找"></span>
+            <span id="subtitle" data-typed-text="Java基础"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-13 19:47" pubdate>
-          2023年12月13日 晚上
+        <time datetime="2024-01-01 23:27" pubdate>
+          2024年1月1日 晚上
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          248 字
+          747 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          3 分钟
+          7 分钟
         
       </span>
     
@@ -268,19 +268,35 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">查找</h1>
+            <h1 id="seo-header">Java基础</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>在数据集合中寻找满足某种条件的数据元素的过程</p>
-<h4 id="查找表（查找结构）"><a href="#查找表（查找结构）" class="headerlink" title="查找表（查找结构）"></a>查找表（查找结构）</h4><p>用于查找的数据集合称为查找表，由同一类型的数据元素（或记录）组成</p>
-<p>可以是线性结构，树形结构或图状结构</p>
-<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p>数据元素中<strong>唯一</strong>标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的</p>
-<p>如每个人的学号</p>
-<h5 id="静态查找表"><a href="#静态查找表" class="headerlink" title="静态查找表"></a>静态查找表</h5><p>仅关注查找速度</p>
-<h5 id="动态查找表"><a href="#动态查找表" class="headerlink" title="动态查找表"></a>动态查找表</h5><p>除了查找速度，也要关注插&#x2F;删操作是否方便实现</p>
-<h4 id="ASL"><a href="#ASL" class="headerlink" title="ASL"></a>ASL</h4><p>平均查找长度——所有查找过程中进行关键字的比较次数的平均值<br>$$<br>ASL&#x3D;\sum_{i&#x3D;1}^{n}P_iC_i<br>$$</p>
+                <h3 id="问题-回答"><a href="#问题-回答" class="headerlink" title="问题&amp;回答"></a>问题&amp;回答</h3><ul>
+<li><p>JDK和OpenJDK有什么区别？安装哪个？安装过程？</p>
+<ul>
+<li><p>区别就像是google的pixel和开源的安卓系统，openjdk可以被任何公司拿过来魔改自己的版本，就像linux，但是Oracle收购了sun因此可以用java的商标，它的版本有以下私有类库</p>
+</li>
+<li><p>在Linux中运行<code>snap install openjdk</code>后无法直接使用，在终端运行<code>openjdk</code>，将输出OpenJDK的配置文件地址，如<code>/var/snap/openjdk/common/openjdk.env</code></p>
+</li>
+<li><p>用vim复制此文件中的内容并粘贴到<code>/etc/prifile</code>文末</p>
+</li>
+<li><p>用<code>source /etc/profile</code>重新加载环境变量即可</p>
+</li>
+</ul>
+</li>
+<li><p>vscode运行helloworld.java后生成了helloworld.class文件，这是个啥？</p>
+<p>通过javac编译java源文件生成的字节码文件，在linux上是以下步骤</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">javac </span>helloworld.<span class="hljs-keyword">java</span><br><span class="hljs-keyword"></span><span class="hljs-keyword">java </span>helloworld<br>Hello,World!<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">helloworld</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Hello,World!&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="问题和回答"><a href="#问题和回答" class="headerlink" title="问题和回答"></a>问题和回答</h3><ul>
+<li><p>为什么String args[]和String[] args写法都可以但是菜鸟教程推荐第二种且可以避免歧义和误读？</p>
+<p>如果写<code>String args[]</code>可以生成一个字符串数组，但是当写<code>String args[],args2</code>的时候，可能会被误读为定义了两个字符串数组，但是实际上定义了一个字符串数组和一个字符串，<code>String[] args,args2</code>即可生成两个字符串</p>
+</li>
+</ul>
 
                 
               </div>
@@ -314,7 +330,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="print-no-link">#数据结构</a>
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
       
     </div>
   
@@ -326,8 +342,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>查找</div>
-      <div>https://homovexillues.github.io/2023/12/13/查找/</div>
+      <div>Java基础</div>
+      <div>https://homovexillues.github.io/2024/01/01/Java基础/</div>
     </div>
     <div class="license-meta">
       
@@ -339,7 +355,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月13日</div>
+          <div>2024年1月1日</div>
         </div>
       
       
@@ -371,9 +387,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/17/%E6%A2%97/" title="梗整理">
+                      <a href="/2024/01/01/%E9%97%AE%E9%A2%98&amp;%E8%A7%A3%E5%86%B3/" title="问题&amp;解决">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">梗整理</span>
+                        <span class="hidden-mobile">问题&amp;解决</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -381,8 +397,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/08/Intel%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/" title="Intel/AMD命名规则">
-                        <span class="hidden-mobile">Intel/AMD命名规则</span>
+                      <a href="/2023/12/17/%E6%A2%97/" title="梗整理">
+                        <span class="hidden-mobile">梗整理</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
