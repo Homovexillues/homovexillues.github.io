@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/OOP_WrapperClass.png">
 <meta property="article:published_time" content="2024-01-01T15:27:30.072Z">
-<meta property="article:modified_time" content="2024-01-03T11:20:37.025Z">
+<meta property="article:modified_time" content="2024-01-04T10:30:27.215Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          13k 字
+          14k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          110 分钟
+          114 分钟
         
       </span>
     
@@ -508,6 +508,41 @@ double d5=12.9867;
 
 <h4 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        System.out.println(Math.min(<span class="hljs-number">12.123</span>,<span class="hljs-number">12.456</span>));<br>        System.out.println<br>        <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
+<h3 id="日期和时间"><a href="#日期和时间" class="headerlink" title="日期和时间"></a>日期和时间</h3><h4 id="获取当前日期时间"><a href="#获取当前日期时间" class="headerlink" title="获取当前日期时间"></a>获取当前日期时间</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Date;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DateDemo</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        Date date=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br><br>        System.out.println(date.toString());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="格式化输出当前日期"><a href="#格式化输出当前日期" class="headerlink" title="格式化输出当前日期"></a>格式化输出当前日期</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.text.*;<br><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DateDemo2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        <span class="hljs-type">Date</span> <span class="hljs-variable">dNow</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br>        SimpleDateFormat ft=<span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleDateFormat</span>(<span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);<br><br>        System.out.println(<span class="hljs-string">&quot;当前时间为: &quot;</span>+ft.format(dNow));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<table>
+    <thead>
+        <tr>
+            <th>字母</th>
+            <th>描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>y</td>
+            <td>年份-yyyy</td>
+        </tr>
+        <tr>
+            <td>M</td>
+            <td>月份-MM</td>
+        </tr>
+        <tr>
+            <td>d</td>
+            <td>日期-dd</td>
+        </tr>
+        <tr>
+            <td>H</td>
+            <td>24小时-HH</td>
+        </tr>
+        <tr>
+            <td>h</td>
+            <td>12小时-hh</td>
+        </tr>
+    </tbody>
+</table>
+
 
                 
               </div>
