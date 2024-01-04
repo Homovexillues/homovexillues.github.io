@@ -23,11 +23,13 @@
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="前言虽然很早就因为想要写个自己的app来接触过java了，但是因为看到java连写个hello，world都冗杂成这样导致对java一直兴趣缺缺 问题&amp;回答 JDK和OpenJDK有什么区别？安装哪个？安装过程？  区别就像是google的pixel和开源的安卓系统，openjdk可以被任何公司拿过来魔改自己的版本，就像linux，但是Oracle收购了sun因此可以用java的商标，它的">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/OOP_WrapperClass.png">
 <meta property="article:published_time" content="2024-01-01T15:27:30.072Z">
-<meta property="article:modified_time" content="2024-01-03T02:30:48.136Z">
+<meta property="article:modified_time" content="2024-01-03T11:20:37.025Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2013/12/OOP_WrapperClass.png">
   
   
   
@@ -220,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11k 字
+          13k 字
         
       </span>
     
@@ -231,7 +233,7 @@
         
         
         
-          93 分钟
+          110 分钟
         
       </span>
     
@@ -277,7 +279,7 @@
 <h3 id="问题-回答"><a href="#问题-回答" class="headerlink" title="问题&amp;回答"></a>问题&amp;回答</h3><ul>
 <li><p>JDK和OpenJDK有什么区别？安装哪个？安装过程？</p>
 <ul>
-<li><p>区别就像是google的pixel和开源的安卓系统，openjdk可以被任何公司拿过来魔改自己的版本，就像linux，但是Oracle收购了sun因此可以用java的商标，它的版本有以下私有类库</p>
+<li><p>区别就像是google的pixel和开源的安卓系统，openjdk可以被任何公司拿过来魔改自己的版本，就像linux，但是Oracle收购了sun因此可以用java的商标，它的版本有一些私有类库，面向企业的版本又称Java EE</p>
 </li>
 <li><p>在Linux中运行<code>snap install openjdk</code>后无法直接使用，在终端运行<code>openjdk</code>，将输出OpenJDK的配置文件地址，如<code>/var/snap/openjdk/common/openjdk.env</code></p>
 </li>
@@ -475,6 +477,37 @@ double d5=12.9867;
 <p>Test.java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        <span class="hljs-type">char</span> <span class="hljs-variable">grade</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;C&#x27;</span>;<br>        <br>        <span class="hljs-keyword">switch</span>(grade)&#123;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;A&#x27;</span>:<br>                System.out.println(<span class="hljs-string">&quot;优秀&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;B&#x27;</span>:<br>                System.out.println(<span class="hljs-string">&quot;良好&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;C&#x27;</span>:<br>                System.out.println(<span class="hljs-string">&quot;及格&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;D&#x27;</span>:<br>                System.out.println(<span class="hljs-string">&quot;不及格&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">default</span> :<br>                System.out.println(<span class="hljs-string">&quot;未知等级&quot;</span>);<br>        &#125;<br>        System.out.println(<span class="hljs-string">&quot;你的等级是&quot;</span>+grade);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mathematica">及格<br>你的等级是<span class="hljs-built_in">C</span><br></code></pre></td></tr></table></figure>
+
+<p>如果case语句块中没有break语句，匹配成功后会将匹配到的case项后面的所有项都输出</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        <span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">switch</span>(i)&#123;<br>            <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:<br>                System.out.println(<span class="hljs-string">&quot;0&quot;</span>);<br>            <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>                System.out.println(<span class="hljs-string">&quot;1&quot;</span>);<br>            <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>                System.out.println(<span class="hljs-string">&quot;2&quot;</span>);<br>            <span class="hljs-keyword">default</span>:<br>                System.out.println(<span class="hljs-string">&quot;default&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">1<br>2<br>3<br></code></pre></td></tr></table></figure>
+
+<h3 id="Number-Math类"><a href="#Number-Math类" class="headerlink" title="Number &amp; Math类"></a>Number &amp; Math类</h3><p><img src="https://www.runoob.com/wp-content/uploads/2013/12/OOP_WrapperClass.png" srcset="/img/loading.gif" lazyload alt="Java Number类 (图片来自菜鸟教程)"></p>
+<h4 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;90°的正弦值: &quot;</span>+Math.sin(Math.PI/<span class="hljs-number">2</span>));<br>        System.out.println(<span class="hljs-string">&quot;0°的余弦值: &quot;</span>+Math.cos(<span class="hljs-number">0</span>));<br>        System.out.println(<span class="hljs-string">&quot;60°的正切值: &quot;</span>+Math.tan(Math.PI/<span class="hljs-number">3</span>));<br>        System.out.println(<span class="hljs-string">&quot;1的反正切值: &quot;</span>+Math.atan(<span class="hljs-number">1</span>));<br>        System.out.println(<span class="hljs-string">&quot;Π/2的角度值: &quot;</span>+Math.toDegrees(Math.PI/<span class="hljs-number">2</span>));<br>        System.out.println(Math.PI);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Number-Math类方法"><a href="#Number-Math类方法" class="headerlink" title="Number &amp; Math类方法"></a>Number &amp; Math类方法</h4><h5 id="equals"><a href="#equals" class="headerlink" title="equals()"></a>equals()</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        Integer x=<span class="hljs-number">5</span>;<br>        Integer y=<span class="hljs-number">10</span>;<br>        Integer z=<span class="hljs-number">5</span>;<br>        Short a=<span class="hljs-number">5</span>;<br>        <br>        System.out.println(x.equals(y));<br>        System.out.println(x.equals(z));<br>		System.out.println(x.equals(a));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs actionscript"><span class="hljs-literal">false</span><br><span class="hljs-literal">true</span><br><span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="问题和回答-1"><a href="#问题和回答-1" class="headerlink" title="问题和回答"></a>问题和回答</h5><ul>
+<li><p>在写程序的时候，如果写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> a=<span class="hljs-number">1</span>,b=<span class="hljs-number">2</span>;<br>...<br>    System.out.println(a.equals(b));<br>...<br></code></pre></td></tr></table></figure>
+
+<p>会报错<code>“Cannot invoke equals(int) on the primitive type int”</code>，意思是不能在基本类型int上调用<code>equals(int)</code>方法。</p>
+<p>在Java中，基本类型如<code>int,double,char</code>等，不是对象，因此它们没有方法可以调用，<code>equals()</code>方法是一个对象方法，通常用于比较两个对象是否相等，如果非要比较两个基本类型并返回布尔值，可以用<code>a==b</code></p>
+<p>但是这里如果这么写就没问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">Integer x=<span class="hljs-number">5</span>;<br>Integer y=<span class="hljs-number">10</span>;<br>Integer z=<span class="hljs-number">5</span>;<br>Short a=<span class="hljs-number">5</span>;<br>...<br>    System.out.println(x.equals(y));<br>	System.out.println(x.equals(z));<br>	System.out.println(x.equals(a));<br></code></pre></td></tr></table></figure>
+
+<p>这里使用的就是<code>Integer和Short</code>对象，<code>Integer</code>和<code>Short</code>都是包装类，分别对应<code>int</code>和<code>short</code>基本类型</p>
+<p>当调用<code>x.equals(y)</code>的时候，实际上是在调用<code>Integer</code>对象的<code>equals()</code>方法</p>
+<h4 id="abs"><a href="#abs" class="headerlink" title="abs()"></a>abs()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        Integer a=-<span class="hljs-number">8</span>;<br>        <span class="hljs-type">double</span> d=-<span class="hljs-number">100</span>;<br>        <span class="hljs-type">float</span> f=-<span class="hljs-number">90f</span>;<br>        <br>        System.out.println(Math.abs(a));<br>        System.out.println(Math.abs(d));<br>        System.out.println(Math.abs(f));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">8</span><br><span class="hljs-attribute">100</span>.<span class="hljs-number">0</span><br><span class="hljs-attribute">90</span>.<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        System.out.println(Math.min(<span class="hljs-number">12.123</span>,<span class="hljs-number">12.456</span>));<br>        System.out.println<br>        <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
 
                 
               </div>
