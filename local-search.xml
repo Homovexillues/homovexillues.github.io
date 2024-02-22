@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>Java常用工具类</title>
+    <link href="/2024/02/22/Java%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <url>/2024/02/22/Java%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Scanner"><a href="#Scanner" class="headerlink" title="Scanner"></a>Scanner</h3><p>扫描控制台输入的工具类</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<span class="hljs-comment">//创建Scanner对象，从标准输入流中读取数据</span><br>System.out.println(<span class="hljs-string">&quot;请输入一个整数&quot;</span>);<br><span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> scanner.nextInt();<span class="hljs-comment">//获取用户输入的整数</span><br>System.out.println(<span class="hljs-string">&quot;您输入的整数是&quot;</span>+num);<br>scanner.nextLine();<span class="hljs-comment">//读取换行符，避免下一次读取</span><br>System.out.println(<span class="hljs-string">&quot;请输入一个字符串:&quot;</span>);<br><span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> scanner.nextLine();<span class="hljs-comment">//获取用户输入的字符串</span><br>System.out.println(<span class="hljs-string">&quot;您输入的字符串是:&quot;</span>+str);<br>scanner.close();<span class="hljs-comment">//关闭sacanner对象</span><br></code></pre></td></tr></table></figure><p>其中System.in返回的是一个字节输入流InputStream</p><p><code>nextLine()</code>方法</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>quest2激活</title>
+    <link href="/2024/02/22/quest2%E6%BF%80%E6%B4%BB/"/>
+    <url>/2024/02/22/quest2%E6%BF%80%E6%B4%BB/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>pc端使用clash进行代理，需使用支持UDP的代理</p></li><li><p>打开Allow LAN模式，允许局域网连接</p></li><li><p>确保quest2和pc连接在同一网络下</p></li><li><p>记住clash代理的端口和pc的ip地址</p></li><li><p>在quest2连接网络的时候高级设置，手动配置代理，地址为pc端wlan的ip地址，端口为代理端口</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>quest2</tag>
+      
+      <tag>vr</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python发送邮件</title>
     <link href="/2024/02/20/Python%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"/>
     <url>/2024/02/20/Python%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</url>
@@ -62,7 +114,7 @@
     <link href="/2024/01/30/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     <url>/2024/01/30/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     
-    <content type="html"><![CDATA[<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install mysql-server mysql-client -y<br></code></pre></td></tr></table></figure><p>随即出现问题，执行<code>mysql -uroot -p</code>时出现如下报错</p><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">ERROR </span>2002 (HY000): Can&#x27;t connect to local MySQL server through socket &#x27;/var/run/mysqld/mysqld.sock&#x27; (2)<br></code></pre></td></tr></table></figure><p>可能原因</p><ul><li>没有启动MySQL服务</li></ul><p>解决方法</p><p>根据&#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf文档的内容修改&#x2F;etc&#x2F;mysql&#x2F;my.cnf文档，具体内容如下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">[mysqld]<br>datadir=/var/lib/mysql<br>basedir=/usr<br>socket=/var/run/mysqld/mysqld.sock<br>user=mysql<br><span class="hljs-meta prompt_"># </span><span class="language-bash">Disabling symbolic-links is recommended to prevent assorted security risks</span><br>symbolic-links=0<br><br>[mysqld_safe]<br>log-error=/var/log/mysqld.log<br>pid-file=/var/run/mysqld/mysqld.pid<br><br>[client]<br>port=3306<br>socket=/var/run/mysqld/mysqld.sock<br></code></pre></td></tr></table></figure><p>修改后直接<code>mysql -u root -p</code>成功运行</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install mysql-server mysql-client -y<br></code></pre></td></tr></table></figure><p>随即出现问题，执行<code>mysql -uroot -p</code>时出现如下报错</p><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">ERROR </span>2002 (HY000): Can&#x27;t connect to local MySQL server through socket &#x27;/var/run/mysqld/mysqld.sock&#x27; (2)<br></code></pre></td></tr></table></figure><p>可能原因</p><ul><li>没有启动MySQL服务</li></ul><p>解决方法</p><p>根据&#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf文档的内容修改&#x2F;etc&#x2F;mysql&#x2F;my.cnf文档，具体内容如下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">[mysqld]<br>datadir=/var/lib/mysql<br>basedir=/usr<br>socket=/var/run/mysqld/mysqld.sock<br>user=mysql<br><span class="hljs-meta prompt_"># </span><span class="language-bash">Disabling symbolic-links is recommended to prevent assorted security risks</span><br>symbolic-links=0<br><br>[mysqld_safe]<br>log-error=/var/log/mysqld.log<br>pid-file=/var/run/mysqld/mysqld.pid<br><br>[client]<br>port=3306<br>socket=/var/run/mysqld/mysqld.sock<br></code></pre></td></tr></table></figure><p>修改后直接<code>mysql -u root -p</code>成功运行</p><h3 id="数据库增删改查"><a href="#数据库增删改查" class="headerlink" title="数据库增删改查"></a>数据库增删改查</h3><h4 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">写mysql语句的时候要加分号;<br></code></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">&gt;  show databases<br>-&gt; show databases;<br></code></pre></td></tr></table></figure><p>报错</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#x27;show databases&#x27; at line 2<br></code></pre></td></tr></table></figure><p>问题</p><p>错误代码1064对应的是语法错误</p><p>第一行没有加分号导致被识别为两行了，重起一行写<code>show databases</code>解决</p><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">creat database 数据库名<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure><p>如：<code>creat database test;</code></p><p>提示<code>Query OK, 1 row affected (0.02 sec)</code>则说明创建成功</p><p>通常会在创建数据库的时候加上<code>if not exist</code>否则当数据库已经存在的时候会报<code>database exist</code>的错误</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">create database if not exists test;<br></code></pre></td></tr></table></figure><p>这样在再次创建同名数据库的时候就会报错：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">ERROR 1007 (HY000): Can&#x27;t create database &#x27;test&#x27;; database exists<br></code></pre></td></tr></table></figure><h4 id="切换数据库"><a href="#切换数据库" class="headerlink" title="切换数据库"></a>切换数据库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">use 数据名;<br></code></pre></td></tr></table></figure><p>如</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">use test;<br></code></pre></td></tr></table></figure><p>如果提示<code>Database changed</code>则说明切换成功了。</p><p>只有切换到相应数据库下，才能对相应数据库下面的表进行操作。</p><h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">drop database 数据库名;<br></code></pre></td></tr></table></figure><p>如：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">drop database test;<br></code></pre></td></tr></table></figure><p>提示<code>Query OK, 0 rows affected (0.25 sec)</code>则说明成功。</p><p>还可以加上<code>if exists</code>以避免数据库不存在的时候报错。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">drop database if exists test;<br></code></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mysql">show processlist;<br>查看当前MySQL被多少个客户端连接了<br>show varables like &#x27;wait_timeout&#x27;;<br>查看Mysql定义的连接最大空闲时长，如果空闲连接超过了这个时长，连接器会自动将其断开<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
