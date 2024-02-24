@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title></title>
+    <link href="/2024/02/24/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <url>/2024/02/24/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java Stream</title>
+    <link href="/2024/02/24/Java%20Stream/"/>
+    <url>/2024/02/24/Java%20Stream/</url>
+    
+    <content type="html"><![CDATA[<p>为了解放程序员操作集合（Colletction）时的生产力，其出现归功于同时期出现的Lambda表达式，极大的提高了编程效率和程序可读性。</p><h3 id="什么是Stream？"><a href="#什么是Stream？" class="headerlink" title="什么是Stream？"></a>什么是Stream？</h3><p>Stream就像一个高级迭代器，但只能遍历一次，在流的过程中，队流中的元素执行一些操作。</p><p>想要操作流，首先需要有一个数据源，可以是数组或者集合。每次操作都会返回一个新的流对象，方便进行链式操作，但原有的流对象会保持不变。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java常用工具类</title>
     <link href="/2024/02/22/Java%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     <url>/2024/02/22/Java%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
@@ -1238,6 +1276,31 @@
   
   
   <entry>
+    <title>Windows CMD命令</title>
+    <link href="/2023/11/12/Windows%E5%91%BD%E4%BB%A4/"/>
+    <url>/2023/11/12/Windows%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>getmac &#x2F;v<br>获得mac地址</p></li><li><p>assoc<br>assoc .mp4&#x3D;VLC.vlc</p></li><li><p>chkdsk<br>chkdsk &#x2F;f</p></li><li><p>tasklist | findstr script<br>找到进程中的脚本</p></li><li><p>netsh wlan show wlanrepor<br>展示wlan的报告</p></li><li><p>netsh interface ip show address | find “IP Adress”<br>显示ip地址</p></li><li><p>netsh advfirewall set allprofiles state off<br>  关闭Windows防火墙<br>  netsh advfirewall set allprofiles state on</p></li><li><p>netstat<br>查看打开的接口</p></li><li><p>powercfg -h off</p><p>关闭休眠模式</p><p>btw,这锤子模式真的消耗了C盘的大量空间</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux文件系统</title>
     <link href="/2023/11/12/Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"/>
     <url>/2023/11/12/Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</url>
@@ -1355,31 +1418,6 @@
     <tags>
       
       <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Windows CMD命令</title>
-    <link href="/2023/11/07/Windows%E5%91%BD%E4%BB%A4/"/>
-    <url>/2023/11/07/Windows%E5%91%BD%E4%BB%A4/</url>
-    
-    <content type="html"><![CDATA[<ul><li>getmac &#x2F;v<br>获得mac地址</li><li>assoc<br>assoc .mp4&#x3D;VLC.vlc</li><li>chkdsk<br>chkdsk &#x2F;f</li><li>tasklist | findstr script<br>找到进程中的脚本</li><li>netsh wlan show wlanrepor<br>展示wlan的报告</li><li>netsh interface ip show address | find “IP Adress”<br>显示ip地址</li><li>netsh advfirewall set allprofiles state off<br>  关闭Windows防火墙<br>  netsh advfirewall set allprofiles state on</li><li>netstat<br>查看打开的接口</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Windows</tag>
       
     </tags>
     
