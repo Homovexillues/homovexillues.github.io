@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Python刷题笔记</title>
+    <link href="/2024/02/28/Python%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    <url>/2024/02/28/Python%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java面向对象</title>
     <link href="/2024/02/27/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <url>/2024/02/27/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
@@ -1092,6 +1117,33 @@
   
   
   <entry>
+    <title>Python-jupyter</title>
+    <link href="/2023/11/17/Python-jupyter/"/>
+    <url>/2023/11/17/Python-jupyter/</url>
+    
+    <content type="html"><![CDATA[<h4 id="Jupyter-notebook转markdown"><a href="#Jupyter-notebook转markdown" class="headerlink" title="Jupyter notebook转markdown"></a>Jupyter notebook转markdown</h4><p>需要的库是<code>nbconbert</code> ，它依赖库<code>pandoc</code> </p><blockquote><p><em>Ps.我看到这个库名的时候脑子里第一反应是”牛逼的转换器“（捂脸），什么牛逼哄哄的能量瓶小伙啊</em></p><p><em>Ps.Ps. 用这个<a href="https://github.com/pyppeteer/pyppeteer">pyppeteer&#x2F;pyppeteer</a>库可以转换为pdf</em></p></blockquote><p>命令为：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">jupyter nbconvert xxx<span class="hljs-selector-class">.ipynb</span> <span class="hljs-attr">--to</span> markdown<br></code></pre></td></tr></table></figure><p>如果xxx.ipynb中有图片的话，会自动保存至当前xxx_files目录下，记得将图片相关文件一并携带，否则无法显示</p><p>批量转换:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">jupyter nvconvert --to markdown *.ipynb<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>库</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux有趣小工具记录</title>
     <link href="/2023/11/17/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/"/>
     <url>/2023/11/17/Linux%E6%9C%89%E8%B6%A3%E5%B0%8F%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95/</url>
@@ -1109,33 +1161,6 @@
     <tags>
       
       <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Python-jupyter</title>
-    <link href="/2023/11/17/Python-jupyter/"/>
-    <url>/2023/11/17/Python-jupyter/</url>
-    
-    <content type="html"><![CDATA[<h4 id="Jupyter-notebook转markdown"><a href="#Jupyter-notebook转markdown" class="headerlink" title="Jupyter notebook转markdown"></a>Jupyter notebook转markdown</h4><p>需要的库是<code>nbconbert</code> ，它依赖库<code>pandoc</code> </p><blockquote><p><em>Ps.我看到这个库名的时候脑子里第一反应是”牛逼的转换器“（捂脸），什么牛逼哄哄的能量瓶小伙啊</em></p><p><em>Ps.Ps. 用这个<a href="https://github.com/pyppeteer/pyppeteer">pyppeteer&#x2F;pyppeteer</a>库可以转换为pdf</em></p></blockquote><p>命令为：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">jupyter nbconvert xxx<span class="hljs-selector-class">.ipynb</span> <span class="hljs-attr">--to</span> markdown<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Python</tag>
-      
-      <tag>库</tag>
       
     </tags>
     
@@ -1419,7 +1444,7 @@
     <link href="/2023/11/12/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/"/>
     <url>/2023/11/12/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
     
-    <content type="html"><![CDATA[<p>温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸）</p><h2 id="①环境"><a href="#①环境" class="headerlink" title="①环境"></a>①环境</h2><p>node.js下载安装后npm安装hexo博客，代码使用如下</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure><p>安装完成后运行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo -v<br></code></pre></td></tr></table></figure><p>来确认安装情况，出现如下报错：</p><h6 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h6><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">无法加载文件C:\Users\Administrator\AppData\Roaming\npm\hexo.ps1，因为在此系统中禁止执行脚本。有关详细信息，请参阅 &quot;get-<span class="hljs-built_in">help</span> about_signing&quot;。<br></code></pre></td></tr></table></figure><h6 id="解决方法如下"><a href="#解决方法如下" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><p>管理员权限运行Powershell，执行</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">get-ExecutionPolicy</span><br>返回状态：Restricted表示状态是禁止的<br>执行命令<br><span class="hljs-built_in">set-ExecutionPolicy</span> RemoteSigned来开启<br>选择Y<br></code></pre></td></tr></table></figure><p>选定位置，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-init</span> blog<br></code></pre></td></tr></table></figure><h6 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm ERR! Error: EPERM: operation not permitted, mkdir <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure><h6 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h6><p>权限不够</p><h6 id="解决方法如下-1"><a href="#解决方法如下-1" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><img src="https://raw.githubusercontent.com/Homovexillues/image_bed/main/image/change_the_authority.png" /><p>在属性中将文件夹的用户完全控制权限打开，重新执行命令。</p><p>创建blog文件夹并初始化，此时可以尝试</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-g</span> 静态部署<br>hexo <span class="hljs-literal">-s</span> 开始本地服务器<br></code></pre></td></tr></table></figure><h6 id="出现问题-1"><a href="#出现问题-1" class="headerlink" title="出现问题"></a>出现问题</h6><p>打开<a href="http://localhost:4000的尝试以失败告终">http://localhost:4000的尝试以失败告终</a></p><h6 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h6><p>4000端口被占用了，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo server <span class="hljs-literal">-p</span> <span class="hljs-number">5000</span><br></code></pre></td></tr></table></figure><p>来更改端口号后重试，成功打开<a href="http://localhost:5000/">http://localhost:5000</a></p><h2 id="②部署"><a href="#②部署" class="headerlink" title="②部署"></a>②部署</h2><p>本地部分完成后，将其部署到Github上的自建库里</p><p>这里首先要新建一个GitHub库，命名为“用户名.github.io”的公共库，创建后会默认自动启动HTTPS</p><p>然后安装<strong>hexo-deployer-git</strong>插件：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install hexo<span class="hljs-literal">-deployer-git</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></figure><p>安装成功后修改**_config.yml**文件内的URL部分和Deployment部分：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://用户名.github.io</span><br><br><span class="hljs-attr">deploy:</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br><span class="hljs-attr">repository:</span> <span class="hljs-string">git@github.com:用户名/用户名.github.io.git</span><br><span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure><p>上传之前别忘了先连接github并配置ssh密匙:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Github用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;Github邮箱&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;Github邮箱&quot;</span><br></code></pre></td></tr></table></figure><p>再将</p><p>Windows：C:\Users\用户名\.ssh下的id_rsa.pub</p><p>Linux： &#x2F;root&#x2F;.ssh&#x2F;id_rsa</p><p>文件中的密匙添加到GitHub上的个人设置-ssh keys中，配置好后可以用<code>ssh -T git@github.com</code>来验证是否连接成功</p><p>然后运行<code>hexo d</code>将网站部署到Github页面</p><p>这样访问https:&#x2F;&#x2F;用户名.github.io就能看到刚才做好的Hexo网站了</p><h2 id="③解决图床问题"><a href="#③解决图床问题" class="headerlink" title="③解决图床问题"></a>③解决图床问题</h2><p>建立一个新的Github库用来存放图片，下载并安装工具<a href="https://github.com/Molunerfinn/PicGo">PicGo</a>用于快速上传图片到Github图床库并获取图片URL链接</p><p>在Github的Setting最下方的Developer Settings，Personal access tokens生成一个token，只选repo那栏就成，在PicGo中设置好之后直接拖拽上传就成了</p><h2 id="将hexo文件夹同步并自动上传"><a href="#将hexo文件夹同步并自动上传" class="headerlink" title="将hexo文件夹同步并自动上传"></a>将hexo文件夹同步并自动上传</h2><p>将hexo文件夹放到OneDrive上以便Windows多端方便对其进行编辑，并在服务器上安装<a href="https://github.com/abraunegg/onedrive">OneDrive</a>(非官方)以便在手机上通过ssh进行编辑和设置定时上传到GitHub功能</p>]]></content>
+    <content type="html"><![CDATA[<p>温故而知新，加上疫情之后记忆力感觉不比从前了，所以要养成随手记笔记的好习惯，免得未来某一天连自己的代码和操作都看不懂了（捂脸）</p><h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>使用Hexo+Github Pages搭建的个人博客属是一个静态网站，但是可以达到一些动态的交互效果。</p><blockquote><p>静态网站：用户和Web页面之间不能做一些交互</p><p>动态网站：允许用户和网站做一些交互</p></blockquote><p>静态网站大致运作流程如下</p><p><img src="https://segmentfault.com/img/remote/1460000022490307" alt="原图像来自https://segmentfault.com/a/1190000022490303"></p><p>Github pages是Github公司提供的免费静态网站托管服务,当把HTML等资源文件存放到GitHub指定的仓库中时，GitHub Pages服务会对这些文件进行处理并把它展示为一个网站，因此其可以代替Web服务器的功能，只需要将在本地生成的HTML等资源文件上传到GitHub的仓库中即可实现类似的Web服务器功能，可以响应请求并把相应的资源文件发送给客户端。</p><p>相比于Dijango、Flask、Spring等Web框架，hexo对相关编程语言基础的需求不高，可以将Markdown文本快速生成html文件，大大提升效率。</p><h2 id="①环境"><a href="#①环境" class="headerlink" title="①环境"></a>①环境</h2><p>node.js下载安装后npm安装hexo博客，代码使用如下</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure><p>安装完成后运行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo -v<br></code></pre></td></tr></table></figure><p>来确认安装情况，出现如下报错：</p><h6 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h6><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">无法加载文件C:\Users\Administrator\AppData\Roaming\npm\hexo.ps1，因为在此系统中禁止执行脚本。有关详细信息，请参阅 &quot;get-<span class="hljs-built_in">help</span> about_signing&quot;。<br></code></pre></td></tr></table></figure><h6 id="解决方法如下"><a href="#解决方法如下" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><p>管理员权限运行Powershell，执行</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">get-ExecutionPolicy</span><br>返回状态：Restricted表示状态是禁止的<br>执行命令<br><span class="hljs-built_in">set-ExecutionPolicy</span> RemoteSigned来开启<br>选择Y<br></code></pre></td></tr></table></figure><p>选定位置，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-init</span> blog<br></code></pre></td></tr></table></figure><h6 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm ERR! Error: EPERM: operation not permitted, mkdir <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure><h6 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h6><p>权限不够</p><h6 id="解决方法如下-1"><a href="#解决方法如下-1" class="headerlink" title="解决方法如下"></a>解决方法如下</h6><img src="https://raw.githubusercontent.com/Homovexillues/image_bed/main/image/change_the_authority.png" /><p>在属性中将文件夹的用户完全控制权限打开，重新执行命令。</p><p>创建blog文件夹并初始化，此时可以尝试</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo <span class="hljs-literal">-g</span> 静态部署<br>hexo <span class="hljs-literal">-s</span> 开始本地服务器<br></code></pre></td></tr></table></figure><h6 id="出现问题-1"><a href="#出现问题-1" class="headerlink" title="出现问题"></a>出现问题</h6><p>打开<a href="http://localhost:4000的尝试以失败告终">http://localhost:4000的尝试以失败告终</a></p><h6 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h6><p>4000端口被占用了，用</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo server <span class="hljs-literal">-p</span> <span class="hljs-number">5000</span><br></code></pre></td></tr></table></figure><p>来更改端口号后重试，成功打开<a href="http://localhost:5000/">http://localhost:5000</a></p><h2 id="②部署"><a href="#②部署" class="headerlink" title="②部署"></a>②部署</h2><p>本地部分完成后，将其部署到Github上的自建库里</p><p>这里首先要新建一个GitHub库，命名为“用户名.github.io”的公共库，创建后会默认自动启动HTTPS</p><p>然后安装<strong>hexo-deployer-git</strong>插件：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install hexo<span class="hljs-literal">-deployer-git</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></figure><p>安装成功后修改**_config.yml**文件内的URL部分和Deployment部分：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://用户名.github.io</span><br><br><span class="hljs-attr">deploy:</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br><span class="hljs-attr">repository:</span> <span class="hljs-string">git@github.com:用户名/用户名.github.io.git</span><br><span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure><p>上传之前别忘了先连接github并配置ssh密匙:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Github用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;Github邮箱&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;Github邮箱&quot;</span><br></code></pre></td></tr></table></figure><p>再将</p><p>Windows：C:\Users\用户名\.ssh下的id_rsa.pub</p><p>Linux： &#x2F;root&#x2F;.ssh&#x2F;id_rsa</p><p>文件中的密匙添加到GitHub上的个人设置-ssh keys中，配置好后可以用<code>ssh -T git@github.com</code>来验证是否连接成功</p><p>然后运行<code>hexo d</code>将网站部署到Github页面</p><p>这样访问https:&#x2F;&#x2F;用户名.github.io就能看到刚才做好的Hexo网站了</p><h2 id="③解决图床问题"><a href="#③解决图床问题" class="headerlink" title="③解决图床问题"></a>③解决图床问题</h2><p>建立一个新的Github库用来存放图片，下载并安装工具<a href="https://github.com/Molunerfinn/PicGo">PicGo</a>用于快速上传图片到Github图床库并获取图片URL链接</p><p>在Github的Setting最下方的Developer Settings，Personal access tokens生成一个token，只选repo那栏就成，在PicGo中设置好之后直接拖拽上传就成了</p><h2 id="将hexo文件夹同步并自动上传"><a href="#将hexo文件夹同步并自动上传" class="headerlink" title="将hexo文件夹同步并自动上传"></a>将hexo文件夹同步并自动上传</h2><p>将hexo文件夹放到OneDrive上以便Windows多端方便对其进行编辑，并在服务器上安装<a href="https://github.com/abraunegg/onedrive">OneDrive</a>(非官方)以便在手机上通过ssh进行编辑和设置定时上传到GitHub功能</p>]]></content>
     
     
     <categories>
@@ -1432,6 +1457,35 @@
     <tags>
       
       <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2077V震天同人随笔</title>
+    <link href="/2023/11/12/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
+    <url>/2023/11/12/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/</url>
+    
+    <content type="html"><![CDATA[<p>“无名小卒？还是名扬天下？”</p><p>200多斤的大黑胖子在黑色高级轿车里对着面前的佣兵问出了这个问题，事实上，他现在心里已经有点发毛了。</p><p>他旁边坐着的这个人从刚才上车开始就一言不发，脸上始终挂着那“爽朗”的露出所有牙齿的微笑，只见这人：</p><p>身躯凛凛，脸板堂堂。一双歧路司光射寒星，两弯眉浑如刷漆。胸板横阔，有万夫难敌之威风；骨健筋强，似亚当重锤临座上；如同天上降魔主，真是人间太岁神。</p><p>德克斯特从V上车开始就开始和V絮絮叨叨，无非是套话吹逼之类，但V就好像全没听见一样，一双眼睛幽光莹莹，隔着黑色高级轿车的防弹玻璃盯着沿途的一台台自动贩卖机，所有自动贩卖机但凡被他一看，顿时就哗哗地落下大量的小商品来，引得周围的流浪汉和市民一阵哄抢。要是有看到的帮派份子，更是直接浑身抽抽着倒在地上，眼看是不活了。当然，这一切是在车里还戴着墨镜的德克斯特和他的那个保镖没有注意到的。</p><p>听到德克斯特此言，V好像才终于将注意力放在了这个大黑胖子身上一样，脸上还是那个“和善”的笑容，就问了一句话：</p><p>“说，去哪儿，杀谁”</p><p>德克斯特心里已经开始发慌了，心说自己这莫不是招来了个赛博精神病，但是为了不刺激眼前的这个疯子，他只能绷着一种比较淡定的语气陈述了他所知道的情报，并掏出了数据芯片，谁成想这芯片刚从兜里掏出来就消失了，耳边传来的还有“砰”的一声，他赶紧抱头缩起身子，过了好一会儿，他才意识到自己身边的那个疯子消失了。</p><p>活见了鬼了！这他妈可是一辆在路上全速行驶的轿车里！</p><p>“哔”</p><p>他接收到了一条新的语音消息，打开一看，正是刚才那个据称“V”的佣兵给他发过来的。</p><p>“回家等电话！有事通知你！”</p><p>他回到他的安全屋好久之后才反应过来，那个疯子是看到了自己拿出数据芯片之后直接开启了义体“基安威斯坦”从自己手中夺走了数据芯片，然后打开车门跳出去了的动静。</p><p>“妈的，这个疯子，就不能…”话还没说完，他的通讯器又传来了“哔”的一声。</p><p>“又怎么了”他烦躁的打开聊天界面，今天雇了个疯子佣兵的事已经让他够闹心的了，如果这时候还有些什么别的破事儿……</p><p>结果是那个叫V的家伙发来的一个视频文件。</p><p>“草？他什么时候黑的我？”</p><p>大黑胖子突然发现自己通讯录里对那个佣兵的备注不知道什么时候被改成了“&gt;&gt;&gt;大名鼎鼎的V&lt;&lt;&lt;”，甚至还加上了符号特效。</p><p>“哈，大名鼎鼎…”大黑胖子不屑的冷笑着，点开了视频。</p><p>视频内容是刚才见到的那个佣兵V，脸上挂着那个有些神经质的露全齿微笑，左手搂着那个叫梅瑞斯托特的公司女的，右手搂着杰克小子，脚下还踩着一个军用科技的箱子，摆着一个拍照常用的老土pose，身边都是军用科技的特工在为他们鼓掌，身后是烧着熊熊大火正在疯狂冒烟的全食品工厂。</p><p>由于视频内容过于劲爆，德克斯特的大脑短路了将近一分钟才缓过来，然后他的第一反应就是特效。</p><p>“都，都是假的，吓不倒我的”他将视频转发给了自己的手下，让他帮忙检查一下视频的编辑痕迹，结果手下的消息窗口显示了将近一分钟的“对方正在输入中”，然后发过来一句话“老大，看新闻。”</p><p>“搅什么了？不知所谓的小子？”德克斯特这么想着，但还是打开了电视，一般情况下他都是一个很听劝的人，正所谓听人劝，吃饱饭嘛，从他的体型就看的出，他经常听人劝。</p><p>新闻54台在播报一条重要新闻，今天晚间，漩涡帮被除名了，一个不剩的全都杀了个干净，而这笔功劳被算在了那个叫梅瑞斯托特的女人头上，剩下的就是一些车轱辘话，展现了军用科技的权威啊，打破平衡啊，公司战争的序曲啊之类的。</p><p>不过这些屁话已经穿不进德克斯特的耳朵里了，现在他脑子里只有一件事——“我特么这是招了个什么活阎王啊。”</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>小说</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>赛博朋克</tag>
+      
+      <tag>2077</tag>
+      
+      <tag>同人</tag>
       
     </tags>
     
@@ -1503,35 +1557,6 @@
       
     </categories>
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>2077V震天同人随笔</title>
-    <link href="/2023/11/04/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
-    <url>/2023/11/04/2077V%E9%9C%87%E5%A4%A9%E5%90%8C%E4%BA%BA%E9%9A%8F%E7%AC%94/</url>
-    
-    <content type="html"><![CDATA[<p>“无名小卒？还是名扬天下？”</p><p>200多斤的大黑胖子在黑色高级轿车里对着面前的佣兵问出了这个问题，事实上，他现在心里已经有点发毛了。</p><p>他旁边坐着的这个人从刚才上车开始就一言不发，脸上始终挂着那“爽朗”的露出所有牙齿的微笑，只见这人：</p><p>身躯凛凛，脸板堂堂。一双歧路司光射寒星，两弯眉浑如刷漆。胸板横阔，有万夫难敌之威风；骨健筋强，似亚当重锤临座上；如同天上降魔主，真是人间太岁神。</p><p>德克斯特从V上车开始就开始和V絮絮叨叨，无非是套话吹逼之类，但V就好像全没听见一样，一双眼睛幽光莹莹，隔着黑色高级轿车的防弹玻璃盯着沿途的一台台自动贩卖机，所有自动贩卖机但凡被他一看，顿时就哗哗地落下大量的小商品来，引得周围的流浪汉和市民一阵哄抢。要是有看到的帮派份子，更是直接浑身抽抽着倒在地上，眼看是不活了。当然，这一切是在车里还戴着墨镜的德克斯特和他的那个保镖没有注意到的。</p><p>听到德克斯特此言，V好像才终于将注意力放在了这个大黑胖子身上一样，脸上还是那个“和善”的笑容，就问了一句话：</p><p>“说，去哪儿，杀谁”</p><p>德克斯特心里已经开始发慌了，心说自己这莫不是招来了个赛博精神病，但是为了不刺激眼前的这个疯子，他只能绷着一种比较淡定的语气陈述了他所知道的情报，并掏出了数据芯片，谁成想这芯片刚从兜里掏出来就消失了，耳边传来的还有“砰”的一声，他赶紧抱头缩起身子，过了好一会儿，他才意识到自己身边的那个疯子消失了。</p><p>活见了鬼了！这他妈可是一辆在路上全速行驶的轿车里！</p><p>“哔”</p><p>他接收到了一条新的语音消息，打开一看，正是刚才那个据称“V”的佣兵给他发过来的。</p><p>“回家等电话！有事通知你！”</p><p>他回到他的安全屋好久之后才反应过来，那个疯子是看到了自己拿出数据芯片之后直接开启了义体“基安威斯坦”从自己手中夺走了数据芯片，然后打开车门跳出去了的动静。</p><p>“妈的，这个疯子，就不能…”话还没说完，他的通讯器又传来了“哔”的一声。</p><p>“又怎么了”他烦躁的打开聊天界面，今天雇了个疯子佣兵的事已经让他够闹心的了，如果这时候还有些什么别的破事儿……</p><p>结果是那个叫V的家伙发来的一个视频文件。</p><p>“草？他什么时候黑的我？”</p><p>大黑胖子突然发现自己通讯录里对那个佣兵的备注不知道什么时候被改成了“&gt;&gt;&gt;大名鼎鼎的V&lt;&lt;&lt;”，甚至还加上了符号特效。</p><p>“哈，大名鼎鼎…”大黑胖子不屑的冷笑着，点开了视频。</p><p>视频内容是刚才见到的那个佣兵V，脸上挂着那个有些神经质的露全齿微笑，左手搂着那个叫梅瑞斯托特的公司女的，右手搂着杰克小子，脚下还踩着一个军用科技的箱子，摆着一个拍照常用的老土pose，身边都是军用科技的特工在为他们鼓掌，身后是烧着熊熊大火正在疯狂冒烟的全食品工厂。</p><p>由于视频内容过于劲爆，德克斯特的大脑短路了将近一分钟才缓过来，然后他的第一反应就是特效。</p><p>“都，都是假的，吓不倒我的”他将视频转发给了自己的手下，让他帮忙检查一下视频的编辑痕迹，结果手下的消息窗口显示了将近一分钟的“对方正在输入中”，然后发过来一句话“老大，看新闻。”</p><p>“搅什么了？不知所谓的小子？”德克斯特这么想着，但还是打开了电视，一般情况下他都是一个很听劝的人，听人劝，吃饱饭嘛，从他的体型就看的出，他经常听人劝。</p><p>新闻54台在播报一条重要新闻，今天晚间，漩涡帮被除名了，一个不剩的全都杀了个干净，而这笔功劳被算在了那个叫梅瑞斯托特的女人头上，剩下的就是一些车轱辘话，展现了军用科技的权威啊，打破平衡啊，公司战争的序曲啊之类的。</p><p>不过这些屁话已经穿不进德克斯特的耳朵里了，现在他脑子里只有一件事——“我特么这是招了个什么活阎王啊。”</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>小说</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>赛博朋克</tag>
-      
-      <tag>2077</tag>
-      
-      <tag>同人</tag>
-      
-    </tags>
     
   </entry>
   
