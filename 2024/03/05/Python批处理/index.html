@@ -16,23 +16,23 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta name="description" content="列表python没有内置数组类型，但是可以为所有相同任务使用列表。 1234567891011list.append(x) #把元素添加到列表的结尾，相当于a[len(a):]&#x3D;[x]list.extend(L) #通过添加指定列表的所有元素来扩充列表，相当于a[len(a):]&#x3D;Llist.insert(i,x)list.remove(x)#删除列表中值为x的第一个元素list.pop([i])">
+    <meta name="description" content="批量重命名将文件名前的数字去除123456789import os#与操作系统交互的函数import re#提供正则表达式相关函数files &#x3D; os.listdir(&#x27;.&#x27;)#获取当前目录下的所有文件和文件夹的名字for file in files:    if file.endswith(&#x27;.pdf&#x27;):#检查是否以.pdf结束        if re">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python数据结构">
-<meta property="og:url" content="https://homovexillues.github.io/2024/02/29/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:title" content="Python批处理">
+<meta property="og:url" content="https://homovexillues.github.io/2024/03/05/Python%E6%89%B9%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="列表python没有内置数组类型，但是可以为所有相同任务使用列表。 1234567891011list.append(x) #把元素添加到列表的结尾，相当于a[len(a):]&#x3D;[x]list.extend(L) #通过添加指定列表的所有元素来扩充列表，相当于a[len(a):]&#x3D;Llist.insert(i,x)list.remove(x)#删除列表中值为x的第一个元素list.pop([i])">
+<meta property="og:description" content="批量重命名将文件名前的数字去除123456789import os#与操作系统交互的函数import re#提供正则表达式相关函数files &#x3D; os.listdir(&#x27;.&#x27;)#获取当前目录下的所有文件和文件夹的名字for file in files:    if file.endswith(&#x27;.pdf&#x27;):#检查是否以.pdf结束        if re">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-02-29T01:34:28.327Z">
-<meta property="article:modified_time" content="2024-02-29T06:19:43.169Z">
+<meta property="article:published_time" content="2024-03-05T02:32:19.253Z">
+<meta property="article:modified_time" content="2024-03-05T02:53:25.809Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Python">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="批处理">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Python数据结构 - 红石门</title>
+  <title>Python批处理 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python数据结构"></span>
+            <span id="subtitle" data-typed-text="Python批处理"></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-29 09:34" pubdate>
-          2024年2月29日 上午
+        <time datetime="2024-03-05 10:32" pubdate>
+          2024年3月5日 上午
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          777 字
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          9 分钟
+          7 分钟
         
       </span>
     
@@ -269,19 +269,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Python数据结构</h1>
+            <h1 id="seo-header">Python批处理</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>python没有内置数组类型，但是可以为所有相同任务使用列表。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span>.append(x) <span class="hljs-comment">#把元素添加到列表的结尾，相当于a[len(a):]=[x]</span><br><span class="hljs-built_in">list</span>.extend(L) <span class="hljs-comment">#通过添加指定列表的所有元素来扩充列表，相当于a[len(a):]=L</span><br><span class="hljs-built_in">list</span>.insert(i,x)<br><span class="hljs-built_in">list</span>.remove(x)<span class="hljs-comment">#删除列表中值为x的第一个元素</span><br><span class="hljs-built_in">list</span>.pop([i])<span class="hljs-comment">#</span><br><span class="hljs-built_in">list</span>.clear()<span class="hljs-comment">#移除列表中的所有项</span><br><span class="hljs-built_in">list</span>.index(x)<span class="hljs-comment">#返回列表中第一个值为x的元素的索引</span><br><span class="hljs-built_in">list</span>.count(x)<span class="hljs-comment">#x在列表中出现的次数</span><br><span class="hljs-built_in">list</span>.sort()<span class="hljs-comment">#对列表中元素进行排序</span><br><span class="hljs-built_in">list</span>.reverse()<span class="hljs-comment">#倒排列表中的元素</span><br><span class="hljs-built_in">list</span>.copy()<span class="hljs-comment">#返回列表的浅复制</span><br></code></pre></td></tr></table></figure>
+                <h2 id="批量重命名"><a href="#批量重命名" class="headerlink" title="批量重命名"></a>批量重命名</h2><h4 id="将文件名前的数字去除"><a href="#将文件名前的数字去除" class="headerlink" title="将文件名前的数字去除"></a>将文件名前的数字去除</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<span class="hljs-comment">#与操作系统交互的函数</span><br><span class="hljs-keyword">import</span> re<span class="hljs-comment">#提供正则表达式相关函数</span><br><br>files = os.listdir(<span class="hljs-string">&#x27;.&#x27;</span>)<span class="hljs-comment">#获取当前目录下的所有文件和文件夹的名字</span><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:<br>    <span class="hljs-keyword">if</span> file.endswith(<span class="hljs-string">&#x27;.pdf&#x27;</span>):<span class="hljs-comment">#检查是否以.pdf结束</span><br>        <span class="hljs-keyword">if</span> re.<span class="hljs-keyword">match</span>(<span class="hljs-string">r&#x27;\d+-&#x27;</span>,file):<span class="hljs-comment">#</span><br>            new_file = re.sub(<span class="hljs-string">r&#x27;\d+-&#x27;</span>,<span class="hljs-string">&#x27;&#x27;</span>,file)<br>            os.rename(file,new_file)<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = [<span class="hljs-number">66.25</span>, <span class="hljs-number">333</span>, <span class="hljs-number">333</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1234.5</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(a.count(<span class="hljs-number">333</span>), a.count(<span class="hljs-number">66.25</span>), a.count(<span class="hljs-string">&#x27;x&#x27;</span>))<br><span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.insert(<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.append(<span class="hljs-number">333</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>a<br>[<span class="hljs-number">66.25</span>, <span class="hljs-number">333</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">333</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1234.5</span>, <span class="hljs-number">333</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.index(<span class="hljs-number">333</span>)<br><span class="hljs-number">1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.remove(<span class="hljs-number">333</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>a<br>[<span class="hljs-number">66.25</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">333</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1234.5</span>, <span class="hljs-number">333</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.reverse()<br><span class="hljs-meta">&gt;&gt;&gt; </span>a<br>[<span class="hljs-number">333</span>, <span class="hljs-number">1234.5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">333</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">66.25</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.sort()<br><span class="hljs-meta">&gt;&gt;&gt; </span>a<br>[-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">66.25</span>, <span class="hljs-number">333</span>, <span class="hljs-number">333</span>, <span class="hljs-number">1234.5</span>]<br></code></pre></td></tr></table></figure>
-
-<h4 id="将列表当作栈堆用"><a href="#将列表当作栈堆用" class="headerlink" title="将列表当作栈堆用"></a>将列表当作栈堆用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>stack = [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>stack.append(<span class="hljs-number">6</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>stack.append(<span class="hljs-number">7</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>stack<br>[<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>stack.pop()<br><span class="hljs-number">7</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>stack<br>[<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>stack.pop()<br><span class="hljs-number">6</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>stack.pop()<br><span class="hljs-number">5</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>stack<br>[<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]<br></code></pre></td></tr></table></figure>
-
-<h4 id="将列表当作队列使用"><a href="#将列表当作队列使用" class="headerlink" title="将列表当作队列使用"></a>将列表当作队列使用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><br></code></pre></td></tr></table></figure>
+<h4 id="将文件名后缀修改"><a href="#将文件名后缀修改" class="headerlink" title="将文件名后缀修改"></a>将文件名后缀修改</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> re<br><br>files = os.listdir(<span class="hljs-string">&#x27;.&#x27;</span>)<br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:<br>    <span class="hljs-keyword">if</span> file.endswith(<span class="hljs-string">&#x27;.mp3.lrc&#x27;</span>):<br>        new_file = re.sub(<span class="hljs-string">r&#x27;\.mp3\.lrc$&#x27;</span>,<span class="hljs-string">&#x27;.lrc&#x27;</span>,file)<br>        os.rename(file,new_file)<br>    <span class="hljs-keyword">elif</span> file.endswith(<span class="hljs-string">&#x27;.mp3.vtt&#x27;</span>):<span class="hljs-comment">#如果发现是vtt格式则自动修改为lrc格式</span><br>        new_file = re.sub(<span class="hljs-string">r&#x27;\.mp3\.vtt$&#x27;</span>,<span class="hljs-string">&#x27;.vtt&#x27;</span>,file)<br>        os.rename(file,new_file)<br>    <span class="hljs-keyword">elif</span> file.endswith(<span class="hljs-string">&#x27;.wav.vtt&#x27;</span>):<br>        new_file = re.sub(<span class="hljs-string">r&#x27;\.wav\.vtt$&#x27;</span>,<span class="hljs-string">&#x27;.vtt&#x27;</span>,file)<br>        os.rename(file,new_file)<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -318,7 +313,7 @@
       
         <a href="/tags/Python/" class="print-no-link">#Python</a>
       
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="print-no-link">#数据结构</a>
+        <a href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" class="print-no-link">#批处理</a>
       
     </div>
   
@@ -330,8 +325,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python数据结构</div>
-      <div>https://homovexillues.github.io/2024/02/29/Python数据结构/</div>
+      <div>Python批处理</div>
+      <div>https://homovexillues.github.io/2024/03/05/Python批处理/</div>
     </div>
     <div class="license-meta">
       
@@ -343,7 +338,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月29日</div>
+          <div>2024年3月5日</div>
         </div>
       
       
@@ -375,18 +370,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/05/Python%E6%89%B9%E5%A4%84%E7%90%86/" title="Python批处理">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python批处理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/28/Python%E5%9F%BA%E7%A1%80/" title="Python基础">
-                        <span class="hidden-mobile">Python基础</span>
+                      <a href="/2024/02/29/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="Python数据结构">
+                        <span class="hidden-mobile">Python数据结构</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

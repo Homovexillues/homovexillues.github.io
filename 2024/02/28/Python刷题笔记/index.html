@@ -24,7 +24,7 @@
 <meta property="og:description" content="进制转换 进制转换 描述 写出一个程序，接受一个十六进制的数，输出该数值的十进制表示。 数据范围：保证结果在 1≤n≤2^31−1 输入描述： 输入一个十六进制的数值字符串。 输出描述： 输出该数值的十进制字符串。不同组的测试用例用\n隔开。 示例1 输入： 0xAA 输出： 170  1234567import sysfor line in sys.stdin:# sys.stdin用于获取用户">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-28T02:17:34.186Z">
-<meta property="article:modified_time" content="2024-03-04T06:05:04.676Z">
+<meta property="article:modified_time" content="2024-03-04T07:24:52.271Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.5k 字
+          6.8k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          54 分钟
+          57 分钟
         
       </span>
     
@@ -390,6 +390,25 @@
 <figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">167773121</span><br><span class="hljs-number">10.3.3.193</span><br></code></pre></td></tr></table></figure>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-keyword">try</span>:<span class="hljs-comment"># 用于尝试执行可能会引发异常的代码块</span><br>        ip = <span class="hljs-built_in">input</span>()<span class="hljs-comment">#从用户这里获取一个字符串输入，ip地址</span><br>        num = <span class="hljs-built_in">input</span>()<span class="hljs-comment">#从用户这里获取字符串输入，二进制数</span><br>    <span class="hljs-keyword">except</span>:<br>        <span class="hljs-keyword">break</span><br><br>    <span class="hljs-keyword">else</span>:<span class="hljs-comment">#如果try代码块中代码执行成功，那么将执行else代码块中的代码</span><br>        ip_list = ip.split(<span class="hljs-string">&#x27;.&#x27;</span>)<span class="hljs-comment">#将输入的IP地址字符串按&#x27;.&#x27;分割，得到一个包含四个字符串的列表</span><br>        ip2num = <span class="hljs-built_in">str</span>()<span class="hljs-comment">#初始化一个空字符串，用于存储转换后的二进制数</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> ip_list:<span class="hljs-comment">#遍历其中的每个元素</span><br>            a = <span class="hljs-built_in">bin</span>(<span class="hljs-built_in">int</span>(i,<span class="hljs-number">10</span>))[<span class="hljs-number">2</span>:]<span class="hljs-comment">#将ip地址的一部分从十进制转换为二进制</span><br>            a = <span class="hljs-string">&#x27;0&#x27;</span>*(<span class="hljs-number">8</span>-<span class="hljs-built_in">len</span>(a)) + a <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(a)&lt;<span class="hljs-number">8</span> <span class="hljs-keyword">else</span> a<span class="hljs-comment">#如果二进制数长度小于8，应该在签名添加足够的0，使其长度达到8</span><br>            ip2num += a<span class="hljs-comment">#将转换后的二进制数添加到ip2num结尾</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(ip2num,<span class="hljs-number">2</span>))<span class="hljs-comment">#将ip2num从二进制转化为十进制</span><br>        <span class="hljs-comment"># num to ip</span><br>        num2ip = []<span class="hljs-comment">#初始化一个空列表，用于存储转换后的IP地址</span><br>        num2 = <span class="hljs-built_in">bin</span>(<span class="hljs-built_in">int</span>(num,<span class="hljs-number">10</span>))[<span class="hljs-number">2</span>:]<span class="hljs-comment">#将输入的十进制数转换为二进制数</span><br>        num2 = <span class="hljs-string">&#x27;0&#x27;</span>*(<span class="hljs-number">32</span>-<span class="hljs-built_in">len</span>(num2))+num2 <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(num2)&lt;<span class="hljs-number">32</span> <span class="hljs-keyword">else</span> num2<br>        <span class="hljs-comment">#如果二进制数长度小于32，那么在签名添加0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):<span class="hljs-comment">#进行四次循环，每次循环处理二进制数的一部分</span><br>            b = num2[<span class="hljs-number">8</span>*i:<span class="hljs-number">8</span>*i+<span class="hljs-number">8</span>]<br>            b = <span class="hljs-built_in">str</span>(<span class="hljs-built_in">int</span>(b,<span class="hljs-number">2</span>))<span class="hljs-comment">#将而仅是数的这一部分从二进制转换为十进制</span><br>            num2ip.append(b)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;.&#x27;</span>.join(num2ip))<span class="hljs-comment">#将num2ip列表中的元素使用.连接起来，形成字符串，最后打印出来</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="输入整型数组和排序标识，对其元素按照升序或降序进行排序"><a href="#输入整型数组和排序标识，对其元素按照升序或降序进行排序" class="headerlink" title="输入整型数组和排序标识，对其元素按照升序或降序进行排序"></a>输入整型数组和排序标识，对其元素按照升序或降序进行排序</h2><blockquote>
+<h3 id="输入描述：-3"><a href="#输入描述：-3" class="headerlink" title="输入描述："></a>输入描述：</h3><p>第一行输入数组元素个数<br>第二行输入待排序的数组，每个数用空格隔开<br>第三行输入一个整数0或1。0代表升序排序，1代表降序排序</p>
+<h3 id="输出描述：-3"><a href="#输出描述：-3" class="headerlink" title="输出描述："></a>输出描述：</h3><p>输出排好序的数字</p>
+<h2 id="示例1-4"><a href="#示例1-4" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">8</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">55</span> <span class="hljs-number">64</span> <span class="hljs-number">25</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">9</span> <span class="hljs-number">25</span> <span class="hljs-number">55</span> <span class="hljs-number">64</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="示例2-2"><a href="#示例2-2" class="headerlink" title="示例2"></a>示例2</h2><p>输入：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">n = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br>ls = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split()))<br>rnk = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br><span class="hljs-keyword">if</span> rnk == <span class="hljs-number">0</span>:<br>    ls.sort()<br>    ls = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">str</span>,ls)<span class="hljs-comment">#需要转成字符串才能拼接</span><br><span class="hljs-keyword">elif</span> rnk == <span class="hljs-number">1</span>:<br>    ls.sort(reverse=<span class="hljs-literal">True</span>)<br>    ls = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">str</span>,ls)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27; &#x27;</span>.join(ls))<br></code></pre></td></tr></table></figure>
+
+
 
 
 
