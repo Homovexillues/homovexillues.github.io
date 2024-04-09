@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>报错和警告</title>
+    <link href="/2024/04/09/%E6%8A%A5%E9%94%99%E5%92%8C%E8%AD%A6%E5%91%8A/"/>
+    <url>/2024/04/09/%E6%8A%A5%E9%94%99%E5%92%8C%E8%AD%A6%E5%91%8A/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="warning"><a href="#warning" class="headerlink" title="warning"></a>warning</h2><ul><li><pre><code class="hljs">warning: in the working copy of &#39;tags/index.html&#39;, LF will be replaced by CRLF the next time Git touches it<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br>- 这个警告是关于 Git 处理换行符的。在 Unix 系统（如 Linux 或 Mac）中，文本文件的行通常以 LF (Line Feed) 结尾，而在 Windows 中，它们通常以 CRLF (Carriage <span class="hljs-keyword">Return</span> Line Feed) 结尾。<br><br>- Git 有一个叫做 `core.autocrlf` 的设置，它可以帮助在不同系统间转换这些换行符。如果你在 Windows 上看到这个警告，那可能是因为你的 `core.autocrlf` 设置为 `true`。这意味着当你检出代码时，Git 会把 LF 转换为 CRLF，当你提交代码时，Git 会把 CRLF 转换回 LF。<br>- **这个警告的意思是**，当 Git 下一次触碰到 ‘tags/index.html’ 文件时，它会把文件中的 LF 换行符替换为 CRLF。这通常不会影响你的工作，除非你正在和期望保持 LF 换行符的系统（如某些 Unix 系统）共享代码。<br><br>- 如果你想关闭这个警告，你可以设置 `core.autocrlf` 为 `input`（在 Unix 系统上）或 `false`（在 Windows 系统上）。这样 Git 就不会试图转换换行符了。你可以用以下命令来改变这个设置：<br><br>  ```bash<br>  git config --global core.autocrlf <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>- 但是请注意，这可能会影响到你与其他系统共享代码的能力。在改变这个设置之前，最好先了解一下它的后果。如果你正在一个团队中工作，那么最好与你的团队成员商量一下这个设置应该设为什么。如果你是独自工作，那么你可以根据你的需要来设置。如果你不确定，那么保持默认设置（`core.autocrlf=true` 在 Windows 上，`core.autocrlf=input` 在 Unix 上）通常是最安全的选择。</code></pre></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Microsoft Learn C-sharp 第二部分</title>
     <link href="/2024/04/06/Microsoft%20Learn%20C-sharp%20%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/"/>
     <url>/2024/04/06/Microsoft%20Learn%20C-sharp%20%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/</url>
