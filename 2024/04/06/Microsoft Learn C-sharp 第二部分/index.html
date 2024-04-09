@@ -19,12 +19,12 @@
     <meta name="description" content="安装并配置Visual Studio Code学习目标 下载并安装Visual Studio Code 检查Visual Studio Code用户界面 配置Visual Studio Code以使用C#扩展 安装.NET运行库 构建并运行控制台应用程序  练习-安装.NET SDK.NET是一个跨平台的开源开发人员平台 检查是否已安装.NET终端输入dotnet --version 安装.NET">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Microsoft Learn C-sharp 第二部分">
-<meta property="og:url" content="https://homovexillues.github.io/2024/04/05/Microsoft%20Learn%20C-sharp%20%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/index.html">
+<meta property="og:url" content="https://homovexillues.github.io/2024/04/06/Microsoft%20Learn%20C-sharp%20%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/index.html">
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="安装并配置Visual Studio Code学习目标 下载并安装Visual Studio Code 检查Visual Studio Code用户界面 配置Visual Studio Code以使用C#扩展 安装.NET运行库 构建并运行控制台应用程序  练习-安装.NET SDK.NET是一个跨平台的开源开发人员平台 检查是否已安装.NET终端输入dotnet --version 安装.NET">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-05T07:38:06.877Z">
-<meta property="article:modified_time" content="2024-04-05T08:23:52.508Z">
+<meta property="article:published_time" content="2024-04-06T11:02:23.063Z">
+<meta property="article:modified_time" content="2024-04-06T10:14:29.000Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="C-sharp">
 <meta name="twitter:card" content="summary_large_image">
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-05 15:38" pubdate>
-          2024年4月5日 下午
+        <time datetime="2024-04-06 19:02" pubdate>
+          2024年4月6日 晚上
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          703 字
+          2.5k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          6 分钟
+          22 分钟
         
       </span>
     
@@ -303,7 +303,43 @@
 <p>运行应用程序可用以下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dotnet run<br></code></pre></td></tr></table></figure>
 
-<h1 id="使用C-从-NET类库调用方法"><a href="#使用C-从-NET类库调用方法" class="headerlink" title="使用C#从.NET类库调用方法"></a>使用C#从.NET类库调用方法</h1>
+<h1 id="使用C-从-NET类库调用方法"><a href="#使用C-从-NET类库调用方法" class="headerlink" title="使用C#从.NET类库调用方法"></a>使用C#从.NET类库调用方法</h1><p>类库就像是巫师的魔法书一样，当然，前提是你施法必须有魔法书，或者法杖。</p>
+<h3 id="学习目标-1"><a href="#学习目标-1" class="headerlink" title="学习目标"></a>学习目标</h3><ul>
+<li>编写用于调用.NET类库中的方法的代码。</li>
+<li>使用.NET类库类的新实例，以调用维护状态的方法。</li>
+<li>使用Visual Studio Code中的Intellisense深入了解方法，包括其重载版本、其返回值类型及其输入参数数据类型。</li>
+<li>使用learn.microsoft.com来研究方法的作用、其重载版本、其返回类型、其输入参数和每个参数所代表的内容等等。</li>
+</ul>
+<h2 id="NET库入门"><a href="#NET库入门" class="headerlink" title=".NET库入门"></a>.NET库入门</h2><p>当需要.NET运行时，用于在最终用户的计算机上执行代码时托管并管理代码。还将依赖于.NET类库，这是一个科长应用程序中使用的预先编写的编码资源集合。此单元介绍.NET类库的定义以及该类库对C#编程语言的补充方式。</p>
+<h3 id="什么是-NET类库？"><a href="#什么是-NET类库？" class="headerlink" title="什么是.NET类库？"></a>什么是.NET类库？</h3><p>包含上千万个方法的数以千计的类的集合。如.NET类库包含<code>Console</code>类，供处理控制台应用程序的开发人员使用。<code>Console</code>类包含用于输入和输出操作的方法，如<code>Write()</code>、<code>WriteLine()</code>、<code>Read()</code>、<code>ReadLine()</code>等。</p>
+<p>可以将类视为魔法书，法师通常需要将相关咒语保留在一本书中。</p>
+<p>在许多情况下，可使用这些类和方法构建特定类型的应用程序。例如，可使用包含类和方法的一个较大子集创建动态Web应用程序。还存在好几个系列的类，使你能生成本机桌面应用程序，可使用另一个类和方法的子集访问数据库。.NET类库中有许多支持特定类型的应用程序的类。</p>
+<h3 id="甚至数据类型也是-NET类型库的一部分"><a href="#甚至数据类型也是-NET类型库的一部分" class="headerlink" title="甚至数据类型也是.NET类型库的一部分"></a>甚至数据类型也是.NET类型库的一部分</h3><p>C#数据类型，例如(<code>string</code>和<code>int</code>)实际上是通过.NET类库中的类提供的。C#语言会屏蔽数据类型和.NET类之间的连接，以简化工作。但在幕后，数据类型的实现方式与.NET类库中的每个其他类都一样。此连接为日常变量提供了非常有用的内置方法。</p>
+<h3 id="如何在-NET类库中查找所需的内容"><a href="#如何在-NET类库中查找所需的内容" class="headerlink" title="如何在.NET类库中查找所需的内容"></a>如何在.NET类库中查找所需的内容</h3><p>就像在图书馆中看书一样，你不会知道图书馆中所有区域是怎样的，但是如果你比较喜欢一类的书，你会对那部分比较熟悉。</p>
+<h2 id="练习-调用-NET类的方法"><a href="#练习-调用-NET类的方法" class="headerlink" title="练习-调用.NET类的方法"></a>练习-调用.NET类的方法</h2><h3 id="调用-NET类库中不同种类的方法"><a href="#调用-NET类库中不同种类的方法" class="headerlink" title="调用.NET类库中不同种类的方法"></a>调用.NET类库中不同种类的方法</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs C#">Random dice = <span class="hljs-keyword">new</span> Random();<br><span class="hljs-built_in">int</span> roll = dice.Next(<span class="hljs-number">1</span>,<span class="hljs-number">7</span>);<br>Console.WriteLine(roll);<br></code></pre></td></tr></table></figure>
+
+<p>在最后一句的代码中，包括对<code>Console</code>类的引用并直接调用<code>Console.WriteLine()</code>方法。不过，使用另一种技术调用<code>Random.Next()</code>方法。使用两种不同的技术进行调用的原因是，有些方法是有状态的，有些方法是无状态的，下一步是检查有状态方法和无状态方法之间的差异。</p>
+<h3 id="有状态方法和无状态方法"><a href="#有状态方法和无状态方法" class="headerlink" title="有状态方法和无状态方法"></a>有状态方法和无状态方法</h3><p>在软件开发项目中，“状态”这个词用于描述执行环境在特定时刻的状态。代码逐行执行时，值存储在变量中在执行过程中的任何时候，应用程序当前的状态为存储在内存中的所有值的集合。</p>
+<p>某些方法的正常工作不依赖于应用程序当前的状态。换言之，实现<strong>无状态方法</strong>是为了在不引用或更改内存中存储的任何值的情况下正常工作。无状态方法也被称为<strong>静态方法</strong>。</p>
+<p>例如<code>Console.WriteLine()</code>方法不依赖于内存中存储的任何值。该方法执行其函数并完成工作，而不会以任何方式影响应用程序的状态。</p>
+<p>但是，其他方法必须有权访问应用程序的状态，才能正常工作。换言之，有状态方法的构建方式使得这些方法依赖于先前已执行的代码行存储在内存中的值。或者，有状态方法通过更新值或新值存储在内存中来修改应用程序的状态。它们也称为<strong>实例方法</strong>。</p>
+<p>有状态（实例方法）在字段中跟踪方法的状态，这些字段是在类上定义的变量。对于存储状态的这些字段，类的每个新实例都将获取其自己的副本。</p>
+<p>单个类可支持有状态方法和 无状态方法。但是，需要调用有状态方法时，唏嘘首先创建类的实例，这样方法才能访问状态。</p>
+<h3 id="创建类的实例"><a href="#创建类的实例" class="headerlink" title="创建类的实例"></a>创建类的实例</h3><p>类的实例称为对象。若要创建类的新实例，请使用<code>new</code>运算符。</p>
+<p>下面这行代码可以创建<code>Random</code>类的新实例，以此创建名为<code>dice</code>的新对象</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#">Random dice = <span class="hljs-keyword">new</span> Random();<br></code></pre></td></tr></table></figure>
+
+<p><code>new</code>运算符执行以下几项重要操作</p>
+<ul>
+<li>首先请求足够大的计算机内存地址，用于存储基于<code>Random</code>类的新对象</li>
+<li>创建新的对象，并将其存储在内存地址上</li>
+<li>返回内存地址，使其保存在<code>dice</code>变量中</li>
+</ul>
+<p>从此时起，引用<code>dice</code>变量时，.NET运行时在幕后执行查找操作，这会造成一种直接使用对象本身的假象。</p>
+<p>使用最新版本的.NET运行时可以实例化对象，而无需重复类型名称（目标类型的构造函数调用）。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#">Random dice = <span class="hljs-keyword">new</span>();<br></code></pre></td></tr></table></figure>
+
+<h3 id="为什么Next-方法是有状态的"><a href="#为什么Next-方法是有状态的" class="headerlink" title="为什么Next()方法是有状态的"></a>为什么Next()方法是有状态的</h3>
                 
               </div>
             
@@ -349,7 +385,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Microsoft Learn C-sharp 第二部分</div>
-      <div>https://homovexillues.github.io/2024/04/05/Microsoft Learn C-sharp 第二部分/</div>
+      <div>https://homovexillues.github.io/2024/04/06/Microsoft Learn C-sharp 第二部分/</div>
     </div>
     <div class="license-meta">
       
@@ -361,7 +397,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年4月5日</div>
+          <div>2024年4月6日</div>
         </div>
       
       
