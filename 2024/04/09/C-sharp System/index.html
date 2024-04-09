@@ -16,22 +16,22 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta name="description" content="类型关键字using 关键字任何C#程序中的第一条语句都是： 1using System;  using关键字用于在程序中包含命名空间。一个程序可以包含多个using语句 using语句-确保正确使用可释放对象 当控件离开using语句块时，将释放获取的IDisposable实例。 访问关键字basebase关键字用于从派生类中访问基类的成员。在执行以下操作的时候使用它：  调用基类上已被其他方法">
+    <meta name="description" content="IDisposable示例： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293using Sy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C-sharp进阶">
-<meta property="og:url" content="https://homovexillues.github.io/2024/04/02/C-sharp%E8%BF%9B%E9%98%B6/index.html">
+<meta property="og:title" content="C-sharp System">
+<meta property="og:url" content="https://homovexillues.github.io/2024/04/09/C-sharp%20System/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="类型关键字using 关键字任何C#程序中的第一条语句都是： 1using System;  using关键字用于在程序中包含命名空间。一个程序可以包含多个using语句 using语句-确保正确使用可释放对象 当控件离开using语句块时，将释放获取的IDisposable实例。 访问关键字basebase关键字用于从派生类中访问基类的成员。在执行以下操作的时候使用它：  调用基类上已被其他方法">
+<meta property="og:description" content="IDisposable示例： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293using Sy">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-02T02:14:04.609Z">
-<meta property="article:modified_time" content="2024-04-09T07:34:14.233Z">
+<meta property="article:published_time" content="2024-04-09T07:26:02.817Z">
+<meta property="article:modified_time" content="2024-04-09T07:32:15.651Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="C-sharp">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>C-sharp进阶 - 红石门</title>
+  <title>C-sharp System - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="C-sharp进阶"></span>
+            <span id="subtitle" data-typed-text="C-sharp System"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-02 10:14" pubdate>
-          2024年4月2日 上午
+        <time datetime="2024-04-09 15:26" pubdate>
+          2024年4月9日 下午
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          1.7k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          19 分钟
+          15 分钟
         
       </span>
     
@@ -268,37 +268,15 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">C-sharp进阶</h1>
+            <h1 id="seo-header">C-sharp System</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h4 id="using-关键字"><a href="#using-关键字" class="headerlink" title="using 关键字"></a>using 关键字</h4><p>任何C#程序中的第一条语句都是：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> System;<br></code></pre></td></tr></table></figure>
-
-<p><strong>using</strong>关键字用于在程序中包含命名空间。一个程序可以包含多个using语句</p>
-<p>using语句-确保正确使用可释放对象</p>
-<p>当控件离开using语句块时，将释放获取的<a href="">IDisposable</a>实例。</p>
-<h3 id="访问关键字"><a href="#访问关键字" class="headerlink" title="访问关键字"></a>访问关键字</h3><h4 id="base"><a href="#base" class="headerlink" title="base"></a>base</h4><p><code>base</code>关键字用于从派生类中访问基类的成员。在执行以下操作的时候使用它：</p>
-<ul>
-<li>调用基类上已被其他方法重写的方法</li>
-<li>指定创建派生类实例时调用的基类构造函数</li>
-</ul>
-<p>仅允许基类访问在构造函数、实例方法和实例属性访问器中进行。</p>
-<p>在静态方法中使用<code>base</code>关键字将产生错误。</p>
-<p>所访问的基类是类声明中指定的基类，如果指定<code>class ClassB:ClassA</code>则从ClassB访问ClassA的成员，而不考虑ClassA基类。</p>
-<h5 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h5><p>在此示例中，基类 <code>Person</code> 和派生类 <code>Employee</code> 都有一个名为 <code>GetInfo</code> 的方法。 通过使用 <code>base</code> 关键字，可以从派生类中调用基类的 <code>GetInfo</code> 方法。</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Person</span><br>&#123;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">string</span> ssn = <span class="hljs-string">&quot;444-55-6666&quot;</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">string</span> name = <span class="hljs-string">&quot;John L. Malgraine&quot;</span>;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">GetInfo</span>()</span><br>    &#123;<br>        Console.WriteLine(<span class="hljs-string">&quot;Name: &#123;0&#125;&quot;</span>, name);<br>        Console.WriteLine(<span class="hljs-string">&quot;SSN: &#123;0&#125;&quot;</span>, ssn);<br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> : <span class="hljs-title">Person</span><br>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> id = <span class="hljs-string">&quot;ABC567EFG&quot;</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">GetInfo</span>()</span><br>    &#123;<br>        <span class="hljs-comment">// Calling the base class GetInfo method:</span><br>        <span class="hljs-keyword">base</span>.GetInfo();<br>        Console.WriteLine(<span class="hljs-string">&quot;Employee ID: &#123;0&#125;&quot;</span>, id);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>    &#123;<br>        Employee E = <span class="hljs-keyword">new</span> Employee();<br>        E.GetInfo();<br>    &#125;<br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">Output</span><br><span class="hljs-comment">Name: John L. Malgraine</span><br><span class="hljs-comment">SSN: 444-55-6666</span><br><span class="hljs-comment">Employee ID: ABC567EFG</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h5><p>本示例显示如何指定在创建派生类实例时调用的基类构造函数。</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">BaseClass</span><br>&#123;<br>    <span class="hljs-built_in">int</span> num;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BaseClass</span>()</span><br>    &#123;<br>        Console.WriteLine(<span class="hljs-string">&quot;in BaseClass()&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BaseClass</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i</span>)</span><br>    &#123;<br>        num = i;<br>        Console.WriteLine(<span class="hljs-string">&quot;in BaseClass(int i)&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">GetNum</span>()</span><br>    &#123;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DerivedClass</span> : <span class="hljs-title">BaseClass</span><br>&#123;<br>    <span class="hljs-comment">// This constructor will call BaseClass.BaseClass()</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DerivedClass</span>() : <span class="hljs-title">base</span>()</span><br>    &#123;<br>    &#125;<br><br>    <span class="hljs-comment">// This constructor will call BaseClass.BaseClass(int i)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DerivedClass</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i</span>) : <span class="hljs-title">base</span>(<span class="hljs-params">i</span>)</span><br>    &#123;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>    &#123;<br>        DerivedClass md = <span class="hljs-keyword">new</span> DerivedClass();<br>        DerivedClass md1 = <span class="hljs-keyword">new</span> DerivedClass(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">Output:</span><br><span class="hljs-comment">in BaseClass()</span><br><span class="hljs-comment">in BaseClass(int i)</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><h2 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h2><h3 id="await运算符"><a href="#await运算符" class="headerlink" title="await运算符"></a>await运算符</h3><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h3 id="声明语句"><a href="#声明语句" class="headerlink" title="声明语句"></a>声明语句</h3><h3 id="异常处理语句"><a href="#异常处理语句" class="headerlink" title="异常处理语句"></a>异常处理语句</h3><h3 id="迭代语句"><a href="#迭代语句" class="headerlink" title="迭代语句"></a>迭代语句</h3><h3 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h3><h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h3 id="checked和unchecked语句"><a href="#checked和unchecked语句" class="headerlink" title="checked和unchecked语句"></a>checked和unchecked语句</h3><h3 id="fixed语句"><a href="#fixed语句" class="headerlink" title="fixed语句"></a>fixed语句</h3><h3 id="lock语句"><a href="#lock语句" class="headerlink" title="lock语句"></a>lock语句</h3><h3 id="using语句"><a href="#using语句" class="headerlink" title="using语句"></a>using语句</h3><p><code>using</code>语句可确保正确使用IDsposable实例：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">var</span> numbers = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-built_in">int</span>&gt;();<br><span class="hljs-keyword">using</span> (StreamReader reader = File.OpenText(<span class="hljs-string">&quot;number.txt&quot;</span>))<br>&#123;<br>    <span class="hljs-built_in">string</span> lien;<br>    <span class="hljs-keyword">while</span> ((line = reader.ReadLine()) <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">int</span>.TryParse(line, <span class="hljs-keyword">out</span> <span class="hljs-built_in">int</span> number))<br>        &#123;<br>            numbers.Add(number);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="IDisposable"><a href="#IDisposable" class="headerlink" title="IDisposable"></a>IDisposable</h1><p>示例：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> System;<br><span class="hljs-keyword">using</span> System.ComponentModel;<br><br><span class="hljs-comment">// 以下示例演示了如何创建一个实现 IDisposable 接口</span><br><span class="hljs-comment">// 和 IDisposable.Dispose 方法的资源类。</span><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DisposeExample</span><br>&#123;<br>    <span class="hljs-comment">// 实现 IDisposable 的基类。</span><br>    <span class="hljs-comment">// 通过实现 IDisposable，你在声明</span><br>    <span class="hljs-comment">// 这种类型的实例分配了稀缺资源。</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyResource</span>: <span class="hljs-title">IDisposable</span><br>    &#123;<br>        <span class="hljs-comment">// 指向外部非托管资源的指针。</span><br>        <span class="hljs-keyword">private</span> IntPtr handle;<br>        <span class="hljs-comment">// 此类使用的其他托管资源。</span><br>        <span class="hljs-keyword">private</span> Component component = <span class="hljs-keyword">new</span> Component();<br>        <span class="hljs-comment">// 跟踪是否已调用 Dispose。</span><br>        <span class="hljs-keyword">private</span> <span class="hljs-built_in">bool</span> disposed = <span class="hljs-literal">false</span>;<br><br>        <span class="hljs-comment">// 类构造函数。</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyResource</span>(<span class="hljs-params">IntPtr handle</span>)</span><br>        &#123;<br>            <span class="hljs-keyword">this</span>.handle = handle;<br>        &#125;<br><br>        <span class="hljs-comment">// 实现 IDisposable。</span><br>        <span class="hljs-comment">// 不要使此方法成为虚方法。</span><br>        <span class="hljs-comment">// 派生类不应能够重写此方法。</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Dispose</span>()</span><br>        &#123;<br>            Dispose(disposing: <span class="hljs-literal">true</span>);<br>            <span class="hljs-comment">// 此对象将由 Dispose 方法清理。</span><br>            <span class="hljs-comment">// 因此，你应该调用 GC.SuppressFinalize 来</span><br>            <span class="hljs-comment">// 将此对象从终结队列中取出</span><br>            <span class="hljs-comment">// 并防止此对象的终结代码</span><br>            <span class="hljs-comment">// 执行第二次。</span><br>            GC.SuppressFinalize(<span class="hljs-keyword">this</span>);<br>        &#125;<br><br>        <span class="hljs-comment">// Dispose(bool disposing) 在两种不同的场景中执行。</span><br>        <span class="hljs-comment">// 如果 disposing 等于 true，该方法已直接或间接</span><br>        <span class="hljs-comment">// 由用户的代码调用。可以处置托管和非托管资源。</span><br>        <span class="hljs-comment">// 如果 disposing 等于 false，该方法已由运行时从</span><br>        <span class="hljs-comment">// 终结器内部调用，你不应引用其他对象。只能处置非托管资源。</span><br>        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Dispose</span>(<span class="hljs-params"><span class="hljs-built_in">bool</span> disposing</span>)</span><br>        &#123;<br>            <span class="hljs-comment">// 检查是否已调用 Dispose。</span><br>            <span class="hljs-keyword">if</span>(!<span class="hljs-keyword">this</span>.disposed)<br>            &#123;<br>                <span class="hljs-comment">// 如果 disposing 等于 true，处置所有托管</span><br>                <span class="hljs-comment">// 和非托管资源。</span><br>                <span class="hljs-keyword">if</span>(disposing)<br>                &#123;<br>                    <span class="hljs-comment">// 处置托管资源。</span><br>                    component.Dispose();<br>                &#125;<br><br>                <span class="hljs-comment">// 在此处调用适当的方法来清理</span><br>                <span class="hljs-comment">// 非托管资源。</span><br>                <span class="hljs-comment">// 如果 disposing 为 false，</span><br>                <span class="hljs-comment">// 只执行以下代码。</span><br>                CloseHandle(handle);<br>                handle = IntPtr.Zero;<br><br>                <span class="hljs-comment">// 注意已进行处置。</span><br>                disposed = <span class="hljs-literal">true</span>;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// 使用互操作调用必要的方法</span><br>        <span class="hljs-comment">// 来清理非托管资源。</span><br>        [<span class="hljs-meta">System.Runtime.InteropServices.DllImport(<span class="hljs-string">&quot;Kernel32&quot;</span>)</span>]<br>        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">extern</span> <span class="hljs-keyword">static</span> Boolean <span class="hljs-title">CloseHandle</span>(<span class="hljs-params">IntPtr handle</span>)</span>;<br><br>        <span class="hljs-comment">// 使用 C# 终结器语法进行终结代码。</span><br>        <span class="hljs-comment">// 此终结器只会在未调用 Dispose 方法时运行。</span><br>        <span class="hljs-comment">// 它给予你的基类机会进行终结。</span><br>        <span class="hljs-comment">// 不要在此类派生的类型中提供终结器。</span><br>        ~MyResource()<br>        &#123;<br>            <span class="hljs-comment">// 不要在此处重新创建 Dispose 清理代码。</span><br>            <span class="hljs-comment">// 调用 Dispose(disposing: false) 在可读性和可维护性方面是最佳的。</span><br>            Dispose(disposing: <span class="hljs-literal">false</span>);<br>        &#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>    &#123;<br>        <span class="hljs-comment">// 在此处插入代码以创建</span><br>        <span class="hljs-comment">// 并使用 MyResource 对象。</span><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
 
-
-<h3 id="yield语句"><a href="#yield语句" class="headerlink" title="yield语句"></a>yield语句</h3><h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><h2 id="编译器读取的属性"><a href="#编译器读取的属性" class="headerlink" title="编译器读取的属性"></a>编译器读取的属性</h2><h2 id="编译器选项"><a href="#编译器选项" class="headerlink" title="编译器选项"></a>编译器选项</h2>
                 
               </div>
             
@@ -343,8 +321,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>C-sharp进阶</div>
-      <div>https://homovexillues.github.io/2024/04/02/C-sharp进阶/</div>
+      <div>C-sharp System</div>
+      <div>https://homovexillues.github.io/2024/04/09/C-sharp System/</div>
     </div>
     <div class="license-meta">
       
@@ -356,7 +334,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年4月2日</div>
+          <div>2024年4月9日</div>
         </div>
       
       
@@ -388,18 +366,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/03/Visual%20Studio%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="Visual Studio快捷键">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Visual Studio快捷键</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/31/Python%E5%BA%93-json/" title="Python库-json">
-                        <span class="hidden-mobile">Python库-json</span>
+                      <a href="/2024/04/09/C-sharp%E5%AE%9E%E4%BE%8B/" title="C-sharp实例">
+                        <span class="hidden-mobile">C-sharp实例</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
