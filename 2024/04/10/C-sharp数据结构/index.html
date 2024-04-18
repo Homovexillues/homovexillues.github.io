@@ -24,7 +24,7 @@
 <meta property="og:description" content="基于《Hello 算法》项目的学习笔记。 数组与链表数组12int[] arr &#x3D; new int[5];&#x2F;&#x2F;[0,0,0,0,0]int[] nums &#x3D; [1,2,3,4,5];   索引本质上是内存地址的偏移量 数组的长度是不可变的 如果希望扩容数组，就只能重新建立一个更大的数组，然后把原数组元素依次复制到新数组。   数组的插入和删除操作有以下缺点 时间复杂度高：评价时间复杂度为O(n),">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-10T03:11:07.529Z">
-<meta property="article:modified_time" content="2024-04-12T03:22:32.042Z">
+<meta property="article:modified_time" content="2024-04-18T14:56:58.270Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="C-sharp">
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.3k 字
+          5.4k 字
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          36 分钟
+          46 分钟
         
       </span>
     
@@ -407,6 +407,54 @@
 </ul>
 <h3 id="内存与缓存"><a href="#内存与缓存" class="headerlink" title="内存与缓存"></a>内存与缓存</h3><p>数组和链表分别代表了“连续存储”和“分散存储”两种物理结构。</p>
 <p>实际上，<strong>物理结构在很大程度上决定了程序对内存和缓存的使用效率</strong>，进而影响算法程序的整体性能。</p>
+<table>
+<thead>
+<tr>
+<th>硬盘</th>
+<th>内存</th>
+<th>缓存</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>长期存储数据，包括操作系统，程序，文件等</td>
+<td>临时存储当前运行的程序和数据</td>
+<td>存储经常访问的数据和指令，减少CPU访问内存次数</td>
+</tr>
+<tr>
+<td>断电后数据不会消失</td>
+<td>断电后数据丢失</td>
+<td>断电后数据丢失</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>硬盘难以被内存取代</strong></li>
+<li><strong>缓存的大容量和高速度难以兼得</strong><ul>
+<li>随着L1、L2、L3缓存容量的逐步增大，其<strong>物理尺寸会变大，与CPU之间的物理举例会变远</strong>，从而导致数据传输时间增加，元素访问延迟变高。在当前技术下，多层级的缓存结构是容量、速度和成本之间的最佳平衡点。</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据结构的内存效率"><a href="#数据结构的内存效率" class="headerlink" title="数据结构的内存效率"></a>数据结构的内存效率</h3><ul>
+<li><strong>内存是有限的，且同一块内存不能被多个程序共享</strong>，因此我们希望数据结构更高效地使用内存空间。数组不需要存储指针，明显空间效率更高，然而因其需要一次性申请大量内存，可能导致内存浪费，数组扩容也需要额外的时间和空间成本。相比之下链表以节点为单位进行内存分配和回收，提供了更大的灵活性。</li>
+<li>在程序运行时，<strong>随着仿佛申请和释放内存，空闲内存的碎片化程度会越来越高</strong>，从而导致内存的利用效率降低。</li>
+</ul>
+<h3 id="数据结构的缓存效率"><a href="#数据结构的缓存效率" class="headerlink" title="数据结构的缓存效率"></a>数据结构的缓存效率</h3><p>由于缓存的容量有限，只能存储一小部分频繁访问的数据，因此当CPU尝试访问的数据不在缓存中时，就会发生<strong>缓存未命中 cache miss</strong>，此时CPU不得不从速度较慢的内存中加载所需数据。</p>
+<p><strong>缓存未命中越少，CPU读写数据的效率就越高</strong>，程序性能也就越好。将CPU从缓存中成功获取数据的比例称为<strong>缓存命中率 cache hit rate</strong>,这个指标通常用来衡量缓存效率。</p>
+<p>为了尽可能达到更高的效率，缓存会采取以下数据加载机制：</p>
+<ul>
+<li><strong>缓存行</strong>：缓存不是单个字节地存储与加载数据，而是以缓存行为单位。相比于单个字节的传输，缓存行的传输形式更加高效。</li>
+<li><strong>预取机制</strong>：处理器会尝试预测数据访问模式（如顺序访问、固定步长跳跃访问等），并根据特定模式将数据加载至缓存之中，从而提升命中率。</li>
+<li><strong>空间局部性</strong>:如果一个数据被访问，则它附近的数据可能近期也会被访问。因此，缓存加载某一数据时，也会加载其附近的数据，以提高命中率。</li>
+<li><strong>时间局部性</strong>:如果一个数据被访问，则其未来也很可能被访问，因此缓存利用 这一原理保留最近访问过的数据以提升访问率。</li>
+</ul>
+<p><strong>数组和链表对缓存的利用效率是不同的</strong></p>
+<ul>
+<li><strong>占用空间</strong>：因为要存指针，因此同样量的有效数据空间占比链表更多</li>
+<li><strong>缓存行</strong>：链表物理地址不相邻，但缓存行是<strong>按行加载</strong>的，因此数组更有优势</li>
+<li><strong>预取机制</strong>：数组比链表的数据访问模式更具有”可预测性“，即系统更容易猜出即将被加载的数据。</li>
+<li><strong>空间局部性</strong>：因为数组存储的物理地址是相邻的，被加载数据附近的数据更有可能被加载到。</li>
+</ul>
+<p>因此，<strong>数组具有更高的缓存命中率，因此它在操作效率上通常优于链表</strong>。这使得在解决算法问题时，基于数组实现的数据结构往往更受欢迎。</p>
+<p>但是值得注意的是，<strong>高缓存效率并不意味着数组在所有情况下都优于链表</strong>。，例如数组和链表都可以实现栈，但它们适用于不同的场景。</p>
 <h1 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h1><p>栈是只有一头开口的羽毛球筒，队列是两头开口的羽毛球筒。</p>
 <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ul>
 <li><p>常用的栈操作命名为<code>push()</code>入栈,<code>pop()</code>出栈,<code>peek()</code>访问栈顶元素。</p>
