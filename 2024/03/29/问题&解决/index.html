@@ -24,7 +24,7 @@
 <meta property="og:description" content="什么是安装钩子和配置钩子？  .db文件是啥  .db文件是数据库文件，通常用于存储和管理数据   方法和函数的区别是什么？  一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C++中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-29T01:51:22.492Z">
-<meta property="article:modified_time" content="2024-04-16T08:07:24.713Z">
+<meta property="article:modified_time" content="2024-04-17T08:41:04.079Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6k 字
+          6.8k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          50 分钟
+          58 分钟
         
       </span>
     
@@ -313,6 +313,7 @@
 <li><p><code>///&lt;summary&gt;...&lt;/summary&gt;</code>写法是什么意思？</p>
 <ul>
 <li>这是一种特殊的注释，被称为XML文档注释，这种注释可以被VisualStudio的IntelliSense（智能感知）和其他工具用来生成代码的文档</li>
+<li>可以在属性、方法等前面输入&#x2F;&#x2F;&#x2F;来自动生成这种注释</li>
 </ul>
 </li>
 <li><p><code>using</code>关键字有什么用</p>
@@ -505,6 +506,28 @@ public void YourMethod()
 </ul>
 </li>
 <li><p>C#抽象类，接口和普通类各自有什么使用环境？</p>
+</li>
+<li><p>.yaml .json .xml文件格式各自用于做什么？有什么使用上要注意的事？</p>
+<ul>
+<li><strong>JSON（JavaScript Object Notation）</strong>：json简介易读，适用于API的请求和响应。它是一种轻量级的数据交换格式，易于人阅读和编写，同时也易于机器解析和生成。JSON采用完全独立于语言的文本格式，使得JSON成为理想的数据交换语言。</li>
+<li><strong>XML(eXtensible Markup Language)</strong>: XML具有跨平台和跨语言的优点，适用于Web服务和RSS源。它是一种标记语言，可以用来编码文档和数据。XML的设计目标是强调通用性和简单性。尽管XML的使用在web上的数据序列化的用途已经减少，但它仍然被广泛用于存储和传输数据。</li>
+<li><strong>YAML(YAML Ain’t Markup Language)<strong>：YAML适合用于需要人类可读的数据表示场景，如配置文件和日志文件。YAML是一种人类友好的数据序列化标注，它允许在不同语言之间交换数据。</strong>YAML是对JSON的超集，因此任何JSON文件都应该能够用YAML解析器解析</strong>。</li>
+<li>XML用<strong>标记</strong>来定义结构数据，就像html那样</li>
+<li>YAML使用<strong>缩进</strong>来定义结构化数据。就像python</li>
+<li>JSON使用的是<strong>冒号和大括号</strong>来定义结构化数据</li>
+<li><strong>数据传输</strong>的时候，XML和JSON很常见，尤其是<strong>JSON</strong>，在<strong>API</strong>的开发中变得非常普及</li>
+<li><strong>文件大小</strong>上来说，同样的<strong>数据集</strong>。<strong>YAML文件最小，JSON次之，XML最大</strong></li>
+<li><strong>学习难度上来说</strong>，<strong>YAML最难，JSON和XML相对简单</strong></li>
+</ul>
+</li>
+<li><p>目前的这些主流语言的设计目的和初衷都是什么？</p>
+</li>
+<li><p>Task.Delay()和Task.Wait()和Task.Sleep()的区别是什么？</p>
+<ul>
+<li><strong>Task.Delay()</strong>:一个<strong>异步</strong>的延迟方法，返回一个任务，在指定的时间间隔后该任务会完成。这个方法是<strong>非阻塞</strong>的。</li>
+<li><strong>Task.Wait()<strong>：一个</strong>同步</strong>的方法，它会<strong>阻塞</strong>当前的线程，直到任务完成。</li>
+<li><strong>Task.Sleep()<strong>：</strong>阻塞</strong>当前线程，使其在指定时间间隔进入睡眠。</li>
+</ul>
 </li>
 </ul>
 
