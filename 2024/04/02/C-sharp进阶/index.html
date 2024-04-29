@@ -24,7 +24,7 @@
 <meta property="og:description" content="类型类、结构和记录方法扩展方法扩展方法使你能向现有类型”添加”方法，而无需创建新的派生类型、重新编译或以其他方式修改原始类型. 扩展方法在LINQ查询操作中特别常见。 以下是关于扩展方法的关键点：  静态方法：扩展方法必须是静态方法。 静态类：扩展方法必须定义在静态中 第一个参数：扩展方法的第一个参数要扩展的类型，参数前必须使用this关键字。 命名空间：如果扩展方法定义在不同的命名空间中，那么在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-02T02:14:04.609Z">
-<meta property="article:modified_time" content="2024-04-18T13:39:28.181Z">
+<meta property="article:modified_time" content="2024-04-28T03:06:48.098Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="C-sharp">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.9k 字
+          4k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          33 分钟
+          34 分钟
         
       </span>
     
@@ -293,8 +293,11 @@
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> System;<br></code></pre></td></tr></table></figure>
 
 <p><strong>using</strong>关键字用于在程序中包含命名空间。一个程序可以包含多个using语句</p>
-<p>using语句-确保正确使用可释放对象</p>
-<p>当控件离开using语句块时，将释放获取的[IDisposable](<a href="https://homovexillues.github.io/2024/04/09/C-sharp">https://homovexillues.github.io/2024/04/09/C-sharp</a> System&#x2F;)实例。</p>
+<p>using关键字通常用于实现IDisposable接口的对象，以确保它们使用完毕后能被正确地释放，如下：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> client = <span class="hljs-keyword">new</span> HttpClient())<br></code></pre></td></tr></table></figure>
+
+<p>这是执行清理操作的一种简洁方式，特别是在处理那些需要明确释放的非托管资源或实现IDisposable接口的对象时。</p>
+<p>当using块内的代码执行完毕后，无论正常退出还是异常退出，HttpClient实例都会自动调用Dispose方法。Dispose方法会释放与HttpClient实例相关联的所有资源，如网络链接。</p>
 <h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><h4 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h4><h4 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h4><h4 id="async"><a href="#async" class="headerlink" title="async"></a>async</h4><p>使用<code>async</code>修饰符可将方法、lambda表达式或匿名方法指定为异步。</p>
 <p>如果对方法或表达式使用此修饰符，则其成为异步方法。如下实例定义了一个名为<code>ExampleMethodAsync</code>的异步方法。如下示例定义了一个名为<code>ExampleMethodAsync</code>的异步方法:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task&lt;<span class="hljs-built_in">int</span>&gt; <span class="hljs-title">ExampleMethodAsync</span>()</span><br>&#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
