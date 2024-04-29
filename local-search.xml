@@ -23,6 +23,33 @@
   
   
   <entry>
+    <title>Modbus TCP/IP</title>
+    <link href="/2024/04/28/Modbus%20TCPIP/"/>
+    <url>/2024/04/28/Modbus%20TCPIP/</url>
+    
+    <content type="html"><![CDATA[<p>在TCP层上又封装了一层协议，在传输数据的时候可以定义地址，变量的存储、格式</p><p>纯TCP，双方要对协议，互相对接，测试，诊断也比较麻烦</p><p>ModBus只要把地址和数据的定义告诉上位机编程人员，代码可复用</p><p>互联网传递的，实际上是数据包，这是TCP&#x2F;IP族特性</p><p>基本步骤：</p><ol><li>给我一个地址，如IPV6地址 </li><li>遵守某个网络协议TCP&#x2F;UDP等把数据包发送到目的地<ol><li>数据报包的生成</li><li>寻址、根据IP地址寻找网络通路（可能不止一条）</li><li>需要穿透多少层路由后放弃</li></ol></li></ol><h5 id="数据包结构："><a href="#数据包结构：" class="headerlink" title="数据包结构："></a>数据包结构：</h5><ul><li>MBAP Header</li><li>Modbus TCP Function Codes</li><li>Modbus Data</li><li>TCP&#x2F;IP Packet</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Modbus</tag>
+      
+      <tag>TCP/IP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Microsoft Learn Visual Studio</title>
     <link href="/2024/04/22/Microsoft%20Learn%20Visual%20Studio/"/>
     <url>/2024/04/22/Microsoft%20Learn%20Visual%20Studio/</url>
