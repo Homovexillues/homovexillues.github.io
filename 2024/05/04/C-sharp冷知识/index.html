@@ -16,23 +16,22 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta name="description" content="增删改批量重命名将文件名前的数字去除123456789import os#与操作系统交互的函数import re#提供正则表达式相关函数files &#x3D; os.listdir(&#x27;.&#x27;)#获取当前目录下的所有文件和文件夹的名字for file in files:    if file.endswith(&#x27;.pdf&#x27;):#检查是否以.pdf结束        if">
+    <meta name="description" content="传递参数  位置参数  命名参数 123456Foo(&quot;Tom&quot;,alive:true);&#x2F;&#x2F;一般用于某些参数已经给好了默认值，可以跳过这些参数Foo(&quot;Tom&quot;,age:18,true);&#x2F;&#x2F;可以在一个命名参数后加一个位置参数void Foo(string name, int age&#x3D;18, bool alive)&#123;    &#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python自动化">
-<meta property="og:url" content="https://homovexillues.github.io/2024/03/05/Python%E8%87%AA%E5%8A%A8%E5%8C%96/index.html">
+<meta property="og:title" content="C-sharp冷知识">
+<meta property="og:url" content="https://homovexillues.github.io/2024/05/04/C-sharp%E5%86%B7%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="增删改批量重命名将文件名前的数字去除123456789import os#与操作系统交互的函数import re#提供正则表达式相关函数files &#x3D; os.listdir(&#x27;.&#x27;)#获取当前目录下的所有文件和文件夹的名字for file in files:    if file.endswith(&#x27;.pdf&#x27;):#检查是否以.pdf结束        if">
+<meta property="og:description" content="传递参数  位置参数  命名参数 123456Foo(&quot;Tom&quot;,alive:true);&#x2F;&#x2F;一般用于某些参数已经给好了默认值，可以跳过这些参数Foo(&quot;Tom&quot;,age:18,true);&#x2F;&#x2F;可以在一个命名参数后加一个位置参数void Foo(string name, int age&#x3D;18, bool alive)&#123;    &#125;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-05T02:32:19.253Z">
-<meta property="article:modified_time" content="2024-03-31T05:19:59.000Z">
+<meta property="article:published_time" content="2024-05-04T07:59:20.838Z">
+<meta property="article:modified_time" content="2024-05-04T08:03:48.000Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="脚本">
+<meta property="article:tag" content="C-sharp">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Python自动化 - 红石门</title>
+  <title>C-sharp冷知识 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python自动化"></span>
+            <span id="subtitle" data-typed-text="C-sharp冷知识"></span>
           
         </div>
 
@@ -209,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-05 10:32" pubdate>
-          2024年3月5日 上午
+        <time datetime="2024-05-04 15:59" pubdate>
+          2024年5月4日 下午
         </time>
       </span>
     
@@ -221,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          180 字
         
       </span>
     
@@ -232,7 +231,7 @@
         
         
         
-          17 分钟
+          2 分钟
         
       </span>
     
@@ -269,18 +268,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Python自动化</h1>
+            <h1 id="seo-header">C-sharp冷知识</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="增"><a href="#增" class="headerlink" title="增"></a>增</h1><h1 id="删"><a href="#删" class="headerlink" title="删"></a>删</h1><h1 id="改"><a href="#改" class="headerlink" title="改"></a>改</h1><h2 id="批量重命名"><a href="#批量重命名" class="headerlink" title="批量重命名"></a>批量重命名</h2><h4 id="将文件名前的数字去除"><a href="#将文件名前的数字去除" class="headerlink" title="将文件名前的数字去除"></a>将文件名前的数字去除</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<span class="hljs-comment">#与操作系统交互的函数</span><br><span class="hljs-keyword">import</span> re<span class="hljs-comment">#提供正则表达式相关函数</span><br><br>files = os.listdir(<span class="hljs-string">&#x27;.&#x27;</span>)<span class="hljs-comment">#获取当前目录下的所有文件和文件夹的名字</span><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:<br>    <span class="hljs-keyword">if</span> file.endswith(<span class="hljs-string">&#x27;.pdf&#x27;</span>):<span class="hljs-comment">#检查是否以.pdf结束</span><br>        <span class="hljs-keyword">if</span> re.<span class="hljs-keyword">match</span>(<span class="hljs-string">r&#x27;\d+-&#x27;</span>,file):<span class="hljs-comment">#</span><br>            new_file = re.sub(<span class="hljs-string">r&#x27;\d+-&#x27;</span>,<span class="hljs-string">&#x27;&#x27;</span>,file)<br>            os.rename(file,new_file)<br></code></pre></td></tr></table></figure>
+                <ul>
+<li><p>传递参数</p>
+<ul>
+<li><p>位置参数</p>
+</li>
+<li><p>命名参数</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c#">Foo(<span class="hljs-string">&quot;Tom&quot;</span>,alive:<span class="hljs-literal">true</span>);<span class="hljs-comment">//一般用于某些参数已经给好了默认值，可以跳过这些参数</span><br>Foo(<span class="hljs-string">&quot;Tom&quot;</span>,age:<span class="hljs-number">18</span>,<span class="hljs-literal">true</span>);<span class="hljs-comment">//可以在一个命名参数后加一个位置参数</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Foo</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> name, <span class="hljs-built_in">int</span> age=<span class="hljs-number">18</span>, <span class="hljs-built_in">bool</span> alive</span>)</span><br>&#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
 
-<h4 id="将文件名后缀修改"><a href="#将文件名后缀修改" class="headerlink" title="将文件名后缀修改"></a>将文件名后缀修改</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> re<br><br>files = os.listdir(<span class="hljs-string">&#x27;.&#x27;</span>)<br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:<br>    <span class="hljs-keyword">if</span> file.endswith(<span class="hljs-string">&#x27;.mp3.lrc&#x27;</span>):<br>        new_file = re.sub(<span class="hljs-string">r&#x27;\.mp3\.lrc$&#x27;</span>,<span class="hljs-string">&#x27;.lrc&#x27;</span>,file)<br>        os.rename(file,new_file)<br>    <span class="hljs-keyword">elif</span> file.endswith(<span class="hljs-string">&#x27;.mp3.vtt&#x27;</span>):<span class="hljs-comment">#如果发现是vtt格式则自动修改为lrc格式</span><br>        new_file = re.sub(<span class="hljs-string">r&#x27;\.mp3\.vtt$&#x27;</span>,<span class="hljs-string">&#x27;.vtt&#x27;</span>,file)<br>        os.rename(file,new_file)<br>        vtt_to_lrc(new_file)<br>    <span class="hljs-keyword">elif</span> file.endswith(<span class="hljs-string">&#x27;.wav.vtt&#x27;</span>):<br>        new_file = re.sub(<span class="hljs-string">r&#x27;\.wav\.vtt$&#x27;</span>,<span class="hljs-string">&#x27;.vtt&#x27;</span>,file)<br>        os.rename(file,new_file)<br>        vtt_to_lrc(new_file)<br></code></pre></td></tr></table></figure>
-
-<h2 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h2><h4 id="vtt转lrc"><a href="#vtt转lrc" class="headerlink" title="vtt转lrc"></a>vtt转lrc</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> re<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">vtt_to_lrc</span>(<span class="hljs-params">vtt_file</span>):<br>    <span class="hljs-comment"># 打开 .vtt 文件</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(vtt_file, <span class="hljs-string">&#x27;r&#x27;</span>,encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        lines = f.readlines()<br><br>    <span class="hljs-comment"># 准备 .lrc 文件内容</span><br>    lrc_content = <span class="hljs-string">&#x27;&#x27;</span><br><br>    <span class="hljs-comment"># 遍历 .vtt 文件中的行</span><br>    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> lines:<br>        <span class="hljs-comment"># 如果该行是时间戳行</span><br>        <span class="hljs-keyword">if</span> re.<span class="hljs-keyword">match</span>(<span class="hljs-string">r&#x27;\d&#123;2&#125;:\d&#123;2&#125;:\d&#123;2&#125;.\d&#123;3&#125; --&gt; \d&#123;2&#125;:\d&#123;2&#125;:\d&#123;2&#125;.\d&#123;3&#125;&#x27;</span>, line):<br>            <span class="hljs-comment"># 将时间戳转换为 .lrc 格式</span><br>            start_time, end_time = line.split(<span class="hljs-string">&#x27; --&gt; &#x27;</span>)<br>            start_min, start_sec = start_time.split(<span class="hljs-string">&#x27;:&#x27;</span>)[-<span class="hljs-number">2</span>:]<br>            start_sec, start_msec = start_sec.split(<span class="hljs-string">&#x27;.&#x27;</span>)<br>            lrc_timestamp = <span class="hljs-string">f&#x27;[<span class="hljs-subst">&#123;start_min&#125;</span>:<span class="hljs-subst">&#123;start_sec&#125;</span>.<span class="hljs-subst">&#123;start_msec&#125;</span>]&#x27;</span><br>            lrc_content += lrc_timestamp<br>        <span class="hljs-keyword">elif</span> line.strip() <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> line.startswith(<span class="hljs-string">&#x27;WEBVTT&#x27;</span>) <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> re.<span class="hljs-keyword">match</span>(<span class="hljs-string">r&#x27;NOTE.*&#x27;</span>, line) <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> re.<span class="hljs-keyword">match</span>(<span class="hljs-string">r&#x27;\d+&#x27;</span>, line):<br>            <span class="hljs-comment"># 如果该行是字幕行，将其添加到 .lrc 文件内容中</span><br>            lrc_content += line<br><br>    <span class="hljs-comment"># 将 .lrc 文件内容写入新的 .lrc 文件</span><br>    lrc_file = vtt_file.replace(<span class="hljs-string">&#x27;.vtt&#x27;</span>, <span class="hljs-string">&#x27;.lrc&#x27;</span>)<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(lrc_file, <span class="hljs-string">&#x27;w&#x27;</span>,encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(lrc_content)<br><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;vtt_file&#125;</span> 已成功转换为 <span class="hljs-subst">&#123;lrc_file&#125;</span>.&quot;</span>)<br></code></pre></td></tr></table></figure>
-
-<h1 id="查"><a href="#查" class="headerlink" title="查"></a>查</h1>
                 
               </div>
             
@@ -313,9 +316,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Python/" class="print-no-link">#Python</a>
-      
-        <a href="/tags/%E8%84%9A%E6%9C%AC/" class="print-no-link">#脚本</a>
+        <a href="/tags/C-sharp/" class="print-no-link">#C-sharp</a>
       
     </div>
   
@@ -327,8 +328,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python自动化</div>
-      <div>https://homovexillues.github.io/2024/03/05/Python自动化/</div>
+      <div>C-sharp冷知识</div>
+      <div>https://homovexillues.github.io/2024/05/04/C-sharp冷知识/</div>
     </div>
     <div class="license-meta">
       
@@ -340,7 +341,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月5日</div>
+          <div>2024年5月4日</div>
         </div>
       
       
@@ -372,18 +373,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/27/C#%E5%9F%BA%E7%A1%80/" title="C#基础">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C#基础</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/29/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="Python数据结构">
-                        <span class="hidden-mobile">Python数据结构</span>
+                      <a href="/2024/05/04/%E5%83%8FPython%E4%B8%80%E6%A0%B7%E5%86%99C#%E4%BB%A3%E7%A0%81/" title="像Python一样写C#代码">
+                        <span class="hidden-mobile">像Python一样写C#代码</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
