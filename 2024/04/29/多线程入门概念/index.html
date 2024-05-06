@@ -24,7 +24,7 @@
 <meta property="og:description" content="基本概念什么是线程？ 线程是操作系统中能够独立运行的最小单位，也是程序中能够并发执行的一段指令序列。 线程是进程的一部分，一个进程可以包含多个线程，这些线程共享进程的资源。 比如现在写了一个控制台程序，在运行之后它就会变成一个进程，入口函数所在的线程就会成为主线程或者入口线程，如果在主线程中创建了其他线程，这个进程就会包含不止一个线程，这些线程都可以访问进程中的资源。   进程有入口线程，也可以创">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-29T03:21:11.781Z">
-<meta property="article:modified_time" content="2024-05-04T09:20:40.000Z">
+<meta property="article:modified_time" content="2024-05-04T10:22:11.321Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          1.9k 字
         
       </span>
     
@@ -385,7 +385,15 @@
 </li>
 </ul>
 <h3 id="线程安全与同步机制"><a href="#线程安全与同步机制" class="headerlink" title="线程安全与同步机制"></a>线程安全与同步机制</h3><ul>
-<li>锁与信号量</li>
+<li>原子操作</li>
+<li>锁与信号量<ul>
+<li>Lock&amp;Monitor</li>
+<li>Mutex</li>
+<li>Semaphore</li>
+<li>WaitHandle</li>
+<li>ReaderWriterLock</li>
+</ul>
+</li>
 <li>轻量型</li>
 <li>不要自己造轮子</li>
 </ul>
