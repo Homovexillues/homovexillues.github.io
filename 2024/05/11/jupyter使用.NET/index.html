@@ -16,21 +16,23 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2021&#x2F;3&#x2F;5">
+    <meta name="description" content="首先确保电脑上有jupyter和.NET环境 安装dotnet interactive全局工具 1dotnet tool install --global Microsoft.dotnet-interactive  然后就可以用**dotnet tool list -g**命令来查看已经安装的全局工具 123包 ID                              版本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="谜语">
-<meta property="og:url" content="https://homovexillues.github.io/2023/12/06/%E8%B0%9C%E8%AF%AD/index.html">
+<meta property="og:title" content="Jupyter使用C#">
+<meta property="og:url" content="https://homovexillues.github.io/2024/05/11/jupyter%E4%BD%BF%E7%94%A8.NET/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="2021&#x2F;3&#x2F;5">
+<meta property="og:description" content="首先确保电脑上有jupyter和.NET环境 安装dotnet interactive全局工具 1dotnet tool install --global Microsoft.dotnet-interactive  然后就可以用**dotnet tool list -g**命令来查看已经安装的全局工具 123包 ID                              版本">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-06T07:20:38.481Z">
-<meta property="article:modified_time" content="2023-12-06T07:21:34.588Z">
+<meta property="article:published_time" content="2024-05-11T02:07:43.029Z">
+<meta property="article:modified_time" content="2024-05-11T02:43:33.725Z">
 <meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="Jupyter">
+<meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>谜语 - 红石门</title>
+  <title>Jupyter使用C# - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="谜语"></span>
+            <span id="subtitle" data-typed-text="Jupyter使用C#"></span>
           
         </div>
 
@@ -207,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-06 15:20" pubdate>
-          2023年12月6日 下午
+        <time datetime="2024-05-11 10:07" pubdate>
+          2024年5月11日 上午
         </time>
       </span>
     
@@ -219,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 字
+          997 字
         
       </span>
     
@@ -230,7 +232,7 @@
         
         
         
-          1 分钟
+          9 分钟
         
       </span>
     
@@ -267,12 +269,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">谜语</h1>
+            <h1 id="seo-header">Jupyter使用C#</h1>
             
             
               <div class="markdown-body">
                 
-                <p>2021&#x2F;3&#x2F;5</p>
+                <p>首先确保电脑上有jupyter和.NET环境</p>
+<p>安装dotnet interactive全局工具</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">dotnet tool install <span class="hljs-literal">--global</span> Microsoft.dotnet<span class="hljs-literal">-interactive</span><br></code></pre></td></tr></table></figure>
+
+<p>然后就可以用**<code>dotnet tool list -g</code>**命令来查看已经安装的全局工具</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">包 ID                              版本              命令<br><span class="hljs-literal">--------------------------------------------------------------------</span><br>microsoft.dotnet<span class="hljs-literal">-interactive</span>      <span class="hljs-number">1.0</span>.<span class="hljs-number">522904</span>      dotnet<span class="hljs-literal">-interactive</span><br></code></pre></td></tr></table></figure>
+
+<p>然后运行**<code>dotnet interactive jupyter install</code>**命令来安装jupyter kernal</p>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs postgresql">Welcome <span class="hljs-keyword">to</span> .NET Interactive!<br><span class="hljs-comment">---------------------</span><br>Telemetry<br><span class="hljs-comment">---------</span><br>The .NET tools collect <span class="hljs-keyword">usage</span> data <span class="hljs-keyword">in</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">to</span> help us improve your experience. The data <span class="hljs-keyword">is</span> anonymous <span class="hljs-keyword">and</span> doesn<span class="hljs-string">&#x27;t include command-line arguments. The data is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT environment variable to &#x27;</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; or &#x27;</span>tru<span class="hljs-string">e&#x27; using your favorite shell.</span><br><span class="hljs-string"></span><br><span class="hljs-string">Installing using jupyter kernelspec module.</span><br><span class="hljs-string">Installed &quot;.NET (C#)&quot; kernel.</span><br><span class="hljs-string">Installing using jupyter kernelspec module.</span><br><span class="hljs-string">Installed &quot;.NET (F#)&quot; kernel.</span><br><span class="hljs-string">Installing using jupyter kernelspec module.</span><br><span class="hljs-string">Installed &quot;.NET (PowerShell)&quot; kernel.</span><br></code></pre></td></tr></table></figure>
+
+<p>然后就可以使用了，但是效果其实没有想象中那么好</p>
 
                 
               </div>
@@ -281,6 +293,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Jupyter/" class="print-no-link">#Jupyter</a>
+      
+        <a href="/tags/C/" class="print-no-link">#C#</a>
+      
+    </div>
   
 </div>
 
@@ -290,8 +332,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>谜语</div>
-      <div>https://homovexillues.github.io/2023/12/06/谜语/</div>
+      <div>Jupyter使用C#</div>
+      <div>https://homovexillues.github.io/2024/05/11/jupyter使用.NET/</div>
     </div>
     <div class="license-meta">
       
@@ -303,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月6日</div>
+          <div>2024年5月11日</div>
         </div>
       
       
@@ -335,9 +377,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/08/Intel%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/" title="Intel/AMD命名规则">
+                      <a href="/2024/05/11/%E7%94%9F%E8%AF%8D%E6%9C%AC/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Intel/AMD命名规则</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -345,8 +387,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/01/%E4%B8%8A%E5%8F%A4%E4%BA%92%E8%81%94%E7%BD%91%E7%AC%91%E8%AF%9D/" title="上古互联网笑话">
-                        <span class="hidden-mobile">上古互联网笑话</span>
+                      <a href="/2024/05/10/%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/" title="事件和委托">
+                        <span class="hidden-mobile">事件和委托</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
