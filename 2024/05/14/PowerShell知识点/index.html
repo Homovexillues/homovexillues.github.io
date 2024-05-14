@@ -16,21 +16,32 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://homovexillues.github.io/archives/2023/page/2/index.html">
+    <meta name="description" content="PowerShell有别名系统,Get-ChildItem可以用ls代替，Get-Help对标Linux中的-helpGet-Adapter命令查看所有网卡 12345Get-NetAdapter | Select-Object -ExpandProperty Name#Select-Object 可以用 select 代替&lt;#这里用了管道操作符来筛选出Name属性，也可以不用，直接显示所有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PowerShell知识点">
+<meta property="og:url" content="https://homovexillues.github.io/2024/05/14/PowerShell%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name" content="红石门">
+<meta property="og:description" content="PowerShell有别名系统,Get-ChildItem可以用ls代替，Get-Help对标Linux中的-helpGet-Adapter命令查看所有网卡 12345Get-NetAdapter | Select-Object -ExpandProperty Name#Select-Object 可以用 select 代替&lt;#这里用了管道操作符来筛选出Name属性，也可以不用，直接显示所有">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-14T08:21:26.867Z">
+<meta property="article:modified_time" content="2024-05-14T08:38:27.057Z">
 <meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="PowerShell">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>归档 - 红石门</title>
+  <title>PowerShell知识点 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -80,7 +91,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -186,9 +197,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="归档"></span>
+            <span id="subtitle" data-typed-text="PowerShell知识点"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-05-14 16:21" pubdate>
+          2024年5月14日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          204 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          2 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -204,100 +255,186 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 98 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2023</p>
-    
-    <a href="/2023/11/22/npm%E5%91%BD%E4%BB%A4/" class="list-group-item list-group-item-action">
-      <time>11-22</time>
-      <div class="list-group-item-title">npm命令</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">PowerShell知识点</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>PowerShell有别名系统,Get-ChildItem可以用ls代替，Get-Help对标Linux中的-help<br>Get-Adapter命令查看所有网卡</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Get-NetAdapter</span> | <span class="hljs-built_in">Select-Object</span> <span class="hljs-literal">-ExpandProperty</span> Name<br><span class="hljs-comment">#Select-Object 可以用 select 代替</span><br><span class="hljs-comment">&lt;#</span><br><span class="hljs-comment">这里用了管道操作符来筛选出Name属性，也可以不用，直接显示所有网卡的所有信息</span><br><span class="hljs-comment">#&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
   
     
-    <a href="/2023/11/21/%E7%AC%91%E8%AF%9D%E6%94%B6%E9%9B%86/" class="list-group-item list-group-item-action">
-      <time>11-21</time>
-      <div class="list-group-item-title">笑话收集</div>
-    </a>
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
   
-    
-    <a href="/2023/11/21/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/" class="list-group-item list-group-item-action">
-      <time>11-21</time>
-      <div class="list-group-item-title">知识记录</div>
-    </a>
   
+
+      </span>
     
-    <a href="/2023/11/20/%E5%AF%B9%E4%BA%8E%E7%BB%8F%E5%85%B8%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%8F%8D%E9%A9%B3%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
-      <time>11-20</time>
-      <div class="list-group-item-title">对于经典逻辑漏洞的反驳方法</div>
-    </a>
   
-    
-    <a href="/2023/11/20/%E4%BA%BA%E6%A0%BC%E9%9D%A2%E5%85%B7%E4%B8%8E%E6%89%AE%E6%BC%94%E6%B3%95/" class="list-group-item list-group-item-action">
-      <time>11-20</time>
-      <div class="list-group-item-title">人格面具与扮演法</div>
-    </a>
+</span>
+
+    </div>
   
-    
-    <a href="/2023/11/20/apt%E5%91%BD%E4%BB%A4/" class="list-group-item list-group-item-action">
-      <time>11-20</time>
-      <div class="list-group-item-title">apt命令</div>
-    </a>
   
-    
-    <a href="/2023/11/19/%E6%A2%97%E4%B8%8E%E8%A7%A3%E6%9E%84%E4%B8%BB%E4%B9%89/" class="list-group-item list-group-item-action">
-      <time>11-19</time>
-      <div class="list-group-item-title">梗与解构主义</div>
-    </a>
-  
-    
-    <a href="/2023/11/18/Vim%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE/" class="list-group-item list-group-item-action">
-      <time>11-18</time>
-      <div class="list-group-item-title">Vim插件配置</div>
-    </a>
-  
-    
-    <a href="/2023/11/17/Docker%E4%BD%BF%E7%94%A8/" class="list-group-item list-group-item-action">
-      <time>11-17</time>
-      <div class="list-group-item-title">Docker使用</div>
-    </a>
-  
-    
-    <a href="/2023/11/17/%E9%81%87%E5%88%B0%E7%9A%84bug%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
-      <time>11-17</time>
-      <div class="list-group-item-title">遇到的bug和解决方法</div>
-    </a>
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PowerShell/" class="print-no-link">#PowerShell</a>
+      
+    </div>
   
 </div>
 
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2023/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2023/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2023/page/3/#board">3</a><a class="page-number" href="/archives/2023/page/4/#board">4</a><a class="page-number" href="/archives/2023/page/5/#board">5</a><a class="extend next" rel="next" href="/archives/2023/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
+              
+  
 
-
-
-
-              </div>
-            </div>
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>PowerShell知识点</div>
+      <div>https://homovexillues.github.io/2024/05/14/PowerShell知识点/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年5月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
           </div>
         </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/05/14/XML%E7%9F%A5%E8%AF%86%E7%82%B9/" title="XML知识点">
+                        <span class="hidden-mobile">XML知识点</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
     
@@ -391,6 +528,99 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 
