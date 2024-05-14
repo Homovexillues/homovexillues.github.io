@@ -58,7 +58,7 @@
     <link href="/2024/05/14/C-sharp%E5%8F%8D%E5%B0%84%E5%92%8C%E7%89%B9%E6%80%A7/"/>
     <url>/2024/05/14/C-sharp%E5%8F%8D%E5%B0%84%E5%92%8C%E7%89%B9%E6%80%A7/</url>
     
-    <content type="html"><![CDATA[<p>反射是特性的充分条件，特性是反射的必要条件。</p><p>反射可以在运行时拿到程序中的东西</p>]]></content>
+    <content type="html"><![CDATA[<p>反射是特性的充分条件，特性是反射的必要条件。</p><p>反射可以在运行时拿到程序中的东西</p><p>比如：</p><p><img src="/../images/image-20240514164333617.png" alt="image-20240514164333617"></p>]]></content>
     
     
     <categories>
