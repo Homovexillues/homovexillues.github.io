@@ -16,22 +16,22 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Get-Help对标Linux中的-helpGet-Adapter命令查看所有网卡 12345Get-NetAdapter | Select-Object -ExpandProperty Name#Select-Object 可以用 select 代替&lt;#这里用了管道操作符来筛选出Name属性，也可以不用，直接显示所有网卡的所有信息#&gt;     命令 别名    Remove-Item">
-<meta property="og:type" content="article">
-<meta property="og:title" content="PowerShell知识点">
-<meta property="og:url" content="https://homovexillues.github.io/2024/05/14/PowerShell%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Git基本操作">
+<meta property="og:url" content="https://homovexillues.github.io/2024/05/15/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="Get-Help对标Linux中的-helpGet-Adapter命令查看所有网卡 12345Get-NetAdapter | Select-Object -ExpandProperty Name#Select-Object 可以用 select 代替&lt;#这里用了管道操作符来筛选出Name属性，也可以不用，直接显示所有网卡的所有信息#&gt;     命令 别名    Remove-Item">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-05-14T08:21:26.867Z">
-<meta property="article:modified_time" content="2024-05-15T03:38:32.943Z">
+<meta property="og:image" content="https://homovexillues.github.io/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png">
+<meta property="article:published_time" content="2024-05-15T06:43:25.251Z">
+<meta property="article:modified_time" content="2024-05-15T06:46:05.201Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="PowerShell">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://homovexillues.github.io/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png">
   
   
   
-  <title>PowerShell知识点 - 红石门</title>
+  <title>Git基本操作 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="PowerShell知识点"></span>
+            <span id="subtitle" data-typed-text="Git基本操作"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-14 16:21" pubdate>
-          2024年5月14日 下午
+        <time datetime="2024-05-15 14:43" pubdate>
+          2024年5月15日 下午
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 字
+          0 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          4 分钟
+          1 分钟
         
       </span>
     
@@ -268,37 +268,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">PowerShell知识点</h1>
+            <h1 id="seo-header">Git基本操作</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Get-Help对标Linux中的-help<br>Get-Adapter命令查看所有网卡</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Get-NetAdapter</span> | <span class="hljs-built_in">Select-Object</span> <span class="hljs-literal">-ExpandProperty</span> Name<br><span class="hljs-comment">#Select-Object 可以用 select 代替</span><br><span class="hljs-comment">&lt;#</span><br><span class="hljs-comment">这里用了管道操作符来筛选出Name属性，也可以不用，直接显示所有网卡的所有信息</span><br><span class="hljs-comment">#&gt;</span><br></code></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>别名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Remove-Item</td>
-<td>rm</td>
-</tr>
-<tr>
-<td>Rename-Item</td>
-<td>ren</td>
-</tr>
-<tr>
-<td>Get-ChildItem</td>
-<td>ls</td>
-</tr>
-</tbody></table>
-<p>执行命令而不返回回显信息</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$ExecutionContext</span>.PreExecutionContextInitScript = &#123; <span class="hljs-variable">$PSDefaultParameterValues</span>[<span class="hljs-string">&quot;*:ErrorAction&quot;</span>] = <span class="hljs-string">&quot;SilentlyContinue&quot;</span> &#125;<br></code></pre></td></tr></table></figure>
-
+                <p><img src="/../images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png" srcset="/img/loading.gif" lazyload alt="image-20240515144600594"></p>
 
                 
               </div>
@@ -332,7 +307,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/PowerShell/" class="print-no-link">#PowerShell</a>
+        <a href="/tags/git/" class="print-no-link">#git</a>
       
     </div>
   
@@ -344,8 +319,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>PowerShell知识点</div>
-      <div>https://homovexillues.github.io/2024/05/14/PowerShell知识点/</div>
+      <div>Git基本操作</div>
+      <div>https://homovexillues.github.io/2024/05/15/Git基本操作/</div>
     </div>
     <div class="license-meta">
       
@@ -357,7 +332,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年5月14日</div>
+          <div>2024年5月15日</div>
         </div>
       
       
@@ -389,9 +364,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/05/15/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="Git基本操作">
+                      <a href="/2024/05/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Git基本操作</span>
+                        <span class="hidden-mobile">计算机网络</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -399,8 +374,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/14/XML%E7%9F%A5%E8%AF%86%E7%82%B9/" title="XML知识点">
-                        <span class="hidden-mobile">XML知识点</span>
+                      <a href="/2024/05/14/PowerShell%E7%9F%A5%E8%AF%86%E7%82%B9/" title="PowerShell知识点">
+                        <span class="hidden-mobile">PowerShell知识点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
