@@ -16,22 +16,21 @@
   <meta name="author" content="Homo vexillues">
   <meta name="keywords" content="">
   
-    <meta name="description" content="npm，即node package manager，node.js的包管理工具，其默认安装行为是将库安装到本地项目目录，以确保项目依赖的隔离性和一致性。如果想要在全局范围内使用某个库，可以使用全局安装: 1npm install -g &lt;package&gt;">
+    <meta name="description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NPM基础">
-<meta property="og:url" content="https://homovexillues.github.io/2024/06/07/Node%20Package%20Manager%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="网络相关问题">
+<meta property="og:url" content="https://homovexillues.github.io/2024/06/11/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="npm，即node package manager，node.js的包管理工具，其默认安装行为是将库安装到本地项目目录，以确保项目依赖的隔离性和一致性。如果想要在全局范围内使用某个库，可以使用全局安装: 1npm install -g &lt;package&gt;">
+<meta property="og:description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-06-07T09:23:29.383Z">
-<meta property="article:modified_time" content="2024-06-07T09:28:07.375Z">
+<meta property="article:published_time" content="2024-06-11T03:16:23.913Z">
+<meta property="article:modified_time" content="2024-06-11T03:20:12.995Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="node.js">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>NPM基础 - 红石门</title>
+  <title>网络相关问题 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="NPM基础"></span>
+            <span id="subtitle" data-typed-text="网络相关问题"></span>
           
         </div>
 
@@ -212,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-07 17:23" pubdate>
-          2024年6月7日 下午
+        <time datetime="2024-06-11 11:16" pubdate>
+          2024年6月11日 上午
         </time>
       </span>
     
@@ -224,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          127 字
+          1.3k 字
         
       </span>
     
@@ -235,7 +234,7 @@
         
         
         
-          2 分钟
+          12 分钟
         
       </span>
     
@@ -272,14 +271,73 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">NPM基础</h1>
+            <h1 id="seo-header">网络相关问题</h1>
             
             
               <div class="markdown-body">
                 
-                <p>npm，即node package manager，node.js的包管理工具，其默认安装行为是将库安装到本地项目目录，以确保项目依赖的隔离性和一致性。如果想要在全局范围内使用某个库，可以使用全局安装:</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install <span class="hljs-literal">-g</span> &lt;package&gt;<br></code></pre></td></tr></table></figure>
-
+                <h2 id="什么是安装钩子和配置钩子-hook-？"><a href="#什么是安装钩子和配置钩子-hook-？" class="headerlink" title="什么是安装钩子和配置钩子(hook)？"></a>什么是安装钩子和配置钩子(hook)？</h2><ul>
+<li><p>在软件开发中，“钩子”（hook）<strong>是一种机制</strong>，<strong>允许在特定事件或时刻触发自定义代码</strong>。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。</p>
+<h3 id="常见的钩子类型"><a href="#常见的钩子类型" class="headerlink" title="常见的钩子类型"></a>常见的钩子类型</h3><ol>
+<li><strong>Git 钩子</strong>： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括：<ul>
+<li><code>pre-commit</code>：在提交代码之前运行，可以用来检查代码风格、运行测试等。</li>
+<li><code>pre-push</code>：在推送代码到远程仓库之前运行，可以用来验证代码是否符合要求。</li>
+<li><code>post-merge</code>：在合并代码之后运行，可以用来执行一些后处理任务。</li>
+</ul>
+</li>
+<li><strong>npm 钩子</strong>： npm 脚本也支持钩子机制，例如 <code>preinstall</code>、<code>postinstall</code> 等，允许在安装 npm 包之前或之后运行脚本。</li>
+<li><strong>Web 应用钩子</strong>： 在 Web 开发中，可以设置一些钩子来在某些事件（如用户登录、数据更新等）发生时触发特定的代码。</li>
+</ol>
+</li>
+</ul>
+<h2 id="串口链路和以太网链路有什么区别？"><a href="#串口链路和以太网链路有什么区别？" class="headerlink" title="串口链路和以太网链路有什么区别？"></a>串口链路和以太网链路有什么区别？</h2><h2 id="串口链路为COM1到COM512，为什么是这个范围？"><a href="#串口链路为COM1到COM512，为什么是这个范围？" class="headerlink" title="串口链路为COM1到COM512，为什么是这个范围？"></a>串口链路为COM1到COM512，为什么是这个范围？</h2><ul>
+<li>早期计算机系统中主板上只有两个串行端口（COM1和COM2），扩展卡可能增加到COM3和COM4。</li>
+<li>到了现代，操作系统可以支持虚拟串行端口</li>
+</ul>
+<h2 id="波特率？奇偶校验？数据位？停止位？"><a href="#波特率？奇偶校验？数据位？停止位？" class="headerlink" title="波特率？奇偶校验？数据位？停止位？"></a>波特率？奇偶校验？数据位？停止位？</h2><h2 id="端口和串口？"><a href="#端口和串口？" class="headerlink" title="端口和串口？"></a>端口和串口？</h2><ul>
+<li><p><strong>端口</strong></p>
+<ul>
+<li><strong>定义</strong>：在网络通信中，IP地址用于标识网络中的设备，端口号用于标识设备上的特定服务或进程。端口号是一个16位数字，从0到65535</li>
+<li><strong>用途</strong>:端口号可以使得一个设备撒谎给你的多个网络服务同时运行而不发生冲突——Http的80端口，SMTP常用25</li>
+<li><strong>特点</strong>: 通常与传输层协议TCP&#x2F;UDP结合使用</li>
+<li><strong>示例</strong>:当你访问一个网站时，你的浏览器可能会通过端口80（HTTP）或443（HTTPS）与服务器建立连接。</li>
+</ul>
+</li>
+<li><p>串口</p>
+<ul>
+<li><strong>定义</strong>: 串口，也称为串行通信接口，是一种用于实现串行通信的硬件接口。它通过数据线（如RS-232、RS-422或RS-485）进行点对点的通信。</li>
+<li><strong>用途</strong>: 串口主要用于计算机与外部设备（如打印机、调制解调器、传感器等）之间的连接。与网络通信不同，串口通信是同步的，数据一次传输一个比特。</li>
+<li><strong>特点</strong>: 串口通信通常较慢，但可以实现长距离通信，并且由于是点对点连接，所以比较简单和稳定。</li>
+<li><strong>示例</strong>: 在工业自动化和嵌入式系统中，串口常用于控制设备和读取传感器数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="在向接口发送GET请求时发生了什么？"><a href="#在向接口发送GET请求时发生了什么？" class="headerlink" title="在向接口发送GET请求时发生了什么？"></a>在向接口发送GET请求时发生了什么？</h2><ol>
+<li><strong>构建请求</strong>：<ul>
+<li>客户端（例如浏览器或HTTP客户端）构建一个GET请求。这个请求包含请求行、请求头以及可能的查询参数。</li>
+</ul>
+</li>
+<li><strong>发送请求</strong>：<ul>
+<li>请求通过网络传输到服务器。这个过程可能经过多个网络节点和路由器。</li>
+</ul>
+</li>
+<li><strong>服务器接收请求</strong>：<ul>
+<li>服务器的Web服务器（如Apache、Nginx或IIS）接收这个请求。Web服务器负责解析请求，并将其传递给处理该请求的应用程序。</li>
+</ul>
+</li>
+<li><strong>请求处理</strong>：<ul>
+<li>应用程序读取请求的详细信息，包括URL、请求头和查询参数。然后根据请求URL和参数执行特定的逻辑。例如，从数据库中获取数据、进行计算、调用其他服务等。</li>
+</ul>
+</li>
+<li><strong>生成响应</strong>：<ul>
+<li>应用程序生成一个响应，通常包括状态码、响应头和响应体。响应体可能包含客户端请求的数据、错误信息或其他内容。</li>
+</ul>
+</li>
+<li><strong>发送响应</strong>：<ul>
+<li>响应通过网络返回到客户端。客户端接收到响应后，处理和显示返回的数据。</li>
+</ul>
+</li>
+</ol>
 
                 
               </div>
@@ -301,6 +359,13 @@
   <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
   
   
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/%E9%97%AE%E9%A2%98/" class="category-chain-item">问题</a>
+  
+  
+
+  
 
       </span>
     
@@ -310,13 +375,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/node-js/" class="print-no-link">#node.js</a>
-      
-    </div>
-  
 </div>
 
 
@@ -325,8 +383,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>NPM基础</div>
-      <div>https://homovexillues.github.io/2024/06/07/Node Package Manager基础/</div>
+      <div>网络相关问题</div>
+      <div>https://homovexillues.github.io/2024/06/11/网络相关问题/</div>
     </div>
     <div class="license-meta">
       
@@ -338,7 +396,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月7日</div>
+          <div>2024年6月11日</div>
         </div>
       
       
@@ -370,18 +428,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/11/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="网络相关问题">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">网络相关问题</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/31/%E4%B8%80%E4%BA%9B%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E8%AE%B0%E5%BD%95/" title="一些编程经验记录">
-                        <span class="hidden-mobile">一些编程经验记录</span>
+                      <a href="/2024/06/07/Node%20Package%20Manager%E5%9F%BA%E7%A1%80/" title="NPM基础">
+                        <span class="hidden-mobile">NPM基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
