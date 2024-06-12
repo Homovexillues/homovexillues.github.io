@@ -24,7 +24,7 @@
 <meta property="og:description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-11T03:16:23.913Z">
-<meta property="article:modified_time" content="2024-06-11T03:20:12.995Z">
+<meta property="article:modified_time" content="2024-06-12T05:54:15.597Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          5.1k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          12 分钟
+          43 分钟
         
       </span>
     
@@ -291,8 +291,47 @@
 </li>
 </ul>
 <h2 id="串口链路和以太网链路有什么区别？"><a href="#串口链路和以太网链路有什么区别？" class="headerlink" title="串口链路和以太网链路有什么区别？"></a>串口链路和以太网链路有什么区别？</h2><h2 id="串口链路为COM1到COM512，为什么是这个范围？"><a href="#串口链路为COM1到COM512，为什么是这个范围？" class="headerlink" title="串口链路为COM1到COM512，为什么是这个范围？"></a>串口链路为COM1到COM512，为什么是这个范围？</h2><ul>
-<li>早期计算机系统中主板上只有两个串行端口（COM1和COM2），扩展卡可能增加到COM3和COM4。</li>
-<li>到了现代，操作系统可以支持虚拟串行端口</li>
+<li><p>早期计算机系统中主板上只有两个串行端口（COM1和COM2），扩展卡可能增加到COM3和COM4。</p>
+</li>
+<li><p>到了现代，操作系统可以支持虚拟串行端口</p>
+</li>
+<li><p>在计算机系统中，<strong>COM端口</strong>（Communication Port）是串行通信端口的简称，用于通过串行接口传输数据。COM端口的主要特点是逐位传输数据，这种传输方式被广泛应用于各种设备之间的通信，例如计算机与调制解调器、打印机、工业控制设备等。</p>
+<h3 id="COM端口的名称和范围"><a href="#COM端口的名称和范围" class="headerlink" title="COM端口的名称和范围"></a>COM端口的名称和范围</h3><ol>
+<li><strong>名称</strong>：<ul>
+<li>COM端口的名称通常为“COM”后面跟一个数字，比如COM1、COM2等。这些名称用于标识计算机系统中的具体串行端口。</li>
+</ul>
+</li>
+<li><strong>范围</strong>：<ul>
+<li>传统上，COM端口的编号范围是从COM1到COM4，因为早期的PC硬件通常只支持4个串行端口。</li>
+<li>随着硬件和操作系统的发展，现代计算机系统可以支持更多的COM端口。Windows系统允许COM端口的编号从COM1一直到COM256。</li>
+<li>一些专业应用和高端硬件可以支持多达512个串行端口，因此在某些情况下可以看到COM1到COM512的范围。</li>
+</ul>
+</li>
+</ol>
+<h3 id="为什么COM端口是这个范围"><a href="#为什么COM端口是这个范围" class="headerlink" title="为什么COM端口是这个范围"></a>为什么COM端口是这个范围</h3><ol>
+<li><strong>历史原因</strong>：<ul>
+<li>早期的计算机硬件限制：在早期的PC系统中，主板上通常只有两个串行端口（COM1和COM2），扩展卡可能增加到COM3和COM4。</li>
+<li>硬件设计：由于串行端口的设计和当时的资源限制，最初的PC系统不支持大量的串行端口。</li>
+</ul>
+</li>
+<li><strong>现代扩展</strong>：<ul>
+<li>操作系统支持：现代操作系统如Windows支持更多的虚拟串行端口和USB-to-Serial适配器，可以分配更高编号的COM端口。</li>
+<li>硬件扩展：现代工业和嵌入式系统中，串行通信依然广泛应用，因此硬件和驱动程序可以支持更大的COM端口范围，例如通过多串口卡或USB扩展器。</li>
+<li>软件需求：一些专业软件和调试工具可能需要访问大量的串行端口，因此支持更大的编号范围。</li>
+</ul>
+</li>
+</ol>
+<h3 id="使用COM端口的示例"><a href="#使用COM端口的示例" class="headerlink" title="使用COM端口的示例"></a>使用COM端口的示例</h3><p>在编程中使用COM端口，通常需要指定端口名称，配置通信参数，然后进行读写操作。以下是一个使用C#中的<code>System.IO.Ports.SerialPort</code>类来打开COM端口的示例：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs csharp">csharp复制代码<span class="hljs-keyword">using</span> System;<br><span class="hljs-keyword">using</span> System.IO.Ports;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title">Program</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>    &#123;<br>        <span class="hljs-comment">// 创建SerialPort对象并指定端口名称和通信参数</span><br>        SerialPort serialPort = <span class="hljs-keyword">new</span> SerialPort(<span class="hljs-string">&quot;COM1&quot;</span>, <span class="hljs-number">9600</span>, Parity.None, <span class="hljs-number">8</span>, StopBits.One);<br><br>        <span class="hljs-keyword">try</span><br>        &#123;<br>            <span class="hljs-comment">// 打开端口</span><br>            serialPort.Open();<br><br>            <span class="hljs-comment">// 向端口写入数据</span><br>            serialPort.WriteLine(<span class="hljs-string">&quot;Hello, COM1!&quot;</span>);<br><br>            <span class="hljs-comment">// 从端口读取数据</span><br>            <span class="hljs-built_in">string</span> response = serialPort.ReadLine();<br>            Console.WriteLine(<span class="hljs-string">&quot;Received: &quot;</span> + response);<br>        &#125;<br>        <span class="hljs-keyword">catch</span> (Exception ex)<br>        &#123;<br>            Console.WriteLine(<span class="hljs-string">&quot;Error: &quot;</span> + ex.Message);<br>        &#125;<br>        <span class="hljs-keyword">finally</span><br>        &#123;<br>            <span class="hljs-comment">// 关闭端口</span><br>            <span class="hljs-keyword">if</span> (serialPort.IsOpen)<br>            &#123;<br>                serialPort.Close();<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这个示例中，程序打开了COM1端口，配置了波特率为9600，无奇偶校验，8个数据位和1个停止位，然后进行了数据的发送和接收操作。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><strong>COM端口</strong>是计算机串行通信端口的简称，广泛用于设备之间的数据传输。</li>
+<li><strong>COM端口的名称</strong>通常为“COM”加上一个数字，从COM1开始。</li>
+<li><strong>现代系统支持的COM端口范围</strong>可以从COM1到COM256，甚至更多（例如COM1到COM512）。</li>
+<li><strong>历史和硬件发展</strong>使得COM端口的范围从早期的COM1到COM4扩展到现在的更大范围，以满足现代应用的需求。</li>
+</ul>
+</li>
 </ul>
 <h2 id="波特率？奇偶校验？数据位？停止位？"><a href="#波特率？奇偶校验？数据位？停止位？" class="headerlink" title="波特率？奇偶校验？数据位？停止位？"></a>波特率？奇偶校验？数据位？停止位？</h2><h2 id="端口和串口？"><a href="#端口和串口？" class="headerlink" title="端口和串口？"></a>端口和串口？</h2><ul>
 <li><p><strong>端口</strong></p>
@@ -337,6 +376,74 @@
 <li>响应通过网络返回到客户端。客户端接收到响应后，处理和显示返回的数据。</li>
 </ul>
 </li>
+</ol>
+<h2 id="Wireshark的Apdapter-for-loopback-traffic-capture是什么"><a href="#Wireshark的Apdapter-for-loopback-traffic-capture是什么" class="headerlink" title="Wireshark的Apdapter for loopback traffic capture是什么"></a>Wireshark的Apdapter for loopback traffic capture是什么</h2><p>Wireshark 的 “Adapter for loopback traffic capture” 是一个专门用于捕获环回（loopback）接口上的网络流量的工具。环回接口是一个虚拟网络接口，它通常用于同一台计算机上运行的应用程序之间的通信。它的 IP 地址通常为 <code>127.0.0.1</code>（IPv4）或 <code>::1</code>（IPv6）。</p>
+<h4 id="环回接口和其捕获的必要性"><a href="#环回接口和其捕获的必要性" class="headerlink" title="环回接口和其捕获的必要性"></a>环回接口和其捕获的必要性</h4><p>在许多操作系统中，<strong>环回接口</strong>上的流量默认不会被捕获。通常情况下，网络分析工具（包括 Wireshark）主要捕获通过物理或无线网络接口的流量。而环回接口上的流量则往往被忽略。然而，捕获环回流量在以下情况下可能是必要的：</p>
+<ol>
+<li><strong>本地开发和测试</strong>：开发者在同一台机器上测试网络应用程序时，环回接口流量对于调试和分析非常重要。</li>
+<li><strong>服务间通信</strong>：同一台服务器上不同服务或进程之间的通信可能通过环回接口进行。</li>
+<li><strong>安全分析</strong>：环回接口流量可能包含对本地服务的攻击或利用尝试，捕获这些流量有助于安全分析。</li>
+</ol>
+<h4 id="“Adapter-for-loopback-traffic-capture”-的工作原理"><a href="#“Adapter-for-loopback-traffic-capture”-的工作原理" class="headerlink" title="“Adapter for loopback traffic capture” 的工作原理"></a>“Adapter for loopback traffic capture” 的工作原理</h4><p>“Adapter for loopback traffic capture” 是一个虚拟网络适配器，用于捕获 Windows 系统上的环回流量。这是因为 Windows <strong>默认不允许捕获环回流量</strong>，需要借助额外的工具来实现这一功能。常用的方法包括安装特殊的驱动程序或使用网络库，如 Npcap。</p>
+<h4 id="Npcap-驱动"><a href="#Npcap-驱动" class="headerlink" title="Npcap 驱动"></a>Npcap 驱动</h4><p>Npcap 是一个 Windows 平台上的高效捕获库，它是 WinPcap 的现代替代品。Npcap 支持捕获环回接口流量。Wireshark 安装过程中通常会提示安装 Npcap：</p>
+<ol>
+<li><strong>安装 Npcap</strong>：确保在安装 Wireshark 时选择安装 Npcap 驱动程序。</li>
+<li><strong>启用环回捕获</strong>：安装 Npcap 后，Wireshark 将能够捕获环回接口上的流量。</li>
+</ol>
+<h4 id="使用-Wireshark-捕获环回流量"><a href="#使用-Wireshark-捕获环回流量" class="headerlink" title="使用 Wireshark 捕获环回流量"></a>使用 Wireshark 捕获环回流量</h4><p>以下是在 Windows 系统上使用 Wireshark 捕获环回流量的步骤：</p>
+<ol>
+<li><strong>安装 Wireshark 和 Npcap</strong>：<ul>
+<li>从 <a target="_blank" rel="noopener" href="https://www.wireshark.org/">Wireshark 官网</a> 下载并安装 Wireshark。</li>
+<li>确保在安装过程中选择安装 Npcap 驱动。</li>
+</ul>
+</li>
+<li><strong>启动 Wireshark</strong>：<ul>
+<li>打开 Wireshark 应用程序。</li>
+</ul>
+</li>
+<li><strong>选择环回适配器</strong>：<ul>
+<li>在主界面中，选择名为 “Npcap Loopback Adapter” 或类似名称的环回适配器。</li>
+<li>注意：不同版本的 Npcap 可能显示的名称略有不同。</li>
+</ul>
+</li>
+<li><strong>启动捕获</strong>：<ul>
+<li>点击 “Start Capturing Packets” 按钮开始捕获数据包。</li>
+</ul>
+</li>
+<li><strong>生成环回流量</strong>：<ul>
+<li>在同一台机器上运行一些网络应用程序，生成环回流量。例如，访问 <code>http://127.0.0.1</code> 或 <code>http://localhost</code> 的 Web 服务器。</li>
+</ul>
+</li>
+<li><strong>查看捕获的数据包</strong>：<ul>
+<li>Wireshark 将显示捕获的环回流量数据包。你可以使用过滤器和其他分析工具查看详细信息。</li>
+</ul>
+</li>
+</ol>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>假设你在本地运行一个 Web 服务器，并且从浏览器访问 <code>http://localhost:8080</code>，你可以在 Wireshark 中看到类似如下的捕获数据包：</p>
+<ol>
+<li><strong>HTTP 请求和响应</strong>：<ul>
+<li>请求：<code>GET / HTTP/1.1</code>，源地址为 <code>127.0.0.1</code>，目的地址也是 <code>127.0.0.1</code>。</li>
+<li>响应：<code>HTTP/1.1 200 OK</code>，源地址和目的地址同样为 <code>127.0.0.1</code>。</li>
+</ul>
+</li>
+<li><strong>其他协议</strong>：<ul>
+<li>如果有其他应用程序使用环回接口进行通信，也会显示在捕获的数据包中。</li>
+</ul>
+</li>
+</ol>
+<p>通过使用 “Adapter for loopback traffic capture” 和 Npcap 驱动程序，你可以方便地捕获和分析本地环回接口上的网络流量，这对于本地开发、调试和安全分析非常有用。</p>
+<h2 id="什么是抓包"><a href="#什么是抓包" class="headerlink" title="什么是抓包"></a>什么是抓包</h2><p>抓包是指捕获和记录在网络上传输的数据包，以便进行分析和调试。抓包可以帮助网络管理员和安全分析师了解网络流量的具体内容，识别网络问题，检测网络攻击和入侵行为。抓包的过程通常包括以下几个步骤：</p>
+<ol>
+<li><strong>选择网卡</strong>：选择一个网卡进行数据包捕获。对于无线网络，可以选择无线网卡；对于有线网络，可以选择有线网卡。</li>
+<li><strong>启动抓包</strong>：使用抓包工具开始捕获数据包。抓包工具会显示实时捕获的数据包列表。</li>
+<li><strong>过滤数据包</strong>：使用过滤器只捕获感兴趣的数据包。例如，只捕获特定 IP 地址、端口号或协议的数据包。</li>
+<li><strong>分析数据包</strong>：抓包工具会解析捕获的数据包，并以易于理解的格式显示其内容。用户可以查看数据包的详细信息，包括源和目的地址、协议类型、数据内容等。</li>
+<li><strong>保存和导出数据包</strong>：将捕获的数据包保存为文件，以便以后分析或共享。</li>
+</ol>
+<h2 id="抓包的原理"><a href="#抓包的原理" class="headerlink" title="抓包的原理"></a>抓包的原理</h2><ol>
+<li><strong>网络接口卡（NIC）</strong>：计算机的网络接口卡（NIC）通常在正常模式下只接收发给自己的数据包。为了进行抓包，NIC 需要工作在混杂模式（Promiscuous Mode），在这种模式下，NIC 可以接收通过网络的所有数据包，而不仅仅是发给它的数据包。</li>
+<li><strong>数据包拦截</strong>：在混杂模式下，网络接口卡将接收到的所有数据包传递给操作系统的网络堆栈。抓包工具（如 Wireshark）通过操作系统提供的接口（例如 Windows 的 WinPcap 或 Npcap 驱动，Linux 的 libpcap 库）来捕获这些数据包。</li>
+<li><strong>数据包存储和分析</strong>：抓包工具会将捕获的数据包存储在内存或文件中，并解析这些数据包，显示其内容和元数据。Wireshark 提供了丰富的协议解析功能，可以识别并解析数百种网络协议，并以用户友好的方式显示数据包的详细信息。</li>
 </ol>
 
                 
