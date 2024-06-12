@@ -24,7 +24,7 @@
 <meta property="og:description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-11T03:16:23.913Z">
-<meta property="article:modified_time" content="2024-06-12T05:54:15.597Z">
+<meta property="article:modified_time" content="2024-06-12T08:33:03.047Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.1k 字
+          7.6k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          43 分钟
+          64 分钟
         
       </span>
     
@@ -442,9 +442,111 @@
 </ol>
 <h2 id="抓包的原理"><a href="#抓包的原理" class="headerlink" title="抓包的原理"></a>抓包的原理</h2><ol>
 <li><strong>网络接口卡（NIC）</strong>：计算机的网络接口卡（NIC）通常在正常模式下只接收发给自己的数据包。为了进行抓包，NIC 需要工作在混杂模式（Promiscuous Mode），在这种模式下，NIC 可以接收通过网络的所有数据包，而不仅仅是发给它的数据包。</li>
-<li><strong>数据包拦截</strong>：在混杂模式下，网络接口卡将接收到的所有数据包传递给操作系统的网络堆栈。抓包工具（如 Wireshark）通过操作系统提供的接口（例如 Windows 的 WinPcap 或 Npcap 驱动，Linux 的 libpcap 库）来捕获这些数据包。</li>
+<li><strong>数据包拦截</strong>：在混杂模式下，网络接口卡<strong>将接收到的所有数据包传递给操作系统的网络堆栈</strong>。抓包工具（如 Wireshark）通过操作系统提供的接口（例如 Windows 的 WinPcap 或 Npcap 驱动，Linux 的 libpcap 库）来捕获这些数据包。</li>
 <li><strong>数据包存储和分析</strong>：抓包工具会将捕获的数据包存储在内存或文件中，并解析这些数据包，显示其内容和元数据。Wireshark 提供了丰富的协议解析功能，可以识别并解析数百种网络协议，并以用户友好的方式显示数据包的详细信息。</li>
 </ol>
+<h2 id="NIC网卡有哪些工作模式？"><a href="#NIC网卡有哪些工作模式？" class="headerlink" title="NIC网卡有哪些工作模式？"></a>NIC网卡有哪些工作模式？</h2><p>除了混杂模式（Promiscuous Mode），NIC还有以下几种常见的工作模式：</p>
+<ol>
+<li><strong>正常模式（Normal Mode）</strong>：<ul>
+<li>在正常模式下，NIC<strong>只接收目的地址是自己的数据包</strong>。对于以太网，这意味着NIC只处理以太网帧的目的MAC地址与其硬件MAC地址匹配的数据包。</li>
+</ul>
+</li>
+<li><strong>多播模式（Multicast Mode）</strong>：<ul>
+<li>在多播模式下，NIC被配置为<strong>接收特定多播组地址的数据包</strong>。多播是一种将单一数据包传送给多个接收者的网络方法。NIC只会接收它被配置的多播地址的数据包。</li>
+</ul>
+</li>
+<li><strong>全部多播模式（All-Multicast Mode）</strong>：<ul>
+<li>在全部多播模式下，NIC将<strong>接收所有的多播流量</strong>，<strong>而不仅仅是特定的多播组地址</strong>。这对于网络分析工具非常有用，因为它们需要监控所有的多播通信。</li>
+</ul>
+</li>
+<li><strong>广播模式（Broadcast Mode）</strong>：<ul>
+<li>在广播模式下，NIC<strong>接收发送到广播地址的数据包</strong>。以太网中的广播地址是 <code>FF:FF:FF:FF:FF:FF</code>，意味着所有连接到同一网络的设备都将接收这些数据包。</li>
+</ul>
+</li>
+<li><strong>无链路模式（Link-Down Mode）</strong>：<ul>
+<li>在无链路模式下，NIC被禁用，无法发送或接收任何数据。这通常用于网络故障排除或网络配置更改时暂时禁用网络接口。</li>
+</ul>
+</li>
+<li><strong>低功耗模式（Low Power Mode）</strong>：<ul>
+<li>在低功耗模式下，NIC进入节能状态，以减少电力消耗。这在移动设备或需要节能的设备上特别有用。<strong>NIC在低功耗模式下可能无法接收数据，或者只能以较低的速率接收数据</strong>。</li>
+</ul>
+</li>
+</ol>
+<h4 id="解释混杂模式"><a href="#解释混杂模式" class="headerlink" title="解释混杂模式"></a>解释混杂模式</h4><p><strong>混杂模式（Promiscuous Mode）</strong>：</p>
+<ul>
+<li>在混杂模式下，NIC接收所有流经网络的流量，而不仅仅是发送到其MAC地址的数据包。这对于网络监控和分析工具（如Wireshark）非常有用，因为它们需要查看网络上所有的通信。</li>
+</ul>
+<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><p>NIC有多种工作模式，包括正常模式、混杂模式、多播模式、全部多播模式、广播模式、无链路模式和低功耗模式。每种模式有其特定的用途，适用于不同的网络需求和场景。混杂模式尤其用于网络分析和监控，因为它允许NIC接收网络上所有的数据包，而不仅仅是发送给自己的数据包。</p>
+<h2 id="Http常见的错误码有哪些？都是什么意思？"><a href="#Http常见的错误码有哪些？都是什么意思？" class="headerlink" title="Http常见的错误码有哪些？都是什么意思？"></a>Http常见的错误码有哪些？都是什么意思？</h2><p>HTTP错误码，也称为HTTP状态码，是服务器在响应HTTP请求时返回的代码，用于表示请求的结果状态。常见的HTTP错误码及其含义如下：</p>
+<h4 id="1xx-Informational-信息性状态码"><a href="#1xx-Informational-信息性状态码" class="headerlink" title="1xx Informational (信息性状态码)"></a>1xx Informational (信息性状态码)</h4><ul>
+<li><strong>100 Continue</strong>：客户端应该继续请求。如果已经完成请求，则忽略此消息。</li>
+<li><strong>101 Switching Protocols</strong>：服务器根据客户端的请求切换协议。</li>
+</ul>
+<h4 id="2xx-Success-成功状态码"><a href="#2xx-Success-成功状态码" class="headerlink" title="2xx Success (成功状态码)"></a>2xx Success (成功状态码)</h4><ul>
+<li><strong>200 OK</strong>：请求成功，并返回所请求的资源。</li>
+<li><strong>201 Created</strong>：请求成功并且服务器创建了新的资源。</li>
+<li><strong>202 Accepted</strong>：服务器已接受请求，但尚未处理。</li>
+<li><strong>204 No Content</strong>：请求成功但没有内容返回。</li>
+<li><strong>205 Reset Content</strong>：请求成功，请重置视图。</li>
+</ul>
+<h4 id="3xx-Redirection-重定向状态码"><a href="#3xx-Redirection-重定向状态码" class="headerlink" title="3xx Redirection (重定向状态码)"></a>3xx Redirection (重定向状态码)</h4><ul>
+<li><strong>301 Moved Permanently</strong>：请求的资源已被永久移动到新的URL。</li>
+<li><strong>302 Found</strong>：请求的资源临时从不同的URL响应。</li>
+<li><strong>304 Not Modified</strong>：资源未被修改，自上次请求以来没有变化。</li>
+<li><strong>307 Temporary Redirect</strong>：请求的资源临时从不同的URL响应，但必须使用原有的方法请求。</li>
+</ul>
+<h4 id="4xx-Client-Errors-客户端错误状态码"><a href="#4xx-Client-Errors-客户端错误状态码" class="headerlink" title="4xx Client Errors (客户端错误状态码)"></a>4xx Client Errors (客户端错误状态码)</h4><ul>
+<li><strong>400 Bad Request</strong>：服务器无法理解请求的格式，客户端应修改请求。</li>
+<li><strong>401 Unauthorized</strong>：请求需要用户认证。</li>
+<li><strong>403 Forbidden</strong>：服务器理解请求，但拒绝执行。</li>
+<li><strong>404 Not Found</strong>：请求的资源不存在。</li>
+<li><strong>405 Method Not Allowed</strong>：请求方法不被允许。</li>
+<li><strong>406 Not Acceptable</strong>：请求的资源不符合客户端的条件。</li>
+<li><strong>408 Request Timeout</strong>：请求超时，服务器等待客户端发送请求数据超时。</li>
+<li><strong>409 Conflict</strong>：请求与服务器的状态冲突。</li>
+<li><strong>410 Gone</strong>：请求的资源永久删除。</li>
+<li><strong>411 Length Required</strong>：服务器要求在请求中包含Content-Length头。</li>
+<li><strong>413 Payload Too Large</strong>：请求实体过大，服务器无法处理。</li>
+<li><strong>414 URI Too Long</strong>：请求的URI过长，服务器无法处理。</li>
+<li><strong>415 Unsupported Media Type</strong>：请求的媒体格式不受支持。</li>
+<li><strong>429 Too Many Requests</strong>：客户端发送的请求次数超过限额。</li>
+</ul>
+<h4 id="5xx-Server-Errors-服务器错误状态码"><a href="#5xx-Server-Errors-服务器错误状态码" class="headerlink" title="5xx Server Errors (服务器错误状态码)"></a>5xx Server Errors (服务器错误状态码)</h4><ul>
+<li><strong>500 Internal Server Error</strong>：服务器遇到错误，无法完成请求。</li>
+<li><strong>501 Not Implemented</strong>：服务器不支持请求的方法。</li>
+<li><strong>502 Bad Gateway</strong>：服务器作为网关或代理，从上游服务器收到无效响应。</li>
+<li><strong>503 Service Unavailable</strong>：服务器暂时不可用，通常是由于过载或维护。</li>
+<li><strong>504 Gateway Timeout</strong>：服务器作为网关或代理，未能及时从上游服务器收到响应。</li>
+<li><strong>505 HTTP Version Not Supported</strong>：服务器不支持请求所用的HTTP版本。</li>
+</ul>
+<h4 id="常见错误码解释"><a href="#常见错误码解释" class="headerlink" title="常见错误码解释"></a>常见错误码解释</h4><h5 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h5><ul>
+<li><strong>解释</strong>：服务器找不到请求的资源。这通常是因为URL错误或资源已被删除。</li>
+<li><strong>例子</strong>：访问一个不存在的网页时，会返回404错误。</li>
+</ul>
+<h5 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h5><ul>
+<li><strong>解释</strong>：服务器遇到意外情况，无法完成请求。这通常是由于服务器端代码错误或配置问题。</li>
+<li><strong>例子</strong>：服务器端脚本执行错误，会导致返回500错误。</li>
+</ul>
+<h5 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h5><ul>
+<li><strong>解释</strong>：服务器理解请求，但拒绝执行。这通常是因为权限问题。</li>
+<li><strong>例子</strong>：试图访问没有权限查看的目录或文件时，会返回403错误。</li>
+</ul>
+<h4 id="如何处理这些错误码"><a href="#如何处理这些错误码" class="headerlink" title="如何处理这些错误码"></a>如何处理这些错误码</h4><ul>
+<li><strong>客户端方面</strong>：<ul>
+<li>检查并确保URL正确。</li>
+<li>确认请求方法（GET、POST等）是否正确。</li>
+<li>验证请求头和参数是否正确。</li>
+<li>对需要身份认证的请求，确保提供正确的认证信息。</li>
+</ul>
+</li>
+<li><strong>服务器方面</strong>：<ul>
+<li>查看服务器日志，确定错误原因。</li>
+<li>检查服务器配置，确保正确处理请求。</li>
+<li>确认资源存在且路径正确。</li>
+<li>对于频繁出现的错误，可以添加自定义错误页面，提供更友好的错误信息。</li>
+</ul>
+</li>
+</ul>
 
                 
               </div>
