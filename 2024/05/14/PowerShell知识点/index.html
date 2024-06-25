@@ -24,7 +24,7 @@
 <meta property="og:description" content="Get-Help对标Linux中的-helpGet-Adapter命令查看所有网卡 12345Get-NetAdapter | Select-Object -ExpandProperty Name#Select-Object 可以用 select 代替&lt;#这里用了管道操作符来筛选出Name属性，也可以不用，直接显示所有网卡的所有信息#&gt;     命令 解释 别名    Remove-I">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-14T08:21:26.867Z">
-<meta property="article:modified_time" content="2024-06-06T07:01:29.607Z">
+<meta property="article:modified_time" content="2024-06-14T16:01:21.669Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="PowerShell">
@@ -225,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.3k 字
         
       </span>
     
@@ -236,7 +236,7 @@
         
         
         
-          10 分钟
+          11 分钟
         
       </span>
     
@@ -382,6 +382,8 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-keyword">param</span> (<br>    [<span class="hljs-type">Alias</span>(<span class="hljs-string">&quot;r&quot;</span>)]	<span class="hljs-comment">#为参数指定别名&#x27;r&#x27;</span><br>    [<span class="hljs-built_in">string</span>]<span class="hljs-variable">$RuntimeIdentifier</span> = <span class="hljs-string">&quot;win-x64&quot;</span>	<span class="hljs-comment">#定义一个字符串类型的参数，并设定默认值为&quot;win-x64&quot;</span><br>)<br></code></pre></td></tr></table></figure>
 
 <p>如果想要用两个变量来拼成一句命令，需要在行首放一个”&amp;”调用运算符</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">(netstat <span class="hljs-literal">-ano</span> | findstr :<span class="hljs-number">1883</span>).Split(<span class="hljs-string">&quot;`n&quot;</span>).Count<br><span class="hljs-comment">#获取所有连接并显示它们的pid，找到其中1883端口的，输出内容根据行来分割成数组，计数</span><br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
