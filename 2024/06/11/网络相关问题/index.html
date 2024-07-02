@@ -24,7 +24,7 @@
 <meta property="og:description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-11T03:16:23.913Z">
-<meta property="article:modified_time" content="2024-06-25T02:51:57.006Z">
+<meta property="article:modified_time" content="2024-06-25T06:15:36.936Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          10k 字
+          11k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          84 分钟
+          96 分钟
         
       </span>
     
@@ -689,7 +689,117 @@
 </tr>
 </tbody></table>
 <p>通过这些比较可以看出，多播和广播在数据传输的目标选择和网络资源利用上有显著的差异。广播适用于需要所有节点接收的简单任务，而多播适合需要选择性传输的高效数据分发任务。</p>
-<h2 id="APN是什么"><a href="#APN是什么" class="headerlink" title="APN是什么"></a>APN是什么</h2>
+<h2 id="常见HTTP请求方法"><a href="#常见HTTP请求方法" class="headerlink" title="常见HTTP请求方法"></a>常见HTTP请求方法</h2><ol>
+<li><p><strong>GET</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：请求从服务器检索数据。</p>
+</li>
+<li><p><strong>功能</strong>：GET请求通过URL传递参数，并从服务器获取响应数据。它通常用于获取数据而不进行任何数据修改。</p>
+</li>
+<li><p><strong>特性</strong>：GET请求是幂等的（同样的请求多次执行效果相同）和安全的（不会对服务器数据进行修改）。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/index.html</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>POST</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：将数据提交到服务器，通常用于表单提交或上传文件。</p>
+</li>
+<li><p><strong>功能</strong>：POST请求通过请求体传递数据，服务器处理数据并返回响应。它通常用于创建或更新资源。</p>
+</li>
+<li><p><strong>特性</strong>：POST请求不是幂等的（同样的请求多次执行可能会导致不同的效果），可以对服务器资源进行修改。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/submit-form</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/x-www-form-urlencoded<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>27<br><br><span class="language-ini"><span class="hljs-attr">name</span>=John&amp;age=<span class="hljs-number">30</span></span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>PUT</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：将数据上传到服务器，通常用于更新资源。</p>
+</li>
+<li><p><strong>功能</strong>：PUT请求通过请求体传递数据，服务器用传递的数据替换目标资源的内容。</p>
+</li>
+<li><p><strong>特性</strong>：PUT请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">PUT</span> <span class="hljs-string">/users/1</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/json<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>18<br><br><span class="language-json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;John&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">30</span><span class="hljs-punctuation">&#125;</span></span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>DELETE</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：请求服务器删除指定的资源。</p>
+</li>
+<li><p><strong>功能</strong>：DELETE请求删除指定的资源，服务器返回删除结果。</p>
+</li>
+<li><p><strong>特性</strong>：DELETE请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">DELETE</span> <span class="hljs-string">/users/1</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>HEAD</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：与GET请求类似，但服务器仅返回响应头，不返回响应体。</p>
+</li>
+<li><p><strong>功能</strong>：用于检查资源的元数据（如响应头信息）而不获取实际数据。</p>
+</li>
+<li><p><strong>特性</strong>：HEAD请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">HEAD</span> <span class="hljs-string">/index.html</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>OPTIONS</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：查询服务器支持的请求方法和选项。</p>
+</li>
+<li><p><strong>功能</strong>：用于检查服务器允许的HTTP方法、CORS设置等。</p>
+</li>
+<li><p><strong>特性</strong>：OPTIONS请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">OPTIONS</span> <span class="hljs-string">/index.html</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>PATCH</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：部分更新资源。</p>
+</li>
+<li><p><strong>功能</strong>：PATCH请求通过请求体传递数据，仅修改目标资源的部分内容。</p>
+</li>
+<li><p><strong>特性</strong>：PATCH请求不是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">PATCH</span> <span class="hljs-string">/users/1</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/json<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>18<br><br><span class="language-json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">31</span><span class="hljs-punctuation">&#125;</span></span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>CONNECT</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：用于建立隧道连接，如通过HTTP代理建立SSL隧道。</p>
+</li>
+<li><p><strong>功能</strong>：通常用于HTTPS请求，通过HTTP代理进行中继。</p>
+</li>
+<li><p><strong>特性</strong>：CONNECT请求不是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">CONNECT</span> <span class="hljs-string">www.example.com:443</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>TRACE</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：回显服务器收到的请求，主要用于诊断和调试。</p>
+</li>
+<li><p><strong>功能</strong>：服务器将收到的请求内容原样返回给客户端。</p>
+</li>
+<li><p><strong>特性</strong>：TRACE请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">TRACE</span> <span class="hljs-string">/index.html</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+
                 
               </div>
             
