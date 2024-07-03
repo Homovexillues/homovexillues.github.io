@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
 <meta property="article:published_time" content="2024-03-29T01:51:22.492Z">
-<meta property="article:modified_time" content="2024-07-02T19:28:34.704Z">
+<meta property="article:modified_time" content="2024-07-03T03:22:33.231Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
@@ -225,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          25k 字
+          27k 字
         
       </span>
     
@@ -236,7 +236,7 @@
         
         
         
-          207 分钟
+          227 分钟
         
       </span>
     
@@ -998,6 +998,57 @@ public void YourMethod()
 </ol>
 <p>SOLID设计原则帮助开发者避免设计上的常见错误，比如过度耦合和脆弱的代码，从而提高代码的可维护性、可扩展性和可测试性。这些原则并不总是需要同时应用，而是根据具体情况灵活运用。</p>
 <h2 id="什么是生成叙事？"><a href="#什么是生成叙事？" class="headerlink" title="什么是生成叙事？"></a>什么是生成叙事？</h2><p>你在游戏里和别的玩家交互，你被K了头，这个就是生成叙事。它是多人游戏特有的。</p>
+<h2 id="ConcurrentDictionary是啥？"><a href="#ConcurrentDictionary是啥？" class="headerlink" title="ConcurrentDictionary是啥？"></a>ConcurrentDictionary是啥？</h2><p><code>ConcurrentDictionary</code> 是 .NET 中的一个线程安全的字典实现，属于 <code>System.Collections.Concurrent</code> 命名空间。它允许多个线程同时读写字典，而不需要额外的同步机制，因为它内部使用了细粒度锁定和其他并发控制技术来确保操作的原子性和线程安全。</p>
+<p><code>ConcurrentDictionary</code> 提供了与 <code>Dictionary&lt;TKey,TValue&gt;</code> 类似的功能，但它更适合在高并发环境中使用。它支持以下特性：</p>
+<ul>
+<li><strong>线程安全</strong>：多个线程可以同时访问字典进行读取或更新操作，而不会互相干扰。</li>
+<li><strong>高性能</strong>：通过减少锁定的粒度，<code>ConcurrentDictionary</code> 可以提供比传统的 <code>Dictionary</code> 更好的并发性能。</li>
+<li><strong>灵活性</strong>：提供了多种添加、删除和查找元素的方法，包括返回默认值的选项，如果键不存在。</li>
+<li><strong>扩展性</strong>：可以与其他并发集合一起使用，以构建复杂的并发数据结构。</li>
+</ul>
+<p>使用 <code>ConcurrentDictionary</code> 时，你不需要手动锁定字典的各个部分，因为 <code>ConcurrentDictionary</code> 已经为你管理了这些细节。这使得它成为多线程应用程序中的首选数据结构之一，特别是当你需要在多个线程之间共享和修改数据时。</p>
+<h2 id="sortedset是什么类型？"><a href="#sortedset是什么类型？" class="headerlink" title="sortedset是什么类型？"></a>sortedset是什么类型？</h2><p><code>SortedSet&lt;T&gt;</code> 是 .NET 中的一个集合类型，属于 <code>System.Collections.Generic</code> 命名空间。它是一个基于红黑树的有序集合，提供了线程安全的添加、删除和搜索操作。以下是 <code>SortedSet&lt;T&gt;</code> 的一些关键特性：</p>
+<ol>
+<li><p><strong>有序性</strong>：<code>SortedSet&lt;T&gt;</code> 保证其中的元素按照特定的顺序排列。默认情况下，元素按照其自然排序顺序（即 <code>IComparable&lt;T&gt;</code> 接口定义的顺序）进行排序。如果元素类型不实现 <code>IComparable&lt;T&gt;</code>，或者你希望使用不同的排序方式，可以通过提供一个 <code>IComparer&lt;T&gt;</code> 实现来指定自定义的排序逻辑。</p>
+</li>
+<li><p><strong>唯一性</strong>：<code>SortedSet&lt;T&gt;</code> 中的元素是唯一的。如果尝试添加一个已经存在于集合中的元素，该元素不会被重复添加。</p>
+</li>
+<li><p><strong>效率</strong>：红黑树的实现确保了 <code>SortedSet&lt;T&gt;</code> 提供了高效的元素添加、删除和搜索操作。例如，添加、删除和查找操作通常都是对数时间复杂度（O(log n)）。</p>
+</li>
+<li><p><strong>范围查询</strong>：<code>SortedSet&lt;T&gt;</code> 支持高效的范围查询，可以快速找到在指定范围内的所有元素。</p>
+</li>
+<li><p><strong>并集、交集和差集操作</strong>：<code>SortedSet&lt;T&gt;</code> 提供了方便的方法来执行集合的并集、交集和差集操作。</p>
+</li>
+<li><p><strong>线程安全</strong>：虽然 <code>SortedSet&lt;T&gt;</code> 本身不是线程安全的，但是可以通过使用 <code>ConcurrentBag&lt;T&gt;</code> 或者通过外部同步机制来确保线程安全。</p>
+</li>
+</ol>
+<p><code>SortedSet&lt;T&gt;</code> 适用于需要有序集合且元素唯一性的场景，例如，存储一组唯一项并保持它们有序，或者实现某些算法（如集合操作、范围搜索等）。</p>
+<h2 id="Hashset不是一个键值对，而是一种用哈希表实现的便于查询的集合？"><a href="#Hashset不是一个键值对，而是一种用哈希表实现的便于查询的集合？" class="headerlink" title="Hashset不是一个键值对，而是一种用哈希表实现的便于查询的集合？"></a>Hashset不是一个键值对，而是一种用哈希表实现的便于查询的集合？</h2><p>是的，您的理解是正确的。<code>HashSet&lt;T&gt;</code> 不是键值对集合，而是一种基于哈希表实现的集合，它主要用于存储不重复的元素。以下是 <code>HashSet&lt;T&gt;</code> 的一些关键特性：</p>
+<ol>
+<li><p><strong>元素唯一性</strong>：<code>HashSet&lt;T&gt;</code> 保证所有元素都是唯一的。如果尝试添加一个已经存在的元素，该元素不会被添加到集合中。</p>
+</li>
+<li><p><strong>基于哈希表</strong>：<code>HashSet&lt;T&gt;</code> 的内部实现基于哈希表，这意味着它使用元素的哈希码来快速定位元素，从而提供高效的查找、插入和删除操作。</p>
+</li>
+<li><p><strong>无序性</strong>：与 <code>Dictionary&lt;TKey, TValue&gt;</code> 不同，<code>HashSet&lt;T&gt;</code> 不保证元素的顺序。元素的添加和遍历顺序可能与元素的实际存储顺序不同。</p>
+</li>
+<li><p><strong>高效操作</strong>：<code>HashSet&lt;T&gt;</code> 提供平均常数时间复杂度（O(1)）的添加、删除和查找操作。</p>
+</li>
+<li><p><strong>不包含键值对</strong>：与字典不同，<code>HashSet&lt;T&gt;</code> 只存储单一类型的元素，不包含键值对结构。每个元素既是键也是值。</p>
+</li>
+<li><p><strong>线程安全性</strong>：<code>HashSet&lt;T&gt;</code> 本身不是线程安全的。如果需要在多线程环境中使用，需要采取额外的同步措施。</p>
+</li>
+<li><p><strong>遍历能力</strong>：<code>HashSet&lt;T&gt;</code> 可以很容易地使用 <code>foreach</code> 循环进行遍历，因为 <code>IEnumerable&lt;T&gt;</code> 接口提供了迭代集合元素的能力。</p>
+</li>
+<li><p><strong>迭代器接口</strong>：<code>HashSet&lt;T&gt;</code> 实现了 <code>IEnumerable&lt;T&gt;</code> 和 <code>IEnumerable</code> 接口。这些接口要求实现一个名为 <code>GetEnumerator</code> 的方法，该方法返回一个实现了 <code>IEnumerator&lt;T&gt;</code> 或 <code>IEnumerator</code> 的对象。</p>
+</li>
+<li><p><strong>封装内部结构</strong>：<code>GetEnumerator</code> 方法封装了 <code>HashSet&lt;T&gt;</code> 的内部结构和元素的检索逻辑，使得用户无需了解哈希表的工作原理，就可以遍历集合中的所有元素。</p>
+</li>
+<li><p><strong>类型安全</strong>：由于 <code>HashSet&lt;T&gt;</code> 是泛型集合，它可以确保存储的元素类型是一致的。当你使用 <code>foreach</code> 遍历时，你可以直接声明变量 <code>a</code> 的类型为 <code>string</code>（如果 <code>HashSet&lt;T&gt;</code> 存储的是 <code>string</code> 类型的元素），并且知道 <code>foreach</code> 循环中的每个元素都将是 <code>string</code> 类型。</p>
+</li>
+<li><p><strong>性能</strong>：尽管 <code>HashSet&lt;T&gt;</code> 是基于哈希表实现的，但 <code>foreach</code> 遍历的性能通常与元素的数量成正比，而不是与哈希表的大小或复杂性成正比。这意味着即使哈希表很大，遍历集合的速度也很快。</p>
+</li>
+</ol>
+<p><code>HashSet&lt;T&gt;</code> 非常适合用于需要快速查找和确保元素唯一性的场景，例如去重、集合操作（并集、交集、差集）等。</p>
 
                 
               </div>
