@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>尝试显示书籍</title>
-    <link href="/2024/07/07/test/"/>
-    <url>/2024/07/07/test/</url>
-    
-    <content type="html"><![CDATA[<iframe src='../pdfjs/web/viewer.html?file=<https://github.com/Homovexillues/homovexillues.github.io/blob/main/pdfjs/pdf/beauty.pdf>' style='width:100%;height:100%'></iframe>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>设计模式之美</title>
     <link href="/2024/07/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BE%8E/"/>
     <url>/2024/07/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BE%8E/</url>
