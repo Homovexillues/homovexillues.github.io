@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>C#代码固定格式及其优缺点</title>
+    <link href="/2024/08/29/C-Sharp%E4%BB%A3%E7%A0%81%E5%9B%BA%E5%AE%9A%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9/"/>
+    <url>/2024/08/29/C-Sharp%E4%BB%A3%E7%A0%81%E5%9B%BA%E5%AE%9A%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<h1 id="轮询任务"><a href="#轮询任务" class="headerlink" title="轮询任务"></a>轮询任务</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">RunningWorks</span>()</span> &#123;<br>    <span class="hljs-keyword">if</span>(ActiveWorks.Count &gt; <span class="hljs-number">0</span>) &#123;<span class="hljs-comment">//任务集合不为空</span><br>        Task.Factory.StartNew(<span class="hljs-keyword">async</span> () =&gt; &#123;<br>            <span class="hljs-keyword">while</span>(!IsDisposed) &#123;<br>                <span class="hljs-keyword">await</span> Task.Delay(Interval);<span class="hljs-comment">//他和Thread.Sleep()那个更好？</span><br>            &#125;<br>        &#125;,TaskCreationOptions.LongRunning);<span class="hljs-comment">//长期运行任务的优化项</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>C#字符串类技巧</title>
     <link href="/2024/07/21/C-sharp%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E6%8A%80%E5%B7%A7/"/>
     <url>/2024/07/21/C-sharp%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E6%8A%80%E5%B7%A7/</url>
