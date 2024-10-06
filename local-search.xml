@@ -29,6 +29,31 @@
   
   
   <entry>
+    <title>C#面向对象</title>
+    <link href="/2024/10/06/C-Sharp%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <url>/2024/10/06/C-Sharp%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
+    
+    <content type="html"><![CDATA[<p>所以封装的作用是这样的，如果一个命名空间下没有可以引用的方法，该命名空间就不能被引用</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Powershell脚本</title>
     <link href="/2024/09/30/Powershell%E8%84%9A%E6%9C%AC/"/>
     <url>/2024/09/30/Powershell%E8%84%9A%E6%9C%AC/</url>
