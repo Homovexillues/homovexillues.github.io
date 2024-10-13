@@ -48,12 +48,18 @@
   
   
   <entry>
-    <title></title>
+    <title>编程工具官网</title>
     <link href="/2024/10/13/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%E5%AE%98%E7%BD%91/"/>
     <url>/2024/10/13/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%E5%AE%98%E7%BD%91/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h4 id="Visual-Studio"><a href="#Visual-Studio" class="headerlink" title="Visual Studio"></a><a href="https://visualstudio.microsoft.com/zh-hans/downloads/">Visual Studio</a></h4><ul><li>C#插件<ul><li><a href="https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaidVS2022">CodeMaid VS2022</a></li></ul></li></ul><h4 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a><a href="https://code.visualstudio.com/docs/?dv=win64user">Visual Studio Code</a></h4><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://git-scm.com/download/win">Git</a></h4>]]></content>
     
+    
+    <categories>
+      
+      <category>分享</category>
+      
+    </categories>
     
     
   </entry>
