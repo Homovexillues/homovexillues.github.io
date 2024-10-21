@@ -24,7 +24,7 @@
 <meta property="og:description" content="前端三剑客： HTML：负责网页的架构 CSS：负责网页的样式，美化 JavaScript：负责网页的行为  什么是HTMLHTML是超文本标记语言（Hyper Text Markup Language），是用来描述网页的一种语言。 简单来说，HTML文件也可以直接称为网页，浏览器的作用就是读取HTML文件，并且以网页的形式去展示它们 标签介绍HTML标签是由尖括号包围起来的关键词，如&lt;ht">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-29T01:52:03.711Z">
-<meta property="article:modified_time" content="2024-10-18T09:03:45.882Z">
+<meta property="article:modified_time" content="2024-10-21T07:43:32.899Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Javascript">
 <meta property="article:tag" content="Html">
@@ -431,7 +431,7 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;我是提交&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="CSS基础选择器"><a href="#CSS基础选择器" class="headerlink" title="CSS基础选择器"></a>CSS基础选择器</h3><p>CSS（Cascading Style Sheets）层叠样式表（级联样式表、样式表），CSS也是一种标记语言</p>
+<h4 id="代码模块"><a href="#代码模块" class="headerlink" title="代码模块"></a>代码模块</h4><h3 id="CSS基础选择器"><a href="#CSS基础选择器" class="headerlink" title="CSS基础选择器"></a>CSS基础选择器</h3><p>CSS（Cascading Style Sheets）层叠样式表（级联样式表、样式表），CSS也是一种标记语言</p>
 <h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul>
 <li>设置HTML页面中文本内容</li>
 <li>图片的外形</li>
@@ -833,5 +833,20 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
