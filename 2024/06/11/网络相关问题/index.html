@@ -24,7 +24,7 @@
 <meta property="og:description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-11T03:16:23.913Z">
-<meta property="article:modified_time" content="2024-10-31T08:35:15.033Z">
+<meta property="article:modified_time" content="2024-10-31T08:59:45.492Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary_large_image">
@@ -1017,9 +1017,7 @@
 <li><code>255.255.255.0</code> (即 <code>/24</code>)</li>
 <li>以及其他以 <code>1</code> 位连续、<code>0</code> 位连续的格式，比如 <code>255.255.252.0</code> (即 <code>/22</code>)</li>
 </ul>
-<h3 id="如何计算一个子网的-IP-地址数量"><a href="#如何计算一个子网的-IP-地址数量" class="headerlink" title="如何计算一个子网的 IP 地址数量"></a>如何计算一个子网的 IP 地址数量</h3><p>如果使用标准的子网掩码，可以用以下公式计算同一子网内的可用 IP 地址数：</p>
-<p>[ \text{可用 IP 地址数} &#x3D; 2^{(32 - \text{子网掩码中的1的数量})} - 2 ]</p>
-<p>例如：</p>
+<h3 id="如何计算一个子网的-IP-地址数量"><a href="#如何计算一个子网的-IP-地址数量" class="headerlink" title="如何计算一个子网的 IP 地址数量"></a>如何计算一个子网的 IP 地址数量</h3><p>如果使用标准的子网掩码，可以用以下公式计算同一子网内的可用 IP 地址数：<br>$$<br>\text{可用 IP 地址数} &#x3D; 2^{(32 - \text{子网掩码中的1的数量})} - 2<br>$$<br>例如：</p>
 <ul>
 <li><strong><code>255.255.255.0</code></strong> (<code>/24</code>)：32 - 24 &#x3D; 8，所以可用 IP 数是 ( 2^8 - 2 &#x3D; 256 - 2 &#x3D; 254 )</li>
 <li><strong><code>255.255.252.0</code></strong> (<code>/22</code>)：32 - 22 &#x3D; 10，所以可用 IP 数是 ( 2^{10} - 2 &#x3D; 1024 - 2 &#x3D; 1022 )</li>
