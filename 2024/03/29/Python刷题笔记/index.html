@@ -1,0 +1,824 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="进制转换 进制转换 描述 写出一个程序，接受一个十六进制的数，输出该数值的十进制表示。 数据范围：保证结果在 1≤n≤2^31−1 输入描述： 输入一个十六进制的数值字符串。 输出描述： 输出该数值的十进制字符串。不同组的测试用例用\n隔开。 示例1 输入： 0xAA 输出： 170  1234567import sysfor line in sys.stdin:# sys.stdin用于获取用户">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python刷题笔记">
+<meta property="og:url" content="https://homovexillues.github.io/2024/03/29/Python%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="红石门">
+<meta property="og:description" content="进制转换 进制转换 描述 写出一个程序，接受一个十六进制的数，输出该数值的十进制表示。 数据范围：保证结果在 1≤n≤2^31−1 输入描述： 输入一个十六进制的数值字符串。 输出描述： 输出该数值的十进制字符串。不同组的测试用例用\n隔开。 示例1 输入： 0xAA 输出： 170  1234567import sysfor line in sys.stdin:# sys.stdin用于获取用户">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-29T01:51:54.987Z">
+<meta property="article:modified_time" content="2024-04-17T01:57:05.767Z">
+<meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Python刷题笔记 - 红石门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Python刷题笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-29 09:51" pubdate>
+          2024年3月29日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          57 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Python刷题笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a><strong>进制转换</strong></h1><blockquote>
+<p><strong>进制转换</strong></p>
+<p><strong>描述</strong></p>
+<p>写出一个程序，接受一个十六进制的数，输出该数值的十进制表示。</p>
+<p>数据范围：保证结果在 1≤n≤2^31−1</p>
+<p><strong>输入描述：</strong></p>
+<p>输入一个十六进制的数值字符串。</p>
+<p><strong>输出描述：</strong></p>
+<p>输出该数值的十进制字符串。不同组的测试用例用\n隔开。</p>
+<p><strong>示例1</strong></p>
+<p><strong>输入：</strong></p>
+<p>0xAA</p>
+<p><strong>输出：</strong></p>
+<p>170</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br><br><span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> sys.stdin:<span class="hljs-comment"># sys.stdin用于获取用户或其它输入源的一个接口，通常用来从键盘或者文件或其它程序中读取数据</span><br>    				  <span class="hljs-comment"># 这种写法会让脚本读取命令行中的每一行数据，直到输入EOF</span><br>    a = line.strip()  <span class="hljs-comment"># python字符串的一个方法，会返回一个新的字符串，清理开头和结尾的空白字符（空格，制表符，换行符）</span><br>    				  <span class="hljs-comment"># 如果输入的line是&quot;  hello  \n&quot;,则line.strip()=&quot;hello&quot;</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(a,<span class="hljs-number">16</span>))<br></code></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(),<span class="hljs-number">16</span>))<br></code></pre></td></tr></table></figure>
+
+<h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><blockquote>
+<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">&gt;输入：nums = <span class="hljs-comment">[2,7,11,15]</span>, target = 9<br>&gt;输出：<span class="hljs-comment">[0,1]</span><br>&gt;解释：因为 nums<span class="hljs-comment">[0]</span> + nums<span class="hljs-comment">[1]</span> == 9 ，返回 <span class="hljs-comment">[0, 1]</span> 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">&gt;输入：nums = <span class="hljs-comment">[3,2,4]</span>, target = 6<br>&gt;输出：<span class="hljs-comment">[1,2]</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">&gt;输入：nums = <span class="hljs-comment">[3,3]</span>, target = 6<br>&gt;输出：<span class="hljs-comment">[0,1]</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
+<li><code>-109 &lt;= target &lt;= 109</code></li>
+<li><strong>只会存在一个有效答案</strong></li>
+</ul>
+<p><strong>进阶：</strong>你可以想出一个时间复杂度小于 <code>O(n2)</code> 的算法吗？</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">twoSum</span>(<span class="hljs-params">self,nums,target</span>):<br>        lens = <span class="hljs-built_in">len</span>(nums)<span class="hljs-comment">#数组长度</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,lens):<span class="hljs-comment">#i在数组内遍历，从第二个数开始</span><br>            <span class="hljs-keyword">if</span>(target-nums[i]) <span class="hljs-keyword">in</span> nums:<span class="hljs-comment">#如果另一个数在数组里</span><br>                j = nums.index(target-nums[i])<span class="hljs-comment">#定位这个数的下角标</span><br>                <span class="hljs-keyword">if</span>(j!=i):<span class="hljs-comment">#这个数不能是i</span><br>                    <span class="hljs-keyword">break</span><br><br>        <span class="hljs-keyword">return</span> [j,i]<br></code></pre></td></tr></table></figure>
+
+<h1 id="明明的随机数"><a href="#明明的随机数" class="headerlink" title="明明的随机数"></a>明明的随机数</h1><blockquote>
+<h4 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h4><p>明明生成了<em>N</em>个1到500之间的随机整数。请你删去其中重复的数字，即相同的数字只保留一个，把其余相同的数去掉，然后再把这些数从小到大排序，按照排好的顺序输出。</p>
+<p>数据范围： 1≤n≤1000 1≤<em>n</em>≤1000 ，输入的数字大小满足 1≤val≤500 </p>
+<h5 id="输入描述："><a href="#输入描述：" class="headerlink" title="输入描述："></a>输入描述：</h5><p>第一行先输入随机整数的个数 N 。 接下来的 N 行每行输入一个整数，代表明明生成的随机数。 具体格式可以参考下面的”示例”。</p>
+<h5 id="输出描述："><a href="#输出描述：" class="headerlink" title="输出描述："></a>输出描述：</h5><p>输出多行，表示输入数据处理后的结果</p>
+<h4 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h4><p>输入：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">3<br>2<br>2<br>1<br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">1<br>2<br></code></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs routeros">输入解释：<br>第一个数字是3，也即这个小样例的<span class="hljs-attribute">N</span>=3，说明用计算机生成了3个1到500之间的随机整数，接下来每行一个随机数字，共3行，也即这3个随机数字为：<br>2<br>2<br>1<br>所以样例的输出为：<br>1<br>2  <br></code></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-keyword">try</span>:<br>        n = <span class="hljs-built_in">input</span>() <span class="hljs-comment"># 输入n个数</span><br>        i=<span class="hljs-number">0</span><br>        lst = [] <span class="hljs-comment">#放数据的空列表</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">int</span>(n)): <span class="hljs-comment">#循环n次</span><br>            lst.append(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())) <span class="hljs-comment">#将输入进来的数字填进</span><br>        uniq=<span class="hljs-built_in">set</span>(lst) <span class="hljs-comment">#列表转集合</span><br>        lst =<span class="hljs-built_in">list</span>(uniq) <span class="hljs-comment">#集合转列表</span><br>        lst.sort() <span class="hljs-comment">#列表排序</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> lst:<br>            <span class="hljs-built_in">print</span>(i) <span class="hljs-comment">#打印列表</span><br>    <span class="hljs-keyword">except</span>:<br>        <span class="hljs-keyword">break</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="字符个数统计"><a href="#字符个数统计" class="headerlink" title="字符个数统计"></a>字符个数统计</h1><blockquote>
+<h2 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h2><p>编写一个函数，计算字符串中含有的不同字符的个数。字符在 ASCII 码范围内( 0~127 ，包括 0 和 127 )，换行表示结束符，不算在字符里。不在范围内的不作统计。多个相同的字符只计算一次</p>
+<p>例如，对于字符串 abaca 而言，有 a、b、c 三种不同的字符，因此输出 3 。</p>
+<p>数据范围：1≤<em>n</em>≤500 </p>
+<h3 id="输入描述：-1"><a href="#输入描述：-1" class="headerlink" title="输入描述："></a>输入描述：</h3><p>输入一行没有空格的字符串。</p>
+<h3 id="输出描述：-1"><a href="#输出描述：-1" class="headerlink" title="输出描述："></a>输出描述：</h3><p>输出 输入字符串 中范围在(0~127，包括0和127)字符的种数。</p>
+<h2 id="示例1-1"><a href="#示例1-1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">abc</span><br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">3<br></code></pre></td></tr></table></figure>
+
+<h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><p>输入：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">aaa</span><br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">1<br></code></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br><br><span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> sys.stdin:<br>    a = line.strip()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(<span class="hljs-built_in">set</span>(a)))<br></code></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(<span class="hljs-built_in">set</span>(<span class="hljs-built_in">input</span>().replace(<span class="hljs-string">&#x27;\n&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>))))<br></code></pre></td></tr></table></figure>
+
+<h1 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h1><blockquote>
+<h2 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a>描述</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+<p>数据范围：1≤<em>n</em>≤40</p>
+<p>要求：时间复杂度：<em>O</em>(<em>n</em>) ，空间复杂度： <em>O</em>(1)</p>
+<h2 id="示例1-2"><a href="#示例1-2" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">2<br></code></pre></td></tr></table></figure>
+
+<p>返回值：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">2<br></code></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">青蛙要跳上两级台阶有两种跳法，分别是：先跳一级，再跳一级或者直接跳两级。因此答案为2       <br></code></pre></td></tr></table></figure>
+
+<h2 id="示例2-1"><a href="#示例2-1" class="headerlink" title="示例2"></a>示例2</h2><p>输入：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">7<br></code></pre></td></tr></table></figure>
+
+<p>返回值：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">21<br></code></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">jumpFloor</span>(<span class="hljs-params">self , number: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        <span class="hljs-comment"># write code here</span><br>        <span class="hljs-keyword">if</span> number &lt;= <span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> self.jumpFloor(number-<span class="hljs-number">1</span>)+self.jumpFloor(number-<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+
+<h1 id="整数与IP地址间的转换"><a href="#整数与IP地址间的转换" class="headerlink" title="整数与IP地址间的转换"></a><strong>整数与IP地址间的转换</strong></h1><blockquote>
+<h2 id="描述-3"><a href="#描述-3" class="headerlink" title="描述"></a>描述</h2><p>原理：ip地址的每段可以看成是一个0-255的整数，把每段拆分成一个二进制形式组合起来，然后把这个二进制数转变成<br>一个长整数。<br>举例：一个ip地址为10.0.3.193<br>每段数字       相对应的二进制数<br>10          00001010<br>0          00000000<br>3          00000011<br>193         11000001</p>
+<p>组合起来即为：00001010 00000000 00000011 11000001,转换为10进制数就是：167773121，即该IP地址转换后的数字就是它了。</p>
+<p>数据范围：保证输入的是合法的 IP 序列</p>
+<h3 id="输入描述：-2"><a href="#输入描述：-2" class="headerlink" title="输入描述："></a>输入描述：</h3><p>输入<br>1 输入IP地址<br>2 输入10进制型的IP地址</p>
+<h3 id="输出描述：-2"><a href="#输出描述：-2" class="headerlink" title="输出描述："></a>输出描述：</h3><p>输出<br>1 输出转换成10进制的IP地址<br>2 输出转换后的IP地址</p>
+<h2 id="示例1-3"><a href="#示例1-3" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">10.0.3.193</span><br><span class="hljs-number">167969729</span><br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">167773121</span><br><span class="hljs-number">10.3.3.193</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-keyword">try</span>:<span class="hljs-comment"># 用于尝试执行可能会引发异常的代码块</span><br>        ip = <span class="hljs-built_in">input</span>()<span class="hljs-comment">#从用户这里获取一个字符串输入，ip地址</span><br>        num = <span class="hljs-built_in">input</span>()<span class="hljs-comment">#从用户这里获取字符串输入，二进制数</span><br>    <span class="hljs-keyword">except</span>:<br>        <span class="hljs-keyword">break</span><br><br>    <span class="hljs-keyword">else</span>:<span class="hljs-comment">#如果try代码块中代码执行成功，那么将执行else代码块中的代码</span><br>        ip_list = ip.split(<span class="hljs-string">&#x27;.&#x27;</span>)<span class="hljs-comment">#将输入的IP地址字符串按&#x27;.&#x27;分割，得到一个包含四个字符串的列表</span><br>        ip2num = <span class="hljs-built_in">str</span>()<span class="hljs-comment">#初始化一个空字符串，用于存储转换后的二进制数</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> ip_list:<span class="hljs-comment">#遍历其中的每个元素</span><br>            a = <span class="hljs-built_in">bin</span>(<span class="hljs-built_in">int</span>(i,<span class="hljs-number">10</span>))[<span class="hljs-number">2</span>:]<span class="hljs-comment">#将ip地址的一部分从十进制转换为二进制</span><br>            a = <span class="hljs-string">&#x27;0&#x27;</span>*(<span class="hljs-number">8</span>-<span class="hljs-built_in">len</span>(a)) + a <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(a)&lt;<span class="hljs-number">8</span> <span class="hljs-keyword">else</span> a<span class="hljs-comment">#如果二进制数长度小于8，应该在签名添加足够的0，使其长度达到8</span><br>            ip2num += a<span class="hljs-comment">#将转换后的二进制数添加到ip2num结尾</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(ip2num,<span class="hljs-number">2</span>))<span class="hljs-comment">#将ip2num从二进制转化为十进制</span><br>        <span class="hljs-comment"># num to ip</span><br>        num2ip = []<span class="hljs-comment">#初始化一个空列表，用于存储转换后的IP地址</span><br>        num2 = <span class="hljs-built_in">bin</span>(<span class="hljs-built_in">int</span>(num,<span class="hljs-number">10</span>))[<span class="hljs-number">2</span>:]<span class="hljs-comment">#将输入的十进制数转换为二进制数</span><br>        num2 = <span class="hljs-string">&#x27;0&#x27;</span>*(<span class="hljs-number">32</span>-<span class="hljs-built_in">len</span>(num2))+num2 <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(num2)&lt;<span class="hljs-number">32</span> <span class="hljs-keyword">else</span> num2<br>        <span class="hljs-comment">#如果二进制数长度小于32，那么在签名添加0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):<span class="hljs-comment">#进行四次循环，每次循环处理二进制数的一部分</span><br>            b = num2[<span class="hljs-number">8</span>*i:<span class="hljs-number">8</span>*i+<span class="hljs-number">8</span>]<br>            b = <span class="hljs-built_in">str</span>(<span class="hljs-built_in">int</span>(b,<span class="hljs-number">2</span>))<span class="hljs-comment">#将而仅是数的这一部分从二进制转换为十进制</span><br>            num2ip.append(b)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;.&#x27;</span>.join(num2ip))<span class="hljs-comment">#将num2ip列表中的元素使用.连接起来，形成字符串，最后打印出来</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="输入整型数组和排序标识，对其元素按照升序或降序进行排序"><a href="#输入整型数组和排序标识，对其元素按照升序或降序进行排序" class="headerlink" title="输入整型数组和排序标识，对其元素按照升序或降序进行排序"></a>输入整型数组和排序标识，对其元素按照升序或降序进行排序</h1><blockquote>
+<h3 id="输入描述：-3"><a href="#输入描述：-3" class="headerlink" title="输入描述："></a>输入描述：</h3><p>第一行输入数组元素个数<br>第二行输入待排序的数组，每个数用空格隔开<br>第三行输入一个整数0或1。0代表升序排序，1代表降序排序</p>
+<h3 id="输出描述：-3"><a href="#输出描述：-3" class="headerlink" title="输出描述："></a>输出描述：</h3><p>输出排好序的数字</p>
+<h2 id="示例1-4"><a href="#示例1-4" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">8</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">55</span> <span class="hljs-number">64</span> <span class="hljs-number">25</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">9</span> <span class="hljs-number">25</span> <span class="hljs-number">55</span> <span class="hljs-number">64</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="示例2-2"><a href="#示例2-2" class="headerlink" title="示例2"></a>示例2</h2><p>输入：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">n = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br>ls = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split()))<br>rnk = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br><span class="hljs-keyword">if</span> rnk == <span class="hljs-number">0</span>:<br>    ls.sort()<br>    ls = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">str</span>,ls)<span class="hljs-comment">#需要转成字符串才能拼接</span><br><span class="hljs-keyword">elif</span> rnk == <span class="hljs-number">1</span>:<br>    ls.sort(reverse=<span class="hljs-literal">True</span>)<br>    ls = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">str</span>,ls)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27; &#x27;</span>.join(ls))<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="符号运算-求分数计算结果"><a href="#符号运算-求分数计算结果" class="headerlink" title="符号运算&#x2F;求分数计算结果"></a>符号运算&#x2F;求分数计算结果</h1><blockquote>
+<p>给定一个表达式，求其分数计算结果。 </p>
+<p>表达式的限制如下: </p>
+<p>1.所有的输入数字皆为 正整数 (包括 0) </p>
+<p>2.仅支持四则运算 (+ - *&#x2F;) 和括号 </p>
+<p>3.结果为整数或分数，分数必须化为最简格式 (比如 6,3&#x2F;4,7&#x2F;8,90&#x2F;7) </p>
+<p>4.除数可能为 0，如果遇到这种情况，直接输出“ERROR </p>
+<p>5.输入和最终计算结果中的数字都不会超出整型范围 用例输入一定合法，不会出现括号匹配的情况。</p>
+<p>输入描述 </p>
+<p>字符串格式的表达式，仅支持 + - *&#x2F;，数字可能超过两位，可能带有空格，没有负数长度小于 200 个字符。 </p>
+<p>输出描述 </p>
+<p>表达式结果，以最简格式表达</p>
+<p>如果结果为整数，那么直接输出整数 </p>
+<p>如果结果为负数，那么分子分母不可再约分，可以为假分数，不可表达为带分数结果可能是负数，符号放在前面</p>
+<p>示例1<br>输入<br>1 + 5 * 7 &#x2F; 8<br>输出：<br>43&#x2F;8<br>示例2<br>输入<br>1 &#x2F; （0 - 5）<br>输出：<br>-1&#x2F;5<br>示例3<br>输入<br>1 *  (3 * 4 &#x2F; (8 - (7 + 0)))<br>输出：<br>12</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> functools<br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> copy<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> math<br><span class="hljs-keyword">import</span> queue<br><br>nums = [] <span class="hljs-comment">#存储分数的栈。每个分数都表示为一个长度为2的列表，其中第一个元素是分子，第二个元素是分母。</span><br>operations = [] <span class="hljs-comment">#存储运算符的栈</span><br><br><span class="hljs-comment"># 最大公约数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">gcd</span>(<span class="hljs-params">a,b</span>):<br>    <span class="hljs-keyword">if</span>(a%b==<span class="hljs-number">0</span>):<br>        <span class="hljs-keyword">return</span> b<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> gcd(b,a%b)<span class="hljs-comment">#用递归来找到最大公约数</span><br>    <br><span class="hljs-comment"># 用于执行运算符操作。从nums和operations中</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">eval_op</span>():<br>    <span class="hljs-keyword">global</span> nums,operations<br>    nums1 = nums.pop() <span class="hljs-comment">#取出最后一个操作数</span><br>    nums2 = nums.pop() <span class="hljs-comment">#取数倒数第二个操作数</span><br>    x = operations.pop() <span class="hljs-comment">#取出最后一个操作符</span><br>    result = [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>] <span class="hljs-comment">#初始化结果</span><br>    <span class="hljs-keyword">if</span>(x == <span class="hljs-string">&#x27;*&#x27;</span> <span class="hljs-keyword">or</span> x == <span class="hljs-string">&#x27;+&#x27;</span> <span class="hljs-keyword">or</span> x == <span class="hljs-string">&#x27;-&#x27;</span>):<br>        result[<span class="hljs-number">0</span>] = nums2[<span class="hljs-number">0</span>] * nums1[<span class="hljs-number">0</span>] <span class="hljs-comment">#如果是加减乘，则分子相乘</span><br>    <span class="hljs-keyword">else</span>:<br>        result[<span class="hljs-number">0</span>] = nums2[<span class="hljs-number">0</span>] * nums1[<span class="hljs-number">1</span>] <span class="hljs-comment">#如果是除，则分子乘以分母</span><br><br>    sum_a = nums2[<span class="hljs-number">1</span>] * nums1[<span class="hljs-number">0</span>]<br>    sum_b = nums1[<span class="hljs-number">1</span>] * nums2[<span class="hljs-number">0</span>]<br>    <span class="hljs-keyword">if</span>(x == <span class="hljs-string">&#x27;*&#x27;</span>):<br>        result[<span class="hljs-number">1</span>] = nums2[<span class="hljs-number">1</span>] * nums1[<span class="hljs-number">1</span>] <span class="hljs-comment">#如果是乘，则分母相乘</span><br>    <span class="hljs-keyword">elif</span> (x == <span class="hljs-string">&#x27;+&#x27;</span>):<br>        result[<span class="hljs-number">1</span>] = sum_a + sum_b <span class="hljs-comment">#如果是加，则分子相加</span><br>    <span class="hljs-keyword">elif</span> (x == <span class="hljs-string">&#x27;-&#x27;</span>):<br>        result[<span class="hljs-number">1</span>] = sum_a - sum_b <span class="hljs-comment">#如果是减，则分子相减</span><br>    <span class="hljs-keyword">else</span>:<br>        result[<span class="hljs-number">1</span>] = nums2[<span class="hljs-number">1</span>] * nums1[<span class="hljs-number">0</span>] <span class="hljs-comment">#如果是除，则分母乘以分子</span><br><br>    nums.append(result) <span class="hljs-comment">#将结果添加到操作数列表</span><br><br><span class="hljs-comment">#获取操作符的优先级</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_priority</span>(<span class="hljs-params">input_char</span>):<br>    <span class="hljs-keyword">if</span>(input_char == <span class="hljs-string">&#x27;+&#x27;</span> <span class="hljs-keyword">or</span> input_char == <span class="hljs-string">&#x27;-&#x27;</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> <span class="hljs-comment">#加减的优先级为0</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> <span class="hljs-comment">#乘除的优先级为1</span><br>    <br><br>input_str = <span class="hljs-built_in">input</span>()<br>nums = []<br>operations = []<br>length = <span class="hljs-built_in">len</span>(input_str)<br>current = <span class="hljs-string">&quot;&quot;</span> <span class="hljs-comment">#初始化当前字符</span><br>i=<span class="hljs-number">0</span><span class="hljs-comment">#初始化索引</span><br><span class="hljs-keyword">while</span> (i&lt;length):<span class="hljs-comment">#遍历表达式</span><br>    <span class="hljs-keyword">if</span>(input_str[i].isdigit()):<span class="hljs-comment">#判断当前字符是否是数字</span><br>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>            <span class="hljs-keyword">if</span>(<span class="hljs-keyword">not</span> input_str[i].isdigit()):<span class="hljs-comment">#如果当前字符不是数字，跳出循环</span><br>                <span class="hljs-keyword">break</span><br>            current += input_str[i] <span class="hljs-comment">#将当前字符添加到当前数字</span><br>            <span class="hljs-keyword">if</span>(i+<span class="hljs-number">1</span> &gt;= length): <span class="hljs-comment">#如果索引超出范围，则跳出循环</span><br>                <span class="hljs-keyword">break</span><br>            i+=<span class="hljs-number">1</span><span class="hljs-comment">#索引加一</span><br>        nums.append([<span class="hljs-number">1</span>,<span class="hljs-built_in">int</span>(current)])<span class="hljs-comment">#将当前数字添加到操作数列表</span><br>        current = <span class="hljs-string">&quot;&quot;</span><span class="hljs-comment">#清空当前数字</span><br>    <span class="hljs-keyword">elif</span> (input_str[i] == <span class="hljs-string">&#x27;(&#x27;</span>):<span class="hljs-comment">#如果当前字符是左括号</span><br>        operations.append(input_str[i])<span class="hljs-comment">#将左括号添加到操作符列表</span><br>    <span class="hljs-keyword">elif</span> (input_str[i] == <span class="hljs-string">&#x27;)&#x27;</span>):<span class="hljs-comment">#如果当前字符是右括号</span><br>        <span class="hljs-keyword">while</span>(operations[<span class="hljs-number">0</span>] != <span class="hljs-string">&#x27;(&#x27;</span>): <span class="hljs-comment">#如果操作符列表的最后一个元素不是左括号</span><br>            eval_op() <span class="hljs-comment">#执行操作符</span><br>        operations.pop(<span class="hljs-number">0</span>)<span class="hljs-comment">#删除操作符列表的最后一个元素（左括号）</span><br>    <span class="hljs-keyword">elif</span>(input_str[i] == <span class="hljs-string">&#x27; &#x27;</span>):<span class="hljs-comment">#如果当前字符是空格</span><br>        i+=<span class="hljs-number">1</span> <span class="hljs-comment">#索引加1</span><br>        <span class="hljs-keyword">continue</span> <span class="hljs-comment">#跳过当前循环</span><br>    <span class="hljs-keyword">else</span>: <span class="hljs-comment">#如果当前字符是操作符</span><br>        <span class="hljs-keyword">while</span> (<span class="hljs-built_in">len</span>(operations)&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> operations[<span class="hljs-number">0</span>] != <span class="hljs-string">&#x27;(&#x27;</span> <span class="hljs-keyword">and</span> get_priority(input_str[i]) &lt;= get_priority(operations[<span class="hljs-number">0</span>])): <span class="hljs-comment">#如果操作符列表不为空，且最后一个元素不是左括号，且当前操作符的优先级小于等于最后一个操作符的优先级</span><br>            eval_op() <span class="hljs-comment">#执行操作符</span><br>        operations.append(input_str[i]) <span class="hljs-comment">#将当前操作符添加到操作符列表</span><br>    i+=<span class="hljs-number">1</span> <span class="hljs-comment">#索引加一</span><br><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">len</span>(nums)&lt;=<span class="hljs-number">1</span>): <span class="hljs-comment">#如果操作数列表的长度小于等于1</span><br>        <span class="hljs-keyword">break</span> <span class="hljs-comment">#跳出循环</span><br>    <span class="hljs-keyword">else</span>:<br>        eval_op() <span class="hljs-comment">#执行操作符</span><br><br>result = nums[<span class="hljs-number">0</span>]<span class="hljs-comment">#获取结果</span><br><span class="hljs-keyword">if</span>(result[<span class="hljs-number">0</span>]==<span class="hljs-number">0</span>):<span class="hljs-comment">#如果分子为0</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;ERROR&quot;</span>)<span class="hljs-comment">#输出错误</span><br><span class="hljs-keyword">else</span>:<br>    up = gcd(result[<span class="hljs-number">0</span>],result[<span class="hljs-number">1</span>]) <span class="hljs-comment">#计算分子和分母的最大公约数</span><br>    result[<span class="hljs-number">0</span>] /= up <span class="hljs-comment">#分子除以最大公约数</span><br>    result[<span class="hljs-number">1</span>] /= up <span class="hljs-comment">#分母除以最大公约数</span><br>    output_str = <span class="hljs-string">&quot;&quot;</span> <span class="hljs-comment">#初始化输出字符串</span><br>    <span class="hljs-keyword">if</span>(result[<span class="hljs-number">0</span>] * result[<span class="hljs-number">1</span>]&lt;<span class="hljs-number">0</span>):<span class="hljs-comment">#如果结果为负数</span><br>        output_str += <span class="hljs-string">&quot;-&quot;</span><span class="hljs-comment">#在输出字符串前添加负号</span><br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">abs</span>(result[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span>):<span class="hljs-comment">#如果分子绝对值为1</span><br>        <span class="hljs-built_in">print</span>(output_str+<span class="hljs-built_in">str</span>(result[<span class="hljs-number">1</span>]))<span class="hljs-comment">#输出分母</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(output_str+<span class="hljs-built_in">str</span>(<span class="hljs-built_in">abs</span>(<span class="hljs-built_in">int</span>(result[<span class="hljs-number">1</span>]))) + <span class="hljs-string">&quot;/&quot;</span> + <span class="hljs-built_in">str</span>(<span class="hljs-built_in">abs</span>(<span class="hljs-built_in">int</span>(result[<span class="hljs-number">0</span>]))))<span class="hljs-comment">#输出分数</span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Python/" class="print-no-link">#Python</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Python刷题笔记</div>
+      <div>https://homovexillues.github.io/2024/03/29/Python刷题笔记/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年3月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/03/29/Python%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" title="Python发送邮件">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python发送邮件</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/03/29/C-sharp%E5%9F%BA%E7%A1%80/" title="C#基础">
+                        <span class="hidden-mobile">C#基础</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

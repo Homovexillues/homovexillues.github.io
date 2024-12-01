@@ -1,0 +1,1756 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="关机&#x2F;重启&#x2F;注销    常用命令 作用    shutdown -h now 即刻关机   shutdown -h 10 10分钟后关机   shutdown -h 11:00 11：00关机   shutdown -h +10 预定时间关机（10分钟后）   shutdown -c 取消指定时间关机   shutdown -r now 重启   shutdown -r 10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux命令速查">
+<meta property="og:url" content="https://homovexillues.github.io/2024/11/03/Linux%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/index.html">
+<meta property="og:site_name" content="红石门">
+<meta property="og:description" content="关机&#x2F;重启&#x2F;注销    常用命令 作用    shutdown -h now 即刻关机   shutdown -h 10 10分钟后关机   shutdown -h 11:00 11：00关机   shutdown -h +10 预定时间关机（10分钟后）   shutdown -c 取消指定时间关机   shutdown -r now 重启   shutdown -r 10">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-02T20:10:01.088Z">
+<meta property="article:modified_time" content="2024-11-02T20:12:18.000Z">
+<meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Linux命令速查 - 红石门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Linux命令速查"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-03 04:10" pubdate>
+          2024年11月3日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          55 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Linux命令速查</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>关机&#x2F;重启&#x2F;注销</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>shutdown -h now</td>
+<td>即刻关机</td>
+</tr>
+<tr>
+<td>shutdown -h 10</td>
+<td>10分钟后关机</td>
+</tr>
+<tr>
+<td>shutdown -h 11:00</td>
+<td>11：00关机</td>
+</tr>
+<tr>
+<td>shutdown -h +10</td>
+<td>预定时间关机（10分钟后）</td>
+</tr>
+<tr>
+<td>shutdown -c</td>
+<td>取消指定时间关机</td>
+</tr>
+<tr>
+<td>shutdown -r now</td>
+<td>重启</td>
+</tr>
+<tr>
+<td>shutdown -r 10</td>
+<td>10分钟之后重启</td>
+</tr>
+<tr>
+<td>shutdown -r 11:00</td>
+<td>定时重启</td>
+</tr>
+<tr>
+<td>reboot</td>
+<td>重启</td>
+</tr>
+<tr>
+<td>init 6</td>
+<td>重启</td>
+</tr>
+<tr>
+<td>init 0</td>
+<td>⽴刻关机</td>
+</tr>
+<tr>
+<td>telinit 0</td>
+<td>关机</td>
+</tr>
+<tr>
+<td>poweroff</td>
+<td>⽴刻关机</td>
+</tr>
+<tr>
+<td>halt</td>
+<td>关机</td>
+</tr>
+<tr>
+<td>sync</td>
+<td>buff数据同步到磁盘</td>
+</tr>
+<tr>
+<td>logout</td>
+<td>退出登录Shell</td>
+</tr>
+</tbody></table>
+<p><strong>系统信息和性能查看</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uname -a</td>
+<td>查看内核&#x2F;OS&#x2F;CPU信息</td>
+</tr>
+<tr>
+<td>uname -r</td>
+<td>查看内核版本</td>
+</tr>
+<tr>
+<td>uname -m</td>
+<td>查看处理器架构</td>
+</tr>
+<tr>
+<td>arch</td>
+<td>查看处理器架构</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>查看计算机名</td>
+</tr>
+<tr>
+<td>who</td>
+<td>显示当前登录系统的⽤户</td>
+</tr>
+<tr>
+<td>who am i</td>
+<td>显示登录时的⽤户名</td>
+</tr>
+<tr>
+<td>whoami</td>
+<td>显示当前⽤户名</td>
+</tr>
+<tr>
+<td>cat &#x2F;proc&#x2F;version</td>
+<td>查看linux版本信息</td>
+</tr>
+<tr>
+<td>cat &#x2F;proc&#x2F;cpuinfo</td>
+<td>查看CPU信息</td>
+</tr>
+<tr>
+<td>cat &#x2F;proc&#x2F;interrupts</td>
+<td>查看中断</td>
+</tr>
+<tr>
+<td>cat &#x2F;proc&#x2F;loadavg</td>
+<td>查看系统负载</td>
+</tr>
+<tr>
+<td>uptime</td>
+<td>查看系统运⾏时间、⽤户数、负载</td>
+</tr>
+<tr>
+<td>env</td>
+<td>查看系统的环境变量</td>
+</tr>
+<tr>
+<td>lsusb -tv</td>
+<td>查看系统USB设备信息</td>
+</tr>
+<tr>
+<td>lspci -tv</td>
+<td>查看系统PCI设备信息</td>
+</tr>
+<tr>
+<td>lsmod</td>
+<td>查看已加载的系统模块</td>
+</tr>
+<tr>
+<td>grep MemTotal &#x2F;proc&#x2F;meminfo</td>
+<td>查看内存总量</td>
+</tr>
+<tr>
+<td>grep MemFree &#x2F;proc&#x2F;meminfo</td>
+<td>查看空闲内存量</td>
+</tr>
+<tr>
+<td>free -m</td>
+<td>查看内存⽤量和交换区⽤量</td>
+</tr>
+<tr>
+<td>date</td>
+<td>显示系统⽇期时间</td>
+</tr>
+<tr>
+<td>cal 2021</td>
+<td>显示2021⽇历表</td>
+</tr>
+<tr>
+<td>top</td>
+<td>动态显示cpu&#x2F;内存&#x2F;进程等情况</td>
+</tr>
+<tr>
+<td>vmstat 1 20</td>
+<td>每1秒采⼀次系统状态，采20次</td>
+</tr>
+<tr>
+<td>iostat</td>
+<td>查看io读写&#x2F;cpu使⽤情况</td>
+</tr>
+<tr>
+<td>查看io读写&#x2F;cpu使⽤情况</td>
+<td>查询cpu使⽤情况（1秒⼀次，共10次）</td>
+</tr>
+<tr>
+<td>sar -d 1 10</td>
+<td>查询磁盘性能</td>
+</tr>
+</tbody></table>
+<p><strong>磁盘和分区</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fdisk -l</td>
+<td>查看所有磁盘分区</td>
+</tr>
+<tr>
+<td>swapon -s</td>
+<td>查看所有交换分区</td>
+</tr>
+<tr>
+<td>df -h</td>
+<td>查看磁盘使⽤情况及挂载点</td>
+</tr>
+<tr>
+<td>df -hl</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>du -sh &#x2F;dir</td>
+<td>查看指定某个⽬录的⼤⼩</td>
+</tr>
+<tr>
+<td>du -sk * | sort -rn</td>
+<td>从⾼到低依次显示⽂件和⽬录⼤⼩</td>
+</tr>
+<tr>
+<td>mount &#x2F;dev&#x2F;hda2 &#x2F;mnt&#x2F;hda2</td>
+<td>挂载hda2盘</td>
+</tr>
+<tr>
+<td>mount -t ntfs &#x2F;dev&#x2F;sdc1 &#x2F;mnt&#x2F;usbhd1</td>
+<td>指定⽂件系统类型挂载（如ntfs）</td>
+</tr>
+<tr>
+<td>mount -o loop xxx.iso &#x2F;mnt&#x2F;cdrom</td>
+<td>挂 载 iso ⽂ 件</td>
+</tr>
+<tr>
+<td>umount -v &#x2F;dev&#x2F;sda1</td>
+<td>通过设备名卸载</td>
+</tr>
+<tr>
+<td>umount -v &#x2F;mnt&#x2F;mymnt</td>
+<td>通过挂载点卸载</td>
+</tr>
+<tr>
+<td>fuser -km &#x2F;mnt&#x2F;hda1</td>
+<td>强制卸载(慎⽤)</td>
+</tr>
+</tbody></table>
+<p><strong>⽤户和⽤户组</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>useradd codesheep</td>
+<td>创建⽤户</td>
+</tr>
+<tr>
+<td>userdel -r codesheep</td>
+<td>删除⽤户</td>
+</tr>
+<tr>
+<td>usermod -g group_name user_name</td>
+<td>修改⽤户的组</td>
+</tr>
+<tr>
+<td>usermod -aG group_name user_name</td>
+<td>将⽤户添加到组</td>
+</tr>
+<tr>
+<td>usermod -s &#x2F;bin&#x2F;ksh -d &#x2F;home&#x2F;codepig –g dev codesheep</td>
+<td>修改⽤户codesheep的登录Shell、主⽬录以及⽤户组</td>
+</tr>
+<tr>
+<td>groups test</td>
+<td>查看test⽤户所在的组</td>
+</tr>
+<tr>
+<td>groupadd group_name</td>
+<td>创建⽤户组</td>
+</tr>
+<tr>
+<td>groupdel group_name</td>
+<td>删除⽤户组</td>
+</tr>
+<tr>
+<td>groupmod -n new_name old_name</td>
+<td>重命名⽤户组</td>
+</tr>
+<tr>
+<td>su - user_name</td>
+<td>su - user_name</td>
+</tr>
+<tr>
+<td>passwd</td>
+<td>修改⼝令</td>
+</tr>
+<tr>
+<td>passwd codesheep</td>
+<td>修改某⽤户的⼝令</td>
+</tr>
+<tr>
+<td>w</td>
+<td>查看活动⽤户</td>
+</tr>
+<tr>
+<td>id codesheep</td>
+<td>查看指定⽤户codesheep信息</td>
+</tr>
+<tr>
+<td>last</td>
+<td>查看⽤户登录⽇志</td>
+</tr>
+<tr>
+<td>crontab -l</td>
+<td>查看当前⽤户的计划任务</td>
+</tr>
+<tr>
+<td>cut -d: -f1 &#x2F;etc&#x2F;passwd</td>
+<td>查看系统所有⽤户</td>
+</tr>
+<tr>
+<td>cut -d: -f1 &#x2F;etc&#x2F;group</td>
+<td>查看系统所有组</td>
+</tr>
+</tbody></table>
+<p><strong>⽹络和进程管理</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ifconfig</td>
+<td>查看⽹络接⼝属性</td>
+</tr>
+<tr>
+<td>ifconfig eth0</td>
+<td>查看某⽹卡的配置</td>
+</tr>
+<tr>
+<td>route -n</td>
+<td>查看路由表</td>
+</tr>
+<tr>
+<td>netstat -lntp</td>
+<td>查看所有监听端⼝</td>
+</tr>
+<tr>
+<td>netstat -antp</td>
+<td>查看已经建⽴的TCP连接</td>
+</tr>
+<tr>
+<td>netstat -lutp</td>
+<td>查看TCP&#x2F;UDP的状态信息</td>
+</tr>
+<tr>
+<td>ifup eth0</td>
+<td>启⽤eth0⽹络设备</td>
+</tr>
+<tr>
+<td>ifdown eth0</td>
+<td>禁⽤eth0⽹络设备</td>
+</tr>
+<tr>
+<td>iptables -L</td>
+<td>查看iptables规则</td>
+</tr>
+<tr>
+<td>ifconfig eth0 192.168.1.1 netmask 255.255.255.0</td>
+<td>配置ip地址</td>
+</tr>
+<tr>
+<td>dhclient eth0</td>
+<td>以dhcp模式启⽤eth0</td>
+</tr>
+<tr>
+<td>route add -net 0&#x2F;0 gw Gateway_IP</td>
+<td>配置默认⽹关</td>
+</tr>
+<tr>
+<td>route add -net 192.168.0.0 netmask 255.255.0.0 gw  192.168.1.1</td>
+<td>配置静态路由到达⽹络’192.168.0.0&#x2F;16’</td>
+</tr>
+<tr>
+<td>route del 0&#x2F;0 gw Gateway_IP</td>
+<td>删除静态路由</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>查看主机名</td>
+</tr>
+<tr>
+<td>host <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></td>
+<td>解析主机名</td>
+</tr>
+<tr>
+<td>nslookup <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></td>
+<td>查询DNS记录，查看域名解析是否正常</td>
+</tr>
+<tr>
+<td>ps -ef</td>
+<td>查看所有进程</td>
+</tr>
+<tr>
+<td>ps -ef | grep codesheep</td>
+<td>过滤出你需要的进程</td>
+</tr>
+<tr>
+<td>kill -s name</td>
+<td>kill指定名称的进程</td>
+</tr>
+<tr>
+<td>kill -s pid</td>
+<td>kill指定pid的进程</td>
+</tr>
+<tr>
+<td>top</td>
+<td>实时显示进程状态</td>
+</tr>
+<tr>
+<td>vmstat 1 20</td>
+<td>每1秒采⼀次系统状态，采20次</td>
+</tr>
+<tr>
+<td>iostat</td>
+<td>iostat</td>
+</tr>
+<tr>
+<td>sar -u 1 10</td>
+<td>查询cpu使⽤情况（1秒⼀次，共10次）</td>
+</tr>
+<tr>
+<td>sar -d 1 10</td>
+<td>查询磁盘性能</td>
+</tr>
+</tbody></table>
+<p><strong>常⻅系统服务命令</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>chkconfig –list</td>
+<td>列出系统服务</td>
+</tr>
+<tr>
+<td>service &lt;服务名&gt; status</td>
+<td>查看某个服务</td>
+</tr>
+<tr>
+<td>service &lt;服务名&gt; start</td>
+<td>启动某个服务</td>
+</tr>
+<tr>
+<td>service &lt;服务名&gt; stop</td>
+<td>终⽌某个服务</td>
+</tr>
+<tr>
+<td>service &lt;服务名&gt; restart</td>
+<td>重启某个服务</td>
+</tr>
+<tr>
+<td>systemctl status &lt;服务名&gt;</td>
+<td>查看某个服务</td>
+</tr>
+<tr>
+<td>systemctl start &lt;服务名&gt;</td>
+<td>启动某个服务</td>
+</tr>
+<tr>
+<td>systemctl stop &lt;服务名&gt;</td>
+<td>终⽌某个服务</td>
+</tr>
+<tr>
+<td>systemctl restart &lt;服务名&gt;</td>
+<td>重启某个服务</td>
+</tr>
+<tr>
+<td>systemctl enable &lt;服务名&gt;</td>
+<td>关闭⾃启动</td>
+</tr>
+<tr>
+<td>systemctl disable &lt;服务名&gt;</td>
+<td>关闭⾃启动</td>
+</tr>
+</tbody></table>
+<p><strong>⽂件和⽬录操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cd &lt;⽬录名&gt;</td>
+<td>进⼊某个⽬录</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td>回上级⽬录</td>
+</tr>
+<tr>
+<td>cd ..&#x2F;..</td>
+<td>回上两级⽬录</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>进个⼈主⽬录</td>
+</tr>
+<tr>
+<td>cd -</td>
+<td>回上⼀步所在⽬录</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>显示当前路径</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>查看⽂件⽬录列表</td>
+</tr>
+<tr>
+<td>ls -F</td>
+<td>查看⽬录中内容（显示是⽂件还是⽬录）</td>
+</tr>
+<tr>
+<td>ls -l</td>
+<td>查看⽂件和⽬录的详情列表</td>
+</tr>
+<tr>
+<td>ls -a</td>
+<td>查看隐藏⽂件</td>
+</tr>
+<tr>
+<td>ls -lh</td>
+<td>查看⽂件和⽬录的详情列表（增强⽂件⼤⼩易读性）</td>
+</tr>
+<tr>
+<td>ls -lSr</td>
+<td>查看⽂件和⽬录列表（以⽂件⼤⼩升序查看）</td>
+</tr>
+<tr>
+<td>tree</td>
+<td>查看⽂件和⽬录的树形结构</td>
+</tr>
+<tr>
+<td>mkdir &lt;⽬录名&gt;</td>
+<td>创建⽬录</td>
+</tr>
+<tr>
+<td>mkdir dir1 dir2</td>
+<td>同时创建两个⽬录</td>
+</tr>
+<tr>
+<td>mkdir -p &#x2F;tmp&#x2F;dir1&#x2F;dir2</td>
+<td>创建⽬录树</td>
+</tr>
+<tr>
+<td>rm -f file1</td>
+<td>删除’file1’⽂件</td>
+</tr>
+<tr>
+<td>rmdir dir1</td>
+<td>删除’dir1’⽬录</td>
+</tr>
+<tr>
+<td>rm -rf dir1</td>
+<td>删除’dir1’⽬录和其内容</td>
+</tr>
+<tr>
+<td>rm -rf dir1 dir2</td>
+<td>同时删除两个⽬录及其内容</td>
+</tr>
+<tr>
+<td>mv old_dir new_dir</td>
+<td>重命名&#x2F;移动⽬录</td>
+</tr>
+<tr>
+<td>cp file1 file2</td>
+<td>复制⽂件</td>
+</tr>
+<tr>
+<td>cp dir&#x2F;* .</td>
+<td>复制某⽬录下的所有⽂件⾄当前⽬录</td>
+</tr>
+<tr>
+<td>cp -a dir1 dir2</td>
+<td>复制⽬录</td>
+</tr>
+<tr>
+<td>cp -a &#x2F;tmp&#x2F;dir1 .</td>
+<td>复制⼀个⽬录⾄当前⽬录</td>
+</tr>
+<tr>
+<td>ln -s file1 link1</td>
+<td>创建指向⽂件&#x2F;⽬录的软链接</td>
+</tr>
+<tr>
+<td>ln file1 lnk1</td>
+<td>创建指向⽂件&#x2F;⽬录的物理链接</td>
+</tr>
+<tr>
+<td>find &#x2F; -name file1</td>
+<td>从跟⽬录开始搜索⽂件&#x2F;⽬录</td>
+</tr>
+<tr>
+<td>find &#x2F; -user user1</td>
+<td>搜索⽤户user1的⽂件&#x2F;⽬录</td>
+</tr>
+<tr>
+<td>find &#x2F;dir -name *.bin</td>
+<td>在⽬录&#x2F;dir中搜带有.bin后缀的⽂件</td>
+</tr>
+<tr>
+<td>locate &lt;关键词&gt;</td>
+<td>快速定位⽂件</td>
+</tr>
+<tr>
+<td>locate *.mp4</td>
+<td>寻找.mp4结尾的⽂件</td>
+</tr>
+<tr>
+<td>whereis &lt;关键词&gt;</td>
+<td>显示某⼆进制⽂件&#x2F;可执⾏⽂件的路径</td>
+</tr>
+<tr>
+<td>which &lt;关键词&gt;</td>
+<td>查找系统⽬录下某的⼆进制⽂件</td>
+</tr>
+<tr>
+<td>chmod ugo+rwx dir1</td>
+<td>设置⽬录所有者(u)、群组(g)及其他⼈(o)的读（r）写(w)执⾏(x)权限</td>
+</tr>
+<tr>
+<td>chmod go-rwx dir1</td>
+<td>移除群组(g)与其他⼈(o)对⽬录的读写执⾏权限</td>
+</tr>
+<tr>
+<td>chown user1 file1</td>
+<td>改变⽂件的所有者属性</td>
+</tr>
+<tr>
+<td>chown -R user1 dir1</td>
+<td>改变⽬录的所有者属性</td>
+</tr>
+<tr>
+<td>chgrp group1 file1</td>
+<td>改变⽂件群组</td>
+</tr>
+<tr>
+<td>chown user1:group1 file1</td>
+<td>改变⽂件的所有⼈和群组</td>
+</tr>
+</tbody></table>
+<p><strong>⽂件查看和处理</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cat file1</td>
+<td>查看⽂件内容</td>
+</tr>
+<tr>
+<td>cat -n file1</td>
+<td>查看内容并标示⾏数</td>
+</tr>
+<tr>
+<td>tac file1</td>
+<td>从最后⼀⾏开始反看⽂件内容</td>
+</tr>
+<tr>
+<td>more file1</td>
+<td>more file1</td>
+</tr>
+<tr>
+<td>less file1</td>
+<td>类似more命令，但允许反向操作</td>
+</tr>
+<tr>
+<td>head -2 file1</td>
+<td>查看⽂件前两⾏</td>
+</tr>
+<tr>
+<td>tail -2 file1</td>
+<td>查看⽂件后两⾏</td>
+</tr>
+<tr>
+<td>tail -f &#x2F;log&#x2F;msg</td>
+<td>实时查看添加到⽂件中的内容</td>
+</tr>
+<tr>
+<td>grep codesheep hello.txt</td>
+<td>在⽂件hello.txt中查找关键词codesheep</td>
+</tr>
+<tr>
+<td>grep ^sheep hello.txt</td>
+<td>在⽂件hello.txt中查找以sheep开头的内容</td>
+</tr>
+<tr>
+<td>grep [0-9] hello.txt</td>
+<td>选择hello.txt⽂件中所有包含数字的⾏</td>
+</tr>
+<tr>
+<td>sed ‘s&#x2F;s1&#x2F;s2&#x2F;g’ hello.txt</td>
+<td>将hello.txt⽂件中的s1替换成s2</td>
+</tr>
+<tr>
+<td>sed ‘&#x2F;^$&#x2F;d’ hello.txt</td>
+<td>从hello.txt⽂件中删除所有空⽩⾏</td>
+</tr>
+<tr>
+<td>sed ‘&#x2F; *#&#x2F;d; &#x2F;^$&#x2F;d’ hello.txt</td>
+<td>从hello.txt⽂件中删除所有注释和空⽩⾏</td>
+</tr>
+<tr>
+<td>sed -e ‘1d’ hello.txt</td>
+<td>从⽂件hello.txt 中排除第⼀⾏</td>
+</tr>
+<tr>
+<td>sed -n ‘&#x2F;s1&#x2F;p’ hello.txt</td>
+<td>查看只包含关键词”s1”的⾏</td>
+</tr>
+<tr>
+<td>sed -e ‘s&#x2F; *$&#x2F;&#x2F;‘ hello.txt</td>
+<td>删除每⼀⾏最后的空⽩字符</td>
+</tr>
+<tr>
+<td>sed -e ‘s&#x2F;s1&#x2F;&#x2F;g’ hello.txt</td>
+<td>从⽂档中只删除词汇s1并保留剩余全部</td>
+</tr>
+<tr>
+<td>sed -n ‘1,5p;5q’ hello.txt</td>
+<td>查看从第⼀⾏到第5⾏内容</td>
+</tr>
+<tr>
+<td>sed -n ‘5p;5q’ hello.txt</td>
+<td>查看第5⾏</td>
+</tr>
+<tr>
+<td>paste file1 file2</td>
+<td>合并两个⽂件或两栏的内容</td>
+</tr>
+<tr>
+<td>paste -d ‘+’ file1 file2</td>
+<td>合并两个⽂件或两栏的内容，中间⽤”+”区分</td>
+</tr>
+<tr>
+<td>sort file1 file2</td>
+<td>排序两个⽂件的内容</td>
+</tr>
+<tr>
+<td>comm -1 file1 file2</td>
+<td>⽐较两个⽂件的内容(去除’file1’所含内容)</td>
+</tr>
+<tr>
+<td>comm -2 file1 file2</td>
+<td>⽐较两个⽂件的内容(去除’file2’所含内容</td>
+</tr>
+<tr>
+<td>comm -3 file1 file2</td>
+<td>⽐较两个⽂件的内容(去除两⽂件共有部分)</td>
+</tr>
+</tbody></table>
+<p><strong>打包和解压</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>zip xxx.zip file</td>
+<td>压缩⾄zip包</td>
+</tr>
+<tr>
+<td>zip -r xxx.zip file1 file2 dir1</td>
+<td>将多个⽂件+⽬录压成zip包</td>
+</tr>
+<tr>
+<td>unzip xxx.zip</td>
+<td>解压zip包</td>
+</tr>
+<tr>
+<td>tar -cvf xxx.tar file</td>
+<td>创建⾮压缩tar包</td>
+</tr>
+<tr>
+<td>tar -cvf xxx.tar file1 file2 dir1</td>
+<td>将多个⽂件+⽬录打tar包</td>
+</tr>
+<tr>
+<td>tar -tf xxx.tar</td>
+<td>查看tar包的内容</td>
+</tr>
+<tr>
+<td>tar -xvf xxx.tar</td>
+<td>解压tar包</td>
+</tr>
+<tr>
+<td>tar -xvf xxx.tar -C &#x2F;dir</td>
+<td>将tar包解压⾄指定⽬录</td>
+</tr>
+<tr>
+<td>tar -cvfj xxx.tar.bz2 dir</td>
+<td>创建bz2压缩包</td>
+</tr>
+<tr>
+<td>tar -jxvf xxx.tar.bz2</td>
+<td>解压bz2压缩包</td>
+</tr>
+<tr>
+<td>tar -cvfz xxx.tar.gz dir</td>
+<td>创建gzip压缩包</td>
+</tr>
+<tr>
+<td>tar -zxvf xxx.tar.gz</td>
+<td>解压gzip压缩包</td>
+</tr>
+<tr>
+<td>bunzip2 xxx.bz2</td>
+<td>解压bz2压缩包</td>
+</tr>
+<tr>
+<td>bzip2 filename</td>
+<td>压缩⽂件</td>
+</tr>
+<tr>
+<td>gunzip xxx.gz</td>
+<td>解压gzip压缩包</td>
+</tr>
+<tr>
+<td>gzip filename</td>
+<td>压缩⽂件</td>
+</tr>
+<tr>
+<td>gzip -9 filename</td>
+<td>最⼤程度压缩</td>
+</tr>
+</tbody></table>
+<p><strong>RPM包管理命令</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rpm -qa</td>
+<td>查看已安装的rpm包</td>
+</tr>
+<tr>
+<td>rpm -q pkg_name</td>
+<td>查询某个rpm包</td>
+</tr>
+<tr>
+<td>rpm -q –whatprovides xxx</td>
+<td>显示xxx功能是由哪个包提供的</td>
+</tr>
+<tr>
+<td>rpm -q –whatrequires xxx</td>
+<td>显示xxx功能被哪个程序包依赖的</td>
+</tr>
+<tr>
+<td>rpm -q –changelog xxx</td>
+<td>显示xxx包的更改记录</td>
+</tr>
+<tr>
+<td>rpm -qi pkg_name</td>
+<td>查看⼀个包的详细信息</td>
+</tr>
+<tr>
+<td>rpm -qd pkg_name</td>
+<td>查询⼀个包所提供的⽂档</td>
+</tr>
+<tr>
+<td>rpm -qc pkg_name</td>
+<td>查看已安装rpm包提供的配置⽂件</td>
+</tr>
+<tr>
+<td>rpm -ql pkg_name</td>
+<td>查看⼀个包安装了哪些⽂件</td>
+</tr>
+<tr>
+<td>rpm -qf filename</td>
+<td>查看某个⽂件属于哪个包</td>
+</tr>
+<tr>
+<td>rpm -qR pkg_name</td>
+<td>查询包的依赖关系</td>
+</tr>
+<tr>
+<td>rpm -ivh xxx.rpm</td>
+<td>安装rpm包</td>
+</tr>
+<tr>
+<td>rpm -ivh –test xxx.rpm</td>
+<td>测试安装rpm包</td>
+</tr>
+<tr>
+<td>rpm -ivh –nodeps xxx.rpm</td>
+<td>安装rpm包时忽略依赖关系</td>
+</tr>
+<tr>
+<td>rpm -e xxx</td>
+<td>卸载程序包</td>
+</tr>
+<tr>
+<td>rpm -Fvh pkg_name</td>
+<td>升级确定已安装的rpm包</td>
+</tr>
+<tr>
+<td>rpm -Uvh pkg_name</td>
+<td>升级rpm包(若未安装则会安装)</td>
+</tr>
+<tr>
+<td>rpm -V pkg_name</td>
+<td>RPM包详细信息校验</td>
+</tr>
+</tbody></table>
+<p><strong>YUM包管理命令</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>yum repolist enabled</td>
+<td>显示可⽤的源仓库</td>
+</tr>
+<tr>
+<td>yum search pkg_name</td>
+<td>搜索软件包</td>
+</tr>
+<tr>
+<td>yum install pkg_name</td>
+<td>下载并安装软件包</td>
+</tr>
+<tr>
+<td>yum install –downloadonly pkg_name</td>
+<td>只 下 载 不 安 装</td>
+</tr>
+<tr>
+<td>yum list</td>
+<td>显示所有程序包</td>
+</tr>
+<tr>
+<td>yum list installed</td>
+<td>查看当前系统已安装包</td>
+</tr>
+<tr>
+<td>yum list updates</td>
+<td>查看可以更新的包列表</td>
+</tr>
+<tr>
+<td>yum check-update</td>
+<td>查看可升级的软件包</td>
+</tr>
+<tr>
+<td>yum update</td>
+<td>更新所有软件包</td>
+</tr>
+<tr>
+<td>yum update pkg_name</td>
+<td>升级指定软件包</td>
+</tr>
+<tr>
+<td>yum deplist pkg_name</td>
+<td>列出软件包依赖关系</td>
+</tr>
+<tr>
+<td>yum remove pkg_name</td>
+<td>删除软件包</td>
+</tr>
+<tr>
+<td>yum clean all</td>
+<td>清除缓存</td>
+</tr>
+<tr>
+<td>yum clean packages</td>
+<td>清除缓存的软件包</td>
+</tr>
+<tr>
+<td>yum clean headers</td>
+<td>清除缓存的header</td>
+</tr>
+</tbody></table>
+<p><strong>DPKG包管理命令</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dpkg -c xxx.deb</td>
+<td>列出deb包的内容</td>
+</tr>
+<tr>
+<td>dpkg -i xxx.deb</td>
+<td>安装&#x2F;更新deb包</td>
+</tr>
+<tr>
+<td>dpkg -r pkg_name</td>
+<td>移除deb包</td>
+</tr>
+<tr>
+<td>dpkg -P pkg_name</td>
+<td>移除deb包(不保留配置)</td>
+</tr>
+<tr>
+<td>dpkg -l</td>
+<td>查看系统中已安装deb包</td>
+</tr>
+<tr>
+<td>dpkg -l pkg_name</td>
+<td>显示包的⼤致信息</td>
+</tr>
+<tr>
+<td>dpkg -L pkg_name</td>
+<td>查看deb包安装的⽂件</td>
+</tr>
+<tr>
+<td>dpkg -s pkg_name</td>
+<td>查看包的详细信息</td>
+</tr>
+<tr>
+<td>dpkg –unpack xxx.deb</td>
+<td>解开deb包的内容</td>
+</tr>
+</tbody></table>
+<p><strong>APT软件⼯具</strong></p>
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>apt-cache search pkg_name</td>
+<td>搜索程序包</td>
+</tr>
+<tr>
+<td>apt-cache show pkg_name</td>
+<td>获取包的概览信息</td>
+</tr>
+<tr>
+<td>apt-get install pkg_name</td>
+<td>安装&#x2F;升级软件包</td>
+</tr>
+<tr>
+<td>apt-get purge pkg_name</td>
+<td>卸载软件（包括配置）</td>
+</tr>
+<tr>
+<td>apt-get remove pkg_name</td>
+<td>卸载软件（不包括配置）</td>
+</tr>
+<tr>
+<td>apt-get update</td>
+<td>更新包索引信息</td>
+</tr>
+<tr>
+<td>apt-get upgrade</td>
+<td>更新已安装软件包</td>
+</tr>
+<tr>
+<td>apt-get clean</td>
+<td>清理缓存</td>
+</tr>
+</tbody></table>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Linux命令速查</div>
+      <div>https://homovexillues.github.io/2024/11/03/Linux命令速查/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年11月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/11/05/GPT4o%E9%97%AE%E7%AD%94-%E7%BC%96%E7%A8%8B%E7%AF%87/" title="GPT4o问答-编程篇">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">GPT4o问答-编程篇</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9/" title="计算机网络零碎知识点">
+                        <span class="hidden-mobile">计算机网络零碎知识点</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
