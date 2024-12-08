@@ -30,8 +30,12 @@
 <meta property="og:image" content="https://homovexillues.github.io/images/CS61A%E7%AC%94%E8%AE%B0/image-20241207181602537.png">
 <meta property="og:image" content="https://homovexillues.github.io/images/CS61A%E7%AC%94%E8%AE%B0/image-20241207181746252.png">
 <meta property="og:image" content="https://homovexillues.github.io/images/CS61A%E7%AC%94%E8%AE%B0/image-20241207181839460.png">
+<meta property="og:image" content="https://homovexillues.github.io/images/CS61A%E7%AC%94%E8%AE%B0/image-20241207222052970.png">
+<meta property="og:image" content="https://homovexillues.github.io/images/CS61A%E7%AC%94%E8%AE%B0/image-20241207222256748.png">
+<meta property="og:image" content="https://homovexillues.github.io/images/CS61A%E7%AC%94%E8%AE%B0/image-20241208163627095.png">
+<meta property="og:image" content="https://homovexillues.github.io/images/CS61A%E7%AC%94%E8%AE%B0/image-20241208231440673.png">
 <meta property="article:published_time" content="2024-12-01T08:37:02.549Z">
-<meta property="article:modified_time" content="2024-12-07T10:18:40.103Z">
+<meta property="article:modified_time" content="2024-12-08T15:45:25.578Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="CS61A">
 <meta name="twitter:card" content="summary_large_image">
@@ -232,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          2.3k 字
         
       </span>
     
@@ -243,7 +247,7 @@
         
         
         
-          10 分钟
+          19 分钟
         
       </span>
     
@@ -316,6 +320,19 @@
 <p>如上面的那个例子，在执行<strong>f(2)<strong>的时候，先在方形函数的主题中查找某个名称，首先在本地帧中查找，找到</strong>f</strong>，将其绑定到2上，如果找不到，就在全局环境中找，发现<strong>mul</strong>在全局中对应的函数，然后传入<strong>f</strong>的值<strong>2</strong>进行操作，返回<strong>4</strong>，然后<strong>f(2)<strong>返回</strong>4</strong>。</p>
 <p><img src="/../images/CS61A%E7%AC%94%E8%AE%B0/image-20241207181746252.png" srcset="/img/loading.gif" lazyload alt="image-20241207181746252"></p>
 <p><img src="/../images/CS61A%E7%AC%94%E8%AE%B0/image-20241207181839460.png" srcset="/img/loading.gif" lazyload alt="image-20241207181839460"></p>
+<p><img src="/../images/CS61A%E7%AC%94%E8%AE%B0/image-20241207222052970.png" srcset="/img/loading.gif" lazyload alt="image-20241207222052970"></p>
+<p><img src="/../images/CS61A%E7%AC%94%E8%AE%B0/image-20241207222256748.png" srcset="/img/loading.gif" lazyload alt="image-20241207222256748"></p>
+<p><img src="/../images/CS61A%E7%AC%94%E8%AE%B0/image-20241208163627095.png" srcset="/img/loading.gif" lazyload alt="image-20241208163627095"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#为什么不能用</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">if_</span>(<span class="hljs-params">c,t,f</span>):<br>    <span class="hljs-keyword">if</span> c:<br>        <span class="hljs-keyword">return</span> t<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> f<br><span class="hljs-comment">#来代替</span><br><span class="hljs-keyword">if</span> x&gt;=<span class="hljs-number">0</span>:<br>    <span class="hljs-keyword">return</span> sqrt(x)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br><span class="hljs-comment">#？</span><br><span class="hljs-comment">#看看这两种实现，用于计算一个负数或者虚数的平方根</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">real_sqrt1</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-keyword">return</span> if_(x&gt;=<span class="hljs-number">0</span>,sqrt(x),<span class="hljs-number">0</span>)<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">real_sqrt2</span>(<span class="hljs-params">x</span>):<br>     <span class="hljs-keyword">if</span> x&gt;=<span class="hljs-number">0</span>:<br>         <span class="hljs-keyword">return</span> sqrt(x)<br>     <span class="hljs-keyword">else</span>:<br>         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br><span class="hljs-comment">#如果执行</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>real_sqrt(-<span class="hljs-number">16</span>)<br><span class="hljs-comment">#会发生什么?</span><br><span class="hljs-comment">#real_sqrt1</span><br>---&gt; <span class="hljs-number">10</span>     <span class="hljs-keyword">return</span> if_(x&gt;=<span class="hljs-number">0</span>,sqrt(x),<span class="hljs-number">0</span>)<br>ValueError: math domain error<br><span class="hljs-comment">#real_sqrt2</span><br><span class="hljs-number">0</span><br><span class="hljs-comment">#为什么?</span><br></code></pre></td></tr></table></figure>
+
+<p>因为在定义函数的时候，函数主体是不会被计算或者说执行的，if-else的模式确保了当x为负数的时候你不会去计算它的平方根，**但是!**当sqrt(x)定义在参数里的话就不一样了，调用表达式不允许你跳过对调用表达式的部分进行评估，你会先计算<code>x&gt;=0</code>,<code>sqrt(x)</code>和<code>0</code>，然后自然而然的抛异常报错。</p>
+<p><strong>这种将所有分支选项写在参数里的做法实际上相当于在执行的时候都执行了一遍</strong></p>
+<h3 id="Higher-Order-Functions"><a href="#Higher-Order-Functions" class="headerlink" title="Higher-Order Functions"></a>Higher-Order Functions</h3><p>高阶函数实际上就像是OOP中的继承一样，为了解决代码复用的问题，如下图所示</p>
+<p><img src="/../images/CS61A%E7%AC%94%E8%AE%B0/image-20241208231440673.png" srcset="/img/loading.gif" lazyload alt="引用自码农翻身的函数式编程圣经"></p>
+<p>但是要注意的是，高阶函数主要注重的是<strong>行为</strong>的复用，而不像是OOP一样，通过对象继承了<strong>状态</strong></p>
+<p>现在是具体的例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#下面这三个函数都计算总和</span><br><span class="hljs-comment">#计算到n为止的自然数的和</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_naturals</span>(<span class="hljs-params">n</span>):<br>    total , k = <span class="hljs-number">0</span> , <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> k &lt;= n:<br>        total , k  = total + k , k + <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> total<br><span class="hljs-comment">#计算到n为止的自然数的立方和</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_cubes</span>(<span class="hljs-params">n</span>):<br>    total , k = <span class="hljs-number">0</span> , <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> k &lt;= n:<br>        total , k  = total + <span class="hljs-built_in">pow</span>(k,<span class="hljs-number">3</span>) , k + <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> total<br><span class="hljs-comment">#计算这个式子的和</span><br><span class="hljs-comment">#8/(1*3)+8/(5*7)+8/(9*11)+...</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_pi</span>(<span class="hljs-params">n</span>):<br>    total , k = <span class="hljs-number">0</span> , <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> k &lt;= n:<br>        total , k  = total + <span class="hljs-number">8</span>/(k*(k+<span class="hljs-number">2</span>)) , k + <span class="hljs-number">4</span><br>    <span class="hljs-keyword">return</span> total<br><span class="hljs-comment">#可以发现其中都复用了这个模式:</span><br><span class="hljs-keyword">def</span> &lt;name&gt;(x):<br>    total, k = <span class="hljs-number">0</span>, <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> k &lt;= x:<br>        total, k = total + &lt;term&gt;(k), &lt;<span class="hljs-built_in">next</span>&gt;(k)<br>    <span class="hljs-keyword">return</span> total<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -405,6 +422,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/12/07/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/" title="英语短语">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">英语短语</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
