@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
 <meta property="article:published_time" content="2024-03-29T01:51:22.492Z">
-<meta property="article:modified_time" content="2024-11-05T08:10:49.000Z">
+<meta property="article:modified_time" content="2025-01-02T02:26:46.075Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          26k 字
+          30k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          220 分钟
+          252 分钟
         
       </span>
     
@@ -952,6 +952,108 @@
 </li>
 </ol>
 <h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>质心是多个点的“平均位置”，通常用于表示一组点的几何中心。在计算时，质心是各点坐标的算术平均值，对于带有不同质量的点集合，质心可以通过加权平均计算。质心在物理学、计算几何、图像处理等领域有广泛的应用。</p>
+<h1 id="为什么在MAUI应用中使用Process-GetProcesses-方法无法获得所有的进程信息"><a href="#为什么在MAUI应用中使用Process-GetProcesses-方法无法获得所有的进程信息" class="headerlink" title="为什么在MAUI应用中使用Process.GetProcesses()方法无法获得所有的进程信息?"></a>为什么在MAUI应用中使用Process.GetProcesses()方法无法获得所有的进程信息?</h1><p>在 Android 设备上使用 <code>Process.GetProcesses()</code> 只能获取到<strong>自己所在的进程</strong>或是非常有限的信息，这是由 Android 的沙盒和权限机制所决定的。和传统桌面或服务器环境的 .NET 不同，Android 并不允许普通应用程序访问系统中所有进程的详细信息。</p>
+<h2 id="为什么会这样？"><a href="#为什么会这样？" class="headerlink" title="为什么会这样？"></a>为什么会这样？</h2><ol>
+<li><strong>Android 沙盒机制</strong><br> 每个 Android 应用都运行在自己的“应用沙盒”中，进程之间隔离很严格。应用无权直接访问其他进程的信息，除非拥有系统级权限或特定的授权。</li>
+<li><strong>权限限制</strong><br> Android 并没有对普通第三方应用开放类似于在桌面系统上遍历所有进程的接口。即使你调用了 <code>Process.GetProcesses()</code>，最终底层的实现也只能让你看到自己进程的基本信息。</li>
+<li><strong>安全策略</strong><br> 出于安全和隐私的考虑，Android 系统对进程、文件等访问做了严格的限制，防止不同应用之间互相窥探或干扰。</li>
+</ol>
+<h2 id="如果想获取所有进程信息，该怎么做？"><a href="#如果想获取所有进程信息，该怎么做？" class="headerlink" title="如果想获取所有进程信息，该怎么做？"></a>如果想获取所有进程信息，该怎么做？</h2><p>一般来说，在<strong>非 Root 环境</strong>下，普通应用几乎没有办法获取系统中所有进程的详细信息。以下是一些可能但并不一定可行的途径：</p>
+<ol>
+<li><strong>Root 权限</strong><ul>
+<li>如果设备已经 Root，那么可以通过访问 <code>/proc</code> 文件系统或使用一些系统级命令（如 <code>ps</code>、<code>top</code> 等）来获取所有进程信息。</li>
+<li>但是这会导致应用只能在 Root 后的设备上运行，并且在官方应用商店上架会遇到限制。</li>
+</ul>
+</li>
+<li><strong>系统签名 &#x2F; 定制 ROM</strong><ul>
+<li>如果你在开发系统应用（即使用了与系统相同的签名）或是开发针对定制 ROM 的特权应用，则可以使用 Android 的系统 API（如 <code>ActivityManagerService</code>）来获取所有进程信息。</li>
+<li>这通常只适用于设备厂商或在特殊场景（比如企业、特定硬件项目）下定制的 Android 系统。</li>
+</ul>
+</li>
+<li><strong>ActivityManager APIs（有限信息）</strong><ul>
+<li>有些情况下，可以用 <code>Android.App.ActivityManager</code>（Java &#x2F; Xamarin.Android）获取<strong>部分</strong>正在运行的任务&#x2F;服务信息，不过从 Android 5.0 开始，能获取到的信息也变得非常有限，且通常只能拿到应用层级的概览（比如包名、进程计数），而非完整进程列表。</li>
+</ul>
+</li>
+<li><strong>Shell 命令（有限，且受权限限制）</strong><ul>
+<li>即使你执行类似 <code>Runtime.getRuntime().exec(&quot;ps&quot;)</code> 的命令，若没有 Root 权限，也只能查看到<strong>自己所在应用</strong>及部分系统可见的进程。</li>
+</ul>
+</li>
+</ol>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><ul>
+<li><strong>在普通的 Android 应用环境下，无法用 <code>Process.GetProcesses()</code> 获取所有进程。</strong></li>
+<li>这并不是 .NET 或 C# 的问题，而是 Android 操作系统本身的安全沙盒设计导致的行为。</li>
+<li>如果确有需要（比如做系统工具、ROM 定制、设备管理等），就必须获得更高权限（Root 或系统签名），然后才能使用系统底层接口或 Shell 命令来获取全部进程信息。</li>
+</ul>
+<p>因此，如果只是做一般的 App 开发，往往只能获取到<strong>自己</strong>的进程信息，这在移动平台上是标准且合规的行为。</p>
+<h1 id="热更新热重载是怎么做到的-是什么原理"><a href="#热更新热重载是怎么做到的-是什么原理" class="headerlink" title="热更新热重载是怎么做到的?是什么原理?"></a>热更新热重载是怎么做到的?是什么原理?</h1><p>“热更新”(Hot Update) 或“热重载”(Hot Reload) 指的是在应用程序<strong>运行时</strong>，对代码或资源文件的修改能够<strong>实时</strong>(或接近实时) 地在应用中生效，而<strong>无需完全重启</strong>应用的技术。不同的平台和框架有不同的实现方式，但总体思路是一致的：<strong>监听到代码或资源文件有改动，就把改动后的部分重新加载并替换原有的逻辑或内容</strong>，从而使运行中的程序能即时应用新代码。</p>
+<p>下面以常见的场景来举例说明原理。</p>
+<hr>
+<h2 id="一、在-NET-C-中的-Hot-Reload-原理"><a href="#一、在-NET-C-中的-Hot-Reload-原理" class="headerlink" title="一、在 .NET &#x2F; C# 中的 Hot Reload 原理"></a>一、在 .NET &#x2F; C# 中的 Hot Reload 原理</h2><h3 id="1-“编辑并继续”-Edit-and-Continue-技术的演进"><a href="#1-“编辑并继续”-Edit-and-Continue-技术的演进" class="headerlink" title="1. “编辑并继续”(Edit and Continue) 技术的演进"></a>1. “编辑并继续”(Edit and Continue) 技术的演进</h3><p>早在 Visual Studio 里就有 “Edit and Continue” 功能：当你在调试（Debug）过程中修改了某些 C# 代码，VS 会尝试把修改过的<strong>方法体</strong>重新编译成 IL(中间语言)，并把它<strong>注入</strong>到正在调试的进程中，从而实现“无需停止调试就能应用新代码”的效果。</p>
+<p>.NET 6+ 将此功能推广为更通用的 “Hot Reload”：</p>
+<ol>
+<li><strong>实时监视源码文件变动</strong>：VS&#x2F;CLI 的监视器(FileWatcher)发现文件更新后触发事件。</li>
+<li><strong>重新编译仅修改的部分</strong>：只编译你刚改的类或方法，得到新的 IL。</li>
+<li><strong>将新 IL 注入到运行中的程序</strong>：.NET 运行时（通过元数据和IL定位）找到对应的类或方法，替换其方法体。</li>
+</ol>
+<p><strong>局限</strong>：</p>
+<ul>
+<li>只能修改<strong>方法的实现</strong>、局部变量、表达式等；</li>
+<li><strong>无法</strong>轻易修改方法签名、类的继承结构、泛型定义等较大范围的结构性更改；</li>
+<li>如果改动超出“Hot Reload”可处理的范围，就需要重启或重新编译整个应用。</li>
+</ul>
+<h3 id="2-XAML-Hot-Reload-WPF-Xamarin-MAUI"><a href="#2-XAML-Hot-Reload-WPF-Xamarin-MAUI" class="headerlink" title="2. XAML Hot Reload (WPF &#x2F; Xamarin &#x2F; MAUI)"></a>2. XAML Hot Reload (WPF &#x2F; Xamarin &#x2F; MAUI)</h3><ul>
+<li>针对 UI 层(XAML)的修改，如调整控件布局、样式等，也可以在运行时注入新的 XAML 资源，刷新 UI 视图。</li>
+<li>实现思路：监听到 XAML 文件改动，重新编译 XAML-&gt;BAML(或生成 C# UI 代码)，调用运行时的刷新机制来动态更新界面树。</li>
+</ul>
+<hr>
+<h2 id="二、在前端框架中的-Hot-Reload-Hot-Module-Replacement"><a href="#二、在前端框架中的-Hot-Reload-Hot-Module-Replacement" class="headerlink" title="二、在前端框架中的 Hot Reload &#x2F; Hot Module Replacement"></a>二、在前端框架中的 Hot Reload &#x2F; Hot Module Replacement</h2><h3 id="1-Webpack-的-HMR-Hot-Module-Replacement"><a href="#1-Webpack-的-HMR-Hot-Module-Replacement" class="headerlink" title="1. Webpack 的 HMR (Hot Module Replacement)"></a>1. Webpack 的 HMR (Hot Module Replacement)</h3><ul>
+<li>前端构建工具（如 Webpack、Vite）会在开发模式下启动一个 <strong>dev server</strong> 并监控(<code>watch</code>) 源文件的变动。</li>
+<li>一旦检测到文件更新，会<strong>只重新编译改动的模块</strong>，并通过 WebSocket 等方式将“更新的模块包”推送到浏览器。</li>
+<li>浏览器端有一个运行时（HMR Runtime），会<strong>替换</strong>对应模块的旧代码，而无需刷新整个网页。</li>
+<li>对于 React&#x2F;Vue 等框架，如果能保持组件状态，就可实现真正“局部更新、不刷新、不丢失状态”的热重载。</li>
+</ul>
+<h3 id="2-React-Refresh-Vue-Hot-Reload"><a href="#2-React-Refresh-Vue-Hot-Reload" class="headerlink" title="2. React Refresh &#x2F; Vue Hot Reload"></a>2. React Refresh &#x2F; Vue Hot Reload</h3><ul>
+<li>React Refresh 利用 Babel 在编译时给组件插桩(instrument)，在运行时检测到代码更新后<strong>只替换对应组件的渲染逻辑</strong>。</li>
+<li>Vue 的单文件组件(.vue)编译后也带有 HMR hook，检测到更新就只替换该组件的部分，不用刷新整页。</li>
+</ul>
+<hr>
+<h2 id="三、在移动端的-Hot-Reload-React-Native-Flutter"><a href="#三、在移动端的-Hot-Reload-React-Native-Flutter" class="headerlink" title="三、在移动端的 Hot Reload (React Native &#x2F; Flutter)"></a>三、在移动端的 Hot Reload (React Native &#x2F; Flutter)</h2><h3 id="1-React-Native"><a href="#1-React-Native" class="headerlink" title="1. React Native"></a>1. React Native</h3><ul>
+<li>Metro bundler 监听 JavaScript&#x2F;TypeScript 文件更新，重新打包相应模块，利用 “Fast Refresh” (类似 HMR) 向运行中的 APP 注入。</li>
+<li>RN 遍历组件树，只重绘受影响的组件，不用重启整个原生应用。</li>
+</ul>
+<h3 id="2-Flutter"><a href="#2-Flutter" class="headerlink" title="2. Flutter"></a>2. Flutter</h3><ul>
+<li>Dart VM 提供了 “hot reload&#x2F;hot restart” 能力。</li>
+<li><strong>hot reload</strong>：在 Dart 层可以将修改过的代码注入到正在运行的 Dart VM 中，Flutter 框架会重建 widget 树并渲染更新，但不会丢失原有状态(如变量、路由栈)。</li>
+<li><strong>hot restart</strong>：比 hot reload范围更大，会完全重启 Dart isolate，但依旧不需要重新启动整个原生进程。</li>
+</ul>
+<hr>
+<h2 id="四、总体机制与原理"><a href="#四、总体机制与原理" class="headerlink" title="四、总体机制与原理"></a>四、总体机制与原理</h2><p>无论是后端(.NET Java)、前端(Webpack、Vite)还是移动端(Flutter、RN)，它们的做法可归纳为：</p>
+<ol>
+<li><strong>监控源码或资源文件改动</strong>：文件系统监听(File System Watcher)或特殊插件(DevServer)发现你保存了文件。</li>
+<li><strong>局部编译&#x2F;增量编译</strong>：只编译改动过的源码模块&#x2F;方法&#x2F;资源，得到新的字节码(IL、JS bundle)或UI资源(XAML、CSS)。</li>
+<li><strong>动态加载并替换</strong>：将新编译的结果注入到内存中，替换掉原有的部分。</li>
+<li><strong>框架层做状态管理</strong>：许多框架会尽可能保持原来的运行状态(变量值、组件状态等)，只更新逻辑或视图，从而达到“热更新”效果。</li>
+</ol>
+<h3 id="核心要点"><a href="#核心要点" class="headerlink" title="核心要点"></a>核心要点</h3><ul>
+<li><strong>编译器或打包器层面</strong>支持增量编译。</li>
+<li><strong>运行时</strong>需要可以“热插拔”新的代码或资源。</li>
+<li>有些变化（比如大范围结构性修改）必须要重新启动，因为运行时无法动态地“改血统、改签名”。</li>
+<li>很多框架为了让开发体验更好，会尽可能地支持“状态保留”，这样你就不必每次改完代码后重新手动执行一系列操作(如登录、跳到某个流程等)。</li>
+</ul>
+<hr>
+<h2 id="五、Cookie-效果之类的常见误解"><a href="#五、Cookie-效果之类的常见误解" class="headerlink" title="五、Cookie 效果之类的常见误解"></a>五、Cookie 效果之类的常见误解</h2><ul>
+<li>“热重载”是针对应用本身的代码或资源进行替换，与<strong>Cookie&#x2F;Session</strong>这类网络状态无关。</li>
+<li>如果应用中维护某些会话或数据状态，只要运行时不会被重启，这些状态就可被保留。在做前端 HMR&#x2F;后端 Hot Reload 时，Cookie&#x2F;Session 信息仍然可以在请求中正常传递。</li>
+</ul>
+<hr>
+<h2 id="六、小结"><a href="#六、小结" class="headerlink" title="六、小结"></a>六、小结</h2><p><strong>热更新、热重载的本质</strong>：在<strong>不重启进程</strong>(或者不刷新整个页面&#x2F;应用)的前提下，<strong>动态替换</strong>部分已编译（或已加载）的代码&#x2F;资源，以实现更快的开发调试迭代。</p>
+<ul>
+<li>在 <strong>.NET</strong> 中，主要利用了 <strong>Edit and Continue</strong> &#x2F; <strong>Hot Reload</strong> 的机制来对方法体或 XAML 进行动态更新；</li>
+<li>在 <strong>Web</strong> 前端，主要利用 **HMR(Hot Module Replacement)**，通过增量打包+运行时替换来只更新改动的模块；</li>
+<li>在 <strong>Flutter &#x2F; React Native</strong> 中，利用虚拟机或 bundler 的能力将修改后的 Dart&#x2F;JS 代码注入运行时，并进行局部重渲染。</li>
+</ul>
+<p><strong>收益</strong>：开发者可以<strong>大大减少编译、启动、登录等步骤</strong>，快速看到最新修改的效果，提高开发效率。</p>
+<p>这就是热更新&#x2F;热重载“能做到且如何做到”的基本原理。</p>
 
                 
               </div>
@@ -1320,20 +1422,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
