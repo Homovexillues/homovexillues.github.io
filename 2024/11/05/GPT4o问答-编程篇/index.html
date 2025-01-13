@@ -26,8 +26,8 @@
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="我想知道的是，C#，C++，Rust，lua，Lisp来写这句话分别[(coords[i], coords[i + 1]) for i in range(0, len(coords), 2)]要怎么写?你希望将以下 Python 代码片段： 1[(coords[i], coords[i + 1]) for i in range(0, len(coords), 2)]  转化为不同语言的等效写法。这">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-05T06:45:14.870Z">
-<meta property="article:modified_time" content="2024-12-07T14:43:37.968Z">
+<meta property="article:published_time" content="2024-11-05T06:45:09.254Z">
+<meta property="article:modified_time" content="2025-01-02T07:10:14.112Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="问答">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          17k 字
+          19k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          143 分钟
+          159 分钟
         
       </span>
     
@@ -638,6 +638,92 @@
 <li><strong>面向对象编程的核心是对象</strong>，侧重于通过对象封装数据和行为，强调继承、多态和状态变化。</li>
 </ul>
 <p>因此，虽然可以从“第一公民”的角度理解两者的不同，但这只是其本质特征之一，二者的差异还包括如何组织代码、如何处理副作用、如何管理状态等方面。</p>
+<h1 id="我是否可以这么理解，-exe只是开启了一个用C-运行时来翻译中间语言的进程，而热重载就是在VS的这个进程对-exe的这个进程进行注入"><a href="#我是否可以这么理解，-exe只是开启了一个用C-运行时来翻译中间语言的进程，而热重载就是在VS的这个进程对-exe的这个进程进行注入" class="headerlink" title="我是否可以这么理解，.exe只是开启了一个用C#运行时来翻译中间语言的进程，而热重载就是在VS的这个进程对.exe的这个进程进行注入"></a>我是否可以这么理解，.exe只是开启了一个用C#运行时来翻译中间语言的进程，而热重载就是在VS的这个进程对.exe的这个进程进行注入</h1><p>你的理解基本正确，但需要稍作补充和调整：</p>
+<ol>
+<li><strong><code>.exe</code> 文件运行的本质</strong><ul>
+<li>当你运行 C# 编写的程序（例如一个 <code>.exe</code> 文件）时，该 <code>.exe</code> 文件实际上包含了 <strong>中间语言（IL）</strong> 和 <strong>元数据</strong>。</li>
+<li>.NET 运行时（CLR，Common Language Runtime）会启动一个进程，加载这个 <code>.exe</code> 文件，解析 IL，并即时编译为机器码（通过 JIT 编译器）。</li>
+<li>所以，<code>.exe</code> 是程序的入口点，但它的执行是由 .NET 运行时处理的。</li>
+</ul>
+</li>
+<li><strong>热重载的作用</strong><ul>
+<li><strong>Visual Studio 和运行时交互</strong>：<ul>
+<li>Visual Studio 的调试器会与运行时直接通信，而不是直接操作 <code>.exe</code> 文件。</li>
+<li>热重载并不是对 <code>.exe</code> 文件进行修改，而是通过调试器注入或替换运行时中的 IL。</li>
+</ul>
+</li>
+<li><strong>注入方式</strong>：<ul>
+<li>Visual Studio 捕获代码变化后，生成 <strong>增量 IL 文件</strong>。</li>
+<li>调试器通过运行时 API，将增量 IL 加载到运行中的进程内存中。</li>
+<li>CLR 动态更新类或方法的元数据和实现，让修改即时生效。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>跨进程通信</strong><ul>
+<li>Visual Studio 调试器是一个单独的进程，它通过 <strong>调试协议</strong>（如 Windows Debug API 或 .NET 调试协议）与运行时进程通信。</li>
+<li>热重载的“注入”本质上是调试器对运行时发出指令，要求运行时动态加载新的 IL。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="改进你的理解"><a href="#改进你的理解" class="headerlink" title="改进你的理解"></a><strong>改进你的理解</strong></h3><h4 id="更准确的表述："><a href="#更准确的表述：" class="headerlink" title="更准确的表述："></a><strong>更准确的表述：</strong></h4><p><code>.exe</code> 文件本身只是托管代码（IL）的容器，其运行由 .NET 运行时管理。热重载通过 Visual Studio 调试器与运行时的交互，将修改后的 IL 动态注入到运行时进程的内存中，而不直接操作 <code>.exe</code> 文件。</p>
+<hr>
+<h3 id="完整运行时流程"><a href="#完整运行时流程" class="headerlink" title="完整运行时流程"></a><strong>完整运行时流程</strong></h3><ol>
+<li><strong>启动 <code>.exe</code> 文件</strong><ul>
+<li>操作系统启动进程，加载 <code>.exe</code> 文件。</li>
+<li>CLR 解析 <code>.exe</code> 的元数据，并启动应用程序的入口方法。</li>
+</ul>
+</li>
+<li><strong>JIT 编译和执行</strong><ul>
+<li>CLR 按需将 IL 转换为机器码（JIT 编译）。</li>
+<li>程序开始运行，执行逻辑。</li>
+</ul>
+</li>
+<li><strong>热重载过程</strong><ul>
+<li><strong>代码修改</strong>：开发者在 Visual Studio 中修改代码。</li>
+<li><strong>增量编译</strong>：Visual Studio 编译器只重新生成改动部分的 IL。</li>
+<li><strong>注入更新</strong>：调试器通过运行时 API，将新的 IL 加载到目标进程中。</li>
+<li><strong>动态替换</strong>：CLR 更新运行时中的方法或类，立即生效。</li>
+</ul>
+</li>
+<li><strong>持续运行</strong><ul>
+<li>运行中的进程保持其当前状态（如变量值和线程栈），无需重新启动。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="补充：为什么不直接修改-exe-文件？"><a href="#补充：为什么不直接修改-exe-文件？" class="headerlink" title="补充：为什么不直接修改 .exe 文件？"></a><strong>补充：为什么不直接修改 <code>.exe</code> 文件？</strong></h3><ol>
+<li><strong>运行时安全性</strong><ul>
+<li><code>.exe</code> 文件可能已被操作系统锁定（因为它正在运行）。</li>
+<li>修改 <code>.exe</code> 文件会带来运行时的不确定性。</li>
+</ul>
+</li>
+<li><strong>热重载的设计目标</strong><ul>
+<li>热重载的目标是快速迭代代码，而不是永久修改二进制文件。</li>
+<li>修改 IL 的逻辑只存在于内存中，对原始文件无影响。</li>
+</ul>
+</li>
+<li><strong>调试器的职责</strong><ul>
+<li>热重载的注入逻辑是调试器和 CLR 的协作，而不需要修改磁盘上的文件。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="总结-7"><a href="#总结-7" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>你可以理解为：</p>
+<ul>
+<li><code>.exe</code> 启动后，CLR 承担了 IL 的加载和运行工作。</li>
+<li>热重载由 <strong>Visual Studio 调试器</strong> 和 <strong>CLR</strong> 协作完成。</li>
+<li>通过注入增量 IL 文件的方式，动态修改运行中的进程内存，而不是直接修改 <code>.exe</code> 文件。</li>
+</ul>
+<p>这种设计既保障了开发效率，又避免了修改原始二进制文件的潜在问题。</p>
+<h1 id="所以实际上，无论是函数式也好，面向对象也好，最重要的思想其实是抽象数据，SICP的前两章实际上是为了传授抽象数据的思想，无论是用函数式还是什么，核心思想其实是这个，我理解的对吗"><a href="#所以实际上，无论是函数式也好，面向对象也好，最重要的思想其实是抽象数据，SICP的前两章实际上是为了传授抽象数据的思想，无论是用函数式还是什么，核心思想其实是这个，我理解的对吗" class="headerlink" title="所以实际上，无论是函数式也好，面向对象也好，最重要的思想其实是抽象数据，SICP的前两章实际上是为了传授抽象数据的思想，无论是用函数式还是什么，核心思想其实是这个，我理解的对吗?"></a>所以实际上，无论是函数式也好，面向对象也好，最重要的思想其实是抽象数据，SICP的前两章实际上是为了传授抽象数据的思想，无论是用函数式还是什么，核心思想其实是这个，我理解的对吗?</h1><p><strong>是的，你的理解大体是正确的。**SICP 的核心思想之一，就是**通过抽象**来管理程序的复杂度。无论是过程抽象（第 1 章讲的“高阶函数”与函数式思维）还是数据抽象（第 2 章讲的“抽象数据类型”），它们的目的都是</strong>把我们在构建程序时的“做什么”<strong>和</strong>“怎么做”**分离开来，从而让程序更易于理解和维护。</p>
+<ul>
+<li><strong>SICP 第 1 章</strong>更多地侧重<strong>过程抽象</strong>：如何把复杂的过程逻辑封装在函数中，再用高阶函数等手段进行组合，从而“像搭积木一样”构建复杂行为。</li>
+<li><strong>SICP 第 2 章</strong>则介绍<strong>数据抽象</strong>：如何“先定义好对数据的操作与接口”，再决定用何种内部表示（结构）去实现这些操作。这样一来，就能<strong>隐藏</strong>数据的底层实现细节，仅保留对外可见的操作接口。</li>
+</ul>
+<p>这些抽象思维本质上<strong>并不局限于函数式或面向对象</strong>——不论使用 OOP、函数式、过程式等范式，都可以而且都需要<strong>数据抽象</strong>来降低耦合、提升可维护性。面向对象更多地在语言层面提供了“类”、“对象”、“继承”、“接口”之类的特性，让你有一整套写法来实现<strong>抽象数据</strong>与<strong>抽象行为</strong>；而函数式或过程式也可以通过<strong>函数、闭包、模块</strong>等手段来做同样的事。</p>
+<p>因此，<strong>SICP 最想传递的</strong>并不是“要去用哪个编程范式”，而是<strong>如何以抽象为工具</strong>，在程序构建中管理复杂度。在第 2 章，你所看到的那种“先定义一组操作，再去实现底层结构”的模式，确实正是“数据抽象”的精髓所在。你把它理解为在给后续的 OOP 思维做铺垫也可以，但它本身更是“抽象数据类型”这一概念的最初阐释，与是否走向 OOP 语言并没有强制联系。</p>
 
                 
               </div>
@@ -1008,5 +1094,20 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
