@@ -27,7 +27,7 @@
 <meta property="og:description" content="PID算法（Proportional-Integral-Derivative 控制器）是工业控制中最常用的一种反馈控制算法。PID控制器通过计算误差并生成相应的控制输出，从而使系统的输出跟随目标值。PID控制器广泛应用于机器人控制、自动化控制、温度控制等领域。 PID控制器的原理PID控制器基于三个主要的控制项来调整输出：  比例控制（P）：根据当前误差大小进行调整。 积分控制（I）：根据历史误差">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-02-12T08:54:24.935Z">
-<meta property="article:modified_time" content="2025-02-12T09:01:10.964Z">
+<meta property="article:modified_time" content="2025-02-12T09:16:59.390Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -286,21 +286,21 @@
 <li><strong>积分控制（I）</strong>：根据历史误差的累积进行调整，解决持续的小误差问题。</li>
 <li><strong>微分控制（D）</strong>：根据误差变化的速率进行调整，预测误差的趋势，提前做出响应，防止系统超调。</li>
 </ol>
-<h4 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h4><p>PID控制器的控制输出 u(t)u(t) 可以表示为以下公式：<br>$$<br>u(t) &#x3D; K_p e(t) + K_i \int_{0}^{t} e(\tau) , d\tau + K_d \frac{de(t)}{dt}<br>$$</p>
+<h4 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h4><p>PID控制器的控制输出 $u(t)$ 可以表示为以下公式：<br>$$<br>u(t) &#x3D; K_p e(t) + K_i \int_{0}^{t} e(\tau) , d\tau + K_d \frac{de(t)}{dt}<br>$$</p>
 <ul>
-<li><p>e(t)e(t) 是系统的<strong>误差</strong>，即目标值与当前值之间的差异：<br>$$<br>e(t) &#x3D; \text{目标值} - \text{实际值}<br>$$</p>
+<li><p>$e(t)$ 是系统的<strong>误差</strong>，即目标值与当前值之间的差异：<br>$$<br>e(t) &#x3D; \text{目标值} - \text{实际值}<br>$$</p>
 </li>
-<li><p>KpK_p 是比例增益，决定了比例控制的强度。</p>
+<li><p>$K_p$ 是比例增益，决定了比例控制的强度。</p>
 </li>
-<li><p>KiK_i 是积分增益，决定了积分控制的强度。</p>
+<li><p>$K_i$ 是积分增益，决定了积分控制的强度。</p>
 </li>
-<li><p>KdK_d 是微分增益，决定了微分控制的强度。</p>
+<li><p>$K_d$ 是微分增益，决定了微分控制的强度。</p>
 </li>
 </ul>
 <h3 id="各个控制项的作用"><a href="#各个控制项的作用" class="headerlink" title="各个控制项的作用"></a>各个控制项的作用</h3><ol>
 <li><p><strong>比例（P）控制</strong>：</p>
 <ul>
-<li>比例项是根据当前的误差 e(t)e(t) 来调整输出。比例控制的目标是使得误差减小到最小。比例控制的输出与误差成正比，比例常数 KpK_p 控制了误差与输出的关系。</li>
+<li>比例项是根据当前的误差 $e(t)$ 来调整输出。比例控制的目标是使得误差减小到最小。比例控制的输出与误差成正比，比例常数 $K_p$ 控制了误差与输出的关系。</li>
 <li>当误差较大时，比例控制会快速地调整系统输出，以减少误差。</li>
 </ul>
 <p><strong>优点</strong>：反应迅速，可以有效减少大误差。</p>
@@ -326,9 +326,9 @@
 <h3 id="PID控制器的工作流程"><a href="#PID控制器的工作流程" class="headerlink" title="PID控制器的工作流程"></a>PID控制器的工作流程</h3><p>PID控制器的基本工作流程如下：</p>
 <ol>
 <li><strong>测量误差</strong>：系统的输出与期望目标值之间的误差。</li>
-<li><strong>计算比例项</strong>：将误差乘以比例增益 KpK_p，得到比例项。</li>
-<li><strong>计算积分项</strong>：将误差进行积分并乘以积分增益 KiK_i，得到积分项。</li>
-<li><strong>计算微分项</strong>：计算误差的变化率并乘以微分增益 KdK_d，得到微分项。</li>
+<li><strong>计算比例项</strong>：将误差乘以比例增益 $K_p$，得到比例项。</li>
+<li><strong>计算积分项</strong>：将误差进行积分并乘以积分增益 $K_i$，得到积分项。</li>
+<li><strong>计算微分项</strong>：计算误差的变化率并乘以微分增益 $K_d$，得到微分项。</li>
 <li><strong>加权求和</strong>：将三个项（比例项、积分项、微分项）加权求和，得到最终的控制输出。</li>
 </ol>
 <h3 id="调整PID参数"><a href="#调整PID参数" class="headerlink" title="调整PID参数"></a>调整PID参数</h3><p>PID控制器的关键是选择合适的 $K_p、K_i和 K_d$参数。不同的应用场景需要不同的参数设置。常见的调参方法有：</p>
