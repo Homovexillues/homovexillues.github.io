@@ -27,7 +27,7 @@
 <meta property="og:description" content="cal  输出一个简单的日历 cat  显示文件内容 cd  更改目录并进入  cd ..回到上一个目录 cd回到home文件夹  chmod123456789101112131415161718192021chmod [who] [operator] [permission] [file][who]u文件所有者g文件所属组o其他用户a所有用户[operator]+增加权限-删除权限&#x3D;设置权限[p">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-29T01:53:06.290Z">
-<meta property="article:modified_time" content="2024-06-24T14:23:42.316Z">
+<meta property="article:modified_time" content="2025-03-29T02:25:26.000Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3k 字
+          3.6k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          26 分钟
+          30 分钟
         
       </span>
     
@@ -296,6 +296,10 @@
 <ul>
 <li>curl [] -&gt; []</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#显示详细的请求和响应信息，用于调试</span><br><span class="hljs-comment">#-v --verbose</span><br>curl -v https://www.baicu.com<br><span class="hljs-comment">#指定代理服务器</span><br><span class="hljs-comment">#-x --proxy</span><br>curl -x socks5://proxy.server.com:port https://www.youtube.com<br><span class="hljs-comment">#将输出保存到指定文件</span><br><span class="hljs-comment">#-o --output</span><br>curl -o output.html https://www.baidu.com<br><span class="hljs-comment">#将输出保留为远程文件的文件名</span><br><span class="hljs-comment">#-O --remote-name</span><br>curl -O https://www.example.com/file.zip<br><span class="hljs-comment">#发送Post请求数据</span><br><span class="hljs-comment">#-d --data</span><br>curl -d <span class="hljs-string">&quot;param1=value1&amp;param2=value2&quot;</span> https://baidu.com<br><span class="hljs-comment">#添加自定义请求头</span><br><span class="hljs-comment">#-H, --header</span><br>curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -d <span class="hljs-string">&#x27;&#123;&quot;key&quot;:&quot;value&quot;&#125;&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure>
+
+
+
 <h3 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h3><p>  比较两个文件的异同并告诉我们差异之处</p>
 <h3 id="df"><a href="#df" class="headerlink" title="df"></a>df</h3><p>  内存占用情况</p>
 <h3 id="du"><a href="#du" class="headerlink" title="du"></a>du</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">du</span><br><span class="hljs-comment"># 显示目录和文件所占空间</span><br><span class="hljs-built_in">du</span> file_name/dir_name<br><span class="hljs-comment"># 显示特定文件或文件夹大小</span><br><span class="hljs-built_in">du</span> -h<br><span class="hljs-comment"># 以方便阅读的格式显示所占空间</span><br><span class="hljs-built_in">du</span> -s<br><span class="hljs-comment"># 显示指定目录或文件的总大小</span><br></code></pre></td></tr></table></figure>
