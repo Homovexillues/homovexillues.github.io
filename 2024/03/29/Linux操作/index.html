@@ -27,7 +27,7 @@
 <meta property="og:description" content="Linux查看系统信息1lsb_release -a  这个工具属于Linux Standard Base（LSB）的一部分。LSB 是一套为 Linux 系统制定的标准化规范，旨在提高不同 Linux 发行版之间的兼容性。    选项 功能    -a 或 --all 显示所有系统信息，包括发行版名称、版本号、描述和代号   -i 或 --id 显示发行版的标识符（如 Ubuntu、Debian">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-29T01:52:19.784Z">
-<meta property="article:modified_time" content="2025-03-07T05:53:17.319Z">
+<meta property="article:modified_time" content="2025-04-28T08:04:28.826Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="WSL">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k 字
+          2.5k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          19 分钟
+          21 分钟
         
       </span>
     
@@ -337,6 +337,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> yagmail<br>mail=yagmail.SMTP(<span class="hljs-string">&#x27;发送邮箱的账号&#x27;</span>，<span class="hljs-string">&#x27;发送邮箱的授权码&#x27;</span>，<span class="hljs-string">&#x27;smtp163.com&#x27;</span>)<br>mail.send(<span class="hljs-string">&#x27;接受邮件的账号&#x27;</span>，<span class="hljs-string">&quot;(标题)测试邮件&quot;</span>,<span class="hljs-string">&quot;邮件文本&quot;</span>)<br>mail.close()<br><br><span class="hljs-comment">#多个收件人</span><br>receiver=[<span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<span class="hljs-string">&quot;xxx@163.com&quot;</span>]<br><span class="hljs-comment">#文本内容</span><br>text=<span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">Dear Toph,\n\n</span><br><span class="hljs-string">	这是一段文本内容</span><br><span class="hljs-string">&quot;&quot;&quot;</span><span class="hljs-string">&quot;</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="将命令添加到环境变量中"><a href="#将命令添加到环境变量中" class="headerlink" title="将命令添加到环境变量中"></a>将命令添加到环境变量中</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 以miniconda举例</span><br><span class="hljs-comment"># 已将miniconda3安装到/home/homovexillues/miniconda3</span><br><span class="hljs-comment"># 使用的是bash shell，配置~/.bashrc，如果是别的shell也可以配置~/.zshrc 或 ~/.cshrc</span><br>vim ~/.bashrc<br><span class="hljs-comment"># 在配置文件中添加如下内容</span><br><span class="hljs-built_in">export</span> PATH=/home/homovexillues/miniconda3/conda/bin:<span class="hljs-variable">$PATH</span><br><span class="hljs-comment"># 然后关闭并保存配置文件，运行</span><br><span class="hljs-built_in">source</span> ~/.bashrc<br><span class="hljs-comment"># 重新加载配置文件以使之生效</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="解压文件"><a href="#解压文件" class="headerlink" title="解压文件"></a>解压文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 解包</span><br>tar -xf 文件名.tar<br><span class="hljs-comment"># 打包</span><br>tar -cf 压缩包名.tar 文件或目录<br><span class="hljs-comment"># zip格式需要下载</span><br>sudo apt install zip<br><span class="hljs-comment"># 解压</span><br>unzip 文件名.zip<br><span class="hljs-comment"># 压缩</span><br>zip -r 压缩包名.zip 文件或目录<br><span class="hljs-comment"># 7z格式需要下载</span><br>sudo apt install p7zip-full<br><span class="hljs-comment"># 解压</span><br>7z x 文件名.7z<br><span class="hljs-comment"># 压缩</span><br>7z a 文件名.7z 文件名or文件夹名<br></code></pre></td></tr></table></figure>
 
 <h4 id="重启bash"><a href="#重启bash" class="headerlink" title="重启bash"></a>重启bash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.bashrc <span class="hljs-comment">#可以使bash读取最新配置文件，但不会改变当前的进程ID和环境变量</span><br><span class="hljs-built_in">exec</span> bash <span class="hljs-comment"># 启动一个新的bash进程，同时继承当前的进程ID和环境变量</span><br></code></pre></td></tr></table></figure>
 
@@ -720,20 +722,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
