@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231714549.png">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231736194.png">
 <meta property="article:published_time" content="2024-03-29T01:51:22.492Z">
-<meta property="article:modified_time" content="2025-04-05T11:45:35.000Z">
+<meta property="article:modified_time" content="2025-05-19T06:55:44.765Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          34k 字
+          32k 字
         
       </span>
     
@@ -242,7 +242,7 @@
         
         
         
-          284 分钟
+          270 分钟
         
       </span>
     
@@ -582,63 +582,20 @@
 </li>
 </ol>
 <h2 id="什么是分治（Divide-and-Conquer）"><a href="#什么是分治（Divide-and-Conquer）" class="headerlink" title="什么是分治（Divide and Conquer）"></a>什么是分治（Divide and Conquer）</h2><p>是一种算法设计范式，通过将问题分解为更小的子问题来解决，然后递归地解决这些子问题，并最终将子问题的解结合并形成原问题的解。</p>
-<h2 id="什么是WebSocket？"><a href="#什么是WebSocket？" class="headerlink" title="什么是WebSocket？"></a>什么是WebSocket？</h2><ul>
-<li><p>一种网络通信协议，旨在实现客户端和服务器之间的全双工通信。与传统的HTTP请求-响应模式不同，WebSocket提供了一种更高效的通信方式，允许双方在单个持久连接上进行双向数据传输。</p>
-</li>
-<li><p>WebSocket 的主要特点包括：</p>
-<ol>
-<li><strong>双向通信</strong>：WebSocket 允许客户端和服务器之间进行双向通信，服务器可以随时向客户端发送数据，而不需要客户端首先发送请求。</li>
-<li><strong>持久连接</strong>：一旦 WebSocket 连接建立，就会保持打开状态，直到其中一方关闭连接。这减少了传统 HTTP 中的频繁开关连接的开销。</li>
-<li><strong>低延迟</strong>：由于 WebSocket 连接是持久的，不需要为每个消息重新建立连接，因此延迟更低，非常适合实时应用。</li>
-<li><strong>较少的头部开销</strong>：WebSocket 的协议头信息较少，相比 HTTP 更加节省带宽。</li>
-<li><strong>基于 TCP</strong>：WebSocket 使用 TCP 作为传输协议，因此可以利用 TCP 提供的可靠性和流量控制。</li>
-</ol>
-<p>WebSocket 的工作过程大致如下：</p>
-<ol>
-<li><strong>握手阶段</strong>：客户端通过 HTTP 向服务器发送一个特殊的 WebSocket 握手请求。如果服务器支持 WebSocket，它将响应一个相应的握手信息，完成协议切换。此时，连接从 HTTP 切换到 WebSocket。</li>
-<li><strong>数据传输阶段</strong>：握手完成后，客户端和服务器之间就可以开始自由地双向传输数据。</li>
-<li><strong>关闭连接</strong>：当通信完成后，客户端或服务器可以关闭 WebSocket 连接。</li>
-</ol>
-<p>WebSocket 常用于需要实时数据更新的应用场景，例如：</p>
-<ul>
-<li><strong>在线聊天应用</strong>：即时消息传递和实时更新。</li>
-<li><strong>实时通知系统</strong>：如新闻推送、股票行情等。</li>
-<li><strong>在线游戏</strong>：需要快速响应的游戏数据传输。</li>
-<li><strong>协作工具</strong>：如 Google Docs 这类需要实时同步文档编辑的工具。</li>
-</ul>
-<p>在实现上，WebSocket 的客户端通常通过 Web 浏览器内置的 WebSocket API 进行连接和通信，而服务器端则有多种实现可以选择，如 Node.js、Python、Java 等多种编程语言和框架都提供了对 WebSocket 的支持。</p>
-</li>
-</ul>
-<h2 id="掩码-Mask-是什么意思"><a href="#掩码-Mask-是什么意思" class="headerlink" title="掩码(Mask)是什么意思"></a>掩码(Mask)是什么意思</h2><ul>
-<li><h3 id="子网掩码（Subnet-Mask）"><a href="#子网掩码（Subnet-Mask）" class="headerlink" title="子网掩码（Subnet Mask）"></a>子网掩码（Subnet Mask）</h3><h4 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h4><p>子网掩码用于区分 IP 地址中的网络部分和主机部分。它与 IP 地址结合使用，以确定一个特定的 IP 地址属于哪个子网。</p>
-<h4 id="表示方式："><a href="#表示方式：" class="headerlink" title="表示方式："></a>表示方式：</h4><p>子网掩码通常以点分十进制形式表示，例如：255.255.255.0。</p>
-<h4 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a>工作原理：</h4><p>子网掩码中的每个“1”表示网络部分，每个“0”表示主机部分。例如，子网掩码 255.255.255.0 转换为二进制是 11111111.11111111.11111111.00000000，这表示前24位是网络部分，后8位是主机部分。</p>
-<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p>假设 IP 地址是 192.168.1.10，子网掩码是 255.255.255.0，则网络部分是 192.168.1，主机部分是 10。</p>
-</li>
-<li><h3 id="位掩码（Bit-Mask）"><a href="#位掩码（Bit-Mask）" class="headerlink" title="位掩码（Bit Mask）"></a>位掩码（Bit Mask）</h3><h4 id="用途：-1"><a href="#用途：-1" class="headerlink" title="用途："></a>用途：</h4><p>在编程中，位掩码用于<strong>对二进制数据进行位级操作</strong>，如设置、清除、切换特定位或检查特定位的状态。</p>
-<h4 id="表示方式：-1"><a href="#表示方式：-1" class="headerlink" title="表示方式："></a>表示方式：</h4><p>位掩码通常以二进制或十六进制形式表示。例如，位掩码 0xFF 表示二进制的 11111111。</p>
-<h4 id="工作原理：-1"><a href="#工作原理：-1" class="headerlink" title="工作原理："></a>工作原理：</h4><p>位掩码通过按位与、按位或、按位异或等操作，对目标数据进行位操作。</p>
-<h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><p>假设有一个8位的数据 0b11001100（204 十进制），你想清除最低的4位。你可以使用位掩码 0b11110000（240 十进制），通过按位与操作实现：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs maxima">python复制代码data = <span class="hljs-number">0b11001100</span><br>mask = <span class="hljs-number">0b11110000</span><br>result = data &amp; mask  # 结果是 <span class="hljs-number">0b11000000</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><h3 id="网络掩码（Network-Mask）"><a href="#网络掩码（Network-Mask）" class="headerlink" title="网络掩码（Network Mask）"></a>网络掩码（Network Mask）</h3><h4 id="用途：-2"><a href="#用途：-2" class="headerlink" title="用途："></a>用途：</h4><p>在网络配置中，网络掩码用于指定网络前缀的长度。与子网掩码类似，但常用于 CIDR（无类别域间路由）表示法。</p>
-<h4 id="表示方式：-2"><a href="#表示方式：-2" class="headerlink" title="表示方式："></a>表示方式：</h4><p>网络掩码通常以斜杠加上网络前缀长度的形式表示，例如：192.168.1.0&#x2F;24。</p>
-<h4 id="工作原理：-2"><a href="#工作原理：-2" class="headerlink" title="工作原理："></a>工作原理：</h4><p>网络掩码指定了网络前缀的长度，例如 &#x2F;24 表示网络前缀长度为 24 位，等价于子网掩码 255.255.255.0。</p>
-</li>
-<li><h3 id="ACL-掩码（Access-Control-List-Mask）"><a href="#ACL-掩码（Access-Control-List-Mask）" class="headerlink" title="ACL 掩码（Access Control List Mask）"></a>ACL 掩码（Access Control List Mask）</h3><h4 id="用途：-3"><a href="#用途：-3" class="headerlink" title="用途："></a>用途：</h4><p>在访问控制列表（ACL）中，掩码用于指定哪些位应该被检查，以确定访问权限。</p>
-<h4 id="表示方式：-3"><a href="#表示方式：-3" class="headerlink" title="表示方式："></a>表示方式：</h4><p>ACL 掩码通常以二进制或十六进制表示，每一位表示相应权限位是否应该被检查。</p>
-<h4 id="工作原理：-3"><a href="#工作原理：-3" class="headerlink" title="工作原理："></a>工作原理：</h4><p>ACL 掩码通过与权限位进行按位与操作，决定哪些位应该被应用。例如，掩码 0xF0 表示只检查高4位。</p>
-</li>
-</ul>
+<p>- </p>
 <h2 id="什么是安装证书"><a href="#什么是安装证书" class="headerlink" title="什么是安装证书"></a>什么是安装证书</h2><ul>
 <li><p>安装证书通常指的是在计算机或设备上添加<strong>数字证书</strong>的过程。数字证书是一种用于加密和验证通信的安全性工具，通常用于加密和保护网络通信、网站身份验证等方面。在安装证书的过程中，用户将数字证书文件添加到其操作系统、浏览器或应用程序的信任存储中，以确保与其他实体的安全通信。</p>
 <h3 id="安装证书的常见场景"><a href="#安装证书的常见场景" class="headerlink" title="安装证书的常见场景"></a>安装证书的常见场景</h3><ol>
 <li><strong>网站身份验证</strong>：Web 浏览器通常会使用数字证书来验证网站的身份。当用户访问一个使用 HTTPS 协议的网站时，网站会向浏览器发送其数字证书，浏览器会验证证书的有效性，并确定是否与信任的证书颁发机构相关联。</li>
 <li><strong>电子邮件加密</strong>：在电子邮件通信中，数字证书可以用于加密和签名邮件，确保邮件内容的保密性和完整性。</li>
 <li><strong>VPN 连接</strong>：VPN（Virtual Private Network）连接通常需要数字证书来验证用户的身份和加密通信。</li>
+</ol>
+</li>
+</ul>
+<ol start="4">
 <li><strong>客户端身份验证</strong>：在某些系统中，客户端需要提供数字证书来验证其身份，以访问受限资源或服务。</li>
 </ol>
-<h3 id="安装证书的步骤"><a href="#安装证书的步骤" class="headerlink" title="安装证书的步骤"></a>安装证书的步骤</h3><p>安装数字证书通常涉及以下步骤：</p>
+<h3 id="安装证书的步骤"><a href="#安装证书的步骤" class="headerlink" title="安装证书的步骤"></a>安装证书的步骤</h3><p>  安装数字证书通常涉及以下步骤：</p>
 <ol>
 <li><strong>获取证书</strong>：用户需要获取数字证书文件，通常是由可信任的证书颁发机构（CA）签发的。这些证书可以是网站的 SSL 证书、电子邮件签名证书等。</li>
 <li><strong>导入证书</strong>：用户需要将数字证书导入其操作系统、浏览器或应用程序的证书存储中。导入证书的方法取决于所使用的操作系统和软件。</li>
@@ -647,9 +604,13 @@
 </ol>
 <h3 id="安全考虑"><a href="#安全考虑" class="headerlink" title="安全考虑"></a>安全考虑</h3><p>在安装数字证书时，需要注意以下安全考虑：</p>
 <ul>
-<li><strong>来源可信性</strong>：确保从可信任的来源获取数字证书，避免使用来自不可信任或未知来源的证书。</li>
+<li><p><strong>来源可信性</strong>：确保从可信任的来源获取数字证书，避免使用来自不可信任或未知来源的证书。</p>
+<ul>
 <li><strong>验证证书有效性</strong>：在安装证书之前，用户应该验证证书的有效性，包括证书的有效期、签发者等信息。</li>
-<li><strong>保护私钥</strong>：如果证书包含私钥，则需要确保私钥的保密性，以防止未经授权的访问或使用。</li>
+</ul>
+</li>
+<li><p><strong>保护私钥</strong>：如果证书包含私钥，则需要确保私钥的保密性，以防止未经授权的访问或使用。</p>
+<ul>
 <li><strong>定期更新</strong>：定期检查和更新证书，以确保其仍然有效，并且与安全最佳实践保持一致。</li>
 </ul>
 <p>通过正确地安装和管理数字证书，用户可以增强其网络通信的安全性和可信度，并确保与其他实体的安全通信。</p>
@@ -870,7 +831,8 @@
 <li><strong>信号量（Semaphores）</strong>：用于控制对共享资源的访问。</li>
 <li><strong>文件映射（Memory-mapped Files）</strong>：将文件内容映射到内存中，允许多个进程通过读写文件来通信。</li>
 </ol>
-<h1 id="接口和抽象类的区别到底是啥？有的编程语言抽象类不能多继承吗？所有编程语言都支持接口多继承？接口的多继承就是所谓的优先使用组合而非继承？"><a href="#接口和抽象类的区别到底是啥？有的编程语言抽象类不能多继承吗？所有编程语言都支持接口多继承？接口的多继承就是所谓的优先使用组合而非继承？" class="headerlink" title="接口和抽象类的区别到底是啥？有的编程语言抽象类不能多继承吗？所有编程语言都支持接口多继承？接口的多继承就是所谓的优先使用组合而非继承？"></a>接口和抽象类的区别到底是啥？有的编程语言抽象类不能多继承吗？所有编程语言都支持接口多继承？接口的多继承就是所谓的优先使用组合而非继承？</h1><h1 id="NTP是啥"><a href="#NTP是啥" class="headerlink" title="NTP是啥"></a>NTP是啥</h1><p>NTP，即网络时间协议（Network Time Protocol），是一种用于同步网络中所有系统时钟以使用同一时间的协议。它确保了计算机系统之间的时间同步，这对于很多应用和服务来说是非常重要的，比如日志记录、数据库同步、网络安全协议等。</p>
+<h1 id="接口和抽象类的区别到底是啥？有的编程语言抽象类不能多继承吗？所有编程语言都支持接口多继承？接口的多继承就是所谓的优先使用组合而非继承？"><a href="#接口和抽象类的区别到底是啥？有的编程语言抽象类不能多继承吗？所有编程语言都支持接口多继承？接口的多继承就是所谓的优先使用组合而非继承？" class="headerlink" title="接口和抽象类的区别到底是啥？有的编程语言抽象类不能多继承吗？所有编程语言都支持接口多继承？接口的多继承就是所谓的优先使用组合而非继承？"></a>接口和抽象类的区别到底是啥？有的编程语言抽象类不能多继承吗？所有编程语言都支持接口多继承？接口的多继承就是所谓的优先使用组合而非继承？</h1><p>抽象类是一种可以支持实现一定方法并继承的接口</p>
+<h1 id="NTP是啥"><a href="#NTP是啥" class="headerlink" title="NTP是啥"></a>NTP是啥</h1><p>NTP，即网络时间协议（Network Time Protocol），是一种用于同步网络中所有系统时钟以使用同一时间的协议。它确保了计算机系统之间的时间同步，这对于很多应用和服务来说是非常重要的，比如日志记录、数据库同步、网络安全协议等。</p>
 <p>NTP 包括协议本身以及在网络计算机上运行的客户端和服务器程序。NTP 服务器可以安装在服务器上，而客户端程序可以安装在需要时间同步的任何计算机上。</p>
 <p>要在服务器上安装 NTP 服务器程序，你可以按照以下步骤进行：</p>
 <ol>
@@ -1163,6 +1125,11 @@
 <p><img src="/../images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231714549.png" srcset="/img/loading.gif" lazyload alt="image-20250329231714549"></p>
 <p><img src="/../images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231736194.png" srcset="/img/loading.gif" lazyload alt="image-20250329231736194"></p>
 <p>KVS key value store</p>
+<h1 id="什么是Mock和Fake对象"><a href="#什么是Mock和Fake对象" class="headerlink" title="什么是Mock和Fake对象?"></a>什么是Mock和Fake对象?</h1><p>这两个概念主要用于单元测试，用于替代真实依赖，方便测试和验证。</p>
+<ul>
+<li>Mock（模拟对象）：用来验证行为，比如“这个方法有没有被调用、调用了几次、参数是什么”。常用 Moq、NSubstitute 等库生成。</li>
+<li>Fake（伪对象）：有简单实现的假对象，能返回预设数据，但不验证行为。比如内存数据库、内存队列等。</li>
+</ul>
 
                 
               </div>
@@ -1531,5 +1498,20 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
