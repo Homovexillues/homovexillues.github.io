@@ -19,19 +19,19 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content=".db文件是啥 .db文件是数据库文件，通常用于存储和管理数据  方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C++中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法  C语言有没有修饰访问符？C语言该如何">
+    <meta name="description" content=".db文件是啥 .db文件是sqlite的数据库文件，通常用于存储和管理数据  方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C++中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法  C语言有没有修饰访问符">
 <meta property="og:type" content="article">
 <meta property="og:title" content="问题&amp;解决">
 <meta property="og:url" content="https://homovexillues.github.io/2024/03/29/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content=".db文件是啥 .db文件是数据库文件，通常用于存储和管理数据  方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C++中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法  C语言有没有修饰访问符？C语言该如何">
+<meta property="og:description" content=".db文件是啥 .db文件是sqlite的数据库文件，通常用于存储和管理数据  方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C++中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法  C语言有没有修饰访问符">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231632185.png">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231714549.png">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231736194.png">
 <meta property="article:published_time" content="2024-03-29T01:51:22.492Z">
-<meta property="article:modified_time" content="2025-05-19T06:55:44.765Z">
+<meta property="article:modified_time" content="2025-05-28T08:40:16.425Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          32k 字
+          33k 字
         
       </span>
     
@@ -242,7 +242,7 @@
         
         
         
-          270 分钟
+          278 分钟
         
       </span>
     
@@ -285,7 +285,7 @@
               <div class="markdown-body">
                 
                 <h2 id="db文件是啥"><a href="#db文件是啥" class="headerlink" title=".db文件是啥"></a>.db文件是啥</h2><ul>
-<li>.db文件是数据库文件，通常用于存储和管理数据</li>
+<li>.db文件是sqlite的数据库文件，通常用于存储和管理数据</li>
 </ul>
 <h2 id="方法和函数的区别是什么？"><a href="#方法和函数的区别是什么？" class="headerlink" title="方法和函数的区别是什么？"></a>方法和函数的区别是什么？</h2><ul>
 <li>一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据</li>
@@ -1130,6 +1130,34 @@
 <li>Mock（模拟对象）：用来验证行为，比如“这个方法有没有被调用、调用了几次、参数是什么”。常用 Moq、NSubstitute 等库生成。</li>
 <li>Fake（伪对象）：有简单实现的假对象，能返回预设数据，但不验证行为。比如内存数据库、内存队列等。</li>
 </ul>
+<h1 id="设计模式描述的是一种逻辑上的关系，并不关心具体实现，我的这个理解对吗"><a href="#设计模式描述的是一种逻辑上的关系，并不关心具体实现，我的这个理解对吗" class="headerlink" title="设计模式描述的是一种逻辑上的关系，并不关心具体实现，我的这个理解对吗?"></a>设计模式描述的是一种逻辑上的关系，并不关心具体实现，我的这个理解对吗?</h1><p>你的理解是正确的。<br>设计模式（Design Pattern）本质上描述的是一种通用的、可复用的解决方案，用于应对特定场景下常见的软件设计问题。它关注的是对象之间的协作关系、职责分配和交互方式，而不是具体的代码实现或技术细节。</p>
+<ul>
+<li><p>设计模式强调的是“结构”、“意图”和“约定”，而不是“怎么写代码”。</p>
+</li>
+<li><p>具体实现可以因语言、框架、项目需求而异，但模式背后的思想和逻辑关系是通用的。</p>
+</li>
+</ul>
+<p>举例说明：</p>
+<ul>
+<li><p>观察者模式（Observer Pattern）描述的是“一个对象状态变化时，通知所有依赖它的对象”，但不规定你用事件、回调还是消息队列实现。</p>
+</li>
+<li><p>单例模式（Singleton Pattern）描述的是“全局唯一实例”，但不关心你用静态变量、懒加载还是线程安全锁。<br>总结：<br>设计模式关注的是抽象的设计思想和对象关系，而不是具体实现细节。你的理解完全正确。</p>
+</li>
+</ul>
+<h1 id="给我讲讲，图片的hsv是什么东西-为什么视觉识别需要用到这个"><a href="#给我讲讲，图片的hsv是什么东西-为什么视觉识别需要用到这个" class="headerlink" title="给我讲讲，图片的hsv是什么东西?为什么视觉识别需要用到这个?"></a>给我讲讲，图片的hsv是什么东西?为什么视觉识别需要用到这个?</h1><p>HSV是一种常用的颜色空间，全称是<strong>Hue（色相）、Saturation（饱和度）、Value（明度）</strong>。<br>它和我们常见的RGB（红绿蓝）颜色空间不同，HSV更符合人类对颜色的感知方式。</p>
+<ul>
+<li><strong>H（色相）</strong>：表示颜色的类型，比如红色、绿色、蓝色等，取值范围一般是0~360度。</li>
+<li><strong>S（饱和度）</strong>：表示颜色的纯度，越高颜色越鲜艳，越低越灰白。</li>
+<li><strong>V（明度）</strong>：表示颜色的亮度，越高越亮，越低越暗。</li>
+</ul>
+<h3 id="为什么视觉识别常用HSV？"><a href="#为什么视觉识别常用HSV？" class="headerlink" title="为什么视觉识别常用HSV？"></a>为什么视觉识别常用HSV？</h3><ol>
+<li><strong>抗光照变化能力强</strong><br>HSV空间把颜色和亮度分开了，光照变化主要影响V（明度），而H（色相）和S（饱和度）基本不变，这样可以更稳定地识别颜色。</li>
+<li><strong>颜色分割更直观</strong><br>在RGB空间下，同一种颜色在不同光照下RGB值变化很大，而在HSV空间下，色相（H）基本不变，便于用阈值分割出特定颜色区域。</li>
+<li><strong>更接近人眼感知</strong><br>HSV空间的表示方式更符合人类对颜色的理解，比如我们说“红色”“绿色”其实就是色相（H）。</li>
+</ol>
+<h3 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a>应用举例</h3><p>比如你要识别红色物体，在HSV空间下只需要判断H在红色范围内即可，而不用关心光照强弱带来的V变化。</p>
+<hr>
+<p><strong>总结：</strong><br>HSV让颜色识别更简单、更稳定，是视觉识别中特别常用的颜色空间。</p>
 
                 
               </div>
