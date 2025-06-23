@@ -22,7 +22,7 @@
     <meta name="description" content=".db文件是啥 .db文件是sqlite的数据库文件，通常用于存储和管理数据  方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C++中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法  C语言有没有修饰访问符">
 <meta property="og:type" content="article">
 <meta property="og:title" content="问题&amp;解决">
-<meta property="og:url" content="https://homovexillues.github.io/2024/03/29/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/index.html">
+<meta property="og:url" content="https://homovexillues.github.io/2024/10/27/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/index.html">
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content=".db文件是啥 .db文件是sqlite的数据库文件，通常用于存储和管理数据  方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C++中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法  C语言有没有修饰访问符">
 <meta property="og:locale" content="zh_CN">
@@ -30,8 +30,8 @@
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231632185.png">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231714549.png">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231736194.png">
-<meta property="article:published_time" content="2024-03-29T01:51:22.492Z">
-<meta property="article:modified_time" content="2025-05-28T08:40:16.425Z">
+<meta property="article:published_time" content="2024-10-27T14:47:35.628Z">
+<meta property="article:modified_time" content="2025-06-23T17:05:17.223Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
@@ -219,8 +219,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-29 09:51" pubdate>
-          2024年3月29日 上午
+        <time datetime="2024-10-27 22:47" pubdate>
+          2024年10月27日 晚上
         </time>
       </span>
     
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          33k 字
+          34k 字
         
       </span>
     
@@ -242,7 +242,7 @@
         
         
         
-          278 分钟
+          282 分钟
         
       </span>
     
@@ -1158,6 +1158,49 @@
 <h3 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a>应用举例</h3><p>比如你要识别红色物体，在HSV空间下只需要判断H在红色范围内即可，而不用关心光照强弱带来的V变化。</p>
 <hr>
 <p><strong>总结：</strong><br>HSV让颜色识别更简单、更稳定，是视觉识别中特别常用的颜色空间。</p>
+<h1 id="什么是哈希加盐"><a href="#什么是哈希加盐" class="headerlink" title="什么是哈希加盐?"></a>什么是哈希加盐?</h1><p><strong>加盐（Salting）</strong>就是给原始密码**添加一段随机字符串**，然后再进行哈希，以增加破解的难度。</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs perl">plaintext复制编辑原始密码：<span class="hljs-number">123456</span><br>随机盐：  x7!@K2<br><br>加盐后：  <span class="hljs-string">&quot;123456x7!@K2&quot;</span><br>哈希值：  MD5(<span class="hljs-string">&quot;123456x7!@K2&quot;</span>) =&gt; <span class="hljs-number">9</span>f1a3e...（不同了）<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>盐是<strong>每个用户随机生成的</strong>，并和哈希值一起存储在数据库中。</li>
+<li>即使两个用户用相同密码，因为盐不同，最终哈希值也不同。</li>
+</ul>
+<hr>
+<h2 id="✅-四、加盐哈希的好处"><a href="#✅-四、加盐哈希的好处" class="headerlink" title="✅ 四、加盐哈希的好处"></a>✅ 四、加盐哈希的好处</h2><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>加盐能解决吗？</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>彩虹表攻击</td>
+<td>✅ 防止</td>
+<td>因为每次加盐都不同，彩虹表无法预制所有组合</td>
+</tr>
+<tr>
+<td>相同密码哈希相同</td>
+<td>✅ 防止</td>
+<td>即使密码一样，加了不同的盐也会得出不同哈希</td>
+</tr>
+<tr>
+<td>被盗哈希后能反推密码</td>
+<td>❌ 不能完全防止</td>
+<td>加盐只是增加破解难度，不能让哈希变得可逆</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🛠-五、哈希加盐的存储方式"><a href="#🛠-五、哈希加盐的存储方式" class="headerlink" title="🛠 五、哈希加盐的存储方式"></a>🛠 五、哈希加盐的存储方式</h2><p>数据库通常会<strong>同时存盐和哈希值</strong>：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">plaintext复制编辑用户名 |<span class="hljs-string"> 盐（Salt） </span>|<span class="hljs-string"> 哈希值</span><br><span class="hljs-string">-------</span>|<span class="hljs-string">------------</span>|<span class="hljs-string">----------------------------</span><br><span class="hljs-string">Alice  </span>|<span class="hljs-string"> x7!@K2     </span>|<span class="hljs-string"> 9f1a3ec1d...</span><br><span class="hljs-string">Bob    </span>|<span class="hljs-string"> Pz#09d     </span>|<span class="hljs-string"> 3ae2b1e3f...</span><br></code></pre></td></tr></table></figure>
+
+<p>验证密码时：</p>
+<ol>
+<li>拿出用户的盐</li>
+<li>拼接输入的密码</li>
+<li>再哈希</li>
+<li>和数据库中哈希值对比</li>
+</ol>
 
                 
               </div>
@@ -1204,7 +1247,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>问题&amp;解决</div>
-      <div>https://homovexillues.github.io/2024/03/29/问题&amp;解决/</div>
+      <div>https://homovexillues.github.io/2024/10/27/问题&amp;解决/</div>
     </div>
     <div class="license-meta">
       
@@ -1216,7 +1259,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月29日</div>
+          <div>2024年10月27日</div>
         </div>
       
       
@@ -1248,9 +1291,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/29/C-sharp%E5%9F%BA%E7%A1%80/" title="C#基础">
+                      <a href="/2024/10/27/%E5%B0%86ipynb%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E4%B8%BAmarkdown/" title="将ipynb文件转换为markdown">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C#基础</span>
+                        <span class="hidden-mobile">将ipynb文件转换为markdown</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -1258,8 +1301,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/27/%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A8-1-%E8%BD%AF%E4%BB%B6%E5%88%9B%E5%BB%BA/" title="代码大全-1-软件创建">
-                        <span class="hidden-mobile">代码大全-1-软件创建</span>
+                      <a href="/2024/10/27/%E7%94%9F%E8%AF%8D%E6%9C%AC/" title="生词本">
+                        <span class="hidden-mobile">生词本</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
