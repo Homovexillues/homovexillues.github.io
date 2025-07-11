@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231714549.png">
 <meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231736194.png">
 <meta property="article:published_time" content="2024-03-29T01:51:22.492Z">
-<meta property="article:modified_time" content="2025-07-01T07:06:43.971Z">
+<meta property="article:modified_time" content="2025-07-05T09:17:48.000Z">
 <meta property="article:author" content="Homo vexillues">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          35k 字
+          36k 字
         
       </span>
     
@@ -242,7 +242,7 @@
         
         
         
-          291 分钟
+          304 分钟
         
       </span>
     
@@ -1235,7 +1235,89 @@
 </ul>
 <hr>
 <h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>Syncthing 在没有公网 IP 的情况下，仍然可以通过 <strong>发现服务器 + NAT 穿透 + 中继备份</strong> 的方式实现文件同步。它的去中心化设计使其在 <strong>隐私性、安全性和灵活性</strong> 上优于传统的云存储服务（如 Dropbox 或 Resilio Sync）。</p>
+<h1 id="为什么-HashSet-只添加了一个元素，但-Capacity-是-3？"><a href="#为什么-HashSet-只添加了一个元素，但-Capacity-是-3？" class="headerlink" title="为什么 HashSet&lt;int&gt; 只添加了一个元素，但 Capacity 是 3？"></a>为什么 <code>HashSet&lt;int&gt;</code> 只添加了一个元素，但 <code>Capacity</code> 是 3？</h1><p>你问得非常好，我们来一一解释：</p>
+<hr>
+<h2 id="✅-为什么-HashSet-只添加了一个元素，但-Capacity-是-3？"><a href="#✅-为什么-HashSet-只添加了一个元素，但-Capacity-是-3？" class="headerlink" title="✅ 为什么 HashSet&lt;int&gt; 只添加了一个元素，但 Capacity 是 3？"></a>✅ 为什么 <code>HashSet&lt;int&gt;</code> 只添加了一个元素，但 <code>Capacity</code> 是 3？</h2><p>这是因为：</p>
+<blockquote>
+<p><strong>HashSet 是基于哈希表实现的，而哈希表底层使用一个数组存储元素的“槽位”</strong>。这些槽位的大小（即 <code>Capacity</code>）<strong>并不等于当前元素个数</strong>，而是为了 <strong>避免频繁扩容</strong> 而预先分配的一些空间。</p>
+</blockquote>
+<hr>
+<h3 id="🔍-更具体地说："><a href="#🔍-更具体地说：" class="headerlink" title="🔍 更具体地说："></a>🔍 更具体地说：</h3><ul>
+<li><p><code>HashSet&lt;int&gt;</code> 默认内部使用 <strong>质数大小</strong> 的容量数组，以提高哈希分布效率；</p>
+</li>
+<li><p>当你第一次向空 <code>HashSet</code> 添加元素时，它就会自动初始化一个最小可用的内部容量；</p>
+</li>
+<li><p>在 .NET 中，这个最小值通常是 <code>3</code>（历史原因 + 哈希冲突概率最小）；</p>
+</li>
+<li><p>所以你添加 1 个元素时，底层其实开了 3 个“桶”给它用。</p>
+</li>
+</ul>
+<p>这就是：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs csharp">&gt; <span class="hljs-keyword">var</span> x = <span class="hljs-keyword">new</span> HashSet&lt;<span class="hljs-built_in">int</span>&gt;();<br>&gt; x.Capacity <span class="hljs-comment">// 0（此时还没添加任何元素）</span><br>&gt; x.Add(<span class="hljs-number">42</span>);<br>&gt; x.Capacity <span class="hljs-comment">// 3（初始化后首次添加，会设置为3）</span><br></code></pre></td></tr></table></figure>
 
+<hr>
+<h2 id="📦-HashSet-的容量扩容机制（补充）"><a href="#📦-HashSet-的容量扩容机制（补充）" class="headerlink" title="📦 HashSet 的容量扩容机制（补充）"></a>📦 HashSet 的容量扩容机制（补充）</h2><ul>
+<li><p>.NET 的 <code>HashSet&lt;T&gt;</code> 使用 <strong>质数增长策略</strong>；</p>
+</li>
+<li><p>添加元素时，<strong>当元素数超过容量的负载因子阈值（通常为 0.75）</strong>时，HashSet 会自动扩容到下一个合适的质数；</p>
+</li>
+<li><p>所以不要被 <code>Capacity</code> 误导，它和元素个数没必然关系。</p>
+</li>
+</ul>
+<hr>
+<h2 id="🈯-HashSet-的中文名称是什么？"><a href="#🈯-HashSet-的中文名称是什么？" class="headerlink" title="🈯 HashSet 的中文名称是什么？"></a>🈯 HashSet 的中文名称是什么？</h2><p><code>HashSet</code> 的中文可以翻译为：</p>
+<blockquote>
+<p>✅ <strong>哈希集合</strong> 或 <strong>散列集合</strong></p>
+</blockquote>
+<p>在实际讲解时也常说：</p>
+<ul>
+<li><p>“去重集合”</p>
+</li>
+<li><p>“唯一元素集”</p>
+</li>
+<li><p>“不允许重复的集合”</p>
+</li>
+</ul>
+<p>例如：</p>
+<blockquote>
+<p>我用一个 HashSet（哈希集合）来去除重复的用户 ID。</p>
+</blockquote>
+<hr>
+<h2 id="🧠-总结"><a href="#🧠-总结" class="headerlink" title="🧠 总结"></a>🧠 总结</h2><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>为什么 <code>HashSet.Capacity</code> 是 3？</td>
+<td>因为首次添加元素时自动初始化了容量为 3 的内部哈希槽数组</td>
+</tr>
+<tr>
+<td>我只添加了一个元素，这样不浪费吗？</td>
+<td>不浪费，这是性能优化的策略。为了避免频繁扩容，预先分配较小容量</td>
+</tr>
+<tr>
+<td><code>HashSet</code> 的中文名称是什么？</td>
+<td>“哈希集合”或“散列集合”，也可称为“去重集合”</td>
+</tr>
+</tbody></table>
+<hr>
+<p>需要我展示一下 HashSet 的底层扩容过程（比如添加多个元素观察 Capacity 变化）也可以告诉我！</p>
+<h1 id="The-Fallout-franchise-has-been-around-since-1997-starting-with-Fallout-《辐射》系列自1997年推出首款游戏以来，一直备受玩家喜爱。-这句里的franchise直译不是特许经营权的意思吗-是怎么引申出翻译的意思的"><a href="#The-Fallout-franchise-has-been-around-since-1997-starting-with-Fallout-《辐射》系列自1997年推出首款游戏以来，一直备受玩家喜爱。-这句里的franchise直译不是特许经营权的意思吗-是怎么引申出翻译的意思的" class="headerlink" title="The Fallout franchise has been around since 1997 starting with Fallout. 《辐射》系列自1997年推出首款游戏以来，一直备受玩家喜爱。 这句里的franchise直译不是特许经营权的意思吗?是怎么引申出翻译的意思的?"></a>The Fallout franchise has been around since 1997 starting with Fallout. 《辐射》系列自1997年推出首款游戏以来，一直备受玩家喜爱。 这句里的franchise直译不是特许经营权的意思吗?是怎么引申出翻译的意思的?</h1><ol>
+<li><strong>“franchise”本义解释</strong><ul>
+<li>“franchise”确实有“特许经营权”的意思。在商业领域，它常用来指企业（特许人）将其商标、商号、专利、专有技术等以合同的形式授予被特许人使用，被特许人按照合同约定在统一的经营模式下开展经营，并向特许人支付特许经营费用的经营活动。比如麦当劳的连锁餐厅，麦当劳公司将其品牌、经营模式等特许给各地的加盟商，这就是一种特许经营。</li>
+</ul>
+</li>
+<li><strong>“franchise”在游戏领域的引申用法</strong><ul>
+<li>在游戏行业，“franchise”被引申为“系列游戏”或“系列作品”。这是因为游戏系列（如《辐射》系列）在一定程度上类似于特许经营的模式。游戏开发商（相当于特许人）创建了一个具有独特世界观、角色设定、玩法风格等元素的游戏品牌（如《辐射》）。当推出续作或者相关衍生作品（如《辐射2》《辐射3》等）时，这些作品都继承了原作的核心品牌价值，就像特许经营店继承了总店的品牌价值一样。</li>
+<li>从品牌传承的角度看，游戏系列中的每一部作品都可以看作是“特许”使用了该系列的核心品牌资产（包括故事背景、角色形象等）来进行创作。而且游戏系列通常会有一套相对固定的粉丝群体，就像特许经营的消费者群体一样，他们对这个系列品牌有忠诚度，会期待后续作品的推出。</li>
+<li>所以在游戏语境下，“franchise”就引申为“系列游戏”了，它强调的是这个系列作为一个整体的品牌价值和延续性。</li>
+</ul>
+</li>
+</ol>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
                 
               </div>
             
