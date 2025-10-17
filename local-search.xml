@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>计算机网络相关问题</title>
+    <link href="/2025/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
+    <url>/2025/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+      <category>问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机网络</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Influxdb相关内容</title>
+    <link href="/2025/10/14/Influxdb%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/"/>
+    <url>/2025/10/14/Influxdb%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/</url>
+    
+    <content type="html"><![CDATA[<h1 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h1><h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><h4 id="把几个点的值相加到另一个新建的值里"><a href="#把几个点的值相加到另一个新建的值里" class="headerlink" title="把几个点的值相加到另一个新建的值里"></a>把几个点的值相加到另一个新建的值里</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;strings&quot;</span><br>// 任务配置：每秒自动运行一次<br>option task = &#123;name: <span class="hljs-string">&quot;DynamicElectricitySum&quot;</span>, every: 1s&#125;<br>// 定义用于筛选 measurement 的关键字<br>keyword = <span class="hljs-string">&quot;电度每小时&quot;</span><br><br>// <span class="hljs-number">1.</span> 查询近一天内所有的 _measurement 字段（即 measurement 名称）并去重<br>all_measurements = <span class="hljs-keyword">from</span>(bucket: <span class="hljs-string">&quot;history&quot;</span>)<br>    |&gt; <span class="hljs-built_in">range</span>(start: -1d) // 查询最近<span class="hljs-number">1</span>小时的数据，防止历史太久没数据的 measurement 被漏掉<br>    |&gt; keep(columns: [<span class="hljs-string">&quot;_measurement&quot;</span>]) // 只保留 _measurement 列<br>    |&gt; distinct(column: <span class="hljs-string">&quot;_measurement&quot;</span>) // 去重，得到所有出现过的 measurement 名称<br>// <span class="hljs-number">2.</span> 用 <span class="hljs-built_in">map</span> 生成一个带 _measurement 字符串的表，方便筛选<br>filtered_measurements = all_measurements<br>    |&gt; <span class="hljs-built_in">filter</span>(fn: (r) =&gt; strings.containsStr(v: r._measurement, substr: keyword)) // 筛选 measurement 名称里包含关键字的项<br>    |&gt; keep(columns: [<span class="hljs-string">&quot;_measurement&quot;</span>]) // 只保留 _measurement 列<br>// <span class="hljs-number">3.</span> 收集所有符合条件的 measurement 名称到一个数组<br>names_record =<br>    filtered_measurements<br>        |&gt; group(columns: [])                      // 合并为单表，避免分组导致 reduce 拆分<br>        |&gt; reduce(<br>            // 注意 reduce 的形参名必须是 (r, accumulator)<br>            fn: (r, accumulator) =&gt; (&#123;<br>                // 字符串累加（避免数组 + 号报错）<br>                names: <span class="hljs-keyword">if</span> accumulator.names == <span class="hljs-string">&quot;&quot;</span> then r._measurement <span class="hljs-keyword">else</span> accumulator.names + <span class="hljs-string">&quot;|&quot;</span> + r._measurement,<br>            &#125;),<br>            identity: &#123;names: <span class="hljs-string">&quot;&quot;</span>&#125;,                 // 初始为空串<br>        )<br>        |&gt; findRecord(fn: (key) =&gt; true, idx: <span class="hljs-number">0</span>)   // 取唯一（或第一）条记录<br>// 把拼接串切分为数组；若为空串则给空数组<br>measurement_names =<br>    <span class="hljs-keyword">if</span> names_record.names == <span class="hljs-string">&quot;&quot;</span> then [] <span class="hljs-keyword">else</span> strings.split(v: names_record.names, t: <span class="hljs-string">&quot;|&quot;</span>)<br>// <span class="hljs-number">4.</span> 查询近<span class="hljs-number">1</span>秒内所有 measurement 的数据，并只保留 measurement 名称在 measurement_names 里的数据<br><span class="hljs-keyword">from</span>(bucket: <span class="hljs-string">&quot;history&quot;</span>)<br>    |&gt; <span class="hljs-built_in">range</span>(start: -1s) // 只查最近<span class="hljs-number">1</span>秒的数据<br>    |&gt; <span class="hljs-built_in">filter</span>(fn: (r) =&gt; contains(value: r._measurement, <span class="hljs-built_in">set</span>: measurement_names)) // 只保留 measurement 名称在 measurement_names 里的行<br>    |&gt; <span class="hljs-built_in">filter</span>(fn: (r) =&gt; r._field == <span class="hljs-string">&quot;v&quot;</span>) // 只处理 _field 为 v 的数据<br>    |&gt; aggregateWindow(every: 1s, fn: <span class="hljs-built_in">sum</span>, createEmpty: false) // 以<span class="hljs-number">1</span>秒为窗口做 <span class="hljs-built_in">sum</span> 聚合<br>    |&gt; <span class="hljs-built_in">map</span>(<br>        fn: (r) =&gt; (&#123;<br>            _time: r._time, // 保留时间戳<br><br>            _value: r._value, // 保留聚合后的值<br><br>            // measurement 名称替换，电度每小时 =&gt; 电度每秒<br><br>            _measurement: <span class="hljs-string">&quot;总电度&quot;</span>,<br><br>        &#125;)<br>    )<br>    |&gt; to(<br>        bucket: <span class="hljs-string">&quot;history&quot;</span>, // 写回的 bucket<br>        org: <span class="hljs-string">&quot;uzone&quot;</span>, // 组织<br>        measurementColumn: <span class="hljs-string">&quot;_measurement&quot;</span>, // 指定 measurement 字段<br>        fieldFn: (r) =&gt; (&#123;<span class="hljs-string">&quot;v&quot;</span>: r._value, <span class="hljs-string">&quot;q&quot;</span>: <span class="hljs-number">192</span>&#125;), // 写入的字段<br>    )<br></code></pre></td></tr></table></figure><h4 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据库</tag>
+      
+      <tag>Influxdb</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>NeoVim安装</title>
     <link href="/2025/10/13/NeoVim%E5%AE%89%E8%A3%85/"/>
     <url>/2025/10/13/NeoVim%E5%AE%89%E8%A3%85/</url>
@@ -19,6 +73,8 @@
     
     
     <tags>
+      
+      <tag>Vim</tag>
       
       <tag>NeoVim</tag>
       
@@ -458,7 +514,7 @@
     <link href="/2025/02/17/%E7%94%B5%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%B8%B8%E8%AF%86/"/>
     <url>/2025/02/17/%E7%94%B5%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%B8%B8%E8%AF%86/</url>
     
-    <content type="html"><![CDATA[<p>“电度”实际上是指电能消耗量，是通过电功率随时间的积分来计算的。简单来说：</p><ul><li><p><strong>电功率</strong>：表示单位时间内电能的使用速率，单位是瓦（W）或千瓦（kW）。</p></li><li><p><strong>电能（电度）</strong>：是电功率在一段时间内的累计消耗，计算公式为 </p><p>​$$\text{电能} &#x3D; \text{电功率} \times \text{时间}$$</p></li><li><p>如果电功率用千瓦表示，时间用小时表示，那么得到的电能单位就是千瓦时（kWh）。</p></li></ul><p>例如，如果一个电器的功率为1千瓦（1 kW），使用2小时，那么它消耗的电能就是：</p><p>​$$1,\text{kW} \times 2,\text{h} &#x3D; 2,\text{kWh}$$</p><ul><li><strong>千瓦时（kWh）</strong>：是一个电能单位，表示1千瓦功率连续运行1小时所消耗的电能。它与焦耳（J）之间的换算关系为：$1,\text{kWh} &#x3D; 3.6 \times 10^6,\text{J}$</li></ul><p>总结一下：</p><ul><li><strong>电度</strong>（电能）是电功率（能量转换的速率）乘以时间得到的能量量。</li><li><strong>电功率</strong>决定了电能消耗的“快慢”，而电能（电度）则是电功率持续作用一段时间后的累计结果。</li><li><strong>千瓦时</strong>就是描述这种累计能量的单位。</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>“电度”实际上是指电能消耗量，是通过电功率随时间的积分来计算的。简单来说：</p><ul><li><strong>电功率</strong>：表示单位时间内电能的使用速率，单位是瓦（W）或千瓦（kW）。</li><li><strong>有功功率（Active Power, P）</strong>:<ul><li><strong>定义</strong>：真正被消耗、用于做实际有用工作的功率，比如让灯泡发光、电机转动、加热等。</li><li><strong>单位</strong>：瓦特（W）</li><li><strong>数学表达</strong>：在纯电阻电路中，有功功率 $P&#x3D;UI$；在交流电路中，一般为 $P&#x3D;UIcos⁡φ$，其中 $\cos\varphi$ 是功率因数（$\varphi$ 是电压与电流的相位差）。</li><li><strong>特点</strong>：有功功率最终会被消耗成热、光、机械能等，不能返回电网。</li></ul></li><li><strong>无功功率（Reactive Power, Q）</strong><ul><li><strong>定义</strong>：在交流电路中，部分能量在发电机和负载（如电感、电容）之间以“往返振荡”的方式传递，这部分“来回交换”但不做实际功的功率叫无功功率。</li><li><strong>单位</strong>：乏（var）</li><li><strong>数学表达</strong>：$Q&#x3D;UIsin⁡φ$</li><li><strong>特点</strong>：无功功率不做实际有用功，但对建立和维持电路中的电磁场（如变压器、电机的磁场）是必须的。</li></ul></li><li><strong>视在功率（Apparent Power, S）</strong><ul><li><strong>定义</strong>：电路中总的功率容量，等于有功功率和无功功率的“合成量”。</li><li><strong>单位</strong>：伏安（VA）</li><li><strong>数学表达</strong>：$S&#x3D;UI$，也有 $S^2&#x3D;P^2+Q^2$</li></ul></li><li><strong>电能（电度）</strong>：是电功率在一段时间内的累计消耗，计算公式为<br>​$$\text{电能} &#x3D; \text{电功率} \times \text{时间}$$</li><li>如果电功率用千瓦表示，时间用小时表示，那么得到的电能单位就是千瓦时（kWh）。</li></ul><p>例如，如果一个电器的功率为1千瓦（1 kW），使用2小时，那么它消耗的电能就是：</p><p>​$$1,\text{kW} \times 2,\text{h} &#x3D; 2,\text{kWh}$$</p><ul><li><strong>千瓦时（kWh）</strong>：是一个电能单位，表示1千瓦功率连续运行1小时所消耗的电能。它与焦耳（J）之间的换算关系为：$1,\text{kWh} &#x3D; 3.6 \times 10^6,\text{J}$</li></ul><p>总结一下：</p><ul><li><strong>电度</strong>（电能）是电功率（能量转换的速率）乘以时间得到的能量量,1度电即为1KWh。</li><li><strong>电功率</strong>决定了电能消耗的“快慢”，而电能（电度）则是电功率持续作用一段时间后的累计结果。</li><li><strong>千瓦时</strong>就是描述这种累计能量的单位。</li></ul>]]></content>
     
     
     
@@ -974,25 +1030,6 @@
   
   
   <entry>
-    <title>编程工具官网</title>
-    <link href="/2024/10/27/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%E5%AE%98%E7%BD%91/"/>
-    <url>/2024/10/27/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%E5%AE%98%E7%BD%91/</url>
-    
-    <content type="html"><![CDATA[<h4 id="Visual-Studio"><a href="#Visual-Studio" class="headerlink" title="Visual Studio"></a><a href="https://visualstudio.microsoft.com/zh-hans/downloads/">Visual Studio</a></h4><ul><li>C#插件<ul><li><a href="https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaidVS2022">CodeMaid VS2022</a></li></ul></li></ul><h4 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a><a href="https://code.visualstudio.com/docs/?dv=win64user">Visual Studio Code</a></h4><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://git-scm.com/download/win">Git</a></h4><h4 id="TightVNC"><a href="#TightVNC" class="headerlink" title="TightVNC"></a><a href="https://www.tightvnc.com/download.php">TightVNC</a></h4><h4 id="DBeaver"><a href="#DBeaver" class="headerlink" title="DBeaver"></a><a href="https://dbeaver.io/download/">DBeaver</a></h4><h4 id="WireShark"><a href="#WireShark" class="headerlink" title="WireShark"></a><a href="https://www.wireshark.org/">WireShark</a></h4><h4 id="Reqable"><a href="#Reqable" class="headerlink" title="Reqable"></a><a href="https://reqable.com/zh-CN/pricing">Reqable</a></h4>]]></content>
-    
-    
-    <categories>
-      
-      <category>分享</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>计算机组成原理</title>
     <link href="/2024/10/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
     <url>/2024/10/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</url>
@@ -1125,6 +1162,25 @@
     <url>/2024/10/13/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/</url>
     
     <content type="html"><![CDATA[<p>本文档内容来自互联网上富有分享精神的程序员们，感谢他们做出的贡献</p><h1 id="Learn-Git-Branching"><a href="#Learn-Git-Branching" class="headerlink" title="Learn Git Branching"></a><a href="https://learngitbranching.js.org/?locale=zh_CN">Learn Git Branching</a></h1><p>一个在线学习和联系Git使用的网站</p><h1 id="VisuAlgo"><a href="#VisuAlgo" class="headerlink" title="VisuAlgo"></a><a href="https://visualgo.net/zh">VisuAlgo</a></h1><p>一个数据结构和算法可视化的网站</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>分享</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>编程工具官网</title>
+    <link href="/2024/10/13/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%E5%AE%98%E7%BD%91/"/>
+    <url>/2024/10/13/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%E5%AE%98%E7%BD%91/</url>
+    
+    <content type="html"><![CDATA[<h4 id="Visual-Studio"><a href="#Visual-Studio" class="headerlink" title="Visual Studio"></a><a href="https://visualstudio.microsoft.com/zh-hans/downloads/">Visual Studio</a></h4><ul><li>C#插件<ul><li><a href="https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaidVS2022">CodeMaid VS2022</a></li></ul></li></ul><h4 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a><a href="https://code.visualstudio.com/docs/?dv=win64user">Visual Studio Code</a></h4><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://git-scm.com/download/win">Git</a></h4><h4 id="TightVNC"><a href="#TightVNC" class="headerlink" title="TightVNC"></a><a href="https://www.tightvnc.com/download.php">TightVNC</a></h4><h4 id="DBeaver"><a href="#DBeaver" class="headerlink" title="DBeaver"></a><a href="https://dbeaver.io/download/">DBeaver</a></h4><h4 id="WireShark"><a href="#WireShark" class="headerlink" title="WireShark"></a><a href="https://www.wireshark.org/">WireShark</a></h4><h4 id="Reqable"><a href="#Reqable" class="headerlink" title="Reqable"></a><a href="https://reqable.com/zh-CN/pricing">Reqable</a></h4><h4 id="Thonny"><a href="#Thonny" class="headerlink" title="Thonny"></a><a href="https://thonny.org/">Thonny</a></h4><ul><li>初学者友好</li><li>支持MicroPython</li></ul><h4 id="MinIO"><a href="#MinIO" class="headerlink" title="MinIO"></a><a href="https://www.minio.org.cn/download.shtml#/linux">MinIO</a></h4>]]></content>
     
     
     <categories>
@@ -1703,6 +1759,12 @@
       
     </categories>
     
+    
+    <tags>
+      
+      <tag>操作系统</tag>
+      
+    </tags>
     
   </entry>
   
