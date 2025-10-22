@@ -19,13 +19,15 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
+<meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络相关问题">
 <meta property="og:url" content="https://homovexillues.github.io/2025/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="红石门">
+<meta property="og:description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-10-15T07:16:49.661Z">
-<meta property="article:modified_time" content="2025-10-15T07:17:26.165Z">
+<meta property="article:modified_time" content="2025-10-21T15:31:58.000Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary_large_image">
@@ -225,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          25k 字
         
       </span>
     
@@ -236,7 +238,7 @@
         
         
         
-          1 分钟
+          209 分钟
         
       </span>
     
@@ -278,7 +280,980 @@
             
               <div class="markdown-body">
                 
-                
+                <h2 id="什么是安装钩子和配置钩子-hook-？"><a href="#什么是安装钩子和配置钩子-hook-？" class="headerlink" title="什么是安装钩子和配置钩子(hook)？"></a>什么是安装钩子和配置钩子(hook)？</h2><ul>
+<li><p>在软件开发中，“钩子”（hook）<strong>是一种机制</strong>，<strong>允许在特定事件或时刻触发自定义代码</strong>。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。</p>
+<h3 id="常见的钩子类型"><a href="#常见的钩子类型" class="headerlink" title="常见的钩子类型"></a>常见的钩子类型</h3><ol>
+<li><strong>Git 钩子</strong>： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括：<ul>
+<li><code>pre-commit</code>：在提交代码之前运行，可以用来检查代码风格、运行测试等。</li>
+<li><code>pre-push</code>：在推送代码到远程仓库之前运行，可以用来验证代码是否符合要求。</li>
+<li><code>post-merge</code>：在合并代码之后运行，可以用来执行一些后处理任务。</li>
+</ul>
+</li>
+<li><strong>npm 钩子</strong>： npm 脚本也支持钩子机制，例如 <code>preinstall</code>、<code>postinstall</code> 等，允许在安装 npm 包之前或之后运行脚本。</li>
+<li><strong>Web 应用钩子</strong>： 在 Web 开发中，可以设置一些钩子来在某些事件（如用户登录、数据更新等）发生时触发特定的代码。</li>
+</ol>
+</li>
+</ul>
+<h2 id="串口链路和以太网链路有什么区别？"><a href="#串口链路和以太网链路有什么区别？" class="headerlink" title="串口链路和以太网链路有什么区别？"></a>串口链路和以太网链路有什么区别？</h2><h2 id="串口链路为COM1到COM512，为什么是这个范围？"><a href="#串口链路为COM1到COM512，为什么是这个范围？" class="headerlink" title="串口链路为COM1到COM512，为什么是这个范围？"></a>串口链路为COM1到COM512，为什么是这个范围？</h2><ul>
+<li><p>早期计算机系统中主板上只有两个串行端口（COM1和COM2），扩展卡可能增加到COM3和COM4。</p>
+</li>
+<li><p>到了现代，操作系统可以支持虚拟串行端口</p>
+</li>
+<li><p>在计算机系统中，<strong>COM端口</strong>（Communication Port）是串行通信端口的简称，用于通过串行接口传输数据。COM端口的主要特点是逐位传输数据，这种传输方式被广泛应用于各种设备之间的通信，例如计算机与调制解调器、打印机、工业控制设备等。</p>
+<h3 id="COM端口的名称和范围"><a href="#COM端口的名称和范围" class="headerlink" title="COM端口的名称和范围"></a>COM端口的名称和范围</h3><ol>
+<li><strong>名称</strong>：<ul>
+<li>COM端口的名称通常为“COM”后面跟一个数字，比如COM1、COM2等。这些名称用于标识计算机系统中的具体串行端口。</li>
+</ul>
+</li>
+<li><strong>范围</strong>：<ul>
+<li>传统上，COM端口的编号范围是从COM1到COM4，因为早期的PC硬件通常只支持4个串行端口。</li>
+<li>随着硬件和操作系统的发展，现代计算机系统可以支持更多的COM端口。Windows系统允许COM端口的编号从COM1一直到COM256。</li>
+<li>一些专业应用和高端硬件可以支持多达512个串行端口，因此在某些情况下可以看到COM1到COM512的范围。</li>
+</ul>
+</li>
+</ol>
+<h3 id="为什么COM端口是这个范围"><a href="#为什么COM端口是这个范围" class="headerlink" title="为什么COM端口是这个范围"></a>为什么COM端口是这个范围</h3><ol>
+<li><strong>历史原因</strong>：<ul>
+<li>早期的计算机硬件限制：在早期的PC系统中，主板上通常只有两个串行端口（COM1和COM2），扩展卡可能增加到COM3和COM4。</li>
+<li>硬件设计：由于串行端口的设计和当时的资源限制，最初的PC系统不支持大量的串行端口。</li>
+</ul>
+</li>
+<li><strong>现代扩展</strong>：<ul>
+<li>操作系统支持：现代操作系统如Windows支持更多的虚拟串行端口和USB-to-Serial适配器，可以分配更高编号的COM端口。</li>
+<li>硬件扩展：现代工业和嵌入式系统中，串行通信依然广泛应用，因此硬件和驱动程序可以支持更大的COM端口范围，例如通过多串口卡或USB扩展器。</li>
+<li>软件需求：一些专业软件和调试工具可能需要访问大量的串行端口，因此支持更大的编号范围。</li>
+</ul>
+</li>
+</ol>
+<h3 id="使用COM端口的示例"><a href="#使用COM端口的示例" class="headerlink" title="使用COM端口的示例"></a>使用COM端口的示例</h3><p>在编程中使用COM端口，通常需要指定端口名称，配置通信参数，然后进行读写操作。以下是一个使用C#中的<code>System.IO.Ports.SerialPort</code>类来打开COM端口的示例：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs csharp">csharp复制代码<span class="hljs-keyword">using</span> System;<br><span class="hljs-keyword">using</span> System.IO.Ports;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title">Program</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>    &#123;<br>        <span class="hljs-comment">// 创建SerialPort对象并指定端口名称和通信参数</span><br>        SerialPort serialPort = <span class="hljs-keyword">new</span> SerialPort(<span class="hljs-string">&quot;COM1&quot;</span>, <span class="hljs-number">9600</span>, Parity.None, <span class="hljs-number">8</span>, StopBits.One);<br><br>        <span class="hljs-keyword">try</span><br>        &#123;<br>            <span class="hljs-comment">// 打开端口</span><br>            serialPort.Open();<br><br>            <span class="hljs-comment">// 向端口写入数据</span><br>            serialPort.WriteLine(<span class="hljs-string">&quot;Hello, COM1!&quot;</span>);<br><br>            <span class="hljs-comment">// 从端口读取数据</span><br>            <span class="hljs-built_in">string</span> response = serialPort.ReadLine();<br>            Console.WriteLine(<span class="hljs-string">&quot;Received: &quot;</span> + response);<br>        &#125;<br>        <span class="hljs-keyword">catch</span> (Exception ex)<br>        &#123;<br>            Console.WriteLine(<span class="hljs-string">&quot;Error: &quot;</span> + ex.Message);<br>        &#125;<br>        <span class="hljs-keyword">finally</span><br>        &#123;<br>            <span class="hljs-comment">// 关闭端口</span><br>            <span class="hljs-keyword">if</span> (serialPort.IsOpen)<br>            &#123;<br>                serialPort.Close();<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这个示例中，程序打开了COM1端口，配置了波特率为9600，无奇偶校验，8个数据位和1个停止位，然后进行了数据的发送和接收操作。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><strong>COM端口</strong>是计算机串行通信端口的简称，广泛用于设备之间的数据传输。</li>
+<li><strong>COM端口的名称</strong>通常为“COM”加上一个数字，从COM1开始。</li>
+<li><strong>现代系统支持的COM端口范围</strong>可以从COM1到COM256，甚至更多（例如COM1到COM512）。</li>
+<li><strong>历史和硬件发展</strong>使得COM端口的范围从早期的COM1到COM4扩展到现在的更大范围，以满足现代应用的需求。</li>
+</ul>
+</li>
+</ul>
+<h2 id="波特率？奇偶校验？数据位？停止位？"><a href="#波特率？奇偶校验？数据位？停止位？" class="headerlink" title="波特率？奇偶校验？数据位？停止位？"></a>波特率？奇偶校验？数据位？停止位？</h2><h2 id="端口和串口？"><a href="#端口和串口？" class="headerlink" title="端口和串口？"></a>端口和串口？</h2><ul>
+<li><p><strong>端口</strong></p>
+<ul>
+<li><strong>定义</strong>：在网络通信中，IP地址用于标识网络中的设备，端口号用于标识设备上的特定服务或进程。端口号是一个16位数字，从0到65535</li>
+<li><strong>用途</strong>:端口号可以使得一个设备撒谎给你的多个网络服务同时运行而不发生冲突——Http的80端口，SMTP常用25</li>
+<li><strong>特点</strong>: 通常与传输层协议TCP&#x2F;UDP结合使用</li>
+<li><strong>示例</strong>:当你访问一个网站时，你的浏览器可能会通过端口80（HTTP）或443（HTTPS）与服务器建立连接。</li>
+</ul>
+</li>
+<li><p>串口</p>
+<ul>
+<li><strong>定义</strong>: 串口，也称为串行通信接口，是一种用于实现串行通信的硬件接口。它通过数据线（如RS-232、RS-422或RS-485）进行点对点的通信。</li>
+<li><strong>用途</strong>: 串口主要用于计算机与外部设备（如打印机、调制解调器、传感器等）之间的连接。与网络通信不同，串口通信是同步的，数据一次传输一个比特。</li>
+<li><strong>特点</strong>: 串口通信通常较慢，但可以实现长距离通信，并且由于是点对点连接，所以比较简单和稳定。</li>
+<li><strong>示例</strong>: 在工业自动化和嵌入式系统中，串口常用于控制设备和读取传感器数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="在向接口发送GET请求时发生了什么？"><a href="#在向接口发送GET请求时发生了什么？" class="headerlink" title="在向接口发送GET请求时发生了什么？"></a>在向接口发送GET请求时发生了什么？</h2><ol>
+<li><strong>构建请求</strong>：<ul>
+<li>客户端（例如浏览器或HTTP客户端）构建一个GET请求。这个请求包含请求行、请求头以及可能的查询参数。</li>
+</ul>
+</li>
+<li><strong>发送请求</strong>：<ul>
+<li>请求通过网络传输到服务器。这个过程可能经过多个网络节点和路由器。</li>
+</ul>
+</li>
+<li><strong>服务器接收请求</strong>：<ul>
+<li>服务器的Web服务器（如Apache、Nginx或IIS）接收这个请求。Web服务器负责解析请求，并将其传递给处理该请求的应用程序。</li>
+</ul>
+</li>
+<li><strong>请求处理</strong>：<ul>
+<li>应用程序读取请求的详细信息，包括URL、请求头和查询参数。然后根据请求URL和参数执行特定的逻辑。例如，从数据库中获取数据、进行计算、调用其他服务等。</li>
+</ul>
+</li>
+<li><strong>生成响应</strong>：<ul>
+<li>应用程序生成一个响应，通常包括状态码、响应头和响应体。响应体可能包含客户端请求的数据、错误信息或其他内容。</li>
+</ul>
+</li>
+<li><strong>发送响应</strong>：<ul>
+<li>响应通过网络返回到客户端。客户端接收到响应后，处理和显示返回的数据。</li>
+</ul>
+</li>
+</ol>
+<h2 id="Wireshark的Apdapter-for-loopback-traffic-capture是什么"><a href="#Wireshark的Apdapter-for-loopback-traffic-capture是什么" class="headerlink" title="Wireshark的Apdapter for loopback traffic capture是什么"></a>Wireshark的Apdapter for loopback traffic capture是什么</h2><p>Wireshark 的 “Adapter for loopback traffic capture” 是一个专门用于捕获环回（loopback）接口上的网络流量的工具。环回接口是一个虚拟网络接口，它通常用于同一台计算机上运行的应用程序之间的通信。它的 IP 地址通常为 <code>127.0.0.1</code>（IPv4）或 <code>::1</code>（IPv6）。</p>
+<h4 id="环回接口和其捕获的必要性"><a href="#环回接口和其捕获的必要性" class="headerlink" title="环回接口和其捕获的必要性"></a>环回接口和其捕获的必要性</h4><p>在许多操作系统中，<strong>环回接口</strong>上的流量默认不会被捕获。通常情况下，网络分析工具（包括 Wireshark）主要捕获通过物理或无线网络接口的流量。而环回接口上的流量则往往被忽略。然而，捕获环回流量在以下情况下可能是必要的：</p>
+<ol>
+<li><strong>本地开发和测试</strong>：开发者在同一台机器上测试网络应用程序时，环回接口流量对于调试和分析非常重要。</li>
+<li><strong>服务间通信</strong>：同一台服务器上不同服务或进程之间的通信可能通过环回接口进行。</li>
+<li><strong>安全分析</strong>：环回接口流量可能包含对本地服务的攻击或利用尝试，捕获这些流量有助于安全分析。</li>
+</ol>
+<h4 id="“Adapter-for-loopback-traffic-capture”-的工作原理"><a href="#“Adapter-for-loopback-traffic-capture”-的工作原理" class="headerlink" title="“Adapter for loopback traffic capture” 的工作原理"></a>“Adapter for loopback traffic capture” 的工作原理</h4><p>“Adapter for loopback traffic capture” 是一个虚拟网络适配器，用于捕获 Windows 系统上的环回流量。这是因为 Windows <strong>默认不允许捕获环回流量</strong>，需要借助额外的工具来实现这一功能。常用的方法包括安装特殊的驱动程序或使用网络库，如 Npcap。</p>
+<h4 id="Npcap-驱动"><a href="#Npcap-驱动" class="headerlink" title="Npcap 驱动"></a>Npcap 驱动</h4><p>Npcap 是一个 Windows 平台上的高效捕获库，它是 WinPcap 的现代替代品。Npcap 支持捕获环回接口流量。Wireshark 安装过程中通常会提示安装 Npcap：</p>
+<ol>
+<li><strong>安装 Npcap</strong>：确保在安装 Wireshark 时选择安装 Npcap 驱动程序。</li>
+<li><strong>启用环回捕获</strong>：安装 Npcap 后，Wireshark 将能够捕获环回接口上的流量。</li>
+</ol>
+<h4 id="使用-Wireshark-捕获环回流量"><a href="#使用-Wireshark-捕获环回流量" class="headerlink" title="使用 Wireshark 捕获环回流量"></a>使用 Wireshark 捕获环回流量</h4><p>以下是在 Windows 系统上使用 Wireshark 捕获环回流量的步骤：</p>
+<ol>
+<li><strong>安装 Wireshark 和 Npcap</strong>：<ul>
+<li>从 <a target="_blank" rel="noopener" href="https://www.wireshark.org/">Wireshark 官网</a> 下载并安装 Wireshark。</li>
+<li>确保在安装过程中选择安装 Npcap 驱动。</li>
+</ul>
+</li>
+<li><strong>启动 Wireshark</strong>：<ul>
+<li>打开 Wireshark 应用程序。</li>
+</ul>
+</li>
+<li><strong>选择环回适配器</strong>：<ul>
+<li>在主界面中，选择名为 “Npcap Loopback Adapter” 或类似名称的环回适配器。</li>
+<li>注意：不同版本的 Npcap 可能显示的名称略有不同。</li>
+</ul>
+</li>
+<li><strong>启动捕获</strong>：<ul>
+<li>点击 “Start Capturing Packets” 按钮开始捕获数据包。</li>
+</ul>
+</li>
+<li><strong>生成环回流量</strong>：<ul>
+<li>在同一台机器上运行一些网络应用程序，生成环回流量。例如，访问 <code>http://127.0.0.1</code> 或 <code>http://localhost</code> 的 Web 服务器。</li>
+</ul>
+</li>
+<li><strong>查看捕获的数据包</strong>：<ul>
+<li>Wireshark 将显示捕获的环回流量数据包。你可以使用过滤器和其他分析工具查看详细信息。</li>
+</ul>
+</li>
+</ol>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>假设你在本地运行一个 Web 服务器，并且从浏览器访问 <code>http://localhost:8080</code>，你可以在 Wireshark 中看到类似如下的捕获数据包：</p>
+<ol>
+<li><strong>HTTP 请求和响应</strong>：<ul>
+<li>请求：<code>GET / HTTP/1.1</code>，源地址为 <code>127.0.0.1</code>，目的地址也是 <code>127.0.0.1</code>。</li>
+<li>响应：<code>HTTP/1.1 200 OK</code>，源地址和目的地址同样为 <code>127.0.0.1</code>。</li>
+</ul>
+</li>
+<li><strong>其他协议</strong>：<ul>
+<li>如果有其他应用程序使用环回接口进行通信，也会显示在捕获的数据包中。</li>
+</ul>
+</li>
+</ol>
+<p>通过使用 “Adapter for loopback traffic capture” 和 Npcap 驱动程序，你可以方便地捕获和分析本地环回接口上的网络流量，这对于本地开发、调试和安全分析非常有用。</p>
+<h2 id="什么是抓包"><a href="#什么是抓包" class="headerlink" title="什么是抓包"></a>什么是抓包</h2><p>抓包是指捕获和记录在网络上传输的数据包，以便进行分析和调试。抓包可以帮助网络管理员和安全分析师了解网络流量的具体内容，识别网络问题，检测网络攻击和入侵行为。抓包的过程通常包括以下几个步骤：</p>
+<ol>
+<li><strong>选择网卡</strong>：选择一个网卡进行数据包捕获。对于无线网络，可以选择无线网卡；对于有线网络，可以选择有线网卡。</li>
+<li><strong>启动抓包</strong>：使用抓包工具开始捕获数据包。抓包工具会显示实时捕获的数据包列表。</li>
+<li><strong>过滤数据包</strong>：使用过滤器只捕获感兴趣的数据包。例如，只捕获特定 IP 地址、端口号或协议的数据包。</li>
+<li><strong>分析数据包</strong>：抓包工具会解析捕获的数据包，并以易于理解的格式显示其内容。用户可以查看数据包的详细信息，包括源和目的地址、协议类型、数据内容等。</li>
+<li><strong>保存和导出数据包</strong>：将捕获的数据包保存为文件，以便以后分析或共享。</li>
+</ol>
+<h2 id="抓包的原理"><a href="#抓包的原理" class="headerlink" title="抓包的原理"></a>抓包的原理</h2><ol>
+<li><strong>网络接口卡（NIC）</strong>：计算机的网络接口卡（NIC）通常在正常模式下只接收发给自己的数据包。为了进行抓包，NIC 需要工作在混杂模式（Promiscuous Mode），在这种模式下，NIC 可以接收通过网络的所有数据包，而不仅仅是发给它的数据包。</li>
+<li><strong>数据包拦截</strong>：在混杂模式下，网络接口卡<strong>将接收到的所有数据包传递给操作系统的网络堆栈</strong>。抓包工具（如 Wireshark）通过操作系统提供的接口（例如 Windows 的 WinPcap 或 Npcap 驱动，Linux 的 libpcap 库）来捕获这些数据包。</li>
+<li><strong>数据包存储和分析</strong>：抓包工具会将捕获的数据包存储在内存或文件中，并解析这些数据包，显示其内容和元数据。Wireshark 提供了丰富的协议解析功能，可以识别并解析数百种网络协议，并以用户友好的方式显示数据包的详细信息。</li>
+</ol>
+<h2 id="NIC网卡有哪些工作模式？"><a href="#NIC网卡有哪些工作模式？" class="headerlink" title="NIC网卡有哪些工作模式？"></a>NIC网卡有哪些工作模式？</h2><p>除了混杂模式（Promiscuous Mode），NIC还有以下几种常见的工作模式：</p>
+<ol>
+<li><strong>正常模式（Normal Mode）</strong>：<ul>
+<li>在正常模式下，NIC<strong>只接收目的地址是自己的数据包</strong>。对于以太网，这意味着NIC只处理以太网帧的目的MAC地址与其硬件MAC地址匹配的数据包。</li>
+</ul>
+</li>
+<li><strong>多播模式（Multicast Mode）</strong>：<ul>
+<li>在多播模式下，NIC被配置为<strong>接收特定多播组地址的数据包</strong>。多播是一种将单一数据包传送给多个接收者的网络方法。NIC只会接收它被配置的多播地址的数据包。</li>
+</ul>
+</li>
+<li><strong>全部多播模式（All-Multicast Mode）</strong>：<ul>
+<li>在全部多播模式下，NIC将<strong>接收所有的多播流量</strong>，<strong>而不仅仅是特定的多播组地址</strong>。这对于网络分析工具非常有用，因为它们需要监控所有的多播通信。</li>
+</ul>
+</li>
+<li><strong>广播模式（Broadcast Mode）</strong>：<ul>
+<li>在广播模式下，NIC<strong>接收发送到广播地址的数据包</strong>。以太网中的广播地址是 <code>FF:FF:FF:FF:FF:FF</code>，意味着所有连接到同一网络的设备都将接收这些数据包。</li>
+</ul>
+</li>
+<li><strong>无链路模式（Link-Down Mode）</strong>：<ul>
+<li>在无链路模式下，NIC被禁用，无法发送或接收任何数据。这通常用于网络故障排除或网络配置更改时暂时禁用网络接口。</li>
+</ul>
+</li>
+<li><strong>低功耗模式（Low Power Mode）</strong>：<ul>
+<li>在低功耗模式下，NIC进入节能状态，以减少电力消耗。这在移动设备或需要节能的设备上特别有用。<strong>NIC在低功耗模式下可能无法接收数据，或者只能以较低的速率接收数据</strong>。</li>
+</ul>
+</li>
+</ol>
+<h4 id="解释混杂模式"><a href="#解释混杂模式" class="headerlink" title="解释混杂模式"></a>解释混杂模式</h4><p><strong>混杂模式（Promiscuous Mode）</strong>：</p>
+<ul>
+<li>在混杂模式下，NIC接收所有流经网络的流量，而不仅仅是发送到其MAC地址的数据包。这对于网络监控和分析工具（如Wireshark）非常有用，因为它们需要查看网络上所有的通信。</li>
+</ul>
+<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><p>NIC有多种工作模式，包括正常模式、混杂模式、多播模式、全部多播模式、广播模式、无链路模式和低功耗模式。每种模式有其特定的用途，适用于不同的网络需求和场景。混杂模式尤其用于网络分析和监控，因为它允许NIC接收网络上所有的数据包，而不仅仅是发送给自己的数据包。</p>
+<h2 id="Http常见的错误码有哪些？都是什么意思？"><a href="#Http常见的错误码有哪些？都是什么意思？" class="headerlink" title="Http常见的错误码有哪些？都是什么意思？"></a>Http常见的错误码有哪些？都是什么意思？</h2><p>HTTP错误码，也称为HTTP状态码，是服务器在响应HTTP请求时返回的代码，用于表示请求的结果状态。常见的HTTP错误码及其含义如下：</p>
+<h4 id="1xx-Informational-信息性状态码"><a href="#1xx-Informational-信息性状态码" class="headerlink" title="1xx Informational (信息性状态码)"></a>1xx Informational (信息性状态码)</h4><ul>
+<li><strong>100 Continue</strong>：客户端应该继续请求。如果已经完成请求，则忽略此消息。</li>
+<li><strong>101 Switching Protocols</strong>：服务器根据客户端的请求切换协议。</li>
+</ul>
+<h4 id="2xx-Success-成功状态码"><a href="#2xx-Success-成功状态码" class="headerlink" title="2xx Success (成功状态码)"></a>2xx Success (成功状态码)</h4><ul>
+<li><strong>200 OK</strong>：请求成功，并返回所请求的资源。</li>
+<li><strong>201 Created</strong>：请求成功并且服务器创建了新的资源。</li>
+<li><strong>202 Accepted</strong>：服务器已接受请求，但尚未处理。</li>
+<li><strong>204 No Content</strong>：请求成功但没有内容返回。</li>
+<li><strong>205 Reset Content</strong>：请求成功，请重置视图。</li>
+</ul>
+<h4 id="3xx-Redirection-重定向状态码"><a href="#3xx-Redirection-重定向状态码" class="headerlink" title="3xx Redirection (重定向状态码)"></a>3xx Redirection (重定向状态码)</h4><ul>
+<li><strong>301 Moved Permanently</strong>：请求的资源已被永久移动到新的URL。</li>
+<li><strong>302 Found</strong>：请求的资源临时从不同的URL响应。</li>
+<li><strong>304 Not Modified</strong>：资源未被修改，自上次请求以来没有变化。</li>
+<li><strong>307 Temporary Redirect</strong>：请求的资源临时从不同的URL响应，但必须使用原有的方法请求。</li>
+</ul>
+<h4 id="4xx-Client-Errors-客户端错误状态码"><a href="#4xx-Client-Errors-客户端错误状态码" class="headerlink" title="4xx Client Errors (客户端错误状态码)"></a>4xx Client Errors (客户端错误状态码)</h4><ul>
+<li><strong>400 Bad Request</strong>：服务器无法理解请求的格式，客户端应修改请求。</li>
+<li><strong>401 Unauthorized</strong>：请求需要用户认证。</li>
+<li><strong>403 Forbidden</strong>：服务器理解请求，但拒绝执行。</li>
+<li><strong>404 Not Found</strong>：请求的资源不存在。</li>
+<li><strong>405 Method Not Allowed</strong>：请求方法不被允许。</li>
+<li><strong>406 Not Acceptable</strong>：请求的资源不符合客户端的条件。</li>
+<li><strong>408 Request Timeout</strong>：请求超时，服务器等待客户端发送请求数据超时。</li>
+<li><strong>409 Conflict</strong>：请求与服务器的状态冲突。</li>
+<li><strong>410 Gone</strong>：请求的资源永久删除。</li>
+<li><strong>411 Length Required</strong>：服务器要求在请求中包含Content-Length头。</li>
+<li><strong>413 Payload Too Large</strong>：请求实体过大，服务器无法处理。</li>
+<li><strong>414 URI Too Long</strong>：请求的URI过长，服务器无法处理。</li>
+<li><strong>415 Unsupported Media Type</strong>：请求的媒体格式不受支持。</li>
+<li><strong>429 Too Many Requests</strong>：客户端发送的请求次数超过限额。</li>
+</ul>
+<h4 id="5xx-Server-Errors-服务器错误状态码"><a href="#5xx-Server-Errors-服务器错误状态码" class="headerlink" title="5xx Server Errors (服务器错误状态码)"></a>5xx Server Errors (服务器错误状态码)</h4><ul>
+<li><strong>500 Internal Server Error</strong>：服务器遇到错误，无法完成请求。</li>
+<li><strong>501 Not Implemented</strong>：服务器不支持请求的方法。</li>
+<li><strong>502 Bad Gateway</strong>：服务器作为网关或代理，从上游服务器收到无效响应。</li>
+<li><strong>503 Service Unavailable</strong>：服务器暂时不可用，通常是由于过载或维护。</li>
+<li><strong>504 Gateway Timeout</strong>：服务器作为网关或代理，未能及时从上游服务器收到响应。</li>
+<li><strong>505 HTTP Version Not Supported</strong>：服务器不支持请求所用的HTTP版本。</li>
+</ul>
+<h4 id="常见错误码解释"><a href="#常见错误码解释" class="headerlink" title="常见错误码解释"></a>常见错误码解释</h4><h5 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h5><ul>
+<li><strong>解释</strong>：服务器找不到请求的资源。这通常是因为URL错误或资源已被删除。</li>
+<li><strong>例子</strong>：访问一个不存在的网页时，会返回404错误。</li>
+</ul>
+<h5 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h5><ul>
+<li><strong>解释</strong>：服务器遇到意外情况，无法完成请求。这通常是由于服务器端代码错误或配置问题。</li>
+<li><strong>例子</strong>：服务器端脚本执行错误，会导致返回500错误。</li>
+</ul>
+<h5 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h5><ul>
+<li><strong>解释</strong>：服务器理解请求，但拒绝执行。这通常是因为权限问题。</li>
+<li><strong>例子</strong>：试图访问没有权限查看的目录或文件时，会返回403错误。</li>
+</ul>
+<h4 id="如何处理这些错误码"><a href="#如何处理这些错误码" class="headerlink" title="如何处理这些错误码"></a>如何处理这些错误码</h4><ul>
+<li><strong>客户端方面</strong>：<ul>
+<li>检查并确保URL正确。</li>
+<li>确认请求方法（GET、POST等）是否正确。</li>
+<li>验证请求头和参数是否正确。</li>
+<li>对需要身份认证的请求，确保提供正确的认证信息。</li>
+</ul>
+</li>
+<li><strong>服务器方面</strong>：<ul>
+<li>查看服务器日志，确定错误原因。</li>
+<li>检查服务器配置，确保正确处理请求。</li>
+<li>确认资源存在且路径正确。</li>
+<li>对于频繁出现的错误，可以添加自定义错误页面，提供更友好的错误信息。</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是Sockets？"><a href="#什么是Sockets？" class="headerlink" title="什么是Sockets？"></a>什么是Sockets？</h2><p>Sockets是一种<strong>网络编程接口</strong>，用于在网络上进行通信。<strong>它是一种抽象的概念</strong>，通过它，应用程序可以通过网络传输数据。Sockets广泛应用于<strong>客户端-服务器模型</strong>的网络通信。</p>
+<h2 id="除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？"><a href="#除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？" class="headerlink" title="除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？"></a>除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？</h2><h3 id="1-对等网络模型（Peer-to-Peer-P2P）"><a href="#1-对等网络模型（Peer-to-Peer-P2P）" class="headerlink" title="1. 对等网络模型（Peer-to-Peer, P2P）"></a>1. <strong>对等网络模型（Peer-to-Peer, P2P）</strong></h3><h4 id="结构："><a href="#结构：" class="headerlink" title="结构："></a>结构：</h4><p>在P2P模型中，<strong>每个节点（即每个计算机或设备）既是客户端也是服务器</strong>。节点可以直接与其他节点通信，没有中心服务器来管理通信。</p>
+<h4 id="应用领域："><a href="#应用领域：" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>文件共享</strong>：如BitTorrent、Gnutella，这些应用允许用户在网络中共享和下载文件。</li>
+<li><strong>分布式计算</strong>：如SETI@home、Folding@home，利用闲置的计算资源来执行大型计算任务。</li>
+<li><strong>区块链和加密货币</strong>：如Bitcoin、Ethereum，通过去中心化的方式实现安全和可靠的交易和智能合约执行。</li>
+</ul>
+<h3 id="2-发布-订阅模型（Publish-Subscribe-Pub-Sub）"><a href="#2-发布-订阅模型（Publish-Subscribe-Pub-Sub）" class="headerlink" title="2. 发布-订阅模型（Publish-Subscribe, Pub&#x2F;Sub）"></a>2. <strong>发布-订阅模型（Publish-Subscribe, Pub&#x2F;Sub）</strong></h3><h4 id="结构：-1"><a href="#结构：-1" class="headerlink" title="结构："></a>结构：</h4><p>在Pub&#x2F;Sub模型中，发布者（Publisher）将消息发布到特定的主题（Topic），订阅者（Subscriber）订阅感兴趣的主题，从而接收相关的消息。<strong>通常通过中介（Broker）来管理发布和订阅</strong>。</p>
+<h4 id="应用领域：-1"><a href="#应用领域：-1" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>消息系统</strong>：如Apache Kafka、RabbitMQ，用于日志收集、事件通知、数据流处理等。</li>
+<li><strong>实时更新</strong>：如股票行情、社交媒体更新，订阅者可以实时收到最新信息。</li>
+<li><strong>物联网（IoT）</strong>：<strong>如MQTT协议</strong>，设备可以发布传感器数据，订阅者可以实时监控这些数据。</li>
+</ul>
+<h3 id="3-点对点模型（Point-to-Point）"><a href="#3-点对点模型（Point-to-Point）" class="headerlink" title="3. 点对点模型（Point-to-Point）"></a>3. <strong>点对点模型（Point-to-Point）</strong></h3><h4 id="结构：-2"><a href="#结构：-2" class="headerlink" title="结构："></a>结构：</h4><p>在点对点模型中，<strong>两端点之间直接通信</strong>，<strong>没有中间的服务器或代理</strong>。<strong>通信通常是基于套接字（Sockets</strong>）。</p>
+<h4 id="应用领域：-2"><a href="#应用领域：-2" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>即时通信</strong>：如Skype、WhatsApp中的点对点通话，用户之间直接建立连接进行音视频通信。</li>
+<li><strong>文件传输</strong>：如SCP（Secure Copy Protocol），用于在两台计算机之间安全传输文件。</li>
+</ul>
+<h3 id="4-多播模型（Multicast）"><a href="#4-多播模型（Multicast）" class="headerlink" title="4. 多播模型（Multicast）"></a>4. <strong>多播模型（Multicast）</strong></h3><h4 id="结构：-3"><a href="#结构：-3" class="headerlink" title="结构："></a>结构：</h4><p><strong>多播模型允许单个发送者将消息发送到多个接收者</strong>，<strong>接收者组成一个多播组（Multicast Group）</strong>。<strong>路由器和交换机在网络层面支持多播。</strong></p>
+<h4 id="应用领域：-3"><a href="#应用领域：-3" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>流媒体</strong>：如网络电视、在线广播，向多个用户同时传输音视频内容。</li>
+<li><strong>金融市场数据分发</strong>：将市场数据（如股票价格）实时分发给多个订阅者。</li>
+<li><strong>分布式数据库</strong>：用于数据库复制和同步。</li>
+</ul>
+<h3 id="5-网格网络模型（Mesh-Network）"><a href="#5-网格网络模型（Mesh-Network）" class="headerlink" title="5. 网格网络模型（Mesh Network）"></a>5. <strong>网格网络模型（Mesh Network）</strong></h3><h4 id="结构：-4"><a href="#结构：-4" class="headerlink" title="结构："></a>结构：</h4><p>在网格网络中，<strong>每个节点都可以与多个其他节点直接通信</strong>，形成一个<strong>网状结构</strong>。通信路径可以动态调整以优化传输和容错。</p>
+<h4 id="应用领域：-4"><a href="#应用领域：-4" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>无线自组网</strong>：如Zigbee、LoRa，应用于智能家居、工业自动化等领域的无线传感器网络。</li>
+<li><strong>灾难恢复</strong>：在自然灾害或紧急情况下，临时建立通信网络以保障通信畅通。</li>
+<li><strong>社区网络</strong>：通过社区用户的设备形成一个分布式网络，共享互联网接入。</li>
+</ul>
+<h3 id="6-代理模型（Proxy-Model）"><a href="#6-代理模型（Proxy-Model）" class="headerlink" title="6. 代理模型（Proxy Model）"></a>6. <strong>代理模型（Proxy Model）</strong></h3><h4 id="结构：-5"><a href="#结构：-5" class="headerlink" title="结构："></a>结构：</h4><p>在代理模型中，<strong>客户端通过代理服务器与外部服务器通信</strong>。代理服务器可以<strong>对请求进行过滤、缓存、负载均衡</strong>等处理。</p>
+<h4 id="应用领域：-5"><a href="#应用领域：-5" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>内容过滤和缓存</strong>：如公司网络中的Web代理，过滤不良网站并缓存常访问内容以节省带宽。</li>
+<li><strong>匿名浏览</strong>：如Tor网络，通过多层代理隐藏用户的真实IP地址和浏览行为。</li>
+<li><strong>负载均衡</strong>：在高流量网站中，代理服务器可以分发请求到多个后端服务器以平衡负载。</li>
+</ul>
+<h2 id="多播和广播的区别是？"><a href="#多播和广播的区别是？" class="headerlink" title="多播和广播的区别是？"></a>多播和广播的区别是？</h2><h3 id="广播（Broadcast）"><a href="#广播（Broadcast）" class="headerlink" title="广播（Broadcast）"></a>广播（Broadcast）</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
+<li><strong>传输范围</strong>：<ul>
+<li>数据包会发送到网络内的所有节点。</li>
+<li>广播数据包在特定网络域（如局域网）内传播，但不会跨越路由器进入其他网络。</li>
+</ul>
+</li>
+<li><strong>目标设备</strong>：<ul>
+<li>所有网络中的设备都会接收到广播消息。</li>
+<li>没有选择性，所有设备都会处理广播数据包，即使它们不需要该数据。</li>
+</ul>
+</li>
+<li><strong>地址类型</strong>：<ul>
+<li>使用广播地址。例如，在IPv4中，广播地址通常为255.255.255.255或特定子网的广播地址（如192.168.1.255）。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>网络发现：例如ARP（地址解析协议）请求，用于将IP地址解析为MAC地址。</li>
+<li>DHCP（动态主机配置协议）：用于分配IP地址时的初始请求。</li>
+</ul>
+</li>
+</ol>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><ul>
+<li><strong>优点</strong>：<ul>
+<li>简单直接，适合发送需要所有节点接收的消息。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>低效：所有节点都要处理广播数据，可能会浪费带宽和计算资源。</li>
+<li>可扩展性差：在大规模网络中，过多的广播会导致广播风暴，降低网络性能。</li>
+</ul>
+</li>
+</ul>
+<h3 id="多播（Multicast）"><a href="#多播（Multicast）" class="headerlink" title="多播（Multicast）"></a>多播（Multicast）</h3><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ol>
+<li><strong>传输范围</strong>：<ul>
+<li>数据包仅发送到订阅了特定多播组的节点。</li>
+<li>多播数据包<strong>可以跨越路由器</strong>，但<strong>需要网络设备（如路由器）支持多播协议（如IGMP和PIM</strong>）。</li>
+</ul>
+</li>
+<li><strong>目标设备</strong>：<ul>
+<li>只有加入特定多播组的节点才会接收到多播消息。</li>
+<li>选择性传输，提高了网络效率。</li>
+</ul>
+</li>
+<li><strong>地址类型</strong>：<ul>
+<li>使用多播地址。在IPv4中，多播地址范围为224.0.0.0到239.255.255.255。</li>
+<li>在IPv6中，多播地址以FF开头（例如FF00::&#x2F;8）。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>实时数据分发：如视频会议、直播视频流、在线游戏。</li>
+<li>网络协议：如OSPF（开放最短路径优先）路由协议，用于在路由器之间分发路由信息。</li>
+</ul>
+</li>
+</ol>
+<h4 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h4><ul>
+<li><strong>优点</strong>：<ul>
+<li>高效：只有需要接收数据的节点才会接收，节省带宽。</li>
+<li>可扩展：适用于大规模分发数据，避免不必要的数据传输。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>复杂性：网络设备和配置需要支持多播。</li>
+<li>需要管理多播组和处理多播协议，增加了配置和维护的复杂性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结比较"><a href="#总结比较" class="headerlink" title="总结比较"></a>总结比较</h3><table>
+<thead>
+<tr>
+<th>特点</th>
+<th>广播 (Broadcast)</th>
+<th>多播 (Multicast)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>传输范围</td>
+<td>所有网络内的节点</td>
+<td>订阅了特定多播组的节点</td>
+</tr>
+<tr>
+<td>目标设备</td>
+<td>所有设备接收</td>
+<td>只有特定多播组的设备接收</td>
+</tr>
+<tr>
+<td>地址类型</td>
+<td>广播地址（如255.255.255.255）</td>
+<td>多播地址（如224.0.0.0到239.255.255.255）</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td>网络发现、DHCP等</td>
+<td>实时数据分发、网络协议等</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>简单直接</td>
+<td>高效、可扩展</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>低效、可扩展性差</td>
+<td>复杂性高、需要多播支持</td>
+</tr>
+</tbody></table>
+<p>通过这些比较可以看出，多播和广播在数据传输的目标选择和网络资源利用上有显著的差异。广播适用于需要所有节点接收的简单任务，而多播适合需要选择性传输的高效数据分发任务。</p>
+<h2 id="常见HTTP请求方法"><a href="#常见HTTP请求方法" class="headerlink" title="常见HTTP请求方法"></a>常见HTTP请求方法</h2><ol>
+<li><p><strong>GET</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：请求从服务器检索数据。</p>
+</li>
+<li><p><strong>功能</strong>：GET请求通过URL传递参数，并从服务器获取响应数据。它通常用于获取数据而不进行任何数据修改。</p>
+</li>
+<li><p><strong>特性</strong>：GET请求是幂等的（同样的请求多次执行效果相同）和安全的（不会对服务器数据进行修改）。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/index.html</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>POST</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：将数据提交到服务器，通常用于表单提交或上传文件。</p>
+</li>
+<li><p><strong>功能</strong>：POST请求通过请求体传递数据，服务器处理数据并返回响应。它通常用于创建或更新资源。</p>
+</li>
+<li><p><strong>特性</strong>：POST请求不是幂等的（同样的请求多次执行可能会导致不同的效果），可以对服务器资源进行修改。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/submit-form</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/x-www-form-urlencoded<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>27<br><br><span class="language-ini"><span class="hljs-attr">name</span>=John&amp;age=<span class="hljs-number">30</span></span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>PUT</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：将数据上传到服务器，通常用于更新资源。</p>
+</li>
+<li><p><strong>功能</strong>：PUT请求通过请求体传递数据，服务器用传递的数据替换目标资源的内容。</p>
+</li>
+<li><p><strong>特性</strong>：PUT请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">PUT</span> <span class="hljs-string">/users/1</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/json<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>18<br><br><span class="language-json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;John&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">30</span><span class="hljs-punctuation">&#125;</span></span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>DELETE</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：请求服务器删除指定的资源。</p>
+</li>
+<li><p><strong>功能</strong>：DELETE请求删除指定的资源，服务器返回删除结果。</p>
+</li>
+<li><p><strong>特性</strong>：DELETE请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">DELETE</span> <span class="hljs-string">/users/1</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>HEAD</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：与GET请求类似，但服务器仅返回响应头，不返回响应体。</p>
+</li>
+<li><p><strong>功能</strong>：用于检查资源的元数据（如响应头信息）而不获取实际数据。</p>
+</li>
+<li><p><strong>特性</strong>：HEAD请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">HEAD</span> <span class="hljs-string">/index.html</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>OPTIONS</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：查询服务器支持的请求方法和选项。</p>
+</li>
+<li><p><strong>功能</strong>：用于检查服务器允许的HTTP方法、CORS设置等。</p>
+</li>
+<li><p><strong>特性</strong>：OPTIONS请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">OPTIONS</span> <span class="hljs-string">/index.html</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>PATCH</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：部分更新资源。</p>
+</li>
+<li><p><strong>功能</strong>：PATCH请求通过请求体传递数据，仅修改目标资源的部分内容。</p>
+</li>
+<li><p><strong>特性</strong>：PATCH请求不是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">PATCH</span> <span class="hljs-string">/users/1</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/json<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>18<br><br><span class="language-json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">31</span><span class="hljs-punctuation">&#125;</span></span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>CONNECT</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：用于建立隧道连接，如通过HTTP代理建立SSL隧道。</p>
+</li>
+<li><p><strong>功能</strong>：通常用于HTTPS请求，通过HTTP代理进行中继。</p>
+</li>
+<li><p><strong>特性</strong>：CONNECT请求不是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">CONNECT</span> <span class="hljs-string">www.example.com:443</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>TRACE</strong>：</p>
+<ul>
+<li><p><strong>用途</strong>：回显服务器收到的请求，主要用于诊断和调试。</p>
+</li>
+<li><p><strong>功能</strong>：服务器将收到的请求内容原样返回给客户端。</p>
+</li>
+<li><p><strong>特性</strong>：TRACE请求是幂等的。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">TRACE</span> <span class="hljs-string">/index.html</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="常见WIFI加密方式及发展历史"><a href="#常见WIFI加密方式及发展历史" class="headerlink" title="常见WIFI加密方式及发展历史"></a>常见WIFI加密方式及发展历史</h2><ul>
+<li><p>WEP </p>
+<ul>
+<li>因为每个包都会以某种形式带有密码，收集足够多的包之后比对重复内容，直接获得</li>
+</ul>
+</li>
+<li><p>WPA2</p>
+<ul>
+<li>不再持续发包，而是简化为了四步握手</li>
+<li>获取到足够多的锁和钥匙之后依旧可以</li>
+</ul>
+</li>
+<li><p>WPA3</p>
+<ul>
+<li>使用Dragonfly算法，旨在大幅增加观察到这个握手过程</li>
+<li>问题是，如果网络中有任何WPA2设备，路由器就会退回WPA2状态</li>
+</ul>
+</li>
+</ul>
+<h2 id="为什么在插入网线之后WiFi断连了？"><a href="#为什么在插入网线之后WiFi断连了？" class="headerlink" title="为什么在插入网线之后WiFi断连了？"></a>为什么在插入网线之后WiFi断连了？</h2><p>当在插有便携 WiFi 的设备上插入网线时，路由冲突的原因主要与<strong>网络适配器的优先级、默认网关的选择</strong>和<strong>IP 地址分配</strong>有关。详细原因如下：</p>
+<h3 id="1-网络适配器优先级和默认网关冲突"><a href="#1-网络适配器优先级和默认网关冲突" class="headerlink" title="1. 网络适配器优先级和默认网关冲突"></a>1. <strong>网络适配器优先级和默认网关冲突</strong></h3><ul>
+<li>操作系统通常根据适配器的优先级来决定网络路由，当插入网线时，<strong>有线网络优先级往往比无线网络高</strong>，因此系统会选择有线网络的路由和网关作为默认路由。</li>
+<li>此时，系统默认的网络路由会自动切换到网线连接，而 WiFi 适配器的路由可能被忽略或被系统暂时断开，以避免流量同时经过两个网关。这种切换可能导致 WiFi 掉线或暂时无法访问网络。</li>
+</ul>
+<h3 id="2-IP-地址和网段冲突"><a href="#2-IP-地址和网段冲突" class="headerlink" title="2. IP 地址和网段冲突"></a>2. <strong>IP 地址和网段冲突</strong></h3><ul>
+<li>如果便携 WiFi 和有线网络分配的 IP 地址在同一网段（例如，两个网络的 IP 都在 <code>192.168.1.x</code>），系统可能出现 IP 地址和路由的混乱，从而导致路由冲突。</li>
+<li>系统可能会尝试将同一个网关分配给两个适配器，这样一来就会导致数据包的去向无法确定，网络连接出现异常。</li>
+</ul>
+<h3 id="3-操作系统的网络切换机制"><a href="#3-操作系统的网络切换机制" class="headerlink" title="3. 操作系统的网络切换机制"></a>3. <strong>操作系统的网络切换机制</strong></h3><ul>
+<li>部分操作系统在检测到新的有线连接时，可能会默认断开现有的 WiFi 连接，以节约资源或保证网络的稳定性。这种情况下，插入网线会自动触发 WiFi 断开，导致网络连接看似“掉线”。</li>
+<li>有些便携 WiFi 适配器也有类似设计，当检测到有线网络时可能会自动断开 WiFi。</li>
+</ul>
+<h3 id="4-DNS-配置和路由表冲突"><a href="#4-DNS-配置和路由表冲突" class="headerlink" title="4. DNS 配置和路由表冲突"></a>4. <strong>DNS 配置和路由表冲突</strong></h3><ul>
+<li>插入网线后，系统的 DNS 配置和路由表可能会自动刷新，优先使用有线连接的 DNS 服务器。如果有线网络的 DNS 解析不稳定或与无线网络冲突，可能会导致无法正常访问 WiFi 网络上的资源。</li>
+<li>当路由表中的默认路由切换到有线连接时，WiFi 的路由可能被移除或不再被优先使用，这就会造成 WiFi 网络不可用的情况。</li>
+</ul>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><strong>解决方法</strong></h3><p>可以通过以下方式避免此类冲突：</p>
+<ul>
+<li><strong>确保两个网络的 IP 不同网段</strong>，如 WiFi 在 <code>192.168.0.x</code>、有线网络在 <code>192.168.1.x</code>。</li>
+<li><strong>手动调整适配器优先级</strong>，让 WiFi 优先于有线网络，或调整默认路由。</li>
+<li><strong>使用不同的 DNS 配置</strong>，保证两个网络的 DNS 服务器不会冲突。</li>
+</ul>
+<p>这种情况在系统默认的网络切换机制下是常见的，但可以通过手动配置适配器和网络优先级来实现并行连接。</p>
+<h2 id="什么是跃点"><a href="#什么是跃点" class="headerlink" title="什么是跃点?"></a>什么是跃点?</h2><p>“跃点”（Hop）是网络中数据从一个设备（通常是路由器或交换机）传递到下一个设备的过程。每经过一个设备就算一个“跃点”。跃点数量用于衡量数据在网络中的传输路径长度，从发送方到接收方需要经过多少个中间设备。</p>
+<h3 id="关键点："><a href="#关键点：" class="headerlink" title="关键点："></a>关键点：</h3><ol>
+<li><p><strong>定义</strong>：跃点指的是数据在网络中从一个节点（例如路由器）传递到下一个节点的过程。</p>
+</li>
+<li><p><strong>用途</strong>：跃点数可以帮助判断网络路径的长短和延迟。网络管理工具如 <code>tracert</code> 或 <code>traceroute</code> 命令会显示从起始设备到目的设备的跃点数。</p>
+</li>
+<li><p><strong>TTL（Time to Live）与跃点</strong>：每个数据包都有一个 TTL 值，表示数据包在网络中允许的最大跃点数，每经过一个跃点这个值就减1。当 TTL 变为0时，数据包会被丢弃，防止它在网络中无限循环。</p>
+</li>
+</ol>
+<h3 id="跃点数的意义："><a href="#跃点数的意义：" class="headerlink" title="跃点数的意义："></a>跃点数的意义：</h3><ul>
+<li><strong>路由效率</strong>：跃点数越少，通常意味着数据的传输路径越短，网络的传输效率越高。</li>
+<li><strong>故障排查</strong>：通过检查跃点数，可以定位网络问题发生在哪个设备上。</li>
+</ul>
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><p>假设你在一个公司网络内访问外部服务器，数据包可能会经过：</p>
+<ul>
+<li>内部路由器 -&gt; 防火墙 -&gt; ISP 路由器 -&gt; 若干个中间网络路由 -&gt; 目标服务器。</li>
+</ul>
+<p>假如经过了7个节点到达目标服务器，这7个节点就是7个跃点。</p>
+<h2 id="无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗-跃点数应该是固定的啊-为什么会是自动跃点？"><a href="#无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗-跃点数应该是固定的啊-为什么会是自动跃点？" class="headerlink" title="无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗?跃点数应该是固定的啊?为什么会是自动跃点？"></a>无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗?跃点数应该是固定的啊?为什么会是自动跃点？</h2><p>无线网络的跃点数设为“自动”是因为跃点数不仅考虑物理连接的直接性（即从设备到无线路由器的路径），还考虑整体网络路径的复杂性和灵活性。以下是为什么会存在“自动”跃点数设置的主要原因：</p>
+<ol>
+<li><p><strong>动态网络路径</strong>：<br>尽管设备是直接通过无线电波连接到无线路由器，但数据包的最终传输路径可能会随着网络环境的变化而不同。例如，在连接到互联网的路径上，数据可能会经过多个不同的网络节点、交换机和路由器，这些路径的跃点数可能因网络状态变化而不同。</p>
+</li>
+<li><p><strong>多网关场景</strong>：<br>在一些网络配置中，尤其是公司或大型局域网中，可能存在多个路由器或网关，这些路由器或网关有不同的网络路径选择。如果有多个路由器提供了不同的默认网关，跃点数会用来帮助系统选择“更优”的路径。</p>
+</li>
+<li><p><strong>自动优化</strong>：<br>操作系统的“自动”跃点数配置可以动态调整网络优先级，以便根据网络状况（如路由器负载、网络流量等）选择合适的路由。这种自动化能够让系统在不同的网络环境下做出更智能的选择，以获得更好的连接稳定性和速度。</p>
+</li>
+<li><p><strong>灵活性与兼容性</strong>：<br>自动跃点允许设备在不固定网络架构的环境中（如加入新路由器、扩展网络）灵活适配。这种灵活性在移动设备上尤为重要，因为它们可能随时切换不同的网络或路由路径。</p>
+</li>
+</ol>
+<h3 id="固定跃点数的情况"><a href="#固定跃点数的情况" class="headerlink" title="固定跃点数的情况"></a>固定跃点数的情况</h3><p>在某些简单网络（例如只有一个路由器的家庭网络）中，跃点数确实可以被认为是固定的，因为连接路径唯一且简明。但在更复杂的网络环境中，自动跃点数可以提高网络适应性。</p>
+<h2 id="是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级-手动设置网络适配器的跃点数是否会导致网络连接出现问题"><a href="#是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级-手动设置网络适配器的跃点数是否会导致网络连接出现问题" class="headerlink" title="是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级?手动设置网络适配器的跃点数是否会导致网络连接出现问题?"></a>是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级?手动设置网络适配器的跃点数是否会导致网络连接出现问题?</h2><p>是的，通过调整“跃点数”（即 TTL，Time to Live）或“接口跃点数” (<code>Interface Metric</code>) 可以设置 Windows 上不同网络适配器的优先级。设置优先级通常是为了控制在多网络环境下哪个网络适配器应当被优先使用。对于网络适配器的优先级，<code>Interface Metric</code> 是直接影响优先选择的指标，比 TTL 更常用于适配器优先级配置。</p>
+<h3 id="设置网络适配器优先级"><a href="#设置网络适配器优先级" class="headerlink" title="设置网络适配器优先级"></a>设置网络适配器优先级</h3><p>在 Windows 中，<code>Interface Metric</code> 是网络适配器的成本值，Windows 会优先选择成本较低的接口进行数据传输。因此，您可以通过以下方式手动设置优先级：</p>
+<ol>
+<li><p>打开 <strong>网络连接</strong>：</p>
+<ul>
+<li>Win + R，输入 <code>ncpa.cpl</code>，回车。</li>
+</ul>
+</li>
+<li><p>选择目标网络适配器，右键点击选择 <strong>属性</strong>。</p>
+</li>
+<li><p>在 <strong>Internet 协议版本 4 (TCP&#x2F;IPv4)</strong> 中点击 <strong>属性</strong>，然后点击 <strong>高级</strong>。</p>
+</li>
+<li><p>在“高级 TCP&#x2F;IP 设置”中，勾选 <strong>自动跃点数</strong> 的勾选框，输入一个较低的值（例如 1 或 2）以增加优先级，输入较高的值以降低优先级。</p>
+</li>
+</ol>
+<h3 id="手动设置-Interface-Metric-的注意事项"><a href="#手动设置-Interface-Metric-的注意事项" class="headerlink" title="手动设置 Interface Metric 的注意事项"></a>手动设置 <code>Interface Metric</code> 的注意事项</h3><ol>
+<li><p><strong>优先级冲突</strong>：如果多个适配器被设置为相同的 <code>Interface Metric</code> 值，Windows 可能会随机选择一个适配器来发送流量，这可能会导致意外的网络切换或连接不稳定。</p>
+</li>
+<li><p><strong>网络连接延迟</strong>：如果将主要适配器的 <code>Interface Metric</code> 设置得过高，可能导致系统默认选择次要或速度较慢的网络适配器，影响网络性能。</p>
+</li>
+<li><p><strong>网络配置复杂性</strong>：手动调整适配器的优先级和跃点数可能导致在复杂的多网环境中不易追踪的问题，特别是在频繁切换网络或使用 VPN 时，配置不当可能造成连接失败或不稳定。</p>
+</li>
+</ol>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>手动调整网络适配器的 <code>Interface Metric</code> 是一种可靠的方法来设置优先级，适用于多网络环境。只要合理配置，通常不会导致网络连接问题，但建议测试每个适配器的设置，以确保不会影响到网络连接的稳定性和速度。</p>
+<h2 id="我是否可以认为，172-21-10-1这个网关地址就是我在无线网络连接的路由器的公网ip地址"><a href="#我是否可以认为，172-21-10-1这个网关地址就是我在无线网络连接的路由器的公网ip地址" class="headerlink" title="我是否可以认为，172.21.10.1这个网关地址就是我在无线网络连接的路由器的公网ip地址?"></a>我是否可以认为，172.21.10.1这个网关地址就是我在无线网络连接的路由器的公网ip地址?</h2><p>不完全是这样。</p>
+<p><strong><code>172.21.10.1</code> 并不是你的路由器的公网 IP 地址</strong>。它只是你本地网络（局域网）内的一个<strong>私有 IP 地址</strong>，是你设备在局域网内连接到路由器的入口。以下是它的意义和作用：</p>
+<ol>
+<li><p><strong>局域网内的路由器地址</strong>：<code>172.21.10.1</code> 是你局域网中（无线网络）路由器的网关 IP 地址，允许局域网中的设备通过它连接到外部网络。你的设备通过这个地址来进行网络请求，并由路由器转发这些请求到外部网络（如互联网）。</p>
+</li>
+<li><p><strong>私有 IP 地址 vs 公网 IP 地址</strong>：<code>172.21.10.1</code> 属于<strong>私有 IP 地址范围</strong>（172.16.0.0 - 172.31.255.255），这类地址只能在局域网内使用，不能直接在互联网中访问。你的路由器实际上有两个 IP 地址：</p>
+<ul>
+<li><strong>局域网（LAN）IP</strong>：在你的局域网中提供给设备使用，例如 <code>172.21.10.1</code>。</li>
+<li><strong>广域网（WAN）IP</strong>（公网 IP）：这是路由器连接到互联网时向外部展示的 IP 地址，通常是由你的 ISP（互联网服务提供商）分配的，你可以用在线服务来查看该地址（如“我的 IP”查询工具）。</li>
+</ul>
+</li>
+<li><p><strong>网络地址转换（NAT）</strong>：你的路由器会使用 NAT（网络地址转换）技术，把你局域网内设备的私有 IP 地址（如 <code>172.21.10.67</code>）映射到一个公网 IP 地址，从而让多个设备共享同一个公网 IP 与互联网通信。</p>
+</li>
+</ol>
+<p>所以，总结来说，**<code>172.21.10.1</code> 是你路由器在局域网内的网关地址，并不是路由器的公网 IP 地址**。你的实际公网 IP 地址是分配给你路由器的 WAN 端口的，用于互联网连接，但它和局域网内的私有 IP 地址是不同的。</p>
+<h2 id="我还见过很多局域网内的地址是192-168-xx开头的地址，这好像不在你所说的私有IP地址范围中，这是什么情况"><a href="#我还见过很多局域网内的地址是192-168-xx开头的地址，这好像不在你所说的私有IP地址范围中，这是什么情况" class="headerlink" title="我还见过很多局域网内的地址是192.168.xx开头的地址，这好像不在你所说的私有IP地址范围中，这是什么情况?"></a>我还见过很多局域网内的地址是192.168.xx开头的地址，这好像不在你所说的私有IP地址范围中，这是什么情况?</h2><p>实际上，**<code>192.168.xx.xx</code> 开头的 IP 地址也是私有 IP 地址<strong>，属于</strong>私有 IP 地址范围**的一部分。根据 <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc1918">RFC 1918</a>，私有 IP 地址范围有三段，每段都是专门保留给局域网使用的，不会在公网中出现：</p>
+<ol>
+<li><strong>10.0.0.0 - 10.255.255.255</strong>（10.0.0.0&#x2F;8）：适用于大规模的私有网络（例如大型企业内部网络）。</li>
+<li><strong>172.16.0.0 - 172.31.255.255</strong>（172.16.0.0&#x2F;12）：适用于中等规模的私有网络。</li>
+<li><strong>192.168.0.0 - 192.168.255.255</strong>（192.168.0.0&#x2F;16）：适用于小型私有网络，也是最常见的家用和小型办公室网络范围。</li>
+</ol>
+<p>其中，**<code>192.168.xx.xx</code>** 是我们最常见的局域网 IP 地址范围，通常用于家庭路由器和小型办公室网络。例如，家庭网络中经常使用的网段是 <code>192.168.0.0/24</code> 或 <code>192.168.1.0/24</code>，这样可以分配 <code>192.168.0.1</code> 到 <code>192.168.0.254</code> 或 <code>192.168.1.1</code> 到 <code>192.168.1.254</code> 的 IP 地址给设备。</p>
+<h3 id="为什么会有不同的私有-IP-范围？"><a href="#为什么会有不同的私有-IP-范围？" class="headerlink" title="为什么会有不同的私有 IP 范围？"></a>为什么会有不同的私有 IP 范围？</h3><p>这些私有 IP 地址范围是为了满足不同规模的网络需求，使用范围较小的段（如 <code>192.168.xx.xx</code>）可以减少地址管理的复杂性。因此，路由器和网络管理员可以根据网络规模和用途选择不同的私有 IP 地址段。</p>
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><strong>192.168.xx.xx</strong> 也是一个私有 IP 地址范围，常用于家庭和小型局域网。</li>
+<li>所有 <strong>10.x.x.x</strong>、<strong>172.16.x.x - 172.31.x.x</strong> 和 <strong>192.168.x.x</strong> 的 IP 地址都是私有 IP 地址，只能在局域网内部使用，不能直接在互联网中使用。</li>
+<li>路由器会用 NAT 把局域网的私有 IP 转换成一个公共 IP，以连接到互联网。</li>
+</ul>
+<h2 id="我发现你在每段网络ip地址的范围后面括号中还有（192-168-0-0-16）这样的内容，这是什么意思"><a href="#我发现你在每段网络ip地址的范围后面括号中还有（192-168-0-0-16）这样的内容，这是什么意思" class="headerlink" title="我发现你在每段网络ip地址的范围后面括号中还有（192.168.0.0&#x2F;16）这样的内容，这是什么意思?"></a>我发现你在每段网络ip地址的范围后面括号中还有（192.168.0.0&#x2F;16）这样的内容，这是什么意思?</h2><p>括号中的 <strong><code>192.168.0.0/16</code></strong> 是一种表示 IP 地址范围的<strong>网络前缀表示法</strong>，称为 <strong>CIDR（Classless Inter-Domain Routing，无类别域间路由）表示法</strong>。在这种表示法中：</p>
+<ul>
+<li><strong>前面的 IP 地址</strong>（如 <code>192.168.0.0</code>）表示<strong>网络的起始地址</strong>。</li>
+<li>斜杠后的数字 <strong>&#x2F;16</strong> 表示<strong>网络前缀长度</strong>，指明了 IP 地址中有多少位是固定的，用于定义网络部分。</li>
+</ul>
+<p>在 IP 地址（IPv4）的表示中，地址共有 <strong>32 位</strong>，每一位可以是 0 或 1。<code>/16</code> 意味着<strong>前 16 位被用作网络前缀</strong>，剩下的 16 位可以用来分配主机地址。</p>
+<h3 id="举例说明-192-168-0-0-16"><a href="#举例说明-192-168-0-0-16" class="headerlink" title="举例说明 192.168.0.0/16"></a>举例说明 <code>192.168.0.0/16</code></h3><ol>
+<li><p><strong>网络前缀</strong>：<code>192.168.0.0/16</code> 表示前 16 位是固定的，网络范围是 <code>192.168.x.x</code>，可以分配给局域网的设备。</p>
+</li>
+<li><p><strong>主机部分</strong>：剩下的 16 位可以用来分配主机地址，这意味着 <code>192.168.0.0/16</code> 包含了从 <strong><code>192.168.0.0</code> 到 <code>192.168.255.255</code></strong> 的所有 IP 地址。这共计 <strong>2^16 &#x3D; 65536</strong> 个地址。</p>
+</li>
+</ol>
+<h3 id="其他示例"><a href="#其他示例" class="headerlink" title="其他示例"></a>其他示例</h3><ul>
+<li><code>10.0.0.0/8</code> 表示前 8 位是网络前缀，因此地址范围是 **<code>10.0.0.0</code> 到 <code>10.255.255.255</code>**，共计 <strong>2^24 &#x3D; 16777216</strong> 个地址。</li>
+<li><code>172.16.0.0/12</code> 表示前 12 位是网络前缀，因此地址范围是 **<code>172.16.0.0</code> 到 <code>172.31.255.255</code>**，共计 <strong>2^20 &#x3D; 1048576</strong> 个地址。</li>
+</ul>
+<h3 id="为什么使用-CIDR-表示法"><a href="#为什么使用-CIDR-表示法" class="headerlink" title="为什么使用 CIDR 表示法"></a>为什么使用 CIDR 表示法</h3><p>CIDR 表示法的好处在于可以灵活划分网络，而不受传统 A 类、B 类、C 类地址分类的限制。它让网络管理员可以更精确地分配地址，减少地址浪费，增强了 IP 地址管理的灵活性。</p>
+<h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><strong>CIDR 表示法</strong>中的 <code>/n</code> 表示网络前缀的长度，即 IP 地址中有多少位是固定的网络部分。</li>
+<li>例如，<code>192.168.0.0/16</code> 表示前 16 位是网络部分，后 16 位用于分配主机。</li>
+<li>CIDR 使网络划分更灵活，允许更有效地管理 IP 地址。</li>
+</ul>
+<h2 id="fe80-ab30-c6f7-f5b0-59d-8-ipv6地址为什么是这么表示的？这是十六进制数吗"><a href="#fe80-ab30-c6f7-f5b0-59d-8-ipv6地址为什么是这么表示的？这是十六进制数吗" class="headerlink" title="fe80::ab30:c6f7:f5b0:59d%8 ipv6地址为什么是这么表示的？这是十六进制数吗?"></a>fe80::ab30:c6f7:f5b0:59d%8 ipv6地址为什么是这么表示的？这是十六进制数吗?</h2><p>是的，IPv6 地址的表示确实使用了<strong>十六进制</strong>。IPv6 地址采用 128 位的地址长度，为了更简洁地表示这些地址，IPv6 使用了<strong>冒号分隔的十六进制</strong>表示法。</p>
+<h3 id="IPv6-地址表示法解析"><a href="#IPv6-地址表示法解析" class="headerlink" title="IPv6 地址表示法解析"></a>IPv6 地址表示法解析</h3><p>一个完整的 IPv6 地址包含 128 位，分为 8 组，每组 16 位，每组之间用冒号 <code>:</code> 分隔。每组的 16 位用<strong>四个十六进制数</strong>来表示。</p>
+<p>例如，IPv6 地址 <code>fe80::ab30:c6f7:f5b0:59d%8</code> 可以分为以下部分：</p>
+<ul>
+<li><strong>fe80</strong> : <strong>0000</strong> : <strong>0000</strong> : <strong>0000</strong> : <strong>ab30</strong> : <strong>c6f7</strong> : <strong>f5b0</strong> : <strong>0059</strong></li>
+</ul>
+<h3 id="地址缩写规则"><a href="#地址缩写规则" class="headerlink" title="地址缩写规则"></a>地址缩写规则</h3><p>为了简化表示，IPv6 允许几种缩写规则：</p>
+<ol>
+<li><p><strong>去掉前导零</strong>：每一组的十六进制数前导零可以省略。例如，<code>0059</code> 可以写作 <code>59</code>。</p>
+</li>
+<li><p><strong>双冒号 <code>::</code> 表示连续的零</strong>：如果一段地址中有连续的 <code>0000</code>，可以用双冒号 <code>::</code> 来代替。但双冒号在同一个地址中只能使用一次，以避免歧义。例如：</p>
+<ul>
+<li><code>fe80:0:0:0:ab30:c6f7:f5b0:59d</code> 可以写成 <code>fe80::ab30:c6f7:f5b0:59d</code>。</li>
+</ul>
+<p>在这个例子中，<code>::</code> 表示有 3 组 <code>0000</code>。</p>
+</li>
+<li><p><strong>范围指示符 <code>%</code><strong>：在本地链路（link-local）IPv6 地址中，<code>%</code> 后面的数字 <code>8</code> 表示</strong>网络接口标识符</strong>，即在该设备上用于区分不同的网络接口。例如，在 <code>fe80::ab30:c6f7:f5b0:59d%8</code> 中，<code>%8</code> 表示这是第 8 个网络接口。</p>
+</li>
+</ol>
+<h3 id="IPv6-地址的组成"><a href="#IPv6-地址的组成" class="headerlink" title="IPv6 地址的组成"></a>IPv6 地址的组成</h3><p>IPv6 地址由两部分组成：</p>
+<ol>
+<li><strong>网络前缀</strong>：前 64 位通常用于指定网络部分。</li>
+<li><strong>主机标识</strong>：后 64 位通常用于标识特定设备（主机）在网络中的唯一性。</li>
+</ol>
+<p>例如，<code>fe80::/64</code> 是本地链路地址的网络前缀，而后面的部分（<code>ab30:c6f7:f5b0:59d</code>）用来唯一标识特定主机。</p>
+<h3 id="总结-5"><a href="#总结-5" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>IPv6 地址使用 <strong>128 位</strong>，每 16 位一组，用十六进制表示。</li>
+<li>IPv6 地址的表示允许缩写，如省略前导零和使用双冒号 <code>::</code> 表示连续的零。</li>
+<li><code>%</code> 后面的数字表示<strong>网络接口标识符</strong>，仅用于本地链路地址。</li>
+</ul>
+<h2 id="你的设备在网络中的地址是-172-21-10-67，子网掩码是-255-255-255-0。这个子网掩码意味着-172-21-10-x-这一整个范围的IP地址都在同一个子网中。-你上面提到了这样的内容，为什么有这个子网掩码意味着这个信息呢-子网掩码又是什么意思"><a href="#你的设备在网络中的地址是-172-21-10-67，子网掩码是-255-255-255-0。这个子网掩码意味着-172-21-10-x-这一整个范围的IP地址都在同一个子网中。-你上面提到了这样的内容，为什么有这个子网掩码意味着这个信息呢-子网掩码又是什么意思" class="headerlink" title="你的设备在网络中的地址是 172.21.10.67，子网掩码是 255.255.255.0。这个子网掩码意味着 172.21.10.x 这一整个范围的IP地址都在同一个子网中。 你上面提到了这样的内容，为什么有这个子网掩码意味着这个信息呢?子网掩码又是什么意思?"></a>你的设备在网络中的地址是 172.21.10.67，子网掩码是 255.255.255.0。这个子网掩码意味着 172.21.10.x 这一整个范围的IP地址都在同一个子网中。 你上面提到了这样的内容，为什么有这个子网掩码意味着这个信息呢?子网掩码又是什么意思?</h2><p>子网掩码（subnet mask）是一种用于区分<strong>网络部分</strong>和<strong>主机部分</strong>的地址标识。它告诉设备哪一部分 IP 地址用于表示网络，哪一部分用于标识网络内的设备（主机）。</p>
+<h3 id="子网掩码的原理"><a href="#子网掩码的原理" class="headerlink" title="子网掩码的原理"></a>子网掩码的原理</h3><p>在 IPv4 地址中（例如 172.21.10.67），一个 IP 地址由 32 位组成，通常分成 4 组，每组 8 位（1 个字节），用十进制表示成 <code>x.x.x.x</code> 的形式。</p>
+<p>子网掩码也是一个 32 位的数字，它用来遮蔽 IP 地址的前几位以表示网络部分。子网掩码中的每个 <code>1</code> 表示网络部分，每个 <code>0</code> 表示主机部分。例如，<code>255.255.255.0</code> 的二进制形式是 <code>11111111.11111111.11111111.00000000</code>，表示前 24 位（即前三组 8 位）属于网络部分，最后 8 位属于主机部分。</p>
+<h4 id="例子解释"><a href="#例子解释" class="headerlink" title="例子解释"></a>例子解释</h4><p>对于 IP 地址 <code>172.21.10.67</code> 和子网掩码 <code>255.255.255.0</code>，转换为二进制为：</p>
+<ul>
+<li>IP 地址：<code>10101100.00010101.00001010.01000011</code>  </li>
+<li>子网掩码：<code>11111111.11111111.11111111.00000000</code></li>
+</ul>
+<p>根据子网掩码的设置，前 24 位是网络部分，后 8 位是主机部分。因此：</p>
+<ul>
+<li><strong>网络部分</strong>：<code>10101100.00010101.00001010</code>（即 <code>172.21.10</code>）</li>
+<li><strong>主机部分</strong>：<code>01000011</code>（即 <code>67</code>）</li>
+</ul>
+<p>这意味着在 <code>172.21.10.x</code> 这个范围内的所有 IP 地址都属于同一个子网，因为它们共享相同的网络部分（前 24 位）。</p>
+<h3 id="子网掩码的作用"><a href="#子网掩码的作用" class="headerlink" title="子网掩码的作用"></a>子网掩码的作用</h3><ol>
+<li><p><strong>标识同一子网的范围</strong>：子网掩码决定了网络的大小和结构。例如，<code>255.255.255.0</code> 表示同一个子网内有 256 个 IP 地址（从 <code>172.21.10.0</code> 到 <code>172.21.10.255</code>），其中 <code>172.21.10.1</code> 到 <code>172.21.10.254</code> 可以分配给主机，而 <code>172.21.10.0</code> 是网络地址，<code>172.21.10.255</code> 是广播地址。</p>
+</li>
+<li><p><strong>帮助设备区分本地和外部网络</strong>：设备在通信时，会使用子网掩码来判断目标 IP 是否在同一子网内。如果是，则可以直接通信；如果不在同一子网内，则数据会通过网关发送到外部网络。</p>
+</li>
+</ol>
+<h3 id="子网掩码的简写（CIDR）"><a href="#子网掩码的简写（CIDR）" class="headerlink" title="子网掩码的简写（CIDR）"></a>子网掩码的简写（CIDR）</h3><p>子网掩码也可以用一种简写形式，称为 CIDR 表示法（Classless Inter-Domain Routing）。例如，<code>255.255.255.0</code> 可以表示为 <code>/24</code>，因为它有 24 位是 <code>1</code>。同理：</p>
+<ul>
+<li><code>255.255.255.0</code> &#x3D; <code>/24</code></li>
+<li><code>255.255.0.0</code> &#x3D; <code>/16</code></li>
+<li><code>255.0.0.0</code> &#x3D; <code>/8</code></li>
+</ul>
+<h3 id="通过子网掩码得知同一子网范围的原因"><a href="#通过子网掩码得知同一子网范围的原因" class="headerlink" title="通过子网掩码得知同一子网范围的原因"></a>通过子网掩码得知同一子网范围的原因</h3><p>因为子网掩码中的 <code>1</code> 位指定了 IP 地址的网络部分，同一网络的设备需要具有相同的网络部分（即相同的子网掩码和网络地址），才能被视为在同一子网中。例如：</p>
+<ul>
+<li>IP 地址 <code>172.21.10.67</code> 和 <code>172.21.10.100</code> 在子网掩码 <code>255.255.255.0</code> 下同属一个子网，因为它们的网络部分（<code>172.21.10</code>）相同。</li>
+</ul>
+<p>因此，有了子网掩码 <code>255.255.255.0</code>，我们就知道 IP 地址 <code>172.21.10.x</code> 属于同一子网。</p>
+<h2 id="那么，如果子网掩码这么写255-255-200-0是不是意味着有17151个ip地址分配给了局域网中的设备，其余地址分配给了网络"><a href="#那么，如果子网掩码这么写255-255-200-0是不是意味着有17151个ip地址分配给了局域网中的设备，其余地址分配给了网络" class="headerlink" title="那么，如果子网掩码这么写255.255.200.0是不是意味着有17151个ip地址分配给了局域网中的设备，其余地址分配给了网络?"></a>那么，如果子网掩码这么写255.255.200.0是不是意味着有17151个ip地址分配给了局域网中的设备，其余地址分配给了网络?</h2><p>其实，子网掩码写成 <code>255.255.200.0</code> 并不会产生你所说的 17151 个 IP 地址可分配。这种子网掩码并不符合标准的连续 <code>1</code> 位和 <code>0</code> 位的规则。</p>
+<h3 id="为什么子网掩码必须是连续的-1-和-0"><a href="#为什么子网掩码必须是连续的-1-和-0" class="headerlink" title="为什么子网掩码必须是连续的 1 和 0"></a>为什么子网掩码必须是连续的 <code>1</code> 和 <code>0</code></h3><p>在 IPv4 中，子网掩码需要由连续的 <code>1</code> 和连续的 <code>0</code> 组成。像 <code>255.255.200.0</code> 这种子网掩码，转换为二进制是 <code>11111111.11111111.11001000.00000000</code>，<code>1</code> 和 <code>0</code> 并不连续，这样的子网掩码会导致网络计算上的问题。因此，这样的子网掩码并不被支持，也不会产生有效的 IP 地址范围。</p>
+<h3 id="标准子网掩码格式"><a href="#标准子网掩码格式" class="headerlink" title="标准子网掩码格式"></a>标准子网掩码格式</h3><p>标准的子网掩码格式只允许使用以下形式：</p>
+<ul>
+<li><code>255.0.0.0</code> (即 <code>/8</code>)</li>
+<li><code>255.255.0.0</code> (即 <code>/16</code>)</li>
+<li><code>255.255.255.0</code> (即 <code>/24</code>)</li>
+<li>以及其他以 <code>1</code> 位连续、<code>0</code> 位连续的格式，比如 <code>255.255.252.0</code> (即 <code>/22</code>)</li>
+</ul>
+<h3 id="如何计算一个子网的-IP-地址数量"><a href="#如何计算一个子网的-IP-地址数量" class="headerlink" title="如何计算一个子网的 IP 地址数量"></a>如何计算一个子网的 IP 地址数量</h3><p>如果使用标准的子网掩码，可以用以下公式计算同一子网内的可用 IP 地址数：<br>$$<br>\text{可用 IP 地址数} &#x3D; 2^{(32 - \text{子网掩码中的1的数量})} - 2<br>$$<br>例如：</p>
+<ul>
+<li><strong><code>255.255.255.0</code></strong> (<code>/24</code>)：32 - 24 &#x3D; 8，所以可用 IP 数是 ( 2^8 - 2 &#x3D; 256 - 2 &#x3D; 254 )</li>
+<li><strong><code>255.255.252.0</code></strong> (<code>/22</code>)：32 - 22 &#x3D; 10，所以可用 IP 数是 ( 2^{10} - 2 &#x3D; 1024 - 2 &#x3D; 1022 )</li>
+</ul>
+<h3 id="总结-6"><a href="#总结-6" class="headerlink" title="总结"></a>总结</h3><p>子网掩码必须由连续的 <code>1</code> 和 <code>0</code> 位组成，像 <code>255.255.200.0</code> 这种格式是无效的。有效的子网掩码会产生固定数量的 IP 地址范围，具体数量取决于子网掩码的位数。</p>
+<h2 id="WebSocket-是什么？"><a href="#WebSocket-是什么？" class="headerlink" title="WebSocket 是什么？"></a>WebSocket 是什么？</h2><p>WebSocket 是一种在单个 TCP 连接上进行<strong>全双工通信</strong>的网络协议。它允许服务器和客户端之间进行持久性的、双向的实时数据交换。</p>
+<p>可以把它想象成在客户端（比如你的浏览器）和服务器之间建立了一条专门的“电话线”。一旦这条线接通，双方都可以随时通过这条线互相发送信息，而不需要每次都重新“拨号”（像传统的HTTP请求那样）。</p>
+<h3 id="与传统-HTTP-的主要区别："><a href="#与传统-HTTP-的主要区别：" class="headerlink" title="与传统 HTTP 的主要区别："></a>与传统 HTTP 的主要区别：</h3><ol>
+<li><p>**持久连接 (Persistent Connection)**：</p>
+<ul>
+<li><strong>HTTP</strong>: 通常是“请求-响应”模式。客户端发送一个请求，服务器响应后连接就可能关闭（HTTP&#x2F;1.0）或在一段时间后关闭（HTTP&#x2F;1.1 Keep-Alive）。如果客户端需要新数据，必须再次发起请求。</li>
+<li><strong>WebSocket</strong>: 一旦建立连接（通过一个初始的HTTP握手），连接会保持打开状态，直到客户端或服务器明确关闭它。</li>
+</ul>
+</li>
+<li><p>**全双工通信 (Full-Duplex Communication)**：</p>
+<ul>
+<li><strong>HTTP</strong>: 基本上是半双工的。客户端请求，服务器响应。服务器不能主动向客户端发送数据，除非客户端先发起请求（有一些变通方法如长轮询、SSE，但WebSocket更直接）。</li>
+<li><strong>WebSocket</strong>: 客户端和服务器都可以独立地、同时地向对方发送数据。服务器可以主动推送信息给客户端，客户端也可以随时发送信息给服务器。</li>
+</ul>
+</li>
+<li><p>**低延迟 (Low Latency)**：</p>
+<ul>
+<li>由于连接是持久的，并且数据帧的头部开销比HTTP小得多，WebSocket 在数据传输时延迟更低。这对于需要快速响应的应用（如在线游戏、实时聊天）非常重要。</li>
+</ul>
+</li>
+<li><p>**协议开销小 (Reduced Overhead)**：</p>
+<ul>
+<li>初始连接建立后，后续的数据帧头部信息非常小（通常只有几个字节），而HTTP请求每次都需要携带完整的头部信息，开销较大。</li>
+</ul>
+</li>
+</ol>
+<h3 id="WebSocket-如何工作？"><a href="#WebSocket-如何工作？" class="headerlink" title="WebSocket 如何工作？"></a>WebSocket 如何工作？</h3><ol>
+<li><p>**握手 (Handshake)**：</p>
+<ul>
+<li>WebSocket 连接的建立始于一个标准的 HTTP 请求，这个请求包含一些特殊的头部信息（如 <code>Upgrade: websocket</code> 和 <code>Connection: Upgrade</code>）。</li>
+<li>如果服务器支持 WebSocket，它会响应一个 HTTP 101 Switching Protocols 状态码，表示同意将连接从 HTTP 升级到 WebSocket。</li>
+<li>一旦握手成功，底层的 TCP 连接就被用于 WebSocket 通信了，不再遵循 HTTP 协议。</li>
+</ul>
+</li>
+<li><p>**数据传输 (Data Transfer)**：</p>
+<ul>
+<li>握手成功后，客户端和服务器就可以通过这个连接双向发送 WebSocket 数据帧。</li>
+<li>数据可以是文本（通常是UTF-8编码）或二进制数据。</li>
+</ul>
+</li>
+<li><p>**关闭连接 (Closing Connection)**：</p>
+<ul>
+<li>任何一方都可以发起关闭连接的请求。</li>
+</ul>
+</li>
+</ol>
+<h3 id="WebSocket-的常见应用场景："><a href="#WebSocket-的常见应用场景：" class="headerlink" title="WebSocket 的常见应用场景："></a>WebSocket 的常见应用场景：</h3><ul>
+<li><strong>实时聊天应用</strong>：如微信网页版、Slack等，消息可以即时推送到所有客户端。</li>
+<li><strong>在线多人游戏</strong>：玩家的动作和游戏状态需要快速同步。</li>
+<li><strong>实时数据仪表盘</strong>：如股票行情、系统监控数据等需要实时更新。</li>
+<li><strong>协作编辑工具</strong>：如 Google Docs，多个用户可以同时编辑文档并看到对方的修改。</li>
+<li><strong>通知系统</strong>：服务器可以即时向客户端推送通知。</li>
+<li><strong>体育赛事直播更新</strong>：实时更新比分和赛况。</li>
+</ul>
+<h3 id="总结-WebSocket-的优势："><a href="#总结-WebSocket-的优势：" class="headerlink" title="总结 WebSocket 的优势："></a>总结 WebSocket 的优势：</h3><ul>
+<li><strong>真正的双向通信</strong>：服务器可以主动向客户端推送数据。</li>
+<li><strong>低延迟</strong>：快速的数据交换。</li>
+<li><strong>减少网络流量</strong>：头部开销小。</li>
+<li><strong>保持连接状态</strong>：避免了重复建立连接的开销。</li>
+</ul>
+<p>总而言之，WebSocket 提供了一种高效的方式来实现客户端和服务器之间的实时、双向通信，是构建现代交互式Web应用的强大工具。</p>
+<p>​        </p>
+<h2 id="掩码-Mask-是什么意思"><a href="#掩码-Mask-是什么意思" class="headerlink" title="掩码(Mask)是什么意思"></a>掩码(Mask)是什么意思</h2><ul>
+<li><h3 id="子网掩码（Subnet-Mask）"><a href="#子网掩码（Subnet-Mask）" class="headerlink" title="子网掩码（Subnet Mask）"></a>子网掩码（Subnet Mask）</h3><h4 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h4><p>子网掩码用于区分 IP 地址中的网络部分和主机部分。它与 IP 地址结合使用，以确定一个特定的 IP 地址属于哪个子网。</p>
+<h4 id="表示方式："><a href="#表示方式：" class="headerlink" title="表示方式："></a>表示方式：</h4><p>子网掩码通常以点分十进制形式表示，例如：255.255.255.0。</p>
+<h4 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a>工作原理：</h4><p>子网掩码中的每个“1”表示网络部分，每个“0”表示主机部分。例如，子网掩码 255.255.255.0 转换为二进制是 11111111.11111111.11111111.00000000，这表示前24位是网络部分，后8位是主机部分。</p>
+<h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><p>假设 IP 地址是 192.168.1.10，子网掩码是 255.255.255.0，则网络部分是 192.168.1，主机部分是 10。</p>
+</li>
+<li><h3 id="位掩码（Bit-Mask）"><a href="#位掩码（Bit-Mask）" class="headerlink" title="位掩码（Bit Mask）"></a>位掩码（Bit Mask）</h3><h4 id="用途：-1"><a href="#用途：-1" class="headerlink" title="用途："></a>用途：</h4><p>在编程中，位掩码用于<strong>对二进制数据进行位级操作</strong>，如设置、清除、切换特定位或检查特定位的状态。</p>
+<h4 id="表示方式：-1"><a href="#表示方式：-1" class="headerlink" title="表示方式："></a>表示方式：</h4><p>位掩码通常以二进制或十六进制形式表示。例如，位掩码 0xFF 表示二进制的 11111111。</p>
+<h4 id="工作原理：-1"><a href="#工作原理：-1" class="headerlink" title="工作原理："></a>工作原理：</h4><p>位掩码通过按位与、按位或、按位异或等操作，对目标数据进行位操作。</p>
+<h4 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h4><p>假设有一个8位的数据 0b11001100（204 十进制），你想清除最低的4位。你可以使用位掩码 0b11110000（240 十进制），通过按位与操作实现：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs maxima">python复制代码data = <span class="hljs-number">0b11001100</span><br>mask = <span class="hljs-number">0b11110000</span><br>result = data &amp; mask  # 结果是 <span class="hljs-number">0b11000000</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><h3 id="网络掩码（Network-Mask）"><a href="#网络掩码（Network-Mask）" class="headerlink" title="网络掩码（Network Mask）"></a>网络掩码（Network Mask）</h3><h4 id="用途：-2"><a href="#用途：-2" class="headerlink" title="用途："></a>用途：</h4><p>在网络配置中，网络掩码用于指定网络前缀的长度。与子网掩码类似，但常用于 CIDR（无类别域间路由）表示法。</p>
+<h4 id="表示方式：-2"><a href="#表示方式：-2" class="headerlink" title="表示方式："></a>表示方式：</h4><p>网络掩码通常以斜杠加上网络前缀长度的形式表示，例如：192.168.1.0&#x2F;24。</p>
+<h4 id="工作原理：-2"><a href="#工作原理：-2" class="headerlink" title="工作原理："></a>工作原理：</h4><p>网络掩码指定了网络前缀的长度，例如 &#x2F;24 表示网络前缀长度为 24 位，等价于子网掩码 255.255.255.0。</p>
+</li>
+<li><h3 id="ACL-掩码（Access-Control-List-Mask）"><a href="#ACL-掩码（Access-Control-List-Mask）" class="headerlink" title="ACL 掩码（Access Control List Mask）"></a>ACL 掩码（Access Control List Mask）</h3><h4 id="用途：-3"><a href="#用途：-3" class="headerlink" title="用途："></a>用途：</h4><p>在访问控制列表（ACL）中，掩码用于指定哪些位应该被检查，以确定访问权限。</p>
+<h4 id="表示方式：-3"><a href="#表示方式：-3" class="headerlink" title="表示方式："></a>表示方式：</h4><p>ACL 掩码通常以二进制或十六进制表示，每一位表示相应权限位是否应该被检查。</p>
+<h4 id="工作原理：-3"><a href="#工作原理：-3" class="headerlink" title="工作原理："></a>工作原理：</h4><p>ACL 掩码通过与权限位进行按位与操作，决定哪些位应该被应用。例如，掩码 0xF0 表示只检查高4位。</p>
+</li>
+</ul>
+<h2 id="Wifi的SSID是什么"><a href="#Wifi的SSID是什么" class="headerlink" title="Wifi的SSID是什么?"></a>Wifi的SSID是什么?</h2><p>Wi-Fi 的 <strong>SSID</strong> 是指：</p>
+<blockquote>
+<p><strong>Service Set Identifier（服务集标识符）</strong></p>
+</blockquote>
+<p>简单来说，它就是：</p>
+<blockquote>
+<p>📡 <strong>你看到的 Wi-Fi 名称</strong></p>
+</blockquote>
+<hr>
+<h2 id="✅-举例说明"><a href="#✅-举例说明" class="headerlink" title="✅ 举例说明"></a>✅ 举例说明</h2><p>假设你用手机连接 Wi-Fi 时，看到这些名称：</p>
+<ul>
+<li><code>Home_WiFi_5G</code></li>
+<li><code>Starbucks_Free_WiFi</code></li>
+<li><code>TP-Link_301</code></li>
+<li><code>Johns-iPhone</code></li>
+</ul>
+<p>这些名字就是对应的 <strong>SSID</strong>。</p>
+<hr>
+<h2 id="🔧-更具体一些："><a href="#🔧-更具体一些：" class="headerlink" title="🔧 更具体一些："></a>🔧 更具体一些：</h2><ul>
+<li>一个 Wi-Fi 路由器可以广播一个或多个 SSID；</li>
+<li>你连接 Wi-Fi 时选择的就是 SSID；</li>
+<li>每个 SSID 可以设置不同密码和权限（比如访客网络）；</li>
+<li>SSID 最长可以是 <strong>32 个字符</strong>；</li>
+<li>你可以选择 <strong>隐藏 SSID</strong>，这样设备就不会自动广播它，连接时需要手动输入。</li>
+</ul>
+<hr>
+<h2 id="🧠-小知识："><a href="#🧠-小知识：" class="headerlink" title="🧠 小知识："></a>🧠 小知识：</h2><ul>
+<li><strong>SSID ≠ MAC 地址</strong>：SSID 是网络名，MAC 是设备硬件地址；</li>
+<li><strong>多个路由器可用相同 SSID</strong>：比如你家有多个 Mesh 节点，名称可以统一为 <code>MyHomeWiFi</code>；</li>
+<li><strong>一个 SSID 下可以有多个 BSSID（MAC 地址）</strong>：BSSID 是每个接入点的唯一标识。</li>
+</ul>
+<hr>
+<h2 id="那么，为什么手机上获取SSID需要位置权限呢"><a href="#那么，为什么手机上获取SSID需要位置权限呢" class="headerlink" title="那么，为什么手机上获取SSID需要位置权限呢?"></a>那么，为什么手机上获取SSID需要位置权限呢?</h2><p>这是一个常见但很容易让人疑惑的问题。简单来说：</p>
+<blockquote>
+<p>📱<strong>手机上获取 Wi-Fi SSID 需要位置权限，是因为操作系统（如 Android 和 iOS）认为 Wi-Fi SSID 能间接暴露你的地理位置。</strong></p>
+</blockquote>
+<hr>
+<h2 id="🧠-详细解释如下："><a href="#🧠-详细解释如下：" class="headerlink" title="🧠 详细解释如下："></a>🧠 详细解释如下：</h2><h3 id="✅-1-Wi-Fi-SSID-是地理位置的“线索”"><a href="#✅-1-Wi-Fi-SSID-是地理位置的“线索”" class="headerlink" title="✅ 1. Wi-Fi SSID 是地理位置的“线索”"></a>✅ 1. <strong>Wi-Fi SSID 是地理位置的“线索”</strong></h3><p>Wi-Fi 热点（SSID）通常是<strong>固定的物理位置</strong>，比如：</p>
+<ul>
+<li>你家路由器的 SSID 是 <code>JohnHomeWiFi</code>，只出现在你家；</li>
+<li>星巴克的 SSID 是 <code>Starbucks_Wifi</code>，只能在那家门店附近看到。</li>
+</ul>
+<p>因此：</p>
+<blockquote>
+<p>如果一个 App 能扫描到附近有哪些 SSID，它基本就能<strong>推测你在什么地方</strong>（甚至不需要 GPS）。</p>
+</blockquote>
+<hr>
+<h3 id="✅-2-Google-Apple-建了“Wi-Fi-定位数据库”"><a href="#✅-2-Google-Apple-建了“Wi-Fi-定位数据库”" class="headerlink" title="✅ 2. Google&#x2F;Apple 建了“Wi-Fi 定位数据库”"></a>✅ 2. <strong>Google&#x2F;Apple 建了“Wi-Fi 定位数据库”</strong></h3><ul>
+<li>Google 和 Apple 都维护了一个庞大的 <strong>SSID → 地理坐标</strong> 的数据库；</li>
+<li>当手机搜索到某些 Wi-Fi 热点，即便你没有打开 GPS，也可以精确定位（就是所谓的 “Wi-Fi 定位”）；</li>
+<li>所以系统默认把 <strong>扫描 Wi-Fi 热点</strong> 也视为 <strong>位置访问行为</strong>。</li>
+</ul>
+<hr>
+<h3 id="✅-3-操作系统强制权限控制（从-Android-6-iOS-13-开始）"><a href="#✅-3-操作系统强制权限控制（从-Android-6-iOS-13-开始）" class="headerlink" title="✅ 3. 操作系统强制权限控制（从 Android 6 &#x2F; iOS 13 开始）"></a>✅ 3. <strong>操作系统强制权限控制（从 Android 6 &#x2F; iOS 13 开始）</strong></h3><table>
+<thead>
+<tr>
+<th>平台</th>
+<th>要求位置权限的行为</th>
+<th>起始版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Android</td>
+<td>获取当前连接的 SSID &#x2F; 扫描 Wi-Fi</td>
+<td>Android 6.0（API 23）起</td>
+</tr>
+<tr>
+<td>iOS</td>
+<td>获取 SSID（即使只获取当前连接）</td>
+<td>iOS 13 起</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>🛡️ 这不是因为硬件或 API 本身需要位置，而是<strong>操作系统为了保护隐私，强制开发者声明位置权限</strong>。</p>
+</blockquote>
+<hr>
+<h2 id="❓那我只想获取“当前连接的-Wi-Fi-名称”，也要位置权限？"><a href="#❓那我只想获取“当前连接的-Wi-Fi-名称”，也要位置权限？" class="headerlink" title="❓那我只想获取“当前连接的 Wi-Fi 名称”，也要位置权限？"></a>❓那我只想获取“当前连接的 Wi-Fi 名称”，也要位置权限？</h2><p>是的，<strong>即便你只想获取当前连接的 Wi-Fi（不是扫描附近的），操作系统仍然要求位置权限</strong>，因为这同样具有定位潜力。</p>
+<hr>
+<h2 id="✅-总结"><a href="#✅-总结" class="headerlink" title="✅ 总结"></a>✅ 总结</h2><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>为什么获取 SSID 需要位置权限？</td>
+<td>因为 Wi-Fi 名称能间接泄露用户位置</td>
+</tr>
+<tr>
+<td>是技术需要吗？</td>
+<td>❌不是，是出于隐私政策</td>
+</tr>
+<tr>
+<td>哪些平台强制这么做？</td>
+<td>Android 6+、iOS 13+</td>
+</tr>
+</tbody></table>
+<hr>
+<p>如果你是开发者，想要获取当前 Wi-Fi SSID，我可以给你一个适配平台和权限的示例代码（比如 Android Java&#x2F;Kotlin 或 iOS Swift）— 需要的话告诉我你的平台就行。</p>
+<h3 id="loT-Wi-Fi是啥？物联网Wi-Fi？有什么功能？"><a href="#loT-Wi-Fi是啥？物联网Wi-Fi？有什么功能？" class="headerlink" title="loT Wi-Fi是啥？物联网Wi-Fi？有什么功能？"></a>loT Wi-Fi是啥？物联网Wi-Fi？有什么功能？</h3><p>您好！您理解得非常准确！</p>
+<p><strong>IoT Wi-Fi 指的就是“物联网 Wi-Fi”</strong>。它并不是一种全新的、物理上独立的Wi-Fi技术（比如像 Wi-Fi 6 或 Wi-Fi 7 那样的标准），而是指<strong>专门为物联网设备的需求而设计、优化和管理的Wi-Fi网络解决方案</strong>。</p>
+<p>您可以把它想象成在您家里或企业的主Wi-Fi网络之外，专门为物联网设备开辟的一条“专用车道”。这条车道有更适合这些小设备的交通规则，从而让整个网络更高效、更安全。</p>
+<hr>
+<h3 id="IoT-Wi-Fi-的核心功能与特点"><a href="#IoT-Wi-Fi-的核心功能与特点" class="headerlink" title="IoT Wi-Fi 的核心功能与特点"></a>IoT Wi-Fi 的核心功能与特点</h3><p>与传统Wi-Fi主要为手机、电脑、平板等高速设备服务不同，IoT Wi-Fi 主要针对的是那些需要持续在线、但数据量很小、对功耗敏感的设备。其主要功能和特点包括：</p>
+<h4 id="1-海量设备连接能力"><a href="#1-海量设备连接能力" class="headerlink" title="1. 海量设备连接能力"></a>1. 海量设备连接能力</h4><ul>
+<li><strong>传统Wi-Fi</strong>：普通家用路由器同时连接20-30个设备可能就会变得不稳定、卡顿。</li>
+<li><strong>IoT Wi-Fi</strong>：通过优化协议和算法，可以稳定地支持上百甚至上千台设备同时在线。这对于智能家居、智能办公室、智能酒店等场景至关重要。</li>
+</ul>
+<h4 id="2-低功耗与电源管理"><a href="#2-低功耗与电源管理" class="headerlink" title="2. 低功耗与电源管理"></a>2. 低功耗与电源管理</h4><ul>
+<li>很多物联网设备（如传感器、门锁）使用电池供电，需要持续工作数月甚至数年。</li>
+<li>IoT Wi-Fi 技术支持 <strong>Wi-Fi HaLow (802.11ah)</strong> 等标准，或者通过优化协议，允许设备大部分时间处于“睡眠”状态，只在需要发送数据时才短暂连接，极大地延长了电池寿命。</li>
+</ul>
+<h4 id="3-增强的安全性与隔离"><a href="#3-增强的安全性与隔离" class="headerlink" title="3. 增强的安全性与隔离"></a>3. 增强的安全性与隔离</h4><ul>
+<li>这是最关键的功能之一。IoT设备通常安全性较弱，容易成为黑客攻击的跳板。</li>
+<li><strong>设备隔离（网络分段）</strong>：IoT Wi-Fi 可以将所有物联网设备隔离在一个独立的子网（VLAN）中。即使某个智能灯泡被黑客攻破，也无法访问您的主网络（包含电脑、手机、NAS等有重要数据的设备）。</li>
+<li><strong>专属安全策略</strong>：可以为IoT网络设置更严格的上网规则，例如禁止IoT设备访问互联网，只允许它们与本地服务器（如智能家居中枢）通信，或者限制其访问特定端口，极大减少被攻击的风险。</li>
+</ul>
+<h4 id="4-简化的配网流程"><a href="#4-简化的配网流程" class="headerlink" title="4. 简化的配网流程"></a>4. 简化的配网流程</h4><ul>
+<li>传统Wi-Fi配网需要输入复杂的密码，对没有屏幕的设备（如一个灯泡）来说非常困难。</li>
+<li>IoT Wi-Fi 广泛支持 <strong>Wi-Fi Easy Connect (WPS3)</strong> 等简化配网协议。您可以用手机扫描设备上的二维码，或者通过蓝牙&#x2F;NFC“碰一碰”，就能安全地将设备接入网络，用户体验大大提升。</li>
+</ul>
+<h4 id="5-更好的网络稳定性与覆盖"><a href="#5-更好的网络稳定性与覆盖" class="headerlink" title="5. 更好的网络稳定性与覆盖"></a>5. 更好的网络稳定性与覆盖</h4><ul>
+<li>针对物联网设备可能分布在角落、信号较弱的情况（如门外的摄像头、车库的传感器），IoT Wi-Fi 系统（如Mesh网络）会优化连接路径，确保这些低数据率的设备也能稳定在线，不会频繁掉线。</li>
+</ul>
+<h4 id="6-集中管理与控制"><a href="#6-集中管理与控制" class="headerlink" title="6. 集中管理与控制"></a>6. 集中管理与控制</h4><ul>
+<li>提供统一的管理界面，可以看到所有连接的物联网设备，并能方便地对它们进行分组、设置访问权限、检查状态和进行固件更新。</li>
+</ul>
+<hr>
+<h3 id="如何实现-IoT-Wi-Fi？"><a href="#如何实现-IoT-Wi-Fi？" class="headerlink" title="如何实现 IoT Wi-Fi？"></a>如何实现 IoT Wi-Fi？</h3><p>普通用户可以通过以下方式获得类似“IoT Wi-Fi”的功能：</p>
+<ol>
+<li><strong>购买支持“IoT模式”或“智能家居Wi-Fi”的高端路由器&#x2F;Mesh系统</strong>：许多品牌（如TP-Link Deco, ASUS, Netgear等）的新款路由器都内置了专门为IoT设备优化的功能，只需在App中一键开启即可。</li>
+<li><strong>手动设置“访客网络”</strong>：这是一个简单有效的方法。将您的物联网设备都连接到“访客网络”，大多数访客网络默认就开启了设备隔离功能，实现了与主网络的基本隔离。</li>
+<li><strong>使用支持VLAN功能的企业级&#x2F;Prosumer级设备</strong>：例如Ubiquiti UniFi, TP-Link Omada, MikroTik等系统，可以创建复杂的网络规则，实现更精细化的IoT网络管理。</li>
+</ol>
+<h3 id="总结-7"><a href="#总结-7" class="headerlink" title="总结"></a>总结</h3><p><strong>IoT Wi-Fi 的本质是一个为物联网设备优化过的专用网络环境</strong>，其核心价值在于：</p>
+<ul>
+<li><strong>容量大</strong>：能连接更多设备。</li>
+<li><strong>更安全</strong>：通过隔离保护核心数据和设备。</li>
+<li><strong>更省电</strong>：延长电池供电设备的寿命。</li>
+<li><strong>更稳定</strong>：确保智能设备始终在线。</li>
+<li><strong>更易用</strong>：简化添加新设备的流程。</li>
+</ul>
+<p>随着智能家居设备的普及，为自己的物联网设备建立一个专用的Wi-Fi网络，已经成为提升家庭网络安全和稳定性的最佳实践。</p>
+
                 
               </div>
             
