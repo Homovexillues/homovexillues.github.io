@@ -33,7 +33,7 @@
     <link href="/2025/10/24/Nginx%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/"/>
     <url>/2025/10/24/Nginx%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</url>
     
-    <content type="html"><![CDATA[<p>介绍视频<br><a href="https://www.bilibili.com/video/BV1gMX1YSEtm/?spm_id_from=333.1387.collection.video_card.click&vd_source=4232358e8919921a1c230128d2e71794">Nginx是什么？Nginx高并发架构拆解指南_哔哩哔哩_bilibili</a></p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Windows端直接官网下载可执行文件，Linux包管理器多半可以下载，下载之后配置文件位于<code>/etc/nginx</code></p><p>总之，Nginx是一个多进程的</p>]]></content>
+    <content type="html"><![CDATA[<p>介绍视频<br><a href="https://www.bilibili.com/video/BV1gMX1YSEtm/?spm_id_from=333.1387.collection.video_card.click&vd_source=4232358e8919921a1c230128d2e71794">Nginx是什么？Nginx高并发架构拆解指南_哔哩哔哩_bilibili</a></p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Windows端直接官网下载可执行文件，Linux包管理器多半可以下载，下载之后位于<code>/usr/sbin/nginx</code></p><p>总之，Nginx是一个多进程的软件，多个worker进程通过共享内存的方式共享数据，由Master进程统一管理，以此实现反向代理服务器的功能，隐藏请求的服务端而只向客户端暴露自己的接口，相当于一个中间层，可以用作网关，流量监控，日志等功能</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>下面是一个nginx的配置文件示例，Windows下位于可执行文件同级conf文件夹下，Linux下位于<code>/etc/nginx</code>下，默认名为nginx.conf</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-comment">#指定运行用户，默认为注释状态，使用默认用户</span><br><span class="hljs-comment">#user  nobody;</span><br><span class="hljs-comment">#指定工作进程数，通常为服务器CPU核心数量</span><br><span class="hljs-attribute">worker_processes</span>  <span class="hljs-number">1</span>;<br><span class="hljs-comment">#指定错误日志文件路径和日志级别</span><br><span class="hljs-comment">#error_log  logs/error.log;</span><br><span class="hljs-comment">#error_log  logs/error.log  notice;</span><br><span class="hljs-comment">#error_log  logs/error.log  info;</span><br><span class="hljs-comment">#指定存储Nginx主进程ID的文件路径</span><br><span class="hljs-comment">#pid        logs/nginx.pid;</span><br><span class="hljs-comment">#事件模块配置</span><br><span class="hljs-comment">#设置每个工作进程允许的最大连接数</span><br><span class="hljs-section">events</span> &#123;<br>    <span class="hljs-attribute">worker_connections</span>  <span class="hljs-number">1024</span>;<br>&#125;<br><span class="hljs-comment">#HTTP模块配置</span><br><span class="hljs-section">http</span> &#123;<br>    <span class="hljs-comment">#加载MIME类型文件，用于定义文件扩展名和内容类型的映射</span><br>    <span class="hljs-attribute">include</span>       mime.types;<br>    <span class="hljs-comment">#设置默认的MIME类型（未识别的文件类型时使用）</span><br>    <span class="hljs-attribute">default_type</span>  application/octet-stream;<br>    <span class="hljs-comment">#定义日志格式（注释状态）</span><br>    <span class="hljs-comment">#log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br>    <span class="hljs-comment">#                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br>    <span class="hljs-comment">#                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br>    <span class="hljs-comment">#指定访问日志文件路径和使用的日志格式（注释状态）</span><br>    <span class="hljs-comment">#access_log  logs/access.log  main;</span><br>    <span class="hljs-comment">#启用高效文件传输</span><br>    <span class="hljs-attribute">sendfile</span>        <span class="hljs-literal">on</span>;<br>    <span class="hljs-comment">#启用TCP_NOPUSH选项（注释状态）</span><br>    <span class="hljs-comment">#tcp_nopush     on;</span><br>    <span class="hljs-comment">#设置客户端连接的超时时间</span><br>    <span class="hljs-comment">#keepalive_timeout  0;</span><br>    <span class="hljs-attribute">keepalive_timeout</span>  <span class="hljs-number">65</span>;<br>    <span class="hljs-comment">#启用Gzip压缩（注释状态）</span><br>    <span class="hljs-comment">#gzip  on;</span><br>    <span class="hljs-comment">#服务器块配置</span><br>    <span class="hljs-section">server</span> &#123;<br>        <span class="hljs-comment">#监听80端口（HTTP默认端口）</span><br>        <span class="hljs-attribute">listen</span>       <span class="hljs-number">80</span>;<br>        <span class="hljs-comment">#定义服务器名称（如域名或IP地址）</span><br>        <span class="hljs-attribute">server_name</span>  localhost;<br>        <span class="hljs-comment">#指定访问日志文件路径和使用的日志格式（注释状态）</span><br>        <span class="hljs-comment">#access_log  logs/host.access.log  main;</span><br>        <span class="hljs-comment">#定义根路径的处理方式</span><br>        <span class="hljs-section">location</span> / &#123;<br>            <span class="hljs-comment">#指定根目录为html文件夹</span><br>            <span class="hljs-attribute">root</span>   html;<br>            <span class="hljs-comment">#定义默认首页文件</span><br>            <span class="hljs-attribute">index</span>  index.html index.htm;<br>        &#125;<br>        <span class="hljs-comment">#定义404错误页面路径（注释状态）</span><br>        <span class="hljs-comment">#error_page  404              /404.html;</span><br>        <span class="hljs-comment">#重定向服务器错误页面到静态页面/50x.html</span><br>        <span class="hljs-attribute">error_page</span>   <span class="hljs-number">500</span> <span class="hljs-number">502</span> <span class="hljs-number">503</span> <span class="hljs-number">504</span>  /50x.html;<br>        <span class="hljs-section">location</span> = /50x.html &#123;<br>            <span class="hljs-comment">#指定错误页面的根目录</span><br>            <span class="hljs-attribute">root</span>   html;<br>        &#125;<br>        <span class="hljs-comment">#将PHP脚本代理到监听127.0.0.1:80的Apache服务器（注释状态）</span><br>        <span class="hljs-comment">#location ~ \.php$ &#123;</span><br>        <span class="hljs-comment">#    proxy_pass   http://127.0.0.1;</span><br>        <span class="hljs-comment">#&#125;</span><br>        <span class="hljs-comment">#将PHP脚本传递到监听127.0.0.1:9000的FastCGI服务器（注释状态）</span><br>        <span class="hljs-comment">#location ~ \.php$ &#123;</span><br>        <span class="hljs-comment">#    root           html;</span><br>        <span class="hljs-comment">#    fastcgi_pass   127.0.0.1:9000;</span><br>        <span class="hljs-comment">#    fastcgi_index  index.php;</span><br>        <span class="hljs-comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br>        <span class="hljs-comment">#    include        fastcgi_params;</span><br>        <span class="hljs-comment">#&#125;</span><br>        <span class="hljs-comment">#禁止访问.htaccess文件（注释状态）</span><br>        <span class="hljs-comment">#location ~ /\.ht &#123;</span><br>        <span class="hljs-comment">#    deny  all;</span><br>        <span class="hljs-comment">#&#125;</span><br>    &#125;<br>    <span class="hljs-comment"># 新增一个 server 块，监听 5000 端口</span><br>    <span class="hljs-section">server</span> &#123;<br>        <span class="hljs-attribute">listen</span>       <span class="hljs-number">5000</span>;<br>        <span class="hljs-attribute">server_name</span>  localhost;<br>        <span class="hljs-comment"># 定义 /api/Query 的处理方式</span><br>        <span class="hljs-section">location</span> = /api/Query &#123;<br>            <span class="hljs-comment"># 限制只允许 POST 方法</span><br>            <span class="hljs-attribute">limit_except</span> POST &#123;<br>                <span class="hljs-attribute">deny</span> all;<br>            &#125;<br>            <span class="hljs-comment"># 代理到指定的 IP 和端口</span><br>            <span class="hljs-attribute">proxy_pass</span> http://192.168.1.100:8080;<br>            <span class="hljs-comment"># 设置代理头部信息</span><br>            <span class="hljs-comment"># 其中$host，$remote_addr 和 $proxy_add_x_forwarded_for 是 Nginx 的内置变量</span><br>            <span class="hljs-comment"># $host 表示请求的主机名</span><br>            <span class="hljs-comment"># $remote_addr 表示客户端的 IP 地址</span><br>            <span class="hljs-comment"># $proxy_add_x_forwarded_for 包含客户端的 IP 地址和所有经过的代理服务器的 IP 地址</span><br>            <span class="hljs-attribute">proxy_set_header</span> Host <span class="hljs-variable">$host</span>;<br>            <span class="hljs-attribute">proxy_set_header</span> X-Real-IP <span class="hljs-variable">$remote_addr</span>;<br>            <span class="hljs-attribute">proxy_set_header</span> X-Forwarded-For <span class="hljs-variable">$proxy_add_x_forwarded_for</span>;<br>            <span class="hljs-comment"># 如果需要，可以设置超时时间</span><br>            <span class="hljs-attribute">proxy_connect_timeout</span> <span class="hljs-number">60s</span>;<br>            <span class="hljs-attribute">proxy_read_timeout</span> <span class="hljs-number">60s</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">#另一个虚拟主机的配置示例（注释状态）</span><br>    <span class="hljs-comment">#server &#123;</span><br>    <span class="hljs-comment">#    listen       8000;</span><br>    <span class="hljs-comment">#    listen       somename:8080;</span><br>    <span class="hljs-comment">#    server_name  somename  alias  another.alias;</span><br>    <span class="hljs-comment">#    location / &#123;</span><br>    <span class="hljs-comment">#        root   html;</span><br>    <span class="hljs-comment">#        index  index.html index.htm;</span><br>    <span class="hljs-comment">#    &#125;</span><br>    <span class="hljs-comment">#&#125;</span><br>    <span class="hljs-comment">#HTTPS服务器配置示例（注释状态）</span><br>    <span class="hljs-comment">#server &#123;</span><br>    <span class="hljs-comment">#    listen       443 ssl;</span><br>    <span class="hljs-comment">#    server_name  localhost;</span><br>    <span class="hljs-comment">#    ssl_certificate      cert.pem;</span><br>    <span class="hljs-comment">#    ssl_certificate_key  cert.key;</span><br>    <span class="hljs-comment">#    ssl_session_cache    shared:SSL:1m;</span><br>    <span class="hljs-comment">#    ssl_session_timeout  5m;</span><br>    <span class="hljs-comment">#    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br>    <span class="hljs-comment">#    ssl_prefer_server_ciphers  on;</span><br>    <span class="hljs-comment">#    location / &#123;</span><br>    <span class="hljs-comment">#        root   html;</span><br>    <span class="hljs-comment">#        index  index.html index.htm;</span><br>    <span class="hljs-comment">#    &#125;</span><br>    <span class="hljs-comment">#&#125;</span><br>&#125;<br></code></pre></td></tr></table></figure><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#测试nginx配置是否正确</span><br>nginx -t<br><span class="hljs-comment">#如果成功会有这样的提示</span><br>&gt; nginx: the configuration file /path/nginx.conf syntax is ok<br>&gt; nginx: configuration file /path/nginx.conf <span class="hljs-built_in">test</span> is successful<br><span class="hljs-comment">#如果已经启动nginx服务，可以用这条命令重启</span><br>nginx -s reload<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -504,8 +504,8 @@
   
   <entry>
     <title>浏览器快捷键</title>
-    <link href="/2025/03/10/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <url>/2025/03/10/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <link href="/2025/03/11/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <url>/2025/03/11/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     
     <content type="html"><![CDATA[<h3 id="清理浏览器缓存"><a href="#清理浏览器缓存" class="headerlink" title="清理浏览器缓存"></a>清理浏览器缓存</h3><h4 id="Ctrl-Shift-Delete"><a href="#Ctrl-Shift-Delete" class="headerlink" title="Ctrl+Shift+Delete"></a>Ctrl+Shift+Delete</h4><p>适用于:</p><ul><li>Edge</li><li>Chrome</li></ul>]]></content>
     
@@ -1150,6 +1150,33 @@
   
   
   <entry>
+    <title>Visual Studio快捷键</title>
+    <link href="/2024/10/27/Visual%20Studio%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <url>/2024/10/27/Visual%20Studio%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    
+    <content type="html"><![CDATA[<h2 id="大小写"><a href="#大小写" class="headerlink" title="大小写"></a>大小写</h2><h4 id="小写-Ctrl-U"><a href="#小写-Ctrl-U" class="headerlink" title="小写 Ctrl+U"></a>小写 Ctrl+U</h4><h4 id="大写-Ctrl-Shift-U"><a href="#大写-Ctrl-Shift-U" class="headerlink" title="大写 Ctrl+Shift+U"></a>大写 Ctrl+Shift+U</h4><h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><h4 id="选中所有相同单词-Alt-Shift"><a href="#选中所有相同单词-Alt-Shift" class="headerlink" title="选中所有相同单词 Alt+Shift+;"></a>选中所有相同单词 Alt+Shift+;</h4><h4 id="选中多行光标-Shift-Alt-上-下"><a href="#选中多行光标-Shift-Alt-上-下" class="headerlink" title="选中多行光标 Shift+Alt+上&#x2F;下"></a>选中多行光标 Shift+Alt+上&#x2F;下</h4><h4 id="整行移动-按住Alt-上下键可以将当前行或选中行上下移动"><a href="#整行移动-按住Alt-上下键可以将当前行或选中行上下移动" class="headerlink" title="整行移动 按住Alt+上下键可以将当前行或选中行上下移动"></a>整行移动 按住Alt+上下键可以将当前行或选中行上下移动</h4><h2 id="复制和剪切"><a href="#复制和剪切" class="headerlink" title="复制和剪切"></a>复制和剪切</h2><h4 id="复制当前行-Ctrl-D"><a href="#复制当前行-Ctrl-D" class="headerlink" title="复制当前行 Ctrl+D"></a>复制当前行 Ctrl+D</h4><h4 id="剪切-删除当前行-Ctrl-X"><a href="#剪切-删除当前行-Ctrl-X" class="headerlink" title="剪切&#x2F;删除当前行 Ctrl+X"></a>剪切&#x2F;删除当前行 Ctrl+X</h4><h3 id="资源解决方案管理器窗口-Ctrl-Alt-L"><a href="#资源解决方案管理器窗口-Ctrl-Alt-L" class="headerlink" title="资源解决方案管理器窗口 Ctrl+Alt+L"></a>资源解决方案管理器窗口 Ctrl+Alt+L</h3><h3 id="终端界面-Ctrl"><a href="#终端界面-Ctrl" class="headerlink" title="终端界面 Ctrl+~"></a>终端界面 Ctrl+~</h3><h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><h4 id="以单词为单位跳转-Ctrl-左键-Ctrl-右键"><a href="#以单词为单位跳转-Ctrl-左键-Ctrl-右键" class="headerlink" title="以单词为单位跳转 Ctrl+左键&#x2F;Ctrl+右键"></a>以单词为单位跳转 Ctrl+左键&#x2F;Ctrl+右键</h4><h4 id="跳转到指定行-Ctrl-G"><a href="#跳转到指定行-Ctrl-G" class="headerlink" title="跳转到指定行 Ctrl+G"></a>跳转到指定行 Ctrl+G</h4><h4 id="跳转到实现-F12"><a href="#跳转到实现-F12" class="headerlink" title="跳转到实现 F12"></a>跳转到实现 F12</h4><h4 id="跳转到定义-Shift-F12"><a href="#跳转到定义-Shift-F12" class="headerlink" title="跳转到定义 Shift+F12"></a>跳转到定义 Shift+F12</h4><h4 id="跳转到打开的文件-Ctrl-TAB"><a href="#跳转到打开的文件-Ctrl-TAB" class="headerlink" title="跳转到打开的文件 Ctrl+TAB"></a>跳转到打开的文件 Ctrl+TAB</h4><h4 id="跳转到文件开头或结尾-Ctrl-Home-End"><a href="#跳转到文件开头或结尾-Ctrl-Home-End" class="headerlink" title="跳转到文件开头或结尾 Ctrl+Home&#x2F;End"></a>跳转到文件开头或结尾 Ctrl+Home&#x2F;End</h4><h4 id="跳转到下一个，上一个Find-F3-Shift-F3"><a href="#跳转到下一个，上一个Find-F3-Shift-F3" class="headerlink" title="跳转到下一个，上一个Find F3&#x2F;Shift F3"></a>跳转到下一个，上一个Find F3&#x2F;Shift F3</h4><h2 id="展开"><a href="#展开" class="headerlink" title="展开"></a>展开</h2><h4 id="折叠所有代码Ctrl-M-O"><a href="#折叠所有代码Ctrl-M-O" class="headerlink" title="折叠所有代码Ctrl+M+O"></a>折叠所有代码Ctrl+M+O</h4><h4 id="展开所有代码Ctrl-M-L"><a href="#展开所有代码Ctrl-M-L" class="headerlink" title="展开所有代码Ctrl+M+L"></a>展开所有代码Ctrl+M+L</h4><h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><h3 id="region代码块-手写-region然后Tab"><a href="#region代码块-手写-region然后Tab" class="headerlink" title="#region代码块 手写#region然后Tab"></a>#region代码块 手写#region然后Tab</h3><h3 id="任意外侧代码-Ctrl-k-Ctrl-S"><a href="#任意外侧代码-Ctrl-k-Ctrl-S" class="headerlink" title="任意外侧代码 Ctrl+k+Ctrl+S"></a>任意外侧代码 Ctrl+k+Ctrl+S</h3><h2 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h2><h4 id="变量重命名-Ctrl-R-R"><a href="#变量重命名-Ctrl-R-R" class="headerlink" title="变量重命名 Ctrl+R+R"></a>变量重命名 Ctrl+R+R</h4><h2 id="剪切板"><a href="#剪切板" class="headerlink" title="剪切板"></a>剪切板</h2><h4 id="展示历史剪切板-Ctrl-Shift-V"><a href="#展示历史剪切板-Ctrl-Shift-V" class="headerlink" title="展示历史剪切板 Ctrl+Shift+V"></a>展示历史剪切板 Ctrl+Shift+V</h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>快捷键</tag>
+      
+      <tag>Visual Studio</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>生词本</title>
     <link href="/2024/10/27/%E7%94%9F%E8%AF%8D%E6%9C%AC/"/>
     <url>/2024/10/27/%E7%94%9F%E8%AF%8D%E6%9C%AC/</url>
@@ -1196,6 +1223,31 @@
       <tag>Windows</tag>
       
       <tag>PowerShell</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Visual Studio知识点</title>
+    <link href="/2024/10/27/Viual%20Studio%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <url>/2024/10/27/Viual%20Studio%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<h4 id="怎么在VS里修改快捷键？"><a href="#怎么在VS里修改快捷键？" class="headerlink" title="怎么在VS里修改快捷键？"></a>怎么在VS里修改快捷键？</h4><p>设置-工具-环境-键盘</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Visual Studio</tag>
       
     </tags>
     
@@ -1643,31 +1695,6 @@
     <tags>
       
       <tag>经验</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Visual Studio知识点</title>
-    <link href="/2024/05/24/Viual%20Studio%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    <url>/2024/05/24/Viual%20Studio%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
-    
-    <content type="html"><![CDATA[<h4 id="怎么在VS里修改快捷键？"><a href="#怎么在VS里修改快捷键？" class="headerlink" title="怎么在VS里修改快捷键？"></a>怎么在VS里修改快捷键？</h4><p>设置-工具-环境-键盘</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Visual Studio</tag>
       
     </tags>
     
@@ -2223,33 +2250,6 @@
     <tags>
       
       <tag>C-sharp</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Visual Studio快捷键</title>
-    <link href="/2024/04/03/Visual%20Studio%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <url>/2024/04/03/Visual%20Studio%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    
-    <content type="html"><![CDATA[<h2 id="大小写"><a href="#大小写" class="headerlink" title="大小写"></a>大小写</h2><h4 id="小写-Ctrl-U"><a href="#小写-Ctrl-U" class="headerlink" title="小写 Ctrl+U"></a>小写 Ctrl+U</h4><h4 id="大写-Ctrl-Shift-U"><a href="#大写-Ctrl-Shift-U" class="headerlink" title="大写 Ctrl+Shift+U"></a>大写 Ctrl+Shift+U</h4><h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><h4 id="选中所有相同单词-Alt-Shift"><a href="#选中所有相同单词-Alt-Shift" class="headerlink" title="选中所有相同单词 Alt+Shift+;"></a>选中所有相同单词 Alt+Shift+;</h4><h4 id="选中多行光标-Shift-Alt-上-下"><a href="#选中多行光标-Shift-Alt-上-下" class="headerlink" title="选中多行光标 Shift+Alt+上&#x2F;下"></a>选中多行光标 Shift+Alt+上&#x2F;下</h4><h4 id="整行移动-按住Alt-上下键可以将当前行或选中行上下移动"><a href="#整行移动-按住Alt-上下键可以将当前行或选中行上下移动" class="headerlink" title="整行移动 按住Alt+上下键可以将当前行或选中行上下移动"></a>整行移动 按住Alt+上下键可以将当前行或选中行上下移动</h4><h2 id="复制和剪切"><a href="#复制和剪切" class="headerlink" title="复制和剪切"></a>复制和剪切</h2><h4 id="复制当前行-Ctrl-D"><a href="#复制当前行-Ctrl-D" class="headerlink" title="复制当前行 Ctrl+D"></a>复制当前行 Ctrl+D</h4><h4 id="剪切-删除当前行-Ctrl-X"><a href="#剪切-删除当前行-Ctrl-X" class="headerlink" title="剪切&#x2F;删除当前行 Ctrl+X"></a>剪切&#x2F;删除当前行 Ctrl+X</h4><h3 id="资源解决方案管理器窗口-Ctrl-Alt-L"><a href="#资源解决方案管理器窗口-Ctrl-Alt-L" class="headerlink" title="资源解决方案管理器窗口 Ctrl+Alt+L"></a>资源解决方案管理器窗口 Ctrl+Alt+L</h3><h3 id="终端界面-Ctrl"><a href="#终端界面-Ctrl" class="headerlink" title="终端界面 Ctrl+~"></a>终端界面 Ctrl+~</h3><h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><h4 id="以单词为单位跳转-Ctrl-左键-Ctrl-右键"><a href="#以单词为单位跳转-Ctrl-左键-Ctrl-右键" class="headerlink" title="以单词为单位跳转 Ctrl+左键&#x2F;Ctrl+右键"></a>以单词为单位跳转 Ctrl+左键&#x2F;Ctrl+右键</h4><h4 id="跳转到指定行-Ctrl-G"><a href="#跳转到指定行-Ctrl-G" class="headerlink" title="跳转到指定行 Ctrl+G"></a>跳转到指定行 Ctrl+G</h4><h4 id="跳转到实现-F12"><a href="#跳转到实现-F12" class="headerlink" title="跳转到实现 F12"></a>跳转到实现 F12</h4><h4 id="跳转到定义-Shift-F12"><a href="#跳转到定义-Shift-F12" class="headerlink" title="跳转到定义 Shift+F12"></a>跳转到定义 Shift+F12</h4><h4 id="跳转到打开的文件-Ctrl-TAB"><a href="#跳转到打开的文件-Ctrl-TAB" class="headerlink" title="跳转到打开的文件 Ctrl+TAB"></a>跳转到打开的文件 Ctrl+TAB</h4><h4 id="跳转到文件开头或结尾-Ctrl-Home-End"><a href="#跳转到文件开头或结尾-Ctrl-Home-End" class="headerlink" title="跳转到文件开头或结尾 Ctrl+Home&#x2F;End"></a>跳转到文件开头或结尾 Ctrl+Home&#x2F;End</h4><h4 id="跳转到下一个，上一个Find-F3-Shift-F3"><a href="#跳转到下一个，上一个Find-F3-Shift-F3" class="headerlink" title="跳转到下一个，上一个Find F3&#x2F;Shift F3"></a>跳转到下一个，上一个Find F3&#x2F;Shift F3</h4><h2 id="展开"><a href="#展开" class="headerlink" title="展开"></a>展开</h2><h4 id="折叠所有代码Ctrl-M-O"><a href="#折叠所有代码Ctrl-M-O" class="headerlink" title="折叠所有代码Ctrl+M+O"></a>折叠所有代码Ctrl+M+O</h4><h4 id="展开所有代码Ctrl-M-L"><a href="#展开所有代码Ctrl-M-L" class="headerlink" title="展开所有代码Ctrl+M+L"></a>展开所有代码Ctrl+M+L</h4><h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><h3 id="region代码块-手写-region然后Tab"><a href="#region代码块-手写-region然后Tab" class="headerlink" title="#region代码块 手写#region然后Tab"></a>#region代码块 手写#region然后Tab</h3><h3 id="任意外侧代码-Ctrl-k-Ctrl-S"><a href="#任意外侧代码-Ctrl-k-Ctrl-S" class="headerlink" title="任意外侧代码 Ctrl+k+Ctrl+S"></a>任意外侧代码 Ctrl+k+Ctrl+S</h3><h2 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h2><h4 id="变量重命名-Ctrl-R-R"><a href="#变量重命名-Ctrl-R-R" class="headerlink" title="变量重命名 Ctrl+R+R"></a>变量重命名 Ctrl+R+R</h4><h2 id="剪切板"><a href="#剪切板" class="headerlink" title="剪切板"></a>剪切板</h2><h4 id="展示历史剪切板-Ctrl-Shift-V"><a href="#展示历史剪切板-Ctrl-Shift-V" class="headerlink" title="展示历史剪切板 Ctrl+Shift+V"></a>展示历史剪切板 Ctrl+Shift+V</h4>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>快捷键</tag>
-      
-      <tag>Visual Studio</tag>
       
     </tags>
     
