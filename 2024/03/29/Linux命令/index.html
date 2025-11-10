@@ -22,12 +22,12 @@
     <meta name="description" content="apt一条命令更新并升级1sudo apt update &amp;&amp; sudo apt upgrade -y  -y	安装过程中有需要用户确认的步骤时，可以选择全部为“yes” 指定版本安装1sudo apt install &lt;package_name&gt;&#x3D;&lt;version_number&gt;  清理不再使用的依赖和库文件1sudo apt autoremove  修复">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux命令">
-<meta property="og:url" content="https://homovexillues.github.io/2024/10/27/Linux%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:url" content="https://homovexillues.github.io/2024/03/29/Linux%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="apt一条命令更新并升级1sudo apt update &amp;&amp; sudo apt upgrade -y  -y	安装过程中有需要用户确认的步骤时，可以选择全部为“yes” 指定版本安装1sudo apt install &lt;package_name&gt;&#x3D;&lt;version_number&gt;  清理不再使用的依赖和库文件1sudo apt autoremove  修复">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-27T14:54:22.886Z">
-<meta property="article:modified_time" content="2025-11-02T14:42:54.274Z">
+<meta property="article:published_time" content="2024-03-29T01:53:06.290Z">
+<meta property="article:modified_time" content="2025-11-07T03:54:28.105Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-27 22:54" pubdate>
-          2024年10月27日 晚上
+        <time datetime="2024-03-29 09:53" pubdate>
+          2024年3月29日 上午
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.7k 字
+          5.3k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          39 分钟
+          45 分钟
         
       </span>
     
@@ -396,8 +396,13 @@
 <h3 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h3><p>  所有命令所在文件夹</p>
 <h3 id="which"><a href="#which" class="headerlink" title="which"></a>which</h3><p>  找到命令的位置</p>
 <h3 id="whoami"><a href="#whoami" class="headerlink" title="whoami"></a>whoami</h3><p>  输出我的用户名</p>
-<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><p>  从网络下载文件</p>
-<h4 id="O"><a href="#O" class="headerlink" title="-O"></a>-O</h4><p>输出为文件</p>
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><p>基础参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#从网络下载文件</span><br>wget xxxxx<br><span class="hljs-comment">#保存为指定文件名</span><br>wget -O xxx.zip http://url/file.zip<br><span class="hljs-comment">#指定下载目录</span><br>wget -P /tmp http://url/file<br><span class="hljs-comment">#断点续传</span><br>wget -c http://url/xxx.iso<br><span class="hljs-comment">#安静模式(不显示输出)</span><br>wget -q http://url/file<br><span class="hljs-comment">#详细输出</span><br>wget -v http://url/file<br><span class="hljs-comment">#后台下载</span><br>wget -b http://url/file.iso<br><span class="hljs-comment">#记录日志 </span><br>wget -o xxx.log http://url/file<br><span class="hljs-comment">#限速下载1MB/s</span><br>wget --limit-rate=1M http://url/file<br><span class="hljs-comment">#检查文件是否存在但不下载</span><br>wget --spider https://example.com/file.zip<br><span class="hljs-comment">#模拟浏览器下载</span><br>wget --user-agent=<span class="hljs-string">&quot;Mozilla/5.0&quot;</span> https://example.com/file<br></code></pre></td></tr></table></figure>
+<p>组合命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#下载压缩包并解压到指定目录</span><br>wget -O - https://example.com/file.tar.gz | tar -xz -C /target/directory<br><span class="hljs-comment">#下载 .deb 包并安装</span><br>wget -P /tmp https://example.com/package.deb &amp;&amp; sudo dpkg -i /tmp/package.deb<br><br><span class="hljs-comment">#下载脚本并执行</span><br>wget -O - https://example.com/install.sh | bash<br></code></pre></td></tr></table></figure>
+
+
+
 <h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><p>  创建压缩文件</p>
 <ul>
 <li>zip [] []</li>
@@ -448,7 +453,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Linux命令</div>
-      <div>https://homovexillues.github.io/2024/10/27/Linux命令/</div>
+      <div>https://homovexillues.github.io/2024/03/29/Linux命令/</div>
     </div>
     <div class="license-meta">
       
@@ -460,7 +465,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月27日</div>
+          <div>2024年3月29日</div>
         </div>
       
       
@@ -492,9 +497,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/29/%E4%B8%80%E6%98%9F%E6%9C%9F%E7%9A%84%E4%B8%83%E5%A4%A9%E9%83%BD%E6%9C%89%E7%9D%80%E4%BB%80%E4%B9%88%E6%84%8F%E8%B1%A1/" title="一星期的七天都有着什么意象">
+                      <a href="/2024/03/29/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/" title="hexo+Github搭建博客记录">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">一星期的七天都有着什么意象</span>
+                        <span class="hidden-mobile">hexo+Github搭建博客记录</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -502,8 +507,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/27/Windows%E5%91%BD%E4%BB%A4/" title="Windows CMD命令">
-                        <span class="hidden-mobile">Windows CMD命令</span>
+                      <a href="/2024/03/29/%E6%9D%82%E8%AE%B0/" title="杂记">
+                        <span class="hidden-mobile">杂记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
