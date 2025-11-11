@@ -669,7 +669,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -1413,33 +1413,6 @@
   
   
   <entry>
-    <title>C#相关问题</title>
-    <link href="/2024/10/27/C-Sharp%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
-    <url>/2024/10/27/C-Sharp%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    
-    <content type="html"><![CDATA[<h2 id="C-中-”字符串”是什么意思"><a href="#C-中-”字符串”是什么意思" class="headerlink" title="C#中$@”字符串”是什么意思"></a>C#中$@”字符串”是什么意思</h2><ul><li>$表示{}内的内容会被替换为变量的值</li><li>@表示将后面字符串内的转义字符当作普通字符对待</li></ul><h2 id="C-中-STATHread-是什么意思？"><a href="#C-中-STATHread-是什么意思？" class="headerlink" title="C#中[STATHread]是什么意思？"></a>C#中[STATHread]是什么意思？</h2><ul><li>[STAThread]是一个特性，用于指示应用程序的默认线程是单线程单元(STA),多用在程序的入口方法上</li><li>STA即Single      Thread Apartment，是一种线程模型，在这个模型中，每个线程都有自己的单独的消息队列，用于处理Windows消息。<strong>这种模型对于需要处理用户界面的线程非常有用</strong>，因为用户界面通常需要在单个线程上进行操作以避免并发问题</li><li>[STATHread]特性在使用COM Interop(托管代码与非托管代码之间的协同过程)的应用程序中非常重要。如果应用程序实际调用了COM组件，则仅为COM interop初始化该线程，如果没有使用COM interop,则不初始化该线程。</li></ul><h2 id="region…-endregion是什么意思？"><a href="#region…-endregion是什么意思？" class="headerlink" title="#region…#endregion是什么意思？"></a><code>#region</code>…<code>#endregion</code>是什么意思？</h2><ul><li>在C#中，<code>#region</code>和<code>#endregion</code>是预处理指令，用于在VisualStudio中标记一块可以折叠和展开的代码区域，可以在<code>#region</code>后添加任意描述文字，以便记住此区域的用途，<strong>不会影响代码执行，只是提升可读性</strong></li></ul><h2 id="using关键字有什么用"><a href="#using关键字有什么用" class="headerlink" title="using关键字有什么用"></a><code>using</code>关键字有什么用</h2><ul><li><strong>导入命名空间</strong>，这样就可以在代码中直接使用该命名空间中的类型，如<code>using System</code>后不用写<code>System.Console.WriteLine()</code></li></ul><h2 id="var是什么意思"><a href="#var是什么意思" class="headerlink" title="var是什么意思"></a>var是什么意思</h2><ul><li><p><code>var</code>是一个关键字，用于声明变量，<code>var</code>关键字告诉编译器，希望它根据变量的初始化表达式来推断变量类型。这被称为类型推断。</p></li><li><p>如<code>var total =0;</code>编译器会推断出<code>total</code>是一个int类型的变量，因为它被初始化为一个整数。</p></li><li><p><code>var</code>声明的变量必须在声明的时候进行初始化</p></li><li><p><code>var</code>只能用于局部变量的声明，不能在类的级别使用<code>var</code>来声明字段。</p></li><li><p>怎么在C#方法的头尾添加计时</p><ul><li><pre><code class="c#">using System.Diagnostics;public void YourMethod()&#123;    //创建Stopwatch实例    Stopwatch stopwatch = new Stopwatch();    //开始计时    stopwatch.Start();    //代码本体    //停止计时    stopwatch.Stop();    //获取经过的时间    TimeSpan elapsed = stopwatch.Elapsed;    //打印经过时间    Console.WriteLine($&quot;程序共运行了&#123;elapsed.TotalMilliseconds&#125;毫秒&quot;);&#125;<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><br><span class="hljs-meta">## C#中的=&gt;是什么意思？</span><br><br>  - =&gt;是c<span class="hljs-meta">#中的lambda运算符，用于定义匿名函数或表达式主体定义方法</span><br><br><span class="hljs-meta">## C#中属性(Property)和变量（Variable）的区别是什么？</span><br><br>  - 属性和变量都是用来存储数据的，但它们的用途和功能有所不同<br><br>  - **变量**是程序中最基本的数据存储单位。它有一个数据类型和一个值，可以直接读取或修改变量的值。<br><br>  - **属性**则是类、结构或接口中的成员，它提供了一种灵活的机制来读取、写入或计算私有字段的值<br><br><span class="hljs-meta">## 重写ToString()有什么作用？</span><br><br>  - ToString是所有对象都具有的方法，默认行为是返回对象的类型名<br><br>- 如果在同一类中，一个方法重写了比如，ToString(),那么同一类的方法再使用ToString的时候是会使用原有方法还是重写后的方法？<br><br>  - 如果在一个类中重写了ToString()方法，那么这个类的所有实例在调用ToString()方法时，都会使用我重写版本的方法而不是原有方法。在面向对象编程中，当一个方法被重写时，子类的方法会覆盖父类的方法。<br><br>- 为什么抽象类没有构造函数也能传入参数<br><br>  - 实际上，抽象类是可以有构造函数的。虽然不能直接实例化一个抽象类，但是可以在抽象类的构造函数中初始化一些成员，然后在派生类中通过`<span class="hljs-keyword">base</span>`关键字来调用这个构造函数。<br><br>    ```C<span class="hljs-meta">#</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title">AbstractClass</span><br>    &#123;<br>        <span class="hljs-keyword">protected</span> <span class="hljs-built_in">string</span> name;<br>    <br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">AbstractClass</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> name</span>)</span><br>        &#123;<br>            <span class="hljs-keyword">this</span>.name = name;<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DerivedClass</span> : <span class="hljs-title">AbstractClass</span><br>    &#123;<br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DerivedClass</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> name</span>) : <span class="hljs-title">base</span>(<span class="hljs-params">name</span>)</span><br>        &#123;<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure></code></pre></li></ul></li><li><p><code>this</code>关键字是干什么用的</p><ul><li><p><strong>引用实例成员</strong>：虽然一般情况下不用this也能访问实例成员，但是它可以结局命名冲突，比如：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span><br>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span> myField;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">MyMethod</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> myField</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">this</span>.myField = myField;  <span class="hljs-comment">// 使用 this 关键字区分实例字段和参数</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>这种情况下虽然也可以直接写，但是这么写更好看</p></li><li><p><strong>调用其他构造函数</strong>：在一个构造函数中，可以使用<code>this</code>关键字来调用同一个类中的其他构造函数，例如：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyClass</span>() : <span class="hljs-title">this</span>(<span class="hljs-params"><span class="hljs-number">10</span></span>)  <span class="hljs-comment">// 使用 this 关键字调用另一个构造函数</span></span><br>    &#123;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyClass</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> myField</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">this</span>.myField = myField;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure></li></ul></li><li><p><code>[JsonIgnore]</code>是啥？</p><ul><li>在C#中，<code>[JsonIgnore]</code>是一个【特性】，它来自<code>Newtonsoft.Json</code>库。当在一个类的属性或字段前使用<code>[JsonIgnore]</code>特性时，这个属性或字段将不会被序列化到JSON字符串中，也不会被从JSON字符串中反序列化。</li></ul></li><li><p>为什么一个类可以被用来定义属性，如<code>private Node? next;</code>和<code>public Node? Next&#123;get;set;&#125;</code></p></li><li><p>为什么一个类可以作为泛型类的类型参数来创建一个新的类？</p><ul><li><strong>性能优化</strong>：因为泛型是值类型而不是引用类型，因此它可以避免装箱和拆箱操作</li><li>具体应用方面，泛型广泛应用于集合类(如List<T>，Dictionary&lt;TKey,TValue&gt;)，以及任务并行库(Task<T>)，事件处理(EventHandler<TEventArgs>)等许多场景中。</li><li>什么是嵌套类？</li></ul></li><li><p>为什么属性可以被委托定义？委托会对委托封装的方法产生什么影响？委托接受的两个参数和委托定义的属性有什么关系？</p><ul><li>委托可以封装一个方法的签名，可以视作对方法的引用，因此，定义一个委托类型的属性，这个属性可以存储一个方法的引用，然后可以通过这个属性来调用这个方法。</li><li><strong>委托对其封装的方法没有直接的影响</strong>。可以将方法作为参数传递给其他方法，或者将多个方法组合在一起，此外，使用位图哦可以实现<strong>事件</strong>和<strong>回调函数</strong>。</li><li><strong>委托的参数是指通过委托调用方法时传递的参数</strong>。</li></ul></li><li><p><code>internal static Action&lt;string, object&gt; Write &#123; get; set; &#125;</code>是什么意思</p><ul><li><p><code>internal</code>访问修饰符，只能在同一程序集中被访问</p></li><li><p><code>static</code>修饰符，<strong>表示这个属性属于类本身，而不是类的实例</strong>。可以通过类名来访问这个属性而不需要创建类的实例。</p></li><li><p><code>Action&lt;string ,object&gt;</code>这是属性的类型。<code>Action</code>代表无返回值的方法的委托。这个<code>Action</code>委托接受两个参数，一个是<code>string</code>类型，一个是<code>object</code>类型。</p></li><li><p><code>Write</code>属性名称</p></li><li><p><code>&#123;get;set;&#125;</code>属性的访问器。</p></li><li><p><code>internal static Action&lt;string, object&gt; Write &#123; get; set; &#125;</code>定义了一个名为<code>Write</code>的属性，它的类型是<code>Action&lt;string,object&gt;</code>可以在同一个程序集中被访问，且属于类本身。</p></li><li><p>这个<code>Write</code>属性可以存储一个方法的引用，这个方法必须接受一个<code>string</code>参数和一个<code>object</code>参数，并且没有返回值。可以通过<code>Write</code>属性来调用这个方法。</p></li><li><p>什么是语法糖？</p><ul><li>语法糖是一种术语，指的是设计来使编程更容易或更可读的语言特性。这些特性并没有增加语言的功能，但是可以使代码更简洁，更易于阅读和编写。</li><li>如，在C#中，属性(properties)就是一种语法糖。可以直接使用<code>obj.Property</code>来获取或设置值，而不需要调用<code>obj.GetProperty</code>或<code>obj.SetProperty(value)</code>。这使得代码更简洁，更像自然语言。</li><li><strong>虽然语法糖可以提高代码的可读性和编写效率，但是过度的使用可能会使代码变得难以理解和维护</strong>。</li></ul></li><li><p><code>Name[3..]</code>是什么意思</p><ul><li>范围表达式，从Name字符串中提取一个子字符串，<code>3..</code>表示从3开始到字符串末尾。</li></ul></li><li><p>C#的垃圾回收机制是怎样的？</p></li><li><p>什么是并发字典（ConcurrentDictionary）？</p><ul><li>并发字典是.NET Framework中的一个类,System.Collections.Concurrent命名空间的一部分。</li><li>并发字典是线程安全的字典，这意味着多个线程可以同时从字典中添加、删除和更新键值对，而不会引发任何线程冲突或数据不一致的问题。</li><li>并发字典的主要优点是它允许多个线程同时读取和写入数据，而不需要使用锁或其他同步机制。这使得并发字典在需要高并发访问的多线程应用程序中非常有用。</li></ul></li><li><p>在C#中，类型和类有区别吗？</p><ul><li>C#的类型分为值类型（int，bool）和引用类型（class interface delegate），用GetType()处理一个引用类型的实例时，会直接返回这个实例的类或接口。</li></ul></li><li><p>如何用C#将一段哈希值解为明码？</p></li></ul></li><li><p>什么是对象初始化器？</p><ul><li><p>C#中的一个特性，允许在创建对象的同时初始化对象的属性或字段。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C#">ClassName objectName = <span class="hljs-keyword">new</span> ClassName &#123;Property1 = value1,Property2 = value2&#125;;<br>Person person = <span class="hljs-keyword">new</span> Person &#123;Name = <span class="hljs-string">&quot;Alice&quot;</span>,Age =<span class="hljs-number">30</span>&#125;;<br></code></pre></td></tr></table></figure></li></ul></li><li><p>StringComparison.OrdinalIgnoreCase是啥？</p><ul><li>StringComparison.OrdinalIgnoreCase是C#枚举的一个成员，在进行字符串比较操作时顾略大小写并使用不分区域性的排序规则。</li></ul></li><li><p>类类型的属性和实例有啥区别？</p><ul><li><strong>主要区别在于访问方式和生命周期</strong></li><li><strong>类类型的属性</strong>:类属性可以有默认值，也可以在构造函数中初始化。它们的声明周期与类实例的声明周期相同。</li><li><strong>实例</strong>:实例是类的具体化。实例的声明舟曲从创建它的那一刻开始，直到没有任何引用指向它并被垃圾收集器回收为止。</li></ul></li><li><p>字典为什么不支持从值访问键？</p><ul><li>字典是一种基于键的数据结构，主要目的是提供快速的键到值的映射。</li></ul></li><li><p>什么是锁语句？</p><ul><li>用于确保在同一时间只有一个线程可以执行被锁定的代码块。<code>SyncRoot</code>是一个对象，用作锁的标识。</li></ul></li><li><p>Devices.TryGetValue(position,out var _)是啥意思？（Devices是个字典）</p><ul><li>尝试获取与指定的键position关联的值，如果找到了键，那么它会返回true，并将关联值赋给out参数，<code>_</code>是一个丢弃符，表示不关心TryGetValue方法返回的值。</li></ul></li><li><p>C#抽象类，接口和普通类各自有什么使用环境？</p></li><li></li><li><p>Task.Delay()和Task.Wait()和Task.Sleep()的区别是什么？</p><ul><li><strong>Task.Delay()</strong>:一个<strong>异步</strong>的延迟方法，返回一个任务，在指定的时间间隔后该任务会完成。这个方法是<strong>非阻塞</strong>的。</li><li><strong>Task.Wait()<strong>：一个</strong>同步</strong>的方法，它会<strong>阻塞</strong>当前的线程，直到任务完成。</li><li><strong>Task.Sleep()<strong>：</strong>阻塞</strong>当前线程，使其在指定时间间隔进入睡眠。</li></ul></li><li><p>C# 中nameof是如何使用的？</p><ul><li>nameof是一个编译器关键字，用于获取变量、类型、方法、属性、事件、索引器和命名空间的名称作为字符串常量。nameof提供了一种方便的方式来引用这些 实体的名称，而不需要硬编码字符串，当实体名称改变时，相关的字符串也会自动更新，减少出错的可能性。</li></ul></li><li><p>ref是什么意思？</p><ul><li><p>一个关键字，用于传递变量的引用。在调用Increment方法时，传递count变量的引用而不是它的值。如：<code>Interlocked.Increment(ref count);</code>会直接修改传递给它的count变量的内存地址中存储的值，而不是修改count变量的一个副本。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-built_in">int</span> <span class="hljs-keyword">value</span> = <span class="hljs-number">10</span>;<br><span class="hljs-built_in">int</span> othervalue = <span class="hljs-number">20</span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Swap</span>(<span class="hljs-params"><span class="hljs-keyword">ref</span> <span class="hljs-built_in">int</span> a,<span class="hljs-keyword">ref</span> <span class="hljs-built_in">int</span> b</span>)</span><br>&#123;<br>    <span class="hljs-built_in">int</span> temp = a;<br>    a = b;<br>    b = temp;<br>&#125;<br>swap(<span class="hljs-keyword">ref</span> <span class="hljs-keyword">value</span>,<span class="hljs-keyword">ref</span> othervalue);<br></code></pre></td></tr></table></figure></li></ul></li><li><p>ref和指针的区别？</p><ul><li><strong>ref关键字</strong>：<ul><li>ref是类型安全的，编译器会检查ref参数的类型，确保它与声明的类型一致。</li><li>在调用方法中使用ref</li></ul></li></ul></li><li><p>相较于多线程，异步有什么优缺点？</p></li><li><p>什么是是匿名方法？</p><ul><li><p>匿名方法（Anonymous Method）是一种<strong>不具有名称的函数或方法</strong>。它通常在<strong>需要将函数作为参数传递时使用</strong>，或者在<strong>不需要重复使用该函数的情况下直接定义</strong>。这类方法在许多编程语言中都有实现，主要用于简化代码和提高可读性。</p></li><li><h3 id="使用-delegate-关键字定义匿名方法"><a href="#使用-delegate-关键字定义匿名方法" class="headerlink" title="使用 delegate 关键字定义匿名方法"></a>使用 <code>delegate</code> 关键字定义匿名方法</h3><p>使用 <code>delegate</code> 关键字定义匿名方法是一种较早的方式，它允许你在没有显式定义方法的情况下编写内联代码。这种方法在C# 2.0中引入。</p></li></ul></li><li><p>什么是显式方法定义？什么是内联代码？</p><ul><li><h3 id="显式方法定义"><a href="#显式方法定义" class="headerlink" title="显式方法定义"></a>显式方法定义</h3><p><strong>显式方法定义</strong>指的是通过为方法提供明确的名称、参数和返回类型来定义的方法。这种方法通常在类或模块中定义，具有清晰的作用域和调用方式。显式方法定义有助于代码的组织和重用。</p></li><li><h3 id="内联代码"><a href="#内联代码" class="headerlink" title="内联代码"></a>内联代码</h3><p><strong>内联代码</strong>指的是在代码的执行路径中直接编写的代码，而不是通过调用方法或函数来执行。这种代码通常直接嵌入在使用它的地方，不通过显式方法定义来分离。内联代码通常用于简单的、一次性的任务，但过多的内联代码会导致代码难以维护和理解。</p></li></ul></li><li><p>匿名方法传入委托有什么效果？</p></li><li><p>为啥C#可以用JAVA的库？</p><ul><li>NPOI将Apache POI 库移植到了.NET</li></ul></li><li><p>C#中Nlog是啥？</p><ul><li>一个流行的C#日志记录库，支持多种目标输出(targets)，如文件，数据库，控制台等。</li></ul></li></ul><h2 id="C-取整和取余怎么写"><a href="#C-取整和取余怎么写" class="headerlink" title="C#取整和取余怎么写"></a>C#取整和取余怎么写</h2><h2 id="C-如何取或去掉字符串中某种格式的数据"><a href="#C-如何取或去掉字符串中某种格式的数据" class="headerlink" title="C#如何取或去掉字符串中某种格式的数据"></a>C#如何取或去掉字符串中某种格式的数据</h2><p>正则表达式</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#">Match match = Regex.Match(text,<span class="hljs-string">$@&quot;^[a-zA-Z]+&quot;</span>)<br></code></pre></td></tr></table></figure><h2 id="C-如何查看项目已经安装的包"><a href="#C-如何查看项目已经安装的包" class="headerlink" title="C#如何查看项目已经安装的包"></a>C#如何查看项目已经安装的包</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#">dotnet list package<br></code></pre></td></tr></table></figure><h2 id="C-如何安装包"><a href="#C-如何安装包" class="headerlink" title="C#如何安装包"></a>C#如何安装包</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#">dotnet <span class="hljs-keyword">add</span> package xxx<br></code></pre></td></tr></table></figure><h2 id="C-如何添加引用"><a href="#C-如何添加引用" class="headerlink" title="C#如何添加引用"></a>C#如何添加引用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dotnet add reference ../.../.../xxx.dll 或xxx.csproj<br></code></pre></td></tr></table></figure><h2 id="C-匿名类型"><a href="#C-匿名类型" class="headerlink" title="C#匿名类型"></a>C#匿名类型</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">var</span> config = <span class="hljs-keyword">new</span>&#123;<br>    UrlOfGuoKongRiZhao = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;国控站_日照市空气质量&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>),<br>UrlOfGuoKongOtherStations = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;国控站_城市具体站点数据&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>),<br>UrlOfFieldDevice = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;现场设备&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>),<br>UrlOfHeChengFugitiveDust = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;青岛和诚_雨水设备&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>),<br>UrlOfHeChengNoise = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;青岛和诚_噪声设备&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>)<br>&#125;;<br></code></pre></td></tr></table></figure><p>匿名类型可以不显式声明类型的情况下创建对象并初始化其属性。可以直接声明直接用，而不用声明一个类或者结构体。</p><h2 id="readonly字段"><a href="#readonly字段" class="headerlink" title="readonly字段"></a>readonly字段</h2><ul><li><p>对于值类型，完全不能更改值</p></li><li><p>对于引用类型，无法更改引用在内存上的指向，但是不会影响修改引用的实例本身，举例就是这样：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> List&lt;<span class="hljs-built_in">string</span>&gt; FilePaths = [];<br></code></pre></td></tr></table></figure><p>如果我定义了这样的一个链表，我可以执行<code>FilePaths.Add(x)</code>，可以执行<code>FilePaths.AddRange(IEnumerable:x)</code>,但是不能执行<code>FilePaths=new()</code></p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-      <category>问题</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>C#</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>计算机组成原理</title>
     <link href="/2024/10/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
     <url>/2024/10/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</url>
@@ -1490,6 +1463,33 @@
   
   
   <entry>
+    <title>C#相关问题</title>
+    <link href="/2024/10/17/C-Sharp%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
+    <url>/2024/10/17/C-Sharp%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h2 id="C-中-”字符串”是什么意思"><a href="#C-中-”字符串”是什么意思" class="headerlink" title="C#中$@”字符串”是什么意思"></a>C#中$@”字符串”是什么意思</h2><ul><li>$表示{}内的内容会被替换为变量的值</li><li>@表示将后面字符串内的转义字符当作普通字符对待</li></ul><h2 id="C-中-STATHread-是什么意思？"><a href="#C-中-STATHread-是什么意思？" class="headerlink" title="C#中[STATHread]是什么意思？"></a>C#中[STATHread]是什么意思？</h2><ul><li>[STAThread]是一个特性，用于指示应用程序的默认线程是单线程单元(STA),多用在程序的入口方法上</li><li>STA即Single      Thread Apartment，是一种线程模型，在这个模型中，每个线程都有自己的单独的消息队列，用于处理Windows消息。<strong>这种模型对于需要处理用户界面的线程非常有用</strong>，因为用户界面通常需要在单个线程上进行操作以避免并发问题</li><li>[STATHread]特性在使用COM Interop(托管代码与非托管代码之间的协同过程)的应用程序中非常重要。如果应用程序实际调用了COM组件，则仅为COM interop初始化该线程，如果没有使用COM interop,则不初始化该线程。</li></ul><h2 id="region…-endregion是什么意思？"><a href="#region…-endregion是什么意思？" class="headerlink" title="#region…#endregion是什么意思？"></a><code>#region</code>…<code>#endregion</code>是什么意思？</h2><ul><li>在C#中，<code>#region</code>和<code>#endregion</code>是预处理指令，用于在VisualStudio中标记一块可以折叠和展开的代码区域，可以在<code>#region</code>后添加任意描述文字，以便记住此区域的用途，<strong>不会影响代码执行，只是提升可读性</strong></li></ul><h2 id="using关键字有什么用"><a href="#using关键字有什么用" class="headerlink" title="using关键字有什么用"></a><code>using</code>关键字有什么用</h2><ul><li><strong>导入命名空间</strong>，这样就可以在代码中直接使用该命名空间中的类型，如<code>using System</code>后不用写<code>System.Console.WriteLine()</code></li></ul><h2 id="var是什么意思"><a href="#var是什么意思" class="headerlink" title="var是什么意思"></a>var是什么意思</h2><ul><li><p><code>var</code>是一个关键字，用于声明变量，<code>var</code>关键字告诉编译器，希望它根据变量的初始化表达式来推断变量类型。这被称为类型推断。</p></li><li><p>如<code>var total =0;</code>编译器会推断出<code>total</code>是一个int类型的变量，因为它被初始化为一个整数。</p></li><li><p><code>var</code>声明的变量必须在声明的时候进行初始化</p></li><li><p><code>var</code>只能用于局部变量的声明，不能在类的级别使用<code>var</code>来声明字段。</p></li><li><p>怎么在C#方法的头尾添加计时</p><ul><li><pre><code class="c#">using System.Diagnostics;public void YourMethod()&#123;    //创建Stopwatch实例    Stopwatch stopwatch = new Stopwatch();    //开始计时    stopwatch.Start();    //代码本体    //停止计时    stopwatch.Stop();    //获取经过的时间    TimeSpan elapsed = stopwatch.Elapsed;    //打印经过时间    Console.WriteLine($&quot;程序共运行了&#123;elapsed.TotalMilliseconds&#125;毫秒&quot;);&#125;<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><br><span class="hljs-meta">## C#中的=&gt;是什么意思？</span><br><br>  - =&gt;是c<span class="hljs-meta">#中的lambda运算符，用于定义匿名函数或表达式主体定义方法</span><br><br><span class="hljs-meta">## C#中属性(Property)和变量（Variable）的区别是什么？</span><br><br>  - 属性和变量都是用来存储数据的，但它们的用途和功能有所不同<br><br>  - **变量**是程序中最基本的数据存储单位。它有一个数据类型和一个值，可以直接读取或修改变量的值。<br><br>  - **属性**则是类、结构或接口中的成员，它提供了一种灵活的机制来读取、写入或计算私有字段的值<br><br><span class="hljs-meta">## 重写ToString()有什么作用？</span><br><br>  - ToString是所有对象都具有的方法，默认行为是返回对象的类型名<br><br>- 如果在同一类中，一个方法重写了比如，ToString(),那么同一类的方法再使用ToString的时候是会使用原有方法还是重写后的方法？<br><br>  - 如果在一个类中重写了ToString()方法，那么这个类的所有实例在调用ToString()方法时，都会使用我重写版本的方法而不是原有方法。在面向对象编程中，当一个方法被重写时，子类的方法会覆盖父类的方法。<br><br>- 为什么抽象类没有构造函数也能传入参数<br><br>  - 实际上，抽象类是可以有构造函数的。虽然不能直接实例化一个抽象类，但是可以在抽象类的构造函数中初始化一些成员，然后在派生类中通过`<span class="hljs-keyword">base</span>`关键字来调用这个构造函数。<br><br>    ```C<span class="hljs-meta">#</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title">AbstractClass</span><br>    &#123;<br>        <span class="hljs-keyword">protected</span> <span class="hljs-built_in">string</span> name;<br>    <br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">AbstractClass</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> name</span>)</span><br>        &#123;<br>            <span class="hljs-keyword">this</span>.name = name;<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DerivedClass</span> : <span class="hljs-title">AbstractClass</span><br>    &#123;<br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DerivedClass</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> name</span>) : <span class="hljs-title">base</span>(<span class="hljs-params">name</span>)</span><br>        &#123;<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure></code></pre></li></ul></li><li><p><code>this</code>关键字是干什么用的</p><ul><li><p><strong>引用实例成员</strong>：虽然一般情况下不用this也能访问实例成员，但是它可以结局命名冲突，比如：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span><br>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span> myField;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">MyMethod</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> myField</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">this</span>.myField = myField;  <span class="hljs-comment">// 使用 this 关键字区分实例字段和参数</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>这种情况下虽然也可以直接写，但是这么写更好看</p></li><li><p><strong>调用其他构造函数</strong>：在一个构造函数中，可以使用<code>this</code>关键字来调用同一个类中的其他构造函数，例如：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyClass</span>() : <span class="hljs-title">this</span>(<span class="hljs-params"><span class="hljs-number">10</span></span>)  <span class="hljs-comment">// 使用 this 关键字调用另一个构造函数</span></span><br>    &#123;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyClass</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> myField</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">this</span>.myField = myField;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure></li></ul></li><li><p><code>[JsonIgnore]</code>是啥？</p><ul><li>在C#中，<code>[JsonIgnore]</code>是一个【特性】，它来自<code>Newtonsoft.Json</code>库。当在一个类的属性或字段前使用<code>[JsonIgnore]</code>特性时，这个属性或字段将不会被序列化到JSON字符串中，也不会被从JSON字符串中反序列化。</li></ul></li><li><p>为什么一个类可以被用来定义属性，如<code>private Node? next;</code>和<code>public Node? Next&#123;get;set;&#125;</code></p></li><li><p>为什么一个类可以作为泛型类的类型参数来创建一个新的类？</p><ul><li><strong>性能优化</strong>：因为泛型是值类型而不是引用类型，因此它可以避免装箱和拆箱操作</li><li>具体应用方面，泛型广泛应用于集合类(如List<T>，Dictionary&lt;TKey,TValue&gt;)，以及任务并行库(Task<T>)，事件处理(EventHandler<TEventArgs>)等许多场景中。</li><li>什么是嵌套类？</li></ul></li><li><p>为什么属性可以被委托定义？委托会对委托封装的方法产生什么影响？委托接受的两个参数和委托定义的属性有什么关系？</p><ul><li>委托可以封装一个方法的签名，可以视作对方法的引用，因此，定义一个委托类型的属性，这个属性可以存储一个方法的引用，然后可以通过这个属性来调用这个方法。</li><li><strong>委托对其封装的方法没有直接的影响</strong>。可以将方法作为参数传递给其他方法，或者将多个方法组合在一起，此外，使用位图哦可以实现<strong>事件</strong>和<strong>回调函数</strong>。</li><li><strong>委托的参数是指通过委托调用方法时传递的参数</strong>。</li></ul></li><li><p><code>internal static Action&lt;string, object&gt; Write &#123; get; set; &#125;</code>是什么意思</p><ul><li><p><code>internal</code>访问修饰符，只能在同一程序集中被访问</p></li><li><p><code>static</code>修饰符，<strong>表示这个属性属于类本身，而不是类的实例</strong>。可以通过类名来访问这个属性而不需要创建类的实例。</p></li><li><p><code>Action&lt;string ,object&gt;</code>这是属性的类型。<code>Action</code>代表无返回值的方法的委托。这个<code>Action</code>委托接受两个参数，一个是<code>string</code>类型，一个是<code>object</code>类型。</p></li><li><p><code>Write</code>属性名称</p></li><li><p><code>&#123;get;set;&#125;</code>属性的访问器。</p></li><li><p><code>internal static Action&lt;string, object&gt; Write &#123; get; set; &#125;</code>定义了一个名为<code>Write</code>的属性，它的类型是<code>Action&lt;string,object&gt;</code>可以在同一个程序集中被访问，且属于类本身。</p></li><li><p>这个<code>Write</code>属性可以存储一个方法的引用，这个方法必须接受一个<code>string</code>参数和一个<code>object</code>参数，并且没有返回值。可以通过<code>Write</code>属性来调用这个方法。</p></li><li><p>什么是语法糖？</p><ul><li>语法糖是一种术语，指的是设计来使编程更容易或更可读的语言特性。这些特性并没有增加语言的功能，但是可以使代码更简洁，更易于阅读和编写。</li><li>如，在C#中，属性(properties)就是一种语法糖。可以直接使用<code>obj.Property</code>来获取或设置值，而不需要调用<code>obj.GetProperty</code>或<code>obj.SetProperty(value)</code>。这使得代码更简洁，更像自然语言。</li><li><strong>虽然语法糖可以提高代码的可读性和编写效率，但是过度的使用可能会使代码变得难以理解和维护</strong>。</li></ul></li><li><p><code>Name[3..]</code>是什么意思</p><ul><li>范围表达式，从Name字符串中提取一个子字符串，<code>3..</code>表示从3开始到字符串末尾。</li></ul></li><li><p>C#的垃圾回收机制是怎样的？</p></li><li><p>什么是并发字典（ConcurrentDictionary）？</p><ul><li>并发字典是.NET Framework中的一个类,System.Collections.Concurrent命名空间的一部分。</li><li>并发字典是线程安全的字典，这意味着多个线程可以同时从字典中添加、删除和更新键值对，而不会引发任何线程冲突或数据不一致的问题。</li><li>并发字典的主要优点是它允许多个线程同时读取和写入数据，而不需要使用锁或其他同步机制。这使得并发字典在需要高并发访问的多线程应用程序中非常有用。</li></ul></li><li><p>在C#中，类型和类有区别吗？</p><ul><li>C#的类型分为值类型（int，bool）和引用类型（class interface delegate），用GetType()处理一个引用类型的实例时，会直接返回这个实例的类或接口。</li></ul></li><li><p>如何用C#将一段哈希值解为明码？</p></li></ul></li><li><p>什么是对象初始化器？</p><ul><li><p>C#中的一个特性，允许在创建对象的同时初始化对象的属性或字段。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C#">ClassName objectName = <span class="hljs-keyword">new</span> ClassName &#123;Property1 = value1,Property2 = value2&#125;;<br>Person person = <span class="hljs-keyword">new</span> Person &#123;Name = <span class="hljs-string">&quot;Alice&quot;</span>,Age =<span class="hljs-number">30</span>&#125;;<br></code></pre></td></tr></table></figure></li></ul></li><li><p>StringComparison.OrdinalIgnoreCase是啥？</p><ul><li>StringComparison.OrdinalIgnoreCase是C#枚举的一个成员，在进行字符串比较操作时顾略大小写并使用不分区域性的排序规则。</li></ul></li><li><p>类类型的属性和实例有啥区别？</p><ul><li><strong>主要区别在于访问方式和生命周期</strong></li><li><strong>类类型的属性</strong>:类属性可以有默认值，也可以在构造函数中初始化。它们的声明周期与类实例的声明周期相同。</li><li><strong>实例</strong>:实例是类的具体化。实例的声明舟曲从创建它的那一刻开始，直到没有任何引用指向它并被垃圾收集器回收为止。</li></ul></li><li><p>字典为什么不支持从值访问键？</p><ul><li>字典是一种基于键的数据结构，主要目的是提供快速的键到值的映射。</li></ul></li><li><p>什么是锁语句？</p><ul><li>用于确保在同一时间只有一个线程可以执行被锁定的代码块。<code>SyncRoot</code>是一个对象，用作锁的标识。</li></ul></li><li><p>Devices.TryGetValue(position,out var _)是啥意思？（Devices是个字典）</p><ul><li>尝试获取与指定的键position关联的值，如果找到了键，那么它会返回true，并将关联值赋给out参数，<code>_</code>是一个丢弃符，表示不关心TryGetValue方法返回的值。</li></ul></li><li><p>C#抽象类，接口和普通类各自有什么使用环境？</p></li><li></li><li><p>Task.Delay()和Task.Wait()和Task.Sleep()的区别是什么？</p><ul><li><strong>Task.Delay()</strong>:一个<strong>异步</strong>的延迟方法，返回一个任务，在指定的时间间隔后该任务会完成。这个方法是<strong>非阻塞</strong>的。</li><li><strong>Task.Wait()<strong>：一个</strong>同步</strong>的方法，它会<strong>阻塞</strong>当前的线程，直到任务完成。</li><li><strong>Task.Sleep()<strong>：</strong>阻塞</strong>当前线程，使其在指定时间间隔进入睡眠。</li></ul></li><li><p>C# 中nameof是如何使用的？</p><ul><li>nameof是一个编译器关键字，用于获取变量、类型、方法、属性、事件、索引器和命名空间的名称作为字符串常量。nameof提供了一种方便的方式来引用这些 实体的名称，而不需要硬编码字符串，当实体名称改变时，相关的字符串也会自动更新，减少出错的可能性。</li></ul></li><li><p>ref是什么意思？</p><ul><li><p>一个关键字，用于传递变量的引用。在调用Increment方法时，传递count变量的引用而不是它的值。如：<code>Interlocked.Increment(ref count);</code>会直接修改传递给它的count变量的内存地址中存储的值，而不是修改count变量的一个副本。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-built_in">int</span> <span class="hljs-keyword">value</span> = <span class="hljs-number">10</span>;<br><span class="hljs-built_in">int</span> othervalue = <span class="hljs-number">20</span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Swap</span>(<span class="hljs-params"><span class="hljs-keyword">ref</span> <span class="hljs-built_in">int</span> a,<span class="hljs-keyword">ref</span> <span class="hljs-built_in">int</span> b</span>)</span><br>&#123;<br>    <span class="hljs-built_in">int</span> temp = a;<br>    a = b;<br>    b = temp;<br>&#125;<br>swap(<span class="hljs-keyword">ref</span> <span class="hljs-keyword">value</span>,<span class="hljs-keyword">ref</span> othervalue);<br></code></pre></td></tr></table></figure></li></ul></li><li><p>ref和指针的区别？</p><ul><li><strong>ref关键字</strong>：<ul><li>ref是类型安全的，编译器会检查ref参数的类型，确保它与声明的类型一致。</li><li>在调用方法中使用ref</li></ul></li></ul></li><li><p>相较于多线程，异步有什么优缺点？</p></li><li><p>什么是是匿名方法？</p><ul><li><p>匿名方法（Anonymous Method）是一种<strong>不具有名称的函数或方法</strong>。它通常在<strong>需要将函数作为参数传递时使用</strong>，或者在<strong>不需要重复使用该函数的情况下直接定义</strong>。这类方法在许多编程语言中都有实现，主要用于简化代码和提高可读性。</p></li><li><h3 id="使用-delegate-关键字定义匿名方法"><a href="#使用-delegate-关键字定义匿名方法" class="headerlink" title="使用 delegate 关键字定义匿名方法"></a>使用 <code>delegate</code> 关键字定义匿名方法</h3><p>使用 <code>delegate</code> 关键字定义匿名方法是一种较早的方式，它允许你在没有显式定义方法的情况下编写内联代码。这种方法在C# 2.0中引入。</p></li></ul></li><li><p>什么是显式方法定义？什么是内联代码？</p><ul><li><h3 id="显式方法定义"><a href="#显式方法定义" class="headerlink" title="显式方法定义"></a>显式方法定义</h3><p><strong>显式方法定义</strong>指的是通过为方法提供明确的名称、参数和返回类型来定义的方法。这种方法通常在类或模块中定义，具有清晰的作用域和调用方式。显式方法定义有助于代码的组织和重用。</p></li><li><h3 id="内联代码"><a href="#内联代码" class="headerlink" title="内联代码"></a>内联代码</h3><p><strong>内联代码</strong>指的是在代码的执行路径中直接编写的代码，而不是通过调用方法或函数来执行。这种代码通常直接嵌入在使用它的地方，不通过显式方法定义来分离。内联代码通常用于简单的、一次性的任务，但过多的内联代码会导致代码难以维护和理解。</p></li></ul></li><li><p>匿名方法传入委托有什么效果？</p></li><li><p>为啥C#可以用JAVA的库？</p><ul><li>NPOI将Apache POI 库移植到了.NET</li></ul></li><li><p>C#中Nlog是啥？</p><ul><li>一个流行的C#日志记录库，支持多种目标输出(targets)，如文件，数据库，控制台等。</li></ul></li></ul><h2 id="C-取整和取余怎么写"><a href="#C-取整和取余怎么写" class="headerlink" title="C#取整和取余怎么写"></a>C#取整和取余怎么写</h2><h2 id="C-如何取或去掉字符串中某种格式的数据"><a href="#C-如何取或去掉字符串中某种格式的数据" class="headerlink" title="C#如何取或去掉字符串中某种格式的数据"></a>C#如何取或去掉字符串中某种格式的数据</h2><p>正则表达式</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#">Match match = Regex.Match(text,<span class="hljs-string">$@&quot;^[a-zA-Z]+&quot;</span>)<br></code></pre></td></tr></table></figure><h2 id="C-如何查看项目已经安装的包"><a href="#C-如何查看项目已经安装的包" class="headerlink" title="C#如何查看项目已经安装的包"></a>C#如何查看项目已经安装的包</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#">dotnet list package<br></code></pre></td></tr></table></figure><h2 id="C-如何安装包"><a href="#C-如何安装包" class="headerlink" title="C#如何安装包"></a>C#如何安装包</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#">dotnet <span class="hljs-keyword">add</span> package xxx<br></code></pre></td></tr></table></figure><h2 id="C-如何添加引用"><a href="#C-如何添加引用" class="headerlink" title="C#如何添加引用"></a>C#如何添加引用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dotnet add reference ../.../.../xxx.dll 或xxx.csproj<br></code></pre></td></tr></table></figure><h2 id="C-匿名类型"><a href="#C-匿名类型" class="headerlink" title="C#匿名类型"></a>C#匿名类型</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">var</span> config = <span class="hljs-keyword">new</span>&#123;<br>    UrlOfGuoKongRiZhao = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;国控站_日照市空气质量&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>),<br>UrlOfGuoKongOtherStations = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;国控站_城市具体站点数据&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>),<br>UrlOfFieldDevice = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;现场设备&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>),<br>UrlOfHeChengFugitiveDust = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;青岛和诚_雨水设备&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>),<br>UrlOfHeChengNoise = httpGroup.GetValueByDefault(<span class="hljs-string">&quot;青岛和诚_噪声设备&quot;</span>,<span class="hljs-built_in">string</span>.Empty,<span class="hljs-literal">true</span>)<br>&#125;;<br></code></pre></td></tr></table></figure><p>匿名类型可以不显式声明类型的情况下创建对象并初始化其属性。可以直接声明直接用，而不用声明一个类或者结构体。</p><h2 id="readonly字段"><a href="#readonly字段" class="headerlink" title="readonly字段"></a>readonly字段</h2><ul><li><p>对于值类型，完全不能更改值</p></li><li><p>对于引用类型，无法更改引用在内存上的指向，但是不会影响修改引用的实例本身，举例就是这样：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> List&lt;<span class="hljs-built_in">string</span>&gt; FilePaths = [];<br></code></pre></td></tr></table></figure><p>如果我定义了这样的一个链表，我可以执行<code>FilePaths.Add(x)</code>，可以执行<code>FilePaths.AddRange(IEnumerable:x)</code>,但是不能执行<code>FilePaths=new()</code></p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+      <category>问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C-sharp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>C#工具</title>
     <link href="/2024/10/13/C-Sharp%E5%B7%A5%E5%85%B7/"/>
     <url>/2024/10/13/C-Sharp%E5%B7%A5%E5%85%B7/</url>
@@ -1506,7 +1506,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -1600,7 +1600,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -1625,7 +1625,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -1650,7 +1650,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -1675,7 +1675,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -1926,7 +1926,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -1951,11 +1951,11 @@
     
     <tags>
       
+      <tag>C-sharp</tag>
+      
       <tag>Jupyter</tag>
       
       <tag>Python</tag>
-      
-      <tag>C#</tag>
       
     </tags>
     
@@ -1980,7 +1980,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -2005,7 +2005,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -2151,7 +2151,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -2205,7 +2205,7 @@
       
       <tag>数据结构</tag>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -2230,7 +2230,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -2255,7 +2255,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -2349,7 +2349,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -3124,7 +3124,7 @@
     
     <tags>
       
-      <tag>C#</tag>
+      <tag>C-sharp</tag>
       
     </tags>
     
