@@ -22,12 +22,12 @@
     <meta name="description" content="Linux查看系统信息1lsb_release -a  这个工具属于Linux Standard Base（LSB）的一部分。LSB 是一套为 Linux 系统制定的标准化规范，旨在提高不同 Linux 发行版之间的兼容性。    选项 功能    -a 或 --all 显示所有系统信息，包括发行版名称、版本号、描述和代号   -i 或 --id 显示发行版的标识符（如 Ubuntu、Debian">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux操作">
-<meta property="og:url" content="https://homovexillues.github.io/2024/03/29/Linux%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:url" content="https://homovexillues.github.io/2024/10/27/Linux%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="Linux查看系统信息1lsb_release -a  这个工具属于Linux Standard Base（LSB）的一部分。LSB 是一套为 Linux 系统制定的标准化规范，旨在提高不同 Linux 发行版之间的兼容性。    选项 功能    -a 或 --all 显示所有系统信息，包括发行版名称、版本号、描述和代号   -i 或 --id 显示发行版的标识符（如 Ubuntu、Debian">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-29T01:52:19.784Z">
-<meta property="article:modified_time" content="2025-11-11T03:32:21.265Z">
+<meta property="article:published_time" content="2024-10-27T14:50:52.732Z">
+<meta property="article:modified_time" content="2025-11-11T05:52:14.000Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="WSL">
@@ -216,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-29 09:52" pubdate>
-          2024年3月29日 上午
+        <time datetime="2024-10-27 22:50" pubdate>
+          2024年10月27日 晚上
         </time>
       </span>
     
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.9k 字
+          3.3k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          24 分钟
+          28 分钟
         
       </span>
     
@@ -323,6 +323,17 @@
 <h4 id="Linux换源"><a href="#Linux换源" class="headerlink" title="Linux换源"></a>Linux换源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /etc/apt/sources.list<br><br><span class="hljs-comment">#中科大</span><br>deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib<br>deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib<br><span class="hljs-comment">#阿里云</span><br>deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib<br>deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib<br><span class="hljs-comment">#清华大学</span><br>deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free<br>deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free<br></code></pre></td></tr></table></figure>
 
 <h4 id="Linux修改时区"><a href="#Linux修改时区" class="headerlink" title="Linux修改时区"></a>Linux修改时区</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看当前时区</span><br>timedatectl<br><span class="hljs-meta prompt_"># </span><span class="language-bash">列出所有支持时区</span><br>timedatectl list-timezones<br><span class="hljs-meta prompt_"># </span><span class="language-bash">设置时区(以东8区为例)</span><br>sudo timedatectl set-timezone Asia/Shanghai<br></code></pre></td></tr></table></figure>
+<h4 id="Linux做NTP时间同步"><a href="#Linux做NTP时间同步" class="headerlink" title="Linux做NTP时间同步"></a>Linux做NTP时间同步</h4><p>编辑配置文件 <code>/etc/chrony/chrony.conf</code>，找到 <code>server</code> 行、或者添加 NTP 服务器。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Shell">server ntp.aliyun.com iburst<br>server time.windows.com iburst<br>server 0.pool.ntp.org iburst<br>server 1.pool.ntp.org iburst<br>server 2.pool.ntp.org iburst<br></code></pre></td></tr></table></figure>
+<p>启动并启用chrony服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Shell">sudo systemctl enable chronyd    # 设置开机自启动<br>sudo systemctl start chronyd     # 启动服务<br>sudo systemctl status chronyd    # 查看服务状态<br></code></pre></td></tr></table></figure>
+<p>检查同步状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">列出当前所有时间源及状态</span><br>chronyc sources     <br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看本机同步详情</span><br>chronyc tracking    <br></code></pre></td></tr></table></figure>
+<p>输出状态中：</p>
+<ul>
+<li><code>*</code> 表示当前正用来同步的服务器</li>
+<li><code>^</code>, <code>+</code>, <code>-</code> 表示候选、可能等状态<br>手动立即同步<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Shell">sudo chronyc makestep<br></code></pre></td></tr></table></figure></li>
+</ul>
 <h4 id="kali安装工具集"><a href="#kali安装工具集" class="headerlink" title="kali安装工具集"></a>kali安装工具集</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install kali-linux-default<br>包含了Kali linux默认的工具集，大概有9GB左右<br>sudo apt install kali-linux-everything<br>包含了所有的kali工具，大小非常大，约11GB左右<br></code></pre></td></tr></table></figure>
 
 <h4 id="转移WSL下安装的linux系统位置"><a href="#转移WSL下安装的linux系统位置" class="headerlink" title="转移WSL下安装的linux系统位置"></a>转移WSL下安装的linux系统位置</h4><p>常见的教程是手写命令行，比较麻烦，可以直接用GitHub上写好的<a target="_blank" rel="noopener" href="https://github.com/pxlrbt/move-wsl">powershell脚本</a></p>
@@ -401,7 +412,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Linux操作</div>
-      <div>https://homovexillues.github.io/2024/03/29/Linux操作/</div>
+      <div>https://homovexillues.github.io/2024/10/27/Linux操作/</div>
     </div>
     <div class="license-meta">
       
@@ -413,7 +424,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月29日</div>
+          <div>2024年10月27日</div>
         </div>
       
       
@@ -445,9 +456,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/29/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" title="线性表的增删改查">
+                      <a href="/2024/10/27/Vim%E5%9F%BA%E6%9C%AC%E9%94%AE%E4%BD%8D/" title="Vim基本键位">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">线性表的增删改查</span>
+                        <span class="hidden-mobile">Vim基本键位</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -455,8 +466,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/29/Docker%E4%BD%BF%E7%94%A8/" title="Docker使用">
-                        <span class="hidden-mobile">Docker使用</span>
+                      <a href="/2024/10/27/Arch%20Linux%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/" title="Arch Linux 安装过程记录">
+                        <span class="hidden-mobile">Arch Linux 安装过程记录</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

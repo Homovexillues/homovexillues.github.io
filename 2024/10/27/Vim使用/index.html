@@ -19,23 +19,21 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="上次是直接安装在老旧笔记本电脑上的，没有进行记录，这次在虚拟机virtual box上安装一下复习一下">
+    <meta name="description" content="x键删除字符  dw删除整个单词  d2w删除接下来的两个单词   d$删除到行尾  w到下一个单词头  e到下一个单词尾  $到行尾  u撤回  Ctrl+R反撤回   0到行首，包括空格  ^到行首，不包括空格  G到文本最好一行首  gg到文本首行  number motion执行几次行动  38j向下移动38次   dd删除一整行  p在光标处粘贴先前删除的文本  r以替换光标处的字符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arch Linux 安装过程记录">
-<meta property="og:url" content="https://homovexillues.github.io/2024/02/12/Arch%20Linux%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="Vim使用">
+<meta property="og:url" content="https://homovexillues.github.io/2024/10/27/Vim%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="上次是直接安装在老旧笔记本电脑上的，没有进行记录，这次在虚拟机virtual box上安装一下复习一下">
+<meta property="og:description" content="x键删除字符  dw删除整个单词  d2w删除接下来的两个单词   d$删除到行尾  w到下一个单词头  e到下一个单词尾  $到行尾  u撤回  Ctrl+R反撤回   0到行首，包括空格  ^到行首，不包括空格  G到文本最好一行首  gg到文本首行  number motion执行几次行动  38j向下移动38次   dd删除一整行  p在光标处粘贴先前删除的文本  r以替换光标处的字符">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-02-12T08:57:06.855Z">
-<meta property="article:modified_time" content="2024-02-12T07:03:52.000Z">
+<meta property="article:published_time" content="2024-10-27T14:54:22.805Z">
+<meta property="article:modified_time" content="2025-11-13T17:10:23.289Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Arch">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Arch Linux 安装过程记录 - 红石门</title>
+  <title>Vim使用 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Arch Linux 安装过程记录"></span>
+            <span id="subtitle" data-typed-text="Vim使用"></span>
           
         </div>
 
@@ -216,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-12 16:57" pubdate>
-          2024年2月12日 下午
+        <time datetime="2024-10-27 22:54" pubdate>
+          2024年10月27日 晚上
         </time>
       </span>
     
@@ -228,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          50 字
+          734 字
         
       </span>
     
@@ -239,7 +237,7 @@
         
         
         
-          1 分钟
+          7 分钟
         
       </span>
     
@@ -276,12 +274,107 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Arch Linux 安装过程记录</h1>
+            <h1 id="seo-header">Vim使用</h1>
             
             
               <div class="markdown-body">
                 
-                <p>上次是直接安装在老旧笔记本电脑上的，没有进行记录，这次在虚拟机virtual box上安装一下复习一下</p>
+                <ul>
+<li><p>x键删除字符</p>
+</li>
+<li><p>dw删除整个单词</p>
+<ul>
+<li>d2w删除接下来的两个单词</li>
+</ul>
+</li>
+<li><p>d$删除到行尾</p>
+</li>
+<li><p>w到下一个单词头</p>
+</li>
+<li><p>e到下一个单词尾</p>
+</li>
+<li><p>$到行尾</p>
+</li>
+<li><p>u撤回</p>
+<ul>
+<li>Ctrl+R反撤回</li>
+</ul>
+</li>
+<li><p>0到行首，包括空格</p>
+</li>
+<li><p>^到行首，不包括空格</p>
+</li>
+<li><p>G到文本最好一行首</p>
+</li>
+<li><p>gg到文本首行</p>
+</li>
+<li><p>number motion执行几次行动</p>
+<ul>
+<li>38j向下移动38次</li>
+</ul>
+</li>
+<li><p>dd删除一整行</p>
+</li>
+<li><p>p在光标处粘贴先前删除的文本</p>
+</li>
+<li><p>r以替换光标处的字符</p>
+<ul>
+<li>移动光标到第一个错误，键入r和要更正的字符</li>
+</ul>
+</li>
+<li><p>ce删除直到单词末尾的内容并进入编辑模式</p>
+<ul>
+<li>cw删除整个单词并进入编辑模式</li>
+<li>c$删除直到行末并进入编辑模式</li>
+</ul>
+</li>
+<li><p>Ctrl+G显示你在文档中的位置</p>
+</li>
+<li><p>number+G前往第数字行</p>
+</li>
+<li><p>&#x2F;+搜索的单词</p>
+<ul>
+<li>向下搜索下一个单词n</li>
+<li>向上搜索下一个单词N</li>
+</ul>
+</li>
+<li><p>？+向上搜索的单词</p>
+</li>
+<li><p>Ctrl+O回到之前的那个位置，Ctrl+I前进位置</p>
+</li>
+<li><p>%将光标移动到它对应的匹配括号上</p>
+</li>
+<li><p>:&#x2F;s&#x2F;old&#x2F;new&#x2F;g将一行中的old替换为new</p>
+</li>
+<li><p>:&#x2F;#,#s&#x2F;old&#x2F;new&#x2F;g其中#,#是更改的行号范围</p>
+</li>
+<li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;g更改全文件的old内容</p>
+</li>
+<li><p>:&#x2F;%s&#x2F;old&#x2F;new&#x2F;gc更改全文及的old内容，并给出替换与否的提示</p>
+</li>
+<li><p>:! 执行外部命令，如:!ls或者:!dir</p>
+</li>
+<li><p>:w Filename.**保存文件并更改文件名或者类型</p>
+</li>
+<li><p>v按住以选择</p>
+</li>
+<li><p>o光标下插入新的一行</p>
+</li>
+<li><p>O光标上插入新的一行</p>
+</li>
+<li><p>A在一句的末尾开始插入内容</p>
+</li>
+<li><p>R插入不止一句内容</p>
+</li>
+<li><p>y复制用v的选中内容，用p粘贴内容</p>
+</li>
+<li><p>选中后U将内容变成大写，u将内容变成小写，~将大小翻转</p>
+</li>
+<li><p>:e ~&#x2F;.vimrc 编辑Unix依赖</p>
+</li>
+<li><p>:e $VIM&#x2F;_vimrc编辑Windows依赖</p>
+</li>
+</ul>
 
                 
               </div>
@@ -312,15 +405,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
-      
-        <a href="/tags/Arch/" class="print-no-link">#Arch</a>
-      
-    </div>
-  
 </div>
 
 
@@ -329,8 +413,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Arch Linux 安装过程记录</div>
-      <div>https://homovexillues.github.io/2024/02/12/Arch Linux安装过程记录/</div>
+      <div>Vim使用</div>
+      <div>https://homovexillues.github.io/2024/10/27/Vim使用/</div>
     </div>
     <div class="license-meta">
       
@@ -342,7 +426,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月12日</div>
+          <div>2024年10月27日</div>
         </div>
       
       
@@ -374,9 +458,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/22/quest2%E6%BF%80%E6%B4%BB/" title="quest2激活">
+                      <a href="/2024/10/27/Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" title="Linux文件系统">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">quest2激活</span>
+                        <span class="hidden-mobile">Linux文件系统</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -384,8 +468,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/04/%E6%95%B4%E8%9B%8A%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%8F%8D%E9%A6%88/" title="整蛊的程序反馈">
-                        <span class="hidden-mobile">整蛊的程序反馈</span>
+                      <a href="/2024/10/27/Vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="Vscode快捷键">
+                        <span class="hidden-mobile">Vscode快捷键</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

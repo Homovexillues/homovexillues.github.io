@@ -22,12 +22,12 @@
     <meta name="description" content="apt一条命令更新并升级1sudo apt update &amp;&amp; sudo apt upgrade -y  -y	安装过程中有需要用户确认的步骤时，可以选择全部为“yes” 指定版本安装1sudo apt install &lt;package_name&gt;&#x3D;&lt;version_number&gt;  清理不再使用的依赖和库文件1sudo apt autoremove  修复">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux命令">
-<meta property="og:url" content="https://homovexillues.github.io/2024/03/29/Linux%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:url" content="https://homovexillues.github.io/2024/10/27/Linux%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="apt一条命令更新并升级1sudo apt update &amp;&amp; sudo apt upgrade -y  -y	安装过程中有需要用户确认的步骤时，可以选择全部为“yes” 指定版本安装1sudo apt install &lt;package_name&gt;&#x3D;&lt;version_number&gt;  清理不再使用的依赖和库文件1sudo apt autoremove  修复">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-29T01:53:06.290Z">
-<meta property="article:modified_time" content="2025-11-07T03:54:28.105Z">
+<meta property="article:published_time" content="2024-10-27T14:54:22.886Z">
+<meta property="article:modified_time" content="2025-11-13T08:14:02.000Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-29 09:53" pubdate>
-          2024年3月29日 上午
+        <time datetime="2024-10-27 22:54" pubdate>
+          2024年10月27日 晚上
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.3k 字
+          6.1k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          45 分钟
+          52 分钟
         
       </span>
     
@@ -339,7 +339,7 @@
 <h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><p>  查看所有执行过的历史记录</p>
 <h3 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h3><p>  用一种更花哨的方式看系统性能的进程</p>
 <h3 id="ip"><a href="#ip" class="headerlink" title="ip"></a>ip</h3><p>用于管理和查看网络接口，包括物理网卡和虚拟接口</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell">ip link <br><span class="hljs-meta prompt_"># </span><span class="language-bash">用于管理和查看网络接口，包括物理网卡和虚拟接口</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">常见用法包括启用或禁用接口，修改接口属性，查看接口状态等</span><br>ip link show <br><span class="hljs-meta prompt_"># </span><span class="language-bash">显示所有网络接口的状态，包括链路层信息，IP地址等</span><br>ip link set dev eth0 up <br><span class="hljs-meta prompt_"># </span><span class="language-bash">启用名为eth0的网卡</span><br>ip link set eth0 mtu 1500<br><span class="hljs-meta prompt_"># </span><span class="language-bash">设置eth0的最大传输单元（MTU）为1500字节</span><br>ip link set eth0 name vbird<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将eth0的名称修改为vbird（需要在网卡关闭时进行）</span><br><br>ip addr<br><span class="hljs-meta prompt_"># </span><span class="language-bash">用于管理和查看ip地址信息</span><br>ip addr add 192.168.1.10/24 dev eth0<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将IP地址192.168.1.10添加到eth0网卡</span><br>ip addr del 192.168.1.10/24 dev eth0<br><span class="hljs-meta prompt_"># </span><span class="language-bash">从网卡中删除指定的IP地址</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">用于管理和查看网络接口，包括物理网卡和虚拟接口</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">常见用法包括启用或禁用接口，修改接口属性，查看接口状态等</span><br>ip link <br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看 ip <span class="hljs-built_in">link</span> 支持的类型</span><br>ip link help<br><span class="hljs-meta prompt_"># </span><span class="language-bash">显示所有网络接口的状态，包括链路层信息，IP地址等</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"></span><br><span class="language-bash">ip <span class="hljs-built_in">link</span> show</span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">启用名为eth0的网卡</span><br>ip link set dev eth0 up <br><span class="hljs-meta prompt_"># </span><span class="language-bash">设置eth0的最大传输单元（MTU）为1500字节</span><br>ip link set eth0 mtu 1500<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将eth0的名称修改为vbird（需要在网卡关闭时进行）</span><br>ip link set eth0 name vbird<br><span class="hljs-meta prompt_"># </span><span class="language-bash">删除网卡</span><br>ip link delete vbird<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">用于管理和查看ip地址信息</span><br>ip addr<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将IP地址192.168.1.10添加到eth0网卡</span><br>ip addr add 192.168.1.10/24 dev eth0<br><span class="hljs-meta prompt_"># </span><span class="language-bash">从网卡中删除指定的IP地址</span><br>ip addr del 192.168.1.10/24 dev eth0<br></code></pre></td></tr></table></figure>
 
 
 
@@ -347,7 +347,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">ps -aux | grep thisbash<br><span class="hljs-comment"># 显示所有进程，并抓取内容中含有“thisbash”内容的进程，然后查看process ID，也就是PID</span><br><br><span class="hljs-built_in">kill</span> -9 6599<br><span class="hljs-comment"># -9表示强制杀掉进程</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><p>  只看文档的一页</p>
-<h3 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h3><p>  链接文件</p>
+<h3 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Shell">ln [选项] &lt;源文件或目录&gt; &lt;目标链接位置&gt;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">创建符号链接</span><br>sudo ln -s /etc/monit/conf-available/nginx /etc/monit/conf-enabled/nginx<br></code></pre></td></tr></table></figure>
 <h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -l<br><span class="hljs-comment"># 查看文件列表，包括属性</span><br><br><span class="hljs-built_in">ls</span> -al<br><span class="hljs-comment"># 查看隐藏文件</span><br><br><span class="hljs-built_in">ls</span> -ld */<br><span class="hljs-comment">#查看当前位置下所有以/结尾的文件，实际上就是目录，遇到目录输出目录名而非目录</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># man命令可以给出命令的帮助文档</span><br>apt install manpages-zh<br><span class="hljs-comment"># 下载中文包将其汉化</span><br>apt install language-pack-zh-han*<br><span class="hljs-comment"># 如果系统没有预装中文语言包，需要以此命令安装</span><br>locale -a<br><span class="hljs-comment"># 可以通过此命令查看系统中的语言环境</span><br>vim ~/.bashrc<br><span class="hljs-built_in">alias</span> cman=<span class="hljs-string">&#x27;man -M /usr/share/man/zh_CN&#x27;</span><br><span class="hljs-comment"># 编辑.bashrc命令以将cman命令添加到shell中</span><br><span class="hljs-built_in">source</span> ~/.bashrc<br><span class="hljs-comment"># 重新加载shell以使之生效</span><br></code></pre></td></tr></table></figure>
@@ -357,6 +357,21 @@
 <h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p>  将要查看的文件内容直接输出在终端上</p>
 <h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>  移动文件</p>
 <h3 id="neofetch"><a href="#neofetch" class="headerlink" title="neofetch"></a>neofetch</h3><p>  显示系统字符图像和系统信息</p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><ul>
+<li><p>npm install xxx</p>
+<ul>
+<li><p>-s	相当于-S，即–save</p>
+<p>局部安装，会写进package.json文件中的dependencie里</p>
+<p>dependencies: 表示生产环境下的依赖管理；</p>
+</li>
+<li><p>-g	全局安装</p>
+</li>
+<li><p>-d	相当于-D，即–save-dev<br>  局部安装，会写进package.json中的devDenpencies里<br>  devDependencies: 表示开发环境下的依赖管理<br>  如果安装这些库是用来打包的或者解析代码的，就可以用这个来安装</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pacman"><a href="#pacman" class="headerlink" title="pacman"></a>pacman</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S [软件名]<br>sudo pacman -Sy <span class="hljs-comment">#更新Arch软件源</span><br>sudo pacman -Syy <span class="hljs-comment">#强制更新Arch软件源</span><br>sudo pacman -Su <span class="hljs-comment">#更新软件</span><br>sudo pcaman -Syu <span class="hljs-comment">#更新软件源并更新软件</span><br>sudo pacman -Syyu <span class="hljs-comment">#强制更新软件源并更新软件</span><br>sudo pacman -Ss vim <span class="hljs-comment">#查询软件源里所有名字里带vim的软件</span><br>sudo pacman -Ss ^vim <span class="hljs-comment">#支持正则表达式，查询所有以vim开头的软件</span><br>sudo pacman -R [软件名] <span class="hljs-comment">#卸载软件</span><br>sudo pacman -Rns [软件名] <span class="hljs-comment">#彻底卸载软件</span><br></code></pre></td></tr></table></figure>
 <h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><p>  更改密码</p>
 <ul>
 <li>sudo passwd nick<br>修改密码</li>
@@ -391,7 +406,8 @@
 <h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h3><p>  只看文档的末尾</p>
 <h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>  创建一个文件</p>
 <h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><p>  查看正在消耗系统性能的进程</p>
-<h5 id="U-根据用户来筛选"><a href="#U-根据用户来筛选" class="headerlink" title="-U 根据用户来筛选"></a>-U 根据用户来筛选</h5><h5 id="k-给某一个pid一个信号-可以用来杀死进程-9"><a href="#k-给某一个pid一个信号-可以用来杀死进程-9" class="headerlink" title="-k 给某一个pid一个信号,可以用来杀死进程(9)"></a>-k 给某一个pid一个信号,可以用来杀死进程(9)</h5><h5 id="X-5显示完整用户名"><a href="#X-5显示完整用户名" class="headerlink" title="-X 5显示完整用户名"></a>-X 5显示完整用户名</h5><h3 id="unzip"><a href="#unzip" class="headerlink" title="unzip"></a>unzip</h3><p>  解压缩文件</p>
+<h5 id="U-根据用户来筛选"><a href="#U-根据用户来筛选" class="headerlink" title="-U 根据用户来筛选"></a>-U 根据用户来筛选</h5><h5 id="k-给某一个pid一个信号-可以用来杀死进程-9"><a href="#k-给某一个pid一个信号-可以用来杀死进程-9" class="headerlink" title="-k 给某一个pid一个信号,可以用来杀死进程(9)"></a>-k 给某一个pid一个信号,可以用来杀死进程(9)</h5><h5 id="X-5显示完整用户名"><a href="#X-5显示完整用户名" class="headerlink" title="-X 5显示完整用户名"></a>-X 5显示完整用户名</h5><h3 id="ufw"><a href="#ufw" class="headerlink" title="ufw"></a>ufw</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看 UFW 状态</span><br>sudo ufw status<br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看详细状态（包括规则）</span><br>sudo ufw status verbose<br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看编号的规则（便于删除）</span><br>sudo ufw status numbered<br><span class="hljs-meta prompt_"># </span><span class="language-bash">启用 UFW</span><br>sudo ufw enable<br><span class="hljs-meta prompt_"># </span><span class="language-bash">禁用 UFW</span><br>sudo ufw disable<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重置所有规则</span><br>sudo ufw reset<br></code></pre></td></tr></table></figure>
+<h3 id="unzip"><a href="#unzip" class="headerlink" title="unzip"></a>unzip</h3><p>  解压缩文件</p>
 <h3 id="useradd-adduser"><a href="#useradd-adduser" class="headerlink" title="useradd&#x2F;adduser"></a>useradd&#x2F;adduser</h3><p>  添加一个新用户&#x2F;添加一个用户，可以指定密码等参数</p>
 <h3 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h3><p>  所有命令所在文件夹</p>
 <h3 id="which"><a href="#which" class="headerlink" title="which"></a>which</h3><p>  找到命令的位置</p>
@@ -453,7 +469,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Linux命令</div>
-      <div>https://homovexillues.github.io/2024/03/29/Linux命令/</div>
+      <div>https://homovexillues.github.io/2024/10/27/Linux命令/</div>
     </div>
     <div class="license-meta">
       
@@ -465,7 +481,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月29日</div>
+          <div>2024年10月27日</div>
         </div>
       
       
@@ -497,9 +513,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/29/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/" title="hexo+Github搭建博客记录">
+                      <a href="/2024/10/29/%E4%B8%80%E6%98%9F%E6%9C%9F%E7%9A%84%E4%B8%83%E5%A4%A9%E9%83%BD%E6%9C%89%E7%9D%80%E4%BB%80%E4%B9%88%E6%84%8F%E8%B1%A1/" title="一星期的七天都有着什么意象">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hexo+Github搭建博客记录</span>
+                        <span class="hidden-mobile">一星期的七天都有着什么意象</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -507,8 +523,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/29/%E6%9D%82%E8%AE%B0/" title="杂记">
-                        <span class="hidden-mobile">杂记</span>
+                      <a href="/2024/10/27/Windows%E5%91%BD%E4%BB%A4/" title="Windows CMD命令">
+                        <span class="hidden-mobile">Windows CMD命令</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
