@@ -22,12 +22,12 @@
     <meta name="description" content="apt一条命令更新并升级1sudo apt update &amp;&amp; sudo apt upgrade -y  -y	安装过程中有需要用户确认的步骤时，可以选择全部为“yes” 指定版本安装1sudo apt install &lt;package_name&gt;&#x3D;&lt;version_number&gt;  清理不再使用的依赖和库文件1sudo apt autoremove  修复">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux命令">
-<meta property="og:url" content="https://homovexillues.github.io/2024/03/29/Linux%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:url" content="https://homovexillues.github.io/2024/10/27/Linux%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="apt一条命令更新并升级1sudo apt update &amp;&amp; sudo apt upgrade -y  -y	安装过程中有需要用户确认的步骤时，可以选择全部为“yes” 指定版本安装1sudo apt install &lt;package_name&gt;&#x3D;&lt;version_number&gt;  清理不再使用的依赖和库文件1sudo apt autoremove  修复">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-29T01:53:06.290Z">
-<meta property="article:modified_time" content="2025-11-14T06:47:31.741Z">
+<meta property="article:published_time" content="2024-10-27T14:54:22.886Z">
+<meta property="article:modified_time" content="2025-11-15T12:47:16.648Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-29 09:53" pubdate>
-          2024年3月29日 上午
+        <time datetime="2024-10-27 22:54" pubdate>
+          2024年10月27日 晚上
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.6k 字
+          7.2k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          56 分钟
+          61 分钟
         
       </span>
     
@@ -311,8 +311,9 @@
 
 
 <h3 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h3><p>  比较两个文件的异同并告诉我们差异之处</p>
-<h3 id="df"><a href="#df" class="headerlink" title="df"></a>df</h3><p>  内存占用情况</p>
-<h3 id="du"><a href="#du" class="headerlink" title="du"></a>du</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">du</span><br><span class="hljs-comment"># 显示目录和文件所占空间</span><br><span class="hljs-built_in">du</span> file_name/dir_name<br><span class="hljs-comment"># 显示特定文件或文件夹大小</span><br><span class="hljs-built_in">du</span> -h<br><span class="hljs-comment"># 以方便阅读的格式显示所占空间</span><br><span class="hljs-built_in">du</span> -s<br><span class="hljs-comment"># 显示指定目录或文件的总大小</span><br></code></pre></td></tr></table></figure>
+<h3 id="df"><a href="#df" class="headerlink" title="df"></a>df</h3><p>  <code>df</code> 命令查看文件系统整体磁盘空间</p>
+<h3 id="du"><a href="#du" class="headerlink" title="du"></a>du</h3><p>与 <code>df</code> 命令不同，<code>du</code> 关注的是具体的文件和目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 显示目录和文件所占空间</span><br><span class="hljs-built_in">du</span><br><span class="hljs-comment"># 显示特定文件或文件夹大小</span><br><span class="hljs-built_in">du</span> file_name/dir_name<br><span class="hljs-comment"># 以方便阅读的格式显示所占空间</span><br><span class="hljs-built_in">du</span> -h<br><span class="hljs-comment"># 显示指定目录或文件的总大小</span><br><span class="hljs-built_in">du</span> -s<br></code></pre></td></tr></table></figure>
 
 <h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><p>  输出一些内容或向文件中添加内容</p>
 <h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>  查找文件</p>
@@ -355,12 +356,15 @@
 <h4 id="排序选项"><a href="#排序选项" class="headerlink" title="排序选项"></a>排序选项</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">按修改时间排序（新的在前）</span><br>ls -lt<br><span class="hljs-meta prompt_"># </span><span class="language-bash">按文件大小排序（大的在前）</span><br>ls -lS<br><span class="hljs-meta prompt_"># </span><span class="language-bash">反向排序(例为文件小的在前)</span><br>ls -lSr<br><span class="hljs-meta prompt_"># </span><span class="language-bash">不排序，按目录顺序显示</span>	<br>ls -U<br><span class="hljs-meta prompt_"># </span><span class="language-bash">按文件扩展名排序</span><br>ls -lX<br></code></pre></td></tr></table></figure>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">每行显示一个文件(-2,-3等不支持)</span><br>ls -1<br><span class="hljs-meta prompt_"># </span><span class="language-bash">输出一个逗号分隔的文件列表</span><br>ls -m<br><span class="hljs-meta prompt_"># </span><span class="language-bash">按列输出（默认）</span><br>ls -C<br><span class="hljs-meta prompt_"># </span><span class="language-bash">按行输出而不是按列</span><br>ls -x<br></code></pre></td></tr></table></figure>
 
+<h3 id="lsblk"><a href="#lsblk" class="headerlink" title="lsblk"></a>lsblk</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看所有硬盘及其物理大小</span><br>lsblk<br><span class="hljs-meta prompt_"># </span><span class="language-bash">输出示例:</span><br>NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS<br>sda    8:0    0 388.4M  1 disk<br>sdb    8:16   0   186M  1 disk<br>sdc    8:32   0     2G  0 disk [SWAP]<br>sdd    8:48   0     1T  0 disk /snap<br>                               /mnt/wslg/distro<br>                               /<br><br></code></pre></td></tr></table></figure>
 <h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># man命令可以给出命令的帮助文档</span><br>apt install manpages-zh<br><span class="hljs-comment"># 下载中文包将其汉化</span><br>apt install language-pack-zh-han*<br><span class="hljs-comment"># 如果系统没有预装中文语言包，需要以此命令安装</span><br>locale -a<br><span class="hljs-comment"># 可以通过此命令查看系统中的语言环境</span><br>vim ~/.bashrc<br><span class="hljs-built_in">alias</span> cman=<span class="hljs-string">&#x27;man -M /usr/share/man/zh_CN&#x27;</span><br><span class="hljs-comment"># 编辑.bashrc命令以将cman命令添加到shell中</span><br><span class="hljs-built_in">source</span> ~/.bashrc<br><span class="hljs-comment"># 重新加载shell以使之生效</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#创建新的文件夹</span><br><span class="hljs-built_in">mkdir</span> path<br><span class="hljs-comment">#递归创建目录，自动创建父目录，忽略已存在的目录</span><br><span class="hljs-built_in">mkdir</span> -p path<br><span class="hljs-comment">#创建目录时直接设置权限</span><br><span class="hljs-built_in">mkdir</span> -m 755 <span class="hljs-built_in">dirname</span><br><span class="hljs-comment">#显示创建过程， verbose 模式，即显示详细步骤、过程，这个参数也可以泛用于很多常见命令，如cp，rm，wget等</span><br><span class="hljs-built_in">mkdir</span> -v path<br>&gt; <span class="hljs-built_in">mkdir</span>: created directory <span class="hljs-string">&#x27;path&#x27;</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p>  将要查看的文件内容直接输出在终端上</p>
 <h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>  移动文件</p>
+<h3 id="ncdu"><a href="#ncdu" class="headerlink" title="ncdu"></a>ncdu</h3><p>磁盘清理工具，像是wizrdtree</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">不指定默认扫描当前文件夹</span><br>ncdu &lt;path&gt;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">扫描整盘</span><br>ncdu /<br><br></code></pre></td></tr></table></figure>
 <h3 id="neofetch"><a href="#neofetch" class="headerlink" title="neofetch"></a>neofetch</h3><p>  显示系统字符图像和系统信息</p>
 <h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><ul>
 <li><p>npm install xxx</p>
@@ -409,6 +413,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl reboot<br><span class="hljs-comment"># 重启系统</span><br><br>sudo systemctl poweroff<br><span class="hljs-comment"># 关闭系统，切断电源</span><br><br>sudo systemctl halt<br><span class="hljs-comment"># CPU停止工作</span><br><br>sudo systemctl <span class="hljs-built_in">suspend</span><br><span class="hljs-comment"># 暂停系统</span><br><br>sudo systemctl hibernate<br><span class="hljs-comment"># 让系统进入冬眠状态</span><br><br>sudo systemctl hybird-sleep<br><span class="hljs-comment"># 让系统进入交互式休眠状态</span><br><br>sudo systemctl rescue<br><span class="hljs-comment"># 启动进入救援状态（单用户状态）</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h3><p>  只看文档的末尾</p>
+<h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">显示完整路径</span><br>tree -f<br><span class="hljs-meta prompt_"># </span><span class="language-bash">显示几层目录（默认显示所有）</span><br>tree -L 2<br><span class="hljs-meta prompt_"># </span><span class="language-bash">文件过滤</span><br><span class="hljs-meta prompt_">	# </span><span class="language-bash">只显示Python文件</span><br>tree -P &quot;*.py&quot;     <br><span class="hljs-meta prompt_">	# </span><span class="language-bash">只显示Java文件</span><br>tree -P &quot;*.java&quot;   <br><span class="hljs-meta prompt_">	# </span><span class="language-bash">排除日志文件</span><br>tree -I &quot;*.log&quot;    <br><span class="hljs-meta prompt_">	# </span><span class="language-bash">排除node_modules目录</span><br>tree -I &quot;node_modules&quot;  <br><span class="hljs-meta prompt_"># </span><span class="language-bash">输出控制</span><br><span class="hljs-meta prompt_">	# </span><span class="language-bash">只显示目录，不显示文件</span><br>tree -d            <br><span class="hljs-meta prompt_">	# </span><span class="language-bash">显示所有文件（包括隐藏文件）</span><br>tree -a            <br><span class="hljs-meta prompt_">	# </span><span class="language-bash">显示文件大小</span><br>tree -s            <br><span class="hljs-meta prompt_">	# </span><span class="language-bash">以人类可读格式显示大小</span><br>tree -h            <br><span class="hljs-meta prompt_">	# </span><span class="language-bash">显示最后修改日期</span><br>tree -D            <br></code></pre></td></tr></table></figure>
 <h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>  创建一个文件</p>
 <h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><p>  查看正在消耗系统性能的进程</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Shell">-U 根据用户来筛选<br>-k 给某一个pid一个信号,可以用来杀死进程(9)<br>-X 5显示完整用户名<br><br></code></pre></td></tr></table></figure>
@@ -476,7 +481,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Linux命令</div>
-      <div>https://homovexillues.github.io/2024/03/29/Linux命令/</div>
+      <div>https://homovexillues.github.io/2024/10/27/Linux命令/</div>
     </div>
     <div class="license-meta">
       
@@ -488,7 +493,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月29日</div>
+          <div>2024年10月27日</div>
         </div>
       
       
@@ -520,9 +525,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/29/hexo+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/" title="hexo+Github搭建博客记录">
+                      <a href="/2024/10/29/%E4%B8%80%E6%98%9F%E6%9C%9F%E7%9A%84%E4%B8%83%E5%A4%A9%E9%83%BD%E6%9C%89%E7%9D%80%E4%BB%80%E4%B9%88%E6%84%8F%E8%B1%A1/" title="一星期的七天都有着什么意象">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hexo+Github搭建博客记录</span>
+                        <span class="hidden-mobile">一星期的七天都有着什么意象</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -530,8 +535,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/29/Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" title="Linux文件系统">
-                        <span class="hidden-mobile">Linux文件系统</span>
+                      <a href="/2024/10/27/Windows%E5%91%BD%E4%BB%A4/" title="Windows CMD命令">
+                        <span class="hidden-mobile">Windows CMD命令</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
