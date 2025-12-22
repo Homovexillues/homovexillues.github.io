@@ -19,15 +19,15 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="跳转   键位 功能    gg 跳转到文本首行   xgg&#x2F;xG&#x2F;:x 跳转到文本第x行   {&#x2F;} 跳转到上&#x2F;下一段   G 跳转到文本最后一行首   w 跳转到下一个单词头   e 跳转到下一个单词尾   $ 跳转到行尾   0 跳转到行首，包括空格   ^ 跳转到行首，不包括空格   Ctrl+o 跳转到之前的那个位置   Ctrl+i 跳转到之后的">
+    <meta name="description" content="跳转   键位 功能 附加动作    gg 跳转到文本首行    xgg&#x2F;xG&#x2F;:x 跳转到文本第x行    {&#x2F;} 跳转到上&#x2F;下一段    G 跳转到文本最后一行首    w 跳转到下一个单词头    Shift+w 跳转到下一个含符号单词头(vim里符号也被视为单词)    b 跳转到上一个单词头    e 跳转到下一个单词尾    $ 跳转到行尾">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim基本键位">
 <meta property="og:url" content="https://homovexillues.github.io/2024/10/27/Vim%E5%9F%BA%E6%9C%AC%E9%94%AE%E4%BD%8D/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="跳转   键位 功能    gg 跳转到文本首行   xgg&#x2F;xG&#x2F;:x 跳转到文本第x行   {&#x2F;} 跳转到上&#x2F;下一段   G 跳转到文本最后一行首   w 跳转到下一个单词头   e 跳转到下一个单词尾   $ 跳转到行尾   0 跳转到行首，包括空格   ^ 跳转到行首，不包括空格   Ctrl+o 跳转到之前的那个位置   Ctrl+i 跳转到之后的">
+<meta property="og:description" content="跳转   键位 功能 附加动作    gg 跳转到文本首行    xgg&#x2F;xG&#x2F;:x 跳转到文本第x行    {&#x2F;} 跳转到上&#x2F;下一段    G 跳转到文本最后一行首    w 跳转到下一个单词头    Shift+w 跳转到下一个含符号单词头(vim里符号也被视为单词)    b 跳转到上一个单词头    e 跳转到下一个单词尾    $ 跳转到行尾">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-27T14:50:58.675Z">
-<meta property="article:modified_time" content="2025-11-13T17:12:36.614Z">
+<meta property="article:modified_time" content="2025-12-22T18:24:09.771Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Vim">
 <meta property="article:tag" content="快捷键">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          841 字
+          958 字
         
       </span>
     
@@ -286,59 +286,98 @@
 <tr>
 <th>键位</th>
 <th>功能</th>
+<th>附加动作</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>gg</td>
 <td>跳转到文本首行</td>
+<td></td>
 </tr>
 <tr>
 <td>xgg&#x2F;xG&#x2F;:x</td>
 <td>跳转到文本第x行</td>
+<td></td>
 </tr>
 <tr>
 <td>{&#x2F;}</td>
 <td>跳转到上&#x2F;下一段</td>
+<td></td>
 </tr>
 <tr>
 <td>G</td>
 <td>跳转到文本最后一行首</td>
+<td></td>
 </tr>
 <tr>
 <td>w</td>
 <td>跳转到下一个单词头</td>
+<td></td>
+</tr>
+<tr>
+<td>Shift+w</td>
+<td>跳转到下一个含符号单词头(vim里符号也被视为单词)</td>
+<td></td>
+</tr>
+<tr>
+<td>b</td>
+<td>跳转到上一个单词头</td>
+<td></td>
 </tr>
 <tr>
 <td>e</td>
 <td>跳转到下一个单词尾</td>
+<td></td>
 </tr>
 <tr>
 <td>$</td>
 <td>跳转到行尾</td>
+<td></td>
 </tr>
 <tr>
 <td>0</td>
 <td>跳转到行首，包括空格</td>
+<td></td>
 </tr>
 <tr>
 <td>^</td>
 <td>跳转到行首，不包括空格</td>
+<td></td>
+</tr>
+<tr>
+<td>fx</td>
+<td>跳转到本行下一个x字符</td>
+<td>;跳转到下一个,跳转到上一个</td>
+</tr>
+<tr>
+<td>Fx</td>
+<td>跳转到本行上一个x字符</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>tx</td>
+<td>跳转到本行下一个x字符的上一个字符(till x)</td>
+<td>同上</td>
 </tr>
 <tr>
 <td>Ctrl+o</td>
 <td>跳转到之前的那个位置</td>
+<td></td>
 </tr>
 <tr>
 <td>Ctrl+i</td>
 <td>跳转到之后的那个位置</td>
+<td></td>
 </tr>
 <tr>
 <td>Ctrl+u</td>
 <td>向上翻页</td>
+<td></td>
 </tr>
 <tr>
 <td>Ctrl+d</td>
 <td>向下翻页</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><table>

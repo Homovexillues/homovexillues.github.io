@@ -26,8 +26,8 @@
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="给我解释一下，GPIO上的TXD和RXD是什么?在树莓派的GPIO引脚中，TXD 和 RXD 分别指的是串口通信（UART）的发送端和接收端：  TXD（Transmit Data，发送数据）也叫 TX，树莓派通过这个引脚把数据“发出去”。在图中是 **GPIO 14 (TXD)**，引脚编号为 8。  RXD（Receive Data，接收数据）也叫 RX，树莓派通过这个引脚“接收”外部设备发来">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-05-28T09:12:00.138Z">
-<meta property="article:modified_time" content="2025-10-23T06:32:38.864Z">
+<meta property="article:published_time" content="2025-05-28T10:38:31.392Z">
+<meta property="article:modified_time" content="2025-12-01T06:53:17.000Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="计算机组成原理">
 <meta name="twitter:card" content="summary_large_image">
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-28 17:12" pubdate>
-          2025年5月28日 下午
+        <time datetime="2025-05-28 18:38" pubdate>
+          2025年5月28日 晚上
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.5k 字
+          9.6k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          55 分钟
+          81 分钟
         
       </span>
     
@@ -426,6 +426,47 @@
 </ul>
 <p><strong>关键点</strong>：现代CPU（2010年后）基本都支持硬件虚拟化，主要问题通常是BIOS设置未启用。如果你的CPU确实不支持，建议优先考虑容器技术或升级硬件。</p>
 <p>你现在使用的是什么CPU？我可以帮你检查具体的支持情况。</p>
+<h1 id="话说字节顺序这茬的标准是什么？怎么有的用3-2-1-0有的用0-1-2-3？有的还是别的顺序？"><a href="#话说字节顺序这茬的标准是什么？怎么有的用3-2-1-0有的用0-1-2-3？有的还是别的顺序？" class="headerlink" title="话说字节顺序这茬的标准是什么？怎么有的用3,2,1,0有的用0,1,2,3？有的还是别的顺序？"></a>话说字节顺序这茬的标准是什么？怎么有的用3,2,1,0有的用0,1,2,3？有的还是别的顺序？</h1><p>字节顺序（Byte Order&#x2F;Endianness）的标准主要有两种，差异源于不同的CPU架构设计哲学：</p>
+<h2 id="主要的字节序标准"><a href="#主要的字节序标准" class="headerlink" title="主要的字节序标准"></a><strong>主要的字节序标准</strong></h2><h3 id="1-大端序（Big-Endian）"><a href="#1-大端序（Big-Endian）" class="headerlink" title="1. 大端序（Big-Endian）"></a>1. <strong>大端序（Big-Endian）</strong></h3><ul>
+<li><strong>顺序：</strong> 高位字节存储在低地址（0,1,2,3）</li>
+<li><strong>特点：</strong> 符合人类阅读习惯</li>
+<li><strong>架构：</strong> PowerPC、SPARC、68000、网络协议<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile">32位数 0x12345678 在内存中：<br><span class="hljs-section">地址:   0x1000  0x1001  0x1002  0x1003</span><br><span class="hljs-section">数据:   0x12    0x34    0x56    0x78</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-小端序（Little-Endian）"><a href="#2-小端序（Little-Endian）" class="headerlink" title="2. 小端序（Little-Endian）"></a>2. <strong>小端序（Little-Endian）</strong></h3><ul>
+<li><strong>顺序：</strong> 低位字节存储在低地址（3,2,1,0）</li>
+<li><strong>特点：</strong> 便于CPU运算处理</li>
+<li><strong>架构：</strong> x86、x86-64、ARM（可配置）<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile">32位数 0x12345678 在内存中：<br><span class="hljs-section">地址:   0x1000  0x1001  0x1002  0x1003</span><br><span class="hljs-section">数据:   0x78    0x56    0x34    0x12</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="历史起源和设计原因"><a href="#历史起源和设计原因" class="headerlink" title="历史起源和设计原因"></a><strong>历史起源和设计原因</strong></h2><h3 id="大端序的优势："><a href="#大端序的优势：" class="headerlink" title="大端序的优势："></a><strong>大端序的优势：</strong></h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs arduino">优点：<br>✅ 符合人类书写习惯（左到右，高到低）<br>✅ 网络传输标准（网络字节序就是大端序）<br>✅ 字符串比较更直观<br>✅ 调试时更易读<br><br>缺点：<br>❌ 多字节运算时需要从高位开始处理<br>❌ 类型转换复杂（如<span class="hljs-type">int</span>转<span class="hljs-type">short</span>）<br></code></pre></td></tr></table></figure>
+
+<h3 id="小端序的优势："><a href="#小端序的优势：" class="headerlink" title="小端序的优势："></a><strong>小端序的优势：</strong></h3><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">优点：<br>✅ <span class="hljs-meta">CPU</span>运算效率高（从低位开始计算）<br>✅ 类型转换简单（截取低字节即可）<br>✅ 内存对齐更灵活<br><br>缺点：<br>❌ 不符合直觉<br>❌ 网络传输需要转换<br>❌ 调试时容易混淆<br></code></pre></td></tr></table></figure>
+
+<h2 id="实际应用中的标准"><a href="#实际应用中的标准" class="headerlink" title="实际应用中的标准"></a><strong>实际应用中的标准</strong></h2><h3 id="1-网络协议标准"><a href="#1-网络协议标准" class="headerlink" title="1. 网络协议标准"></a><strong>1. 网络协议标准</strong></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 网络字节序（大端序）</span><br><span class="hljs-type">uint32_t</span> host_value = <span class="hljs-number">0x12345678</span>;<br><span class="hljs-type">uint32_t</span> network_value = htonl(host_value);  <span class="hljs-comment">// Host TO Network Long</span><br><span class="hljs-type">uint32_t</span> back_to_host = ntohl(network_value); <span class="hljs-comment">// Network TO Host Long</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-文件格式标准"><a href="#2-文件格式标准" class="headerlink" title="2. 文件格式标准"></a><strong>2. 文件格式标准</strong></h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">BMP图片: 小端序</span><br><span class="hljs-section">TIFF图片: 可选择（文件头指定）</span><br><span class="hljs-section">PNG图片: 大端序</span><br><span class="hljs-section">JPEG: 大端序</span><br><span class="hljs-section">PDF: 大端序</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-数据库存储"><a href="#3-数据库存储" class="headerlink" title="3. 数据库存储"></a><strong>3. 数据库存储</strong></h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">MySQL:</span> 小端序（x86架构）<br><span class="hljs-symbol">PostgreSQL:</span> 平台相关<br><span class="hljs-symbol">Oracle:</span> 可配置<br><span class="hljs-symbol">SQLite:</span> 大端序（文件格式）<br></code></pre></td></tr></table></figure>
+
+<h2 id="混合字节序（Mixed-Endian）"><a href="#混合字节序（Mixed-Endian）" class="headerlink" title="混合字节序（Mixed-Endian）"></a><strong>混合字节序（Mixed-Endian）</strong></h2><p>还有一些特殊情况：</p>
+<h3 id="中端序（Middle-Endian）"><a href="#中端序（Middle-Endian）" class="headerlink" title="中端序（Middle-Endian）"></a><strong>中端序（Middle-Endian）</strong></h3><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dns">某些老旧的PDP-<span class="hljs-number">11</span>系统：<br><span class="hljs-number">32</span>位数 <span class="hljs-number">0x12345678</span> 存储为：<br>地址:   <span class="hljs-number">0</span>x1000  <span class="hljs-number">0</span>x1001  <span class="hljs-number">0</span>x1002  <span class="hljs-number">0</span>x1003<br>数据:   <span class="hljs-number">0</span>x34    <span class="hljs-number">0</span>x12    <span class="hljs-number">0</span>x78    <span class="hljs-number">0</span>x56<br>顺序：  <span class="hljs-number">1,0,3,2</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="字节内位序"><a href="#字节内位序" class="headerlink" title="字节内位序"></a><strong>字节内位序</strong></h3><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dns">有些系统还有位级别的字节序：<br>MSB (Most Significant Bit first): <span class="hljs-number">7,6,5,4</span>,<span class="hljs-number">3,2,1,0</span><br>LSB (Least Significant Bit first): <span class="hljs-number">0,1,2,3</span>,<span class="hljs-number">4,5,6,7</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="检测和处理代码示例"><a href="#检测和处理代码示例" class="headerlink" title="检测和处理代码示例"></a><strong>检测和处理代码示例</strong></h2><h3 id="C-中检测字节序："><a href="#C-中检测字节序：" class="headerlink" title="C#中检测字节序："></a><strong>C#中检测字节序：</strong></h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">EndianHelper</span><br>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">bool</span> IsLittleEndian =&gt; BitConverter.IsLittleEndian;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">byte</span>[] <span class="hljs-title">ToNetworkOrder</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> <span class="hljs-keyword">value</span></span>)</span><br>    &#123;<br>        <span class="hljs-keyword">var</span> bytes = BitConverter.GetBytes(<span class="hljs-keyword">value</span>);<br>        <span class="hljs-keyword">if</span> (BitConverter.IsLittleEndian)<br>        &#123;<br>            Array.Reverse(bytes);<br>        &#125;<br>        <span class="hljs-keyword">return</span> bytes;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">int</span> <span class="hljs-title">FromNetworkOrder</span>(<span class="hljs-params"><span class="hljs-built_in">byte</span>[] bytes</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">if</span> (BitConverter.IsLittleEndian)<br>        &#123;<br>            <span class="hljs-keyword">var</span> reversed = <span class="hljs-keyword">new</span> <span class="hljs-built_in">byte</span>[bytes.Length];<br>            Array.Copy(bytes, reversed, bytes.Length);<br>            Array.Reverse(reversed);<br>            <span class="hljs-keyword">return</span> BitConverter.ToInt32(reversed, <span class="hljs-number">0</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> BitConverter.ToInt32(bytes, <span class="hljs-number">0</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 使用示例</span><br>Console.WriteLine(<span class="hljs-string">$&quot;当前系统是小端序: <span class="hljs-subst">&#123;EndianHelper. IsLittleEndian&#125;</span>&quot;</span>);<br><br><span class="hljs-built_in">int</span> <span class="hljs-keyword">value</span> = <span class="hljs-number">0x12345678</span>;<br><span class="hljs-built_in">byte</span>[] networkBytes = EndianHelper.ToNetworkOrder(<span class="hljs-keyword">value</span>);<br>Console.WriteLine(<span class="hljs-string">$&quot;网络字节序: <span class="hljs-subst">&#123;BitConverter.ToString(networkBytes)&#125;</span>&quot;</span>);<br><span class="hljs-comment">// 输出: 12-34-56-78 (大端序)</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="跨平台兼容处理："><a href="#跨平台兼容处理：" class="headerlink" title="跨平台兼容处理："></a><strong>跨平台兼容处理：</strong></h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">CrossPlatformBinaryWriter</span><br>&#123;<br>    <span class="hljs-keyword">private</span> BinaryWriter _writer;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">bool</span> _forceBigEndian;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CrossPlatformBinaryWriter</span>(<span class="hljs-params">Stream stream, <span class="hljs-built_in">bool</span> forceBigEndian = <span class="hljs-literal">false</span></span>)</span><br>    &#123;<br>        _writer = <span class="hljs-keyword">new</span> BinaryWriter(stream);<br>        _forceBigEndian = forceBigEndian;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">WriteInt32</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> <span class="hljs-keyword">value</span></span>)</span><br>    &#123;<br>        <span class="hljs-keyword">if</span> (_forceBigEndian &amp;&amp; BitConverter.IsLittleEndian)<br>        &#123;<br>            <span class="hljs-keyword">var</span> bytes = BitConverter. GetBytes(<span class="hljs-keyword">value</span>);<br>            Array. Reverse(bytes);<br>            _writer.Write(bytes);<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            _writer.Write(<span class="hljs-keyword">value</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="现代开发的最佳实践"><a href="#现代开发的最佳实践" class="headerlink" title="现代开发的最佳实践"></a><strong>现代开发的最佳实践</strong></h2><ol>
+<li><p><strong>明确规定字节序标准</strong></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">// 在协议或文件格式中明确指定</span><br><span class="hljs-keyword">public</span> <span class="hljs-built_in">enum</span> ByteOrder &#123; LittleEndian, BigEndian &#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使用标准库函数</strong></p>
+   <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">// .NET Core/5+ 中的新方法</span><br><span class="hljs-built_in">int</span> <span class="hljs-keyword">value</span> = BinaryPrimitives.ReadInt32BigEndian(span);<br>BinaryPrimitives.WriteInt32LittleEndian(span, <span class="hljs-keyword">value</span>);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>网络通信统一用大端序</strong></p>
+   <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">// 网络传输始终使用大端序</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">byte</span>[] <span class="hljs-title">SerializeForNetwork</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> <span class="hljs-keyword">value</span></span>)</span><br>&#123;<br>    <span class="hljs-keyword">return</span> BitConverter.IsLittleEndian <br>        ? BitConverter.GetBytes(<span class="hljs-keyword">value</span>).Reverse().ToArray()<br>        : BitConverter.GetBytes(<span class="hljs-keyword">value</span>);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>总结：</strong> 字节序的”标准”实际上是历史和架构的产物，现在主要是小端序（Intel&#x2F;AMD）和大端序（网络协议）两大阵营，选择哪种主要看具体应用场景和兼容性要求。</p>
 
                 
               </div>
@@ -523,9 +564,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/05/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="计算机视觉相关问题">
+                      <a href="/2025/06/04/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="自动控制理论相关问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机视觉相关问题</span>
+                        <span class="hidden-mobile">自动控制理论相关问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -533,8 +574,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/27/%E9%9D%A2%E5%8C%85%E5%BA%97%E7%AE%97%E6%B3%95/" title="面包店算法">
-                        <span class="hidden-mobile">面包店算法</span>
+                      <a href="/2025/05/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="计算机视觉相关问题">
+                        <span class="hidden-mobile">计算机视觉相关问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
