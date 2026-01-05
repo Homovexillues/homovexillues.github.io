@@ -26,8 +26,8 @@
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="介绍数据页![[Pasted image 20251116162917.png]]![[Pasted image 20251116162936.png]]pg的数据表叫堆表文件，是磁盘上一个数字命名的没有后缀名的文件这个数字代表这张数据表在数据库里的ID，又叫relfileNode,数据表越大，堆表文件也就越大，而当堆表文件超过1GB时，会自动分割为多个文件![[Pasted image 2025">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-09-06T14:14:40.033Z">
-<meta property="article:modified_time" content="2025-11-16T09:30:27.104Z">
+<meta property="article:published_time" content="2025-09-06T14:14:52.226Z">
+<meta property="article:modified_time" content="2026-01-02T17:48:12.000Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="数据库">
 <meta property="article:tag" content="Postgresql">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          2.2k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          16 分钟
+          19 分钟
         
       </span>
     
@@ -282,12 +282,12 @@
               <div class="markdown-body">
                 
                 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="数据页"><a href="#数据页" class="headerlink" title="数据页"></a>数据页</h3><p>![[Pasted image 20251116162917.png]]<br>![[Pasted image 20251116162936.png]]<br>pg的数据表叫<strong>堆表文件</strong>，是磁盘上一个数字命名的没有后缀名的文件这个数字代表这张数据表在数据库里的ID，又叫relfileNode,数据表越大，堆表文件也就越大，而当堆表文件超过1GB时，会自动分割为多个文件<br>![[Pasted image 20251116172222.png]]<br>堆表文件里会将数据拆分成一个一个数据页来存储，每页8KB，这样只需要读取磁盘里的页就可以，比读写整个表要快很多<br>![[Pasted image 20251116172914.png]]</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install postgresql	<br></code></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>linux下如果apt能找到直接安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install postgresql	<br></code></pre></td></tr></table></figure>
+<p>如果找不到加个源再装,官方文档地址:<a target="_blank" rel="noopener" href="https://www.postgresql.org/download/linux/ubuntu/">PostgreSQL: Linux downloads (Ubuntu)</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Import the repository signing key:</span><br>sudo apt install curl ca-certificates  <br>sudo install -d /usr/share/postgresql-common/pgdg  <br>sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc  <br><span class="hljs-comment"># Create the repository configuration file:</span><br><span class="hljs-comment"># 这里是个bash语法，如果用的别的shell要注意</span><br>. /etc/os-release  <br>sudo sh -c <span class="hljs-string">&quot;echo &#x27;deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt <span class="hljs-variable">$VERSION_CODENAME</span>-pgdg main&#x27; &gt; /etc/apt/sources.list.d/pgdg.list&quot;</span>  <br>sudo apt update<br></code></pre></td></tr></table></figure>
 
-<p>linux下如果apt能找到直接安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo sh -c <span class="hljs-string">&#x27;echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list&#x27;</span><br>wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -<br>sudo apt update<br></code></pre></td></tr></table></figure>
 
-<p>如果找不到加个源再装</p>
 <p>装完了之后会自动注册成systemctl服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl status postgresql<br></code></pre></td></tr></table></figure>
 <p>且会自动配置开机自启动</p>
