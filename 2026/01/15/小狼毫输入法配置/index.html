@@ -19,23 +19,22 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="Microsoft Store 安装默认位置在%LOCALAPPDATA%\Packages\&lt;发行版包名&gt;\ 常见包名：  Ubuntu：CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc Kali：KaliLinux.54290C8133FEE_ey8k8hqnwqnmg Debian：TheDebianProject.DebianGNULinux">
+    <meta name="description" content="参考文章：Rime（小狼毫输入法）配置 - 知乎">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WSL安装及配置">
-<meta property="og:url" content="https://homovexillues.github.io/2025/10/03/WSL%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="小狼毫输入法配置">
+<meta property="og:url" content="https://homovexillues.github.io/2026/01/15/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="Microsoft Store 安装默认位置在%LOCALAPPDATA%\Packages\&lt;发行版包名&gt;\ 常见包名：  Ubuntu：CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc Kali：KaliLinux.54290C8133FEE_ey8k8hqnwqnmg Debian：TheDebianProject.DebianGNULinux">
+<meta property="og:description" content="参考文章：Rime（小狼毫输入法）配置 - 知乎">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-03T08:49:19.977Z">
-<meta property="article:modified_time" content="2025-11-02T14:36:03.548Z">
+<meta property="article:published_time" content="2026-01-15T02:27:55.070Z">
+<meta property="article:modified_time" content="2026-01-15T02:28:49.481Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="WSL">
+<meta property="article:tag" content="配置">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>WSL安装及配置 - 红石门</title>
+  <title>小狼毫输入法配置 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="WSL安装及配置"></span>
+            <span id="subtitle" data-typed-text="小狼毫输入法配置"></span>
           
         </div>
 
@@ -216,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-10-03 16:49" pubdate>
-          2025年10月3日 下午
+        <time datetime="2026-01-15 10:27" pubdate>
+          2026年1月15日 上午
         </time>
       </span>
     
@@ -228,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          22 字
         
       </span>
     
@@ -239,7 +238,7 @@
         
         
         
-          11 分钟
+          1 分钟
         
       </span>
     
@@ -276,25 +275,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">WSL安装及配置</h1>
+            <h1 id="seo-header">小狼毫输入法配置</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Microsoft Store 安装默认位置在<code>%LOCALAPPDATA%\Packages\&lt;发行版包名&gt;\</code></p>
-<p>常见包名：</p>
-<ul>
-<li>Ubuntu：<code>CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc</code></li>
-<li>Kali：<code>KaliLinux.54290C8133FEE_ey8k8hqnwqnmg</code></li>
-<li>Debian：<code>TheDebianProject.DebianGNULinux_76v4gfsz19hv4</code></li>
-</ul>
-<p>这个命令可以立刻查看</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Get-ChildItem</span> <span class="hljs-string">&quot;<span class="hljs-variable">$env:LOCALAPPDATA</span>\Packages&quot;</span> <span class="hljs-literal">-Directory</span> | ? Name <span class="hljs-operator">-Like</span> <span class="hljs-string">&#x27;*Linux*&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<p>WSL 本身不支持“改路径”，官方做法是：<br><strong>导出 → 注销原实例 → 导入到新目录</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 1. 查看实例名</span><br>wsl <span class="hljs-literal">-l</span> <span class="hljs-literal">-v</span><br><span class="hljs-comment"># 假设看到  NAME      STATE           VERSION</span><br><span class="hljs-comment">#            Kali      Running         2</span><br><br><span class="hljs-comment"># 2. 彻底退出</span><br>wsl <span class="hljs-literal">--shutdown</span><br><br><span class="hljs-comment"># 3. 导出为 tar（备份兼迁移）</span><br>mkdir D:\WSL<br>wsl <span class="hljs-literal">--export</span> Kali D:\WSL\kali.tar<br><br><span class="hljs-comment"># 4. 注销原实例（C 盘空间就释放了）</span><br>wsl <span class="hljs-literal">--unregister</span> Kali<br><br><span class="hljs-comment"># 5. 在新目录导入并重新命名</span><br>wsl <span class="hljs-literal">--import</span> Kali D:\WSL\Kali D:\WSL\kali.tar <span class="hljs-literal">--version</span> <span class="hljs-number">2</span><br><br><span class="hljs-comment"># 6. 恢复默认用户（重要！否则登录后是 root）</span><br><span class="hljs-comment"># 先查原用户名</span><br><span class="hljs-built_in">cd</span> <span class="hljs-variable">$env:USERPROFILE</span><br>wsl <span class="hljs-literal">-d</span> Kali <span class="hljs-literal">-e</span> <span class="hljs-built_in">cat</span> /etc/passwd | findstr /B <span class="hljs-string">&quot;/home&quot;</span><br><span class="hljs-comment"># 假设看到 homovexillues:x:1000:1000:,,,:/home/homovexillues:/bin/zsh</span><br><span class="hljs-comment"># 设置回默认用户</span><br>ubuntu config <span class="hljs-literal">--default-user</span> homovexillues        <span class="hljs-comment"># Ubuntu 系列</span><br><span class="hljs-comment"># Kali/Debian 没有官方 config 命令，用注册表法：</span><br><span class="hljs-built_in">Set-ItemProperty</span> <span class="hljs-string">&quot;HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss\<span class="hljs-variable">$</span>((Get-ChildItem HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | ?&#123;(Get-ItemProperty <span class="hljs-variable">$_</span>.PSPath).DistributionName -eq &#x27;Kali&#x27;&#125;).PSChildName)&quot;</span> <span class="hljs-literal">-Name</span> DefaultUid <span class="hljs-literal">-Value</span> <span class="hljs-number">1000</span><br></code></pre></td></tr></table></figure>
-
-<p>WSL默认会创建root用户，及初始化的时候设置的root权限用户，root用户的默认密码是随机的,需要以默认创建的root权限用户执行<code>sudo passwd root</code>来修改密码</p>
+                <p>参考文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/267076288">Rime（小狼毫输入法）配置 - 知乎</a></p>
 
                 
               </div>
@@ -328,9 +314,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
-      
-        <a href="/tags/WSL/" class="print-no-link">#WSL</a>
+        <a href="/tags/%E9%85%8D%E7%BD%AE/" class="print-no-link">#配置</a>
       
     </div>
   
@@ -342,8 +326,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>WSL安装及配置</div>
-      <div>https://homovexillues.github.io/2025/10/03/WSL安装及配置/</div>
+      <div>小狼毫输入法配置</div>
+      <div>https://homovexillues.github.io/2026/01/15/小狼毫输入法配置/</div>
     </div>
     <div class="license-meta">
       
@@ -355,7 +339,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年10月3日</div>
+          <div>2026年1月15日</div>
         </div>
       
       
@@ -387,9 +371,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/10/06/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" title="函数式编程">
+                      <a href="/2026/03/09/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="接口相关问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">函数式编程</span>
+                        <span class="hidden-mobile">接口相关问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -397,8 +381,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/06/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/" title="PostgreSQL数据库">
-                        <span class="hidden-mobile">PostgreSQL数据库</span>
+                      <a href="/2026/01/15/%E7%94%9F%E6%88%90SSL%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/" title="生成SSL自签名证书">
+                        <span class="hidden-mobile">生成SSL自签名证书</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -27,7 +27,7 @@
 <meta property="og:description" content="Miniconda安装Linux12345#通过官方提供的安装脚本安装wget https:&#x2F;&#x2F;repo.anaconda.com&#x2F;miniconda&#x2F;Miniconda3-latest-Linux-x86_64.sh#运行脚本之后交互式安装即可bash Miniconda3-latest-Linux-x86_64.sh#注意：如果安装的时候选择了no，conda命令是默认不会被添加到环境变量里的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-05T03:18:57.835Z">
-<meta property="article:modified_time" content="2025-11-05T08:05:05.782Z">
+<meta property="article:modified_time" content="2026-03-05T05:33:08.872Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          483 字
+          781 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          5 分钟
+          7 分钟
         
       </span>
     
@@ -283,6 +283,11 @@
                 <h1 id="Miniconda"><a href="#Miniconda" class="headerlink" title="Miniconda"></a>Miniconda</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#通过官方提供的安装脚本安装</span><br>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh<br><span class="hljs-comment">#运行脚本之后交互式安装即可</span><br>bash Miniconda3-latest-Linux-x86_64.sh<br><span class="hljs-comment">#注意：如果安装的时候选择了no，conda命令是默认不会被添加到环境变量里的，要手动处理一下</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 1. 为项目创建独立环境</span><br>conda create -n web_app python=3.11<br>conda activate web_app<br><br><span class="hljs-comment"># 2. 安装项目依赖</span><br>conda install django pandas<br>pip install some_special_package  <span class="hljs-comment"># 也可以混用pip</span><br><br><span class="hljs-comment"># 3. 工作完成后退出环境</span><br>conda deactivate<br><br><span class="hljs-comment"># 4. 环境导出（用于部署或分享）</span><br>conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br><br><span class="hljs-comment"># 5. 从文件重建环境</span><br>conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h4 id="查看有哪些虚拟环境"><a href="#查看有哪些虚拟环境" class="headerlink" title="查看有哪些虚拟环境"></a>查看有哪些虚拟环境</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure>
+<h4 id="激活特定虚拟环境"><a href="#激活特定虚拟环境" class="headerlink" title="激活特定虚拟环境"></a>激活特定虚拟环境</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">conda <span class="hljs-built_in">activate</span> xxx<br></code></pre></td></tr></table></figure>
+<h4 id="关闭虚拟环境"><a href="#关闭虚拟环境" class="headerlink" title="关闭虚拟环境"></a>关闭虚拟环境</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">conda deactivate</span><br></code></pre></td></tr></table></figure>
+<h4 id="打包现有虚拟环境并迁移"><a href="#打包现有虚拟环境并迁移" class="headerlink" title="打包现有虚拟环境并迁移"></a>打包现有虚拟环境并迁移</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 1. 安装 conda-pack 工具(需要在你想迁移的环境中运行)</span><br>conda install -c conda-forge conda-pack<br><span class="hljs-comment"># 2. 打包 rms 环境</span><br><span class="hljs-comment"># 这会在当前目录生成一个 rms.tar.gz 文件</span><br>conda pack -n rms -o rms.tar.gz<br><span class="hljs-comment"># （可选）查看包大小</span><br><span class="hljs-built_in">ls</span> -sh rms.tar.gz<br><span class="hljs-comment"># 也可以直接指定安装的虚拟环境</span><br>conda install -n rms -c conda-forge conda-pack<br></code></pre></td></tr></table></figure>
                 
               </div>
             
