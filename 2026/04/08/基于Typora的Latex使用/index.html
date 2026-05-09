@@ -19,22 +19,22 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="基本概念什么是线程？ 线程是操作系统中能够独立运行的最小单位，也是程序中能够并发执行的一段指令序列。 线程是进程的一部分，一个进程可以包含多个线程，这些线程共享进程的资源。 比如现在写了一个控制台程序，在运行之后它就会变成一个进程，入口函数所在的线程就会成为主线程或者入口线程，如果在主线程中创建了其他线程，这个进程就会包含不止一个线程，这些线程都可以访问进程中的资源。   进程有入口线程，也可以创">
+    <meta name="description" content="使用前需要先配置好[Typora](Typora — a markdown editor, markdown reader.)及pandoc以便能将写好的内容导出为LaTex形式 用$$以创建公式段 换行\\或者\newline,不过要在align环境中，如 1234\begin&#123;align&#125;3840 \div 1.5 &#x3D; 2560 \\2160 \div 1.5 &#x3D; 1440">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多线程入门概念">
-<meta property="og:url" content="https://homovexillues.github.io/2024/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:title" content="基于Typora的LaTex使用">
+<meta property="og:url" content="https://homovexillues.github.io/2026/04/08/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="基本概念什么是线程？ 线程是操作系统中能够独立运行的最小单位，也是程序中能够并发执行的一段指令序列。 线程是进程的一部分，一个进程可以包含多个线程，这些线程共享进程的资源。 比如现在写了一个控制台程序，在运行之后它就会变成一个进程，入口函数所在的线程就会成为主线程或者入口线程，如果在主线程中创建了其他线程，这个进程就会包含不止一个线程，这些线程都可以访问进程中的资源。   进程有入口线程，也可以创">
+<meta property="og:description" content="使用前需要先配置好[Typora](Typora — a markdown editor, markdown reader.)及pandoc以便能将写好的内容导出为LaTex形式 用$$以创建公式段 换行\\或者\newline,不过要在align环境中，如 1234\begin&#123;align&#125;3840 \div 1.5 &#x3D; 2560 \\2160 \div 1.5 &#x3D; 1440">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-29T03:21:11.781Z">
-<meta property="article:modified_time" content="2025-10-14T07:33:24.961Z">
+<meta property="article:published_time" content="2026-04-08T02:44:38.814Z">
+<meta property="article:modified_time" content="2026-04-27T05:51:38.058Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="LaTex">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>多线程入门概念 - 红石门</title>
+  <title>基于Typora的LaTex使用 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="多线程入门概念"></span>
+            <span id="subtitle" data-typed-text="基于Typora的LaTex使用"></span>
           
         </div>
 
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-29 11:21" pubdate>
-          2024年4月29日 上午
+        <time datetime="2026-04-08 10:44" pubdate>
+          2026年4月8日 上午
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          651 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          16 分钟
+          6 分钟
         
       </span>
     
@@ -275,136 +275,29 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">多线程入门概念</h1>
+            <h1 id="seo-header">基于Typora的LaTex使用</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="什么是线程？"><a href="#什么是线程？" class="headerlink" title="什么是线程？"></a>什么是线程？</h3><ul>
-<li>线程是操作系统中能够独立运行的最小单位，也是程序中能够并发执行的一段指令序列。</li>
-<li>线程是进程的一部分，一个进程可以包含多个线程，这些线程共享进程的资源。<ul>
-<li>比如现在写了一个控制台程序，在运行之后它就会变成一个进程，入口函数所在的线程就会成为主线程或者入口线程，如果在主线程中创建了其他线程，这个进程就会包含不止一个线程，这些线程都可以访问进程中的资源。</li>
-</ul>
-</li>
-<li>进程有入口线程，也可以创建更多的线程。</li>
-</ul>
-<h3 id="为什么需要多线程？"><a href="#为什么需要多线程？" class="headerlink" title="为什么需要多线程？"></a>为什么需要多线程？</h3><ul>
-<li>批量重复任务希望同时进行（比如对数组中每个元素进行相同且耗时的操作）</li>
-<li>多个不同任务希望同时进行，互不干扰（比如有多个后才线程需要做轮询等操作时）</li>
-</ul>
-<h3 id="什么是线程池？"><a href="#什么是线程池？" class="headerlink" title="什么是线程池？"></a>什么是线程池？</h3><ul>
-<li>一组预先创建的线程，可以被重复使用来执行多个任务</li>
-<li>线程的创建和删除等，生命周期比较耗时</li>
-<li>避免频繁地创建和销毁线程，从而减少了线程创建和销毁的开销，提高了系统的性能和效率</li>
-<li>异步编程默认使用线程池</li>
-</ul>
-<h3 id="什么是线程安全？"><a href="#什么是线程安全？" class="headerlink" title="什么是线程安全？"></a>什么是线程安全？</h3><ul>
-<li><p>线程安全</p>
-<ul>
-<li>多个线程访问共享资源时，对共享资源的访问不会导致数据不一致或不可预期的结果</li>
-</ul>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">const</span> <span class="hljs-built_in">int</span> total = <span class="hljs-number">100</span>_000;<br><span class="hljs-built_in">int</span> count = <span class="hljs-number">0</span>;<br><span class="hljs-built_in">object</span> lockObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">object</span>();<br><span class="hljs-keyword">var</span> thread1 = <span class="hljs-keyword">new</span> Thread(ThreadMethod);<br><span class="hljs-keyword">var</span> thread2 = <span class="hljs-keyword">new</span> Thread(ThreadMethod);<br>thread1.Start();<br>thread2.Start();<br>thread1.Join();<br>thread2.Join();<br>Console.WriteLine(<span class="hljs-string">$&quot;Count:<span class="hljs-subst">&#123;count&#125;</span>&quot;</span>);<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ThreadMethod</span>()</span><br>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; total; i++)<br>        <span class="hljs-keyword">lock</span>(lockObj)<br>            count ++;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>在上述内容中，入果不加锁锁住的话，可能会出现在同一时间thread1和thread2同时调用total的请况，由于它们对total的操作是相同的，相当于只进行了一次计数操作，操作就被抵消掉了。</p>
-</li>
-<li><p>同步机制</p>
-<ul>
-<li>用于协调和控制多个线程之间执行顺序和互斥访问共享资源<ul>
-<li>先到先得，不能同时访问一个资源</li>
-</ul>
-</li>
-<li>确保线程按照特定的顺序执行，避免竞态条件和数据不一致的问题<ul>
-<li>竞态条件就是两个线程在同时用一个资源</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>原子操作</p>
-<ul>
-<li><p>在执行过程中不会被中断的操作。不可分割，要么完全执行，要么完全不执行，没有中间态</p>
-</li>
-<li><p>在多线程环境下，原子操作能够保证数据的一致性和可靠性，避免出现竞态条件和数据竞争的问题</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-comment"><span class="hljs-doctag">///</span>dotnet自带了原子化操作的方法</span><br>Interlocked<br></code></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h3 id="C-的常用实现方式"><a href="#C-的常用实现方式" class="headerlink" title="C#的常用实现方式"></a>C#的常用实现方式</h3><ul>
-<li><p>线程</p>
-<ul>
-<li>new一个线程</li>
-</ul>
-</li>
-<li><p>线程池</p>
-<ul>
-<li>使用ThreadPool中的一些方法</li>
-</ul>
-</li>
-<li><p>异步编程</p>
-<ul>
-<li>async await</li>
-</ul>
-</li>
-<li><p>自带方法</p>
-<ul>
-<li>Parallel:For、ForEach、Invoke——好比传统的for循环，但是里面的每一个循环都能独立进行，Invoke可以传入多个回调函数，这些函数可以同时进行</li>
-<li>PLINQ:AsParallel、AsSequental、AsOrdered</li>
-</ul>
-</li>
-</ul>
-<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul>
-<li><p>线程的创建</p>
-<ul>
-<li>创建Thread实例，并传入ThreadStart委托——还可以配置线程，如是否为后台线程（前台线程只要终止了，那么后台线程也会跟着关闭掉）<ul>
-<li>一般都是一个while循环</li>
-</ul>
-</li>
-<li>调用Thread.Start方法，还可以传参</li>
-</ul>
-</li>
-<li><p>线程的终止</p>
-<ul>
-<li><p>调用Thread.Join方法等待线程的结束——主线程会被阻塞，直到子线程结束才能停止</p>
-</li>
-<li><p>调用Thread.Interrupt方法，中断线程的执行</p>
-<ul>
-<li><p>会在相应线程中抛出ThreadInterruptedException</p>
-</li>
-<li><p>如果一个线程中包含一个while(true)循环，那么需要保证包含等待方法，如IO操作，Thread.Sleep等</p>
-<ul>
-<li><p>如果不包含，则这个线程会太忙了以至于无法抓到抛出的异常</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<br>&#123;<br>    Thread.Sleep(<span class="hljs-number">0</span>);<span class="hljs-comment">//可以添加一个sleep以改变cpu处理这个线程的模式，另，一般写sleep(1)的睡眠时间是会超过1ms的，因为还要调用系统方法什么的</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>不能用Abort?</p>
-</li>
-</ul>
-</li>
-<li><p>线程的挂起与恢复</p>
-<ul>
-<li>Thread.Suspend以及Thread.Resume<ul>
-<li>和Abort一样，挂起和恢复可能让线程在任一位置停止，这一状况非常危险</li>
-</ul>
-</li>
-<li>在较新版本的.NET中，这两个方法已经被标为Obsolete，且调用会报错</li>
-<li>推荐使用锁、信号量等方式实现这一逻辑</li>
-</ul>
-</li>
-</ul>
-<h3 id="线程安全与同步机制"><a href="#线程安全与同步机制" class="headerlink" title="线程安全与同步机制"></a>线程安全与同步机制</h3><ul>
-<li>原子操作</li>
-<li>锁与信号量<ul>
-<li>Lock&amp;Monitor</li>
-<li>Mutex</li>
-<li>Semaphore</li>
-<li>WaitHandle</li>
-<li>ReaderWriterLock</li>
-</ul>
-</li>
-<li>轻量型</li>
-<li>不要自己造轮子</li>
-</ul>
+                <p>使用前需要先配置好[Typora](<a target="_blank" rel="noopener" href="https://typora.io/">Typora — a markdown editor, markdown reader.</a>)及<a target="_blank" rel="noopener" href="https://github.com/jgm/pandoc/releases/latest">pandoc</a>以便能将写好的内容导出为LaTex形式</p>
+<p>用$$以创建公式段</p>
+<h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><p>\\或者\newline,不过要在align环境中，如</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;align&#125;<br>3840 <span class="hljs-keyword">\div</span> 1.5 = 2560 <span class="hljs-keyword">\\</span><br>2160 <span class="hljs-keyword">\div</span> 1.5 = 1440 <span class="hljs-keyword">\\</span><br><span class="hljs-keyword">\end</span>&#123;align&#125;<br></code></pre></td></tr></table></figure>
+<p>$$<br>\begin{align}<br>3840 \div 1.5 &#x3D; 2560 \<br>2160 \div 1.5 &#x3D; 1440 \<br>\end{align}<br>$$<br>a\newline b \newline c</p>
+<h4 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h4><p>a^2<br>a^{2222}<br>$$<br>a^2<br>a^{2222}<br>$$</p>
+<h4 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h4><p>a_2<br>a_{2222}<br>$$<br>a_2<br>a_{2222}<br>$$</p>
+<h4 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h4><p>$$<br>\overline{}<br>\underline{}</p>
+<h1 id="overline-a-b-c"><a href="#overline-a-b-c" class="headerlink" title="$$\overline{a+b+c}"></a>$$<br>\overline{a+b+c}</h1><p>\underline{a+b+c}</p>
+<h4 id="平方根"><a href="#平方根" class="headerlink" title="平方根"></a>平方根</h4><p>$$</p>
+<p>\sqrt[n]{a+b+c}</p>
+<p>$$<br>\sqrt[n]{a+b+c}</p>
+<h4 id="水平大括号"><a href="#水平大括号" class="headerlink" title="水平大括号"></a>水平大括号</h4><p>$$</p>
+<p>\overbrace{2,3,4,\cdots,100}^{99}<br>\underbrace{2,3,4,…,100}^{99}</p>
+<p>$$<br>\overbrace{2,3,4,…,100}^{99}<br>\\underbrace{2,3,4,…,100}^{99}</p>
+<h4 id="分数"><a href="#分数" class="headerlink" title="分数"></a>分数</h4><p>$$<br>\frac{1}{2}<br>$$<br>\frac{1}{2}</p>
+<h4 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h4><p>$$<br>\int_{a}^{b}<br>$$<br>\int_{a}^{b}</p>
+<h4 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h4><p>\to<br>$$<br>\to<br>$$</p>
 
                 
               </div>
@@ -438,7 +331,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="print-no-link">#操作系统</a>
+        <a href="/tags/LaTex/" class="print-no-link">#LaTex</a>
       
     </div>
   
@@ -450,8 +343,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>多线程入门概念</div>
-      <div>https://homovexillues.github.io/2024/04/29/多线程入门概念/</div>
+      <div>基于Typora的LaTex使用</div>
+      <div>https://homovexillues.github.io/2026/04/08/基于Typora的Latex使用/</div>
     </div>
     <div class="license-meta">
       
@@ -463,7 +356,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年4月29日</div>
+          <div>2026年4月8日</div>
         </div>
       
       
@@ -495,9 +388,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/05/04/C-sharp%E5%86%B7%E7%9F%A5%E8%AF%86/" title="C#冷知识">
+                      <a href="/2026/04/08/Git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="Git相关问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C#冷知识</span>
+                        <span class="hidden-mobile">Git相关问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -505,8 +398,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/04/28/Modbus%20TCPIP/" title="Modbus TCP/IP">
-                        <span class="hidden-mobile">Modbus TCP/IP</span>
+                      <a href="/2026/04/08/Vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="Vscode快捷键">
+                        <span class="hidden-mobile">Vscode快捷键</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -563,6 +456,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -756,6 +655,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

@@ -4,6 +4,275 @@
   
   
   <entry>
+    <title>Everything软件常用语法</title>
+    <link href="/2026/05/06/Everything%E8%BD%AF%E4%BB%B6%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
+    <url>/2026/05/06/Everything%E8%BD%AF%E4%BB%B6%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<ul><li>全部视频：<code>video:</code></li><li>全部文件夹：<code>folder:</code></li><li>全部文档：<code>doc:</code></li><li>仅 PDF：<code>ext:pdf</code></li><li>仅 Word：<code>ext:docx;doc</code></li><li>视频 + 关键词：<code>video: 旅行</code></li><li>文档 + 排除 TXT：<code>doc: !ext:txt</code></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>应用程序是怎么在图形界面上绘制出来的</title>
+    <link href="/2026/04/22/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E5%9C%A8%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%BB%98%E5%88%B6%E5%87%BA%E6%9D%A5%E7%9A%84/"/>
+    <url>/2026/04/22/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E5%9C%A8%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%BB%98%E5%88%B6%E5%87%BA%E6%9D%A5%E7%9A%84/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──────────────────────────────────────────────────────────┐<br>│  原生 GUI 方案 (性能最优)                                 │<br>├──────────────────────────────────────────────────────────┤<br>│  渲染引擎           │  UI 框架          │  代表作品       │<br>├──────────────────────────────────────────────────────────┤<br>│  OpenGL/DirectX     │  自写/Dear ImGui  │  游戏/工具      │<br>│  Skia               │  自写             │  Chrome/Flutter │<br>│  Direct2D           │  Win32 API        │  Windows 应用   │<br>│  Core Graphics      │  Cocoa            │  macOS 应用     │<br>│  自绘引擎           │  完全自写         │  Tsoding 风格   │<br>└──────────────────────────────────────────────────────────┘<br>示例架构<br>┌─────────────────────────────────────────────────────────┐<br>│                    你的 Markdown 编辑器                   │<br>├─────────────────────────────────────────────────────────┤<br>│  C/C++ 代码                                              │<br>│  ├── 文本渲染 (FreeType/HarfBuzz)                       │<br>│  ├── Markdown 解析 (cmark/自写)                          │<br>│  ├── 图形绘制 (OpenGL/Direct2D/Skia)                    │<br>│  ├── 窗口管理 (GLFW/SDL/原生 API)                       │<br>│  └── 输入处理 (键盘/鼠标/IME)                           │<br>├─────────────────────────────────────────────────────────┤<br>│  操作系统 API                                            │<br>└─────────────────────────────────────────────────────────┘<br>Tsoding 相关项目<br>https://github.com/tsoding/notepad<br>https://github.com/tsoding/microfrontends<br>特点：<br>- 几万行 C 代码<br>- 直接调用 Win32 API / X11<br>- 自己实现文本渲染、布局<br>- 无依赖，二进制几 KB 到几 MB<br>窗口程序的渲染层次<br>┌─────────────────────────────────────────────────────────────────┐<br>│                    应用 GUI 渲染层级                             │<br>├─────────────────────────────────────────────────────────────────┤<br>│                                                                 │<br>│  你的应用代码                                                   │<br>│       ↓                                                         │<br>│  UI 框架 (WPF/Avalonia/Qt/自写)                                 │<br>│       ↓                                                         │<br>│  渲染引擎 (DirectX/OpenGL/Skia/Core Graphics/GDI)              │<br>│       ↓                                                         │<br>│  图形驱动 (GPU Driver)                                          │<br>│       ↓                                                         │<br>│  GPU 硬件                                                       │<br>│                                                                 │<br>└─────────────────────────────────────────────────────────────────┘<br>---<br>各框架的渲染方式对比<br>WPF (Windows Presentation Foundation)<br>┌─────────────────────────────────────────────────────────┐<br>│  WPF 渲染架构                                            │<br>├─────────────────────────────────────────────────────────┤<br>│  XAML → 视觉树 → 渲染树 → DirectX 9 → GPU              │<br>│                                                         │<br>│  特点：                                                  │<br>│  - 基于 DirectX 9 (不是 GDI)                            │<br>│  - 有保留模式 (Retained Mode) 渲染                     │<br>│  - 自动处理重绘、动画、变换                            │<br>│  - 不能直接用 GDI 混合绘制                             │<br>└─────────────────────────────────────────────────────────┘<br>// WPF - 你声明 UI，框架负责渲染<br>&lt;StackPanel&gt;<br>    &lt;Button Content=<span class="hljs-string">&quot;Click Me&quot;</span> /&gt;<br>    &lt;TextBlock Text=<span class="hljs-string">&quot;Hello&quot;</span> /&gt;<br>&lt;/StackPanel&gt;<br>// 底层：WPF 把这些转换为 DirectX 调用<br>---<br>Avalonia<br>┌─────────────────────────────────────────────────────────┐<br>│  Avalonia 渲染架构                                       │<br>├─────────────────────────────────────────────────────────┤<br>│  Avalonia 自研渲染引擎                                   │<br>│  ├─ 跨平台抽象层                                         │<br>│  ├─ 支持 DirectX / OpenGL / Metal                       │<br>│  └─ 也可软件渲染 (CPU)                                  │<br>│                                                         │<br>│  特点：                                                  │<br>│  - 类似 WPF 但跨平台                                     │<br>│  - 即时模式 (Immediate Mode) 渲染                       │<br>│  - Skia 作为可选后端                                     │<br>└─────────────────────────────────────────────────────────┘<br>---<br>Qt<br>┌─────────────────────────────────────────────────────────┐<br>│  Qt 渲染架构                                             │<br>├─────────────────────────────────────────────────────────┤<br>│  QPainter → 后端抽象                                     │<br>│  ├─ Windows: Direct2D / OpenGL / GDI                   │<br>│  ├─ macOS: Core Graphics / Metal                       │<br>│  ├─ Linux: X11 / Wayland / OpenGL                      │<br>│  └─ 软件渲染 (Raster)                                   │<br>│                                                         │<br>│  Qt Quick: 基于场景图 + OpenGL/DirectX                 │<br>└─────────────────────────────────────────────────────────┘<br>---<br>自绘引擎 (Tsoding 风格)<br>┌─────────────────────────────────────────────────────────┐<br>│  自绘引擎架构                                            │<br>├─────────────────────────────────────────────────────────┤<br>│  你的代码 → 直接调用图形 API → GPU                     │<br>│                                                         │<br>│  可选路径：                                              │<br>│  ├─ Win32 API + GDI (最简单，CPU 渲染)                  │<br>│  ├─ Win32 API + Direct2D (现代，硬件加速)              │<br>│  ├─ Win32 API + OpenGL (跨平台，硬件加速)              │<br>│  ├─ Win32 API + DirectX 11/12 (Windows 专属)           │<br>│  └─ 纯 framebuffer + 自己画像素 (最底层)               │<br>│                                                         │<br>│  特点：                                                  │<br>│  - 无中间层，性能最优                                    │<br>│  - 所有逻辑自己实现 (文本/布局/事件)                   │<br>│  - 开发成本最高                                          │<br>└─────────────────────────────────────────────────────────┘<br>---<br>关键概念辨析<br>保留模式 vs 即时模式<br>┌──────────────────────────────────────────────────────────┐<br>│  保留模式 (Retained Mode) - WPF/Silverlight             │<br>├──────────────────────────────────────────────────────────┤<br>│  你：创建对象树 (Button, TextBlock...)                   │<br>│  框架：维护场景图，自动处理重绘                          │<br>│                                                         │<br>│  优点：开发简单，自动优化                                │<br>│  缺点：黑箱，难以精细控制                                │<br>└──────────────────────────────────────────────────────────┘<br>┌──────────────────────────────────────────────────────────┐<br>│  即时模式 (Immediate Mode) - OpenGL/自绘                │<br>├──────────────────────────────────────────────────────────┤<br>│  你：每帧手动绘制一切                                     │<br>│  框架：只负责执行你的绘制命令                            │<br>│                                                         │<br>│  优点：完全控制，性能可优化                              │<br>│  缺点：每帧都要重绘，代码量大                            │<br>└──────────────────────────────────────────────────────────┘<br>// 保留模式 (WPF)<br>&lt;Button Content=<span class="hljs-string">&quot;Click&quot;</span> /&gt;  // 创建后不用管，框架自动重绘<br>// 即时模式 (OpenGL)<br><span class="hljs-keyword">while</span> (running) &#123;<br>    glClear(GL_COLOR_BUFFER_BIT);<br>    drawButton(x, y, w, h, <span class="hljs-string">&quot;Click&quot;</span>);  // 每帧手动绘制<br>    swapBuffers();<br>&#125;<br>---<br>常见 GUI 框架的渲染后端<br>框架默认渲染后端<br>WPFDirectX 9<br>AvaloniaSkia/DirectX<br>Qt WidgetsGDI/Direct2D<br>Qt QuickOpenGL<br>WinFormsGDI<br>WinUI 3Direct2D<br>ElectronChromium (Skia+OpenGL)<br>Dear ImGuiOpenGL/DirectX<br>自绘任意选择<br>---<br>自绘引擎的真实代码示例<br>Tsoding 风格 (Win32 + GDI)<br>// 完全自绘，无 UI 框架<br><span class="hljs-comment">#include &lt;windows.h&gt;</span><br>void draw_button(HDC hdc, int x, int y, int w, int h, const char* text) &#123;<br>    // 自己画矩形<br>    RECT rect = &#123;x, y, x+w, y+h&#125;;<br>    FillRect(hdc, &amp;rect, (HBRUSH)GetStockObject(GRAY_BRUSH));<br>    FrameRect(hdc, &amp;rect, (HBRUSH)GetStockObject(BLACK_BRUSH));<br>    <br>    // 自己画文字<br>    TextOut(hdc, x+5, y+5, text, strlen(text));<br>&#125;<br>LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) &#123;<br>    <span class="hljs-keyword">case</span> WM_PAINT: &#123;<br>        PAINTSTRUCT ps;<br>        HDC hdc = BeginPaint(hwnd, &amp;ps);<br>        <br>        // 每帧手动绘制所有内容<br>        draw_button(hdc, 50, 50, 100, 30, <span class="hljs-string">&quot;Click&quot;</span>);<br>        <br>        EndPaint(hwnd, &amp;ps);<br>    &#125;<br>&#125;<br>现代自绘 (Win32 + Direct2D)<br>// 直接调用 DirectX 接口<br>ID2D1HwndRenderTarget* pRenderTarget;<br>ID2D1SolidColorBrush* pBrush;<br>void <span class="hljs-function"><span class="hljs-title">Render</span></span>() &#123;<br>    pRenderTarget-&gt;BeginDraw();<br>    pRenderTarget-&gt;Clear(D2D1::ColorF(D2D1::ColorF::White));<br>    <br>    // 直接绘制到 GPU<br>    pRenderTarget-&gt;FillRectangle(<br>        D2D1::RectF(50, 50, 150, 80),<br>        pBrush<br>    );<br>    <br>    pRenderTarget-&gt;EndDraw();<br>&#125;<br>---<br>性能对比<br>┌──────────────────────────────────────────────────────────┐<br>│  渲染方式对比 (绘制 1000 个矩形)                          │<br>├──────────────────────────────────────────────────────────┤<br>│  方案              │  FPS    │  内存    │  开发成本     │<br>├──────────────────────────────────────────────────────────┤<br>│  WPF              │  60     │  100MB+ │  低           │<br>│  Avalonia         │  60     │  80MB+  │  低           │<br>│  Qt               │  60     │  60MB+  │  中           │<br>│  Electron         │  60     │  200MB+ │  低           │<br>│  自绘 (GDI)       │  30-60  │  20MB   │  高           │<br>│  自绘 (Direct2D)  │  60+    │  30MB   │  很高         │<br>│  自绘 (OpenGL)    │  60+    │  25MB   │  很高         │<br>└──────────────────────────────────────────────────────────┘<br>---<br>总结<br>问题答案<br>窗口程序都调用渲染引擎吗？是，只是引擎抽象层次不同<br>WPF/Avalonia 是怎么做的？封装了 DirectX/OpenGL，提供高级 API<br>自绘引擎是什么？跳过 UI 框架，直接调用图形 API<br>自绘=直接调 GPU 吗？是，但也可以通过 GDI 等 CPU 渲染<br>哪个性能最好？自绘 (DirectX/OpenGL) &gt; 框架 &gt; Electron<br>核心结论：<br>- 框架 = 帮你管理渲染细节，开发快，有 overhead<br>- 自绘 = 自己控制每一像素，性能高，开发慢<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>GUI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Avalonia使用</title>
+    <link href="/2026/04/16/Avalonia%E4%BD%BF%E7%94%A8/"/>
+    <url>/2026/04/16/Avalonia%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在编写此文档时，<code>Avalonia</code>版本为<code>12.0.1</code><br>以下命令安装<code>Avalonia</code>模板</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dotnet new install Avalonia.Templates<br></code></pre></td></tr></table></figure><p>如果成功安装，输出如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">将安装以下模板包:<br>   Avalonia.Templates<br><br>成功: Avalonia.Templates@12.0.1 已安装以下模板:<br>模板名                               短名称                     语言     标记<br>-----------------------------------  -------------------------  -------  -----------------------------------------<br>Avalonia .NET App                    avalonia.app               [C<span class="hljs-comment">#],F#  Desktop/Xaml/Avalonia/Windows/Linux/macOS</span><br>Avalonia .NET MVVM App               avalonia.mvvm              [C<span class="hljs-comment">#],F#  Desktop/Xaml/Avalonia/Windows/Linux/macOS</span><br>Avalonia Cross Platform Application  avalonia.xplat             [C<span class="hljs-comment">#],F#  Desktop/Xaml/Avalonia/Browser/Mobile</span><br>Avalonia Resource Dictionary         avalonia.resource                   Desktop/Xaml/Avalonia/Windows/Linux/macOS<br>Avalonia Styles                      avalonia.styles                     Desktop/Xaml/Avalonia/Windows/Linux/macOS<br>Avalonia TemplatedControl            avalonia.templatedcontrol  [C<span class="hljs-comment">#],F#  Desktop/Xaml/Avalonia/Windows/Linux/macOS</span><br>Avalonia UserControl                 avalonia.usercontrol       [C<span class="hljs-comment">#],F#  Desktop/Xaml/Avalonia/Windows/Linux/macOS</span><br>Avalonia Window                      avalonia.window            [C<span class="hljs-comment">#],F#  Desktop/Xaml/Avalonia/Windows/Linux/macOS</span><br></code></pre></td></tr></table></figure><p>其中</p><ul><li><code>avalonia.app</code> → 普通桌面项目</li><li><code>avalonia.mvvm</code> → <code>MVVM</code> 项目（最常用）</li><li><code>avalonia.xplat</code> → 跨平台项目</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C-sharp</tag>
+      
+      <tag>Avalonia</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>双拼输入法配置</title>
+    <link href="/2026/04/08/%E5%8F%8C%E6%8B%BC%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/"/>
+    <url>/2026/04/08/%E5%8F%8C%E6%8B%BC%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="微软拼音"><a href="#微软拼音" class="headerlink" title="微软拼音"></a>微软拼音</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">reg add HKCU\Software\Microsoft\InputMethod\Settings\CHS /v UserDefinedDoublePinyinScheme0 /t REG_SZ /d &quot;小鹤双拼*<span class="hljs-number">2</span>*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt&quot;<br></code></pre></td></tr></table></figure><p>终端执行上述命令，时间和语言-语言和区域-选项-微软拼音-常规  里面就有小鹤双拼了</p><h1 id="小狼毫输入法"><a href="#小狼毫输入法" class="headerlink" title="小狼毫输入法"></a>小狼毫输入法</h1><p>参考文章：<a href="https://zhuanlan.zhihu.com/p/267076288">Rime（小狼毫输入法）配置 - 知乎</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>配置</tag>
+      
+      <tag>双拼</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git相关问题</title>
+    <link href="/2026/04/08/Git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
+    <url>/2026/04/08/Git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Git-的三个区域"><a href="#Git-的三个区域" class="headerlink" title="Git 的三个区域"></a>Git 的三个区域</h2><p>Git 的工作流程涉及三个核心区域：</p><ol><li><strong>工作区 (Working Directory)</strong> — 你实际编辑文件的地方</li><li><strong>暂存区 (Staging Area &#x2F; Index)</strong> — 一个”待提交”的缓冲区</li><li><strong>仓库 (Repository)</strong> — 提交后的永久记录<br>正常的 Git 流程是：<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">编辑文件 → git <span class="hljs-keyword">add</span>（放到暂存区）→ git commit（提交到仓库）→ git <span class="hljs-keyword">push</span>（推送到远程）<br></code></pre></td></tr></table></figure></li></ol><h2 id="为什么要分两步（add-commit）？"><a href="#为什么要分两步（add-commit）？" class="headerlink" title="为什么要分两步（add + commit）？"></a>为什么要分两步（add + commit）？</h2><p>暂存区的作用是让你<strong>精确控制</strong>哪些改动属于同一次提交。比如你改了 5 个文件，但其中 3 个是一组逻辑改动，另外 2 个是另一组，你可以分两次 <code>git add</code> + <code>git commit</code>，让每次提交都干净、有意义。</p><h2 id="为什么你之前”直接提交推送”？"><a href="#为什么你之前”直接提交推送”？" class="headerlink" title="为什么你之前”直接提交推送”？"></a>为什么你之前”直接提交推送”？</h2><p>大概率是你用的工具（或配置）在背后自动帮你执行了 <code>git add .</code> + <code>git commit</code> + <code>git push</code>。很多封装工具为了简化操作会：</p><ul><li>自动把所有改动 <code>git add -A</code>（全部暂存）</li><li>自动生成 commit message 并提交</li><li>自动 push<br>这样你感觉是”直接提交推送”了，但底层流程其实没变，只是工具替你做了 add 那一步。</li></ul><h2 id="常见的-Git-工具流对比"><a href="#常见的-Git-工具流对比" class="headerlink" title="常见的 Git 工具流对比"></a>常见的 Git 工具流对比</h2><table><thead><tr><th>方式</th><th>流程</th><th>灵活度</th></tr></thead><tbody><tr><td>原生 Git CLI</td><td>手动 add → commit → push</td><td>最高，完全可控</td></tr><tr><td>VS Code &#x2F; IDE</td><td>可选择性暂存文件，然后提交</td><td>高</td></tr><tr><td>GitHub Desktop</td><td>选择文件提交，自动 add</td><td>中</td></tr><tr><td>一键式工具&#x2F;脚本</td><td>全部自动 add + commit + push</td><td>最低，但最省事</td></tr></tbody></table><h2 id="实用建议"><a href="#实用建议" class="headerlink" title="实用建议"></a>实用建议</h2><p>如果你想要精细控制但又不想每次手动 add，可以用：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add -A &amp;&amp; git commit -m <span class="hljs-string">&quot;msg&quot;</span>   <span class="hljs-comment"># 全部暂存+提交（一步到位）</span><br>git commit -am <span class="hljs-string">&quot;msg&quot;</span>                  <span class="hljs-comment"># 等价于上面（但不包括新文件）</span><br>git commit -am <span class="hljs-string">&quot;msg&quot;</span> &amp;&amp; git push      <span class="hljs-comment"># 全自动</span><br></code></pre></td></tr></table></figure><p>但如果你想要更好的提交历史，建议保持 add + commit 分开，这样每次提交的内容更有意义，出了问题也更容易回退。</p><hr><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs Shell">.git/<br>├── HEAD                    # 指向当前所在的分支<br>├── config                  # 项目特定的Git配置<br>├── description             # 仓库描述<br>├── index                   # 暂存区（staging area）索引<br>├── hooks/                  # 客户端和服务端钩子脚本<br>├── info/                   # 全局排除文件和稀疏检出配置<br>│   └── exclude<br>├── objects/                # 所有Git对象存储（核心！）<br>│   ├── info/<br>│   └── pack/               # 打包压缩的对象<br>│       ├── pack-xxx.pack   # 打包的数据文件<br>│       └── pack-xxx.idx    # 打包的索引文件<br>├── refs/                   # 引用（分支、标签等）<br>│   ├── heads/              # 分支引用<br>│   ├── tags/               # 标签引用<br>│   └── remotes/            # 远程跟踪分支<br>└── logs/                   # 引用更新日志<br>    ├── HEAD<br>    └── refs/<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>#git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>基于Typora的LaTex使用</title>
+    <link href="/2026/04/08/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/"/>
+    <url>/2026/04/08/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<p>使用前需要先配置好[Typora](<a href="https://typora.io/">Typora — a markdown editor, markdown reader.</a>)及<a href="https://github.com/jgm/pandoc/releases/latest">pandoc</a>以便能将写好的内容导出为LaTex形式</p><p>用$$以创建公式段</p><h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><p>\\或者\newline,不过要在align环境中，如</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;align&#125;<br>3840 <span class="hljs-keyword">\div</span> 1.5 = 2560 <span class="hljs-keyword">\\</span><br>2160 <span class="hljs-keyword">\div</span> 1.5 = 1440 <span class="hljs-keyword">\\</span><br><span class="hljs-keyword">\end</span>&#123;align&#125;<br></code></pre></td></tr></table></figure><p>$$<br>\begin{align}<br>3840 \div 1.5 &#x3D; 2560 \<br>2160 \div 1.5 &#x3D; 1440 \<br>\end{align}<br>$$<br>a\newline b \newline c</p><h4 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h4><p>a^2<br>a^{2222}<br>$$<br>a^2<br>a^{2222}<br>$$</p><h4 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h4><p>a_2<br>a_{2222}<br>$$<br>a_2<br>a_{2222}<br>$$</p><h4 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h4><p>$$<br>\overline{}<br>\underline{}</p><h1 id="overline-a-b-c"><a href="#overline-a-b-c" class="headerlink" title="$$\overline{a+b+c}"></a>$$<br>\overline{a+b+c}</h1><p>\underline{a+b+c}</p><h4 id="平方根"><a href="#平方根" class="headerlink" title="平方根"></a>平方根</h4><p>$$</p><p>\sqrt[n]{a+b+c}</p><p>$$<br>\sqrt[n]{a+b+c}</p><h4 id="水平大括号"><a href="#水平大括号" class="headerlink" title="水平大括号"></a>水平大括号</h4><p>$$</p><p>\overbrace{2,3,4,\cdots,100}^{99}<br>\underbrace{2,3,4,…,100}^{99}</p><p>$$<br>\overbrace{2,3,4,…,100}^{99}<br>\\underbrace{2,3,4,…,100}^{99}</p><h4 id="分数"><a href="#分数" class="headerlink" title="分数"></a>分数</h4><p>$$<br>\frac{1}{2}<br>$$<br>\frac{1}{2}</p><h4 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h4><p>$$<br>\int_{a}^{b}<br>$$<br>\int_{a}^{b}</p><h4 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h4><p>\to<br>$$<br>\to<br>$$</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LaTex</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vscode快捷键</title>
+    <link href="/2026/04/08/Vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <url>/2026/04/08/Vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    
+    <content type="html"><![CDATA[<h4 id="返回刚才位置"><a href="#返回刚才位置" class="headerlink" title="返回刚才位置"></a>返回刚才位置</h4><ul><li>Alt+⬅️&#x2F;Alt+➡️</li></ul><h4 id="命令窗口"><a href="#命令窗口" class="headerlink" title="命令窗口"></a>命令窗口</h4><ul><li>Ctrl+Shift+P</li></ul><h3 id="选中当前单词"><a href="#选中当前单词" class="headerlink" title="选中当前单词"></a>选中当前单词</h3><ul><li>Ctrl+D</li></ul><h4 id="选中当前文件中所有该单词"><a href="#选中当前文件中所有该单词" class="headerlink" title="选中当前文件中所有该单词"></a>选中当前文件中所有该单词</h4><ul><li>Ctrl+Shift+L</li></ul><h4 id="向左-向右选中整个单词"><a href="#向左-向右选中整个单词" class="headerlink" title="向左&#x2F;向右选中整个单词"></a>向左&#x2F;向右选中整个单词</h4><ul><li>Ctrl+Shift+←&#x2F;→</li></ul><h4 id="注释与取消注释"><a href="#注释与取消注释" class="headerlink" title="注释与取消注释"></a>注释与取消注释</h4><ul><li><p>Ctrl+K+C &#x2F;Ctrl+&#x2F;注释 </p></li><li><p>Ctrl+K+U &#x2F;Ctrl+&#x2F;取消注释</p></li></ul><h4 id="批量重命名"><a href="#批量重命名" class="headerlink" title="批量重命名"></a>批量重命名</h4><ul><li>F2更改变量名</li><li>Ctrl+F2更改所有匹配项</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Visual Studio Code</tag>
+      
+      <tag>快捷键</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>多线程入门概念</title>
+    <link href="/2026/04/08/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5/"/>
+    <url>/2026/04/08/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5/</url>
+    
+    <content type="html"><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="什么是线程？"><a href="#什么是线程？" class="headerlink" title="什么是线程？"></a>什么是线程？</h3><ul><li>线程是操作系统中能够独立运行的最小单位，也是程序中能够并发执行的一段指令序列。</li><li>线程是进程的一部分，一个进程可以包含多个线程，这些线程共享进程的资源。<ul><li>比如现在写了一个控制台程序，在运行之后它就会变成一个进程，入口函数所在的线程就会成为主线程或者入口线程，如果在主线程中创建了其他线程，这个进程就会包含不止一个线程，这些线程都可以访问进程中的资源。</li></ul></li><li>进程有入口线程，也可以创建更多的线程。</li></ul><h3 id="为什么需要多线程？"><a href="#为什么需要多线程？" class="headerlink" title="为什么需要多线程？"></a>为什么需要多线程？</h3><ul><li>批量重复任务希望同时进行（比如对数组中每个元素进行相同且耗时的操作）</li><li>多个不同任务希望同时进行，互不干扰（比如有多个后才线程需要做轮询等操作时）</li></ul><h3 id="什么是线程池？"><a href="#什么是线程池？" class="headerlink" title="什么是线程池？"></a>什么是线程池？</h3><ul><li>一组预先创建的线程，可以被重复使用来执行多个任务</li><li>线程的创建和删除等，生命周期比较耗时</li><li>避免频繁地创建和销毁线程，从而减少了线程创建和销毁的开销，提高了系统的性能和效率</li><li>异步编程默认使用线程池</li></ul><h3 id="什么是线程安全？"><a href="#什么是线程安全？" class="headerlink" title="什么是线程安全？"></a>什么是线程安全？</h3><ul><li><p>线程安全</p><ul><li>多个线程访问共享资源时，对共享资源的访问不会导致数据不一致或不可预期的结果</li></ul><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">const</span> <span class="hljs-built_in">int</span> total = <span class="hljs-number">100</span>_000;<br><span class="hljs-built_in">int</span> count = <span class="hljs-number">0</span>;<br><span class="hljs-built_in">object</span> lockObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">object</span>();<br><span class="hljs-keyword">var</span> thread1 = <span class="hljs-keyword">new</span> Thread(ThreadMethod);<br><span class="hljs-keyword">var</span> thread2 = <span class="hljs-keyword">new</span> Thread(ThreadMethod);<br>thread1.Start();<br>thread2.Start();<br>thread1.Join();<br>thread2.Join();<br>Console.WriteLine(<span class="hljs-string">$&quot;Count:<span class="hljs-subst">&#123;count&#125;</span>&quot;</span>);<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ThreadMethod</span>()</span><br>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; total; i++)<br>        <span class="hljs-keyword">lock</span>(lockObj)<br>            count ++;<br>&#125;<br></code></pre></td></tr></table></figure><p>在上述内容中，入果不加锁锁住的话，可能会出现在同一时间thread1和thread2同时调用total的请况，由于它们对total的操作是相同的，相当于只进行了一次计数操作，操作就被抵消掉了。</p></li><li><p>同步机制</p><ul><li>用于协调和控制多个线程之间执行顺序和互斥访问共享资源<ul><li>先到先得，不能同时访问一个资源</li></ul></li><li>确保线程按照特定的顺序执行，避免竞态条件和数据不一致的问题<ul><li>竞态条件就是两个线程在同时用一个资源</li></ul></li></ul></li><li><p>原子操作</p><ul><li><p>在执行过程中不会被中断的操作。不可分割，要么完全执行，要么完全不执行，没有中间态</p></li><li><p>在多线程环境下，原子操作能够保证数据的一致性和可靠性，避免出现竞态条件和数据竞争的问题</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-comment"><span class="hljs-doctag">///</span>dotnet自带了原子化操作的方法</span><br>Interlocked<br></code></pre></td></tr></table></figure></li></ul></li></ul><h3 id="C-的常用实现方式"><a href="#C-的常用实现方式" class="headerlink" title="C#的常用实现方式"></a>C#的常用实现方式</h3><ul><li><p>线程</p><ul><li>new一个线程</li></ul></li><li><p>线程池</p><ul><li>预先new出来一些线程，在需要使用的时候用这些线程，和异步操作一起使用，避免反复新建和释放线程造成的开销</li></ul></li><li><p>异步编程</p><ul><li>async await</li></ul></li><li><p>自带方法</p><ul><li>Parallel:For、ForEach、Invoke——好比传统的for循环，但是里面的每一个循环都能独立进行，Invoke可以传入多个回调函数，这些函数可以同时进行</li><li>PLINQ:AsParallel、AsSequental、AsOrdered</li></ul></li></ul><h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul><li><p>线程的创建</p><ul><li>创建Thread实例，并传入ThreadStart委托——还可以配置线程，如是否为后台线程（前台线程只要终止了，那么后台线程也会跟着关闭掉）<ul><li>一般都是一个while循环</li></ul></li><li>调用Thread.Start方法，还可以传参</li></ul></li><li><p>线程的终止</p><ul><li><p>调用Thread.Join方法等待线程的结束——主线程会被阻塞，直到子线程结束才能停止</p></li><li><p>调用Thread.Interrupt方法，中断线程的执行</p><ul><li><p>会在相应线程中抛出ThreadInterruptedException</p></li><li><p>如果一个线程中包含一个while(true)循环，那么需要保证包含等待方法，如IO操作，Thread.Sleep等</p><ul><li><p>如果不包含，则这个线程会太忙了以至于无法抓到抛出的异常</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<br>&#123;<br>    Thread.Sleep(<span class="hljs-number">0</span>);<span class="hljs-comment">//可以添加一个sleep以改变cpu处理这个线程的模式，另，一般写sleep(1)的睡眠时间是会超过1ms的，因为还要调用系统方法什么的</span><br>&#125;<br></code></pre></td></tr></table></figure></li></ul></li></ul></li><li><p>不能用Abort?</p></li></ul></li><li><p>线程的挂起与恢复</p><ul><li>Thread.Suspend以及Thread.Resume<ul><li>和Abort一样，挂起和恢复可能让线程在任一位置停止，这一状况非常危险</li></ul></li><li>在较新版本的.NET中，这两个方法已经被标为Obsolete，且调用会报错</li><li>推荐使用锁、信号量等方式实现这一逻辑</li></ul></li></ul><h3 id="线程安全与同步机制"><a href="#线程安全与同步机制" class="headerlink" title="线程安全与同步机制"></a>线程安全与同步机制</h3><ul><li>原子操作</li><li>锁与信号量<ul><li>Lock&amp;Monitor</li><li>Mutex</li><li>Semaphore</li><li>WaitHandle</li><li>ReaderWriterLock</li></ul></li><li>轻量型</li><li>不要自己造轮子</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>操作系统</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git基本操作</title>
+    <link href="/2026/04/08/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <url>/2026/04/08/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/../images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png" alt="image-20240515144600594"></p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-comment"># 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。</span><br><span class="hljs-attribute">git</span> checkout .<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>简写说明</title>
+    <link href="/2026/04/08/%E7%AE%80%E5%86%99%E8%AF%B4%E6%98%8E/"/>
+    <url>/2026/04/08/%E7%AE%80%E5%86%99%E8%AF%B4%E6%98%8E/</url>
+    
+    <content type="html"><![CDATA[<h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>ALU</td><td>Arithmetic Logic Unit</td><td>算数逻辑单元</td></tr><tr><td>API</td><td>Application Programming Interface</td><td>应用程序编程接口</td></tr><tr><td>APN</td><td>Access Point Name</td><td>接入点名称</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>BEP</td><td>Block Exchange Protocol</td><td>区块交换协议</td></tr></tbody></table><h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>CPU</td><td>Central Processing Unit</td><td>中央处理器</td></tr><tr><td>COM</td><td>Communication Port</td><td>串行通信端口</td></tr><tr><td>CRC</td><td>Cyclic Redundancy Check</td><td>循环冗余校验</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>DC</td><td>Device Context</td><td>设备上下文</td></tr><tr><td>DIP</td><td>Device Independent Pixel</td><td>设备无关像素 &#x2F; 逻辑像素</td></tr><tr><td>DPI</td><td>Dots Per Inch</td><td>每英寸物理点数</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>FSM</td><td>Finite State Machine</td><td>有限状态机</td></tr><tr><td>FBD</td><td>Function Block Diagram</td><td>功能块图</td></tr><tr><td>FWIW</td><td>For What Is Worth</td><td>仅供参考</td></tr></tbody></table><h1 id="G"><a href="#G" class="headerlink" title="G"></a>G</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>GPIO</td><td>General Purpose Input&#x2F;Output</td><td>通用输入输出</td></tr><tr><td>GDI</td><td>Graphics Device Interface</td><td>图形设备接口</td></tr></tbody></table><h1 id="H"><a href="#H" class="headerlink" title="H"></a>H</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>HIT</td><td>Harbin Institute Technology</td><td>哈尔滨工业大学</td></tr><tr><td>HWND</td><td>Handle to a window</td><td>窗口句柄</td></tr></tbody></table><h1 id="I"><a href="#I" class="headerlink" title="I"></a>I</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>ICMP</td><td>Internet Control Message Protocol</td><td>互联网消息控制协议</td></tr><tr><td>IoT</td><td>Internet of Things</td><td>物联网</td></tr><tr><td>ISS</td><td>Internal Space Station</td><td>国际空间站</td></tr><tr><td>IL</td><td>Instruction List</td><td>指令表</td></tr><tr><td>ISP</td><td>Internet Service Provider</td><td>互联网服务提供商</td></tr><tr><td>IPC</td><td>Inter-Process Communication</td><td>进程间通信</td></tr><tr><td>IoC</td><td>Inversion of Control</td><td>控制反转</td></tr><tr><td>iSCSI</td><td>Internet Small Computer System Interface</td><td>互联网小型计算机系统接口</td></tr></tbody></table><h1 id="J"><a href="#J" class="headerlink" title="J"></a>J</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>JWT</td><td>Json Web Token</td><td>Json网络令牌</td></tr></tbody></table><h1 id="K"><a href="#K" class="headerlink" title="K"></a>K</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="L"><a href="#L" class="headerlink" title="L"></a>L</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>LD</td><td>Ladder Diagram</td><td>梯形图</td></tr><tr><td>LVM</td><td>Logical Volume Manager</td><td>逻辑卷管理</td></tr></tbody></table><h1 id="M"><a href="#M" class="headerlink" title="M"></a>M</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>MQTT</td><td>Message Queuing Telemetry Transport</td><td>消息队列遥测传输</td></tr><tr><td>MOM</td><td>Minutes Of Meeting</td><td>会议纪要</td></tr><tr><td>MEMS</td><td></td><td></td></tr></tbody></table><h1 id="N"><a href="#N" class="headerlink" title="N"></a>N</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>NIC</td><td>Network Interface Card</td><td>网卡</td></tr></tbody></table><h1 id="O"><a href="#O" class="headerlink" title="O"></a>O</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>OPC</td><td>OLE for Process Control&#x2F;Open Platform Communications</td><td>开放平台通信</td></tr><tr><td>Ops</td><td>Operations &amp; Maintenance</td><td>运维</td></tr><tr><td>ORM</td><td>Object-Reactional Mapping</td><td>对象关系映射</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="P"><a href="#P" class="headerlink" title="P"></a>P</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>PLC</td><td>Programmable Logic Controller</td><td>可编程逻辑控制器</td></tr><tr><td>PAM</td><td>Plugged Authentication Modules</td><td>可插拔认证模块</td></tr><tr><td>PPI</td><td>Pixel Per Inch</td><td>每英寸多少像素点</td></tr></tbody></table><h1 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>QoS</td><td>Quality of Service</td><td>服务质量</td></tr></tbody></table><h1 id="R"><a href="#R" class="headerlink" title="R"></a>R</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>RTU</td><td>Remote Terminal Unit</td><td>远程终端单元</td></tr><tr><td>RAM</td><td>Random Access Memory</td><td>随机存取存储器</td></tr><tr><td>ROM</td><td>Read Only Memory</td><td>只读存储器</td></tr><tr><td>ROS</td><td>Robot Operating System</td><td>机器人操作系统</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="S"><a href="#S" class="headerlink" title="S"></a>S</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>SAN</td><td>Storage Area Network</td><td>存储区域网络</td></tr><tr><td>SSL</td><td>Secure Sockets Layer</td><td>安全套接字层</td></tr><tr><td>SLAM</td><td>Simultaneous Localization and Mapping</td><td>同时定位与建图</td></tr><tr><td>STA</td><td>Single Thread Apartment</td><td>单线程单元</td></tr></tbody></table><h1 id="T"><a href="#T" class="headerlink" title="T"></a>T</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>TLS</td><td>Transport Layer Security</td><td>传输层安全</td></tr></tbody></table><h1 id="U"><a href="#U" class="headerlink" title="U"></a>U</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>USB</td><td>Universal Serial Bus</td><td>通用串行总线</td></tr></tbody></table><h1 id="V"><a href="#V" class="headerlink" title="V"></a>V</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>VPN</td><td>Virtual Private Network</td><td>虚拟私人网络</td></tr></tbody></table><h1 id="W"><a href="#W" class="headerlink" title="W"></a>W</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>WEP</td><td>Wired Equivalent Privacy</td><td>有线等效加密</td></tr><tr><td>WPA</td><td>Wifi Protected Access</td><td>Wi-Fi保护接入</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="X"><a href="#X" class="headerlink" title="X"></a>X</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="Y"><a href="#Y" class="headerlink" title="Y"></a>Y</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="Z"><a href="#Z" class="headerlink" title="Z"></a>Z</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>对概念的个人理解</title>
+    <link href="/2026/04/08/%E5%AF%B9%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/"/>
+    <url>/2026/04/08/%E5%AF%B9%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="命令式编程和声明式编程"><a href="#命令式编程和声明式编程" class="headerlink" title="命令式编程和声明式编程"></a>命令式编程和声明式编程</h1><ul><li><p>命令式</p><ul><li>How</li><li>命令式编程要详细的告诉计算机要如何实现你的目标</li><li>a&#x3D;[10];</li><li>For(b in a){      if(b&gt;&#x3D;3){c[10].add(b);}}</li></ul></li><li><p>声明式</p><ul><li>What</li><li>告诉计算机你要实现什么目标</li><li>a&#x3D;[10];</li><li>c[10] &#x3D;      a.Which(b&#x3D;&gt; b&gt;&#x3D;3);</li></ul></li><li><p>并发</p><ul><li><del>在一段时间内看上去像是同时做了多个事情，实际上是并行执行的还是异步执行的都没有关系</del></li><li>并发就是同一时刻，只有一个线程在执行，但是靠操作系统调度+时间片分片，你在1秒内可以感知到多个进程同时在工作，实际上是在夸夸夸夸地疯狂转线程，看起来像是在同时跑多个线程，实则不然</li><li>并行则是真的多个核心在一起干活，同时是真的能跑多个线程的</li></ul></li></ul><h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><ul><li>进程是拥有资源的基本单位，线程是调用CPU的基本单位</li><li>最好的那个例子，一个word进程，你编辑文字是一个线程，保存文字是一个线程，如果不能并发的执行的话，那么在执行保存的时候进程就要卡住</li></ul><h1 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h1><ul><li>所谓泛型方法，实际上就是将类型作为参数输入进了函数中</li></ul><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>个人理解</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Redis安装及使用</title>
     <link href="/2026/03/09/Redis%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
     <url>/2026/03/09/Redis%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
@@ -48,31 +317,6 @@
     <tags>
       
       <tag>经验</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>小狼毫输入法配置</title>
-    <link href="/2026/01/15/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/"/>
-    <url>/2026/01/15/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/</url>
-    
-    <content type="html"><![CDATA[<p>参考文章：<a href="https://zhuanlan.zhihu.com/p/267076288">Rime（小狼毫输入法）配置 - 知乎</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>配置</tag>
       
     </tags>
     
@@ -200,31 +444,6 @@
     <tags>
       
       <tag>计算机组成原理</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Git相关问题</title>
-    <link href="/2025/11/23/Git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
-    <url>/2025/11/23/Git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    
-    <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs Shell">.git/<br>├── HEAD                    # 指向当前所在的分支<br>├── config                  # 项目特定的Git配置<br>├── description             # 仓库描述<br>├── index                   # 暂存区（staging area）索引<br>├── hooks/                  # 客户端和服务端钩子脚本<br>├── info/                   # 全局排除文件和稀疏检出配置<br>│   └── exclude<br>├── objects/                # 所有Git对象存储（核心！）<br>│   ├── info/<br>│   └── pack/               # 打包压缩的对象<br>│       ├── pack-xxx.pack   # 打包的数据文件<br>│       └── pack-xxx.idx    # 打包的索引文件<br>├── refs/                   # 引用（分支、标签等）<br>│   ├── heads/              # 分支引用<br>│   ├── tags/               # 标签引用<br>│   └── remotes/            # 远程跟踪分支<br>└── logs/                   # 引用更新日志<br>    ├── HEAD<br>    └── refs/<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>#git</tag>
       
     </tags>
     
@@ -1473,33 +1692,6 @@
   
   
   <entry>
-    <title>Vscode快捷键</title>
-    <link href="/2024/10/27/Vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <url>/2024/10/27/Vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    
-    <content type="html"><![CDATA[<h4 id="返回刚才位置"><a href="#返回刚才位置" class="headerlink" title="返回刚才位置"></a>返回刚才位置</h4><ul><li>Alt+⬅️&#x2F;Alt+➡️</li></ul><h4 id="命令窗口"><a href="#命令窗口" class="headerlink" title="命令窗口"></a>命令窗口</h4><ul><li>Ctrl+Shift+P</li></ul><h4 id="注释与取消注释"><a href="#注释与取消注释" class="headerlink" title="注释与取消注释"></a>注释与取消注释</h4><ul><li><p>Ctrl+K+C &#x2F;Ctrl+&#x2F;注释 </p></li><li><p>Ctrl+K+U &#x2F;Ctrl+&#x2F;取消注释</p></li></ul><h4 id="批量重命名"><a href="#批量重命名" class="headerlink" title="批量重命名"></a>批量重命名</h4><ul><li>F2更改变量名</li><li>Ctrl+F2更改所有匹配项</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Visual Studio Code</tag>
-      
-      <tag>快捷键</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Vim&amp;NeoVim基础配置</title>
     <link href="/2024/10/27/Vim&amp;NeoVim%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"/>
     <url>/2024/10/27/Vim&amp;NeoVim%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</url>
@@ -1735,25 +1927,6 @@
       <tag>PowerShell</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>简写说明</title>
-    <link href="/2024/10/27/%E7%AE%80%E5%86%99%E8%AF%B4%E6%98%8E/"/>
-    <url>/2024/10/27/%E7%AE%80%E5%86%99%E8%AF%B4%E6%98%8E/</url>
-    
-    <content type="html"><![CDATA[<h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>ALU</td><td>Arithmetic Logic Unit</td><td>算数逻辑单元</td></tr><tr><td>API</td><td>Application Programming Interface</td><td>应用程序编程接口</td></tr><tr><td>APN</td><td>Access Point Name</td><td>接入点名称</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>BEP</td><td>Block Exchange Protocol</td><td>区块交换协议</td></tr></tbody></table><h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>CPU</td><td>Central Processing Unit</td><td>中央处理器</td></tr><tr><td>COM</td><td>Communication Port</td><td>串行通信端口</td></tr><tr><td>CRC</td><td>Cyclic Redundancy Check</td><td>循环冗余校验</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>FSM</td><td>Finite State Machine</td><td>有限状态机</td></tr><tr><td>FBD</td><td>Function Block Diagram</td><td>功能块图</td></tr><tr><td>FWIW</td><td>For What Is Worth</td><td>仅供参考</td></tr></tbody></table><h1 id="G"><a href="#G" class="headerlink" title="G"></a>G</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>GPIO</td><td>General Purpose Input&#x2F;Output</td><td>通用输入输出</td></tr></tbody></table><h1 id="H"><a href="#H" class="headerlink" title="H"></a>H</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>HIT</td><td>Harbin Institute Technology</td><td>哈尔滨工业大学</td></tr></tbody></table><h1 id="I"><a href="#I" class="headerlink" title="I"></a>I</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>ICMP</td><td>Internet Control Message Protocol</td><td>互联网消息控制协议</td></tr><tr><td>IoT</td><td>Internet of Things</td><td>物联网</td></tr><tr><td>ISS</td><td>Internal Space Station</td><td>国际空间站</td></tr><tr><td>IL</td><td>Instruction List</td><td>指令表</td></tr><tr><td>ISP</td><td>Internet Service Provider</td><td>互联网服务提供商</td></tr><tr><td>IPC</td><td>Inter-Process Communication</td><td>进程间通信</td></tr><tr><td>IoC</td><td>Inversion of Control</td><td>控制反转</td></tr><tr><td>iSCSI</td><td>Internet Small Computer System Interface</td><td>互联网小型计算机系统接口</td></tr></tbody></table><h1 id="J"><a href="#J" class="headerlink" title="J"></a>J</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>JWT</td><td>Json Web Token</td><td>Json网络令牌</td></tr></tbody></table><h1 id="K"><a href="#K" class="headerlink" title="K"></a>K</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="L"><a href="#L" class="headerlink" title="L"></a>L</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>LD</td><td>Ladder Diagram</td><td>梯形图</td></tr><tr><td>LVM</td><td>Logical Volume Manager</td><td>逻辑卷管理</td></tr></tbody></table><h1 id="M"><a href="#M" class="headerlink" title="M"></a>M</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>MQTT</td><td>Message Queuing Telemetry Transport</td><td>消息队列遥测传输</td></tr><tr><td>MOM</td><td>Minutes Of Meeting</td><td>会议纪要</td></tr><tr><td>MEMS</td><td></td><td></td></tr></tbody></table><h1 id="N"><a href="#N" class="headerlink" title="N"></a>N</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>NIC</td><td>Network Interface Card</td><td>网卡</td></tr></tbody></table><h1 id="O"><a href="#O" class="headerlink" title="O"></a>O</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>OPC</td><td>OLE for Process Control&#x2F;Open Platform Communications</td><td>开放平台通信</td></tr><tr><td>Ops</td><td>Operations &amp; Maintenance</td><td>运维</td></tr><tr><td>ORM</td><td>Object-Reactional Mapping</td><td>对象关系映射</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="P"><a href="#P" class="headerlink" title="P"></a>P</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>PLC</td><td>Programmable Logic Controller</td><td>可编程逻辑控制器</td></tr><tr><td>PAM</td><td>Plugged Authentication Modules</td><td>可插拔认证模块</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>QoS</td><td>Quality of Service</td><td>服务质量</td></tr></tbody></table><h1 id="R"><a href="#R" class="headerlink" title="R"></a>R</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>RTU</td><td>Remote Terminal Unit</td><td>远程终端单元</td></tr><tr><td>RAM</td><td>Random Access Memory</td><td>随机存取存储器</td></tr><tr><td>ROM</td><td>Read Only Memory</td><td>只读存储器</td></tr><tr><td>ROS</td><td>Robot Operating System</td><td>机器人操作系统</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="S"><a href="#S" class="headerlink" title="S"></a>S</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>SAN</td><td>Storage Area Network</td><td>存储区域网络</td></tr><tr><td>SSL</td><td>Secure Sockets Layer</td><td>安全套接字层</td></tr><tr><td>SLAM</td><td>Simultaneous Localization and Mapping</td><td>同时定位与建图</td></tr></tbody></table><h1 id="T"><a href="#T" class="headerlink" title="T"></a>T</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>TLS</td><td>Transport Layer Security</td><td>传输层安全</td></tr></tbody></table><h1 id="U"><a href="#U" class="headerlink" title="U"></a>U</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>USB</td><td>Universal Serial Bus</td><td>通用串行总线</td></tr></tbody></table><h1 id="V"><a href="#V" class="headerlink" title="V"></a>V</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>VPN</td><td>Virtual Private Network</td><td>虚拟私人网络</td></tr></tbody></table><h1 id="W"><a href="#W" class="headerlink" title="W"></a>W</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>WEP</td><td>Wired Equivalent Privacy</td><td>有线等效加密</td></tr><tr><td>WPA</td><td>Wifi Protected Access</td><td>Wi-Fi保护接入</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="X"><a href="#X" class="headerlink" title="X"></a>X</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="Y"><a href="#Y" class="headerlink" title="Y"></a>Y</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="Z"><a href="#Z" class="headerlink" title="Z"></a>Z</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
     
   </entry>
   
@@ -2138,31 +2311,6 @@
   
   
   <entry>
-    <title>对概念的个人理解</title>
-    <link href="/2024/07/21/%E5%AF%B9%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/"/>
-    <url>/2024/07/21/%E5%AF%B9%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/</url>
-    
-    <content type="html"><![CDATA[<h1 id="命令式编程和声明式编程"><a href="#命令式编程和声明式编程" class="headerlink" title="命令式编程和声明式编程"></a>命令式编程和声明式编程</h1><ul><li><p>命令式</p><ul><li>How</li><li>命令式编程要详细的告诉计算机要如何实现你的目标</li><li>a&#x3D;[10];</li><li>For(b in a){      if(b&gt;&#x3D;3){c[10].add(b);}}</li></ul></li><li><p>声明式</p><ul><li>What</li><li>告诉计算机你要实现什么目标</li><li>a&#x3D;[10];</li><li>c[10] &#x3D;      a.Which(b&#x3D;&gt; b&gt;&#x3D;3);</li></ul></li><li><p>并发</p><ul><li>在一段时间内看上去像是同时做了多个事情，实际上是并行执行的还是异步执行的都没有关系</li></ul></li></ul><h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><ul><li>进程是拥有资源的基本单位，线程是调用CPU的基本单位</li><li>最好的那个例子，一个word进程，你编辑文字是一个线程，保存文字是一个线程，如果不能并发的执行的话，那么在执行保存的时候进程就要卡住</li></ul><h1 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h1><ul><li>所谓泛型方法，实际上就是将类型作为参数输入进了函数中</li></ul><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>个人理解</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>设计模式之美</title>
     <link href="/2024/07/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BE%8E/"/>
     <url>/2024/07/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BE%8E/</url>
@@ -2295,31 +2443,6 @@
   
   
   <entry>
-    <title>Git基本操作</title>
-    <link href="/2024/05/15/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
-    <url>/2024/05/15/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    
-    <content type="html"><![CDATA[<p><img src="/../images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png" alt="image-20240515144600594"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>git</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>XML知识点</title>
     <link href="/2024/05/14/XML%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     <url>/2024/05/14/XML%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
@@ -2441,31 +2564,6 @@
     <tags>
       
       <tag>C-sharp</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>多线程入门概念</title>
-    <link href="/2024/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5/"/>
-    <url>/2024/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5/</url>
-    
-    <content type="html"><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="什么是线程？"><a href="#什么是线程？" class="headerlink" title="什么是线程？"></a>什么是线程？</h3><ul><li>线程是操作系统中能够独立运行的最小单位，也是程序中能够并发执行的一段指令序列。</li><li>线程是进程的一部分，一个进程可以包含多个线程，这些线程共享进程的资源。<ul><li>比如现在写了一个控制台程序，在运行之后它就会变成一个进程，入口函数所在的线程就会成为主线程或者入口线程，如果在主线程中创建了其他线程，这个进程就会包含不止一个线程，这些线程都可以访问进程中的资源。</li></ul></li><li>进程有入口线程，也可以创建更多的线程。</li></ul><h3 id="为什么需要多线程？"><a href="#为什么需要多线程？" class="headerlink" title="为什么需要多线程？"></a>为什么需要多线程？</h3><ul><li>批量重复任务希望同时进行（比如对数组中每个元素进行相同且耗时的操作）</li><li>多个不同任务希望同时进行，互不干扰（比如有多个后才线程需要做轮询等操作时）</li></ul><h3 id="什么是线程池？"><a href="#什么是线程池？" class="headerlink" title="什么是线程池？"></a>什么是线程池？</h3><ul><li>一组预先创建的线程，可以被重复使用来执行多个任务</li><li>线程的创建和删除等，生命周期比较耗时</li><li>避免频繁地创建和销毁线程，从而减少了线程创建和销毁的开销，提高了系统的性能和效率</li><li>异步编程默认使用线程池</li></ul><h3 id="什么是线程安全？"><a href="#什么是线程安全？" class="headerlink" title="什么是线程安全？"></a>什么是线程安全？</h3><ul><li><p>线程安全</p><ul><li>多个线程访问共享资源时，对共享资源的访问不会导致数据不一致或不可预期的结果</li></ul><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">const</span> <span class="hljs-built_in">int</span> total = <span class="hljs-number">100</span>_000;<br><span class="hljs-built_in">int</span> count = <span class="hljs-number">0</span>;<br><span class="hljs-built_in">object</span> lockObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">object</span>();<br><span class="hljs-keyword">var</span> thread1 = <span class="hljs-keyword">new</span> Thread(ThreadMethod);<br><span class="hljs-keyword">var</span> thread2 = <span class="hljs-keyword">new</span> Thread(ThreadMethod);<br>thread1.Start();<br>thread2.Start();<br>thread1.Join();<br>thread2.Join();<br>Console.WriteLine(<span class="hljs-string">$&quot;Count:<span class="hljs-subst">&#123;count&#125;</span>&quot;</span>);<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ThreadMethod</span>()</span><br>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; total; i++)<br>        <span class="hljs-keyword">lock</span>(lockObj)<br>            count ++;<br>&#125;<br></code></pre></td></tr></table></figure><p>在上述内容中，入果不加锁锁住的话，可能会出现在同一时间thread1和thread2同时调用total的请况，由于它们对total的操作是相同的，相当于只进行了一次计数操作，操作就被抵消掉了。</p></li><li><p>同步机制</p><ul><li>用于协调和控制多个线程之间执行顺序和互斥访问共享资源<ul><li>先到先得，不能同时访问一个资源</li></ul></li><li>确保线程按照特定的顺序执行，避免竞态条件和数据不一致的问题<ul><li>竞态条件就是两个线程在同时用一个资源</li></ul></li></ul></li><li><p>原子操作</p><ul><li><p>在执行过程中不会被中断的操作。不可分割，要么完全执行，要么完全不执行，没有中间态</p></li><li><p>在多线程环境下，原子操作能够保证数据的一致性和可靠性，避免出现竞态条件和数据竞争的问题</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-comment"><span class="hljs-doctag">///</span>dotnet自带了原子化操作的方法</span><br>Interlocked<br></code></pre></td></tr></table></figure></li></ul></li></ul><h3 id="C-的常用实现方式"><a href="#C-的常用实现方式" class="headerlink" title="C#的常用实现方式"></a>C#的常用实现方式</h3><ul><li><p>线程</p><ul><li>new一个线程</li></ul></li><li><p>线程池</p><ul><li>使用ThreadPool中的一些方法</li></ul></li><li><p>异步编程</p><ul><li>async await</li></ul></li><li><p>自带方法</p><ul><li>Parallel:For、ForEach、Invoke——好比传统的for循环，但是里面的每一个循环都能独立进行，Invoke可以传入多个回调函数，这些函数可以同时进行</li><li>PLINQ:AsParallel、AsSequental、AsOrdered</li></ul></li></ul><h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul><li><p>线程的创建</p><ul><li>创建Thread实例，并传入ThreadStart委托——还可以配置线程，如是否为后台线程（前台线程只要终止了，那么后台线程也会跟着关闭掉）<ul><li>一般都是一个while循环</li></ul></li><li>调用Thread.Start方法，还可以传参</li></ul></li><li><p>线程的终止</p><ul><li><p>调用Thread.Join方法等待线程的结束——主线程会被阻塞，直到子线程结束才能停止</p></li><li><p>调用Thread.Interrupt方法，中断线程的执行</p><ul><li><p>会在相应线程中抛出ThreadInterruptedException</p></li><li><p>如果一个线程中包含一个while(true)循环，那么需要保证包含等待方法，如IO操作，Thread.Sleep等</p><ul><li><p>如果不包含，则这个线程会太忙了以至于无法抓到抛出的异常</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<br>&#123;<br>    Thread.Sleep(<span class="hljs-number">0</span>);<span class="hljs-comment">//可以添加一个sleep以改变cpu处理这个线程的模式，另，一般写sleep(1)的睡眠时间是会超过1ms的，因为还要调用系统方法什么的</span><br>&#125;<br></code></pre></td></tr></table></figure></li></ul></li></ul></li><li><p>不能用Abort?</p></li></ul></li><li><p>线程的挂起与恢复</p><ul><li>Thread.Suspend以及Thread.Resume<ul><li>和Abort一样，挂起和恢复可能让线程在任一位置停止，这一状况非常危险</li></ul></li><li>在较新版本的.NET中，这两个方法已经被标为Obsolete，且调用会报错</li><li>推荐使用锁、信号量等方式实现这一逻辑</li></ul></li></ul><h3 id="线程安全与同步机制"><a href="#线程安全与同步机制" class="headerlink" title="线程安全与同步机制"></a>线程安全与同步机制</h3><ul><li>原子操作</li><li>锁与信号量<ul><li>Lock&amp;Monitor</li><li>Mutex</li><li>Semaphore</li><li>WaitHandle</li><li>ReaderWriterLock</li></ul></li><li>轻量型</li><li>不要自己造轮子</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>操作系统</tag>
       
     </tags>
     
@@ -2970,31 +3068,6 @@
     <tags>
       
       <tag>单词</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>基于Typora的LaTex使用</title>
-    <link href="/2024/03/29/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/"/>
-    <url>/2024/03/29/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/</url>
-    
-    <content type="html"><![CDATA[<p>使用前需要先配置好[Typora](<a href="https://typora.io/">Typora — a markdown editor, markdown reader.</a>)及<a href="https://github.com/jgm/pandoc/releases/latest">pandoc</a>以便能将写好的内容导出为LaTex形式</p><p>用$$以创建公式段</p><h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><ul><li>\\或者\newline</li></ul><p>$$<br>a\newline b \newline c<br>$$</p><h4 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h4><ul><li>a^2</li><li>a^{2222}</li></ul><p>$$<br>a^2<br>a^{2222}<br>$$</p><h4 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h4><ul><li>a_2</li><li>a_{2222}</li></ul><p>$$<br>a_2<br>a_{2222}<br>$$</p><h4 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h4><ul><li>\overline{}</li><li>\underline{}</li></ul><h1 id="overline-a-b-c"><a href="#overline-a-b-c" class="headerlink" title="$$\overline{a+b+c}"></a>$$<br>\overline{a+b+c}</h1><p>\underline{a+b+c}<br>$$</p><h4 id="平方根"><a href="#平方根" class="headerlink" title="平方根"></a>平方根</h4><ul><li>\sqrt[n]{a+b+c}</li></ul><p>$$<br>\sqrt[n]{a+b+c}<br>$$</p><h4 id="水平大括号"><a href="#水平大括号" class="headerlink" title="水平大括号"></a>水平大括号</h4><ul><li>\overbrace{2,3,4,\cdots,100}^{99}</li><li>\underbrace{2,3,4,…,100}^{99}</li></ul><p>$$<br>\overbrace{2,3,4,…,100}^{99}<br>\\underbrace{2,3,4,…,100}^{99}<br>$$</p><h4 id="分数"><a href="#分数" class="headerlink" title="分数"></a>分数</h4><ul><li>\frac{1}{2}</li></ul><p>$$<br>\frac{1}{2}<br>$$</p><h4 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h4><ul><li>\int_{a}^{b}</li></ul><p>$$<br>\int_{a}^{b}<br>$$</p><h4 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h4><ul><li>\to</li></ul><p>$$<br>\to<br>$$</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>LaTex</tag>
       
     </tags>
     

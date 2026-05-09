@@ -19,22 +19,22 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="命令式编程和声明式编程 命令式  How 命令式编程要详细的告诉计算机要如何实现你的目标 a&#x3D;[10]; For(b in a){      if(b&gt;&#x3D;3){c[10].add(b);}}   声明式  What 告诉计算机你要实现什么目标 a&#x3D;[10]; c[10] &#x3D;      a.Which(b&#x3D;&gt; b&gt;&#x3D;3);">
+    <meta name="description" content="Git 的三个区域Git 的工作流程涉及三个核心区域：  工作区 (Working Directory) — 你实际编辑文件的地方 暂存区 (Staging Area &#x2F; Index) — 一个”待提交”的缓冲区 仓库 (Repository) — 提交后的永久记录正常的 Git 流程是：1编辑文件 → git add（放到暂存区）→ git commit（提交到仓库）→ git pus">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对概念的个人理解">
-<meta property="og:url" content="https://homovexillues.github.io/2024/07/21/%E5%AF%B9%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:title" content="Git相关问题">
+<meta property="og:url" content="https://homovexillues.github.io/2026/04/08/Git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="命令式编程和声明式编程 命令式  How 命令式编程要详细的告诉计算机要如何实现你的目标 a&#x3D;[10]; For(b in a){      if(b&gt;&#x3D;3){c[10].add(b);}}   声明式  What 告诉计算机你要实现什么目标 a&#x3D;[10]; c[10] &#x3D;      a.Which(b&#x3D;&gt; b&gt;&#x3D;3);">
+<meta property="og:description" content="Git 的三个区域Git 的工作流程涉及三个核心区域：  工作区 (Working Directory) — 你实际编辑文件的地方 暂存区 (Staging Area &#x2F; Index) — 一个”待提交”的缓冲区 仓库 (Repository) — 提交后的永久记录正常的 Git 流程是：1编辑文件 → git add（放到暂存区）→ git commit（提交到仓库）→ git pus">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-21T06:47:30.929Z">
-<meta property="article:modified_time" content="2025-10-14T07:35:21.162Z">
+<meta property="article:published_time" content="2026-04-08T03:04:35.777Z">
+<meta property="article:modified_time" content="2026-04-29T13:55:18.000Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="个人理解">
+<meta property="article:tag" content="#git">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>对概念的个人理解 - 红石门</title>
+  <title>Git相关问题 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="对概念的个人理解"></span>
+            <span id="subtitle" data-typed-text="Git相关问题"></span>
           
         </div>
 
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-21 14:47" pubdate>
-          2024年7月21日 下午
+        <time datetime="2026-04-08 11:04" pubdate>
+          2026年4月8日 上午
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          348 字
+          1.2k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          3 分钟
+          11 分钟
         
       </span>
     
@@ -275,42 +275,58 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">对概念的个人理解</h1>
+            <h1 id="seo-header">Git相关问题</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="命令式编程和声明式编程"><a href="#命令式编程和声明式编程" class="headerlink" title="命令式编程和声明式编程"></a>命令式编程和声明式编程</h1><ul>
-<li><p>命令式</p>
+                <h2 id="Git-的三个区域"><a href="#Git-的三个区域" class="headerlink" title="Git 的三个区域"></a>Git 的三个区域</h2><p>Git 的工作流程涉及三个核心区域：</p>
+<ol>
+<li><strong>工作区 (Working Directory)</strong> — 你实际编辑文件的地方</li>
+<li><strong>暂存区 (Staging Area &#x2F; Index)</strong> — 一个”待提交”的缓冲区</li>
+<li><strong>仓库 (Repository)</strong> — 提交后的永久记录<br>正常的 Git 流程是：<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">编辑文件 → git <span class="hljs-keyword">add</span>（放到暂存区）→ git commit（提交到仓库）→ git <span class="hljs-keyword">push</span>（推送到远程）<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="为什么要分两步（add-commit）？"><a href="#为什么要分两步（add-commit）？" class="headerlink" title="为什么要分两步（add + commit）？"></a>为什么要分两步（add + commit）？</h2><p>暂存区的作用是让你<strong>精确控制</strong>哪些改动属于同一次提交。比如你改了 5 个文件，但其中 3 个是一组逻辑改动，另外 2 个是另一组，你可以分两次 <code>git add</code> + <code>git commit</code>，让每次提交都干净、有意义。</p>
+<h2 id="为什么你之前”直接提交推送”？"><a href="#为什么你之前”直接提交推送”？" class="headerlink" title="为什么你之前”直接提交推送”？"></a>为什么你之前”直接提交推送”？</h2><p>大概率是你用的工具（或配置）在背后自动帮你执行了 <code>git add .</code> + <code>git commit</code> + <code>git push</code>。很多封装工具为了简化操作会：</p>
 <ul>
-<li>How</li>
-<li>命令式编程要详细的告诉计算机要如何实现你的目标</li>
-<li>a&#x3D;[10];</li>
-<li>For(b in a){      if(b&gt;&#x3D;3){c[10].add(b);}}</li>
+<li>自动把所有改动 <code>git add -A</code>（全部暂存）</li>
+<li>自动生成 commit message 并提交</li>
+<li>自动 push<br>这样你感觉是”直接提交推送”了，但底层流程其实没变，只是工具替你做了 add 那一步。</li>
 </ul>
-</li>
-<li><p>声明式</p>
-<ul>
-<li>What</li>
-<li>告诉计算机你要实现什么目标</li>
-<li>a&#x3D;[10];</li>
-<li>c[10] &#x3D;      a.Which(b&#x3D;&gt; b&gt;&#x3D;3);</li>
-</ul>
-</li>
-<li><p>并发</p>
-<ul>
-<li>在一段时间内看上去像是同时做了多个事情，实际上是并行执行的还是异步执行的都没有关系</li>
-</ul>
-</li>
-</ul>
-<h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><ul>
-<li>进程是拥有资源的基本单位，线程是调用CPU的基本单位</li>
-<li>最好的那个例子，一个word进程，你编辑文字是一个线程，保存文字是一个线程，如果不能并发的执行的话，那么在执行保存的时候进程就要卡住</li>
-</ul>
-<h1 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h1><ul>
-<li>所谓泛型方法，实际上就是将类型作为参数输入进了函数中</li>
-</ul>
-<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2>
+<h2 id="常见的-Git-工具流对比"><a href="#常见的-Git-工具流对比" class="headerlink" title="常见的 Git 工具流对比"></a>常见的 Git 工具流对比</h2><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>流程</th>
+<th>灵活度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>原生 Git CLI</td>
+<td>手动 add → commit → push</td>
+<td>最高，完全可控</td>
+</tr>
+<tr>
+<td>VS Code &#x2F; IDE</td>
+<td>可选择性暂存文件，然后提交</td>
+<td>高</td>
+</tr>
+<tr>
+<td>GitHub Desktop</td>
+<td>选择文件提交，自动 add</td>
+<td>中</td>
+</tr>
+<tr>
+<td>一键式工具&#x2F;脚本</td>
+<td>全部自动 add + commit + push</td>
+<td>最低，但最省事</td>
+</tr>
+</tbody></table>
+<h2 id="实用建议"><a href="#实用建议" class="headerlink" title="实用建议"></a>实用建议</h2><p>如果你想要精细控制但又不想每次手动 add，可以用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add -A &amp;&amp; git commit -m <span class="hljs-string">&quot;msg&quot;</span>   <span class="hljs-comment"># 全部暂存+提交（一步到位）</span><br>git commit -am <span class="hljs-string">&quot;msg&quot;</span>                  <span class="hljs-comment"># 等价于上面（但不包括新文件）</span><br>git commit -am <span class="hljs-string">&quot;msg&quot;</span> &amp;&amp; git push      <span class="hljs-comment"># 全自动</span><br></code></pre></td></tr></table></figure>
+<p>但如果你想要更好的提交历史，建议保持 add + commit 分开，这样每次提交的内容更有意义，出了问题也更容易回退。</p>
+<hr>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs Shell">.git/<br>├── HEAD                    # 指向当前所在的分支<br>├── config                  # 项目特定的Git配置<br>├── description             # 仓库描述<br>├── index                   # 暂存区（staging area）索引<br>├── hooks/                  # 客户端和服务端钩子脚本<br>├── info/                   # 全局排除文件和稀疏检出配置<br>│   └── exclude<br>├── objects/                # 所有Git对象存储（核心！）<br>│   ├── info/<br>│   └── pack/               # 打包压缩的对象<br>│       ├── pack-xxx.pack   # 打包的数据文件<br>│       └── pack-xxx.idx    # 打包的索引文件<br>├── refs/                   # 引用（分支、标签等）<br>│   ├── heads/              # 分支引用<br>│   ├── tags/               # 标签引用<br>│   └── remotes/            # 远程跟踪分支<br>└── logs/                   # 引用更新日志<br>    ├── HEAD<br>    └── refs/<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -343,7 +359,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/" class="print-no-link">#个人理解</a>
+        <a href="/tags/git/" class="print-no-link">##git</a>
       
     </div>
   
@@ -355,8 +371,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>对概念的个人理解</div>
-      <div>https://homovexillues.github.io/2024/07/21/对概念的个人理解/</div>
+      <div>Git相关问题</div>
+      <div>https://homovexillues.github.io/2026/04/08/Git相关问题/</div>
     </div>
     <div class="license-meta">
       
@@ -368,7 +384,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年7月21日</div>
+          <div>2026年4月8日</div>
         </div>
       
       
@@ -400,9 +416,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/07/21/C-sharp%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E6%8A%80%E5%B7%A7/" title="C#字符串类技巧">
+                      <a href="/2026/04/08/%E5%8F%8C%E6%8B%BC%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/" title="双拼输入法配置">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C#字符串类技巧</span>
+                        <span class="hidden-mobile">双拼输入法配置</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -410,8 +426,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BE%8E/" title="设计模式之美">
-                        <span class="hidden-mobile">设计模式之美</span>
+                      <a href="/2026/04/08/%E5%9F%BA%E4%BA%8ETypora%E7%9A%84Latex%E4%BD%BF%E7%94%A8/" title="基于Typora的LaTex使用">
+                        <span class="hidden-mobile">基于Typora的LaTex使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
