@@ -19,23 +19,24 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="数组（array） 数组中的元素在内存中处于相邻的位置  数组的长度是固定的，一旦创建之后长度是不会变的，向量和链表就会改变  数组支持随机访问，可以用a[i]访问第i个元素，时间复杂度只有O(1)，也就是常数时间，向量就能按[]访问，但是链表就不成，链表只能按照顺序访问  可以把数组中间的数删掉，这种操作很慢，而且要将后面的元素向左移，需要O(n)的时间复杂度，n为数组长度，相比之下链表的好处在">
+    <meta name="description" content="使用yagmail库来发送邮件123456789101112import yagmailmail&#x3D;yagmail.SMTP(&#x27;发送邮箱的账号&#x27;,&#x27;发送邮箱的授权码&#x27;,&#x27;smtp163.com&#x27;)mail.send(&#x27;接受邮件的账号&#x27;，&quot;（标题）测试邮件&quot;，&quot;邮件文本&quot;)mail.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C&#x2F;C++数据结构">
-<meta property="og:url" content="https://homovexillues.github.io/2023/11/29/C&C++%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:title" content="Python发送邮件">
+<meta property="og:url" content="https://homovexillues.github.io/2026/04/08/Python%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="数组（array） 数组中的元素在内存中处于相邻的位置  数组的长度是固定的，一旦创建之后长度是不会变的，向量和链表就会改变  数组支持随机访问，可以用a[i]访问第i个元素，时间复杂度只有O(1)，也就是常数时间，向量就能按[]访问，但是链表就不成，链表只能按照顺序访问  可以把数组中间的数删掉，这种操作很慢，而且要将后面的元素向左移，需要O(n)的时间复杂度，n为数组长度，相比之下链表的好处在">
+<meta property="og:description" content="使用yagmail库来发送邮件123456789101112import yagmailmail&#x3D;yagmail.SMTP(&#x27;发送邮箱的账号&#x27;,&#x27;发送邮箱的授权码&#x27;,&#x27;smtp163.com&#x27;)mail.send(&#x27;接受邮件的账号&#x27;，&quot;（标题）测试邮件&quot;，&quot;邮件文本&quot;)mail.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-28T16:56:36.616Z">
-<meta property="article:modified_time" content="2023-11-28T20:39:01.549Z">
+<meta property="article:published_time" content="2026-04-08T02:44:31.036Z">
+<meta property="article:modified_time" content="2026-05-14T06:00:14.236Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="C&#x2F;C++">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="e-mail">
+<meta property="article:tag" content="脚本">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>C/C++数据结构 - 红石门</title>
+  <title>Python发送邮件 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="C/C++数据结构"></span>
+            <span id="subtitle" data-typed-text="Python发送邮件"></span>
           
         </div>
 
@@ -216,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-29 00:56" pubdate>
-          2023年11月29日 凌晨
+        <time datetime="2026-04-08 10:44" pubdate>
+          2026年4月8日 上午
         </time>
       </span>
     
@@ -228,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.9k 字
+          616 字
         
       </span>
     
@@ -239,7 +240,7 @@
         
         
         
-          24 分钟
+          6 分钟
         
       </span>
     
@@ -276,109 +277,16 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">C/C++数据结构</h1>
+            <h1 id="seo-header">Python发送邮件</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="数组（array）"><a href="#数组（array）" class="headerlink" title="数组（array）"></a>数组（array）</h3><ol>
-<li><p>数组中的元素在内存中处于相邻的位置</p>
-</li>
-<li><p>数组的长度是固定的，一旦创建之后长度是不会变的，向量和链表就会改变</p>
-</li>
-<li><p>数组支持随机访问，可以用a[i]访问第i个元素，时间复杂度只有O(1)，也就是常数时间，<strong>向量就能按[]访问，但是链表就不成，链表只能按照顺序访问</strong></p>
-</li>
-<li><p>可以把数组中间的数删掉，这种操作很慢，而且要将后面的元素向左移，需要O(n)的时间复杂度，n为数组长度，<strong>相比之下链表的好处在于可以删除任意元素，时间复杂度只有常数</strong></p>
-</li>
-</ol>
-<h5 id="静态数组"><a href="#静态数组" class="headerlink" title="静态数组"></a>静态数组</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-type">char</span> a[<span class="hljs-number">6</span>]=&#123;<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-string">&#x27;\0&#x27;</span>&#125;;<br><span class="hljs-comment">// 这里一开始写的是char a[5],会输出hellP&#x27;,</span><br><span class="hljs-comment">// 因为在C++中，字符数组是以&#x27;\0&#x27;为结尾的，</span><br><span class="hljs-comment">// 如果没有则会持续输出直到遇到&#x27;\0&#x27;为止，因此需要加上,或者手动在cout里添加</span><br></code></pre></td></tr></table></figure>
+                <h3 id="使用yagmail库来发送邮件"><a href="#使用yagmail库来发送邮件" class="headerlink" title="使用yagmail库来发送邮件"></a>使用yagmail库来发送邮件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> yagmail<br>mail=yagmail.SMTP(<span class="hljs-string">&#x27;发送邮箱的账号&#x27;</span>,<span class="hljs-string">&#x27;发送邮箱的授权码&#x27;</span>,<span class="hljs-string">&#x27;smtp163.com&#x27;</span>)<br>mail.send(<span class="hljs-string">&#x27;接受邮件的账号&#x27;</span>，<span class="hljs-string">&quot;（标题）测试邮件&quot;</span>，<span class="hljs-string">&quot;邮件文本&quot;</span>)<br>mail.close()<br><br><span class="hljs-comment"># 多个收件人</span><br>receiver=[<span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<span class="hljs-string">&quot;xxx@163.com&quot;</span>]<br><span class="hljs-comment"># 文本内容</span><br>text=<span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">Dear Toph,\n\n</span><br><span class="hljs-string">	这是一段文本内容</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
-<h5 id="动态数组"><a href="#动态数组" class="headerlink" title="动态数组"></a>动态数组</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-type">char</span>* b=<span class="hljs-literal">NULL</span>;<br><span class="hljs-type">int</span> n; <span class="hljs-comment">//数组大小，可以用cin &gt;&gt; n;让用户手动输入</span><br><span class="hljs-comment">// 另，编译数组的时候编译器是不知道数组大小的，只有程序运行的时候才知道</span><br>b=<span class="hljs-keyword">new</span> <span class="hljs-type">char</span>[n]; <span class="hljs-comment">//这样就获得了一个空数组b</span><br>b[<span class="hljs-number">0</span>]=<span class="hljs-string">&#x27;w&#x27;</span>;<br>b[<span class="hljs-number">1</span>]=<span class="hljs-string">&#x27;o&#x27;</span>;<br>b[<span class="hljs-number">2</span>]=<span class="hljs-string">&#x27;r&#x27;</span>;<br>b[<span class="hljs-number">3</span>]=<span class="hljs-string">&#x27;l&#x27;</span>;<br>b[<span class="hljs-number">4</span>]=<span class="hljs-string">&#x27;d&#x27;</span>;<br><span class="hljs-keyword">delete</span> [] b;<br>b=<span class="hljs-literal">NULL</span>;  <span class="hljs-comment">//如果后面的程序又用到了b就很容易出现bug</span><br></code></pre></td></tr></table></figure>
+<h3 id="定时发送邮件"><a href="#定时发送邮件" class="headerlink" title="定时发送邮件"></a>定时发送邮件</h3><p>使用Linux的crontab工具来定时运行python脚本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">* * * * * 要执行的命令<br>第一个*代表分钟(0-59)<br>第二个*代表小时(0-23)<br>第三个*代表一个月中的第几天(1-31)<br>第四个*代表月份(1-12)<br>第五个*代表一个星期中的第几天(0-7,其中0和7都代表星期日)<br><br>如果想让python每天早上8点的第0分钟运行脚本<br>0 8 * * * /usr/bin/python3 /path/script.py<br>注意/usr/bin/python是python3解释器的正确路径，可以在终端输入which python来查找python解释器的路径<br></code></pre></td></tr></table></figure>
 
-<h3 id="向量（vector）"><a href="#向量（vector）" class="headerlink" title="向量（vector）"></a>向量（vector）</h3><ol>
-<li>向量就是把数组包了一层，里面就是个数组，特点和数组差不多</li>
-<li>与数组一样，元素在内存中处于相邻的位置，向量也可以通过[]来访问第i个元素</li>
-<li><strong>向量和数组的主要区别在于大小不固定，可以自动增长</strong></li>
-<li>可以用<code>push_back()</code>函数在向量末尾添加新的元素，添加新的元素之后，向量的大小就会增长，时间复杂度为O(1)</li>
-<li>还可以用<code>pop_back()</code>函数把向量最后一个元素删除掉，时间复杂度为O(1)</li>
-<li>可以用<code>erase()</code>来删除中间的元素，但是平均情况下时间复杂度会是O(n)，n为后面所有的元素</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 需要#include &lt;vector&gt;</span><br>vector&lt;<span class="hljs-type">char</span>&gt; v=&#123;<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>&#125;;<br><span class="hljs-comment">// 指定初始的大小</span><br><span class="hljs-function">vector&lt;<span class="hljs-type">char</span>&gt; <span class="hljs-title">w</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span></span>;<br><span class="hljs-comment">// 在向量的最后插入内容</span><br>v.<span class="hljs-built_in">push_back</span>(<span class="hljs-string">&#x27;,&#x27;</span>);<br><span class="hljs-comment">// 删除向量最后一位的内容</span><br><span class="hljs-comment">// 运行后向量的最后一位会空出来，back指针会指向前一个位置</span><br>v.<span class="hljs-built_in">pop_back</span>();<br><span class="hljs-comment">// 删除中间的元素</span><br>v.<span class="hljs-built_in">erase</span>(v.<span class="hljs-built_in">begin</span>()+<span class="hljs-number">1</span>)<br><span class="hljs-comment">// 查看向量v的大小</span><br>v.<span class="hljs-built_in">size</span>();<br><span class="hljs-comment">// 查看向量v的容量</span><br>v.<span class="hljs-built_in">capacity</span>(); <br>cout&lt;&lt;w.<span class="hljs-built_in">size</span>()&lt;&lt;endl; <span class="hljs-comment">// 大小为100</span><br>cout&lt;&lt;w.<span class="hljs-built_in">capacity</span>()&lt;&lt;endl; <span class="hljs-comment">// 容量为100</span><br><br><span class="hljs-comment">// 在w的末尾再添加一个元素</span><br>w.<span class="hljs-built_in">push_back</span>(<span class="hljs-string">&#x27;a&#x27;</span>);<br>cout&lt;&lt;w.<span class="hljs-built_in">size</span>()&lt;&lt;endl; <span class="hljs-comment">// 大小变成了101</span><br>cout&lt;&lt;w.<span class="hljs-built_in">capacity</span>()&lt;&lt;endl; <span class="hljs-comment">// 容量变成了200</span><br><br><span class="hljs-comment">// 解释一下</span><br><span class="hljs-comment">// 原本向量里有个数组用来存储元素，原本数组大小为100，数组大小就是向量的容量capacity，数组已经存满了，有100个元素，因此size也是100;</span><br><span class="hljs-comment">// 加入一个元素之后，原本数组大小无法存储，自动添加了新的数组长度，因此此时capacity为200，size为101</span><br><span class="hljs-comment">// 这个过程实际上就是一个创建新数组并拷贝数据的过程，因此非常的慢，标准库的策略是一次让数组增加很多，下一次就不用再来一遍</span><br><br></code></pre></td></tr></table></figure>
-
-<h3 id="链表（List）"><a href="#链表（List）" class="headerlink" title="链表（List）"></a>链表（List）</h3><ol>
-<li>想要访问一个节点，需要一个个元素的找下去，因为数据元素在内存中并不相连</li>
-<li>链表中有一个指向开头的指针<code>front</code>和指向末尾的指针<code>back</code>，访问开头或者末尾的时间复杂度是O(1)</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 创建一个链表</span><br><span class="hljs-comment">// C++默认的链表是双链表，有一个指向前一个元素的指针和指向后一个元素的指针，最前面的元素指向前的指针和最后一个元素指向后的指针可以认为是指向NULL</span><br>list&lt;<span class="hljs-type">char</span>&gt; l=&#123;<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>&#125;;<br><span class="hljs-comment">// 访问链表开头元素</span><br>l.<span class="hljs-built_in">front</span>();<br><span class="hljs-comment">// 访问链表末尾元素</span><br>l.<span class="hljs-built_in">back</span>();<br><span class="hljs-comment">// 历遍链表的话要使用迭代器interator</span><br><span class="hljs-comment">// 用此段代码定义一个迭代器</span><br><span class="hljs-comment">// iter指向链表的头部节点</span><br>list&lt;<span class="hljs-type">char</span>&gt;::iterator iter=l.<span class="hljs-built_in">begin</span>();<br><span class="hljs-comment">// 打印inter中的数据</span><br>cout&lt;&lt;*iter&lt;&lt;endl;<br><span class="hljs-comment">// 让iter指向下一个节点</span><br>iter++;<br><span class="hljs-comment">// 此时iter的内容就会是&#x27;e&#x27;</span><br><span class="hljs-comment">// 可以用迭代器来更改链表数据</span><br>*iter=<span class="hljs-string">&#x27;a&#x27;</span>;<br><span class="hljs-comment">// 链表支持插入操作，可以用push_back()或push_front()</span><br><span class="hljs-comment">// 此操作只有常数时间复杂度</span><br>l.<span class="hljs-built_in">push_back</span>(<span class="hljs-string">&#x27;s&#x27;</span>);<br>l.<span class="hljs-built_in">push_front</span>(<span class="hljs-string">&#x27;s&#x27;</span>);<br><span class="hljs-comment">// 可以对链表节点进行删除，可以用pop_back()或pop_front()</span><br><span class="hljs-comment">// 此操作只有常数时间复杂度</span><br>l.<span class="hljs-built_in">pop_back</span>();<br>l.<span class="hljs-built_in">pop_front</span>();<br><span class="hljs-comment">// 可以对链表中间的元素进行删除和插入，</span><br><span class="hljs-comment">// 此操作只有常数时间复杂度</span><br><span class="hljs-comment">// 在链表中间插入元素</span><br><span class="hljs-built_in">advance</span>(iter,<span class="hljs-number">1</span>);<br>l.<span class="hljs-built_in">insert</span>(iter,<span class="hljs-string">&#x27;e&#x27;</span>);<br></code></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th>数组</th>
-<th>向量</th>
-<th>链表</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>大小</td>
-<td>无法更改</td>
-<td>增删改查</td>
-<td>增删改查</td>
-</tr>
-<tr>
-<td>内存</td>
-<td>随机访问内存</td>
-<td>随机访问内存</td>
-<td>内存上不相邻，不支持随机访问</td>
-</tr>
-<tr>
-<td>常规操作</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>&#x2F;</td>
-</tr>
-<tr>
-<td>push_back()</td>
-<td>&#x2F;</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>pop_back()</td>
-<td>&#x2F;</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>insert()</td>
-<td>&#x2F;</td>
-<td>O(n)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>erase()</td>
-<td>&#x2F;</td>
-<td>O(n)</td>
-<td>O(1)</td>
-</tr>
-</tbody></table>
-<h5 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h5><ul>
-<li>数组 <ul>
-<li>需要固定长度存储数据，从创建到删除无需改变长度</li>
-</ul>
-</li>
-<li>向量<ul>
-<li>频繁访问任意元素而不是按照顺序访问，应该用向量</li>
-<li>可以快速在末尾插入和删除元素，但是在开头和中间就很慢</li>
-</ul>
-</li>
-<li>链表<ul>
-<li>在任何位置访问和修改内存</li>
-<li>但是不支持随机访问内存</li>
-</ul>
-</li>
-</ul>
 
                 
               </div>
@@ -412,9 +320,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/C-C/" class="print-no-link">#C/C++</a>
+        <a href="/tags/Python/" class="print-no-link">#Python</a>
       
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="print-no-link">#数据结构</a>
+        <a href="/tags/e-mail/" class="print-no-link">#e-mail</a>
+      
+        <a href="/tags/%E8%84%9A%E6%9C%AC/" class="print-no-link">#脚本</a>
       
     </div>
   
@@ -426,8 +336,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>C/C++数据结构</div>
-      <div>https://homovexillues.github.io/2023/11/29/C&amp;C++数据结构/</div>
+      <div>Python发送邮件</div>
+      <div>https://homovexillues.github.io/2026/04/08/Python发送邮件/</div>
     </div>
     <div class="license-meta">
       
@@ -439,7 +349,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月29日</div>
+          <div>2026年4月8日</div>
         </div>
       
       
@@ -471,9 +381,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/29/C&amp;C++%E6%8C%87%E9%92%88/" title="C/C++指针">
+                      <a href="/2026/04/08/C&amp;C++%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="C/C++数据结构">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C/C++指针</span>
+                        <span class="hidden-mobile">C/C++数据结构</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -481,8 +391,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/27/%E7%BB%88%E7%AB%AF%E5%BD%A9%E8%89%B2%E5%AD%97%E4%BD%93%E6%98%BE%E7%A4%BA/" title="终端彩色字体显示">
-                        <span class="hidden-mobile">终端彩色字体显示</span>
+                      <a href="/2026/04/08/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5/" title="多线程入门概念">
+                        <span class="hidden-mobile">多线程入门概念</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

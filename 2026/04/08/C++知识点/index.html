@@ -19,24 +19,22 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="使用yagmail库来发送邮件123456789101112import yagmailmail&#x3D;yagmail.SMTP(&#x27;发送邮箱的账号&#x27;,&#x27;发送邮箱的授权码&#x27;,&#x27;smtp163.com&#x27;)mail.send(&#x27;接受邮件的账号&#x27;，&quot;（标题）测试邮件&quot;，&quot;邮件文本&quot;)mail.">
+    <meta name="description" content="和C#的函数默认支持多态不同，C++需要显式virtual关键字声明才能支持多态 C++的类型转换可以但是不推荐使用int(x)或者(int)x的写法，这种C like写法在C++里不提供任何报错，它会自动遍历static_cast &#x2F; dynamic_cast &#x2F; const_cast &#x2F; reinterpret_cast这四种转换类型，直到能转换为止，所以写的时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python发送邮件">
-<meta property="og:url" content="https://homovexillues.github.io/2024/03/29/Python%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/index.html">
+<meta property="og:title" content="C++知识点">
+<meta property="og:url" content="https://homovexillues.github.io/2026/04/08/C++%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="使用yagmail库来发送邮件123456789101112import yagmailmail&#x3D;yagmail.SMTP(&#x27;发送邮箱的账号&#x27;,&#x27;发送邮箱的授权码&#x27;,&#x27;smtp163.com&#x27;)mail.send(&#x27;接受邮件的账号&#x27;，&quot;（标题）测试邮件&quot;，&quot;邮件文本&quot;)mail.">
+<meta property="og:description" content="和C#的函数默认支持多态不同，C++需要显式virtual关键字声明才能支持多态 C++的类型转换可以但是不推荐使用int(x)或者(int)x的写法，这种C like写法在C++里不提供任何报错，它会自动遍历static_cast &#x2F; dynamic_cast &#x2F; const_cast &#x2F; reinterpret_cast这四种转换类型，直到能转换为止，所以写的时">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-29T01:52:01.021Z">
-<meta property="article:modified_time" content="2024-04-12T08:28:14.878Z">
+<meta property="article:published_time" content="2026-04-08T03:04:12.616Z">
+<meta property="article:modified_time" content="2026-05-19T03:13:14.325Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="e-mail">
-<meta property="article:tag" content="脚本">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Python发送邮件 - 红石门</title>
+  <title>C++知识点 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python发送邮件"></span>
+            <span id="subtitle" data-typed-text="C++知识点"></span>
           
         </div>
 
@@ -217,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-29 09:52" pubdate>
-          2024年3月29日 上午
+        <time datetime="2026-04-08 11:04" pubdate>
+          2026年4月8日 上午
         </time>
       </span>
     
@@ -229,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          616 字
+          2.1k 字
         
       </span>
     
@@ -240,7 +238,7 @@
         
         
         
-          6 分钟
+          18 分钟
         
       </span>
     
@@ -277,16 +275,32 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Python发送邮件</h1>
+            <h1 id="seo-header">C++知识点</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="使用yagmail库来发送邮件"><a href="#使用yagmail库来发送邮件" class="headerlink" title="使用yagmail库来发送邮件"></a>使用yagmail库来发送邮件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> yagmail<br>mail=yagmail.SMTP(<span class="hljs-string">&#x27;发送邮箱的账号&#x27;</span>,<span class="hljs-string">&#x27;发送邮箱的授权码&#x27;</span>,<span class="hljs-string">&#x27;smtp163.com&#x27;</span>)<br>mail.send(<span class="hljs-string">&#x27;接受邮件的账号&#x27;</span>，<span class="hljs-string">&quot;（标题）测试邮件&quot;</span>，<span class="hljs-string">&quot;邮件文本&quot;</span>)<br>mail.close()<br><br><span class="hljs-comment"># 多个收件人</span><br>receiver=[<span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<span class="hljs-string">&quot;xxx@163.com&quot;</span>]<br><span class="hljs-comment"># 文本内容</span><br>text=<span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">Dear Toph,\n\n</span><br><span class="hljs-string">	这是一段文本内容</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="定时发送邮件"><a href="#定时发送邮件" class="headerlink" title="定时发送邮件"></a>定时发送邮件</h3><p>使用Linux的crontab工具来定时运行python脚本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">* * * * * 要执行的命令<br>第一个*代表分钟(0-59)<br>第二个*代表小时(0-23)<br>第三个*代表一个月中的第几天(1-31)<br>第四个*代表月份(1-12)<br>第五个*代表一个星期中的第几天(0-7,其中0和7都代表星期日)<br><br>如果想让python每天早上8点的第0分钟运行脚本<br>0 8 * * * /usr/bin/python3 /path/script.py<br>注意/usr/bin/python是python3解释器的正确路径，可以在终端输入which python来查找python解释器的路径<br></code></pre></td></tr></table></figure>
-
+                <ul>
+<li>和C#的函数默认支持多态不同，C++需要显式virtual关键字声明才能支持多态</li>
+<li>C++的类型转换可以但是不推荐使用<code>int(x)</code>或者<code>(int)x</code>的写法，这种C like写法在C++里不提供任何报错，它会自动遍历<code>static_cast</code> &#x2F; <code>dynamic_cast</code> &#x2F; <code>const_cast</code> &#x2F; <code>reinterpret_cast</code>这四种转换类型，直到能转换为止，所以写的时候还是要显式的使用这四种转换</li>
+<li>C&#x2F;C++里，头文件里的挺多错误编译器是不会管的，比如这种：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// header.h</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> b, <span class="hljs-type">int</span> a)</span></span>;   <span class="hljs-comment">// 头文件说：第一个参数叫 b，第二个叫 a</span><br><br><span class="hljs-comment">// source.cpp</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> </span>&#123;  <span class="hljs-comment">// 源文件说：第一个参数叫 a，第二个叫 b</span><br>    <span class="hljs-comment">// 你以为在交换 a 和 b，和调用方的理解完全不同</span><br>&#125;	<br></code></pre></td></tr></table></figure>
+实际上是完全相同的，因为符号匹配只看 <code>void(int, int)</code> 和 <code>void(int, int)</code>，参数名不参与 mangling</li>
+<li>C++的宏是纯文本替代，<strong>无视所有范围限制</strong>，污染<strong>一切</strong>引用了它的代码</li>
+<li>std::endl会刷新(清空)缓冲区，所以很慢，还是要用<code>\n</code><br>![[Pasted image 20260517134435.png]]![[Pasted image 20260517134809.png]]</li>
+<li>经典傻逼错误之引用库的顺序不对导致宏挤占了下一个库的关键字然后编译失败：  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;winsock2.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;windows.h&gt;</span></span><br></code></pre></td></tr></table></figure></li>
+<li>C++的Vector是个动态数组，所以也像所有迭代的时候向迭代目标添加元素导致的报错那样──如果在迭代一个vector的时候向其中增加元素，其大小变化会导致内存重新分配，然后重新申请内存地址，将现有数组的元素放到新的内存地址上，这样下来，指向旧地址的迭代器就会失效，变成野指针，然后程序崩溃，删除同理</li>
+<li>傻逼的std::unordered_map即C++的Hash Map抽象会在<code>map[key]</code>找不到的时候直接插入这个key，最佳实践居然是<code>if(map.find(key) != map.end())</code>,和迭代器的路数一样</li>
+<li>更傻逼的是，如果你写map.insert(key,value),如果key已经存在，它不会默认覆盖，而是会无视你插入的操作，要用<code>insert_or_assign</code>方法</li>
+<li>可以在写参数的时候用<code>const</code>关键字来保证在函数内部引用的值不会被改动：<code>void print(const T&amp; value)</code></li>
+<li>结构化绑定：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 之前：逐个取</span><br><span class="hljs-keyword">auto</span> person = std::<span class="hljs-built_in">make_pair</span>(<span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-number">25</span>);<br><span class="hljs-keyword">auto</span> name = person.first;<br><span class="hljs-keyword">auto</span> age = person.second;<br><br><span class="hljs-comment">// C++17：一行拆开</span><br><span class="hljs-keyword">auto</span> [name, age] = std::<span class="hljs-built_in">make_pair</span>(<span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-number">25</span>);<br><span class="hljs-comment">// name = &quot;张三&quot;, age = 25</span><br><br><span class="hljs-comment">// 对结构体也适用</span><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Point</span> &#123; <span class="hljs-type">int</span> x; <span class="hljs-type">int</span> y; &#125;;<br>Point p&#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>&#125;;<br><span class="hljs-keyword">auto</span> [x, y] = p;  <span class="hljs-comment">// x=10, y=20</span><br><br><span class="hljs-comment">// 对数组也适用</span><br><span class="hljs-type">int</span> arr[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;<br><span class="hljs-keyword">auto</span> [a, b, c] = arr;  <span class="hljs-comment">// a=1, b=2, c=3</span><br></code></pre></td></tr></table></figure></li>
+<li>内省即程序在运行期或编译期查看自身数据结构的能力，C#的反射机制即是依赖此功能，上文的结构化绑定也是一种内省，“编译期内省”，但是属于编译器自己操作，并没有将这个能力开放给程序员，C++26倒是打算开放出来来着，不过那是未来的事了</li>
+<li>冷知识，C++是静态弱类型语言，它允许程序员绕过类型系统，下面的这种写法是完全能通过编译的：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-type">double</span> d = <span class="hljs-number">3.14</span>;<br><span class="hljs-type">int</span> i = d;               <span class="hljs-comment">// 隐式截断，不报错</span><br><span class="hljs-type">int</span>* p = (<span class="hljs-type">int</span>*)&amp;d;       <span class="hljs-comment">// 把一个 double 当 int 指针用</span><br><span class="hljs-keyword">auto</span> q = <span class="hljs-built_in">reinterpret_cast</span>&lt;<span class="hljs-type">float</span>*&gt;(&amp;d); <span class="hljs-comment">// 类型系统管不了你</span><br></code></pre></td></tr></table></figure></li>
+<li>C++的编译器在Debug模式下和Release模式下的行为不一样，如经典的UB(未定义行为)在编译器的不同优化程度下行为不同,不同操作系统下的不同编译器下的结果不同，比如对变量初始化这茬<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">int</span> x;<br>	std::cout &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+这段代码执行出来，输出在终端上的是多少都有可能，0或者一个随机数，编译器想干嘛就干嘛</li>
+<li>C++没有稳定的ABI标准，所以C++的包管理器基本上都是直接把对应库的源代码拉下来然后在本地编译，绝了，这语言真是大屎山了</li>
+<li>C++也不支持模式匹配，且未来十年内都不用想了</li>
+<li>为了不折腾头文件，C++憋出来了个header-only范式，即将头文件和代码实现所有的内容都放到一个.hpp文件里，到时候直接引用这一个文件，天哪没有命名空间存在的垃圾设计。。。</li>
+</ul>
 
                 
               </div>
@@ -308,6 +322,13 @@
   <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
   
   
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/%E9%97%AE%E9%A2%98/" class="category-chain-item">问题</a>
+  
+  
+
+  
 
       </span>
     
@@ -320,11 +341,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Python/" class="print-no-link">#Python</a>
-      
-        <a href="/tags/e-mail/" class="print-no-link">#e-mail</a>
-      
-        <a href="/tags/%E8%84%9A%E6%9C%AC/" class="print-no-link">#脚本</a>
+        <a href="/tags/C/" class="print-no-link">#C++</a>
       
     </div>
   
@@ -336,8 +353,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python发送邮件</div>
-      <div>https://homovexillues.github.io/2024/03/29/Python发送邮件/</div>
+      <div>C++知识点</div>
+      <div>https://homovexillues.github.io/2026/04/08/C++知识点/</div>
     </div>
     <div class="license-meta">
       
@@ -349,7 +366,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月29日</div>
+          <div>2026年4月8日</div>
         </div>
       
       
@@ -381,9 +398,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/29/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" title="MySQL数据库">
+                      <a href="/2026/04/08/Git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="Git相关问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MySQL数据库</span>
+                        <span class="hidden-mobile">Git相关问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -391,8 +408,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/29/Python%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" title="Python刷题笔记">
-                        <span class="hidden-mobile">Python刷题笔记</span>
+                      <a href="/2026/04/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="操作系统相关问题">
+                        <span class="hidden-mobile">操作系统相关问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

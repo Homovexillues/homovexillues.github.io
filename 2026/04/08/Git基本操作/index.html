@@ -19,16 +19,16 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="12# 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。git checkout .">
+    <meta name="description" content="1234567# 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。git checkout .# --progress 显示进度信息# -- branch x 从指定的名为x的分支拉取# -v verbos模式，输出更详细的信息# -- 选项分隔符，告诉git之后的内容是路径&#x2F;参数，不要当成选项来解析git clone --progress --branch x -v -- &amp;qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git基本操作">
 <meta property="og:url" content="https://homovexillues.github.io/2026/04/08/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="12# 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。git checkout .">
+<meta property="og:description" content="1234567# 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。git checkout .# --progress 显示进度信息# -- branch x 从指定的名为x的分支拉取# -v verbos模式，输出更详细的信息# -- 选项分隔符，告诉git之后的内容是路径&#x2F;参数，不要当成选项来解析git clone --progress --branch x -v -- &amp;qu">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://homovexillues.github.io/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png">
 <meta property="article:published_time" content="2026-04-08T02:43:54.502Z">
-<meta property="article:modified_time" content="2026-03-23T08:09:21.000Z">
+<meta property="article:modified_time" content="2026-05-18T06:44:04.363Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary_large_image">
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          46 字
+          522 字
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -283,7 +283,9 @@
               <div class="markdown-body">
                 
                 <p><img src="/../images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png" srcset="/img/loading.gif" lazyload alt="image-20240515144600594"></p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-comment"># 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。</span><br><span class="hljs-attribute">git</span> checkout .<br></code></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-comment"># 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。</span><br>git checkout .<br><span class="hljs-comment"># --progress 显示进度信息</span><br><span class="hljs-comment"># -- branch x 从指定的名为x的分支拉取</span><br><span class="hljs-comment"># -v verbos模式，输出更详细的信息</span><br><span class="hljs-comment"># -- 选项分隔符，告诉git之后的内容是路径/参数，不要当成选项来解析</span><br>git <span class="hljs-keyword">clone</span> <span class="hljs-title">--progress</span> --branch x -v -- <span class="hljs-string">&quot;https/git&quot;</span> <span class="hljs-string">&quot;path&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Pasted-image-20260518141003-png-深度-浅克隆，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要-递归-克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库-克隆成纯版本库-只下载-git内部文件，不生成可直接打开的代码文件夹-Pasted-image-20260518141652-png-一般用于服务器端仓库、备份仓库-不检出-只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的-git文件夹，看不到源代码，需要手动checkout才会出现代码-原名称-克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称"><a href="#Pasted-image-20260518141003-png-深度-浅克隆，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要-递归-克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库-克隆成纯版本库-只下载-git内部文件，不生成可直接打开的代码文件夹-Pasted-image-20260518141652-png-一般用于服务器端仓库、备份仓库-不检出-只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的-git文件夹，看不到源代码，需要手动checkout才会出现代码-原名称-克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称" class="headerlink" title="![[Pasted image 20260518141003.png]]- 深度    - 浅克隆，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要- 递归    - 克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库- 克隆成纯版本库    - 只下载.git内部文件，不生成可直接打开的代码文件夹        ![[Pasted image 20260518141652.png]]        一般用于服务器端仓库、备份仓库- 不检出    - 只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的.git文件夹，看不到源代码，需要手动checkout才会出现代码- 原名称    - 克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称"></a>![[Pasted image 20260518141003.png]]<br>- 深度<br>    - <strong>浅克隆</strong>，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要<br>- 递归<br>    - 克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库<br>- 克隆成纯版本库<br>    - 只下载.git内部文件，不生成可直接打开的代码文件夹<br>        ![[Pasted image 20260518141652.png]]<br>        一般用于服务器端仓库、备份仓库<br>- 不检出<br>    - 只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的.git文件夹，看不到源代码，需要手动checkout才会出现代码<br>- 原名称<br>    - 克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称</h2>
                 
               </div>
             
