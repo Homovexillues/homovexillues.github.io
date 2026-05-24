@@ -19,22 +19,24 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="Git 的三个区域Git 的工作流程涉及三个核心区域：  工作区 (Working Directory) — 你实际编辑文件的地方 暂存区 (Staging Area &#x2F; Index) — 一个”待提交”的缓冲区 仓库 (Repository) — 提交后的永久记录正常的 Git 流程是：1编辑文件 → git add（放到暂存区）→ git commit（提交到仓库）→ git pus">
+    <meta name="description" content="安装Linux1sudo apt install tmux -y Windows原生Windows Terminal支持分屏功能，但是关闭窗口之后不能持久化，有个Rust写的wmux意在对标Linux的Tmux，不过还没用过 使用快捷键   键位 功能    Ctrl + b 松开 % 左右分屏   Ctrl + b 松开 “ 上下分屏   Ctrl + b 松开 方向键↑↓←→ 移动光标所在分窗">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git相关问题">
-<meta property="og:url" content="https://homovexillues.github.io/2026/04/08/Git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="Tmux安装及使用">
+<meta property="og:url" content="https://homovexillues.github.io/2026/05/23/Tmux%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="Git 的三个区域Git 的工作流程涉及三个核心区域：  工作区 (Working Directory) — 你实际编辑文件的地方 暂存区 (Staging Area &#x2F; Index) — 一个”待提交”的缓冲区 仓库 (Repository) — 提交后的永久记录正常的 Git 流程是：1编辑文件 → git add（放到暂存区）→ git commit（提交到仓库）→ git pus">
+<meta property="og:description" content="安装Linux1sudo apt install tmux -y Windows原生Windows Terminal支持分屏功能，但是关闭窗口之后不能持久化，有个Rust写的wmux意在对标Linux的Tmux，不过还没用过 使用快捷键   键位 功能    Ctrl + b 松开 % 左右分屏   Ctrl + b 松开 “ 上下分屏   Ctrl + b 松开 方向键↑↓←→ 移动光标所在分窗">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-04-08T03:04:35.777Z">
-<meta property="article:modified_time" content="2026-04-29T13:55:18.000Z">
+<meta property="article:published_time" content="2026-05-23T09:17:23.479Z">
+<meta property="article:modified_time" content="2026-05-23T09:29:55.427Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="#git">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Tmux">
+<meta property="article:tag" content="Terminal">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Git相关问题 - 红石门</title>
+  <title>Tmux安装及使用 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Git相关问题"></span>
+            <span id="subtitle" data-typed-text="Tmux安装及使用"></span>
           
         </div>
 
@@ -215,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-04-08 11:04" pubdate>
-          2026年4月8日 上午
+        <time datetime="2026-05-23 17:17" pubdate>
+          2026年5月23日 下午
         </time>
       </span>
     
@@ -227,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          224 字
         
       </span>
     
@@ -238,7 +240,7 @@
         
         
         
-          11 分钟
+          2 分钟
         
       </span>
     
@@ -275,58 +277,46 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Git相关问题</h1>
+            <h1 id="seo-header">Tmux安装及使用</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="Git-的三个区域"><a href="#Git-的三个区域" class="headerlink" title="Git 的三个区域"></a>Git 的三个区域</h2><p>Git 的工作流程涉及三个核心区域：</p>
-<ol>
-<li><strong>工作区 (Working Directory)</strong> — 你实际编辑文件的地方</li>
-<li><strong>暂存区 (Staging Area &#x2F; Index)</strong> — 一个”待提交”的缓冲区</li>
-<li><strong>仓库 (Repository)</strong> — 提交后的永久记录<br>正常的 Git 流程是：<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">编辑文件 → git <span class="hljs-keyword">add</span>（放到暂存区）→ git commit（提交到仓库）→ git <span class="hljs-keyword">push</span>（推送到远程）<br></code></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="为什么要分两步（add-commit）？"><a href="#为什么要分两步（add-commit）？" class="headerlink" title="为什么要分两步（add + commit）？"></a>为什么要分两步（add + commit）？</h2><p>暂存区的作用是让你<strong>精确控制</strong>哪些改动属于同一次提交。比如你改了 5 个文件，但其中 3 个是一组逻辑改动，另外 2 个是另一组，你可以分两次 <code>git add</code> + <code>git commit</code>，让每次提交都干净、有意义。</p>
-<h2 id="为什么你之前”直接提交推送”？"><a href="#为什么你之前”直接提交推送”？" class="headerlink" title="为什么你之前”直接提交推送”？"></a>为什么你之前”直接提交推送”？</h2><p>大概率是你用的工具（或配置）在背后自动帮你执行了 <code>git add .</code> + <code>git commit</code> + <code>git push</code>。很多封装工具为了简化操作会：</p>
-<ul>
-<li>自动把所有改动 <code>git add -A</code>（全部暂存）</li>
-<li>自动生成 commit message 并提交</li>
-<li>自动 push<br>这样你感觉是”直接提交推送”了，但底层流程其实没变，只是工具替你做了 add 那一步。</li>
-</ul>
-<h2 id="常见的-Git-工具流对比"><a href="#常见的-Git-工具流对比" class="headerlink" title="常见的 Git 工具流对比"></a>常见的 Git 工具流对比</h2><table>
+                <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install tmux -y<br></code></pre></td></tr></table></figure>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>原生Windows Terminal支持分屏功能，但是关闭窗口之后不能持久化，有个Rust写的wmux意在对标Linux的Tmux，不过还没用过</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><table>
 <thead>
 <tr>
-<th>方式</th>
-<th>流程</th>
-<th>灵活度</th>
+<th>键位</th>
+<th>功能</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>原生 Git CLI</td>
-<td>手动 add → commit → push</td>
-<td>最高，完全可控</td>
+<td>Ctrl + b 松开 %</td>
+<td>左右分屏</td>
 </tr>
 <tr>
-<td>VS Code &#x2F; IDE</td>
-<td>可选择性暂存文件，然后提交</td>
-<td>高</td>
+<td>Ctrl + b 松开 “</td>
+<td>上下分屏</td>
 </tr>
 <tr>
-<td>GitHub Desktop</td>
-<td>选择文件提交，自动 add</td>
-<td>中</td>
+<td>Ctrl + b 松开 方向键↑↓←→</td>
+<td>移动光标所在分窗</td>
 </tr>
 <tr>
-<td>一键式工具&#x2F;脚本</td>
-<td>全部自动 add + commit + push</td>
-<td>最低，但最省事</td>
+<td>Ctrl + b 不松开 方向键↑↓←→</td>
+<td>移动所在分窗比例</td>
+</tr>
+<tr>
+<td>Ctrl + b + z</td>
+<td>当前分窗扩大到填满窗口</td>
+</tr>
+<tr>
+<td>Ctrl + b 松开 x</td>
+<td>关闭当前所在分窗</td>
 </tr>
 </tbody></table>
-<h2 id="实用建议"><a href="#实用建议" class="headerlink" title="实用建议"></a>实用建议</h2><p>如果你想要精细控制但又不想每次手动 add，可以用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add -A &amp;&amp; git commit -m <span class="hljs-string">&quot;msg&quot;</span>   <span class="hljs-comment"># 全部暂存+提交（一步到位）</span><br>git commit -am <span class="hljs-string">&quot;msg&quot;</span>                  <span class="hljs-comment"># 等价于上面（但不包括新文件）</span><br>git commit -am <span class="hljs-string">&quot;msg&quot;</span> &amp;&amp; git push      <span class="hljs-comment"># 全自动</span><br></code></pre></td></tr></table></figure>
-<p>但如果你想要更好的提交历史，建议保持 add + commit 分开，这样每次提交的内容更有意义，出了问题也更容易回退。</p>
-<hr>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs Shell">.git/<br>├── HEAD                    # 指向当前所在的分支<br>├── config                  # 项目特定的Git配置<br>├── description             # 仓库描述<br>├── index                   # 暂存区（staging area）索引<br>├── hooks/                  # 客户端和服务端钩子脚本<br>├── info/                   # 全局排除文件和稀疏检出配置<br>│   └── exclude<br>├── objects/                # 所有Git对象存储（核心！）<br>│   ├── info/<br>│   └── pack/               # 打包压缩的对象<br>│       ├── pack-xxx.pack   # 打包的数据文件<br>│       └── pack-xxx.idx    # 打包的索引文件<br>├── refs/                   # 引用（分支、标签等）<br>│   ├── heads/              # 分支引用<br>│   ├── tags/               # 标签引用<br>│   └── remotes/            # 远程跟踪分支<br>└── logs/                   # 引用更新日志<br>    ├── HEAD<br>    └── refs/<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -347,6 +337,13 @@
   <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
   
   
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/%E9%97%AE%E9%A2%98/" class="category-chain-item">问题</a>
+  
+  
+
+  
 
       </span>
     
@@ -359,7 +356,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/git/" class="print-no-link">##git</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+        <a href="/tags/Tmux/" class="print-no-link">#Tmux</a>
+      
+        <a href="/tags/Terminal/" class="print-no-link">#Terminal</a>
       
     </div>
   
@@ -371,8 +372,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Git相关问题</div>
-      <div>https://homovexillues.github.io/2026/04/08/Git相关问题/</div>
+      <div>Tmux安装及使用</div>
+      <div>https://homovexillues.github.io/2026/05/23/Tmux安装及使用/</div>
     </div>
     <div class="license-meta">
       
@@ -384,7 +385,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年4月8日</div>
+          <div>2026年5月23日</div>
         </div>
       
       
@@ -416,9 +417,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/08/Rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Rust学习笔记">
+                      <a href="/2026/05/23/Windows%20Terminal%20%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="Windows Terminal 配置及快捷键">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Rust学习笔记</span>
+                        <span class="hidden-mobile">Windows Terminal 配置及快捷键</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -426,8 +427,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/04/08/C++%E7%9F%A5%E8%AF%86%E7%82%B9/" title="C++知识点">
-                        <span class="hidden-mobile">C++知识点</span>
+                      <a href="/2026/05/22/Go%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Go知识点">
+                        <span class="hidden-mobile">Go知识点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

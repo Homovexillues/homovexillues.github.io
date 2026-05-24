@@ -19,22 +19,23 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="和C#的函数默认支持多态不同，C++需要显式virtual关键字声明才能支持多态 C++的类型转换可以但是不推荐使用int(x)或者(int)x的写法，这种C like写法在C++里不提供任何报错，它会自动遍历static_cast &#x2F; dynamic_cast &#x2F; const_cast &#x2F; reinterpret_cast这四种转换类型，直到能转换为止，所以写的时">
+    <meta name="description" content="Windows在线安装1winget install NeoVim Linux离线安装直接安装预编译版本 1234curl -LO https:&#x2F;&#x2F;github.com&#x2F;neovim&#x2F;neovim&#x2F;releases&#x2F;latest&#x2F;download&#x2F;nvim-linux-x86_64.tar.gzsudo rm -rf &#x2F;opt&#x2F;nvim-linux-x86_64sudo tar -C &#x2F;opt -">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++知识点">
-<meta property="og:url" content="https://homovexillues.github.io/2026/04/08/C++%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:title" content="NeoVim安装">
+<meta property="og:url" content="https://homovexillues.github.io/2025/10/18/NeoVim%E5%AE%89%E8%A3%85/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="和C#的函数默认支持多态不同，C++需要显式virtual关键字声明才能支持多态 C++的类型转换可以但是不推荐使用int(x)或者(int)x的写法，这种C like写法在C++里不提供任何报错，它会自动遍历static_cast &#x2F; dynamic_cast &#x2F; const_cast &#x2F; reinterpret_cast这四种转换类型，直到能转换为止，所以写的时">
+<meta property="og:description" content="Windows在线安装1winget install NeoVim Linux离线安装直接安装预编译版本 1234curl -LO https:&#x2F;&#x2F;github.com&#x2F;neovim&#x2F;neovim&#x2F;releases&#x2F;latest&#x2F;download&#x2F;nvim-linux-x86_64.tar.gzsudo rm -rf &#x2F;opt&#x2F;nvim-linux-x86_64sudo tar -C &#x2F;opt -">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-04-08T03:04:12.616Z">
-<meta property="article:modified_time" content="2026-05-19T03:13:14.325Z">
+<meta property="article:published_time" content="2025-10-18T04:16:28.119Z">
+<meta property="article:modified_time" content="2026-05-23T06:25:07.218Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Vim">
+<meta property="article:tag" content="NeoVim">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>C++知识点 - 红石门</title>
+  <title>NeoVim安装 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="C++知识点"></span>
+            <span id="subtitle" data-typed-text="NeoVim安装"></span>
           
         </div>
 
@@ -215,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-04-08 11:04" pubdate>
-          2026年4月8日 上午
+        <time datetime="2025-10-18 12:16" pubdate>
+          2025年10月18日 中午
         </time>
       </span>
     
@@ -227,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          956 字
         
       </span>
     
@@ -238,7 +239,7 @@
         
         
         
-          18 分钟
+          8 分钟
         
       </span>
     
@@ -275,32 +276,35 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">C++知识点</h1>
+            <h1 id="seo-header">NeoVim安装</h1>
             
             
               <div class="markdown-body">
                 
-                <ul>
-<li>和C#的函数默认支持多态不同，C++需要显式virtual关键字声明才能支持多态</li>
-<li>C++的类型转换可以但是不推荐使用<code>int(x)</code>或者<code>(int)x</code>的写法，这种C like写法在C++里不提供任何报错，它会自动遍历<code>static_cast</code> &#x2F; <code>dynamic_cast</code> &#x2F; <code>const_cast</code> &#x2F; <code>reinterpret_cast</code>这四种转换类型，直到能转换为止，所以写的时候还是要显式的使用这四种转换</li>
-<li>C&#x2F;C++里，头文件里的挺多错误编译器是不会管的，比如这种：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// header.h</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> b, <span class="hljs-type">int</span> a)</span></span>;   <span class="hljs-comment">// 头文件说：第一个参数叫 b，第二个叫 a</span><br><br><span class="hljs-comment">// source.cpp</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> </span>&#123;  <span class="hljs-comment">// 源文件说：第一个参数叫 a，第二个叫 b</span><br>    <span class="hljs-comment">// 你以为在交换 a 和 b，和调用方的理解完全不同</span><br>&#125;	<br></code></pre></td></tr></table></figure>
-实际上是完全相同的，因为符号匹配只看 <code>void(int, int)</code> 和 <code>void(int, int)</code>，参数名不参与 mangling</li>
-<li>C++的宏是纯文本替代，<strong>无视所有范围限制</strong>，污染<strong>一切</strong>引用了它的代码</li>
-<li>std::endl会刷新(清空)缓冲区，所以很慢，还是要用<code>\n</code><br>![[Pasted image 20260517134435.png]]![[Pasted image 20260517134809.png]]</li>
-<li>经典傻逼错误之引用库的顺序不对导致宏挤占了下一个库的关键字然后编译失败：  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;winsock2.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;windows.h&gt;</span></span><br></code></pre></td></tr></table></figure></li>
-<li>C++的Vector是个动态数组，所以也像所有迭代的时候向迭代目标添加元素导致的报错那样──如果在迭代一个vector的时候向其中增加元素，其大小变化会导致内存重新分配，然后重新申请内存地址，将现有数组的元素放到新的内存地址上，这样下来，指向旧地址的迭代器就会失效，变成野指针，然后程序崩溃，删除同理</li>
-<li>傻逼的std::unordered_map即C++的Hash Map抽象会在<code>map[key]</code>找不到的时候直接插入这个key，最佳实践居然是<code>if(map.find(key) != map.end())</code>,和迭代器的路数一样</li>
-<li>更傻逼的是，如果你写map.insert(key,value),如果key已经存在，它不会默认覆盖，而是会无视你插入的操作，要用<code>insert_or_assign</code>方法</li>
-<li>可以在写参数的时候用<code>const</code>关键字来保证在函数内部引用的值不会被改动：<code>void print(const T&amp; value)</code></li>
-<li>结构化绑定：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 之前：逐个取</span><br><span class="hljs-keyword">auto</span> person = std::<span class="hljs-built_in">make_pair</span>(<span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-number">25</span>);<br><span class="hljs-keyword">auto</span> name = person.first;<br><span class="hljs-keyword">auto</span> age = person.second;<br><br><span class="hljs-comment">// C++17：一行拆开</span><br><span class="hljs-keyword">auto</span> [name, age] = std::<span class="hljs-built_in">make_pair</span>(<span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-number">25</span>);<br><span class="hljs-comment">// name = &quot;张三&quot;, age = 25</span><br><br><span class="hljs-comment">// 对结构体也适用</span><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Point</span> &#123; <span class="hljs-type">int</span> x; <span class="hljs-type">int</span> y; &#125;;<br>Point p&#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>&#125;;<br><span class="hljs-keyword">auto</span> [x, y] = p;  <span class="hljs-comment">// x=10, y=20</span><br><br><span class="hljs-comment">// 对数组也适用</span><br><span class="hljs-type">int</span> arr[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;<br><span class="hljs-keyword">auto</span> [a, b, c] = arr;  <span class="hljs-comment">// a=1, b=2, c=3</span><br></code></pre></td></tr></table></figure></li>
-<li>内省即程序在运行期或编译期查看自身数据结构的能力，C#的反射机制即是依赖此功能，上文的结构化绑定也是一种内省，“编译期内省”，但是属于编译器自己操作，并没有将这个能力开放给程序员，C++26倒是打算开放出来来着，不过那是未来的事了</li>
-<li>冷知识，C++是静态弱类型语言，它允许程序员绕过类型系统，下面的这种写法是完全能通过编译的：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-type">double</span> d = <span class="hljs-number">3.14</span>;<br><span class="hljs-type">int</span> i = d;               <span class="hljs-comment">// 隐式截断，不报错</span><br><span class="hljs-type">int</span>* p = (<span class="hljs-type">int</span>*)&amp;d;       <span class="hljs-comment">// 把一个 double 当 int 指针用</span><br><span class="hljs-keyword">auto</span> q = <span class="hljs-built_in">reinterpret_cast</span>&lt;<span class="hljs-type">float</span>*&gt;(&amp;d); <span class="hljs-comment">// 类型系统管不了你</span><br></code></pre></td></tr></table></figure></li>
-<li>C++的编译器在Debug模式下和Release模式下的行为不一样，如经典的UB(未定义行为)在编译器的不同优化程度下行为不同,不同操作系统下的不同编译器下的结果不同，比如对变量初始化这茬<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">int</span> x;<br>	std::cout &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-这段代码执行出来，输出在终端上的是多少都有可能，0或者一个随机数，编译器想干嘛就干嘛</li>
-<li>C++没有稳定的ABI标准，所以C++的包管理器基本上都是直接把对应库的源代码拉下来然后在本地编译，绝了，这语言真是大屎山了</li>
-<li>C++也不支持模式匹配，且未来十年内都不用想了</li>
-<li>为了不折腾头文件，C++憋出来了个header-only范式，即将头文件和代码实现所有的内容都放到一个.hpp文件里，到时候直接引用这一个文件，天哪没有命名空间存在的垃圾设计。。。</li>
-</ul>
+                <h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">winget install NeoVim<br></code></pre></td></tr></table></figure>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="离线安装"><a href="#离线安装" class="headerlink" title="离线安装"></a>离线安装</h2><p>直接安装预编译版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz<br>sudo rm -rf /opt/nvim-linux-x86_64<br>sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz<br>export PATH=&quot;$PATH:/opt/nvim-linux-x86_64/bin&quot;<br></code></pre></td></tr></table></figure>
+<h2 id="在线安装-1"><a href="#在线安装-1" class="headerlink" title="在线安装"></a>在线安装</h2><p>直接用自带包管理器安装，不过要注意一下安装出来的版本可能会比较老</p>
+<h2 id="配置包安装"><a href="#配置包安装" class="headerlink" title="配置包安装"></a>配置包安装</h2><h3 id="lazyvim"><a href="#lazyvim" class="headerlink" title="lazyvim"></a>lazyvim</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># required</span><br><span class="hljs-built_in">Move-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim.bak<br><span class="hljs-comment"># optional but recommended</span><br><span class="hljs-built_in">Move-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<span class="hljs-literal">-data</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<span class="hljs-literal">-data</span>.bak<br>git clone https://github.com/LazyVim/starter <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<br><span class="hljs-comment">#记得移除.git文件夹</span><br><span class="hljs-built_in">Remove-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim\.git <span class="hljs-literal">-Recurse</span> <span class="hljs-literal">-Force</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># required</span><br><span class="hljs-built_in">mv</span> ~/.config/nvim&#123;,.bak&#125;<br><br><span class="hljs-comment"># optional but recommended</span><br><span class="hljs-built_in">mv</span> ~/.local/share/nvim&#123;,.bak&#125;<br><span class="hljs-built_in">mv</span> ~/.local/state/nvim&#123;,.bak&#125;<br><span class="hljs-built_in">mv</span> ~/.cache/nvim&#123;,.bak&#125;<br><br>git <span class="hljs-built_in">clone</span> https://github.com/LazyVim/starter ~/.config/nvim<br><span class="hljs-built_in">rm</span> -rf ~/.config/nvim/.git<br></code></pre></td></tr></table></figure>
+
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>gd</td>
+<td>(Go Definition)跳转到光标所在的内容的定义位置</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt; + e</code></td>
+<td>打开&#x2F;关闭 &#96;:Explore文件浏览器</td>
+</tr>
+</tbody></table>
 
                 
               </div>
@@ -322,13 +326,6 @@
   <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
   
   
-    <span>></span>
-    
-  <a href="/categories/%E7%AC%94%E8%AE%B0/%E9%97%AE%E9%A2%98/" class="category-chain-item">问题</a>
-  
-  
-
-  
 
       </span>
     
@@ -341,7 +338,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/C/" class="print-no-link">#C++</a>
+        <a href="/tags/Vim/" class="print-no-link">#Vim</a>
+      
+        <a href="/tags/NeoVim/" class="print-no-link">#NeoVim</a>
       
     </div>
   
@@ -353,8 +352,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>C++知识点</div>
-      <div>https://homovexillues.github.io/2026/04/08/C++知识点/</div>
+      <div>NeoVim安装</div>
+      <div>https://homovexillues.github.io/2025/10/18/NeoVim安装/</div>
     </div>
     <div class="license-meta">
       
@@ -366,7 +365,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年4月8日</div>
+          <div>2025年10月18日</div>
         </div>
       
       
@@ -398,9 +397,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/08/Git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="Git相关问题">
+                      <a href="/2025/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="计算机网络相关问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Git相关问题</span>
+                        <span class="hidden-mobile">计算机网络相关问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -408,8 +407,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/04/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="操作系统相关问题">
-                        <span class="hidden-mobile">操作系统相关问题</span>
+                      <a href="/2025/10/14/Influxdb%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="Influxdb相关内容">
+                        <span class="hidden-mobile">Influxdb相关内容</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
