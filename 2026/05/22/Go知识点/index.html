@@ -19,15 +19,15 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="gopls Go语言官方的语言服务器  Go的:&#x3D;有几个含义:  类型推导，省的我手写变量类型了 强制变量使用，防止僵尸代码，至少用 _ &#x3D; err来处理一下 声明作用域，声明+赋值，会创造新的变量，如下面这个经典例子：12345678910package mainimport &quot;fmt&quot;func main() &#123;    x :&#x3D; 1       &#x2F;&#x2F; 声">
+    <meta name="description" content="gopls Go语言官方的语言服务器 Go的:&#x3D;有几个含义: 类型推导，省的我手写变量类型了 强制变量使用，防止僵尸代码，至少用 _ &#x3D; err来处理一下 声明作用域，声明+赋值，会创造新的变量，如下面这个经典例子：12345678910package mainimport &quot;fmt&quot;func main() &#123;    x :&#x3D; 1       &#x2F;&#x2F; 声明一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go知识点">
 <meta property="og:url" content="https://homovexillues.github.io/2026/05/22/Go%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="gopls Go语言官方的语言服务器  Go的:&#x3D;有几个含义:  类型推导，省的我手写变量类型了 强制变量使用，防止僵尸代码，至少用 _ &#x3D; err来处理一下 声明作用域，声明+赋值，会创造新的变量，如下面这个经典例子：12345678910package mainimport &quot;fmt&quot;func main() &#123;    x :&#x3D; 1       &#x2F;&#x2F; 声">
+<meta property="og:description" content="gopls Go语言官方的语言服务器 Go的:&#x3D;有几个含义: 类型推导，省的我手写变量类型了 强制变量使用，防止僵尸代码，至少用 _ &#x3D; err来处理一下 声明作用域，声明+赋值，会创造新的变量，如下面这个经典例子：12345678910package mainimport &quot;fmt&quot;func main() &#123;    x :&#x3D; 1       &#x2F;&#x2F; 声明一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-22T00:17:47.782Z">
-<meta property="article:modified_time" content="2026-05-23T15:57:48.426Z">
+<meta property="article:modified_time" content="2026-06-10T02:13:04.000Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Go">
 <meta name="twitter:card" content="summary_large_image">
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.3k 字
+          5.7k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          28 分钟
+          48 分钟
         
       </span>
     
@@ -281,19 +281,20 @@
               <div class="markdown-body">
                 
                 <ul>
-<li><p>gopls Go语言官方的语言服务器</p>
-</li>
-<li><p>Go的<code>:=</code>有几个含义:</p>
-<ul>
+<li>gopls Go语言官方的语言服务器</li>
+<li>Go的<code>:=</code>有几个含义:<ul>
 <li><strong>类型推导</strong>，省的我手写变量类型了</li>
 <li><strong>强制变量使用</strong>，防止僵尸代码，至少用 _ &#x3D; err来处理一下</li>
 <li><strong>声明作用域，声明+赋值，会创造新的变量</strong>，如下面这个经典例子：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">package</span> main<br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    x := <span class="hljs-number">1</span>       <span class="hljs-comment">// 声明一个外层变量 x</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-literal">true</span> &#123;<br>        x := <span class="hljs-number">2</span>   <span class="hljs-comment">// 又声明了一个新的内层变量 x！</span><br>        fmt.Println(<span class="hljs-string">&quot;内部 x:&quot;</span>, x) <span class="hljs-comment">// 输出：内部 x: 2</span><br>    &#125;<br>    fmt.Println(<span class="hljs-string">&quot;外部 x:&quot;</span>, x) <span class="hljs-comment">// 输出：外部 x: 1（外层变量没有被修改）</span><br>&#125;	<br></code></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li><p>Go和C#一样也用帕斯卡命名法来命名，但是更加极端，直接用首字母大小写来控制可见性：</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">首字母大写 = 公开（exported）  → <span class="hljs-keyword">Write</span>, <span class="hljs-keyword">Server</span>, Timeout<br>首字母小写 = 私有（unexported）→ <span class="hljs-keyword">write</span>, <span class="hljs-keyword">server</span>, timeout<br></code></pre></td></tr></table></figure>
-<p>这既是命名风格，也是访问控制。没有 public&#x2F;private 关键字。</p>
-</li>
+<li>另外写的时候千万注意，x :&#x3D; xxx和x :&#x3D; xxx{}是不一样的，一个没有初始化默认nil，一个初始化了有默认值</li>
+<li>Go和C#一样也用帕斯卡命名法来命名，但是更加极端，直接用首字母大小写来控制可见性：<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">首字母大写 = 公开（exported）  → <span class="hljs-keyword">Write</span>, <span class="hljs-keyword">Server</span>, Timeout<br>首字母小写 = 私有（unexported）→ <span class="hljs-keyword">write</span>, <span class="hljs-keyword">server</span>, timeout<br></code></pre></td></tr></table></figure>
+这既是命名风格，也是访问控制。没有 public&#x2F;private 关键字。<br>再就是根据变量的作用范围来调整命名长度，比如函数里用的局域变量一遍也就<code>cnn</code>,库里要用的连接字段则是<code>Conn</code>,靠上下文来表示代码含义…怎么这里你又不降低心智负担了喂</li>
+</ul>
+<p>另外事后发现，Go的封装等级没有private一说，因为只有值类型struct没有class嘛，所以实际上Go只有public&#x2F;interval两种封装级别</p>
+<hr>
+<ul>
 <li><p>怪不得说Go是无趣的语言，Go语言把继承砍了，但是留下了组合，如果说别的语言是告诉你组合大于继承，Go就是只让你可以用组合，不能继承，用<strong>duck typing</strong>来组织逻辑链条，梗的当然就是那个鸭子理论，用std的net库举例:</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs Go"><span class="hljs-comment">// Addr represents a network end point address.</span><br><span class="hljs-comment">//</span><br><span class="hljs-comment">// The two methods [Addr.Network] and [Addr.String] conventionally return strings</span><br><span class="hljs-comment">// that can be passed as the arguments to [Dial], but the exact form</span><br><span class="hljs-comment">// and meaning of the strings is up to the implementation.</span><br><span class="hljs-keyword">type</span> Addr <span class="hljs-keyword">interface</span> &#123;<br>	Network() <span class="hljs-type">string</span> <span class="hljs-comment">// name of the network (for example, &quot;tcp&quot;, &quot;udp&quot;)</span><br>	String() <span class="hljs-type">string</span>  <span class="hljs-comment">// string form of address (for example, &quot;192.0.2.1:25&quot;, &quot;[2001:db8::1]:80&quot;)</span><br>&#125;  <br></code></pre></td></tr></table></figure>
 <p>只要<strong>隐式满足(implicit satisfaction)</strong> 这个接口的定义即会被视为Addr，例如：</p>
@@ -320,6 +321,64 @@
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Go">slice := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>,<span class="hljs-number">10</span>)<br>slice = <span class="hljs-built_in">append</span>(slice,<span class="hljs-number">4</span>)<br>slice = <span class="hljs-built_in">append</span>(slice,[]<span class="hljs-type">int</span>&#123;<span class="hljs-number">5</span>,<span class="hljs-number">6</span>&#125;)<br><span class="hljs-comment">// 头插性能太差，少用</span><br>slice = <span class="hljs-built_in">append</span>([]<span class="hljs-type">int</span>&#123;<span class="hljs-number">0</span>&#125;,slice)<br></code></pre></td></tr></table></figure>
 <p>在长度不够需要扩容的时候，实际上还是动了底层的匿名数组，扩容就创建个新的大小2倍的数组然后将旧数组的数据移过去<br>另外如果对slice做了扩容操作，超出了原有的数组长度，那么实际上会分配一个新的数组来让slice指向新数组，这时候你再对slice做的任何操作都不会指向原数组了，事实上，最佳实践就是用原数据的slice做处理，然后返回一个新的slice指向的数组，而<strong>不是</strong>直接修改原数据。这其实就是函数式的思想，<strong>不可变数据</strong>要求了元数据不可变，但是给你开放了可变的空间，靠规范来要求你不要动原数据，想动还是可以动的，而<strong>Rust</strong>就是更加激进的直接在编译器层面做了语法上的处理，如果你借用了不可变的数据但是内部动了会直接给你报错。<br>另外，Rust还限制同一时间只能存在一个可变引用，即同时只能存在一个slice指针或者能修改元数据的指针存在，以此保证编译期的内存安全。而Go是用GC来规避了这一切，在运行时会有GC来给乱玩指针的程序员兜底，这样保留了灵活性，也防止了悬空指针，不过<strong>数据竞争</strong>得程序员自己管了，Rust这些靠借用检查器在编译期就拦掉了。<br>我必须玩这个梗──<strong>但这一切值得吗？</strong></p>
 </li>
+</ul>
+<hr>
+<ul>
+<li>Go的make传递的是引用项，是指针，但是在go里定义的chan传递的又是值拷贝，那么就会出现这样的情况：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">type</span> client <span class="hljs-keyword">struct</span>&#123;<br>	outgoing <span class="hljs-keyword">chan</span> <span class="hljs-type">string</span><br>&#125;<br>channel := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> client)<br>cl := client&#123;outgoing: <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-type">string</span>)&#125;<br>channel &lt;- cl<br>channel &lt;- cl<br>channel &lt;- cl<br></code></pre></td></tr></table></figure>
+这三个传递的cl是三个不同的值拷贝不错，但是outgoing是引用，所以它拷贝完了之后这三个传递的client实例的outgoing指向同一个底层的channel而不是三个</li>
+</ul>
+<hr>
+<ul>
+<li>Go的goroutine是不是GC的可回收对象，一个正在阻塞等待channel的goroutine有引用根（活跃的栈），GC就不会回收它，所以如果因为什么写法导致一堆goroutine永久阻塞下去了，那么包括他们里面引用的上下文，buffer等都不会被释放。</li>
+</ul>
+<hr>
+<ul>
+<li>Go语言里有这么个select关键字，专门用来处理channel，可以理解为处理channel的Switch，每次处理一个case就退出，所以一般搭配for循环来使用，内部实现用算法保证case被选中的概率是严格相等的，所以如果多个case都有消息，它会随机选一个执行<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">for</span>&#123;<br>	<span class="hljs-keyword">select</span>&#123;<br>		<span class="hljs-keyword">case</span> &lt;- channel<br>		<span class="hljs-keyword">case</span> &lt;- channel<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>Go语言的枚举不存在对应关键字，底层用int实现，定义的时候需要这么做…<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">type</span> Message <span class="hljs-type">int</span><br><span class="hljs-keyword">const</span>(<br>	Disconnected Message = <span class="hljs-literal">iota</span> <span class="hljs-comment">// 预定义标识符，每次在const里出现就重置为0</span><br>	Connected <span class="hljs-comment">// 隐式沿用上一行的表达式</span><br>	NewMessage<br>)<br><span class="hljs-comment">// 或者</span><br><span class="hljs-keyword">const</span>(Disconnected Message = <span class="hljs-literal">iota</span>;Connected;NewMessage)<br></code></pre></td></tr></table></figure>
+<strong>才怪！</strong><br>值得注意的是，Go语言的枚举类型用的是const约束，也就是说无论你定义在哪儿，最后在编译器层面是会铺开到同一层的，用法也是直接用定义的常量名，也就是这样：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Go">status Status = NewMessage<br></code></pre></td></tr></table></figure>
+项目里的枚举写得一多，根本没法自动补全，所以Go的枚举最佳实践目前是这样的：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">type</span> Message <span class="hljs-type">int</span><br><span class="hljs-keyword">const</span>(<br>	MessageDisconnected Message = <span class="hljs-literal">iota</span> <br>	MessageConnected <br>	MessageNewMessage<br>)<br></code></pre></td></tr></table></figure>
+把常量名带上枚举名的前缀，以便于自动补全…<br>虽然我目前依然觉得这个设计还是够用就行，不过考虑到C#里那种顺滑的语法，不奇怪大家骂go语言的枚举实现很糟糕…</li>
+</ul>
+<hr>
+<ul>
+<li>卧槽了Go语言没有函数重载…为啥啊？？完全不必要的麻烦啊这个</li>
+</ul>
+<hr>
+<ul>
+<li>go的args继承了C的传统，毕竟Go的设计者还是Ken Thompson、Rob Pike这老哥俩<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// C 语言从 1970 年代就是这样的</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> **argv)</span> &#123;<br>    <span class="hljs-comment">// argv[0] = &quot;./zwhich&quot;   ← 程序名</span><br>    <span class="hljs-comment">// argv[1] = &quot;go&quot;         ← 第一个参数</span><br>&#125;<br></code></pre></td></tr></table></figure>
+所以记得用Go的参数的时候这么判断：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">if</span>(<span class="hljs-built_in">len</span>(os.Args) &lt; <span class="hljs-number">2</span>)&#123;<br>	<span class="hljs-comment">// 长度小于2相当于没有输入参数</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>PS. Unix 系语言（C、C++、Go、Rust、Python 的 <code>sys.argv</code>、Node 的 <code>process.argv</code>）全是带程序名的</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Go语言也继承了C语言的格式化语法</li>
+<li>Go的核心思想就一句话，<strong>代码是给人读的，不是给人写的</strong>，你写起来巨难受的代码，比如显式处理错误，这样写起来很难受，但是你能没什么心智负担的看懂，不过这点我真的存疑，这种写法极大的增加了代码的码量，读起来真的能降低心智负担吗？</li>
+</ul>
+<hr>
+<ul>
+<li>Go语言里的函数是一等公民，可以直接定义函数类型的变量或者参数：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">type</span> MonitorCallback <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(msg <span class="hljs-type">string</span>)</span></span><br><span class="hljs-keyword">type</span> Assistant <span class="hljs-keyword">struct</span> &#123;<br>    onHighCPU   MonitorCallback<br>    onProcessDied MonitorCallback<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(a *Assistant)</span></span> checkCPU(cpu <span class="hljs-type">float64</span>) &#123;<br>    <span class="hljs-keyword">if</span> cpu &gt; <span class="hljs-number">90</span> &#123;<br>        a.onHighCPU(fmt.Sprintf(<span class="hljs-string">&quot;CPU 飙升: %.2f%%&quot;</span>, cpu))<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+其实就是用结构体包了一层，实际上的行为就是传了两个<code>func(msg string)</code>类型的函数参数到<code>checkCPU</code>函数里</li>
+</ul>
+<hr>
+<ul>
+<li>Do not communicate by sharing memory; share memory by communicating<ul>
+<li>就是说，Go倾向于不直接在线程间共享一个全局的字段或者变量来通信，go更倾向于在不同的线程中各自维护自己的状态，然后通过线程安全的channel来传递</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Go 语言不支持任何的运算符重载</li>
+</ul>
+<hr>
+<ul>
+<li>Go 的Json序列化反序列化匹配大小写不敏感</li>
 </ul>
 
                 
@@ -428,8 +487,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/05/20/%E5%88%86%E9%A1%B5%E5%99%A8%E6%93%8D%E4%BD%9C/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2026/05/18/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="编译原理相关问题">
+                        <span class="hidden-mobile">编译原理相关问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
