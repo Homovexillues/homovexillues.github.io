@@ -19,23 +19,22 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="安装Windows在线安装1winget install NeoVim Linux离线安装直接安装预编译版本 1234curl -LO https:&#x2F;&#x2F;github.com&#x2F;neovim&#x2F;neovim&#x2F;releases&#x2F;latest&#x2F;download&#x2F;nvim-linux-x86_64.tar.gzsudo rm -rf &#x2F;opt&#x2F;nvim-linux-x86_64sudo tar -C &#x2F;opt">
+    <meta name="description" content="schtasks 是 Windows 系统自带的命令行工具，功能与图形化的“任务计划程序”完全一致，让你可以直接在终端里创建、修改、查询和删除计划任务。 它的基本命令结构如下： 1schtasks [参数]  其中，最常用的几个操作是 create（创建）、query（查询）、change（修改）、run（立即运行）和 delete（删除）。 📋 核心命令与通用参数schtasks &#x2F;creat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NeoVim安装">
-<meta property="og:url" content="https://homovexillues.github.io/2025/10/18/NeoVim%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:title" content="Windows计划任务注册">
+<meta property="og:url" content="https://homovexillues.github.io/2026/06/10/Windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%B3%A8%E5%86%8C/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="安装Windows在线安装1winget install NeoVim Linux离线安装直接安装预编译版本 1234curl -LO https:&#x2F;&#x2F;github.com&#x2F;neovim&#x2F;neovim&#x2F;releases&#x2F;latest&#x2F;download&#x2F;nvim-linux-x86_64.tar.gzsudo rm -rf &#x2F;opt&#x2F;nvim-linux-x86_64sudo tar -C &#x2F;opt">
+<meta property="og:description" content="schtasks 是 Windows 系统自带的命令行工具，功能与图形化的“任务计划程序”完全一致，让你可以直接在终端里创建、修改、查询和删除计划任务。 它的基本命令结构如下： 1schtasks [参数]  其中，最常用的几个操作是 create（创建）、query（查询）、change（修改）、run（立即运行）和 delete（删除）。 📋 核心命令与通用参数schtasks &#x2F;creat">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-18T04:16:28.119Z">
-<meta property="article:modified_time" content="2026-06-14T10:46:38.569Z">
+<meta property="article:published_time" content="2026-06-10T15:21:21.363Z">
+<meta property="article:modified_time" content="2026-06-10T15:23:20.634Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="Vim">
-<meta property="article:tag" content="NeoVim">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>NeoVim安装 - 红石门</title>
+  <title>Windows计划任务注册 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="NeoVim安装"></span>
+            <span id="subtitle" data-typed-text="Windows计划任务注册"></span>
           
         </div>
 
@@ -216,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-10-18 12:16" pubdate>
-          2025年10月18日 中午
+        <time datetime="2026-06-10 23:21" pubdate>
+          2026年6月10日 晚上
         </time>
       </span>
     
@@ -228,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          2.1k 字
         
       </span>
     
@@ -239,7 +238,7 @@
         
         
         
-          13 分钟
+          18 分钟
         
       </span>
     
@@ -276,94 +275,164 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">NeoVim安装</h1>
+            <h1 id="seo-header">Windows计划任务注册</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">winget install NeoVim<br></code></pre></td></tr></table></figure>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="离线安装"><a href="#离线安装" class="headerlink" title="离线安装"></a>离线安装</h3><p>直接安装预编译版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz<br>sudo rm -rf /opt/nvim-linux-x86_64<br>sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz<br>export PATH=&quot;$PATH:/opt/nvim-linux-x86_64/bin&quot;<br></code></pre></td></tr></table></figure>
-<h3 id="在线安装-1"><a href="#在线安装-1" class="headerlink" title="在线安装"></a>在线安装</h3><p>直接用自带包管理器安装，不过要注意一下安装出来的版本可能会比较老</p>
-<h1 id="配置包"><a href="#配置包" class="headerlink" title="配置包"></a>配置包</h1><h2 id="lazyvim"><a href="#lazyvim" class="headerlink" title="lazyvim"></a>lazyvim</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><h4 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># required</span><br><span class="hljs-built_in">Move-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim.bak<br><span class="hljs-comment"># 如果报错说找不到xxxx\nvim文件夹说明没做过配置</span><br><span class="hljs-comment"># optional but recommended</span><br><span class="hljs-built_in">Move-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<span class="hljs-literal">-data</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<span class="hljs-literal">-data</span>.bak<br>git clone https://github.com/LazyVim/starter <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<br><span class="hljs-comment"># 记得移除.git文件夹</span><br><span class="hljs-built_in">Remove-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim\.git <span class="hljs-literal">-Recurse</span> <span class="hljs-literal">-Force</span><br></code></pre></td></tr></table></figure>
-<h4 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># required</span><br><span class="hljs-built_in">mv</span> ~/.config/nvim&#123;,.bak&#125;<br><br><span class="hljs-comment"># optional but recommended</span><br><span class="hljs-built_in">mv</span> ~/.local/share/nvim&#123;,.bak&#125;<br><span class="hljs-built_in">mv</span> ~/.local/state/nvim&#123;,.bak&#125;<br><span class="hljs-built_in">mv</span> ~/.cache/nvim&#123;,.bak&#125;<br><br>git <span class="hljs-built_in">clone</span> https://github.com/LazyVim/starter ~/.config/nvim<br><span class="hljs-built_in">rm</span> -rf ~/.config/nvim/.git<br></code></pre></td></tr></table></figure>
+                <p><code>schtasks</code> 是 Windows 系统自带的命令行工具，功能与图形化的“任务计划程序”完全一致，让你可以直接在终端里创建、修改、查询和删除计划任务。</p>
+<p>它的基本命令结构如下：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">schtasks [参数]<br></code></pre></td></tr></table></figure>
 
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="键位"><a href="#键位" class="headerlink" title="键位"></a>键位</h3><table>
+<p>其中，最常用的几个操作是 <code>create</code>（创建）、<code>query</code>（查询）、<code>change</code>（修改）、<code>run</code>（立即运行）和 <code>delete</code>（删除）。</p>
+<h3 id="📋-核心命令与通用参数"><a href="#📋-核心命令与通用参数" class="headerlink" title="📋 核心命令与通用参数"></a>📋 核心命令与通用参数</h3><h4 id="schtasks-create-创建计划任务"><a href="#schtasks-create-创建计划任务" class="headerlink" title="schtasks /create - 创建计划任务"></a><code>schtasks /create</code> - 创建计划任务</h4><p>这是最核心、最复杂的命令。以下是创建任务时最常用到的参数：</p>
+<table>
 <thead>
 <tr>
-<th>快捷键</th>
-<th>功能描述</th>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">示例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>gd</td>
-<td>(Go Definition)跳转到光标所在的内容的定义位置</td>
+<td align="left"><code>/tn</code></td>
+<td align="left"><strong>任务名称</strong>（必填）。不能和已有任务重名。</td>
+<td align="left"><code>/tn &quot;MyTask&quot;</code></td>
 </tr>
 <tr>
-<td>gr</td>
-<td>查找所有引用</td>
+<td align="left"><code>/tr</code></td>
+<td align="left"><strong>要运行的程序或命令</strong>（必填）。需要填写完整的路径。</td>
+<td align="left"><code>/tr &quot;C:\Scripts\backup.bat&quot;</code></td>
 </tr>
 <tr>
-<td><code>&lt;leader&gt; + e</code></td>
-<td>打开&#x2F;关闭 &#96;:Explore文件浏览器</td>
+<td align="left"><code>/sc</code></td>
+<td align="left"><strong>计划频率</strong>（必填）。这是最重要的参数之一。</td>
+<td align="left"><code>/sc daily</code> (每天)</td>
 </tr>
 <tr>
-<td>a</td>
-<td>按 <code>a</code>（add），然后输入 <code>文件名/</code> 就是目录，不加 <code>/</code>就是文件</td>
+<td align="left"><code>/mo</code></td>
+<td align="left"><strong>运行间隔</strong>。与 <code>/sc</code> 配合使用，指定每几天&#x2F;几周等。</td>
+<td align="left"><code>/mo 2</code> (每2天&#x2F;周&#x2F;月)</td>
 </tr>
 <tr>
-<td>r</td>
-<td>重命名</td>
+<td align="left"><code>/d</code></td>
+<td align="left"><strong>在一周或一月中的特定几天运行</strong>。</td>
+<td align="left"><code>/d MON,WED,FRI</code> (周一、三、五)<br><code>/d 1,15</code> (每月1号和15号)</td>
 </tr>
 <tr>
-<td>d</td>
-<td>删除</td>
+<td align="left"><code>/st</code></td>
+<td align="left"><strong>开始时间</strong>。24小时制。</td>
+<td align="left"><code>/st 14:30</code> (下午2:30)</td>
 </tr>
 <tr>
-<td><code>&lt;leader&gt; + cr</code></td>
-<td>重命名变量&#x2F;方法</td>
+<td align="left"><code>/sd</code></td>
+<td align="left"><strong>开始日期</strong>。</td>
+<td align="left"><code>/sd 2024/12/01</code></td>
 </tr>
 <tr>
-<td><code>&lt;leader&gt; + ca</code></td>
-<td>Code Action，LSP提供的一些小功能，如快速修复什么的</td>
+<td align="left"><code>/ru</code></td>
+<td align="left"><strong>任务运行所用的账户</strong>。</td>
+<td align="left"><code>/ru SYSTEM</code> (系统账户)<br><code>/ru &quot;DOMAIN\User&quot;</code></td>
 </tr>
 <tr>
-<td>K</td>
-<td>Hover模式打开光标所在代码的文档（:q退出）</td>
+<td align="left"><code>/rp</code></td>
+<td align="left"><strong><code>/ru</code> 指定账户的密码</strong>。如果使用 <code>SYSTEM</code> 账户则不需密码。</td>
+<td align="left"><code>/rp &quot;MyPassword&quot;</code></td>
 </tr>
 <tr>
-<td>Alt+j&#x2F;k</td>
-<td>将整行上下移动(Normal&#x2F;Insert&#x2F;Visual 全模式生效)</td>
+<td align="left"><code>/f</code></td>
+<td align="left"><strong>强制创建</strong>。如果任务已存在，则强制覆盖。</td>
+<td align="left"><code>/f</code></td>
 </tr>
 <tr>
-<td>Shift + L&#x2F;H</td>
-<td>向右&#x2F;左移动标签页</td>
-</tr>
-<tr>
-<td><code>&lt;leader&gt; + xx</code></td>
-<td>打开报错信息页面</td>
-</tr>
-<tr>
-<td>Ctrl+ww</td>
-<td>光标跳转到另外窗口</td>
-</tr>
-<tr>
-<td>Ctrl+wj&#x2F;wk</td>
-<td>光标跳转到下面&#x2F;上面的窗口</td>
-</tr>
-<tr>
-<td><code>&lt;leader&gt; + bd</code></td>
-<td>关闭光标当前所在窗口</td>
-</tr>
-<tr>
-<td><code>&lt;leader&gt; + /</code></td>
-<td>打开&#x2F;关闭终端下边栏</td>
+<td align="left"><code>/rl</code></td>
+<td align="left"><strong>设置任务运行级别</strong>。<code>HIGHEST</code> 表示以最高权限运行。</td>
+<td align="left"><code>/rl HIGHEST</code></td>
 </tr>
 </tbody></table>
-<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><h4 id="lang-Markdown"><a href="#lang-Markdown" class="headerlink" title="lang.Markdown"></a>lang.Markdown</h4><ul>
-<li><code>:MarkdownPreview</code> 执行了之后可以打开默认浏览器预览Markdown文档</li>
-<li>默认安装的render-markdown.nvim可以直接渲染Markdown，内置渲染效果</li>
+<h4 id="schtasks-query-查询计划任务"><a href="#schtasks-query-查询计划任务" class="headerlink" title="schtasks /query - 查询计划任务"></a><code>schtasks /query</code> - 查询计划任务</h4><p>用于查看已经创建的任务。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>/tn</code></td>
+<td align="left"><strong>指定要查询的任务名称</strong>。如果不加，则列出所有任务。</td>
+<td align="left"><code>/tn &quot;MyTask&quot;</code></td>
+</tr>
+<tr>
+<td align="left"><code>/fo</code></td>
+<td align="left"><strong>输出格式</strong>。可设为 <code>TABLE</code>(表格)、<code>LIST</code>(列表) 或 <code>CSV</code>。</td>
+<td align="left"><code>/fo CSV</code></td>
+</tr>
+<tr>
+<td align="left"><code>/v</code></td>
+<td align="left"><strong>显示详细属性</strong>。包含更多高级信息。</td>
+<td align="left"><code>/v</code></td>
+</tr>
+<tr>
+<td align="left"><code>/nh</code></td>
+<td align="left"><strong>不显示列标题</strong>。常与 <code>/fo TABLE</code> 或 <code>/fo CSV</code> 一起用。</td>
+<td align="left"><code>/nh</code></td>
+</tr>
+</tbody></table>
+<h4 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h4><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>schtasks /change</code></td>
+<td align="left"><strong>修改现有任务的属性</strong>。可以改 <code>/tn</code>、<code>/tr</code>、<code>/ru</code> 等。</td>
+<td align="left"><code>schtasks /change /tn &quot;MyTask&quot; /ru &quot;SYSTEM&quot;</code></td>
+</tr>
+<tr>
+<td align="left"><code>schtasks /run</code></td>
+<td align="left"><strong>立即运行指定的任务</strong>。忽略预设的排程。</td>
+<td align="left"><code>schtasks /run /tn &quot;MyTask&quot;</code></td>
+</tr>
+<tr>
+<td align="left"><code>schtasks /end</code></td>
+<td align="left"><strong>停止由任务启动的程序</strong>。</td>
+<td align="left"><code>schtasks /end /tn &quot;MyTask&quot;</code></td>
+</tr>
+<tr>
+<td align="left"><code>schtasks /delete</code></td>
+<td align="left"><strong>删除计划任务</strong>。</td>
+<td align="left"><code>schtasks /delete /tn &quot;MyTask&quot; /f</code></td>
+</tr>
+</tbody></table>
+<h3 id="💡-使用示例与场景"><a href="#💡-使用示例与场景" class="headerlink" title="💡 使用示例与场景"></a>💡 使用示例与场景</h3><h4 id="1-创建每天定时关机的任务"><a href="#1-创建每天定时关机的任务" class="headerlink" title="1. 创建每天定时关机的任务"></a>1. 创建每天定时关机的任务</h4><p>这个例子会创建一个名为 <code>DailyShutdown</code> 的任务，在每天23:30执行关机命令。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">schtasks /create /tn &quot;DailyShutdown&quot; /tr &quot;shutdown /s /f /t <span class="hljs-number">0</span>&quot; /sc daily /st <span class="hljs-number">23</span>:<span class="hljs-number">30</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>/tr &quot;shutdown /s /f /t 0&quot;</code>：<code>/s</code> 是关机，<code>/f</code> 强制关闭应用，<code>/t 0</code> 是立即执行。</li>
+<li><code>/sc daily /st 23:30</code>：设置计划为每天 (<code>daily</code>) 的23:30开始。</li>
 </ul>
+<h4 id="2-创建每周运行一次的维护脚本"><a href="#2-创建每周运行一次的维护脚本" class="headerlink" title="2. 创建每周运行一次的维护脚本"></a>2. 创建每周运行一次的维护脚本</h4><p>这个例子会创建一个在每周日凌晨3点运行一个维护脚本的任务。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">schtasks /create /tn &quot;WeeklyMaintenance&quot; /tr &quot;D:\Scripts\cleanup.bat&quot; /sc weekly /d SUN /st <span class="hljs-number">03</span>:<span class="hljs-number">00</span> /ru SYSTEM<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>/sc weekly /d SUN</code>：设置为每周 (<code>weekly</code>) 的周日 (<code>SUN</code>) 运行。</li>
+<li><code>/ru SYSTEM</code>：使用具有更高权限的系统账户 (<code>SYSTEM</code>) 来运行脚本，避免权限不足。</li>
+</ul>
+<h4 id="3-查询并验证任务是否成功创建"><a href="#3-查询并验证任务是否成功创建" class="headerlink" title="3. 查询并验证任务是否成功创建"></a>3. 查询并验证任务是否成功创建</h4><p>使用 <code>/query</code> 可以查看任务状态。如果想看详细信息，可以加上 <code>/v</code> 和 <code>/fo LIST</code> 参数。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">schtasks /query /tn &quot;DailyShutdown&quot; /fo LIST /v<br></code></pre></td></tr></table></figure>
+
+<h3 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h3><ol>
+<li><strong>管理员权限</strong>：执行 <code>schtasks</code> 来创建、修改或删除任务时，<strong>必须以管理员身份运行命令提示符或PowerShell</strong>，否则会提示“拒绝访问”。</li>
+<li><strong>任务名称唯一性</strong>：每个计划任务的名称 (<code>/tn</code>) 在系统中必须是唯一的。</li>
+<li><strong>引号使用</strong>：如果任务名称、路径或参数中包含空格，请务必使用英文双引号 <code>&quot;</code> 将它们括起来。</li>
+<li><strong>编码问题</strong>：在某些系统上运行 <code>schtasks /query</code> 时，可能会遇到“无法加载列资源”的错误。这通常是CMD的代码页设置问题，可以先执行 <code>chcp 437</code> 将代码页切换到美国英语，查询完成后再用 <code>chcp 936</code> 切换回简体中文。</li>
+</ol>
+<p><code>schtasks</code> 的参数虽然多，但掌握 <code>/create</code>、<code>/query</code> 和 <code>/delete</code> 这几个核心参数，再配合 <code>/sc</code>、<code>/tn</code>、<code>/tr</code>、<code>/st</code> 这些常用选项，就能覆盖绝大部分的自动化需求了。</p>
 
                 
               </div>
@@ -397,9 +466,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Vim/" class="print-no-link">#Vim</a>
-      
-        <a href="/tags/NeoVim/" class="print-no-link">#NeoVim</a>
+        <a href="/tags/Windows/" class="print-no-link">#Windows</a>
       
     </div>
   
@@ -411,8 +478,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>NeoVim安装</div>
-      <div>https://homovexillues.github.io/2025/10/18/NeoVim安装/</div>
+      <div>Windows计划任务注册</div>
+      <div>https://homovexillues.github.io/2026/06/10/Windows计划任务注册/</div>
     </div>
     <div class="license-meta">
       
@@ -424,7 +491,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年10月18日</div>
+          <div>2026年6月10日</div>
         </div>
       
       
@@ -456,18 +523,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="计算机网络相关问题">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机网络相关问题</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/10/14/Influxdb%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="Influxdb相关内容">
-                        <span class="hidden-mobile">Influxdb相关内容</span>
+                      <a href="/2026/06/10/Windows%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/" title="Windows后台服务注册">
+                        <span class="hidden-mobile">Windows后台服务注册</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
