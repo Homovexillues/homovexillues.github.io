@@ -26,8 +26,8 @@
 <meta property="og:site_name" content="红石门">
 <meta property="og:description" content="gopls Go语言官方的语言服务器 Go的:&#x3D;有几个含义: 类型推导，省的我手写变量类型了 强制变量使用，防止僵尸代码，至少用 _ &#x3D; err来处理一下 声明作用域，声明+赋值，会创造新的变量，如下面这个经典例子：12345678910package mainimport &quot;fmt&quot;func main() &#123;    x :&#x3D; 1       &#x2F;&#x2F; 声明一">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-22T00:17:47.782Z">
-<meta property="article:modified_time" content="2026-06-14T08:21:26.755Z">
+<meta property="article:published_time" content="2026-05-22T00:57:47.400Z">
+<meta property="article:modified_time" content="2026-06-16T10:13:01.990Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="Go">
 <meta name="twitter:card" content="summary_large_image">
@@ -215,7 +215,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-05-22 08:17" pubdate>
+        <time datetime="2026-05-22 08:57" pubdate>
           2026年5月22日 早上
         </time>
       </span>
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.8k 字
+          6.2k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          48 分钟
+          53 分钟
         
       </span>
     
@@ -383,6 +383,52 @@
 <hr>
 <ul>
 <li>Go里有这么个设定<code>interface&#123;&#125;</code>,叫空接口，默认所有的类型都自动实现它，也是是说传个什么都可以</li>
+</ul>
+<hr>
+<ul>
+<li><code>&lt;-chan xxx</code>在Go里代表只读通道，<code>chan&lt;- xxx</code>是只写通道，默认啥符号没有就是双向通道<code>chan xxx</code></li>
+</ul>
+<hr>
+<ul>
+<li>如果之前没提到过，那么这里提一下，Go的goroutine并非真实线程，实际用户态线程，结构如下：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">G   G   G   G   G   G   G   G   G   G   G   G   G   G<br> \  |  /       \  |  /        \  |  /        \  |  /<br>   P1             P2             P3             P4<br>   │              │              │              │<br>   M1             M2             M3             M4<br>   │              │              │              │<br>CPU 核心 1     CPU 核心 2     CPU 核心 3     CPU 核心 4<br></code></pre></td></tr></table></figure></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>全称</th>
+<th>是什么</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>G</strong></td>
+<td>Goroutine</td>
+<td>你的 <code>go func()</code> 创建的任务</td>
+<td>成千上万，无限</td>
+</tr>
+<tr>
+<td><strong>M</strong></td>
+<td>Machine &#x2F; OS Thread</td>
+<td>真正的操作系统线程</td>
+<td>由 Go 调度器管理，通常等于核心数</td>
+</tr>
+<tr>
+<td><strong>P</strong></td>
+<td>Processor</td>
+<td>逻辑处理器 + 调度上下文</td>
+<td><code>GOMAXPROCS</code> 决定，默认 &#x3D; CPU 核心数</td>
+</tr>
+<tr>
+<td>这就是所谓的Go的G-M-P调度器模型，不过实际上的顺序是G-P-M-CPU，也有说法叫M:N调度器，即将M个goroutine映射到N个OS线程上运行</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li>Go提供了一个神奇的语法糖，每个包可以写多个的<code>func init()&#123;&#125;</code>,这个函数相当于提供给用户的重载，加载库的时候会自动执行，多个init的话就根据依赖关系顺序执行</li>
 </ul>
 
                 
