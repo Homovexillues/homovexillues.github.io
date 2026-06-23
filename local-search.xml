@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>CPU命名规则(Intel与AMD)</title>
+    <link href="/2026/06/23/CPU%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99(Intel%E4%B8%8EAMD)/"/>
+    <url>/2026/06/23/CPU%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99(Intel%E4%B8%8EAMD)/</url>
+    
+    <content type="html"><![CDATA[<p>&#x3D;&#x3D;$intel$&#x3D;&#x3D;酷睿&#x3D;&#x3D;$i5$&#x3D;&#x3D;-<strong>$12$</strong>&#x3D;&#x3D;$600$&#x3D;&#x3D;<strong>$K$</strong>&#x3D;&#x3D;$F$&#x3D;&#x3D;</p><ul><li><p><strong>Intel</strong> 是一款知名牙膏品牌</p></li><li><p><strong>酷睿</strong> 英特尔的CPU系列</p><table><thead><tr><th>Core</th><th>酷睿</th></tr></thead><tbody><tr><td><strong>Pentium</strong></td><td><strong>奔腾</strong></td></tr><tr><td><strong>Celeron</strong></td><td><strong>赛扬</strong></td></tr><tr><td><strong>Xeon</strong></td><td><strong>至强</strong></td></tr><tr><td><strong>Atom</strong></td><td><strong>凌动</strong></td></tr></tbody></table></li><li><p><strong>i5</strong> 中端定位，i3，i5，i7，i9，数字越大越强</p></li><li><p><strong>12</strong> 代数，数字越大越新</p></li><li><p><strong>600</strong> 性能，数字越大，频率越高</p></li><li><p><strong>B</strong> BGA封装的CPU，专为紧凑型设备开发</p><ul><li><strong>BGA</strong> 是一种CPU封装技术，</li></ul></li><li><p><strong>X</strong> 带X的表示支持XFR技术，自适应动态扩频，频率的最大值受到散热器散热效果而变化，<strong>散热器越强</strong>，<strong>频率越高</strong>。</p></li><li><p><strong>XT</strong> 相当于X的加强版</p></li></ul><p>$R5-5600G$</p><ul><li><strong>G</strong> 表示属于<strong>APU</strong>，内置强大的核显，如R5 5600G</li><li><strong>U</strong> 低电压，性能弱但功耗低，常见轻薄本</li><li><strong>H</strong> 低压，性能强，常见游戏本</li><li><strong>HX</strong> 一般使用在AMD高端发烧级CPU上，至尊版</li><li><strong>HS</strong> 相较于H工号更低，性能较强</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机基础</category>
+      
+      <category>计算机组成原理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>代码相关英语</title>
+    <link href="/2026/06/23/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E8%8B%B1%E8%AF%AD/"/>
+    <url>/2026/06/23/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E8%8B%B1%E8%AF%AD/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>approximate adj.大概的</p><ul><li>The approximate time required to complete the tutor is 25-30minutes</li></ul></li><li><p>execute v.执行</p><ul><li>execute command</li></ul></li><li><p>hint n.暗示，提示</p></li><li><p>prompt v.(计算机上)提示</p><ul><li>shell prompt shell提示</li></ul></li><li><p>If you have these steps memorized and confident</p><p>如果你已经记住这些步骤并有信心了</p></li><li><p>discard v.弃置，扔掉</p><ul><li><p>XX discards any changes you made</p><p>XX 会取消你对文本所作的任何改动</p></li></ul></li><li><p>combination n.结合体，组合</p></li><li><p>glitch n.小故障，失灵，短时脉冲波干扰</p></li><li><p>daemon n.守护进程，后台程序</p></li><li><p>prior adj.在先的，在前的，先前的，更重要的</p></li><li><p>prefix n.前缀</p></li><li><p>constructor n. 构造函数；构造器；建造者</p></li><li><p>coordinate<br>  v. 协调，配合；使身体协调；（使颜色、款式、风格等）搭配，配套；给 （原子或分子）配位，与……形成共价键<br>  n. 坐标；配套服装；同等级（或类别）的人（或事物）<br>  adj. 地位相当的，同等重要的；（语法）并列的；（化学）配位的</p></li><li><p><strong>formal parameter</strong> 形式参数</p></li><li><p><strong>call function</strong> 调用函数</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>生活杂项</category>
+      
+      <category>英语学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>单词</tag>
+      
+      <tag>English</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Windows计划任务注册</title>
     <link href="/2026/06/11/Windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%B3%A8%E5%86%8C/"/>
     <url>/2026/06/11/Windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%B3%A8%E5%86%8C/</url>
@@ -275,9 +325,9 @@
     
     <tags>
       
-      <tag>C-sharp</tag>
-      
       <tag>Avalonia</tag>
+      
+      <tag>C-sharp</tag>
       
     </tags>
     
@@ -831,9 +881,9 @@
     
     <tags>
       
-      <tag>问答</tag>
-      
       <tag>C++</tag>
+      
+      <tag>问答</tag>
       
       <tag>问题</tag>
       
@@ -912,6 +962,8 @@
     <categories>
       
       <category>机器人与控制</category>
+      
+      <category>传感器</category>
       
     </categories>
     
@@ -1108,6 +1160,8 @@
       
       <category>机器人与控制</category>
       
+      <category>控制理论</category>
+      
     </categories>
     
     
@@ -1116,35 +1170,6 @@
       <tag>问题</tag>
       
       <tag>自动控制理论</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>计算机视觉相关问题</title>
-    <link href="/2026/04/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
-    <url>/2026/04/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    
-    <content type="html"><![CDATA[<h1 id="计算机视觉识别任务具体指啥"><a href="#计算机视觉识别任务具体指啥" class="headerlink" title="计算机视觉识别任务具体指啥?"></a>计算机视觉识别任务具体指啥?</h1><p>在计算机科学领域，使用OpenCV等工具进行的视觉识别，专业术语通常称为<strong>计算机视觉（Computer Vision）</strong>。具体到识别任务，还可以细分为：</p><ul><li><strong>目标检测（Object Detection）</strong>：识别图像或视频中所有目标的位置和类别。</li><li><strong>目标识别&#x2F;分类（Object Recognition&#x2F;Classification）</strong>：判断图像中目标的具体类别。</li><li><strong>图像分割（Image Segmentation）</strong>：将图像划分为有意义的区域，常见有语义分割和实例分割。</li><li><strong>特征提取（Feature Extraction）</strong>：从图像中提取关键特征（如边缘、角点、颜色直方图、SIFT、SURF等）。</li><li><strong>模式识别（Pattern Recognition）</strong>：识别图像中的特定模式或结构。</li><li><strong>图像处理（Image Processing）</strong>：对图像进行预处理、增强、变换等操作，为后续识别做准备。</li></ul><p>这些任务都属于<strong>计算机视觉</strong>的范畴，OpenCV是实现这些任务的常用开源库。</p><h1 id="图片的hsv是什么东西-为什么视觉识别需要用到这个"><a href="#图片的hsv是什么东西-为什么视觉识别需要用到这个" class="headerlink" title="图片的hsv是什么东西?为什么视觉识别需要用到这个?"></a>图片的hsv是什么东西?为什么视觉识别需要用到这个?</h1><p>HSV是一种常用的颜色空间，全称是<strong>Hue（色相）、Saturation（饱和度）、Value（明度）</strong>。<br>它和我们常见的RGB（红绿蓝）颜色空间不同，HSV更符合人类对颜色的感知方式。</p><ul><li><strong>H（色相）</strong>：表示颜色的类型，比如红色、绿色、蓝色等，取值范围一般是0~360度。</li><li><strong>S（饱和度）</strong>：表示颜色的纯度，越高颜色越鲜艳，越低越灰白。</li><li><strong>V（明度）</strong>：表示颜色的亮度，越高越亮，越低越暗。</li></ul><h3 id="为什么视觉识别常用HSV？"><a href="#为什么视觉识别常用HSV？" class="headerlink" title="为什么视觉识别常用HSV？"></a>为什么视觉识别常用HSV？</h3><ol><li><strong>抗光照变化能力强</strong><br>HSV空间把颜色和亮度分开了，光照变化主要影响V（明度），而H（色相）和S（饱和度）基本不变，这样可以更稳定地识别颜色。</li><li><strong>颜色分割更直观</strong><br>在RGB空间下，同一种颜色在不同光照下RGB值变化很大，而在HSV空间下，色相（H）基本不变，便于用阈值分割出特定颜色区域。</li><li><strong>更接近人眼感知</strong><br>HSV空间的表示方式更符合人类对颜色的理解，比如我们说“红色”“绿色”其实就是色相（H）。</li></ol><h3 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a>应用举例</h3><p>比如你要识别红色物体，在HSV空间下只需要判断H在红色范围内即可，而不用关心光照强弱带来的V变化。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>计算机基础</category>
-      
-      <category>计算机视觉</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>问题</tag>
-      
-      <tag>计算机视觉</tag>
       
     </tags>
     
@@ -1174,6 +1199,35 @@
       <tag>问题</tag>
       
       <tag>计算机组成原理</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>计算机视觉相关问题</title>
+    <link href="/2026/04/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
+    <url>/2026/04/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="计算机视觉识别任务具体指啥"><a href="#计算机视觉识别任务具体指啥" class="headerlink" title="计算机视觉识别任务具体指啥?"></a>计算机视觉识别任务具体指啥?</h1><p>在计算机科学领域，使用OpenCV等工具进行的视觉识别，专业术语通常称为<strong>计算机视觉（Computer Vision）</strong>。具体到识别任务，还可以细分为：</p><ul><li><strong>目标检测（Object Detection）</strong>：识别图像或视频中所有目标的位置和类别。</li><li><strong>目标识别&#x2F;分类（Object Recognition&#x2F;Classification）</strong>：判断图像中目标的具体类别。</li><li><strong>图像分割（Image Segmentation）</strong>：将图像划分为有意义的区域，常见有语义分割和实例分割。</li><li><strong>特征提取（Feature Extraction）</strong>：从图像中提取关键特征（如边缘、角点、颜色直方图、SIFT、SURF等）。</li><li><strong>模式识别（Pattern Recognition）</strong>：识别图像中的特定模式或结构。</li><li><strong>图像处理（Image Processing）</strong>：对图像进行预处理、增强、变换等操作，为后续识别做准备。</li></ul><p>这些任务都属于<strong>计算机视觉</strong>的范畴，OpenCV是实现这些任务的常用开源库。</p><h1 id="图片的hsv是什么东西-为什么视觉识别需要用到这个"><a href="#图片的hsv是什么东西-为什么视觉识别需要用到这个" class="headerlink" title="图片的hsv是什么东西?为什么视觉识别需要用到这个?"></a>图片的hsv是什么东西?为什么视觉识别需要用到这个?</h1><p>HSV是一种常用的颜色空间，全称是<strong>Hue（色相）、Saturation（饱和度）、Value（明度）</strong>。<br>它和我们常见的RGB（红绿蓝）颜色空间不同，HSV更符合人类对颜色的感知方式。</p><ul><li><strong>H（色相）</strong>：表示颜色的类型，比如红色、绿色、蓝色等，取值范围一般是0~360度。</li><li><strong>S（饱和度）</strong>：表示颜色的纯度，越高颜色越鲜艳，越低越灰白。</li><li><strong>V（明度）</strong>：表示颜色的亮度，越高越亮，越低越暗。</li></ul><h3 id="为什么视觉识别常用HSV？"><a href="#为什么视觉识别常用HSV？" class="headerlink" title="为什么视觉识别常用HSV？"></a>为什么视觉识别常用HSV？</h3><ol><li><strong>抗光照变化能力强</strong><br>HSV空间把颜色和亮度分开了，光照变化主要影响V（明度），而H（色相）和S（饱和度）基本不变，这样可以更稳定地识别颜色。</li><li><strong>颜色分割更直观</strong><br>在RGB空间下，同一种颜色在不同光照下RGB值变化很大，而在HSV空间下，色相（H）基本不变，便于用阈值分割出特定颜色区域。</li><li><strong>更接近人眼感知</strong><br>HSV空间的表示方式更符合人类对颜色的理解，比如我们说“红色”“绿色”其实就是色相（H）。</li></ol><h3 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a>应用举例</h3><p>比如你要识别红色物体，在HSV空间下只需要判断H在红色范围内即可，而不用关心光照强弱带来的V变化。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机基础</category>
+      
+      <category>计算机视觉</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>问题</tag>
+      
+      <tag>计算机视觉</tag>
       
     </tags>
     
@@ -1234,7 +1288,7 @@
     <link href="/2026/04/08/Windows%E5%91%BD%E4%BB%A4/"/>
     <url>/2026/04/08/Windows%E5%91%BD%E4%BB%A4/</url>
     
-    <content type="html"><![CDATA[<h4 id="获得mac地址"><a href="#获得mac地址" class="headerlink" title="获得mac地址"></a>获得mac地址</h4><p><code>getmac /v</code></p><h4 id="显示或修改文件扩展名与文件类型（文件关联）之间的映射关系"><a href="#显示或修改文件扩展名与文件类型（文件关联）之间的映射关系" class="headerlink" title="显示或修改文件扩展名与文件类型（文件关联）之间的映射关系"></a>显示或修改文件扩展名与文件类型（文件关联）之间的映射关系</h4><p><code>assoc .mp4</code></p><p><code>assoc .mp4=VLC.vlc</code></p><h4 id="磁盘体检-修理工"><a href="#磁盘体检-修理工" class="headerlink" title="磁盘体检+修理工"></a>磁盘体检+修理工</h4><table><thead><tr><th>命令</th><th>作用</th></tr></thead><tbody><tr><td><code>chkdsk</code></td><td>只读模式，看基本信息，不修复。</td></tr><tr><td><code>chkdsk /f</code></td><td><strong>修复</strong>文件系统逻辑错误（需独占时提示“下次重启再跑”）</td></tr><tr><td><code>chkdsk /f /r</code></td><td><strong>&#x2F;f</strong> 修逻辑 + <strong>&#x2F;r</strong> 扫坏道并恢复可读数据（耗时最久）。</td></tr></tbody></table><h4 id="找到进程中的脚本"><a href="#找到进程中的脚本" class="headerlink" title="找到进程中的脚本"></a>找到进程中的脚本</h4><p><code>tasklist | findstr script</code></p><h4 id="展示wlan的报告"><a href="#展示wlan的报告" class="headerlink" title="展示wlan的报告"></a>展示wlan的报告</h4><p><code>netsh wlan show wlanrepor</code></p><h4 id="显示ip地址"><a href="#显示ip地址" class="headerlink" title="显示ip地址"></a>显示ip地址</h4><p><code>netsh interface ip show address | find &quot;IP Adress&quot;</code></p><h4 id="关闭Windows防火墙"><a href="#关闭Windows防火墙" class="headerlink" title="关闭Windows防火墙"></a>关闭Windows防火墙</h4><p><code>netsh advfirewall set allprofiles state off</code></p><p><code>netsh advfirewall set allprofiles state on</code></p><h4 id="查看打开的接口"><a href="#查看打开的接口" class="headerlink" title="查看打开的接口"></a>查看打开的接口</h4><p><code>netstat</code></p><h4 id="关闭休眠模式"><a href="#关闭休眠模式" class="headerlink" title="关闭休眠模式"></a>关闭休眠模式</h4><p><code>powercfg -h off</code><br>btw,这锤子模式真的消耗了C盘的大量空间</p><h4 id="打开网络适配器"><a href="#打开网络适配器" class="headerlink" title="打开网络适配器"></a>打开网络适配器</h4><p><code>ncpa.cpl</code></p><h4 id="找到使用特定端口的进程"><a href="#找到使用特定端口的进程" class="headerlink" title="找到使用特定端口的进程"></a>找到使用特定端口的进程</h4><p><code>netstat -ano | findstr &quot;:xxxx&quot;</code></p><table><thead><tr><th>字母</th><th>全称 &#x2F; 意义</th><th>作用</th></tr></thead><tbody><tr><td><strong>-a</strong></td><td><strong>all</strong></td><td>显示 <strong>所有</strong> 连接和监听端口（不加则只显示当前活跃连接）。</td></tr><tr><td><strong>-n</strong></td><td><strong>numeric</strong></td><td>以 <strong>数字形式</strong> 显示地址和端口号，<strong>不解析成主机名&#x2F;服务名</strong>，速度更快。</td></tr><tr><td><strong>-o</strong></td><td><strong>own</strong></td><td>显示 <strong>owning process 的 PID</strong>（进程标识符），方便后续用 <code>tasklist</code> 或任务管理器找进程。</td></tr></tbody></table><h4 id="获取系统所有用户"><a href="#获取系统所有用户" class="headerlink" title="获取系统所有用户"></a>获取系统所有用户</h4><p><code>net user</code></p><table><thead><tr><th>账户名</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><strong>Administrator</strong></td><td>内置管理员</td><td>真正的超级管理员，默认<strong>被禁用</strong>（你没手动启用就不能登录）。</td></tr><tr><td><strong>DefaultAccount</strong>、<strong>Guest</strong>、<strong>WDAGUtilityAccount</strong></td><td>系统内置</td><td>都被禁用且不能登录，普通用户不用管。</td></tr></tbody></table><p><strong>WDAGUtilityAccount</strong> 是“Windows Defender Application Guard” 的虚拟账户，用来跑沙盒里的 Edge，<strong>不是人用的管理员</strong>。</p><h5 id="获取特定用户"><a href="#获取特定用户" class="headerlink" title="获取特定用户"></a>获取特定用户</h5><p><code>net user xxx</code> </p><h5 id="修改用户密码"><a href="#修改用户密码" class="headerlink" title="修改用户密码"></a>修改用户密码</h5><p><code>net user &lt;username&gt; &lt;newpassword&gt;</code></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="获得mac地址"><a href="#获得mac地址" class="headerlink" title="获得mac地址"></a>获得mac地址</h4><p><code>getmac /v</code></p><h4 id="显示或修改文件扩展名与文件类型（文件关联）之间的映射关系"><a href="#显示或修改文件扩展名与文件类型（文件关联）之间的映射关系" class="headerlink" title="显示或修改文件扩展名与文件类型（文件关联）之间的映射关系"></a>显示或修改文件扩展名与文件类型（文件关联）之间的映射关系</h4><p><code>assoc .mp4</code></p><p><code>assoc .mp4=VLC.vlc</code></p><h4 id="磁盘体检-修理工"><a href="#磁盘体检-修理工" class="headerlink" title="磁盘体检+修理工"></a>磁盘体检+修理工</h4><table><thead><tr><th>命令</th><th>作用</th></tr></thead><tbody><tr><td><code>chkdsk</code></td><td>只读模式，看基本信息，不修复。</td></tr><tr><td><code>chkdsk /f</code></td><td><strong>修复</strong>文件系统逻辑错误（需独占时提示“下次重启再跑”）</td></tr><tr><td><code>chkdsk /f /r</code></td><td><strong>&#x2F;f</strong> 修逻辑 + <strong>&#x2F;r</strong> 扫坏道并恢复可读数据（耗时最久）。</td></tr></tbody></table><h4 id="找到进程中的脚本"><a href="#找到进程中的脚本" class="headerlink" title="找到进程中的脚本"></a>找到进程中的脚本</h4><p><code>tasklist | findstr script</code></p><h4 id="展示wlan的报告"><a href="#展示wlan的报告" class="headerlink" title="展示wlan的报告"></a>展示wlan的报告</h4><p><code>netsh wlan show wlanrepor</code></p><h4 id="显示ip地址"><a href="#显示ip地址" class="headerlink" title="显示ip地址"></a>显示ip地址</h4><p><code>netsh interface ip show address | find &quot;IP Adress&quot;</code></p><h4 id="关闭Windows防火墙"><a href="#关闭Windows防火墙" class="headerlink" title="关闭Windows防火墙"></a>关闭Windows防火墙</h4><p><code>netsh advfirewall set allprofiles state off</code></p><p><code>netsh advfirewall set allprofiles state on</code></p><h4 id="查看打开的接口"><a href="#查看打开的接口" class="headerlink" title="查看打开的接口"></a>查看打开的接口</h4><p><code>netstat</code></p><h4 id="关闭休眠模式"><a href="#关闭休眠模式" class="headerlink" title="关闭休眠模式"></a>关闭休眠模式</h4><p><code>powercfg -h off</code><br>btw,这锤子模式真的消耗了C盘的大量空间</p><h4 id="打开网络适配器"><a href="#打开网络适配器" class="headerlink" title="打开网络适配器"></a>打开网络适配器</h4><p><code>ncpa.cpl</code></p><h4 id="找到使用特定端口的进程"><a href="#找到使用特定端口的进程" class="headerlink" title="找到使用特定端口的进程"></a>找到使用特定端口的进程</h4><p><code>netstat -ano | findstr &quot;:xxxx&quot;</code></p><table><thead><tr><th>字母</th><th>全称 &#x2F; 意义</th><th>作用</th></tr></thead><tbody><tr><td><strong>-a</strong></td><td><strong>all</strong></td><td>显示 <strong>所有</strong> 连接和监听端口（不加则只显示当前活跃连接）。</td></tr><tr><td><strong>-n</strong></td><td><strong>numeric</strong></td><td>以 <strong>数字形式</strong> 显示地址和端口号，<strong>不解析成主机名&#x2F;服务名</strong>，速度更快。</td></tr><tr><td><strong>-o</strong></td><td><strong>own</strong></td><td>显示 <strong>owning process 的 PID</strong>（进程标识符），方便后续用 <code>tasklist</code> 或任务管理器找进程。</td></tr></tbody></table><h4 id="获取系统所有用户"><a href="#获取系统所有用户" class="headerlink" title="获取系统所有用户"></a>获取系统所有用户</h4><p><code>net user</code></p><table><thead><tr><th>账户名</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><strong>Administrator</strong></td><td>内置管理员</td><td>真正的超级管理员，默认<strong>被禁用</strong>（你没手动启用就不能登录）。</td></tr><tr><td><strong>DefaultAccount</strong>、<strong>Guest</strong>、<strong>WDAGUtilityAccount</strong></td><td>系统内置</td><td>都被禁用且不能登录，普通用户不用管。</td></tr></tbody></table><p><strong>WDAGUtilityAccount</strong> 是“Windows Defender Application Guard” 的虚拟账户，用来跑沙盒里的 Edge，<strong>不是人用的管理员</strong>。</p><h5 id="获取特定用户"><a href="#获取特定用户" class="headerlink" title="获取特定用户"></a>获取特定用户</h5><p><code>net user xxx</code> </p><h5 id="修改用户密码"><a href="#修改用户密码" class="headerlink" title="修改用户密码"></a>修改用户密码</h5><p><code>net user &lt;username&gt; &lt;newpassword&gt;</code></p><h4 id="网络共享文件"><a href="#网络共享文件" class="headerlink" title="网络共享文件"></a>网络共享文件</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">net</span> user username password /add<br></code></pre></td></tr></table></figure><p>用此命令添加一个新的本地用户，在文件夹属性中选择网络共享，添加这个你新添加的本地用户，然后在内网中共享</p>]]></content>
     
     
     <categories>
@@ -1361,33 +1415,6 @@
     <tags>
       
       <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>代码相关单词</title>
-    <link href="/2026/04/08/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/"/>
-    <url>/2026/04/08/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E5%8D%95%E8%AF%8D/</url>
-    
-    <content type="html"><![CDATA[<ul><li><p>approximate adj.大概的</p><ul><li>The approximate time required to complete the tutor is 25-30minutes</li></ul></li><li><p>execute v.执行</p><ul><li>execute command</li></ul></li><li><p>hint n.暗示，提示</p></li><li><p>prompt v.(计算机上)提示</p><ul><li>shell prompt shell提示</li></ul></li><li><p>If you have these steps memorized and confident</p><p>如果你已经记住这些步骤并有信心了</p></li><li><p>discard v.弃置，扔掉</p><ul><li><p>XX discards any changes you made</p><p>XX 会取消你对文本所作的任何改动</p></li></ul></li><li><p>combination n.结合体，组合</p></li><li><p>glitch n.小故障，失灵，短时脉冲波干扰</p></li><li><p>daemon n.守护进程，后台程序</p></li><li><p>prior adj.在先的，在前的，先前的，更重要的</p></li><li><p>prefix n.前缀</p></li><li><p>constructor n. 构造函数；构造器；建造者</p></li><li><p>coordinate<br>  v. 协调，配合；使身体协调；（使颜色、款式、风格等）搭配，配套；给 （原子或分子）配位，与……形成共价键<br>  n. 坐标；配套服装；同等级（或类别）的人（或事物）<br>  adj. 地位相当的，同等重要的；（语法）并列的；（化学）配位的</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>生活杂项</category>
-      
-      <category>英语学习</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>单词</tag>
       
     </tags>
     
@@ -2020,7 +2047,7 @@
       
       <category>生活杂项</category>
       
-      <category>杂谈</category>
+      <category>思辨</category>
       
     </categories>
     
@@ -2362,27 +2389,6 @@
       <category>生活杂项</category>
       
       <category>笑话与梗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Intel/AMD命名规则</title>
-    <link href="/2026/04/08/Intel%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/"/>
-    <url>/2026/04/08/Intel%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/</url>
-    
-    <content type="html"><![CDATA[<p>&#x3D;&#x3D;$intel$&#x3D;&#x3D;酷睿&#x3D;&#x3D;$i5$&#x3D;&#x3D;-<strong>$12$</strong>&#x3D;&#x3D;$600$&#x3D;&#x3D;<strong>$K$</strong>&#x3D;&#x3D;$F$&#x3D;&#x3D;</p><ul><li><p><strong>Intel</strong> 是一款知名牙膏品牌</p></li><li><p><strong>酷睿</strong> 英特尔的CPU系列</p><table><thead><tr><th>Core</th><th>酷睿</th></tr></thead><tbody><tr><td><strong>Pentium</strong></td><td><strong>奔腾</strong></td></tr><tr><td><strong>Celeron</strong></td><td><strong>赛扬</strong></td></tr><tr><td><strong>Xeon</strong></td><td><strong>至强</strong></td></tr><tr><td><strong>Atom</strong></td><td><strong>凌动</strong></td></tr></tbody></table></li><li><p><strong>i5</strong> 中端定位，i3，i5，i7，i9，数字越大越强</p></li><li><p><strong>12</strong> 代数，数字越大越新</p></li><li><p><strong>600</strong> 性能，数字越大，频率越高</p></li><li><p><strong>B</strong> BGA封装的CPU，专为紧凑型设备开发</p><ul><li><strong>BGA</strong> 是一种CPU封装技术，</li></ul></li><li><p><strong>X</strong> 带X的表示支持XFR技术，自适应动态扩频，频率的最大值受到散热器散热效果而变化，<strong>散热器越强</strong>，<strong>频率越高</strong>。</p></li><li><p><strong>XT</strong> 相当于X的加强版</p></li></ul><p>$R5-5600G$</p><ul><li><strong>G</strong> 表示属于<strong>APU</strong>，内置强大的核显，如R5 5600G</li><li><strong>U</strong> 低电压，性能弱但功耗低，常见轻薄本</li><li><strong>H</strong> 低压，性能强，常见游戏本</li><li><strong>HX</strong> 一般使用在AMD高端发烧级CPU上，至尊版</li><li><strong>HS</strong> 相较于H工号更低，性能较强</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>计算机基础</category>
-      
-      <category>计算机组成原理</category>
       
     </categories>
     
@@ -2950,7 +2956,7 @@
     <link href="/2026/04/08/C-sharp%E8%BF%9B%E9%98%B6/"/>
     <url>/2026/04/08/C-sharp%E8%BF%9B%E9%98%B6/</url>
     
-    <content type="html"><![CDATA[<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><h2 id="类、结构和记录"><a href="#类、结构和记录" class="headerlink" title="类、结构和记录"></a>类、结构和记录</h2><h3 id="记录-record"><a href="#记录-record" class="headerlink" title="记录(record)"></a>记录(record)</h3><p>传统的 <code>class</code> 和 <code>struct</code> 在相等性上很让人困惑，但 <code>record</code> 统一了行为：<strong>基于值的比较</strong>。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">var</span> classA = <span class="hljs-keyword">new</span> PointClass(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><span class="hljs-keyword">var</span> classB = <span class="hljs-keyword">new</span> PointClass(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><br>Console.WriteLine(classA == classB); <span class="hljs-comment">// True (比较的是 (1,2) 和 (1,2))</span><br>Console.WriteLine(classA.Equals(classB)); <span class="hljs-comment">// True</span><br><br><span class="hljs-keyword">var</span> structA = <span class="hljs-keyword">new</span> PointStruct(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><span class="hljs-keyword">var</span> structB = <span class="hljs-keyword">new</span> PointStruct(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><br>Console.WriteLine(structA == structB); <span class="hljs-comment">// True (比较的是 (1,2) 和 (1,2))</span><br>Console.WriteLine(structA.Equals(structB)); <span class="hljs-comment">// True</span><br></code></pre></td></tr></table></figure><ul><li>普通 <code>class</code>：<code>==</code> 比较引用，即使属性值相同也为 <code>false</code>。</li><li>普通 <code>struct</code>：<code>==</code> 运算符默认不可用，需要重载；<code>Equals</code> 方法默认通过反射比较，性能差。<br><code>record</code> 为你自动生成了基于所有属性的、高性能的 <code>Equals</code>、<code>GetHashCode</code> 和 <code>==</code> 运算符。</li></ul><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="扩展方法"><a href="#扩展方法" class="headerlink" title="扩展方法"></a>扩展方法</h4><p>扩展方法使你能向现有类型”添加”方法，而<strong>无需创建新的派生类型</strong>、<strong>重新编译</strong>或<strong>以其他方式修改原始类型</strong>.</p><p>扩展方法在LINQ查询操作中特别常见。</p><p>以下是关于扩展方法的关键点：</p><ol><li><strong>静态方法：</strong>扩展方法必须是静态方法。</li><li><strong>静态类：</strong>扩展方法必须定义在静态中</li><li><strong>第一个参数：</strong>扩展方法的第一个参数要扩展的类型，参数前必须使用<code>this</code>关键字。</li><li><strong>命名空间：</strong>如果扩展方法定义在不同的命名空间中，那么在使用扩展方法的地方必须包含命名空间的<code>using</code>指令。</li></ol><p>示例：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">StringExtensions</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">string</span> <span class="hljs-title">ToLowerFirstLetter</span>(<span class="hljs-params"><span class="hljs-keyword">this</span> <span class="hljs-built_in">string</span> str</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">string</span>.IsNullOrEmpty(str)||<span class="hljs-built_in">char</span>.IsLower(str,<span class="hljs-number">0</span>))<br>            <span class="hljs-keyword">return</span> str;<br>        <br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">char</span>.ToLowerInvariant(str[<span class="hljs-number">0</span>])+str.Substring(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>这个例子中，定义了一个扩展方法<code>ToLowerFirstLetter</code>将字符串的第一个字符转换为小写。这个方法可以像实例方法一样被调用：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-built_in">string</span> s = <span class="hljs-string">&quot;Hello&quot;</span>;<br>s = s.ToLowerFirstLetter();<span class="hljs-comment">//输出&quot;hello&quot;</span><br></code></pre></td></tr></table></figure><p>尽管扩展方法看起来像是类型的实例方法，但<strong>它们实际上是静态方法的语法糖</strong>。<strong>这意味着你不能在扩展方法中访问被扩展类型的私有或受保护的成员</strong>。扩展方法只能访问它们所扩展的类型的公共成员。此外，如果类型已经有一个实例方法和一个扩展方法具有相同的签名，那么实例方法将始终被调用。扩展方法只有在实例方法不存在的情况下才会被调用。这就是扩展方法的解析规则。</p><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h4 id="using-关键字"><a href="#using-关键字" class="headerlink" title="using 关键字"></a>using 关键字</h4><p>任何C#程序中的第一条语句都是：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> System;<br></code></pre></td></tr></table></figure><p><strong>using</strong>关键字用于在程序中包含命名空间。一个程序可以包含多个using语句</p><p>using关键字通常用于实现IDisposable接口的对象，以确保它们使用完毕后能被正确地释放，如下：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> client = <span class="hljs-keyword">new</span> HttpClient())<br></code></pre></td></tr></table></figure><p>这是执行清理操作的一种简洁方式，特别是在处理那些需要明确释放的非托管资源或实现IDisposable接口的对象时。</p><p>当using块内的代码执行完毕后，无论正常退出还是异常退出，HttpClient实例都会自动调用Dispose方法。Dispose方法会释放与HttpClient实例相关联的所有资源，如网络链接。</p><h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><h4 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h4><h4 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h4><h4 id="async"><a href="#async" class="headerlink" title="async"></a>async</h4><p>使用<code>async</code>修饰符可将方法、lambda表达式或匿名方法指定为异步。</p><p>如果对方法或表达式使用此修饰符，则其成为异步方法。如下实例定义了一个名为<code>ExampleMethodAsync</code>的异步方法。如下示例定义了一个名为<code>ExampleMethodAsync</code>的异步方法:</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task&lt;<span class="hljs-built_in">int</span>&gt; <span class="hljs-title">ExampleMethodAsync</span>()</span><br>&#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure><h3 id="访问关键字"><a href="#访问关键字" class="headerlink" title="访问关键字"></a>访问关键字</h3><h4 id="base"><a href="#base" class="headerlink" title="base"></a>base</h4><p><code>base</code>关键字用于从派生类中访问基类的成员。在执行以下操作的时候使用它：</p><ul><li>调用基类上已被其他方法重写的方法</li><li>指定创建派生类实例时调用的基类构造函数</li></ul><p>仅允许基类访问在构造函数、实例方法和实例属性访问器中进行。</p><p>在静态方法中使用<code>base</code>关键字将产生错误。</p><p>所访问的基类是类声明中指定的基类，如果指定<code>class ClassB:ClassA</code>则从ClassB访问ClassA的成员，而不考虑ClassA基类。</p><h5 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h5><p>在此示例中，基类 <code>Person</code> 和派生类 <code>Employee</code> 都有一个名为 <code>GetInfo</code> 的方法。 通过使用 <code>base</code> 关键字，可以从派生类中调用基类的 <code>GetInfo</code> 方法。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Person</span><br>&#123;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">string</span> ssn = <span class="hljs-string">&quot;444-55-6666&quot;</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">string</span> name = <span class="hljs-string">&quot;John L. Malgraine&quot;</span>;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">GetInfo</span>()</span><br>    &#123;<br>        Console.WriteLine(<span class="hljs-string">&quot;Name: &#123;0&#125;&quot;</span>, name);<br>        Console.WriteLine(<span class="hljs-string">&quot;SSN: &#123;0&#125;&quot;</span>, ssn);<br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> : <span class="hljs-title">Person</span><br>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> id = <span class="hljs-string">&quot;ABC567EFG&quot;</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">GetInfo</span>()</span><br>    &#123;<br>        <span class="hljs-comment">// Calling the base class GetInfo method:</span><br>        <span class="hljs-keyword">base</span>.GetInfo();<br>        Console.WriteLine(<span class="hljs-string">&quot;Employee ID: &#123;0&#125;&quot;</span>, id);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>    &#123;<br>        Employee E = <span class="hljs-keyword">new</span> Employee();<br>        E.GetInfo();<br>    &#125;<br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">Output</span><br><span class="hljs-comment">Name: John L. Malgraine</span><br><span class="hljs-comment">SSN: 444-55-6666</span><br><span class="hljs-comment">Employee ID: ABC567EFG</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure><h5 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h5><p>本示例显示如何指定在创建派生类实例时调用的基类构造函数。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">BaseClass</span><br>&#123;<br>    <span class="hljs-built_in">int</span> num;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BaseClass</span>()</span><br>    &#123;<br>        Console.WriteLine(<span class="hljs-string">&quot;in BaseClass()&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BaseClass</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i</span>)</span><br>    &#123;<br>        num = i;<br>        Console.WriteLine(<span class="hljs-string">&quot;in BaseClass(int i)&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">GetNum</span>()</span><br>    &#123;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DerivedClass</span> : <span class="hljs-title">BaseClass</span><br>&#123;<br>    <span class="hljs-comment">// This constructor will call BaseClass.BaseClass()</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DerivedClass</span>() : <span class="hljs-title">base</span>()</span><br>    &#123;<br>    &#125;<br><br>    <span class="hljs-comment">// This constructor will call BaseClass.BaseClass(int i)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DerivedClass</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i</span>) : <span class="hljs-title">base</span>(<span class="hljs-params">i</span>)</span><br>    &#123;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>    &#123;<br>        DerivedClass md = <span class="hljs-keyword">new</span> DerivedClass();<br>        DerivedClass md1 = <span class="hljs-keyword">new</span> DerivedClass(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">Output:</span><br><span class="hljs-comment">in BaseClass()</span><br><span class="hljs-comment">in BaseClass(int i)</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure><h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><h4 id="value"><a href="#value" class="headerlink" title="value"></a>value</h4><h2 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h2><h3 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><p>Lambda表达式是一个匿名函数，可以用来创建委托或表达式树类型。Lambda表达式的形式为<code>(parameters)=&gt;expression-or-statement-block</code>.</p><p>Lambda表达式可以在任何方法或属性的内部定义，包括在其他方法中。它的可见性（如<code>public</code>,<code>private</code>）取决于它被复制的变量或属性的可见性。如这个例子中：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">internal</span> <span class="hljs-keyword">static</span> Action&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">object</span>&gt; Write&#123;<span class="hljs-keyword">get</span>;<span class="hljs-keyword">set</span>;&#125;<br>Write = (sz,<span class="hljs-keyword">value</span>)=&gt;<br>&#123;<br><span class="hljs-keyword">try</span><br>    &#123;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">string</span>.IsNullOrEmpty(sz))&#123;<span class="hljs-keyword">return</span>;&#125;<br>        <span class="hljs-keyword">if</span>(outputs[sz].Variable.TrySetValue(<span class="hljs-keyword">value</span>,<span class="hljs-keyword">typeof</span>(Helper)))<br>        &#123;<br>            outputs[sz].SetBugger(<span class="hljs-keyword">value</span>);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">catch</span>(Exception ex)&#123;ex.Tolog();&#125;<br>&#125;;<br></code></pre></td></tr></table></figure><p>它的可见性就取决于Write属性的可见性</p><h3 id="await运算符"><a href="#await运算符" class="headerlink" title="await运算符"></a>await运算符</h3><h3 id="as运算符"><a href="#as运算符" class="headerlink" title="as运算符"></a>as运算符</h3><p> 用于执行引用类型的显式转换。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-keyword">var</span> result = expression <span class="hljs-keyword">as</span> Type;<br></code></pre></td></tr></table></figure><p>如果expression可以成功转换为Type，那么 result就是转换后的对象，如果不能，result就是null</p><p>as运算符在转换失败时不会抛出异常</p><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h3 id="声明语句"><a href="#声明语句" class="headerlink" title="声明语句"></a>声明语句</h3><h3 id="异常处理语句"><a href="#异常处理语句" class="headerlink" title="异常处理语句"></a>异常处理语句</h3><h3 id="迭代语句"><a href="#迭代语句" class="headerlink" title="迭代语句"></a>迭代语句</h3><h3 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h3><h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h3 id="checked和unchecked语句"><a href="#checked和unchecked语句" class="headerlink" title="checked和unchecked语句"></a>checked和unchecked语句</h3><h3 id="fixed语句"><a href="#fixed语句" class="headerlink" title="fixed语句"></a>fixed语句</h3><h3 id="lock语句"><a href="#lock语句" class="headerlink" title="lock语句"></a>lock语句</h3><h3 id="using语句"><a href="#using语句" class="headerlink" title="using语句"></a>using语句</h3><p><code>using</code>语句可确保正确使用IDsposable实例：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">var</span> numbers = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-built_in">int</span>&gt;();<br><span class="hljs-keyword">using</span> (StreamReader reader = File.OpenText(<span class="hljs-string">&quot;number.txt&quot;</span>))<br>&#123;<br>    <span class="hljs-built_in">string</span> lien;<br>    <span class="hljs-keyword">while</span> ((line = reader.ReadLine()) <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">int</span>.TryParse(line, <span class="hljs-keyword">out</span> <span class="hljs-built_in">int</span> number))<br>        &#123;<br>            numbers.Add(number);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="yield语句"><a href="#yield语句" class="headerlink" title="yield语句"></a>yield语句</h3><h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><h2 id="编译器读取的属性"><a href="#编译器读取的属性" class="headerlink" title="编译器读取的属性"></a>编译器读取的属性</h2><h2 id="编译器选项"><a href="#编译器选项" class="headerlink" title="编译器选项"></a>编译器选项</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><h2 id="类、结构和记录"><a href="#类、结构和记录" class="headerlink" title="类、结构和记录"></a>类、结构和记录</h2><h3 id="记录-record"><a href="#记录-record" class="headerlink" title="记录(record)"></a>记录(record)</h3><p>传统的 <code>class</code> 和 <code>struct</code> 在相等性上很让人困惑，但 <code>record</code> 统一了行为：<strong>基于值的比较</strong>。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">var</span> classA = <span class="hljs-keyword">new</span> PointClass(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><span class="hljs-keyword">var</span> classB = <span class="hljs-keyword">new</span> PointClass(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><br>Console.WriteLine(classA == classB); <span class="hljs-comment">// True (比较的是 (1,2) 和 (1,2))</span><br>Console.WriteLine(classA.Equals(classB)); <span class="hljs-comment">// True</span><br><br><span class="hljs-keyword">var</span> structA = <span class="hljs-keyword">new</span> PointStruct(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><span class="hljs-keyword">var</span> structB = <span class="hljs-keyword">new</span> PointStruct(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><br>Console.WriteLine(structA == structB); <span class="hljs-comment">// True (比较的是 (1,2) 和 (1,2))</span><br>Console.WriteLine(structA.Equals(structB)); <span class="hljs-comment">// True</span><br></code></pre></td></tr></table></figure><ul><li>普通 <code>class</code>：<code>==</code> 比较引用，即使属性值相同也为 <code>false</code>。</li><li>普通 <code>struct</code>：<code>==</code> 运算符默认不可用，需要重载；<code>Equals</code> 方法默认通过反射比较，性能差。<br><code>record</code> 为你自动生成了基于所有属性的、高性能的 <code>Equals</code>、<code>GetHashCode</code> 和 <code>==</code> 运算符。</li></ul><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="扩展方法"><a href="#扩展方法" class="headerlink" title="扩展方法"></a>扩展方法</h4><p>扩展方法使你能向现有类型”添加”方法，而<strong>无需创建新的派生类型</strong>、<strong>重新编译</strong>或<strong>以其他方式修改原始类型</strong>.</p><p>扩展方法在LINQ查询操作中特别常见。</p><p>以下是关于扩展方法的关键点：</p><ol><li><strong>静态方法：</strong>扩展方法必须是静态方法。</li><li><strong>静态类：</strong>扩展方法必须定义在静态中</li><li><strong>第一个参数：</strong>扩展方法的第一个参数要扩展的类型，参数前必须使用<code>this</code>关键字。</li><li><strong>命名空间：</strong>如果扩展方法定义在不同的命名空间中，那么在使用扩展方法的地方必须包含命名空间的<code>using</code>指令。</li></ol><p>示例：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">StringExtensions</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">string</span> <span class="hljs-title">ToLowerFirstLetter</span>(<span class="hljs-params"><span class="hljs-keyword">this</span> <span class="hljs-built_in">string</span> str</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">string</span>.IsNullOrEmpty(str)||<span class="hljs-built_in">char</span>.IsLower(str,<span class="hljs-number">0</span>))<br>            <span class="hljs-keyword">return</span> str;<br>        <br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">char</span>.ToLowerInvariant(str[<span class="hljs-number">0</span>])+str.Substring(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>这个例子中，定义了一个扩展方法<code>ToLowerFirstLetter</code>将字符串的第一个字符转换为小写。这个方法可以像实例方法一样被调用：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-built_in">string</span> s = <span class="hljs-string">&quot;Hello&quot;</span>;<br>s = s.ToLowerFirstLetter();<span class="hljs-comment">//输出&quot;hello&quot;</span><br></code></pre></td></tr></table></figure><p>尽管扩展方法看起来像是类型的实例方法，但<strong>它们实际上是静态方法的语法糖</strong>。<strong>这意味着你不能在扩展方法中访问被扩展类型的私有或受保护的成员</strong>。扩展方法只能访问它们所扩展的类型的公共成员。此外，如果类型已经有一个实例方法和一个扩展方法具有相同的签名，那么实例方法将始终被调用。扩展方法只有在实例方法不存在的情况下才会被调用。这就是扩展方法的解析规则。</p><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h4 id="using-关键字"><a href="#using-关键字" class="headerlink" title="using 关键字"></a>using 关键字</h4><p>任何C#程序中的第一条语句都是：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> System;<br></code></pre></td></tr></table></figure><p><strong>using</strong>关键字用于在程序中包含命名空间。一个程序可以包含多个using语句</p><p>using关键字通常用于实现IDisposable接口的对象，以确保它们使用完毕后能被正确地释放，如下：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> client = <span class="hljs-keyword">new</span> HttpClient())<br></code></pre></td></tr></table></figure><p>这是执行清理操作的一种简洁方式，特别是在处理那些需要明确释放的非托管资源或实现IDisposable接口的对象时。</p><p>当using块内的代码执行完毕后，无论正常退出还是异常退出，HttpClient实例都会自动调用Dispose方法。Dispose方法会释放与HttpClient实例相关联的所有资源，如网络链接。</p><h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><h4 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h4><h4 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h4><h4 id="async"><a href="#async" class="headerlink" title="async"></a>async</h4><p>使用<code>async</code>修饰符可将方法、lambda表达式或匿名方法指定为异步。</p><p>如果对方法或表达式使用此修饰符，则其成为异步方法。如下实例定义了一个名为<code>ExampleMethodAsync</code>的异步方法。如下示例定义了一个名为<code>ExampleMethodAsync</code>的异步方法:</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task&lt;<span class="hljs-built_in">int</span>&gt; <span class="hljs-title">ExampleMethodAsync</span>()</span><br>&#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure><h3 id="访问关键字"><a href="#访问关键字" class="headerlink" title="访问关键字"></a>访问关键字</h3><h4 id="base"><a href="#base" class="headerlink" title="base"></a>base</h4><p><code>base</code>关键字用于从派生类中访问基类的成员。在执行以下操作的时候使用它：</p><ul><li>调用基类上已被其他方法重写的方法</li><li>指定创建派生类实例时调用的基类构造函数</li></ul><p>仅允许基类访问在构造函数、实例方法和实例属性访问器中进行。</p><p>在静态方法中使用<code>base</code>关键字将产生错误。</p><p>所访问的基类是类声明中指定的基类，如果指定<code>class ClassB:ClassA</code>则从ClassB访问ClassA的成员，而不考虑ClassA基类。</p><h5 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h5><p>在此示例中，基类 <code>Person</code> 和派生类 <code>Employee</code> 都有一个名为 <code>GetInfo</code> 的方法。 通过使用 <code>base</code> 关键字，可以从派生类中调用基类的 <code>GetInfo</code> 方法。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Person</span><br>&#123;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">string</span> ssn = <span class="hljs-string">&quot;444-55-6666&quot;</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">string</span> name = <span class="hljs-string">&quot;John L. Malgraine&quot;</span>;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">GetInfo</span>()</span><br>    &#123;<br>        Console.WriteLine(<span class="hljs-string">&quot;Name: &#123;0&#125;&quot;</span>, name);<br>        Console.WriteLine(<span class="hljs-string">&quot;SSN: &#123;0&#125;&quot;</span>, ssn);<br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> : <span class="hljs-title">Person</span><br>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> id = <span class="hljs-string">&quot;ABC567EFG&quot;</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">GetInfo</span>()</span><br>    &#123;<br>        <span class="hljs-comment">// Calling the base class GetInfo method:</span><br>        <span class="hljs-keyword">base</span>.GetInfo();<br>        Console.WriteLine(<span class="hljs-string">&quot;Employee ID: &#123;0&#125;&quot;</span>, id);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>    &#123;<br>        Employee E = <span class="hljs-keyword">new</span> Employee();<br>        E.GetInfo();<br>    &#125;<br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">Output</span><br><span class="hljs-comment">Name: John L. Malgraine</span><br><span class="hljs-comment">SSN: 444-55-6666</span><br><span class="hljs-comment">Employee ID: ABC567EFG</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure><h5 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h5><p>本示例显示如何指定在创建派生类实例时调用的基类构造函数。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">BaseClass</span><br>&#123;<br>    <span class="hljs-built_in">int</span> num;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BaseClass</span>()</span><br>    &#123;<br>        Console.WriteLine(<span class="hljs-string">&quot;in BaseClass()&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BaseClass</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i</span>)</span><br>    &#123;<br>        num = i;<br>        Console.WriteLine(<span class="hljs-string">&quot;in BaseClass(int i)&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">GetNum</span>()</span><br>    &#123;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DerivedClass</span> : <span class="hljs-title">BaseClass</span><br>&#123;<br>    <span class="hljs-comment">// This constructor will call BaseClass.BaseClass()</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DerivedClass</span>() : <span class="hljs-title">base</span>()</span><br>    &#123;<br>    &#125;<br><br>    <span class="hljs-comment">// This constructor will call BaseClass.BaseClass(int i)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DerivedClass</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i</span>) : <span class="hljs-title">base</span>(<span class="hljs-params">i</span>)</span><br>    &#123;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>    &#123;<br>        DerivedClass md = <span class="hljs-keyword">new</span> DerivedClass();<br>        DerivedClass md1 = <span class="hljs-keyword">new</span> DerivedClass(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">Output:</span><br><span class="hljs-comment">in BaseClass()</span><br><span class="hljs-comment">in BaseClass(int i)</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure><h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><h4 id="value"><a href="#value" class="headerlink" title="value"></a>value</h4><h2 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h2><h3 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><p>Lambda表达式是一个匿名函数，可以用来创建委托或表达式树类型。Lambda表达式的形式为<code>(parameters)=&gt;expression-or-statement-block</code>.</p><p>Lambda表达式可以在任何方法或属性的内部定义，包括在其他方法中。它的可见性（如<code>public</code>,<code>private</code>）取决于它被复制的变量或属性的可见性。如这个例子中：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">internal</span> <span class="hljs-keyword">static</span> Action&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">object</span>&gt; Write&#123;<span class="hljs-keyword">get</span>;<span class="hljs-keyword">set</span>;&#125;<br>Write = (sz,<span class="hljs-keyword">value</span>)=&gt;<br>&#123;<br><span class="hljs-keyword">try</span><br>    &#123;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">string</span>.IsNullOrEmpty(sz))&#123;<span class="hljs-keyword">return</span>;&#125;<br>        <span class="hljs-keyword">if</span>(outputs[sz].Variable.TrySetValue(<span class="hljs-keyword">value</span>,<span class="hljs-keyword">typeof</span>(Helper)))<br>        &#123;<br>            outputs[sz].SetBugger(<span class="hljs-keyword">value</span>);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">catch</span>(Exception ex)&#123;ex.Tolog();&#125;<br>&#125;;<br></code></pre></td></tr></table></figure><p>它的可见性就取决于Write属性的可见性</p><h3 id="await运算符"><a href="#await运算符" class="headerlink" title="await运算符"></a>await运算符</h3><h3 id="as运算符"><a href="#as运算符" class="headerlink" title="as运算符"></a>as运算符</h3><p> 用于执行引用类型的显式转换。</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-keyword">var</span> result = expression <span class="hljs-keyword">as</span> Type;<br></code></pre></td></tr></table></figure><p>如果expression可以成功转换为Type，那么 result就是转换后的对象，如果不能，result就是null</p><p>as运算符在转换失败时不会抛出异常</p><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h3 id="声明语句"><a href="#声明语句" class="headerlink" title="声明语句"></a>声明语句</h3><h3 id="异常处理语句"><a href="#异常处理语句" class="headerlink" title="异常处理语句"></a>异常处理语句</h3><h3 id="迭代语句"><a href="#迭代语句" class="headerlink" title="迭代语句"></a>迭代语句</h3><h3 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h3><h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h3 id="checked和unchecked语句"><a href="#checked和unchecked语句" class="headerlink" title="checked和unchecked语句"></a>checked和unchecked语句</h3><h3 id="fixed语句"><a href="#fixed语句" class="headerlink" title="fixed语句"></a>fixed语句</h3><h3 id="lock语句"><a href="#lock语句" class="headerlink" title="lock语句"></a>lock语句</h3><h3 id="using语句"><a href="#using语句" class="headerlink" title="using语句"></a>using语句</h3><p><code>using</code>语句可确保正确使用IDsposable实例：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">var</span> numbers = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-built_in">int</span>&gt;();<br><span class="hljs-keyword">using</span> (StreamReader reader = File.OpenText(<span class="hljs-string">&quot;number.txt&quot;</span>))<br>&#123;<br>    <span class="hljs-built_in">string</span> lien;<br>    <span class="hljs-keyword">while</span> ((line = reader.ReadLine()) <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">int</span>.TryParse(line, <span class="hljs-keyword">out</span> <span class="hljs-built_in">int</span> number))<br>        &#123;<br>            numbers.Add(number);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="yield语句"><a href="#yield语句" class="headerlink" title="yield语句"></a>yield语句</h3><h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><h2 id="编译器读取的属性"><a href="#编译器读取的属性" class="headerlink" title="编译器读取的属性"></a>编译器读取的属性</h2><h2 id="编译器选项"><a href="#编译器选项" class="headerlink" title="编译器选项"></a>编译器选项</h2><h2 id="事件和委托"><a href="#事件和委托" class="headerlink" title="事件和委托"></a>事件和委托</h2><p>委托能干什么？</p><p>作为函数传参，如LINQ，orderby，传入了一个函数将函数作为规则去筛选</p><blockquote><p> 回调函数:将一个函数传给另一个函数，并且在特定的事件发生或满足特定条件时被调用执行的函数</p></blockquote>]]></content>
     
     
     <categories>
@@ -3205,9 +3211,9 @@
     
     <tags>
       
-      <tag>数据结构</tag>
-      
       <tag>C-sharp</tag>
+      
+      <tag>数据结构</tag>
       
     </tags>
     
@@ -3304,6 +3310,8 @@
       
       <category>机器人与控制</category>
       
+      <category>框架与协议</category>
+      
     </categories>
     
     
@@ -3339,33 +3347,6 @@
     <tags>
       
       <tag>操作系统</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>C#事件和委托</title>
-    <link href="/2026/04/08/C-sharp%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/"/>
-    <url>/2026/04/08/C-sharp%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%A7%94%E6%89%98/</url>
-    
-    <content type="html"><![CDATA[<p>委托能干什么？</p><p>作为函数传参，如LINQ，orderby，传入了一个函数将函数作为规则去筛选</p><blockquote><p> 回调函数:将一个函数传给另一个函数，并且在特定的事件发生或满足特定条件时被调用执行的函数</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>编程语言</category>
-      
-      <category>C#</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>C-sharp</tag>
       
     </tags>
     
@@ -4370,35 +4351,6 @@
   
   
   <entry>
-    <title>英语短语</title>
-    <link href="/2026/04/08/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/"/>
-    <url>/2026/04/08/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/</url>
-    
-    <content type="html"><![CDATA[<ul><li><strong>formal parameter</strong> 形式参数</li><li><strong>call function</strong> 调用函数</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>生活杂项</category>
-      
-      <category>英语学习</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>English</tag>
-      
-      <tag>短语</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>C#安装</title>
     <link href="/2026/04/08/C-Sharp%E5%AE%89%E8%A3%85/"/>
     <url>/2026/04/08/C-Sharp%E5%AE%89%E8%A3%85/</url>
@@ -4437,6 +4389,8 @@
       
       <category>机器人与控制</category>
       
+      <category>控制理论</category>
+      
     </categories>
     
     
@@ -4455,6 +4409,8 @@
     <categories>
       
       <category>机器人与控制</category>
+      
+      <category>框架与协议</category>
       
     </categories>
     
@@ -4476,27 +4432,6 @@
       <category>工具与环境</category>
       
       <category>虚拟机</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Windows 网络共享文件</title>
-    <link href="/2026/04/08/Windows%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/"/>
-    <url>/2026/04/08/Windows%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/</url>
-    
-    <content type="html"><![CDATA[<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">net</span> user username password /add<br></code></pre></td></tr></table></figure><p>用此命令添加一个新的本地用户，在文件夹属性中选择网络共享，添加这个你新添加的本地用户，然后在内网中共享</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>工具与环境</category>
-      
-      <category>Windows</category>
       
     </categories>
     
