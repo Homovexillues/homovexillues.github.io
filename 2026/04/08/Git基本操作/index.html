@@ -27,8 +27,10 @@
 <meta property="og:description" content="1234567# 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。git checkout .# --progress 显示进度信息# -- branch x 从指定的名为x的分支拉取# -v verbos模式，输出更详细的信息# -- 选项分隔符，告诉git之后的内容是路径&#x2F;参数，不要当成选项来解析git clone --progress --branch x -v -- &amp;qu">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://homovexillues.github.io/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png">
+<meta property="og:image" content="https://homovexillues.github.io/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/Pasted-image-20260518141003.png">
+<meta property="og:image" content="https://homovexillues.github.io/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/Pasted-image-20260518141652.png">
 <meta property="article:published_time" content="2026-04-08T02:43:54.502Z">
-<meta property="article:modified_time" content="2026-05-18T06:44:04.363Z">
+<meta property="article:modified_time" content="2026-06-23T09:59:33.681Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary_large_image">
@@ -229,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          522 字
+          454 字
         
       </span>
     
@@ -240,7 +242,7 @@
         
         
         
-          5 分钟
+          4 分钟
         
       </span>
     
@@ -285,7 +287,7 @@
                 <p><img src="/../images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png" srcset="/img/loading.gif" lazyload alt="image-20240515144600594"></p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-comment"># 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。</span><br>git checkout .<br><span class="hljs-comment"># --progress 显示进度信息</span><br><span class="hljs-comment"># -- branch x 从指定的名为x的分支拉取</span><br><span class="hljs-comment"># -v verbos模式，输出更详细的信息</span><br><span class="hljs-comment"># -- 选项分隔符，告诉git之后的内容是路径/参数，不要当成选项来解析</span><br>git <span class="hljs-keyword">clone</span> <span class="hljs-title">--progress</span> --branch x -v -- <span class="hljs-string">&quot;https/git&quot;</span> <span class="hljs-string">&quot;path&quot;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="Pasted-image-20260518141003-png-深度-浅克隆，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要-递归-克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库-克隆成纯版本库-只下载-git内部文件，不生成可直接打开的代码文件夹-Pasted-image-20260518141652-png-一般用于服务器端仓库、备份仓库-不检出-只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的-git文件夹，看不到源代码，需要手动checkout才会出现代码-原名称-克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称"><a href="#Pasted-image-20260518141003-png-深度-浅克隆，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要-递归-克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库-克隆成纯版本库-只下载-git内部文件，不生成可直接打开的代码文件夹-Pasted-image-20260518141652-png-一般用于服务器端仓库、备份仓库-不检出-只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的-git文件夹，看不到源代码，需要手动checkout才会出现代码-原名称-克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称" class="headerlink" title="![[Pasted image 20260518141003.png]]- 深度    - 浅克隆，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要- 递归    - 克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库- 克隆成纯版本库    - 只下载.git内部文件，不生成可直接打开的代码文件夹        ![[Pasted image 20260518141652.png]]        一般用于服务器端仓库、备份仓库- 不检出    - 只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的.git文件夹，看不到源代码，需要手动checkout才会出现代码- 原名称    - 克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称"></a>![[Pasted image 20260518141003.png]]<br>- 深度<br>    - <strong>浅克隆</strong>，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要<br>- 递归<br>    - 克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库<br>- 克隆成纯版本库<br>    - 只下载.git内部文件，不生成可直接打开的代码文件夹<br>        ![[Pasted image 20260518141652.png]]<br>        一般用于服务器端仓库、备份仓库<br>- 不检出<br>    - 只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的.git文件夹，看不到源代码，需要手动checkout才会出现代码<br>- 原名称<br>    - 克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称</h2>
+<h2 id="深度-浅克隆，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要-递归-克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库-克隆成纯版本库-只下载-git内部文件，不生成可直接打开的代码文件夹-一般用于服务器端仓库、备份仓库-不检出-只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的-git文件夹，看不到源代码，需要手动checkout才会出现代码-原名称-克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称"><a href="#深度-浅克隆，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要-递归-克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库-克隆成纯版本库-只下载-git内部文件，不生成可直接打开的代码文件夹-一般用于服务器端仓库、备份仓库-不检出-只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的-git文件夹，看不到源代码，需要手动checkout才会出现代码-原名称-克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称" class="headerlink" title="- 深度    - 浅克隆，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要- 递归    - 克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库- 克隆成纯版本库    - 只下载.git内部文件，不生成可直接打开的代码文件夹                一般用于服务器端仓库、备份仓库- 不检出    - 只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的.git文件夹，看不到源代码，需要手动checkout才会出现代码- 原名称    - 克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称"></a><img src="/../images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/Pasted-image-20260518141003.png" srcset="/img/loading.gif" lazyload><br>- 深度<br>    - <strong>浅克隆</strong>，有时候历史库太大了，为了快速拉取，可以值下载最新的x次提交，旧的提交，历史版本全部不要<br>- 递归<br>    - 克隆主仓库的时候顺便克隆子模块，即主仓库依赖的其他Git仓库，或者第三方库<br>- 克隆成纯版本库<br>    - 只下载.git内部文件，不生成可直接打开的代码文件夹<br>        <img src="/../images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/Pasted-image-20260518141652.png" srcset="/img/loading.gif" lazyload><br>        一般用于服务器端仓库、备份仓库<br>- 不检出<br>    - 只下载仓库数据，不把代码将文件解压出来，克隆后只有隐藏的.git文件夹，看不到源代码，需要手动checkout才会出现代码<br>- 原名称<br>    - 克隆之后的文件夹名称强制和远程仓库名一样，不能自定义名称</h2>
                 
               </div>
             
@@ -303,8 +305,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/" class="category-chain-item">工具与环境</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/Git/" class="category-chain-item">Git</a>
+  
+  
+
   
 
       </span>
@@ -375,9 +384,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/08/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5/" title="多线程入门概念">
+                      <a href="/2026/04/08/PowerShell%E7%9F%A5%E8%AF%86%E7%82%B9/" title="PowerShell知识点">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">多线程入门概念</span>
+                        <span class="hidden-mobile">PowerShell知识点</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -385,8 +394,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/04/08/%E5%AF%B9%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/" title="对概念的个人理解">
-                        <span class="hidden-mobile">对概念的个人理解</span>
+                      <a href="/2026/04/08/%E7%AE%80%E5%86%99%E8%AF%B4%E6%98%8E/" title="简写说明">
+                        <span class="hidden-mobile">简写说明</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
