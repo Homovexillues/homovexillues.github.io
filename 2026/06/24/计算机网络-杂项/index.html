@@ -1,0 +1,931 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-杂项">
+<meta property="og:url" content="https://homovexillues.github.io/2026/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/index.html">
+<meta property="og:site_name" content="红石门">
+<meta property="og:description" content="什么是安装钩子和配置钩子(hook)？ 在软件开发中，“钩子”（hook）是一种机制，允许在特定事件或时刻触发自定义代码。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。 常见的钩子类型 Git 钩子： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括： pre-commit：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-24T02:26:52.832Z">
+<meta property="article:modified_time" content="2026-06-24T02:26:52.833Z">
+<meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="问题">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>计算机网络-杂项 - 红石门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="计算机网络-杂项"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-24 10:26" pubdate>
+          2026年6月24日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          58 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">计算机网络-杂项</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="什么是安装钩子和配置钩子-hook-？"><a href="#什么是安装钩子和配置钩子-hook-？" class="headerlink" title="什么是安装钩子和配置钩子(hook)？"></a>什么是安装钩子和配置钩子(hook)？</h2><ul>
+<li><p>在软件开发中，“钩子”（hook）<strong>是一种机制</strong>，<strong>允许在特定事件或时刻触发自定义代码</strong>。安装和配置钩子通常涉及在某些操作前后自动执行脚本或程序，以实现自动化任务、执行验证或其他定制功能。</p>
+<h3 id="常见的钩子类型"><a href="#常见的钩子类型" class="headerlink" title="常见的钩子类型"></a>常见的钩子类型</h3><ol>
+<li><strong>Git 钩子</strong>： Git 提供了一系列钩子，允许在特定的 Git 操作（如提交、推送、合并等）前后运行自定义脚本。常见的 Git 钩子包括：<ul>
+<li><code>pre-commit</code>：在提交代码之前运行，可以用来检查代码风格、运行测试等。</li>
+<li><code>pre-push</code>：在推送代码到远程仓库之前运行，可以用来验证代码是否符合要求。</li>
+<li><code>post-merge</code>：在合并代码之后运行，可以用来执行一些后处理任务。</li>
+</ul>
+</li>
+<li><strong>npm 钩子</strong>： npm 脚本也支持钩子机制，例如 <code>preinstall</code>、<code>postinstall</code> 等，允许在安装 npm 包之前或之后运行脚本。</li>
+<li><strong>Web 应用钩子</strong>： 在 Web 开发中，可以设置一些钩子来在某些事件（如用户登录、数据更新等）发生时触发特定的代码。</li>
+</ol>
+</li>
+</ul>
+<h2 id="要怎么判断一个视频链接的下载是否支持断点续传？"><a href="#要怎么判断一个视频链接的下载是否支持断点续传？" class="headerlink" title="要怎么判断一个视频链接的下载是否支持断点续传？"></a>要怎么判断一个视频链接的下载是否支持断点续传？</h2><p>结论先说</p>
+<ul>
+<li>“支持断点续传”的标准就是：服务器支持 HTTP 字节范围请求（RFC 7233）。你发带 Range 头的请求，服务器返回 206 Partial Content，并带 Content-Range 才能算真正支持。</li>
+<li>仅看是否有 Accept-Ranges: bytes 可以作为信号，但不是绝对。最可靠的办法是主动发一个带 Range 的请求去试。</li>
+</ul>
+<p>最可靠的判定方法（推荐）</p>
+<ul>
+<li>发送一个极小的 Range 请求，比如只要第 1 个字节：<ul>
+<li>期望结果：HTTP&#x2F;1.1 206 Partial Content，并出现 Content-Range: bytes 0-0&#x2F;总大小</li>
+<li>不支持：返回 200 OK（整文件）或 4xx&#x2F;5xx</li>
+</ul>
+</li>
+<li>避免压缩干扰：有些服务器对压缩后的实体不支持 Range，测试时加 Accept-Encoding: identity</li>
+</ul>
+<p>用 curl 测</p>
+<ul>
+<li>基本测试（跟随重定向，强制不压缩）<ul>
+<li>curl -I -L “<a target="_blank" rel="noopener" href="https://example.com/video.mp4">https://example.com/video.mp4</a>“<ul>
+<li>看看是否有 Accept-Ranges: bytes（有利信号，但不是铁证）</li>
+</ul>
+</li>
+<li>curl -L -H “Accept-Encoding: identity” -H “Range: bytes&#x3D;0-0” -D - -o &#x2F;dev&#x2F;null “<a target="_blank" rel="noopener" href="https://example.com/video.mp4">https://example.com/video.mp4</a>“<ul>
+<li>判断：<ul>
+<li>Status 206 且有 Content-Range: bytes 0-0&#x2F;123456789 &#x3D;&gt; 支持断点续传</li>
+<li>Status 200 且没有 Content-Range &#x3D;&gt; 不支持（或中间层丢了 Range）</li>
+<li>Status 416 Range Not Satisfiable &#x3D;&gt; 可能 Range 越界（比如资源极小或总长为 0），也能从响应头里看到总长度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>若需要鉴权&#x2F;防盗链：</li>
+<li>加上 Cookie&#x2F;Referer&#x2F;Authorization，例如  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs Shell">curl -L -H &quot;Accept-Encoding: identity&quot; \<br>     -H &quot;Range: bytes=0-0&quot; \<br>     -H &quot;Referer: https://example.com/page&quot; \<br>     -H &quot;Cookie: k=v&quot; \<br>     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \<br>     -D - -o /dev/null &quot;https://example.com/video.mp4&quot;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>如何从响应头判断</p>
+<ul>
+<li>明确支持：<ul>
+<li>状态码：206 Partial Content</li>
+<li>必有：Content-Range: bytes start-end&#x2F;total</li>
+<li>通常也有：Accept-Ranges: bytes（但有时服务端不回这个头，仍然支持）</li>
+</ul>
+</li>
+<li>可能支持（但需实测）：<ul>
+<li>只有 Accept-Ranges: bytes（没有发 Range 请求时看到的）。有的服务端写了这个头但是实现不规范，所以还是以 206 为准。</li>
+</ul>
+</li>
+<li>不支持：<ul>
+<li>发了 Range 但返回 200 OK（且无 Content-Range）</li>
+<li>明确回 Accept-Ranges: none（少见）</li>
+<li>HLS&#x2F;DASH（m3u8&#x2F;mpd）这种分段流：不是单一文件的字节续传；它是“按分片重下&#x2F;续下”，不是对同一个 URL 按字节续传</li>
+</ul>
+</li>
+</ul>
+<p>C# 用 HttpClient 进行可编程判断（简例）</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">using</span> System;<br><span class="hljs-keyword">using</span> System.Net;<br><span class="hljs-keyword">using</span> System.Net.Http;<br><span class="hljs-keyword">using</span> System.Net.Http.Headers;<br><span class="hljs-keyword">using</span> System.Threading.Tasks;<br><br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> Task&lt;<span class="hljs-built_in">bool</span>&gt; <span class="hljs-title">SupportsRangeAsync</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> url, Action&lt;HttpRequestHeaders&gt;? addAuthHeaders = <span class="hljs-literal">null</span></span>)</span><br>&#123;<br>    <span class="hljs-keyword">using</span> <span class="hljs-keyword">var</span> handler = <span class="hljs-keyword">new</span> HttpClientHandler<br>    &#123;<br>        AutomaticDecompression = DecompressionMethods.None <span class="hljs-comment">// 保持实体原样，避免压缩影响 Range</span><br>    &#125;;<br>    <span class="hljs-keyword">using</span> <span class="hljs-keyword">var</span> http = <span class="hljs-keyword">new</span> HttpClient(handler);<br><br>    <span class="hljs-keyword">var</span> req = <span class="hljs-keyword">new</span> HttpRequestMessage(HttpMethod.Get, url);<br>    req.Headers.Range = <span class="hljs-keyword">new</span> RangeHeaderValue(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);           <span class="hljs-comment">// 取第 1 个字节</span><br>    req.Headers.AcceptEncoding.ParseAdd(<span class="hljs-string">&quot;identity&quot;</span>);          <span class="hljs-comment">// 禁止压缩</span><br>    addAuthHeaders?.Invoke(req.Headers);                      <span class="hljs-comment">// 如需加 Cookie/Authorization/Referer</span><br><br>    <span class="hljs-keyword">using</span> <span class="hljs-keyword">var</span> resp = <span class="hljs-keyword">await</span> http.SendAsync(req, HttpCompletionOption.ResponseHeadersRead);<br>    <span class="hljs-keyword">if</span> (resp.StatusCode == HttpStatusCode.PartialContent)<br>    &#123;<br>        <span class="hljs-comment">// 有 Content-Range 且单位为 bytes 基本稳了</span><br>        <span class="hljs-keyword">var</span> cr = resp.Content.Headers.ContentRange;<br>        <span class="hljs-keyword">return</span> cr != <span class="hljs-literal">null</span> &amp;&amp; cr.Unit == <span class="hljs-string">&quot;bytes&quot;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">// 常见是 200 OK 或鉴权失败等</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>真正做断点续传时要注意</p>
+<ul>
+<li>保存并复用校验信息：<ul>
+<li>ETag 或 Last-Modified：断点续传时最好带 If-Range，这样资源有更新时服务器会回 200（让你重下），没更新才回 206 续传</li>
+</ul>
+</li>
+<li>示例头组合：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs Shell">Range: bytes=&lt;already&gt;-      // 从已下载字节数继续<br>If-Range: &quot;&lt;ETag&gt;&quot;           // 或 If-Range: &lt;Last-Modified&gt;<br></code></pre></td></tr></table></figure></li>
+<li>处理重定向&#x2F;临时链接：<ul>
+<li>短期签名 URL（如 S3&#x2F;OSS）可能过期，续传前要刷新 URL</li>
+<li>某些中间层（CDN&#x2F;WAF）在重定向后丢 Range，需要直连最终地址或在每一跳都带上鉴权头</li>
+</ul>
+</li>
+<li>Content-Encoding：<ul>
+<li>如果响应是 gzip&#x2F;br 压缩，一些实现不支持对压缩体 Range；请求时用 Accept-Encoding: identity 可以规避</li>
+</ul>
+</li>
+</ul>
+<p>关于视频流（m3u8&#x2F;mpd）</p>
+<ul>
+<li>这类不是单一文件，不能用字节 Range 判断“断点续传”。</li>
+<li>它的“续传”是对分片逐个重下&#x2F;续下。常见做法：<ul>
+<li>让下载器（如 aria2）并发拉各个分片；失败分片重试即可</li>
+<li>用 ffmpeg 直接拉流并写文件（-c copy），中断后重新执行通常会跳过已存在的分片或从最近片重新获取，但不是严格意义的字节级续传</li>
+</ul>
+</li>
+</ul>
+<p>快速检查清单</p>
+<ul>
+<li>直链文件：用 Range 测试，看 206 + Content-Range</li>
+<li>看见 Accept-Ranges: bytes：加分，但仍以 206 为准</li>
+<li>m3u8&#x2F;mpd：按分片续，不是字节续</li>
+<li>出现 200：基本不支持或鉴权&#x2F;重定向造成 Range 失效</li>
+<li>需要稳定续传：保存 ETag&#x2F;Last-Modified，并用 If-Range 续传</li>
+</ul>
+<p>如果你能提供一个实际链接的响应头（或我帮你用 curl 跑一次），我可以直接给出是否支持与对应的 C#&#x2F;aria2&#x2F;ffmpeg 参数模板。</p>
+<h2 id="TUN-TAP-是什么？"><a href="#TUN-TAP-是什么？" class="headerlink" title="TUN&#x2F;TAP 是什么？"></a>TUN&#x2F;TAP 是什么？</h2><p><strong>TUN&#x2F;TAP 是 Linux 内核中的虚拟网络设备模块</strong>，它提供了一种方式让<strong>用户空间的应用程序</strong>能够直接操作<strong>网络数据包</strong>。</p>
+<h3 id="两个关键概念"><a href="#两个关键概念" class="headerlink" title="两个关键概念"></a>两个关键概念</h3><h4 id="TUN（Tunnel-Interface）"><a href="#TUN（Tunnel-Interface）" class="headerlink" title="TUN（Tunnel Interface）"></a><strong>TUN（Tunnel Interface）</strong></h4><ul>
+<li>工作在<strong>第 3 层（网络层）</strong></li>
+<li>操作的是 <strong>IP 数据包</strong></li>
+<li>用于 VPN、隧道等应用</li>
+</ul>
+<h4 id="TAP（Tap-Interface）"><a href="#TAP（Tap-Interface）" class="headerlink" title="TAP（Tap Interface）"></a><strong>TAP（Tap Interface）</strong></h4><ul>
+<li>工作在<strong>第 2 层（数据链路层）</strong></li>
+<li>操作的是<strong>以太网帧</strong></li>
+<li>用于虚拟机、网桥等应用</li>
+</ul>
+<hr>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><h4 id="常规网络流程"><a href="#常规网络流程" class="headerlink" title="常规网络流程"></a>常规网络流程</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs">应用程序<br>    ↓<br>内核网络栈<br>    ↓<br>网卡驱动<br>    ↓<br>物理网卡<br>    ↓<br>网络<br></code></pre></td></tr></table></figure>
+
+<h4 id="使用-TUN-TAP-的流程"><a href="#使用-TUN-TAP-的流程" class="headerlink" title="使用 TUN&#x2F;TAP 的流程"></a>使用 TUN&#x2F;TAP 的流程</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css">应用程序 <span class="hljs-selector-tag">A</span> (用户空间)<br>    ↓<br>TUN/TAP 设备 ←→ 内核网络栈 ←→ 网卡<br>    ↓<br>应用程序 <span class="hljs-selector-tag">B</span> (用户空间)<br></code></pre></td></tr></table></figure>
+
+<p><strong>关键点</strong>：应用程序可以<strong>直接读写网络包</strong>，就像操作普通文件一样。</p>
+<hr>
+<h3 id="为什么需要-TUN-TAP？"><a href="#为什么需要-TUN-TAP？" class="headerlink" title="为什么需要 TUN&#x2F;TAP？"></a>为什么需要 TUN&#x2F;TAP？</h3><h4 id="问题：用户空间应用如何处理网络包？"><a href="#问题：用户空间应用如何处理网络包？" class="headerlink" title="问题：用户空间应用如何处理网络包？"></a>问题：用户空间应用如何处理网络包？</h4><p><strong>没有 TUN&#x2F;TAP 时</strong>：</p>
+<ul>
+<li>用户空间程序无法直接操作网络包</li>
+<li>所有网络操作必须经过内核网络栈</li>
+<li>无法实现自定义的网络协议处理</li>
+</ul>
+<p><strong>有了 TUN&#x2F;TAP 后</strong>：</p>
+<ul>
+<li>用户空间程序可以<strong>拦截和修改</strong>网络包</li>
+<li>可以<strong>实现自定义网络功能</strong></li>
+<li>实现了<strong>内核与用户空间的隔离</strong></li>
+</ul>
+<hr>
+<h3 id="实际应用场景"><a href="#实际应用场景" class="headerlink" title="实际应用场景"></a>实际应用场景</h3><h4 id="1-VPN（OpenVPN、WireGuard）"><a href="#1-VPN（OpenVPN、WireGuard）" class="headerlink" title="1. VPN（OpenVPN、WireGuard）"></a>1. <strong>VPN（OpenVPN、WireGuard）</strong></h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs scss">用户的网络流量<br>    ↓<br>TUN 设备<br>    ↓<br>VPN 应用程序 (加密)<br>    ↓<br>互联网<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-虚拟机（KVM、QEMU）"><a href="#2-虚拟机（KVM、QEMU）" class="headerlink" title="2. 虚拟机（KVM、QEMU）"></a>2. <strong>虚拟机（KVM、QEMU）</strong></h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">虚拟机内的网络<br>    ↓<br>TAP 设备<br>    ↓<br>虚拟机管理器<br>    ↓<br>物理网卡<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-Docker-容器网络"><a href="#3-Docker-容器网络" class="headerlink" title="3. Docker&#x2F;容器网络"></a>3. <strong>Docker&#x2F;容器网络</strong></h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">容器内的应用<br>    ↓<br>虚拟网卡<br>    ↓<br>TAP/TUN 设备<br>    ↓<br>宿主机网络<br></code></pre></td></tr></table></figure>
+
+<h4 id="4-网络工具"><a href="#4-网络工具" class="headerlink" title="4. 网络工具"></a>4. <strong>网络工具</strong></h4><ul>
+<li>Wireshark（抓包）</li>
+<li>Tcpdump（数据包分析）</li>
+<li>自定义 DNS 服务器</li>
+<li>网络协议研究</li>
+</ul>
+<hr>
+<h3 id="创建和使用-TUN-TAP"><a href="#创建和使用-TUN-TAP" class="headerlink" title="创建和使用 TUN&#x2F;TAP"></a>创建和使用 TUN&#x2F;TAP</h3><h4 id="检查模块是否加载"><a href="#检查模块是否加载" class="headerlink" title="检查模块是否加载"></a>检查模块是否加载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看 TUN/TAP 模块</span><br>lsmod | grep tun<br><br><span class="hljs-comment"># 输出示例</span><br><span class="hljs-comment"># tun    28672  2</span><br><br><span class="hljs-comment"># 如果没有，加载模块</span><br>sudo modprobe tun<br></code></pre></td></tr></table></figure>
+
+<h4 id="创建虚拟网卡"><a href="#创建虚拟网卡" class="headerlink" title="创建虚拟网卡"></a>创建虚拟网卡</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建 TUN 设备</span><br>sudo ip tuntap add dev tun0 mode tun<br><br><span class="hljs-comment"># 创建 TAP 设备</span><br>sudo ip tuntap add dev tap0 mode tap<br><br><span class="hljs-comment"># 配置 IP 地址</span><br>sudo ip addr add 192.168.100.1/24 dev tun0<br>sudo ip addr add 192.168.100.2/24 dev tap0<br><br><span class="hljs-comment"># 启用网卡</span><br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> tun0 up<br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> tap0 up<br><br><span class="hljs-comment"># 查看</span><br>ip addr show tun0<br>ip addr show tap0<br></code></pre></td></tr></table></figure>
+
+<h4 id="删除虚拟网卡"><a href="#删除虚拟网卡" class="headerlink" title="删除虚拟网卡"></a>删除虚拟网卡</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 删除 TUN 设备</span><br>sudo ip tuntap del dev tun0 mode tun<br><br><span class="hljs-comment"># 删除 TAP 设备</span><br>sudo ip tuntap del dev tap0 mode tap<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="TUN-和-TAP-的对比"><a href="#TUN-和-TAP-的对比" class="headerlink" title="TUN 和 TAP 的对比"></a>TUN 和 TAP 的对比</h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>TUN</th>
+<th>TAP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>工作层</strong></td>
+<td>第 3 层（IP）</td>
+<td>第 2 层（以太网）</td>
+</tr>
+<tr>
+<td><strong>处理数据</strong></td>
+<td>IP 数据包</td>
+<td>以太网帧</td>
+</tr>
+<tr>
+<td><strong>使用场景</strong></td>
+<td>VPN、隧道</td>
+<td>虚拟机、网桥</td>
+</tr>
+<tr>
+<td><strong>性能</strong></td>
+<td>较高</td>
+<td>较低</td>
+</tr>
+<tr>
+<td><strong>复杂度</strong></td>
+<td>中等</td>
+<td>较高</td>
+</tr>
+<tr>
+<td><strong>地址格式</strong></td>
+<td>IP 地址</td>
+<td>MAC 地址</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="完整例子：创建虚拟网络"><a href="#完整例子：创建虚拟网络" class="headerlink" title="完整例子：创建虚拟网络"></a>完整例子：创建虚拟网络</h3><h4 id="创建-TUN-设备并使用"><a href="#创建-TUN-设备并使用" class="headerlink" title="创建 TUN 设备并使用"></a>创建 TUN 设备并使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 1. 创建 TUN 设备</span><br>sudo ip tuntap add dev tun0 mode tun<br><br><span class="hljs-comment"># 2. 配置 IP</span><br>sudo ip addr add 10.0.0.1/24 dev tun0<br><br><span class="hljs-comment"># 3. 启用</span><br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> tun0 up<br><br><span class="hljs-comment"># 4. 配置路由</span><br>sudo ip route add 10.0.0.0/24 dev tun0<br><br><span class="hljs-comment"># 5. 用 Python 读写数据包</span><br><span class="hljs-built_in">cat</span> &gt; read_tun.py &lt;&lt; <span class="hljs-string">&#x27;EOF&#x27;</span><br>import struct<br>import fcntl<br>import os<br><br><span class="hljs-comment"># 打开 TUN 设备</span><br>tun = open(<span class="hljs-string">&#x27;/dev/net/tun&#x27;</span>, <span class="hljs-string">&#x27;r+b&#x27;</span>)<br><br><span class="hljs-comment"># 配置为 TUN 模式</span><br>TUNSETIFF = 0x400454ca<br>IFF_TUN = 0x0001<br>ifr = struct.pack(<span class="hljs-string">&#x27;16sH&#x27;</span>, b<span class="hljs-string">&#x27;tun0&#x27;</span>, IFF_TUN)<br>fcntl.ioctl(tun, TUNSETIFF, ifr)<br><br><span class="hljs-comment"># 读取数据包</span><br><span class="hljs-keyword">while</span> True:<br>    packet = tun.read(4096)<br>    <span class="hljs-built_in">print</span>(f<span class="hljs-string">&quot;收到数据包，长度: &#123;len(packet)&#125;&quot;</span>)<br>    <span class="hljs-comment"># 解析 IP 头</span><br>    <span class="hljs-keyword">if</span> len(packet) &gt;= 20:<br>        src_ip = <span class="hljs-string">&#x27;.&#x27;</span>.<span class="hljs-built_in">join</span>(map(str, packet[12:16]))<br>        dst_ip = <span class="hljs-string">&#x27;.&#x27;</span>.<span class="hljs-built_in">join</span>(map(str, packet[16:20]))<br>        <span class="hljs-built_in">print</span>(f<span class="hljs-string">&quot;源 IP: &#123;src_ip&#125;, 目标 IP: &#123;dst_ip&#125;&quot;</span>)<br>EOF<br><br><span class="hljs-comment"># 6. 运行</span><br>python3 read_tun.py<br></code></pre></td></tr></table></figure>
+
+<h4 id="创建-TAP-网桥"><a href="#创建-TAP-网桥" class="headerlink" title="创建 TAP 网桥"></a>创建 TAP 网桥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 1. 创建 TAP 设备</span><br>sudo ip tuntap add dev tap0 mode tap<br><br><span class="hljs-comment"># 2. 创建网桥</span><br>sudo ip <span class="hljs-built_in">link</span> add br0 <span class="hljs-built_in">type</span> bridge<br><br><span class="hljs-comment"># 3. 添加网卡到网桥</span><br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> eth0 master br0<br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> tap0 master br0<br><br><span class="hljs-comment"># 4. 配置网桥 IP</span><br>sudo ip addr add 192.168.1.10/24 dev br0<br><br><span class="hljs-comment"># 5. 启用</span><br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> br0 up<br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> eth0 up<br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> tap0 up<br><br><span class="hljs-comment"># 6. 查看网桥</span><br>brctl show<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="为什么虚拟网卡需要-TUN-TAP？"><a href="#为什么虚拟网卡需要-TUN-TAP？" class="headerlink" title="为什么虚拟网卡需要 TUN&#x2F;TAP？"></a>为什么虚拟网卡需要 TUN&#x2F;TAP？</h3><h4 id="原因-1：内核与用户空间通信"><a href="#原因-1：内核与用户空间通信" class="headerlink" title="原因 1：内核与用户空间通信"></a>原因 1：内核与用户空间通信</h4><ul>
+<li>虚拟网卡需要将网络包从内核传到用户空间</li>
+<li>TUN&#x2F;TAP 提供了这个接口</li>
+</ul>
+<h4 id="原因-2：灵活性"><a href="#原因-2：灵活性" class="headerlink" title="原因 2：灵活性"></a>原因 2：灵活性</h4><ul>
+<li>用户空间应用可以完全控制网络行为</li>
+<li>可以实现复杂的网络处理逻辑</li>
+</ul>
+<h4 id="原因-3：虚拟化支持"><a href="#原因-3：虚拟化支持" class="headerlink" title="原因 3：虚拟化支持"></a>原因 3：虚拟化支持</h4><ul>
+<li>虚拟机需要虚拟网卡</li>
+<li>TUN&#x2F;TAP 是实现虚拟网卡的基础</li>
+</ul>
+<h4 id="原因-4：性能隔离"><a href="#原因-4：性能隔离" class="headerlink" title="原因 4：性能隔离"></a>原因 4：性能隔离</h4><ul>
+<li>用户空间程序崩溃不会影响内核</li>
+<li>网络异常不会直接影响系统稳定性</li>
+</ul>
+<hr>
+<h3 id="检查-TUN-TAP-是否可用"><a href="#检查-TUN-TAP-是否可用" class="headerlink" title="检查 TUN&#x2F;TAP 是否可用"></a>检查 TUN&#x2F;TAP 是否可用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 方式 1：检查文件</span><br><span class="hljs-built_in">ls</span> -la /dev/net/tun<br><span class="hljs-comment"># 输出: crw-rw-rw- 1 root root 10, 200 Nov 13 07:35 /dev/net/tun</span><br><br><span class="hljs-comment"># 方式 2：检查模块</span><br>lsmod | grep tun<br><br><span class="hljs-comment"># 方式 3：尝试加载</span><br>sudo modprobe tun<br><br><span class="hljs-comment"># 方式 4：检查权限</span><br><span class="hljs-comment"># 如果当前用户不是 root，可能需要调整权限</span><br>sudo <span class="hljs-built_in">chmod</span> 666 /dev/net/tun<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="虚拟机使用-TUN-TAP-的例子"><a href="#虚拟机使用-TUN-TAP-的例子" class="headerlink" title="虚拟机使用 TUN&#x2F;TAP 的例子"></a>虚拟机使用 TUN&#x2F;TAP 的例子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># KVM/QEMU 虚拟机网络配置</span><br><span class="hljs-comment"># 创建 TAP 设备</span><br>sudo ip tuntap add dev tap0 mode tap user <span class="hljs-variable">$USER</span><br><br><span class="hljs-comment"># 启用</span><br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> tap0 up<br><br><span class="hljs-comment"># 配置网桥</span><br>sudo ip <span class="hljs-built_in">link</span> add br0 <span class="hljs-built_in">type</span> bridge<br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> eth0 master br0<br>sudo ip <span class="hljs-built_in">link</span> <span class="hljs-built_in">set</span> tap0 master br0<br><br><span class="hljs-comment"># 启动虚拟机时指定网络</span><br>qemu-system-x86_64 -net tap,ifname=tap0,script=no -net nic,model=virtio ...<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>TUN&#x2F;TAP 是什么？</strong></td>
+<td>Linux 虚拟网络设备，连接内核与用户空间</td>
+</tr>
+<tr>
+<td><strong>为什么需要它？</strong></td>
+<td>让用户程序能处理网络包，实现虚拟网卡</td>
+</tr>
+<tr>
+<td><strong>TUN vs TAP？</strong></td>
+<td>TUN 处理 IP 包（VPN），TAP 处理以太网帧（虚拟机）</td>
+</tr>
+<tr>
+<td><strong>必须加载吗？</strong></td>
+<td>通常自动加载，如果没有用 <code>modprobe tun</code> 加载</td>
+</tr>
+<tr>
+<td><strong>权限要求？</strong></td>
+<td>创建设备需要 root 权限，使用需要 &#x2F;dev&#x2F;net&#x2F;tun 读写权限</td>
+</tr>
+</tbody></table>
+<p><strong>简单来说</strong>：TUN&#x2F;TAP 就是 Linux 给用户空间应用程序<strong>开的后门</strong>，让它们能够<strong>直接操作网络包</strong>，从而实现虚拟网卡、VPN、虚拟机等功能。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="category-chain-item">计算机基础</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="category-chain-item">计算机网络</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%97%AE%E9%A2%98/" class="print-no-link">#问题</a>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="print-no-link">#计算机网络</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>计算机网络-杂项</div>
+      <div>https://homovexillues.github.io/2026/06/24/计算机网络-杂项/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/06/24/C-sharp-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="C# 基础语法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C# 基础语法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" title="计算机网络-网络安全">
+                        <span class="hidden-mobile">计算机网络-网络安全</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

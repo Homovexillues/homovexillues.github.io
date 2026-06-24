@@ -1,0 +1,862 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="&#x2F;&#x2F;&#x2F;&lt;summary&gt;...&lt;&#x2F;summary&gt;写法是什么意思？ 这是一种特殊的注释，被称为XML文档注释，这种注释可以被VisualStudio的IntelliSense（智能感知）和其他工具用来生成代码的文档 可以在属性、方法等前面输入&#x2F;&#x2F;&#x2F;来自动生成这种注  当前上下文中不存在名称“Console.WriteLine”是什么情况 命名空">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C# 问答补遗">
+<meta property="og:url" content="https://homovexillues.github.io/2026/06/24/C-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/index.html">
+<meta property="og:site_name" content="红石门">
+<meta property="og:description" content="&#x2F;&#x2F;&#x2F;&lt;summary&gt;...&lt;&#x2F;summary&gt;写法是什么意思？ 这是一种特殊的注释，被称为XML文档注释，这种注释可以被VisualStudio的IntelliSense（智能感知）和其他工具用来生成代码的文档 可以在属性、方法等前面输入&#x2F;&#x2F;&#x2F;来自动生成这种注  当前上下文中不存在名称“Console.WriteLine”是什么情况 命名空">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
+<meta property="article:published_time" content="2026-06-24T03:40:38.979Z">
+<meta property="article:modified_time" content="2026-06-24T03:40:38.979Z">
+<meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="C-sharp">
+<meta property="article:tag" content="问答">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp">
+  
+  
+  
+  <title>C# 问答补遗 - 红石门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="C# 问答补遗"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-24 11:40" pubdate>
+          2026年6月24日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          41 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">C# 问答补遗</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="写法是什么意思？"><a href="#写法是什么意思？" class="headerlink" title="///&lt;summary&gt;...&lt;/summary&gt;写法是什么意思？"></a><code>///&lt;summary&gt;...&lt;/summary&gt;</code>写法是什么意思？</h2><ul>
+<li>这是一种特殊的注释，被称为XML文档注释，这种注释可以被VisualStudio的IntelliSense（智能感知）和其他工具用来生成代码的文档</li>
+<li>可以在属性、方法等前面输入&#x2F;&#x2F;&#x2F;来自动生成这种注</li>
+</ul>
+<h2 id="当前上下文中不存在名称“Console-WriteLine”是什么情况"><a href="#当前上下文中不存在名称“Console-WriteLine”是什么情况" class="headerlink" title="当前上下文中不存在名称“Console.WriteLine”是什么情况"></a>当前上下文中不存在名称“Console.WriteLine”是什么情况</h2><ul>
+<li><p>命名空间未被引用——开头没有using System</p>
+</li>
+<li><p>大小写拼写错误</p>
+</li>
+<li><p>错误的上下文使用：Console.WriteLine是一个静态方法，它只能在方法内部使用，如果在类的定义中，但不在任何方法体内部去使用它，就会收到这个错误。</p>
+</li>
+<li><p>- </p>
+</li>
+<li><p>什么是回写？</p>
+<ul>
+<li>将数据读到内存上处理，处理之后写到硬盘上，这就是回写。</li>
+</ul>
+</li>
+<li><p>.dll文件和python库之间有什么关系？</p>
+<ul>
+<li>.dll文件是动态链接库（Dynamic Link Library）的缩写，它包含了可以被多个程序共享的代码和数据。这些库通常是用C或C++编写的。</li>
+<li>如<code>numpy</code>库的源代码中有大量的C代码，这些代码在安装numpy库的时候会被编译为动态链接库。然后在python中通过import numpy调用库的时候，python会加载动态链接库，并将其中国的函数和数据结构结构映射到python的命名空间中。</li>
+<li>如调用numpy.arrary()的时候，实际上是在调用一个C语言实现的函数。这个函数会在C语言的环境中执行，然后将结果返回给python。</li>
+</ul>
+</li>
+<li><p>在判断中，is not null和!&#x3D;null有什么区别吗？</p>
+<ul>
+<li><p>在大多数编程语言中没啥区别</p>
+</li>
+<li><p>在SQL中，这两者有重要区别。NULL是一种特殊的值，表示未知或缺失的数据。因此，NULL与任何值，包括NULL自己的比较结果都是未知的，即<code>NULL=NULL</code>和<code>NULL!=NULL</code>都不会返回<code>true</code></p>
+</li>
+<li><p>因此当想要检查一个字段是否为<code>NULL</code>的时候，应该用<code>IS NULL</code>或<code>IS NOT NULL</code>。</p>
+</li>
+<li><p>如<code>WHERE column IS NOT NULL</code>会选取那些column字段不为NULL的行。</p>
+</li>
+</ul>
+</li>
+<li><p>.yaml .json .xml文件格式各自用于做什么？有什么使用上要注意的事？</p>
+<ul>
+<li><strong>JSON（JavaScript Object Notation）</strong>：json简介易读，适用于API的请求和响应。它是一种轻量级的数据交换格式，易于人阅读和编写，同时也易于机器解析和生成。JSON采用完全独立于语言的文本格式，使得JSON成为理想的数据交换语言。</li>
+<li><strong>XML(eXtensible Markup Language)</strong>: XML具有跨平台和跨语言的优点，适用于Web服务和RSS源。它是一种标记语言，可以用来编码文档和数据。XML的设计目标是强调通用性和简单性。尽管XML的使用在web上的数据序列化的用途已经减少，但它仍然被广泛用于存储和传输数据。</li>
+<li><strong>YAML(YAML Ain’t Markup Language)<strong>：YAML适合用于需要人类可读的数据表示场景，如配置文件和日志文件。YAML是一种人类友好的数据序列化标注，它允许在不同语言之间交换数据。</strong>YAML是对JSON的超集，因此任何JSON文件都应该能够用YAML解析器解析</strong>。</li>
+<li>XML用<strong>标记</strong>来定义结构数据，就像html那样</li>
+<li>YAML使用<strong>缩进</strong>来定义结构化数据。就像python</li>
+<li>JSON使用的是<strong>冒号和大括号</strong>来定义结构化数据</li>
+<li><strong>数据传输</strong>的时候，XML和JSON很常见，尤其是<strong>JSON</strong>，在<strong>API</strong>的开发中变得非常普及</li>
+<li><strong>文件大小</strong>上来说，同样的<strong>数据集</strong>。<strong>YAML文件最小，JSON次之，XML最大</strong></li>
+<li><strong>学习难度上来说</strong>，<strong>YAML最难，JSON和XML相对简单</strong></li>
+</ul>
+</li>
+<li><p>目前的这些主流语言的设计目的和初衷都是什么？</p>
+</li>
+<li><p>.ico文件和.resx文件是啥？.config文件一般是什么格式的？</p>
+<ul>
+<li><strong>.ico</strong>:图标文件</li>
+<li><strong>.resx</strong>:资源文件格式，用于存储本地化字符串、图像和其他资源。通常用于.NET Framework应用程序，以便用于管理和本地化应用程序的资源。</li>
+<li><strong>.config</strong>:在.NET应用程序中，包含应用程序的设置，如数据库连接字符串，应用该程序设置等。XML格式，允许开发者以结构化的方式定义配置选项。</li>
+</ul>
+</li>
+<li><p>什么是组件？</p>
+</li>
+<li><p>什么是fody框架？</p>
+<ul>
+<li>一个针对.NET平台的IL（intermediate language）编织工具，允许开发人员在代码编译过程中对代码进行自动化的注入和修改，以实现一些常见的横切关注点</li>
+</ul>
+</li>
+<li><h2 id="什么是横切关注点（Cross-cutting-conerns）？"><a href="#什么是横切关注点（Cross-cutting-conerns）？" class="headerlink" title="什么是横切关注点（Cross-cutting conerns）？"></a>什么是横切关注点（Cross-cutting conerns）？</h2></li>
+<li><p>什么是ping&amp;pong?(计算机网络相关，非游戏)</p>
+<ul>
+<li>用来描述一种简单的请求&#x2F;响应模式，其中两个<strong>设备</strong>或<strong>进程</strong>之间进行基本的通信。</li>
+<li>涉及到以下几个概念：<ul>
+<li><strong>ICMP回显请求&#x2F;回显应答</strong>：<ul>
+<li>最常见的ping-pong是ICMP（Internet control message protocol）的ping命令。一台设备发送一个ICMP回显请求消息给另一台设备，接收设备在收到请求后返返回一个ICMP回显应答消息。</li>
+</ul>
+</li>
+<li><strong>TCP握手过程</strong>:<ul>
+<li>在TCP（Transmission Control Protocol）连接建立过程中，也有ping-pong操作。最著名的是三次握手过程，客户端发送一个SYN（Synchronize Sequence Numbers）同步序列编号消息给服务器以开始连接服务器回复一个SYN-ACK同步-确认消息，最后客户端发送ACK确认消息完成连接建立</li>
+</ul>
+</li>
+<li><strong>应用层协议</strong>:<ul>
+<li>许多应用层协议，如HTTP或FTP，也使用请求&#x2F;响应模式。客户端发送一个请求到服务器，服务器处理请求并返回一个响应。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是网桥"><a href="#什么是网桥" class="headerlink" title="什么是网桥"></a>什么是网桥</h2><ul>
+<li><p>一种网络设备，用于连接两个或多个局域网LAN并转发数据帧frame。网桥工作在OSI参考模型的数据链路层，主要用于在同一网络协议下连接两个或多个局域网，使他们成为一个逻辑上的网络。</p>
+</li>
+<li><p>没错，看完了上面的定义会让人想起交换机，现代网络中，网桥通常被交换机取代，交换机具有与网桥类似的功能，但性能更好、管理更简单。概念上，交换机可以看作是多端口的网桥。</p>
+</li>
+<li><p><strong>主要功能包括</strong>: </p>
+<ul>
+<li><strong>帧过滤</strong>：</li>
+<li><strong>学习</strong></li>
+<li><strong>转发</strong></li>
+<li><strong>环路检测</strong></li>
+<li><strong>隔离</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>主要工作流程:</p>
+<ul>
+<li><strong>学习阶段</strong><ul>
+<li>当网桥首次启动时，它开始学习阶段，通过接收网络上的数据帧来学习每个设备的MAC地址</li>
+<li>网桥通过检查进入数据帧中的源MAC地址来学习这些地址，并记录这些MAC地址与数据帧到达的端口之间的关联。</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是4G模块"><a href="#什么是4G模块" class="headerlink" title="什么是4G模块"></a>什么是4G模块</h2><p>  <img src="/../images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<ul>
+<li><p>4G模块是一种用于实现无线网络连接的设备，它可以让设备通过4G网络（第四代移动通信技术）进行数据通信。这种模块通常被集成到设备中，例如智能手机、平板电脑、物联网设备等，以实现无线互联网连接。</p>
+</li>
+<li><p>4G模块通常包括: </p>
+<ul>
+<li><strong>调制解调器</strong></li>
+<li><strong>天线</strong></li>
+<li><strong>SIM卡槽</strong></li>
+<li><strong>处理器和存储器</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是调制解调器（Modem）？"><a href="#什么是调制解调器（Modem）？" class="headerlink" title="什么是调制解调器（Modem）？"></a>什么是调制解调器（Modem）？</h2><ul>
+<li>将数字信号转换为模拟信号（<strong>调制</strong>）将模拟信号转换为数字信号（<strong>解调</strong>）</li>
+<li>在数字通信中，数据通常是以数字形式存在的，如二进制数据，但是，许多通信介质（电话线、光纤、无线电波）中，传递的是模拟信号，要转这么一手。</li>
+</ul>
+<h2 id="为什么4G模块每次上线都会获得一个新的IP地址"><a href="#为什么4G模块每次上线都会获得一个新的IP地址" class="headerlink" title="为什么4G模块每次上线都会获得一个新的IP地址"></a>为什么4G模块每次上线都会获得一个新的IP地址</h2><ul>
+<li>在移动通信网络中，运营山通常采用动态IP地址分配的方式，即每次设备连接到网络时，运营商会从其IP地址池中动态分配一个可用的IP地址给设备使用。这种动态分配的IP地址通常具有一定的生命周期，一旦设备断开连接或一段时间未使用，分配的IP地址就会被释放，返回到IP地址池中供其他设备使用。</li>
+</ul>
+<h2 id="MQTT是什么？"><a href="#MQTT是什么？" class="headerlink" title="MQTT是什么？"></a>MQTT是什么？</h2><ul>
+<li><p>Message Queuing Telemetry Transport 消息队列遥测传输，在应用层</p>
+</li>
+<li><p>一种轻量级的、开放式的、基于发布&#x2F;订阅模式的通信协议，用于物联网(loT)和机器到机器（M2M）通信。</p>
+</li>
+<li><p>MQTT协议的特点包括：</p>
+<ol>
+<li><strong>轻量级</strong>：MQTT协议设计简洁，通信开销小，适用于资源受限的设备和网络环境，如传感器、嵌入式设备、移动设备等。</li>
+<li><strong>发布&#x2F;订阅模式</strong>：MQTT使用发布&#x2F;订阅模式进行消息传递，消息发送者（发布者）将消息发布到特定的主题（Topic），消息接收者（订阅者）通过订阅特定的主题来接收消息。这种模式使得设备之间可以进行松耦合的通信，易于扩展和管理。</li>
+<li><strong>可靠性</strong>：MQTT支持不同级别的消息传递质量（QoS），包括最多一次（QoS 0）、至少一次（QoS 1）和仅一次（QoS 2），可根据应用需求选择适当的消息传递质量级别。</li>
+<li><strong>持久性</strong>：MQTT支持持久会话和持久订阅，使得设备断线后可以恢复之前的会话状态和订阅关系。</li>
+<li><strong>安全性</strong>：MQTT协议支持基于TLS&#x2F;SSL的加密通信和基于用户名和密码的身份认证，保障通信的安全性和隐私性。</li>
+</ol>
+</li>
+</ul>
+<h2 id="什么是寄存器（Register）？"><a href="#什么是寄存器（Register）？" class="headerlink" title="什么是寄存器（Register）？"></a>什么是寄存器（Register）？</h2><h2 id="什么是PLC（Programmable-Logic-Controller）？"><a href="#什么是PLC（Programmable-Logic-Controller）？" class="headerlink" title="什么是PLC（Programmable Logic Controller）？"></a>什么是PLC（Programmable Logic Controller）？</h2><pre><code class="hljs">- 一种借鉴了冯诺依曼机的专为工业自动化控制设计和优化的专用计算设备
+</code></pre>
+</li>
+</ul>
+<h1 id="extern-partial字段都是什么意思？为什么他俩和abstract字段标记可以没有方法主体？"><a href="#extern-partial字段都是什么意思？为什么他俩和abstract字段标记可以没有方法主体？" class="headerlink" title="extern,partial字段都是什么意思？为什么他俩和abstract字段标记可以没有方法主体？"></a>extern,partial字段都是什么意思？为什么他俩和abstract字段标记可以没有方法主体？</h1><h1 id="委托是个什么设定？"><a href="#委托是个什么设定？" class="headerlink" title="委托是个什么设定？"></a>委托是个什么设定？</h1><p>虽然委托一开始创建的时候是要传入一个函数的，但并不一定的不空的，如果空的话可以直接&#x3D;&#x3D;null的</p>
+<h1 id="为什么在MAUI应用中使用Process-GetProcesses-方法无法获得所有的进程信息"><a href="#为什么在MAUI应用中使用Process-GetProcesses-方法无法获得所有的进程信息" class="headerlink" title="为什么在MAUI应用中使用Process.GetProcesses()方法无法获得所有的进程信息?"></a>为什么在MAUI应用中使用Process.GetProcesses()方法无法获得所有的进程信息?</h1><p>在 Android 设备上使用 <code>Process.GetProcesses()</code> 只能获取到<strong>自己所在的进程</strong>或是非常有限的信息，这是由 Android 的沙盒和权限机制所决定的。和传统桌面或服务器环境的 .NET 不同，Android 并不允许普通应用程序访问系统中所有进程的详细信息。</p>
+<h2 id="为什么会这样？"><a href="#为什么会这样？" class="headerlink" title="为什么会这样？"></a>为什么会这样？</h2><ol>
+<li><strong>Android 沙盒机制</strong><br> 每个 Android 应用都运行在自己的“应用沙盒”中，进程之间隔离很严格。应用无权直接访问其他进程的信息，除非拥有系统级权限或特定的授权。</li>
+<li><strong>权限限制</strong><br> Android 并没有对普通第三方应用开放类似于在桌面系统上遍历所有进程的接口。即使你调用了 <code>Process.GetProcesses()</code>，最终底层的实现也只能让你看到自己进程的基本信息。</li>
+<li><strong>安全策略</strong><br> 出于安全和隐私的考虑，Android 系统对进程、文件等访问做了严格的限制，防止不同应用之间互相窥探或干扰。</li>
+</ol>
+<h2 id="如果想获取所有进程信息，该怎么做？"><a href="#如果想获取所有进程信息，该怎么做？" class="headerlink" title="如果想获取所有进程信息，该怎么做？"></a>如果想获取所有进程信息，该怎么做？</h2><p>一般来说，在<strong>非 Root 环境</strong>下，普通应用几乎没有办法获取系统中所有进程的详细信息。以下是一些可能但并不一定可行的途径：</p>
+<ol>
+<li><strong>Root 权限</strong><ul>
+<li>如果设备已经 Root，那么可以通过访问 <code>/proc</code> 文件系统或使用一些系统级命令（如 <code>ps</code>、<code>top</code> 等）来获取所有进程信息。</li>
+<li>但是这会导致应用只能在 Root 后的设备上运行，并且在官方应用商店上架会遇到限制。</li>
+</ul>
+</li>
+<li><strong>系统签名 &#x2F; 定制 ROM</strong><ul>
+<li>如果你在开发系统应用（即使用了与系统相同的签名）或是开发针对定制 ROM 的特权应用，则可以使用 Android 的系统 API（如 <code>ActivityManagerService</code>）来获取所有进程信息。</li>
+<li>这通常只适用于设备厂商或在特殊场景（比如企业、特定硬件项目）下定制的 Android 系统。</li>
+</ul>
+</li>
+<li><strong>ActivityManager APIs（有限信息）</strong><ul>
+<li>有些情况下，可以用 <code>Android.App.ActivityManager</code>（Java &#x2F; Xamarin.Android）获取<strong>部分</strong>正在运行的任务&#x2F;服务信息，不过从 Android 5.0 开始，能获取到的信息也变得非常有限，且通常只能拿到应用层级的概览（比如包名、进程计数），而非完整进程列表。</li>
+</ul>
+</li>
+<li><strong>Shell 命令（有限，且受权限限制）</strong><ul>
+<li>即使你执行类似 <code>Runtime.getRuntime().exec(&quot;ps&quot;)</code> 的命令，若没有 Root 权限，也只能查看到<strong>自己所在应用</strong>及部分系统可见的进程。</li>
+</ul>
+</li>
+</ol>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><ul>
+<li><strong>在普通的 Android 应用环境下，无法用 <code>Process.GetProcesses()</code> 获取所有进程。</strong></li>
+<li>这并不是 .NET 或 C# 的问题，而是 Android 操作系统本身的安全沙盒设计导致的行为。</li>
+<li>如果确有需要（比如做系统工具、ROM 定制、设备管理等），就必须获得更高权限（Root 或系统签名），然后才能使用系统底层接口或 Shell 命令来获取全部进程信息。</li>
+</ul>
+<p>因此，如果只是做一般的 App 开发，往往只能获取到<strong>自己</strong>的进程信息，这在移动平台上是标准且合规的行为。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="category-chain-item">编程语言</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/" class="category-chain-item">C#</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/C-sharp/" class="print-no-link">#C-sharp</a>
+      
+        <a href="/tags/%E9%97%AE%E7%AD%94/" class="print-no-link">#问答</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>C# 问答补遗</div>
+      <div>https://homovexillues.github.io/2026/06/24/C-sharp问答补遗/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%97%AE%E7%AD%94/" title="数据结构问答(Hashset·SortedSet等)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数据结构问答(Hashset·SortedSet等)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E9%97%AE%E7%AD%94/" title="设计原则问答(开闭原则·SOLID·设计模式)">
+                        <span class="hidden-mobile">设计原则问答(开闭原则·SOLID·设计模式)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

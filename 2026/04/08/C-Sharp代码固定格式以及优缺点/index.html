@@ -27,7 +27,7 @@
 <meta property="og:description" content="轮询任务123456789public static void RunningWorks() &#123;    if(ActiveWorks.Count &gt; 0) &#123;&#x2F;&#x2F;任务集合不为空        Task.Factory.StartNew(async () &#x3D;&gt; &#123;            while(!IsDisposed) &#123;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-08T02:37:34.356Z">
-<meta property="article:modified_time" content="2026-06-23T09:59:33.597Z">
+<meta property="article:modified_time" content="2026-06-24T06:12:23.226Z">
 <meta property="article:author" content="Homo vexillues">
 <meta property="article:tag" content="C-sharp">
 <meta name="twitter:card" content="summary_large_image">
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          630 字
+          659 字
         
       </span>
     
@@ -283,7 +283,7 @@
                 <h1 id="轮询任务"><a href="#轮询任务" class="headerlink" title="轮询任务"></a>轮询任务</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">RunningWorks</span>()</span> &#123;<br>    <span class="hljs-keyword">if</span>(ActiveWorks.Count &gt; <span class="hljs-number">0</span>) &#123;<span class="hljs-comment">//任务集合不为空</span><br>        Task.Factory.StartNew(<span class="hljs-keyword">async</span> () =&gt; &#123;<br>            <span class="hljs-keyword">while</span>(!IsDisposed) &#123;<br>                <span class="hljs-keyword">await</span> Task.Delay(Interval);<span class="hljs-comment">//他和Thread.Sleep()那个更好？</span><br>            &#125;<br>        &#125;,TaskCreationOptions.LongRunning);<span class="hljs-comment">//长期运行任务的优化项</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h1 id="Null判断"><a href="#Null判断" class="headerlink" title="Null判断"></a>Null判断</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">if</span>(a!=<span class="hljs-literal">null</span>)&#123;<br>    a.Start();<br>&#125;<br><span class="hljs-comment">//可以替换为</span><br>a?.Start();<span class="hljs-comment">//a不为null则Start</span><br></code></pre></td></tr></table></figure>
-
+<p>2026-06-24<br>学了Go之后再来看这段还真是有点绷不住</p>
 <h1 id="生成大量Enumable随机数据"><a href="#生成大量Enumable随机数据" class="headerlink" title="生成大量Enumable随机数据"></a>生成大量Enumable随机数据</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C#">Enumerable.Repeat(label,<span class="hljs-number">50</span>).Select(x =&gt; x + (<span class="hljs-built_in">float</span>)random.NextDouble()).ToArray()<br></code></pre></td></tr></table></figure>
 
 <h2 id="带正负"><a href="#带正负" class="headerlink" title="带正负"></a>带正负</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C#">Enumerable.Repeat(label,<span class="hljs-number">50</span>).Select(x =&gt; x + (<span class="hljs-built_in">float</span>)random.NextDouble()*<span class="hljs-number">2</span><span class="hljs-number">-1</span>).ToArray()<br><span class="hljs-comment">//加减在1内的随机数据</span><br></code></pre></td></tr></table></figure>

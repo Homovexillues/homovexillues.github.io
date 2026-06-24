@@ -1,0 +1,819 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="什么是Sockets？Sockets是一种网络编程接口，用于在网络上进行通信。它是一种抽象的概念，通过它，应用程序可以通过网络传输数据。Sockets广泛应用于客户端-服务器模型的网络通信。 除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？1. 对等网络模型（Peer-to-Peer, P2P）结构：在P2P模型中，每个节点（即每个计算机或设备）既是客户端也是服务器。节点可以直接与">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-通信模型">
+<meta property="og:url" content="https://homovexillues.github.io/2026/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="红石门">
+<meta property="og:description" content="什么是Sockets？Sockets是一种网络编程接口，用于在网络上进行通信。它是一种抽象的概念，通过它，应用程序可以通过网络传输数据。Sockets广泛应用于客户端-服务器模型的网络通信。 除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？1. 对等网络模型（Peer-to-Peer, P2P）结构：在P2P模型中，每个节点（即每个计算机或设备）既是客户端也是服务器。节点可以直接与">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-24T02:26:52.820Z">
+<meta property="article:modified_time" content="2026-06-24T02:26:52.821Z">
+<meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="问题">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>计算机网络-通信模型 - 红石门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="计算机网络-通信模型"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-24 10:26" pubdate>
+          2026年6月24日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          21 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">计算机网络-通信模型</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="什么是Sockets？"><a href="#什么是Sockets？" class="headerlink" title="什么是Sockets？"></a>什么是Sockets？</h2><p>Sockets是一种<strong>网络编程接口</strong>，用于在网络上进行通信。<strong>它是一种抽象的概念</strong>，通过它，应用程序可以通过网络传输数据。Sockets广泛应用于<strong>客户端-服务器模型</strong>的网络通信。</p>
+<h2 id="除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？"><a href="#除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？" class="headerlink" title="除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？"></a>除了客户端-服务器模型的网络通信，还有什么模型？应用于什么领域？</h2><h3 id="1-对等网络模型（Peer-to-Peer-P2P）"><a href="#1-对等网络模型（Peer-to-Peer-P2P）" class="headerlink" title="1. 对等网络模型（Peer-to-Peer, P2P）"></a>1. <strong>对等网络模型（Peer-to-Peer, P2P）</strong></h3><h4 id="结构："><a href="#结构：" class="headerlink" title="结构："></a>结构：</h4><p>在P2P模型中，<strong>每个节点（即每个计算机或设备）既是客户端也是服务器</strong>。节点可以直接与其他节点通信，没有中心服务器来管理通信。</p>
+<h4 id="应用领域："><a href="#应用领域：" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>文件共享</strong>：如BitTorrent、Gnutella，这些应用允许用户在网络中共享和下载文件。</li>
+<li><strong>分布式计算</strong>：如SETI@home、Folding@home，利用闲置的计算资源来执行大型计算任务。</li>
+<li><strong>区块链和加密货币</strong>：如Bitcoin、Ethereum，通过去中心化的方式实现安全和可靠的交易和智能合约执行。</li>
+</ul>
+<h3 id="2-发布-订阅模型（Publish-Subscribe-Pub-Sub）"><a href="#2-发布-订阅模型（Publish-Subscribe-Pub-Sub）" class="headerlink" title="2. 发布-订阅模型（Publish-Subscribe, Pub&#x2F;Sub）"></a>2. <strong>发布-订阅模型（Publish-Subscribe, Pub&#x2F;Sub）</strong></h3><h4 id="结构：-1"><a href="#结构：-1" class="headerlink" title="结构："></a>结构：</h4><p>在Pub&#x2F;Sub模型中，发布者（Publisher）将消息发布到特定的主题（Topic），订阅者（Subscriber）订阅感兴趣的主题，从而接收相关的消息。<strong>通常通过中介（Broker）来管理发布和订阅</strong>。</p>
+<h4 id="应用领域：-1"><a href="#应用领域：-1" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>消息系统</strong>：如Apache Kafka、RabbitMQ，用于日志收集、事件通知、数据流处理等。</li>
+<li><strong>实时更新</strong>：如股票行情、社交媒体更新，订阅者可以实时收到最新信息。</li>
+<li><strong>物联网（IoT）</strong>：<strong>如MQTT协议</strong>，设备可以发布传感器数据，订阅者可以实时监控这些数据。</li>
+</ul>
+<h3 id="3-点对点模型（Point-to-Point）"><a href="#3-点对点模型（Point-to-Point）" class="headerlink" title="3. 点对点模型（Point-to-Point）"></a>3. <strong>点对点模型（Point-to-Point）</strong></h3><h4 id="结构：-2"><a href="#结构：-2" class="headerlink" title="结构："></a>结构：</h4><p>在点对点模型中，<strong>两端点之间直接通信</strong>，<strong>没有中间的服务器或代理</strong>。<strong>通信通常是基于套接字（Sockets</strong>）。</p>
+<h4 id="应用领域：-2"><a href="#应用领域：-2" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>即时通信</strong>：如Skype、WhatsApp中的点对点通话，用户之间直接建立连接进行音视频通信。</li>
+<li><strong>文件传输</strong>：如SCP（Secure Copy Protocol），用于在两台计算机之间安全传输文件。</li>
+</ul>
+<h3 id="4-多播模型（Multicast）"><a href="#4-多播模型（Multicast）" class="headerlink" title="4. 多播模型（Multicast）"></a>4. <strong>多播模型（Multicast）</strong></h3><h4 id="结构：-3"><a href="#结构：-3" class="headerlink" title="结构："></a>结构：</h4><p><strong>多播模型允许单个发送者将消息发送到多个接收者</strong>，<strong>接收者组成一个多播组（Multicast Group）</strong>。<strong>路由器和交换机在网络层面支持多播。</strong></p>
+<h4 id="应用领域：-3"><a href="#应用领域：-3" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>流媒体</strong>：如网络电视、在线广播，向多个用户同时传输音视频内容。</li>
+<li><strong>金融市场数据分发</strong>：将市场数据（如股票价格）实时分发给多个订阅者。</li>
+<li><strong>分布式数据库</strong>：用于数据库复制和同步。</li>
+</ul>
+<h3 id="5-网格网络模型（Mesh-Network）"><a href="#5-网格网络模型（Mesh-Network）" class="headerlink" title="5. 网格网络模型（Mesh Network）"></a>5. <strong>网格网络模型（Mesh Network）</strong></h3><h4 id="结构：-4"><a href="#结构：-4" class="headerlink" title="结构："></a>结构：</h4><p>在网格网络中，<strong>每个节点都可以与多个其他节点直接通信</strong>，形成一个<strong>网状结构</strong>。通信路径可以动态调整以优化传输和容错。</p>
+<h4 id="应用领域：-4"><a href="#应用领域：-4" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>无线自组网</strong>：如Zigbee、LoRa，应用于智能家居、工业自动化等领域的无线传感器网络。</li>
+<li><strong>灾难恢复</strong>：在自然灾害或紧急情况下，临时建立通信网络以保障通信畅通。</li>
+<li><strong>社区网络</strong>：通过社区用户的设备形成一个分布式网络，共享互联网接入。</li>
+</ul>
+<h3 id="6-代理模型（Proxy-Model）"><a href="#6-代理模型（Proxy-Model）" class="headerlink" title="6. 代理模型（Proxy Model）"></a>6. <strong>代理模型（Proxy Model）</strong></h3><h4 id="结构：-5"><a href="#结构：-5" class="headerlink" title="结构："></a>结构：</h4><p>在代理模型中，<strong>客户端通过代理服务器与外部服务器通信</strong>。代理服务器可以<strong>对请求进行过滤、缓存、负载均衡</strong>等处理。</p>
+<h4 id="应用领域：-5"><a href="#应用领域：-5" class="headerlink" title="应用领域："></a>应用领域：</h4><ul>
+<li><strong>内容过滤和缓存</strong>：如公司网络中的Web代理，过滤不良网站并缓存常访问内容以节省带宽。</li>
+<li><strong>匿名浏览</strong>：如Tor网络，通过多层代理隐藏用户的真实IP地址和浏览行为。</li>
+<li><strong>负载均衡</strong>：在高流量网站中，代理服务器可以分发请求到多个后端服务器以平衡负载。</li>
+</ul>
+<h2 id="多播和广播的区别是？"><a href="#多播和广播的区别是？" class="headerlink" title="多播和广播的区别是？"></a>多播和广播的区别是？</h2><h3 id="广播（Broadcast）"><a href="#广播（Broadcast）" class="headerlink" title="广播（Broadcast）"></a>广播（Broadcast）</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
+<li><strong>传输范围</strong>：<ul>
+<li>数据包会发送到网络内的所有节点。</li>
+<li>广播数据包在特定网络域（如局域网）内传播，但不会跨越路由器进入其他网络。</li>
+</ul>
+</li>
+<li><strong>目标设备</strong>：<ul>
+<li>所有网络中的设备都会接收到广播消息。</li>
+<li>没有选择性，所有设备都会处理广播数据包，即使它们不需要该数据。</li>
+</ul>
+</li>
+<li><strong>地址类型</strong>：<ul>
+<li>使用广播地址。例如，在IPv4中，广播地址通常为255.255.255.255或特定子网的广播地址（如192.168.1.255）。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>网络发现：例如ARP（地址解析协议）请求，用于将IP地址解析为MAC地址。</li>
+<li>DHCP（动态主机配置协议）：用于分配IP地址时的初始请求。</li>
+</ul>
+</li>
+</ol>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><ul>
+<li><strong>优点</strong>：<ul>
+<li>简单直接，适合发送需要所有节点接收的消息。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>低效：所有节点都要处理广播数据，可能会浪费带宽和计算资源。</li>
+<li>可扩展性差：在大规模网络中，过多的广播会导致广播风暴，降低网络性能。</li>
+</ul>
+</li>
+</ul>
+<h3 id="多播（Multicast）"><a href="#多播（Multicast）" class="headerlink" title="多播（Multicast）"></a>多播（Multicast）</h3><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ol>
+<li><strong>传输范围</strong>：<ul>
+<li>数据包仅发送到订阅了特定多播组的节点。</li>
+<li>多播数据包<strong>可以跨越路由器</strong>，但<strong>需要网络设备（如路由器）支持多播协议（如IGMP和PIM</strong>）。</li>
+</ul>
+</li>
+<li><strong>目标设备</strong>：<ul>
+<li>只有加入特定多播组的节点才会接收到多播消息。</li>
+<li>选择性传输，提高了网络效率。</li>
+</ul>
+</li>
+<li><strong>地址类型</strong>：<ul>
+<li>使用多播地址。在IPv4中，多播地址范围为224.0.0.0到239.255.255.255。</li>
+<li>在IPv6中，多播地址以FF开头（例如FF00::&#x2F;8）。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>实时数据分发：如视频会议、直播视频流、在线游戏。</li>
+<li>网络协议：如OSPF（开放最短路径优先）路由协议，用于在路由器之间分发路由信息。</li>
+</ul>
+</li>
+</ol>
+<h4 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h4><ul>
+<li><strong>优点</strong>：<ul>
+<li>高效：只有需要接收数据的节点才会接收，节省带宽。</li>
+<li>可扩展：适用于大规模分发数据，避免不必要的数据传输。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>复杂性：网络设备和配置需要支持多播。</li>
+<li>需要管理多播组和处理多播协议，增加了配置和维护的复杂性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结比较"><a href="#总结比较" class="headerlink" title="总结比较"></a>总结比较</h3><table>
+<thead>
+<tr>
+<th>特点</th>
+<th>广播 (Broadcast)</th>
+<th>多播 (Multicast)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>传输范围</td>
+<td>所有网络内的节点</td>
+<td>订阅了特定多播组的节点</td>
+</tr>
+<tr>
+<td>目标设备</td>
+<td>所有设备接收</td>
+<td>只有特定多播组的设备接收</td>
+</tr>
+<tr>
+<td>地址类型</td>
+<td>广播地址（如255.255.255.255）</td>
+<td>多播地址（如224.0.0.0到239.255.255.255）</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td>网络发现、DHCP等</td>
+<td>实时数据分发、网络协议等</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>简单直接</td>
+<td>高效、可扩展</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>低效、可扩展性差</td>
+<td>复杂性高、需要多播支持</td>
+</tr>
+</tbody></table>
+<p>通过这些比较可以看出，多播和广播在数据传输的目标选择和网络资源利用上有显著的差异。广播适用于需要所有节点接收的简单任务，而多播适合需要选择性传输的高效数据分发任务。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="category-chain-item">计算机基础</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="category-chain-item">计算机网络</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%97%AE%E9%A2%98/" class="print-no-link">#问题</a>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="print-no-link">#计算机网络</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>计算机网络-通信模型</div>
+      <div>https://homovexillues.github.io/2026/06/24/计算机网络-通信模型/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IP%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机网络-IP地址与子网</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-HTTP%E4%B8%8EWeb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议">
+                        <span class="hidden-mobile">计算机网络-HTTP与Web协议</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

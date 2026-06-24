@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="为什么在插入网线之后WiFi断连了？当在插有便携 WiFi 的设备上插入网线时，路由冲突的原因主要与网络适配器的优先级、默认网关的选择和IP 地址分配有关。详细原因如下： 1. 网络适配器优先级和默认网关冲突 操作系统通常根据适配器的优先级来决定网络路由，当插入网线时，有线网络优先级往往比无线网络高，因此系统会选择有线网络的路由和网关作为默认路由。 此时，系统默认的网络路由会自动切换到网线连接，而">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-路由与跃点">
+<meta property="og:url" content="https://homovexillues.github.io/2026/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E8%B7%AF%E7%94%B1%E4%B8%8E%E8%B7%83%E7%82%B9/index.html">
+<meta property="og:site_name" content="红石门">
+<meta property="og:description" content="为什么在插入网线之后WiFi断连了？当在插有便携 WiFi 的设备上插入网线时，路由冲突的原因主要与网络适配器的优先级、默认网关的选择和IP 地址分配有关。详细原因如下： 1. 网络适配器优先级和默认网关冲突 操作系统通常根据适配器的优先级来决定网络路由，当插入网线时，有线网络优先级往往比无线网络高，因此系统会选择有线网络的路由和网关作为默认路由。 此时，系统默认的网络路由会自动切换到网线连接，而">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-24T02:26:52.825Z">
+<meta property="article:modified_time" content="2026-06-24T02:26:52.825Z">
+<meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="问题">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>计算机网络-路由与跃点 - 红石门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="计算机网络-路由与跃点"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-24 10:26" pubdate>
+          2026年6月24日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          24 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">计算机网络-路由与跃点</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="为什么在插入网线之后WiFi断连了？"><a href="#为什么在插入网线之后WiFi断连了？" class="headerlink" title="为什么在插入网线之后WiFi断连了？"></a>为什么在插入网线之后WiFi断连了？</h2><p>当在插有便携 WiFi 的设备上插入网线时，路由冲突的原因主要与<strong>网络适配器的优先级、默认网关的选择</strong>和<strong>IP 地址分配</strong>有关。详细原因如下：</p>
+<h3 id="1-网络适配器优先级和默认网关冲突"><a href="#1-网络适配器优先级和默认网关冲突" class="headerlink" title="1. 网络适配器优先级和默认网关冲突"></a>1. <strong>网络适配器优先级和默认网关冲突</strong></h3><ul>
+<li>操作系统通常根据适配器的优先级来决定网络路由，当插入网线时，<strong>有线网络优先级往往比无线网络高</strong>，因此系统会选择有线网络的路由和网关作为默认路由。</li>
+<li>此时，系统默认的网络路由会自动切换到网线连接，而 WiFi 适配器的路由可能被忽略或被系统暂时断开，以避免流量同时经过两个网关。这种切换可能导致 WiFi 掉线或暂时无法访问网络。</li>
+</ul>
+<h3 id="2-IP-地址和网段冲突"><a href="#2-IP-地址和网段冲突" class="headerlink" title="2. IP 地址和网段冲突"></a>2. <strong>IP 地址和网段冲突</strong></h3><ul>
+<li>如果便携 WiFi 和有线网络分配的 IP 地址在同一网段（例如，两个网络的 IP 都在 <code>192.168.1.x</code>），系统可能出现 IP 地址和路由的混乱，从而导致路由冲突。</li>
+<li>系统可能会尝试将同一个网关分配给两个适配器，这样一来就会导致数据包的去向无法确定，网络连接出现异常。</li>
+</ul>
+<h3 id="3-操作系统的网络切换机制"><a href="#3-操作系统的网络切换机制" class="headerlink" title="3. 操作系统的网络切换机制"></a>3. <strong>操作系统的网络切换机制</strong></h3><ul>
+<li>部分操作系统在检测到新的有线连接时，可能会默认断开现有的 WiFi 连接，以节约资源或保证网络的稳定性。这种情况下，插入网线会自动触发 WiFi 断开，导致网络连接看似“掉线”。</li>
+<li>有些便携 WiFi 适配器也有类似设计，当检测到有线网络时可能会自动断开 WiFi。</li>
+</ul>
+<h3 id="4-DNS-配置和路由表冲突"><a href="#4-DNS-配置和路由表冲突" class="headerlink" title="4. DNS 配置和路由表冲突"></a>4. <strong>DNS 配置和路由表冲突</strong></h3><ul>
+<li>插入网线后，系统的 DNS 配置和路由表可能会自动刷新，优先使用有线连接的 DNS 服务器。如果有线网络的 DNS 解析不稳定或与无线网络冲突，可能会导致无法正常访问 WiFi 网络上的资源。</li>
+<li>当路由表中的默认路由切换到有线连接时，WiFi 的路由可能被移除或不再被优先使用，这就会造成 WiFi 网络不可用的情况。</li>
+</ul>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><strong>解决方法</strong></h3><p>可以通过以下方式避免此类冲突：</p>
+<ul>
+<li><strong>确保两个网络的 IP 不同网段</strong>，如 WiFi 在 <code>192.168.0.x</code>、有线网络在 <code>192.168.1.x</code>。</li>
+<li><strong>手动调整适配器优先级</strong>，让 WiFi 优先于有线网络，或调整默认路由。</li>
+<li><strong>使用不同的 DNS 配置</strong>，保证两个网络的 DNS 服务器不会冲突。</li>
+</ul>
+<p>这种情况在系统默认的网络切换机制下是常见的，但可以通过手动配置适配器和网络优先级来实现并行连接。</p>
+<h2 id="什么是跃点"><a href="#什么是跃点" class="headerlink" title="什么是跃点?"></a>什么是跃点?</h2><p>“跃点”（Hop）是网络中数据从一个设备（通常是路由器或交换机）传递到下一个设备的过程。每经过一个设备就算一个“跃点”。跃点数量用于衡量数据在网络中的传输路径长度，从发送方到接收方需要经过多少个中间设备。</p>
+<h3 id="关键点："><a href="#关键点：" class="headerlink" title="关键点："></a>关键点：</h3><ol>
+<li><p><strong>定义</strong>：跃点指的是数据在网络中从一个节点（例如路由器）传递到下一个节点的过程。</p>
+</li>
+<li><p><strong>用途</strong>：跃点数可以帮助判断网络路径的长短和延迟。网络管理工具如 <code>tracert</code> 或 <code>traceroute</code> 命令会显示从起始设备到目的设备的跃点数。</p>
+</li>
+<li><p><strong>TTL（Time to Live）与跃点</strong>：每个数据包都有一个 TTL 值，表示数据包在网络中允许的最大跃点数，每经过一个跃点这个值就减1。当 TTL 变为0时，数据包会被丢弃，防止它在网络中无限循环。</p>
+</li>
+</ol>
+<h3 id="跃点数的意义："><a href="#跃点数的意义：" class="headerlink" title="跃点数的意义："></a>跃点数的意义：</h3><ul>
+<li><strong>路由效率</strong>：跃点数越少，通常意味着数据的传输路径越短，网络的传输效率越高。</li>
+<li><strong>故障排查</strong>：通过检查跃点数，可以定位网络问题发生在哪个设备上。</li>
+</ul>
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><p>假设你在一个公司网络内访问外部服务器，数据包可能会经过：</p>
+<ul>
+<li>内部路由器 -&gt; 防火墙 -&gt; ISP 路由器 -&gt; 若干个中间网络路由 -&gt; 目标服务器。</li>
+</ul>
+<p>假如经过了7个节点到达目标服务器，这7个节点就是7个跃点。</p>
+<h2 id="无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗-跃点数应该是固定的啊-为什么会是自动跃点？"><a href="#无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗-跃点数应该是固定的啊-为什么会是自动跃点？" class="headerlink" title="无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗?跃点数应该是固定的啊?为什么会是自动跃点？"></a>无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗?跃点数应该是固定的啊?为什么会是自动跃点？</h2><p>无线网络的跃点数设为“自动”是因为跃点数不仅考虑物理连接的直接性（即从设备到无线路由器的路径），还考虑整体网络路径的复杂性和灵活性。以下是为什么会存在“自动”跃点数设置的主要原因：</p>
+<ol>
+<li><p><strong>动态网络路径</strong>：<br>尽管设备是直接通过无线电波连接到无线路由器，但数据包的最终传输路径可能会随着网络环境的变化而不同。例如，在连接到互联网的路径上，数据可能会经过多个不同的网络节点、交换机和路由器，这些路径的跃点数可能因网络状态变化而不同。</p>
+</li>
+<li><p><strong>多网关场景</strong>：<br>在一些网络配置中，尤其是公司或大型局域网中，可能存在多个路由器或网关，这些路由器或网关有不同的网络路径选择。如果有多个路由器提供了不同的默认网关，跃点数会用来帮助系统选择“更优”的路径。</p>
+</li>
+<li><p><strong>自动优化</strong>：<br>操作系统的“自动”跃点数配置可以动态调整网络优先级，以便根据网络状况（如路由器负载、网络流量等）选择合适的路由。这种自动化能够让系统在不同的网络环境下做出更智能的选择，以获得更好的连接稳定性和速度。</p>
+</li>
+<li><p><strong>灵活性与兼容性</strong>：<br>自动跃点允许设备在不固定网络架构的环境中（如加入新路由器、扩展网络）灵活适配。这种灵活性在移动设备上尤为重要，因为它们可能随时切换不同的网络或路由路径。</p>
+</li>
+</ol>
+<h3 id="固定跃点数的情况"><a href="#固定跃点数的情况" class="headerlink" title="固定跃点数的情况"></a>固定跃点数的情况</h3><p>在某些简单网络（例如只有一个路由器的家庭网络）中，跃点数确实可以被认为是固定的，因为连接路径唯一且简明。但在更复杂的网络环境中，自动跃点数可以提高网络适应性。</p>
+<h2 id="是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级-手动设置网络适配器的跃点数是否会导致网络连接出现问题"><a href="#是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级-手动设置网络适配器的跃点数是否会导致网络连接出现问题" class="headerlink" title="是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级?手动设置网络适配器的跃点数是否会导致网络连接出现问题?"></a>是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级?手动设置网络适配器的跃点数是否会导致网络连接出现问题?</h2><p>是的，通过调整“跃点数”（即 TTL，Time to Live）或“接口跃点数” (<code>Interface Metric</code>) 可以设置 Windows 上不同网络适配器的优先级。设置优先级通常是为了控制在多网络环境下哪个网络适配器应当被优先使用。对于网络适配器的优先级，<code>Interface Metric</code> 是直接影响优先选择的指标，比 TTL 更常用于适配器优先级配置。</p>
+<h3 id="设置网络适配器优先级"><a href="#设置网络适配器优先级" class="headerlink" title="设置网络适配器优先级"></a>设置网络适配器优先级</h3><p>在 Windows 中，<code>Interface Metric</code> 是网络适配器的成本值，Windows 会优先选择成本较低的接口进行数据传输。因此，您可以通过以下方式手动设置优先级：</p>
+<ol>
+<li><p>打开 <strong>网络连接</strong>：</p>
+<ul>
+<li>Win + R，输入 <code>ncpa.cpl</code>，回车。</li>
+</ul>
+</li>
+<li><p>选择目标网络适配器，右键点击选择 <strong>属性</strong>。</p>
+</li>
+<li><p>在 <strong>Internet 协议版本 4 (TCP&#x2F;IPv4)</strong> 中点击 <strong>属性</strong>，然后点击 <strong>高级</strong>。</p>
+</li>
+<li><p>在“高级 TCP&#x2F;IP 设置”中，勾选 <strong>自动跃点数</strong> 的勾选框，输入一个较低的值（例如 1 或 2）以增加优先级，输入较高的值以降低优先级。</p>
+</li>
+</ol>
+<h3 id="手动设置-Interface-Metric-的注意事项"><a href="#手动设置-Interface-Metric-的注意事项" class="headerlink" title="手动设置 Interface Metric 的注意事项"></a>手动设置 <code>Interface Metric</code> 的注意事项</h3><ol>
+<li><p><strong>优先级冲突</strong>：如果多个适配器被设置为相同的 <code>Interface Metric</code> 值，Windows 可能会随机选择一个适配器来发送流量，这可能会导致意外的网络切换或连接不稳定。</p>
+</li>
+<li><p><strong>网络连接延迟</strong>：如果将主要适配器的 <code>Interface Metric</code> 设置得过高，可能导致系统默认选择次要或速度较慢的网络适配器，影响网络性能。</p>
+</li>
+<li><p><strong>网络配置复杂性</strong>：手动调整适配器的优先级和跃点数可能导致在复杂的多网环境中不易追踪的问题，特别是在频繁切换网络或使用 VPN 时，配置不当可能造成连接失败或不稳定。</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>手动调整网络适配器的 <code>Interface Metric</code> 是一种可靠的方法来设置优先级，适用于多网络环境。只要合理配置，通常不会导致网络连接问题，但建议测试每个适配器的设置，以确保不会影响到网络连接的稳定性和速度。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="category-chain-item">计算机基础</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="category-chain-item">计算机网络</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%97%AE%E9%A2%98/" class="print-no-link">#问题</a>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="print-no-link">#计算机网络</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>计算机网络-路由与跃点</div>
+      <div>https://homovexillues.github.io/2026/06/24/计算机网络-路由与跃点/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-WiFi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机网络-WiFi与无线</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IP%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">
+                        <span class="hidden-mobile">计算机网络-IP地址与子网</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

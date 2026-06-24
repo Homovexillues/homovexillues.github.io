@@ -1,0 +1,866 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="我听到过这样一种说法，编程的本质是lambda代数，这个说法是否正确?这是什么意思？什么是lambda代数？在上面这个例子中又如何体现?1. 编程的本质是 λ 演算（Lambda Calculus）吗？这个说法在某种程度上是正确的，尤其是在描述函数式编程范式时。编程的本质并不完全是 λ 演算，但 λ 演算的确为现代编程语言的理论基础提供了许多重要概念。特别是在函数式编程语言（如 Haskell、L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编程范式：lambda 演算、函数式与面向对象">
+<meta property="og:url" content="https://homovexillues.github.io/2026/06/24/%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F-lambda%E6%BC%94%E7%AE%97%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BC%8F/index.html">
+<meta property="og:site_name" content="红石门">
+<meta property="og:description" content="我听到过这样一种说法，编程的本质是lambda代数，这个说法是否正确?这是什么意思？什么是lambda代数？在上面这个例子中又如何体现?1. 编程的本质是 λ 演算（Lambda Calculus）吗？这个说法在某种程度上是正确的，尤其是在描述函数式编程范式时。编程的本质并不完全是 λ 演算，但 λ 演算的确为现代编程语言的理论基础提供了许多重要概念。特别是在函数式编程语言（如 Haskell、L">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-24T03:33:20.235Z">
+<meta property="article:modified_time" content="2026-06-24T03:33:20.235Z">
+<meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="问答">
+<meta property="article:tag" content="函数式编程">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>编程范式：lambda 演算、函数式与面向对象 - 红石门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="编程范式：lambda 演算、函数式与面向对象"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-24 11:33" pubdate>
+          2026年6月24日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          60 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">编程范式：lambda 演算、函数式与面向对象</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="我听到过这样一种说法，编程的本质是lambda代数，这个说法是否正确-这是什么意思？什么是lambda代数？在上面这个例子中又如何体现"><a href="#我听到过这样一种说法，编程的本质是lambda代数，这个说法是否正确-这是什么意思？什么是lambda代数？在上面这个例子中又如何体现" class="headerlink" title="我听到过这样一种说法，编程的本质是lambda代数，这个说法是否正确?这是什么意思？什么是lambda代数？在上面这个例子中又如何体现?"></a>我听到过这样一种说法，编程的本质是lambda代数，这个说法是否正确?这是什么意思？什么是lambda代数？在上面这个例子中又如何体现?</h2><h3 id="1-编程的本质是-λ-演算（Lambda-Calculus）吗？"><a href="#1-编程的本质是-λ-演算（Lambda-Calculus）吗？" class="headerlink" title="1. 编程的本质是 λ 演算（Lambda Calculus）吗？"></a>1. <strong>编程的本质是 λ 演算（Lambda Calculus）吗？</strong></h3><p>这个说法在某种程度上是正确的，尤其是在描述函数式编程范式时。编程的本质并不完全是 λ 演算，但 λ 演算的确为现代编程语言的理论基础提供了许多重要概念。特别是在函数式编程语言（如 Haskell、Lisp、Scala）中，λ 演算的概念更加突出，函数和操作可以作为一等公民。</p>
+<h3 id="2-什么是-λ-演算？"><a href="#2-什么是-λ-演算？" class="headerlink" title="2. 什么是 λ 演算？"></a>2. <strong>什么是 λ 演算？</strong></h3><p>λ 演算（Lambda Calculus）是一种基于函数定义和应用的形式系统。它是计算机科学中描述计算和算法的一个理论模型。λ 演算的基本构成有：</p>
+<ul>
+<li><strong>变量</strong>：例如 <code>x</code>。</li>
+<li><strong>抽象（函数定义）</strong>：<code>λx.x+1</code> 表示一个接受参数 <code>x</code> 并返回 <code>x + 1</code> 的函数。<code>λ</code>（lambda）是一个符号，用来表示函数抽象。</li>
+<li><strong>应用</strong>：函数应用是将一个值传递给函数。例如，<code>(λx.x+1) 3</code> 表示应用函数 <code>λx.x+1</code> 给 3，结果是 <code>4</code>。</li>
+</ul>
+<p>λ 演算可以通过组合这些简单的规则来表示任何计算过程。虽然它看起来比较简洁，但它非常强大，可以模拟所有可计算的过程。</p>
+<h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><ul>
+<li><code>λx.x+1</code> 是一个简单的函数，它把输入 <code>x</code> 加 1。</li>
+<li><code>(λx.x+1) 3</code> 就是将数字 <code>3</code> 作为参数传给该函数，结果是 <code>4</code>。</li>
+</ul>
+<h3 id="3-为什么说编程的本质是-λ-演算？"><a href="#3-为什么说编程的本质是-λ-演算？" class="headerlink" title="3. 为什么说编程的本质是 λ 演算？"></a>3. <strong>为什么说编程的本质是 λ 演算？</strong></h3><p>编程语言（尤其是函数式编程语言）在底层可以通过 λ 演算来理解。现代编程语言的许多概念，如匿名函数（lambda）、闭包、函数作为一等公民等，实际上都与 λ 演算密切相关。λ 演算描述了如何定义和操作函数，而编程语言中的许多操作（尤其是函数式编程语言）就是在执行类似 λ 演算的规则。</p>
+<p>举例来说：</p>
+<ul>
+<li><strong>匿名函数</strong>（也称为 <strong>lambda 函数</strong>）在现代编程语言中广泛使用，实际上就是 λ 演算的一个直接体现。</li>
+<li><strong>高阶函数</strong>（接受或返回函数的函数）也是 λ 演算的基本概念之一。</li>
+<li><strong>函数应用</strong>：在 λ 演算中，函数应用（即将值传递给函数）是计算的核心，而大部分编程语言中的函数调用都可以用 λ 演算来解释。</li>
+</ul>
+<h3 id="4-λ-演算在上面示例中的体现"><a href="#4-λ-演算在上面示例中的体现" class="headerlink" title="4. λ 演算在上面示例中的体现"></a>4. <strong>λ 演算在上面示例中的体现</strong></h3><p>在你给出的 Python 示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">[(coords[i], coords[i + <span class="hljs-number">1</span>]) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(coords), <span class="hljs-number">2</span>)]<br></code></pre></td></tr></table></figure>
+
+<p>这段代码本质上体现了 <strong>高阶函数</strong> 和 <strong>函数应用</strong> 的概念，和 λ 演算中的思想非常接近。</p>
+<ul>
+<li><p><strong><code>(coords[i], coords[i + 1])</code></strong> 部分是一个 <strong>元组构造函数</strong>，它接受 <code>i</code> 和 <code>i + 1</code> 作为输入，并返回一个包含这两个值的元组。这是一个 <strong>匿名函数</strong> 或 <strong>lambda 表达式</strong> 的形式。</p>
+</li>
+<li><p><strong><code>for i in range(0, len(coords), 2)</code></strong> 是对 <code>coords</code> 列表的迭代，类似于应用了某种 <strong>映射函数</strong>。如果你把它转化为 λ 演算的形式，可以理解为：</p>
+<ul>
+<li><code>λcoords. map(λi. (coords[i], coords[i+1]))</code>。<br>这里，<code>map</code> 表示对 <code>coords</code> 列表应用一个函数，这个函数对每一对相邻元素执行 <code>(coords[i], coords[i+1])</code>。</li>
+</ul>
+</li>
+</ul>
+<p>可以把这段 Python 代码想象成在进行 <strong>函数应用</strong>，每次你将一个索引值 <code>i</code> 应用到匿名函数 <code>λi.(coords[i], coords[i+1])</code> 上，得到的是一个包含坐标对的元组。</p>
+<h3 id="5-总结：编程与-λ-演算的关系"><a href="#5-总结：编程与-λ-演算的关系" class="headerlink" title="5. 总结：编程与 λ 演算的关系"></a>5. <strong>总结：编程与 λ 演算的关系</strong></h3><ul>
+<li><strong>编程语言</strong>，尤其是 <strong>函数式编程语言</strong>，通常在设计时就借鉴了 λ 演算的理论。很多概念（如匿名函数、高阶函数、闭包）都来源于 λ 演算。</li>
+<li>λ 演算不仅是编程语言的理论基础，也为编程提供了简洁、灵活的表达方式。在 C#、C++、Rust、Lua 和 Lisp 等语言中，函数式编程的概念经常可以与 λ 演算的形式相联系。</li>
+<li><strong>匿名函数</strong> 和 <strong>函数应用</strong> 是 λ 演算的核心概念。在你的例子中，列表推导式和使用 <code>map</code> 等高阶函数正是这些概念的体现。</li>
+</ul>
+<p>所以，<strong>编程的本质是 λ 演算</strong> 这个说法是有一定道理的，尤其是在函数式编程中，λ 演算的概念被广泛应用。它帮助我们理解函数、变量、应用等概念，尤其是在处理复杂的计算和数据转换时。</p>
+<h2 id="那么面向对象编程和它又是什么关系呢-那些对于对象，类，实例的定义"><a href="#那么面向对象编程和它又是什么关系呢-那些对于对象，类，实例的定义" class="headerlink" title="那么面向对象编程和它又是什么关系呢?那些对于对象，类，实例的定义?"></a>那么面向对象编程和它又是什么关系呢?那些对于对象，类，实例的定义?</h2><p>你的理解是非常正确的，实际上编程语言和编程范式之间的关系确实是你所描述的那样。让我们从更深入的角度来探讨这个问题：</p>
+<h3 id="1-编程范式的出现"><a href="#1-编程范式的出现" class="headerlink" title="1. 编程范式的出现"></a>1. <strong>编程范式的出现</strong></h3><p>编程范式（Programming Paradigms）是一种指导我们如何解决计算问题的思想方法或思维模式。在计算机科学的发展中，编程范式的演变通常是根据人类对如何设计、组织和管理程序的理解逐步演进的。因此，<strong>编程语言</strong> 是为了实现这些编程范式的理念而出现的。</p>
+<p>最早的编程语言（如汇编、Fortran、C）主要聚焦于过程化编程，也就是通过函数或过程来描述问题的解决过程。随着时间的推移，程序员们逐渐意识到如何通过更高层次的抽象来更好地组织代码、提高可重用性和扩展性，逐步催生了 <strong>面向对象编程（OOP）</strong>、<strong>函数式编程（FP）</strong>、<strong>逻辑编程</strong> 等范式。</p>
+<h3 id="2-编程语言对范式的实现"><a href="#2-编程语言对范式的实现" class="headerlink" title="2. 编程语言对范式的实现"></a>2. <strong>编程语言对范式的实现</strong></h3><p>不同的编程语言是按照各自的设计目标和历史背景来实现不同编程范式的，它们通过语法、特性和构造来提供对特定范式的支持。<strong>编程语言的特性逐步实现了对不同编程范式的适应</strong>，并且有些语言本身可能是多范式的，允许程序员根据需求选择合适的范式。</p>
+<p>例如：</p>
+<ul>
+<li><strong>C 语言</strong>：最初是过程化语言，专注于通过一组函数或过程来组织程序。它的设计哲学非常接近于 <strong>结构化编程</strong>，它本身并不直接支持面向对象编程（OOP）特性。</li>
+<li>**C++**：在 C 语言的基础上，添加了对面向对象编程的支持，如类、继承、多态等，支持 <strong>面向对象编程</strong>。</li>
+<li><strong>Java</strong>：从一开始就是面向对象的语言，所有代码都需要在类内部进行。</li>
+<li><strong>Python</strong>：最初是支持面向过程编程的，但后来也加入了对面向对象编程、函数式编程（如 lambda、map、filter 等）等范式的支持，成为多范式语言。</li>
+<li><strong>Lisp 和 Haskell</strong>：这些语言更强调 <strong>函数式编程（FP）</strong>，并允许更高层次的抽象，如高阶函数和递归。</li>
+</ul>
+<h3 id="3-编程语言的抽象思想"><a href="#3-编程语言的抽象思想" class="headerlink" title="3. 编程语言的抽象思想"></a>3. <strong>编程语言的抽象思想</strong></h3><p>无论是哪种编程范式，核心的抽象思想始终是 <strong>如何组织计算过程和数据</strong>。每种范式都有它自己的抽象模型，用来帮助开发者更清晰、简洁、易扩展地解决问题。</p>
+<ul>
+<li><strong>过程式编程</strong>：核心思想是通过一系列顺序执行的步骤（函数或过程）来描述问题的解决过程。抽象的单位是函数。</li>
+<li><strong>面向对象编程（OOP）</strong>：核心思想是通过对象来模拟现实世界的实体，类和对象是抽象的单位。OOP 强调封装、继承和多态，用类和对象来组织数据和行为。</li>
+<li><strong>函数式编程（FP）</strong>：核心思想是通过不可变数据和纯函数来表达计算过程。函数是抽象的基本单位，强调通过组合函数来构建复杂的计算。</li>
+<li><strong>声明式编程</strong>：关注 “做什么” 而非 “如何做”，强调通过声明数据或行为的性质来描述计算目标，而不是控制流程。SQL 和逻辑编程（如 Prolog）都是声明式编程的例子。</li>
+</ul>
+<h3 id="4-编程语言的演进过程"><a href="#4-编程语言的演进过程" class="headerlink" title="4. 编程语言的演进过程"></a>4. <strong>编程语言的演进过程</strong></h3><p>编程语言的演进通常是为了更好地满足开发者对高层次抽象的需求。从最初的 <strong>机器语言</strong> 和 <strong>汇编语言</strong>，到 <strong>结构化编程</strong>（如 C 语言），再到 <strong>面向对象编程</strong>（如 C++、Java），再到 <strong>函数式编程</strong>（如 Haskell、Scala、F#），每一种新的范式通常都是对前一种范式的扩展或补充，提供了更强的抽象能力和更灵活的方式来处理程序中的复杂问题。</p>
+<p>例如，C 语言虽然是一种面向过程的语言，但它并没有内建类和对象的概念。为了引入面向对象的特性，C++ 作为 C 的超集引入了类（Class）、继承（Inheritance）、多态（Polymorphism）等 OOP 特性。Java 和 C# 则是在 C++ 的基础上进一步发展，强化了 OOP 的特性，加入了垃圾回收和跨平台特性，成为了面向对象的语言。</p>
+<p>与此同时，随着计算机科学的发展和对抽象能力需求的提升， <strong>函数式编程</strong> 和 <strong>逻辑编程</strong> 也逐渐被重视，语言设计者开始注重如何让程序员更加便捷地使用高阶函数、递归、不可变数据等概念。</p>
+<h3 id="5-编程范式和编程语言的关系是互相促进的"><a href="#5-编程范式和编程语言的关系是互相促进的" class="headerlink" title="5. 编程范式和编程语言的关系是互相促进的"></a>5. <strong>编程范式和编程语言的关系是互相促进的</strong></h3><ul>
+<li><strong>范式的提出推动了语言的演进</strong>：编程范式（如 OOP、FP）为如何组织代码提供了新的思路，促使新的编程语言特性和工具的诞生。</li>
+<li><strong>编程语言实现范式的特性</strong>：语言设计者会根据当时的技术需求和理论研究，逐步将这些范式融入到语言的设计中，提供新的语法和语义支持。</li>
+<li><strong>范式的选择根据问题的需求</strong>：当你面对一个问题时，选择一种编程范式是基于你对问题的理解和对代码组织的需求。面向对象适用于需要复杂数据结构和行为建模的问题，函数式编程适用于需要高阶函数和不可变数据流的场景，而过程式编程适用于简洁直观的顺序执行问题。</li>
+</ul>
+<h3 id="6-核心思想的统一"><a href="#6-核心思想的统一" class="headerlink" title="6. 核心思想的统一"></a>6. <strong>核心思想的统一</strong></h3><p>虽然不同的编程语言有不同的实现方式，但它们的核心思想实际上是类似的：通过抽象来简化问题的解决过程。编程范式的关键是通过一种更适合问题本质的方式来组织代码、进行计算和管理状态。不同的范式给出了不同的解法，但它们都在追求程序可维护性、可扩展性、可理解性以及高效性。</p>
+<h3 id="7-举例：面向对象与函数式的融合"><a href="#7-举例：面向对象与函数式的融合" class="headerlink" title="7. 举例：面向对象与函数式的融合"></a>7. <strong>举例：面向对象与函数式的融合</strong></h3><p>现代编程语言（如 <strong>Scala</strong>、<strong>Python</strong>、<strong>C#</strong> 等）已经允许开发者使用不同的编程范式来解决问题。例如：</p>
+<ul>
+<li><strong>Python</strong> 支持面向对象、函数式编程、命令式编程等多种范式。你可以在同一程序中混合使用类和对象、函数、生成器、装饰器等特性。</li>
+<li><strong>C#</strong> 也是多范式的，支持 OOP 和 FP 特性，如 LINQ 使得在 C# 中可以进行类似函数式编程的操作，而类和对象仍然是其基础。</li>
+</ul>
+<p>这些语言之所以能做到这一点，是因为它们已经积累了不同编程范式的设计经验，并逐步将其抽象成可组合的语言特性，提供给开发者灵活的编程模型。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><strong>编程范式</strong> 是解决问题的一种思维方式，它帮助程序员组织和构建程序。</li>
+<li><strong>编程语言</strong> 是为了实现这些范式的思想和概念而设计的，语言通过提供不同的语法和特性来支持这些范式。</li>
+<li>虽然不同的语言在实现细节上有所不同，但它们的核心思想是相通的：通过抽象和组织计算来解决实际问题。</li>
+</ul>
+<h2 id="我是否可以这么理解，所谓的函数式还是面向对象式风格的代码，最大的区别就在于函数还是对象是编程语言中的第一公民"><a href="#我是否可以这么理解，所谓的函数式还是面向对象式风格的代码，最大的区别就在于函数还是对象是编程语言中的第一公民" class="headerlink" title="我是否可以这么理解，所谓的函数式还是面向对象式风格的代码，最大的区别就在于函数还是对象是编程语言中的第一公民?"></a>我是否可以这么理解，所谓的函数式还是面向对象式风格的代码，最大的区别就在于函数还是对象是编程语言中的第一公民?</h2><p>你的理解是有一定道理的，但可以进一步细化。函数式编程（Functional Programming, FP）和面向对象编程（Object-Oriented Programming, OOP）的核心区别，确实可以从<strong>第一公民</strong>的角度来理解，但它们的差异远不止于此。</p>
+<h3 id="函数式编程（FP）"><a href="#函数式编程（FP）" class="headerlink" title="函数式编程（FP）"></a>函数式编程（FP）</h3><p>在函数式编程中，<strong>函数</strong>是编程语言中的“第一公民”。这意味着：</p>
+<ol>
+<li><strong>函数可以作为值</strong>：你可以将函数作为参数传递给其他函数，或者将其返回作为结果。例如，高阶函数（higher-order functions）可以接受函数作为参数，或者返回函数作为结果。</li>
+<li><strong>函数无副作用</strong>：函数通常是纯粹的（pure），这意味着它们的返回值只依赖于输入参数，不依赖外部状态，并且没有副作用（例如，不修改全局变量或输入参数）。</li>
+<li><strong>不变性</strong>：函数式编程推崇<strong>不可变数据</strong>。变量一旦赋值后，不会再被修改。数据结构通常是不可变的，如果需要修改，就会生成一个新的数据结构。</li>
+<li><strong>声明式</strong>：函数式编程侧重于描述“做什么”（What）而不是“如何做”（How）。比如，使用映射（map）、过滤（filter）等高阶函数来描述逻辑，而不是详细说明如何逐步实现这些逻辑。</li>
+</ol>
+<h3 id="面向对象编程（OOP）"><a href="#面向对象编程（OOP）" class="headerlink" title="面向对象编程（OOP）"></a>面向对象编程（OOP）</h3><p>在面向对象编程中，<strong>对象</strong>是编程语言中的“第一公民”。这意味着：</p>
+<ol>
+<li><strong>数据和行为封装在对象中</strong>：对象不仅包含数据（属性），还包含操作这些数据的行为（方法）。OOP 强调通过封装（encapsulation）将数据和行为紧密绑定在一起。</li>
+<li><strong>继承和多态</strong>：OOP 强调通过继承（inheritance）来重用代码，并通过多态（polymorphism）来实现不同对象间的行为重载和扩展。</li>
+<li><strong>状态和行为的修改</strong>：对象的状态通常是可以改变的（mutability），并且行为是通过方法来实现的。对象之间的交互通常通过消息传递（方法调用）来进行。</li>
+<li><strong>命令式</strong>：OOP 偏向于命令式编程（imperative），强调如何执行任务，逐步修改状态。</li>
+</ol>
+<h3 id="进一步分析"><a href="#进一步分析" class="headerlink" title="进一步分析"></a>进一步分析</h3><p>将“第一公民”概念作为区分 FP 和 OOP 的角度，可以看出，确实是函数和对象在两种风格中的角色不同。但这种区分并不意味着函数式编程没有对象，或者面向对象编程没有函数。在许多语言中，尤其是现代语言（如 C#、JavaScript、Python 等），两种编程范式是可以并存的。</p>
+<ul>
+<li>在 C# 中，函数是通过委托、Lambda 表达式等形式存在的，而对象则是通过类和实例来定义的。C# 允许你以面向对象的方式编写代码，但同时也支持函数式编程的特性，如 LINQ 查询和不可变集合。</li>
+<li>例如，C# 的 LINQ 查询使用了大量的函数式编程思想，但它的基本结构依然是基于对象和类的。</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><strong>函数式编程的核心是函数</strong>，侧重于数据的处理与变换，强调不可变性、纯函数和声明式编程。</li>
+<li><strong>面向对象编程的核心是对象</strong>，侧重于通过对象封装数据和行为，强调继承、多态和状态变化。</li>
+</ul>
+<p>因此，虽然可以从“第一公民”的角度理解两者的不同，但这只是其本质特征之一，二者的差异还包括如何组织代码、如何处理副作用、如何管理状态等方面。</p>
+<h1 id="我是否可以这么理解，-exe只是开启了一个用C-运行时来翻译中间语言的进程，而热重载就是在VS的这个进程对-exe的这个进程进行注入"><a href="#我是否可以这么理解，-exe只是开启了一个用C-运行时来翻译中间语言的进程，而热重载就是在VS的这个进程对-exe的这个进程进行注入" class="headerlink" title="我是否可以这么理解，.exe只是开启了一个用C#运行时来翻译中间语言的进程，而热重载就是在VS的这个进程对.exe的这个进程进行注入"></a>我是否可以这么理解，.exe只是开启了一个用C#运行时来翻译中间语言的进程，而热重载就是在VS的这个进程对.exe的这个进程进行注入</h1><p>你的理解基本正确，但需要稍作补充和调整：</p>
+<ol>
+<li><strong><code>.exe</code> 文件运行的本质</strong><ul>
+<li>当你运行 C# 编写的程序（例如一个 <code>.exe</code> 文件）时，该 <code>.exe</code> 文件实际上包含了 <strong>中间语言（IL）</strong> 和 <strong>元数据</strong>。</li>
+<li>.NET 运行时（CLR，Common Language Runtime）会启动一个进程，加载这个 <code>.exe</code> 文件，解析 IL，并即时编译为机器码（通过 JIT 编译器）。</li>
+<li>所以，<code>.exe</code> 是程序的入口点，但它的执行是由 .NET 运行时处理的。</li>
+</ul>
+</li>
+<li><strong>热重载的作用</strong><ul>
+<li><strong>Visual Studio 和运行时交互</strong>：<ul>
+<li>Visual Studio 的调试器会与运行时直接通信，而不是直接操作 <code>.exe</code> 文件。</li>
+<li>热重载并不是对 <code>.exe</code> 文件进行修改，而是通过调试器注入或替换运行时中的 IL。</li>
+</ul>
+</li>
+<li><strong>注入方式</strong>：<ul>
+<li>Visual Studio 捕获代码变化后，生成 <strong>增量 IL 文件</strong>。</li>
+<li>调试器通过运行时 API，将增量 IL 加载到运行中的进程内存中。</li>
+<li>CLR 动态更新类或方法的元数据和实现，让修改即时生效。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>跨进程通信</strong><ul>
+<li>Visual Studio 调试器是一个单独的进程，它通过 <strong>调试协议</strong>（如 Windows Debug API 或 .NET 调试协议）与运行时进程通信。</li>
+<li>热重载的“注入”本质上是调试器对运行时发出指令，要求运行时动态加载新的 IL。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="改进你的理解"><a href="#改进你的理解" class="headerlink" title="改进你的理解"></a><strong>改进你的理解</strong></h3><h4 id="更准确的表述："><a href="#更准确的表述：" class="headerlink" title="更准确的表述："></a><strong>更准确的表述：</strong></h4><p><code>.exe</code> 文件本身只是托管代码（IL）的容器，其运行由 .NET 运行时管理。热重载通过 Visual Studio 调试器与运行时的交互，将修改后的 IL 动态注入到运行时进程的内存中，而不直接操作 <code>.exe</code> 文件。</p>
+<hr>
+<h3 id="完整运行时流程"><a href="#完整运行时流程" class="headerlink" title="完整运行时流程"></a><strong>完整运行时流程</strong></h3><ol>
+<li><strong>启动 <code>.exe</code> 文件</strong><ul>
+<li>操作系统启动进程，加载 <code>.exe</code> 文件。</li>
+<li>CLR 解析 <code>.exe</code> 的元数据，并启动应用程序的入口方法。</li>
+</ul>
+</li>
+<li><strong>JIT 编译和执行</strong><ul>
+<li>CLR 按需将 IL 转换为机器码（JIT 编译）。</li>
+<li>程序开始运行，执行逻辑。</li>
+</ul>
+</li>
+<li><strong>热重载过程</strong><ul>
+<li><strong>代码修改</strong>：开发者在 Visual Studio 中修改代码。</li>
+<li><strong>增量编译</strong>：Visual Studio 编译器只重新生成改动部分的 IL。</li>
+<li><strong>注入更新</strong>：调试器通过运行时 API，将新的 IL 加载到目标进程中。</li>
+<li><strong>动态替换</strong>：CLR 更新运行时中的方法或类，立即生效。</li>
+</ul>
+</li>
+<li><strong>持续运行</strong><ul>
+<li>运行中的进程保持其当前状态（如变量值和线程栈），无需重新启动。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="补充：为什么不直接修改-exe-文件？"><a href="#补充：为什么不直接修改-exe-文件？" class="headerlink" title="补充：为什么不直接修改 .exe 文件？"></a><strong>补充：为什么不直接修改 <code>.exe</code> 文件？</strong></h3><ol>
+<li><strong>运行时安全性</strong><ul>
+<li><code>.exe</code> 文件可能已被操作系统锁定（因为它正在运行）。</li>
+<li>修改 <code>.exe</code> 文件会带来运行时的不确定性。</li>
+</ul>
+</li>
+<li><strong>热重载的设计目标</strong><ul>
+<li>热重载的目标是快速迭代代码，而不是永久修改二进制文件。</li>
+<li>修改 IL 的逻辑只存在于内存中，对原始文件无影响。</li>
+</ul>
+</li>
+<li><strong>调试器的职责</strong><ul>
+<li>热重载的注入逻辑是调试器和 CLR 的协作，而不需要修改磁盘上的文件。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>你可以理解为：</p>
+<ul>
+<li><code>.exe</code> 启动后，CLR 承担了 IL 的加载和运行工作。</li>
+<li>热重载由 <strong>Visual Studio 调试器</strong> 和 <strong>CLR</strong> 协作完成。</li>
+<li>通过注入增量 IL 文件的方式，动态修改运行中的进程内存，而不是直接修改 <code>.exe</code> 文件。</li>
+</ul>
+<p>这种设计既保障了开发效率，又避免了修改原始二进制文件的潜在问题。</p>
+<h1 id="所以实际上，无论是函数式也好，面向对象也好，最重要的思想其实是抽象数据，SICP的前两章实际上是为了传授抽象数据的思想，无论是用函数式还是什么，核心思想其实是这个，我理解的对吗"><a href="#所以实际上，无论是函数式也好，面向对象也好，最重要的思想其实是抽象数据，SICP的前两章实际上是为了传授抽象数据的思想，无论是用函数式还是什么，核心思想其实是这个，我理解的对吗" class="headerlink" title="所以实际上，无论是函数式也好，面向对象也好，最重要的思想其实是抽象数据，SICP的前两章实际上是为了传授抽象数据的思想，无论是用函数式还是什么，核心思想其实是这个，我理解的对吗?"></a>所以实际上，无论是函数式也好，面向对象也好，最重要的思想其实是抽象数据，SICP的前两章实际上是为了传授抽象数据的思想，无论是用函数式还是什么，核心思想其实是这个，我理解的对吗?</h1><p><strong>是的，你的理解大体是正确的。**SICP 的核心思想之一，就是**通过抽象**来管理程序的复杂度。无论是过程抽象（第 1 章讲的“高阶函数”与函数式思维）还是数据抽象（第 2 章讲的“抽象数据类型”），它们的目的都是</strong>把我们在构建程序时的“做什么”<strong>和</strong>“怎么做”**分离开来，从而让程序更易于理解和维护。</p>
+<ul>
+<li><strong>SICP 第 1 章</strong>更多地侧重<strong>过程抽象</strong>：如何把复杂的过程逻辑封装在函数中，再用高阶函数等手段进行组合，从而“像搭积木一样”构建复杂行为。</li>
+<li><strong>SICP 第 2 章</strong>则介绍<strong>数据抽象</strong>：如何“先定义好对数据的操作与接口”，再决定用何种内部表示（结构）去实现这些操作。这样一来，就能<strong>隐藏</strong>数据的底层实现细节，仅保留对外可见的操作接口。</li>
+</ul>
+<p>这些抽象思维本质上<strong>并不局限于函数式或面向对象</strong>——不论使用 OOP、函数式、过程式等范式，都可以而且都需要<strong>数据抽象</strong>来降低耦合、提升可维护性。面向对象更多地在语言层面提供了“类”、“对象”、“继承”、“接口”之类的特性，让你有一整套写法来实现<strong>抽象数据</strong>与<strong>抽象行为</strong>；而函数式或过程式也可以通过<strong>函数、闭包、模块</strong>等手段来做同样的事。</p>
+<p>因此，<strong>SICP 最想传递的</strong>并不是“要去用哪个编程范式”，而是<strong>如何以抽象为工具</strong>，在程序构建中管理复杂度。在第 2 章，你所看到的那种“先定义一组操作，再去实现底层结构”的模式，确实正是“数据抽象”的精髓所在。你把它理解为在给后续的 OOP 思维做铺垫也可以，但它本身更是“抽象数据类型”这一概念的最初阐释，与是否走向 OOP 语言并没有强制联系。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/" class="category-chain-item">编程通用</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/" class="category-chain-item">编程范式</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%97%AE%E7%AD%94/" class="print-no-link">#问答</a>
+      
+        <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="print-no-link">#函数式编程</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>编程范式：lambda 演算、函数式与面向对象</div>
+      <div>https://homovexillues.github.io/2026/06/24/编程范式-lambda演算与函数式/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E6%B3%9B%E5%9E%8B%E7%9A%84%E6%9C%AC%E8%B4%A8%E4%B8%8E%E5%AE%9E%E7%8E%B0/" title="泛型的本质与实现">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">泛型的本质与实现</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E7%BC%96%E7%A8%8B%E9%97%AE%E7%AD%94-%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BB%A3%E7%A0%81%E5%AF%B9%E7%85%A7/" title="一段代码的多语言写法对照(C#/C++/Rust/Lua/Lisp)">
+                        <span class="hidden-mobile">一段代码的多语言写法对照(C#/C++/Rust/Lua/Lisp)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

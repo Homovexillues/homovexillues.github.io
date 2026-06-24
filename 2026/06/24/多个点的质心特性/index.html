@@ -1,0 +1,711 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="多个点的质心或者说中心点有什么特性质心（centroid）或中心点是指多个点的 “平均位置”。在几何学和物理学中，质心是一个集合的质量中心，对于一组给定的点，它是所有点的加权平均位置。如果这些点在同一平面或空间中，质心就是这些点坐标的平均值。 质心的基本定义对于一组 (n) 个点，点的坐标为$ (x_1, y_1), (x_2, y_2), …, (x_n, y_n)$，其质心 $G &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多个点的质心特性">
+<meta property="og:url" content="https://homovexillues.github.io/2026/06/24/%E5%A4%9A%E4%B8%AA%E7%82%B9%E7%9A%84%E8%B4%A8%E5%BF%83%E7%89%B9%E6%80%A7/index.html">
+<meta property="og:site_name" content="红石门">
+<meta property="og:description" content="多个点的质心或者说中心点有什么特性质心（centroid）或中心点是指多个点的 “平均位置”。在几何学和物理学中，质心是一个集合的质量中心，对于一组给定的点，它是所有点的加权平均位置。如果这些点在同一平面或空间中，质心就是这些点坐标的平均值。 质心的基本定义对于一组 (n) 个点，点的坐标为$ (x_1, y_1), (x_2, y_2), …, (x_n, y_n)$，其质心 $G &#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-24T03:40:38.994Z">
+<meta property="article:modified_time" content="2026-06-24T03:40:38.995Z">
+<meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="问答">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>多个点的质心特性 - 红石门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="多个点的质心特性"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-24 11:40" pubdate>
+          2026年6月24日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">多个点的质心特性</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="多个点的质心或者说中心点有什么特性"><a href="#多个点的质心或者说中心点有什么特性" class="headerlink" title="多个点的质心或者说中心点有什么特性"></a>多个点的质心或者说中心点有什么特性</h1><p>质心（centroid）或中心点是指多个点的 “平均位置”。在几何学和物理学中，质心是一个集合的质量中心，对于一组给定的点，它是所有点的加权平均位置。如果这些点在同一平面或空间中，质心就是这些点坐标的平均值。</p>
+<h3 id="质心的基本定义"><a href="#质心的基本定义" class="headerlink" title="质心的基本定义"></a>质心的基本定义</h3><p>对于一组 (n) 个点，点的坐标为$ (x_1, y_1), (x_2, y_2), …, (x_n, y_n)$，其质心 $G &#x3D; (x_c, y_c) $可以通过以下方式计算：<br>$$<br>x_c &#x3D; \frac{1}{n} \sum_{i&#x3D;1}^{n} x_i<br>$$</p>
+<p>$$<br>y_c &#x3D; \frac{1}{n} \sum_{i&#x3D;1}^{n} y_i<br>$$</p>
+<p>对于三维空间中的点，质心的计算公式类似：</p>
+<p>$$<br>x_c &#x3D; \frac{1}{n} \sum_{i&#x3D;1}^{n} x_i<br>$$<br>$$<br>y_c &#x3D; \frac{1}{n} \sum_{i&#x3D;1}^{n} y_i<br>$$<br>$$<br>z_c &#x3D; \frac{1}{n} \sum_{i&#x3D;1}^{n} z_i<br>$$</p>
+<p>即，质心是所有点在各个坐标轴上的平均坐标。</p>
+<h3 id="质心的特性"><a href="#质心的特性" class="headerlink" title="质心的特性"></a>质心的特性</h3><ol>
+<li><p><strong>位置是各点坐标的平均值</strong>：<br>质心是所有点在每个坐标轴上的坐标的算术平均值。</p>
+</li>
+<li><p><strong>不依赖于点的权重</strong>（假设所有点的质量相等）：<br>如果每个点都有相同的质量，那么质心就是这些点的算术平均位置。</p>
+<p>如果不同点的质量不同，则质心的计算应考虑点的质量。对于带权重的情况，质心是加权平均数：</p>
+<p>$$<br>x_c &#x3D; \frac{\sum_{i&#x3D;1}^{n} m_i \cdot x_i}{\sum_{i&#x3D;1}^{n} m_i}<br>$$<br>$$<br>y_c &#x3D; \frac{\sum_{i&#x3D;1}^{n} m_i \cdot y_i}{\sum_{i&#x3D;1}^{n} m_i}<br>$$</p>
+<p>其中 (m_i) 是第 (i) 个点的质量，(x_i) 和 (y_i) 是第 (i) 个点的坐标。</p>
+</li>
+<li><p><strong>质心是平衡点</strong>：<br>如果你在二维平面上画一个图形，并将这个图形按质心进行平衡，它应该是平衡的。也就是说，如果在质心的位置上放一个支点，那么这个图形就不会倾斜。</p>
+</li>
+<li><p><strong>质心与几何形状有关</strong>：<br>对于规则形状（如正多边形、圆形等），质心位于形状的对称中心。对于不规则形状，它可能位于形状内部或外部，取决于点的分布。</p>
+</li>
+<li><p><strong>质心不一定在已知的点集内</strong>：<br>在某些情况下，质心可能位于给定点集之外，特别是在计算多边形的质心时。对于一个简单的凸多边形，质心通常位于该多边形内部，但对于复杂的凹形状，质心可能位于多边形外部。</p>
+</li>
+<li><p><strong>具有旋转对称性</strong>：<br>对于一个平面上的对称图形（如圆形、正多边形等），质心通常位于其对称中心。</p>
+</li>
+<li><p><strong>计算简单且高效</strong>：<br>质心的计算方法通常非常简单，只需要计算所有点的坐标的平均值即可。对于大多数应用而言，这种计算的时间复杂度为 (O(n))，其中 (n) 是点的数量。</p>
+</li>
+</ol>
+<h3 id="质心的应用"><a href="#质心的应用" class="headerlink" title="质心的应用"></a>质心的应用</h3><ul>
+<li><strong>物理学</strong>：质心概念用于描述物体的质量中心，特别是在分析物体的运动时（例如转动惯量）。</li>
+<li><strong>计算几何</strong>：在图形处理中，质心用于寻找图形的几何中心，广泛应用于碰撞检测、分割和配准等任务。</li>
+<li><strong>图像处理</strong>：在图像中，质心可以用来描述形状或物体的重心，常用于形状分析、目标追踪和图像分割。</li>
+<li><strong>计算机图形学</strong>：质心用于计算模型的中心点，帮助进行模型对齐和变换。</li>
+</ul>
+<h3 id="质心计算的例子"><a href="#质心计算的例子" class="headerlink" title="质心计算的例子"></a>质心计算的例子</h3><ol>
+<li><p><strong>二维点集的质心计算</strong>：</p>
+<p>给定四个点：<br>$$<br>(1, 2), (4, 6), (7, 8), (10, 12)<br>$$</p>
+<p>质心的计算：<br>$$<br>x_c &#x3D; \frac{1 + 4 + 7 + 10}{4} &#x3D; 5.5<br>$$<br>$$<br>y_c &#x3D; \frac{2 + 6 + 8 + 12}{4} &#x3D; 7<br>$$</p>
+<p>所以质心为 ((5.5, 7))。</p>
+</li>
+<li><p><strong>三维点集的质心计算</strong>：</p>
+<p>给定三个点：<br>$$<br>(1, 2, 3), (4, 5, 6), (7, 8, 9)<br>$$</p>
+<p>质心的计算：<br>$$<br>x_c &#x3D; \frac{1 + 4 + 7}{3} &#x3D; 4<br>$$<br>$$<br>y_c &#x3D; \frac{2 + 5 + 8}{3} &#x3D; 5<br>$$<br>$$<br>z_c &#x3D; \frac{3 + 6 + 9}{3} &#x3D; 6<br>$$</p>
+<p>所以质心为 ((4, 5, 6))。</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>质心是多个点的“平均位置”，通常用于表示一组点的几何中心。在计算时，质心是各点坐标的算术平均值，对于带有不同质量的点集合，质心可以通过加权平均计算。质心在物理学、计算几何、图像处理等领域有广泛的应用。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E5%AD%A6/" class="category-chain-item">数学</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%97%AE%E7%AD%94/" class="print-no-link">#问答</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>多个点的质心特性</div>
+      <div>https://homovexillues.github.io/2026/06/24/多个点的质心特性/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/06/24/Fallout%E7%B3%BB%E5%88%97%E7%AE%80%E5%8F%B2/" title="Fallout 系列简史">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Fallout 系列简史</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E5%9B%BE%E5%83%8FHSV%E4%B8%8E%E8%A7%86%E8%A7%89%E8%AF%86%E5%88%AB/" title="图像HSV与视觉识别">
+                        <span class="hidden-mobile">图像HSV与视觉识别</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

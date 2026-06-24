@@ -1,0 +1,780 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Homo vexillues">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="热更新热重载是怎么做到的?是什么原理?“热更新”(Hot Update) 或“热重载”(Hot Reload) 指的是在应用程序运行时，对代码或资源文件的修改能够实时(或接近实时) 地在应用中生效，而无需完全重启应用的技术。不同的平台和框架有不同的实现方式，但总体思路是一致的：监听到代码或资源文件有改动，就把改动后的部分重新加载并替换原有的逻辑或内容，从而使运行中的程序能即时应用新代码。 下面以常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程实践问答">
+<meta property="og:url" content="https://homovexillues.github.io/2026/06/24/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/index.html">
+<meta property="og:site_name" content="红石门">
+<meta property="og:description" content="热更新热重载是怎么做到的?是什么原理?“热更新”(Hot Update) 或“热重载”(Hot Reload) 指的是在应用程序运行时，对代码或资源文件的修改能够实时(或接近实时) 地在应用中生效，而无需完全重启应用的技术。不同的平台和框架有不同的实现方式，但总体思路是一致的：监听到代码或资源文件有改动，就把改动后的部分重新加载并替换原有的逻辑或内容，从而使运行中的程序能即时应用新代码。 下面以常">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231632185.png">
+<meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231714549.png">
+<meta property="og:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231736194.png">
+<meta property="article:published_time" content="2026-06-24T03:40:38.974Z">
+<meta property="article:modified_time" content="2026-06-24T03:40:38.975Z">
+<meta property="article:author" content="Homo vexillues">
+<meta property="article:tag" content="问答">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://homovexillues.github.io/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231632185.png">
+  
+  
+  
+  <title>软件工程实践问答 - 红石门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"homovexillues.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>红石门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="软件工程实践问答"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-24 11:40" pubdate>
+          2026年6月24日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          29 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">软件工程实践问答</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="热更新热重载是怎么做到的-是什么原理"><a href="#热更新热重载是怎么做到的-是什么原理" class="headerlink" title="热更新热重载是怎么做到的?是什么原理?"></a>热更新热重载是怎么做到的?是什么原理?</h1><p>“热更新”(Hot Update) 或“热重载”(Hot Reload) 指的是在应用程序<strong>运行时</strong>，对代码或资源文件的修改能够<strong>实时</strong>(或接近实时) 地在应用中生效，而<strong>无需完全重启</strong>应用的技术。不同的平台和框架有不同的实现方式，但总体思路是一致的：<strong>监听到代码或资源文件有改动，就把改动后的部分重新加载并替换原有的逻辑或内容</strong>，从而使运行中的程序能即时应用新代码。</p>
+<p>下面以常见的场景来举例说明原理。</p>
+<hr>
+<h2 id="一、在-NET-C-中的-Hot-Reload-原理"><a href="#一、在-NET-C-中的-Hot-Reload-原理" class="headerlink" title="一、在 .NET &#x2F; C# 中的 Hot Reload 原理"></a>一、在 .NET &#x2F; C# 中的 Hot Reload 原理</h2><h3 id="1-“编辑并继续”-Edit-and-Continue-技术的演进"><a href="#1-“编辑并继续”-Edit-and-Continue-技术的演进" class="headerlink" title="1. “编辑并继续”(Edit and Continue) 技术的演进"></a>1. “编辑并继续”(Edit and Continue) 技术的演进</h3><p>早在 Visual Studio 里就有 “Edit and Continue” 功能：当你在调试（Debug）过程中修改了某些 C# 代码，VS 会尝试把修改过的<strong>方法体</strong>重新编译成 IL(中间语言)，并把它<strong>注入</strong>到正在调试的进程中，从而实现“无需停止调试就能应用新代码”的效果。</p>
+<p>.NET 6+ 将此功能推广为更通用的 “Hot Reload”：</p>
+<ol>
+<li><strong>实时监视源码文件变动</strong>：VS&#x2F;CLI 的监视器(FileWatcher)发现文件更新后触发事件。</li>
+<li><strong>重新编译仅修改的部分</strong>：只编译你刚改的类或方法，得到新的 IL。</li>
+<li><strong>将新 IL 注入到运行中的程序</strong>：.NET 运行时（通过元数据和IL定位）找到对应的类或方法，替换其方法体。</li>
+</ol>
+<p><strong>局限</strong>：</p>
+<ul>
+<li>只能修改<strong>方法的实现</strong>、局部变量、表达式等；</li>
+<li><strong>无法</strong>轻易修改方法签名、类的继承结构、泛型定义等较大范围的结构性更改；</li>
+<li>如果改动超出“Hot Reload”可处理的范围，就需要重启或重新编译整个应用。</li>
+</ul>
+<h3 id="2-XAML-Hot-Reload-WPF-Xamarin-MAUI"><a href="#2-XAML-Hot-Reload-WPF-Xamarin-MAUI" class="headerlink" title="2. XAML Hot Reload (WPF &#x2F; Xamarin &#x2F; MAUI)"></a>2. XAML Hot Reload (WPF &#x2F; Xamarin &#x2F; MAUI)</h3><ul>
+<li>针对 UI 层(XAML)的修改，如调整控件布局、样式等，也可以在运行时注入新的 XAML 资源，刷新 UI 视图。</li>
+<li>实现思路：监听到 XAML 文件改动，重新编译 XAML-&gt;BAML(或生成 C# UI 代码)，调用运行时的刷新机制来动态更新界面树。</li>
+</ul>
+<hr>
+<h2 id="二、在前端框架中的-Hot-Reload-Hot-Module-Replacement"><a href="#二、在前端框架中的-Hot-Reload-Hot-Module-Replacement" class="headerlink" title="二、在前端框架中的 Hot Reload &#x2F; Hot Module Replacement"></a>二、在前端框架中的 Hot Reload &#x2F; Hot Module Replacement</h2><h3 id="1-Webpack-的-HMR-Hot-Module-Replacement"><a href="#1-Webpack-的-HMR-Hot-Module-Replacement" class="headerlink" title="1. Webpack 的 HMR (Hot Module Replacement)"></a>1. Webpack 的 HMR (Hot Module Replacement)</h3><ul>
+<li>前端构建工具（如 Webpack、Vite）会在开发模式下启动一个 <strong>dev server</strong> 并监控(<code>watch</code>) 源文件的变动。</li>
+<li>一旦检测到文件更新，会<strong>只重新编译改动的模块</strong>，并通过 WebSocket 等方式将“更新的模块包”推送到浏览器。</li>
+<li>浏览器端有一个运行时（HMR Runtime），会<strong>替换</strong>对应模块的旧代码，而无需刷新整个网页。</li>
+<li>对于 React&#x2F;Vue 等框架，如果能保持组件状态，就可实现真正“局部更新、不刷新、不丢失状态”的热重载。</li>
+</ul>
+<h3 id="2-React-Refresh-Vue-Hot-Reload"><a href="#2-React-Refresh-Vue-Hot-Reload" class="headerlink" title="2. React Refresh &#x2F; Vue Hot Reload"></a>2. React Refresh &#x2F; Vue Hot Reload</h3><ul>
+<li>React Refresh 利用 Babel 在编译时给组件插桩(instrument)，在运行时检测到代码更新后<strong>只替换对应组件的渲染逻辑</strong>。</li>
+<li>Vue 的单文件组件(.vue)编译后也带有 HMR hook，检测到更新就只替换该组件的部分，不用刷新整页。</li>
+</ul>
+<hr>
+<h2 id="三、在移动端的-Hot-Reload-React-Native-Flutter"><a href="#三、在移动端的-Hot-Reload-React-Native-Flutter" class="headerlink" title="三、在移动端的 Hot Reload (React Native &#x2F; Flutter)"></a>三、在移动端的 Hot Reload (React Native &#x2F; Flutter)</h2><h3 id="1-React-Native"><a href="#1-React-Native" class="headerlink" title="1. React Native"></a>1. React Native</h3><ul>
+<li>Metro bundler 监听 JavaScript&#x2F;TypeScript 文件更新，重新打包相应模块，利用 “Fast Refresh” (类似 HMR) 向运行中的 APP 注入。</li>
+<li>RN 遍历组件树，只重绘受影响的组件，不用重启整个原生应用。</li>
+</ul>
+<h3 id="2-Flutter"><a href="#2-Flutter" class="headerlink" title="2. Flutter"></a>2. Flutter</h3><ul>
+<li>Dart VM 提供了 “hot reload&#x2F;hot restart” 能力。</li>
+<li><strong>hot reload</strong>：在 Dart 层可以将修改过的代码注入到正在运行的 Dart VM 中，Flutter 框架会重建 widget 树并渲染更新，但不会丢失原有状态(如变量、路由栈)。</li>
+<li><strong>hot restart</strong>：比 hot reload范围更大，会完全重启 Dart isolate，但依旧不需要重新启动整个原生进程。</li>
+</ul>
+<hr>
+<h2 id="四、总体机制与原理"><a href="#四、总体机制与原理" class="headerlink" title="四、总体机制与原理"></a>四、总体机制与原理</h2><p>无论是后端(.NET Java)、前端(Webpack、Vite)还是移动端(Flutter、RN)，它们的做法可归纳为：</p>
+<ol>
+<li><strong>监控源码或资源文件改动</strong>：文件系统监听(File System Watcher)或特殊插件(DevServer)发现你保存了文件。</li>
+<li><strong>局部编译&#x2F;增量编译</strong>：只编译改动过的源码模块&#x2F;方法&#x2F;资源，得到新的字节码(IL、JS bundle)或UI资源(XAML、CSS)。</li>
+<li><strong>动态加载并替换</strong>：将新编译的结果注入到内存中，替换掉原有的部分。</li>
+<li><strong>框架层做状态管理</strong>：许多框架会尽可能保持原来的运行状态(变量值、组件状态等)，只更新逻辑或视图，从而达到“热更新”效果。</li>
+</ol>
+<h3 id="核心要点"><a href="#核心要点" class="headerlink" title="核心要点"></a>核心要点</h3><ul>
+<li><strong>编译器或打包器层面</strong>支持增量编译。</li>
+<li><strong>运行时</strong>需要可以“热插拔”新的代码或资源。</li>
+<li>有些变化（比如大范围结构性修改）必须要重新启动，因为运行时无法动态地“改血统、改签名”。</li>
+<li>很多框架为了让开发体验更好，会尽可能地支持“状态保留”，这样你就不必每次改完代码后重新手动执行一系列操作(如登录、跳到某个流程等)。</li>
+</ul>
+<hr>
+<h2 id="五、Cookie-效果之类的常见误解"><a href="#五、Cookie-效果之类的常见误解" class="headerlink" title="五、Cookie 效果之类的常见误解"></a>五、Cookie 效果之类的常见误解</h2><ul>
+<li>“热重载”是针对应用本身的代码或资源进行替换，与<strong>Cookie&#x2F;Session</strong>这类网络状态无关。</li>
+<li>如果应用中维护某些会话或数据状态，只要运行时不会被重启，这些状态就可被保留。在做前端 HMR&#x2F;后端 Hot Reload 时，Cookie&#x2F;Session 信息仍然可以在请求中正常传递。</li>
+</ul>
+<hr>
+<h2 id="六、小结"><a href="#六、小结" class="headerlink" title="六、小结"></a>六、小结</h2><p><strong>热更新、热重载的本质</strong>：在<strong>不重启进程</strong>(或者不刷新整个页面&#x2F;应用)的前提下，<strong>动态替换</strong>部分已编译（或已加载）的代码&#x2F;资源，以实现更快的开发调试迭代。</p>
+<ul>
+<li>在 <strong>.NET</strong> 中，主要利用了 <strong>Edit and Continue</strong> &#x2F; <strong>Hot Reload</strong> 的机制来对方法体或 XAML 进行动态更新；</li>
+<li>在 <strong>Web</strong> 前端，主要利用 **HMR(Hot Module Replacement)**，通过增量打包+运行时替换来只更新改动的模块；</li>
+<li>在 <strong>Flutter &#x2F; React Native</strong> 中，利用虚拟机或 bundler 的能力将修改后的 Dart&#x2F;JS 代码注入运行时，并进行局部重渲染。</li>
+</ul>
+<p><strong>收益</strong>：开发者可以<strong>大大减少编译、启动、登录等步骤</strong>，快速看到最新修改的效果，提高开发效率。</p>
+<p>这就是热更新&#x2F;热重载“能做到且如何做到”的基本原理。</p>
+<h1 id="为什么GC是独立组件-通用框架又是什么-什么又是规则引擎"><a href="#为什么GC是独立组件-通用框架又是什么-什么又是规则引擎" class="headerlink" title="为什么GC是独立组件?通用框架又是什么?什么又是规则引擎?"></a>为什么GC是独立组件?通用框架又是什么?什么又是规则引擎?</h1><h1 id="关于GC、通用框架和规则引擎的解释"><a href="#关于GC、通用框架和规则引擎的解释" class="headerlink" title="关于GC、通用框架和规则引擎的解释"></a>关于GC、通用框架和规则引擎的解释</h1><h2 id="为什么GC-垃圾回收-是独立组件？"><a href="#为什么GC-垃圾回收-是独立组件？" class="headerlink" title="为什么GC(垃圾回收)是独立组件？"></a>为什么GC(垃圾回收)是独立组件？</h2><p>GC(垃圾回收)作为独立组件存在有几个重要原因：</p>
+<ol>
+<li><strong>关注点分离</strong>：GC专注于内存管理这一单一职责，与程序的核心逻辑分离</li>
+<li><strong>复杂性封装</strong>：垃圾回收算法复杂(如标记-清除、分代收集等)，独立封装便于维护</li>
+<li><strong>可替换性</strong>：不同应用场景可能需要不同的GC策略(如实时系统用增量GC，服务器用并行GC)</li>
+<li><strong>跨语言通用性</strong>：类似JVM、.NET CLR等运行时环境可以共享GC组件</li>
+</ol>
+<h2 id="什么是通用框架？"><a href="#什么是通用框架？" class="headerlink" title="什么是通用框架？"></a>什么是通用框架？</h2><p>通用框架是指为解决某一类问题而设计的基础软件结构，具有以下特点：</p>
+<ol>
+<li><strong>可扩展性</strong>：通过继承、组合等方式扩展功能</li>
+<li><strong>可配置性</strong>：通过参数或配置文件调整行为</li>
+<li><strong>重用性</strong>：为多个具体应用提供共用基础</li>
+<li><strong>控制反转</strong>：框架控制程序流程，开发者填充具体逻辑</li>
+</ol>
+<p>例如：Spring(Java)、Django(Python)、React(前端)等都是通用框架</p>
+<h2 id="什么是规则引擎？"><a href="#什么是规则引擎？" class="headerlink" title="什么是规则引擎？"></a>什么是规则引擎？</h2><p>规则引擎是一种将业务规则与应用程序代码分离的系统，特点包括：</p>
+<ol>
+<li><strong>业务逻辑外部化</strong>：规则通常存储在数据库或配置文件中</li>
+<li><strong>声明式编程</strong>：关注”做什么”而非”如何做”</li>
+<li><strong>推理引擎</strong>：使用算法(如Rete)高效匹配和执行规则</li>
+<li><strong>动态更新</strong>：无需重新部署即可修改规则</li>
+</ol>
+<p>常见规则引擎：Drools、Jess、IBM ODM等</p>
+<p>三者关系：GC保障内存安全，通用框架提供应用基础结构，规则引擎处理灵活的业务逻辑，它们共同构建健壮的软件系统。</p>
+<h1 id="为什么try-catch-throw-不是一个好的做法"><a href="#为什么try-catch-throw-不是一个好的做法" class="headerlink" title="为什么try{}catch{throw}不是一个好的做法?"></a>为什么try{}catch{throw}不是一个好的做法?</h1><p><img src="/../images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231632185.png" srcset="/img/loading.gif" lazyload alt="image-20250329231632185"></p>
+<p><img src="/../images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231714549.png" srcset="/img/loading.gif" lazyload alt="image-20250329231714549"></p>
+<p><img src="/../images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231736194.png" srcset="/img/loading.gif" lazyload alt="image-20250329231736194"></p>
+<p>KVS key value store</p>
+<h1 id="什么是Mock和Fake对象"><a href="#什么是Mock和Fake对象" class="headerlink" title="什么是Mock和Fake对象?"></a>什么是Mock和Fake对象?</h1><p>这两个概念主要用于单元测试，用于替代真实依赖，方便测试和验证。</p>
+<ul>
+<li>Mock（模拟对象）：用来验证行为，比如“这个方法有没有被调用、调用了几次、参数是什么”。常用 Moq、NSubstitute 等库生成。</li>
+<li>Fake（伪对象）：有简单实现的假对象，能返回预设数据，但不验证行为。比如内存数据库、内存队列等。</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/" class="category-chain-item">编程通用</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/" class="category-chain-item">原理</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%97%AE%E7%AD%94/" class="print-no-link">#问答</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>软件工程实践问答</div>
+      <div>https://homovexillues.github.io/2026/06/24/软件工程实践问答/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Homo vexillues</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E9%97%AE%E7%AD%94/" title="设计原则问答(开闭原则·SOLID·设计模式)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">设计原则问答(开闭原则·SOLID·设计模式)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/24/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E9%97%AE%E7%AD%94/" title="编程概念问答">
+                        <span class="hidden-mobile">编程概念问答</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
