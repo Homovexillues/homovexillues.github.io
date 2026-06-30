@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>SQLite数据库</title>
+    <link href="/2026/06/29/SQLite%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <url>/2026/06/29/SQLite%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    
+    <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>由于Sqlite数据库本质上就是个文件，所以这里安装的都是在不同平台处理SQLite数据库的工具</p><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install sqlite3<br></code></pre></td></tr></table></figure><h2 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h2><h4 id="查看此库有哪些表"><a href="#查看此库有哪些表" class="headerlink" title="查看此库有哪些表"></a>查看此库有哪些表</h4><p>这条语句会返回当前数据库中所有<strong>用户创建的表</strong>的名称。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">SELECT</span> name <span class="hljs-keyword">FROM</span> sqlite_master <span class="hljs-keyword">WHERE</span> type<span class="hljs-operator">=</span><span class="hljs-string">&#x27;table&#x27;</span> <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> name;<br></code></pre></td></tr></table></figure><p>不经筛选的话则返回<strong>包括系统表</strong>的所有表</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">SELECT</span> name <span class="hljs-keyword">FROM</span> sqlite_master;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机基础</category>
+      
+      <category>数据库</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据库</tag>
+      
+      <tag>SQLite</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Cron语法</title>
     <link href="/2026/06/24/Cron%E8%AF%AD%E6%B3%95/"/>
     <url>/2026/06/24/Cron%E8%AF%AD%E6%B3%95/</url>
@@ -1191,32 +1220,11 @@
   
   
   <entry>
-    <title>CPU命名规则(Intel与AMD)</title>
-    <link href="/2026/06/23/CPU%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99(Intel%E4%B8%8EAMD)/"/>
-    <url>/2026/06/23/CPU%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99(Intel%E4%B8%8EAMD)/</url>
-    
-    <content type="html"><![CDATA[<p>&#x3D;&#x3D;$intel$&#x3D;&#x3D;酷睿&#x3D;&#x3D;$i5$&#x3D;&#x3D;-<strong>$12$</strong>&#x3D;&#x3D;$600$&#x3D;&#x3D;<strong>$K$</strong>&#x3D;&#x3D;$F$&#x3D;&#x3D;</p><ul><li><p><strong>Intel</strong> 是一款知名牙膏品牌</p></li><li><p><strong>酷睿</strong> 英特尔的CPU系列</p><table><thead><tr><th>Core</th><th>酷睿</th></tr></thead><tbody><tr><td><strong>Pentium</strong></td><td><strong>奔腾</strong></td></tr><tr><td><strong>Celeron</strong></td><td><strong>赛扬</strong></td></tr><tr><td><strong>Xeon</strong></td><td><strong>至强</strong></td></tr><tr><td><strong>Atom</strong></td><td><strong>凌动</strong></td></tr></tbody></table></li><li><p><strong>i5</strong> 中端定位，i3，i5，i7，i9，数字越大越强</p></li><li><p><strong>12</strong> 代数，数字越大越新</p></li><li><p><strong>600</strong> 性能，数字越大，频率越高</p></li><li><p><strong>B</strong> BGA封装的CPU，专为紧凑型设备开发</p><ul><li><strong>BGA</strong> 是一种CPU封装技术，</li></ul></li><li><p><strong>X</strong> 带X的表示支持XFR技术，自适应动态扩频，频率的最大值受到散热器散热效果而变化，<strong>散热器越强</strong>，<strong>频率越高</strong>。</p></li><li><p><strong>XT</strong> 相当于X的加强版</p></li></ul><p>$R5-5600G$</p><ul><li><strong>G</strong> 表示属于<strong>APU</strong>，内置强大的核显，如R5 5600G</li><li><strong>U</strong> 低电压，性能弱但功耗低，常见轻薄本</li><li><strong>H</strong> 低压，性能强，常见游戏本</li><li><strong>HX</strong> 一般使用在AMD高端发烧级CPU上，至尊版</li><li><strong>HS</strong> 相较于H工号更低，性能较强</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>计算机基础</category>
-      
-      <category>计算机组成原理</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>代码相关英语</title>
-    <link href="/2026/06/23/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E8%8B%B1%E8%AF%AD/"/>
-    <url>/2026/06/23/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E8%8B%B1%E8%AF%AD/</url>
+    <link href="/2026/06/24/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E8%8B%B1%E8%AF%AD/"/>
+    <url>/2026/06/24/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E8%8B%B1%E8%AF%AD/</url>
     
-    <content type="html"><![CDATA[<ul><li><p>approximate adj.大概的</p><ul><li>The approximate time required to complete the tutor is 25-30minutes</li></ul></li><li><p>execute v.执行</p><ul><li>execute command</li></ul></li><li><p>hint n.暗示，提示</p></li><li><p>prompt v.(计算机上)提示</p><ul><li>shell prompt shell提示</li></ul></li><li><p>If you have these steps memorized and confident</p><p>如果你已经记住这些步骤并有信心了</p></li><li><p>discard v.弃置，扔掉</p><ul><li><p>XX discards any changes you made</p><p>XX 会取消你对文本所作的任何改动</p></li></ul></li><li><p>combination n.结合体，组合</p></li><li><p>glitch n.小故障，失灵，短时脉冲波干扰</p></li><li><p>daemon n.守护进程，后台程序</p></li><li><p>prior adj.在先的，在前的，先前的，更重要的</p></li><li><p>prefix n.前缀</p></li><li><p>constructor n. 构造函数；构造器；建造者</p></li><li><p>coordinate<br>  v. 协调，配合；使身体协调；（使颜色、款式、风格等）搭配，配套；给 （原子或分子）配位，与……形成共价键<br>  n. 坐标；配套服装；同等级（或类别）的人（或事物）<br>  adj. 地位相当的，同等重要的；（语法）并列的；（化学）配位的</p></li><li><p><strong>formal parameter</strong> 形式参数</p></li><li><p><strong>call function</strong> 调用函数</p></li><li><p>Closure n. 闭包</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li><p>approximate adj.大概的</p><ul><li>The approximate time required to complete the tutor is 25-30minutes</li></ul></li><li><p>execute v.执行</p><ul><li>execute command</li></ul></li><li><p>hint n.暗示，提示</p></li><li><p>prompt v.(计算机上)提示</p><ul><li>shell prompt shell提示</li></ul></li><li><p>If you have these steps memorized and confident</p><p>如果你已经记住这些步骤并有信心了</p></li><li><p>discard v.弃置，扔掉</p><ul><li><p>XX discards any changes you made</p><p>XX 会取消你对文本所作的任何改动</p></li></ul></li><li><p>combination n.结合体，组合</p></li><li><p>glitch n.小故障，失灵，短时脉冲波干扰</p></li><li><p>daemon n.守护进程，后台程序</p></li><li><p>prior adj.在先的，在前的，先前的，更重要的</p></li><li><p>prefix n.前缀</p></li><li><p>constructor n. 构造函数；构造器；建造者</p></li><li><p>coordinate<br>  v. 协调，配合；使身体协调；（使颜色、款式、风格等）搭配，配套；给 （原子或分子）配位，与……形成共价键<br>  n. 坐标；配套服装；同等级（或类别）的人（或事物）<br>  adj. 地位相当的，同等重要的；（语法）并列的；（化学）配位的</p></li><li><p><strong>formal parameter</strong> 形式参数</p></li><li><p><strong>call function</strong> 调用函数</p></li><li><p>Closure n. 闭包</p></li><li><p>Polymorphism  n. 多态，多晶性，多形性</p></li></ul>]]></content>
     
     
     <categories>
@@ -1235,6 +1243,27 @@
       <tag>English</tag>
       
     </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CPU命名规则(Intel与AMD)</title>
+    <link href="/2026/06/23/CPU%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99(Intel%E4%B8%8EAMD)/"/>
+    <url>/2026/06/23/CPU%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99(Intel%E4%B8%8EAMD)/</url>
+    
+    <content type="html"><![CDATA[<p>&#x3D;&#x3D;$intel$&#x3D;&#x3D;酷睿&#x3D;&#x3D;$i5$&#x3D;&#x3D;-<strong>$12$</strong>&#x3D;&#x3D;$600$&#x3D;&#x3D;<strong>$K$</strong>&#x3D;&#x3D;$F$&#x3D;&#x3D;</p><ul><li><p><strong>Intel</strong> 是一款知名牙膏品牌</p></li><li><p><strong>酷睿</strong> 英特尔的CPU系列</p><table><thead><tr><th>Core</th><th>酷睿</th></tr></thead><tbody><tr><td><strong>Pentium</strong></td><td><strong>奔腾</strong></td></tr><tr><td><strong>Celeron</strong></td><td><strong>赛扬</strong></td></tr><tr><td><strong>Xeon</strong></td><td><strong>至强</strong></td></tr><tr><td><strong>Atom</strong></td><td><strong>凌动</strong></td></tr></tbody></table></li><li><p><strong>i5</strong> 中端定位，i3，i5，i7，i9，数字越大越强</p></li><li><p><strong>12</strong> 代数，数字越大越新</p></li><li><p><strong>600</strong> 性能，数字越大，频率越高</p></li><li><p><strong>B</strong> BGA封装的CPU，专为紧凑型设备开发</p><ul><li><strong>BGA</strong> 是一种CPU封装技术，</li></ul></li><li><p><strong>X</strong> 带X的表示支持XFR技术，自适应动态扩频，频率的最大值受到散热器散热效果而变化，<strong>散热器越强</strong>，<strong>频率越高</strong>。</p></li><li><p><strong>XT</strong> 相当于X的加强版</p></li></ul><p>$R5-5600G$</p><ul><li><strong>G</strong> 表示属于<strong>APU</strong>，内置强大的核显，如R5 5600G</li><li><strong>U</strong> 低电压，性能弱但功耗低，常见轻薄本</li><li><strong>H</strong> 低压，性能强，常见游戏本</li><li><strong>HX</strong> 一般使用在AMD高端发烧级CPU上，至尊版</li><li><strong>HS</strong> 相较于H工号更低，性能较强</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机基础</category>
+      
+      <category>计算机组成原理</category>
+      
+    </categories>
+    
     
   </entry>
   
@@ -1600,33 +1629,6 @@
       <tag>配置</tag>
       
       <tag>双拼</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>生成SSL自签名证书</title>
-    <link href="/2026/04/08/%E7%94%9F%E6%88%90SSL%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
-    <url>/2026/04/08/%E7%94%9F%E6%88%90SSL%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/</url>
-    
-    <content type="html"><![CDATA[<p>大部分Linux发行版配备了OpenSSL工具，可以用来生成自签名SSL证书，如果没有，<code>sudo apt update &amp;&amp; sudo apt install openssl</code><br>生成自签名证书的核心是使用 OpenSSL 的 <code>req</code> 命令。下面是创建一份通用的、可用于 HTTPS 服务器测试的证书的<strong>标准流程</strong>：<br><strong>第1步：生成私钥（Private Key）</strong><br>这是证书安全的基础，必须妥善保管。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl genrsa -out server.key 2048<br></code></pre></td></tr></table></figure><ul><li><p><code>genrsa</code>: 生成 RSA 私钥。</p></li><li><p><code>-out server.key</code>: 将私钥保存到 <code>server.key</code> 文件。</p></li><li><p><code>2048</code>: 密钥长度（位），2048 是目前安全与性能兼顾的标准。<br><strong>第2步：生成证书签名请求（CSR - Certificate Signing Request）</strong><br>CSR 包含了你的服务器和公司信息，用于向证书颁发机构（CA）申请签名。在自签名中，我们将用它直接生成证书。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl req -new -key server.key -out server.csr -subj <span class="hljs-string">&quot;/C=CN/ST=YourProvince/L=YourCity/O=YourOrganization/CN=your-domain-or-ip&quot;</span><br></code></pre></td></tr></table></figure></li><li><p><code>req -new</code>: 创建新的 CSR。</p></li><li><p><code>-key server.key</code>: 使用上一步生成的私钥。</p></li><li><p><code>-out server.csr</code>: 输出 CSR 文件。</p></li><li><p><code>-subj “/...”</code>: <strong>关键参数！</strong> 用于预填所有信息，避免交互式提问。请替换其中字段：</p><ul><li><strong><code>C</code></strong>: 国家代码（如 CN 表示中国）。</li><li><strong><code>ST</code></strong>: 州或省。</li><li><strong><code>L</code></strong>: 城市。</li><li><strong><code>O</code></strong>: 组织名称。</li><li><strong><code>CN</code></strong>: <strong>最重要的字段</strong>，必须填写你打算用此证书访问的<strong>域名或IP地址</strong>（例如 <code>localhost</code>、<code>192.168.1.100</code> 或 <code>example.com</code>）。如果 <code>CN</code> 与实际访问地址不匹配，浏览器会报安全错误。<br><strong>第3步：生成自签名证书（CRT）</strong><br>用自己的私钥为自己的 CSR 签名，这样就得到了自签名证书。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl x509 -req -days 365 -<span class="hljs-keyword">in</span> server.csr -signkey server.key -out server.crt<br></code></pre></td></tr></table></figure></li></ul></li><li><p><code>x509 -req</code>: 使用 x509 标准处理证书请求。</p></li><li><p><code>-days 365</code>: 证书有效期为 365 天。</p></li><li><p><code>-in server.csr</code>: 输入 CSR 文件。</p></li><li><p><code>-signkey server.key</code>: 使用私钥进行签名。</p></li><li><p><code>-out server.crt</code>: 输出最终的证书文件。</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>工具与环境</category>
-      
-      <category>网络与SSH</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>计算机网络</tag>
       
     </tags>
     
@@ -2102,35 +2104,6 @@
       <tag>Influxdb</tag>
       
       <tag>数据库</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>NeoVim安装与使用</title>
-    <link href="/2026/04/08/NeoVim%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
-    <url>/2026/04/08/NeoVim%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    
-    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">winget install NeoVim<br></code></pre></td></tr></table></figure><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="离线安装"><a href="#离线安装" class="headerlink" title="离线安装"></a>离线安装</h3><p>直接安装预编译版本</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz<br>sudo rm -rf /opt/nvim-linux-x86_64<br>sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz<br>export PATH=&quot;$PATH:/opt/nvim-linux-x86_64/bin&quot;<br></code></pre></td></tr></table></figure><h3 id="在线安装-1"><a href="#在线安装-1" class="headerlink" title="在线安装"></a>在线安装</h3><p>直接用自带包管理器安装，不过要注意一下安装出来的版本可能会比较老</p><h1 id="配置包"><a href="#配置包" class="headerlink" title="配置包"></a>配置包</h1><h2 id="lazyvim"><a href="#lazyvim" class="headerlink" title="lazyvim"></a>lazyvim</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><h4 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># required</span><br><span class="hljs-built_in">Move-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim.bak<br><span class="hljs-comment"># 如果报错说找不到xxxx\nvim文件夹说明没做过配置</span><br><span class="hljs-comment"># optional but recommended</span><br><span class="hljs-built_in">Move-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<span class="hljs-literal">-data</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<span class="hljs-literal">-data</span>.bak<br>git clone https://github.com/LazyVim/starter <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<br><span class="hljs-comment"># 记得移除.git文件夹</span><br><span class="hljs-built_in">Remove-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim\.git <span class="hljs-literal">-Recurse</span> <span class="hljs-literal">-Force</span><br></code></pre></td></tr></table></figure><h4 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># required</span><br><span class="hljs-built_in">mv</span> ~/.config/nvim&#123;,.bak&#125;<br><br><span class="hljs-comment"># optional but recommended</span><br><span class="hljs-built_in">mv</span> ~/.local/share/nvim&#123;,.bak&#125;<br><span class="hljs-built_in">mv</span> ~/.local/state/nvim&#123;,.bak&#125;<br><span class="hljs-built_in">mv</span> ~/.cache/nvim&#123;,.bak&#125;<br><br>git <span class="hljs-built_in">clone</span> https://github.com/LazyVim/starter ~/.config/nvim<br><span class="hljs-built_in">rm</span> -rf ~/.config/nvim/.git<br></code></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="键位"><a href="#键位" class="headerlink" title="键位"></a>键位</h3><table><thead><tr><th>快捷键</th><th>功能描述</th></tr></thead><tbody><tr><td>gd</td><td>(Go Definition)跳转到光标所在的内容的定义位置</td></tr><tr><td>gr</td><td>查找所有引用</td></tr><tr><td>gc</td><td>注释&#x2F;解注释选中的代码</td></tr><tr><td><code>&lt;leader&gt; + e</code></td><td>打开&#x2F;关闭 &#96;:Explore文件浏览器</td></tr><tr><td>Explore中 a</td><td>按 <code>a</code>（add），然后输入 <code>文件名/</code> 就是目录，不加 <code>/</code>就是文件</td></tr><tr><td>Explore中 r</td><td>重命名</td></tr><tr><td>Explore中 d</td><td>删除</td></tr><tr><td>dw</td><td>剪切当前整个单词 Background</td></tr><tr><td>dW</td><td>剪切当前整个长标识符 context.Background()</td></tr><tr><td>y</td><td>复制光标所在文件的绝对地址</td></tr><tr><td>yy</td><td>复制当前整行(带空格和换行符)</td></tr><tr><td>y_</td><td>复制当前整行(带空格)</td></tr><tr><td>yw</td><td>复制当前整个单词 Background</td></tr><tr><td>yW</td><td>复制当前整个长标识符 context.Background()</td></tr><tr><td>H</td><td>查看隐藏文件</td></tr><tr><td><code>&lt;leader&gt; + cr</code></td><td>重命名变量&#x2F;方法</td></tr><tr><td><code>&lt;leader&gt; + ca</code></td><td>Code Action，LSP提供的一些小功能，如快速修复什么的</td></tr><tr><td>K</td><td>Hover模式打开光标所在代码的文档（:q退出）</td></tr><tr><td>Alt+j&#x2F;k</td><td>将整行上下移动(Normal&#x2F;Insert&#x2F;Visual 全模式生效)</td></tr><tr><td>Shift + L&#x2F;H</td><td>向右&#x2F;左移动标签页</td></tr><tr><td><code>&lt;leader&gt; + xx</code></td><td>打开报错信息页面</td></tr><tr><td>Ctrl+ww</td><td>光标跳转到另外窗口</td></tr><tr><td>Ctrl+wj&#x2F;wk</td><td>光标跳转到下面&#x2F;上面的窗口</td></tr><tr><td><code>&lt;leader&gt; + bd</code></td><td>关闭光标当前所在窗口</td></tr><tr><td><code>&lt;leader&gt; + /</code></td><td>打开&#x2F;关闭终端下边栏</td></tr><tr><td>V</td><td>整行选择</td></tr></tbody></table><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><h4 id="lang-Markdown"><a href="#lang-Markdown" class="headerlink" title="lang.Markdown"></a>lang.Markdown</h4><ul><li><code>:MarkdownPreview</code> 执行了之后可以打开默认浏览器预览Markdown文档</li><li>默认安装的render-markdown.nvim可以直接渲染Markdown，内置渲染效果</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>工具与环境</category>
-      
-      <category>编辑器与IDE</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>NeoVim</tag>
-      
-      <tag>Vim</tag>
       
     </tags>
     
@@ -4720,33 +4693,6 @@
   
   
   <entry>
-    <title>简写说明</title>
-    <link href="/2026/04/08/%E7%AE%80%E5%86%99%E8%AF%B4%E6%98%8E/"/>
-    <url>/2026/04/08/%E7%AE%80%E5%86%99%E8%AF%B4%E6%98%8E/</url>
-    
-    <content type="html"><![CDATA[<h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>ALU</td><td>Arithmetic Logic Unit</td><td>算数逻辑单元</td></tr><tr><td>API</td><td>Application Programming Interface</td><td>应用程序编程接口</td></tr><tr><td>APN</td><td>Access Point Name</td><td>接入点名称</td></tr><tr><td>ABI</td><td>Application Binary Interface</td><td>二进制级接口</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>BEP</td><td>Block Exchange Protocol</td><td>区块交换协议</td></tr></tbody></table><h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>CPU</td><td>Central Processing Unit</td><td>中央处理器</td></tr><tr><td>COM</td><td>Communication Port</td><td>串行通信端口</td></tr><tr><td>CRC</td><td>Cyclic Redundancy Check</td><td>循环冗余校验</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>DC</td><td>Device Context</td><td>设备上下文</td></tr><tr><td>DIP</td><td>Device Independent Pixel</td><td>设备无关像素 &#x2F; 逻辑像素</td></tr><tr><td>DIP</td><td>Dependency Inversion Principle</td><td>依赖倒置原则</td></tr><tr><td>DPI</td><td>Dots Per Inch</td><td>每英寸物理点数</td></tr></tbody></table><h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>FSM</td><td>Finite State Machine</td><td>有限状态机</td></tr><tr><td>FBD</td><td>Function Block Diagram</td><td>功能块图</td></tr><tr><td>FWIW</td><td>For What Is Worth</td><td>仅供参考</td></tr><tr><td>FFI</td><td>Foreign Function Interface</td><td>外部函数接口</td></tr></tbody></table><h1 id="G"><a href="#G" class="headerlink" title="G"></a>G</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>GPIO</td><td>General Purpose Input&#x2F;Output</td><td>通用输入输出</td></tr><tr><td>GDI</td><td>Graphics Device Interface</td><td>图形设备接口</td></tr></tbody></table><h1 id="H"><a href="#H" class="headerlink" title="H"></a>H</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>HIT</td><td>Harbin Institute Technology</td><td>哈尔滨工业大学</td></tr><tr><td>HWND</td><td>Handle to a window</td><td>窗口句柄</td></tr></tbody></table><h1 id="I"><a href="#I" class="headerlink" title="I"></a>I</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>ICMP</td><td>Internet Control Message Protocol</td><td>互联网消息控制协议</td></tr><tr><td>IoT</td><td>Internet of Things</td><td>物联网</td></tr><tr><td>ISS</td><td>Internal Space Station</td><td>国际空间站</td></tr><tr><td>IL</td><td>Instruction List</td><td>指令表</td></tr><tr><td>ISP</td><td>Internet Service Provider</td><td>互联网服务提供商</td></tr><tr><td>IPC</td><td>Inter-Process Communication</td><td>进程间通信</td></tr><tr><td>IoC</td><td>Inversion of Control</td><td>控制反转</td></tr><tr><td>iSCSI</td><td>Internet Small Computer System Interface</td><td>互联网小型计算机系统接口</td></tr><tr><td>IRC</td><td>Internet Relay Chat</td><td>互联网中继聊天</td></tr></tbody></table><h1 id="J"><a href="#J" class="headerlink" title="J"></a>J</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>JWT</td><td>Json Web Token</td><td>Json网络令牌</td></tr></tbody></table><h1 id="K"><a href="#K" class="headerlink" title="K"></a>K</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>KLT</td><td>Kernal-Level Thread</td><td>操作系统内核级线程</td></tr></tbody></table><h1 id="L"><a href="#L" class="headerlink" title="L"></a>L</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>LD</td><td>Ladder Diagram</td><td>梯形图</td></tr><tr><td>LVM</td><td>Logical Volume Manager</td><td>逻辑卷管理</td></tr><tr><td>LWT</td><td>Lightweight Thread</td><td>轻量级线程</td></tr></tbody></table><h1 id="M"><a href="#M" class="headerlink" title="M"></a>M</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>MQTT</td><td>Message Queuing Telemetry Transport</td><td>消息队列遥测传输</td></tr><tr><td>MOM</td><td>Minutes Of Meeting</td><td>会议纪要</td></tr><tr><td>MEMS</td><td></td><td></td></tr></tbody></table><h1 id="N"><a href="#N" class="headerlink" title="N"></a>N</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>NIC</td><td>Network Interface Card</td><td>网卡</td></tr></tbody></table><h1 id="O"><a href="#O" class="headerlink" title="O"></a>O</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>OPC</td><td>OLE for Process Control&#x2F;Open Platform Communications</td><td>开放平台通信</td></tr><tr><td>Ops</td><td>Operations &amp; Maintenance</td><td>运维</td></tr><tr><td>ORM</td><td>Object-Reactional Mapping</td><td>对象关系映射</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="P"><a href="#P" class="headerlink" title="P"></a>P</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>PLC</td><td>Programmable Logic Controller</td><td>可编程逻辑控制器</td></tr><tr><td>PAM</td><td>Plugged Authentication Modules</td><td>可插拔认证模块</td></tr><tr><td>PPI</td><td>Pixel Per Inch</td><td>每英寸多少像素点</td></tr></tbody></table><h1 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>QoS</td><td>Quality of Service</td><td>服务质量</td></tr></tbody></table><h1 id="R"><a href="#R" class="headerlink" title="R"></a>R</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>RTU</td><td>Remote Terminal Unit</td><td>远程终端单元</td></tr><tr><td>RAM</td><td>Random Access Memory</td><td>随机存取存储器</td></tr><tr><td>ROM</td><td>Read Only Memory</td><td>只读存储器</td></tr><tr><td>ROS</td><td>Robot Operating System</td><td>机器人操作系统</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="S"><a href="#S" class="headerlink" title="S"></a>S</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>SAN</td><td>Storage Area Network</td><td>存储区域网络</td></tr><tr><td>SSL</td><td>Secure Sockets Layer</td><td>安全套接字层</td></tr><tr><td>SLAM</td><td>Simultaneous Localization and Mapping</td><td>同时定位与建图</td></tr><tr><td>STA</td><td>Single Thread Apartment</td><td>单线程单元</td></tr></tbody></table><h1 id="T"><a href="#T" class="headerlink" title="T"></a>T</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>TLS</td><td>Transport Layer Security</td><td>传输层安全</td></tr></tbody></table><h1 id="U"><a href="#U" class="headerlink" title="U"></a>U</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>USB</td><td>Universal Serial Bus</td><td>通用串行总线</td></tr><tr><td>ULT</td><td>User-Level Threads</td><td>用户态线程</td></tr></tbody></table><h1 id="V"><a href="#V" class="headerlink" title="V"></a>V</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>VPN</td><td>Virtual Private Network</td><td>虚拟私人网络</td></tr></tbody></table><h1 id="W"><a href="#W" class="headerlink" title="W"></a>W</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>WEP</td><td>Wired Equivalent Privacy</td><td>有线等效加密</td></tr><tr><td>WPA</td><td>Wifi Protected Access</td><td>Wi-Fi保护接入</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="X"><a href="#X" class="headerlink" title="X"></a>X</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="Y"><a href="#Y" class="headerlink" title="Y"></a>Y</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="Z"><a href="#Z" class="headerlink" title="Z"></a>Z</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table>]]></content>
-    
-    
-    <categories>
-      
-      <category>编程通用</category>
-      
-      <category>资源</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>速查</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>杂记-2</title>
     <link href="/2026/04/08/%E6%9D%82%E8%AE%B0-2/"/>
     <url>/2026/04/08/%E6%9D%82%E8%AE%B0-2/</url>
@@ -5718,6 +5664,89 @@
     <tags>
       
       <tag>虚拟机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>生成SSL自签名证书</title>
+    <link href="/2026/01/15/%E7%94%9F%E6%88%90SSL%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
+    <url>/2026/01/15/%E7%94%9F%E6%88%90SSL%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/</url>
+    
+    <content type="html"><![CDATA[<p>大部分Linux发行版配备了OpenSSL工具，可以用来生成自签名SSL证书，如果没有，<code>sudo apt update &amp;&amp; sudo apt install openssl</code><br>生成自签名证书的核心是使用 OpenSSL 的 <code>req</code> 命令。下面是创建一份通用的、可用于 HTTPS 服务器测试的证书的<strong>标准流程</strong>：</p><h3 id="第1步：生成私钥（Private-Key）"><a href="#第1步：生成私钥（Private-Key）" class="headerlink" title="第1步：生成私钥（Private Key）"></a><strong>第1步：生成私钥（Private Key）</strong></h3><p>这是证书安全的基础，必须妥善保管。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl genrsa -out server.key 2048<br></code></pre></td></tr></table></figure><ul><li><code>genrsa</code>: 生成 RSA 密钥对，密钥对里同时包含私钥和能推导出的公钥。</li><li><code>-out server.key</code>: 将密钥对保存到 <code>server.key</code> 文件。</li><li><code>2048</code>: 密钥长度（位），2048 是目前安全与性能兼顾的标准。</li></ul><h3 id="第2步：生成证书签名请求（CSR-Certificate-Signing-Request）"><a href="#第2步：生成证书签名请求（CSR-Certificate-Signing-Request）" class="headerlink" title="第2步：生成证书签名请求（CSR - Certificate Signing Request）"></a><strong>第2步：生成证书签名请求（CSR - Certificate Signing Request）</strong></h3><p>CSR 包含了你的服务器和公司信息，用于向证书颁发机构（CA）申请签名。在自签名中，我们将用它直接生成证书。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl req -new -key server.key -out server.csr -subj <span class="hljs-string">&quot;/C=CN/ST=YourProvince/L=YourCity/O=YourOrganization/CN=your-domain-or-ip&quot;</span><br></code></pre></td></tr></table></figure><ul><li><code>req -new</code>: 创建新的 CSR。</li><li><code>-key server.key</code>: 使用上一步生成的密钥对，这里会自动提取出公钥来加密。</li><li><code>-out server.csr</code>: 输出 CSR 文件。</li><li><code>-subj “/...”</code>: <strong>关键参数！</strong> 用于预填所有信息，避免交互式提问。请替换其中字段：<ul><li><strong><code>C</code></strong>: 国家代码（如 CN 表示中国）。<ul><li><strong><code>ST</code></strong>: 州或省。</li><li><strong><code>L</code></strong>: 城市。</li><li><strong><code>O</code></strong>: 组织名称。</li><li><strong><code>CN</code></strong>: <strong>最重要的字段</strong>，必须填写你打算用此证书访问的<strong>域名或IP地址</strong>（例如 <code>localhost</code>、<code>192.168.1.100</code> 或 <code>example.com</code>）。如果 <code>CN</code> 与实际访问地址不匹配，浏览器会报安全错误。<ul><li>另：如果走反向代理等代理手段，这个IP写最外层的那个公网IP</li></ul></li></ul></li></ul></li></ul><h3 id="第3步：生成自签名证书（CRT，即Certificate的缩写）"><a href="#第3步：生成自签名证书（CRT，即Certificate的缩写）" class="headerlink" title="第3步：生成自签名证书（CRT，即Certificate的缩写）"></a><strong>第3步：生成自签名证书（CRT，即Certificate的缩写）</strong></h3><p>用自己的私钥为自己的 CSR 签名，这样就得到了自签名证书。</p><p>这里要提到一个<strong>签名</strong>的概念，所谓的签名，就是计算被加密内容的文件哈希，然后<strong>用私钥来加密这个哈希</strong>（公钥不能用来做签名，因为RSA密钥的数学性质，私钥能推算出公钥，但是反过来却不能)，并附加到要发送的数据包上，而一般发送的数据包会附带上公钥，用公钥可以对私钥进行解密，获取文件哈希，以此来对比文件是否被修改。</p><p>而这个逻辑依赖公钥不被修改，所以就有了CA用自己的私钥来加密的服务器公钥，作为CRT证书，这样确保公钥不被修改。</p><blockquote><p>比如有中间人截获数据包，用你附带的公钥解密了签名，解密了数据包，拿到了session key，现在想全都换掉，完全没问题，但是他不能换成一个CA发的数字签名（CA攻击那另说），因为客户端会用CA签发方的公钥对数字签名做验证，不通过则浏览器就会提示有风险，做设备绑定数字签名的安全验证就会不通过</p></blockquote><p>不过本文档的操作实际上是自签名，始终用的是服务器自己的密钥对，实际上为</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl x509 -req -days 365 -<span class="hljs-keyword">in</span> server.csr -signkey server.key -out server.crt<br></code></pre></td></tr></table></figure><ul><li><code>x509 -req</code>: 使用 x509 标准处理证书请求。</li><li><code>-days 365</code>: 证书有效期为 365 天。</li><li><code>-in server.csr</code>: 输入 CSR 文件。</li><li><code>-signkey server.key</code>: 使用私钥进行签名。</li><li><code>-out server.crt</code>: 输出最终的证书文件。</li></ul><p><strong>2026-06-26</strong></p><p>然而上述做法已经有点过时了，现在基本上不靠CN来验证身份，而是使用SAN来验证身份了，所以最后一步应该更新为下面的命令:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl x509 -req -<span class="hljs-keyword">in</span> server.csr -signkey server.key \<br>  -out server.crt -days 825 -sha256 \<br>  -extfile &lt;(<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;subjectAltName=IP:YourIP,IP:YourIP\n&quot;</span>)<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>工具与环境</category>
+      
+      <category>网络与SSH</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机网络</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>NeoVim安装与使用</title>
+    <link href="/2025/10/18/NeoVim%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
+    <url>/2025/10/18/NeoVim%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">winget install NeoVim<br></code></pre></td></tr></table></figure><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="离线安装"><a href="#离线安装" class="headerlink" title="离线安装"></a>离线安装</h3><p>直接安装预编译版本</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz<br>sudo rm -rf /opt/nvim-linux-x86_64<br>sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz<br>export PATH=&quot;$PATH:/opt/nvim-linux-x86_64/bin&quot;<br></code></pre></td></tr></table></figure><h3 id="在线安装-1"><a href="#在线安装-1" class="headerlink" title="在线安装"></a>在线安装</h3><p>直接用自带包管理器安装，不过要注意一下安装出来的版本可能会比较老</p><h2 id="配置包"><a href="#配置包" class="headerlink" title="配置包"></a>配置包</h2><h2 id="lazyvim"><a href="#lazyvim" class="headerlink" title="lazyvim"></a>lazyvim</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><h4 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># required</span><br><span class="hljs-built_in">Move-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim.bak<br><span class="hljs-comment"># 如果报错说找不到xxxx\nvim文件夹说明没做过配置</span><br><span class="hljs-comment"># optional but recommended</span><br><span class="hljs-built_in">Move-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<span class="hljs-literal">-data</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<span class="hljs-literal">-data</span>.bak<br>git clone https://github.com/LazyVim/starter <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim<br><span class="hljs-comment"># 记得移除.git文件夹</span><br><span class="hljs-built_in">Remove-Item</span> <span class="hljs-variable">$env:LOCALAPPDATA</span>\nvim\.git <span class="hljs-literal">-Recurse</span> <span class="hljs-literal">-Force</span><br></code></pre></td></tr></table></figure><h4 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># required</span><br><span class="hljs-built_in">mv</span> ~/.config/nvim&#123;,.bak&#125;<br><br><span class="hljs-comment"># optional but recommended</span><br><span class="hljs-built_in">mv</span> ~/.local/share/nvim&#123;,.bak&#125;<br><span class="hljs-built_in">mv</span> ~/.local/state/nvim&#123;,.bak&#125;<br><span class="hljs-built_in">mv</span> ~/.cache/nvim&#123;,.bak&#125;<br><br>git <span class="hljs-built_in">clone</span> https://github.com/LazyVim/starter ~/.config/nvim<br><span class="hljs-built_in">rm</span> -rf ~/.config/nvim/.git<br></code></pre></td></tr></table></figure><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h3 id="键位"><a href="#键位" class="headerlink" title="键位"></a>键位</h3><table><thead><tr><th>快捷键</th><th>功能描述</th></tr></thead><tbody><tr><td>gd</td><td>(Go Definition)跳转到光标所在的内容的定义位置</td></tr><tr><td>gr</td><td>查找所有引用</td></tr><tr><td>gc</td><td>注释&#x2F;解注释选中的代码</td></tr><tr><td><code>&lt;leader&gt; + e</code></td><td>打开&#x2F;关闭 &#96;:Explore文件浏览器</td></tr><tr><td>Explore中 a</td><td>按 <code>a</code>（add），然后输入 <code>文件名/</code> 就是目录，不加 <code>/</code>就是文件</td></tr><tr><td>Explore中 r</td><td>重命名</td></tr><tr><td>Explore中 d</td><td>删除</td></tr><tr><td>dw</td><td>剪切当前整个单词 Background</td></tr><tr><td>dW</td><td>剪切当前整个长标识符 context.Background()</td></tr><tr><td>y</td><td>复制光标所在文件的绝对地址</td></tr><tr><td>yy</td><td>复制当前整行(带空格和换行符)</td></tr><tr><td>y_</td><td>复制当前整行(带空格)</td></tr><tr><td>yw</td><td>复制当前整个单词 Background</td></tr><tr><td>yW</td><td>复制当前整个长标识符 context.Background()</td></tr><tr><td>H</td><td>查看隐藏文件</td></tr><tr><td><code>&lt;leader&gt; + cr</code></td><td>重命名变量&#x2F;方法</td></tr><tr><td><code>&lt;leader&gt; + ca</code></td><td>Code Action，LSP提供的一些小功能，如快速修复什么的</td></tr><tr><td>K</td><td>Hover模式打开光标所在代码的文档（:q退出）</td></tr><tr><td>Alt+j&#x2F;k</td><td>将整行上下移动(Normal&#x2F;Insert&#x2F;Visual 全模式生效)</td></tr><tr><td>Shift + L&#x2F;H</td><td>向右&#x2F;左移动标签页</td></tr><tr><td><code>&lt;leader&gt; + xx</code></td><td>打开报错信息页面</td></tr><tr><td>Ctrl+ww</td><td>光标跳转到另外窗口</td></tr><tr><td>Ctrl+wj&#x2F;wk</td><td>光标跳转到下面&#x2F;上面的窗口</td></tr><tr><td><code>&lt;leader&gt; + bd</code></td><td>关闭光标当前所在窗口</td></tr><tr><td><code>&lt;leader&gt; + /</code></td><td>打开&#x2F;关闭终端下边栏</td></tr><tr><td>V</td><td>整行选择</td></tr></tbody></table><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><h4 id="lang-Markdown"><a href="#lang-Markdown" class="headerlink" title="lang.Markdown"></a>lang.Markdown</h4><ul><li><code>:MarkdownPreview</code> 执行了之后可以打开默认浏览器预览Markdown文档</li><li>默认安装的render-markdown.nvim可以直接渲染Markdown，内置渲染效果</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>工具与环境</category>
+      
+      <category>编辑器与IDE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>NeoVim</tag>
+      
+      <tag>Vim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>简写说明</title>
+    <link href="/2024/10/27/%E7%AE%80%E5%86%99%E8%AF%B4%E6%98%8E/"/>
+    <url>/2024/10/27/%E7%AE%80%E5%86%99%E8%AF%B4%E6%98%8E/</url>
+    
+    <content type="html"><![CDATA[<h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>ALU</td><td>Arithmetic Logic Unit</td><td>算数逻辑单元</td></tr><tr><td>API</td><td>Application Programming Interface</td><td>应用程序编程接口</td></tr><tr><td>APN</td><td>Access Point Name</td><td>接入点名称</td></tr><tr><td>ABI</td><td>Application Binary Interface</td><td>二进制级接口</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>BEP</td><td>Block Exchange Protocol</td><td>区块交换协议</td></tr></tbody></table><h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>CPU</td><td>Central Processing Unit</td><td>中央处理器</td></tr><tr><td>COM</td><td>Communication Port</td><td>串行通信端口</td></tr><tr><td>CRC</td><td>Cyclic Redundancy Check</td><td>循环冗余校验</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>DC</td><td>Device Context</td><td>设备上下文</td></tr><tr><td>DIP</td><td>Device Independent Pixel</td><td>设备无关像素 &#x2F; 逻辑像素</td></tr><tr><td>DIP</td><td>Dependency Inversion Principle</td><td>依赖倒置原则</td></tr><tr><td>DPI</td><td>Dots Per Inch</td><td>每英寸物理点数</td></tr><tr><td>DTO</td><td>Data Transfer Object</td><td>数据传输对象</td></tr></tbody></table><h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>FSM</td><td>Finite State Machine</td><td>有限状态机</td></tr><tr><td>FBD</td><td>Function Block Diagram</td><td>功能块图</td></tr><tr><td>FWIW</td><td>For What Is Worth</td><td>仅供参考</td></tr><tr><td>FFI</td><td>Foreign Function Interface</td><td>外部函数接口</td></tr></tbody></table><h1 id="G"><a href="#G" class="headerlink" title="G"></a>G</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>GPIO</td><td>General Purpose Input&#x2F;Output</td><td>通用输入输出</td></tr><tr><td>GDI</td><td>Graphics Device Interface</td><td>图形设备接口</td></tr></tbody></table><h1 id="H"><a href="#H" class="headerlink" title="H"></a>H</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>HIT</td><td>Harbin Institute Technology</td><td>哈尔滨工业大学</td></tr><tr><td>HWND</td><td>Handle to a window</td><td>窗口句柄</td></tr></tbody></table><h1 id="I"><a href="#I" class="headerlink" title="I"></a>I</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>ICMP</td><td>Internet Control Message Protocol</td><td>互联网消息控制协议</td></tr><tr><td>IoT</td><td>Internet of Things</td><td>物联网</td></tr><tr><td>ISS</td><td>Internal Space Station</td><td>国际空间站</td></tr><tr><td>IL</td><td>Instruction List</td><td>指令表</td></tr><tr><td>ISP</td><td>Internet Service Provider</td><td>互联网服务提供商</td></tr><tr><td>IPC</td><td>Inter-Process Communication</td><td>进程间通信</td></tr><tr><td>IoC</td><td>Inversion of Control</td><td>控制反转</td></tr><tr><td>iSCSI</td><td>Internet Small Computer System Interface</td><td>互联网小型计算机系统接口</td></tr><tr><td>IRC</td><td>Internet Relay Chat</td><td>互联网中继聊天</td></tr></tbody></table><h1 id="J"><a href="#J" class="headerlink" title="J"></a>J</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>JWT</td><td>Json Web Token</td><td>Json网络令牌</td></tr><tr><td>JD</td><td>Job Description</td><td>职位描述</td></tr></tbody></table><h1 id="K"><a href="#K" class="headerlink" title="K"></a>K</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>KLT</td><td>Kernal-Level Thread</td><td>操作系统内核级线程</td></tr></tbody></table><h1 id="L"><a href="#L" class="headerlink" title="L"></a>L</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>LD</td><td>Ladder Diagram</td><td>梯形图</td></tr><tr><td>LVM</td><td>Logical Volume Manager</td><td>逻辑卷管理</td></tr><tr><td>LWT</td><td>Lightweight Thread</td><td>轻量级线程</td></tr></tbody></table><h1 id="M"><a href="#M" class="headerlink" title="M"></a>M</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>MQTT</td><td>Message Queuing Telemetry Transport</td><td>消息队列遥测传输</td></tr><tr><td>MOM</td><td>Minutes Of Meeting</td><td>会议纪要</td></tr><tr><td>MEMS</td><td></td><td></td></tr></tbody></table><h1 id="N"><a href="#N" class="headerlink" title="N"></a>N</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>NIC</td><td>Network Interface Card</td><td>网卡</td></tr></tbody></table><h1 id="O"><a href="#O" class="headerlink" title="O"></a>O</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>OPC</td><td>OLE for Process Control&#x2F;Open Platform Communications</td><td>开放平台通信</td></tr><tr><td>Ops</td><td>Operations &amp; Maintenance</td><td>运维</td></tr><tr><td>ORM</td><td>Object-Reactional Mapping</td><td>对象关系映射</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="P"><a href="#P" class="headerlink" title="P"></a>P</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>PLC</td><td>Programmable Logic Controller</td><td>可编程逻辑控制器</td></tr><tr><td>PAM</td><td>Plugged Authentication Modules</td><td>可插拔认证模块</td></tr><tr><td>PPI</td><td>Pixel Per Inch</td><td>每英寸多少像素点</td></tr></tbody></table><h1 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>QoS</td><td>Quality of Service</td><td>服务质量</td></tr></tbody></table><h1 id="R"><a href="#R" class="headerlink" title="R"></a>R</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>RTU</td><td>Remote Terminal Unit</td><td>远程终端单元</td></tr><tr><td>RAM</td><td>Random Access Memory</td><td>随机存取存储器</td></tr><tr><td>ROM</td><td>Read Only Memory</td><td>只读存储器</td></tr><tr><td>ROS</td><td>Robot Operating System</td><td>机器人操作系统</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="S"><a href="#S" class="headerlink" title="S"></a>S</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>SAN</td><td>Storage Area Network</td><td>存储区域网络</td></tr><tr><td>SSL</td><td>Secure Sockets Layer</td><td>安全套接字层</td></tr><tr><td>SLAM</td><td>Simultaneous Localization and Mapping</td><td>同时定位与建图</td></tr><tr><td>STA</td><td>Single Thread Apartment</td><td>单线程单元</td></tr><tr><td>SWE</td><td>Software Engineer</td><td>软件工程师</td></tr><tr><td>SRE</td><td>Site Reliability Engineering</td><td>网站可靠性工程</td></tr></tbody></table><h1 id="T"><a href="#T" class="headerlink" title="T"></a>T</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>TLS</td><td>Transport Layer Security</td><td>传输层安全</td></tr></tbody></table><h1 id="U"><a href="#U" class="headerlink" title="U"></a>U</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>USB</td><td>Universal Serial Bus</td><td>通用串行总线</td></tr><tr><td>ULT</td><td>User-Level Threads</td><td>用户态线程</td></tr></tbody></table><h1 id="V"><a href="#V" class="headerlink" title="V"></a>V</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>VPN</td><td>Virtual Private Network</td><td>虚拟私人网络</td></tr></tbody></table><h1 id="W"><a href="#W" class="headerlink" title="W"></a>W</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td>WEP</td><td>Wired Equivalent Privacy</td><td>有线等效加密</td></tr><tr><td>WPA</td><td>Wifi Protected Access</td><td>Wi-Fi保护接入</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="X"><a href="#X" class="headerlink" title="X"></a>X</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="Y"><a href="#Y" class="headerlink" title="Y"></a>Y</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h1 id="Z"><a href="#Z" class="headerlink" title="Z"></a>Z</h1><table><thead><tr><th>简写</th><th>全名</th><th>说明</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程通用</category>
+      
+      <category>资源</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>速查</tag>
       
     </tags>
     

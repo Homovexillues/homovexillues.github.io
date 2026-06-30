@@ -19,22 +19,23 @@
   </script>
   <meta name="keywords" content="">
   
-    <meta name="description" content="大部分Linux发行版配备了OpenSSL工具，可以用来生成自签名SSL证书，如果没有，sudo apt update &amp;&amp; sudo apt install openssl生成自签名证书的核心是使用 OpenSSL 的 req 命令。下面是创建一份通用的、可用于 HTTPS 服务器测试的证书的标准流程：第1步：生成私钥（Private Key）这是证书安全的基础，必须妥善保管。">
+    <meta name="description" content="approximate adj.大概的  The approximate time required to complete the tutor is 25-30minutes   execute v.执行  execute command   hint n.暗示，提示  prompt v.(计算机上)提示  shell prompt shell提示   If you have these st">
 <meta property="og:type" content="article">
-<meta property="og:title" content="生成SSL自签名证书">
-<meta property="og:url" content="https://homovexillues.github.io/2026/04/08/%E7%94%9F%E6%88%90SSL%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/index.html">
+<meta property="og:title" content="代码相关英语">
+<meta property="og:url" content="https://homovexillues.github.io/2026/06/24/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E8%8B%B1%E8%AF%AD/index.html">
 <meta property="og:site_name" content="红石门">
-<meta property="og:description" content="大部分Linux发行版配备了OpenSSL工具，可以用来生成自签名SSL证书，如果没有，sudo apt update &amp;&amp; sudo apt install openssl生成自签名证书的核心是使用 OpenSSL 的 req 命令。下面是创建一份通用的、可用于 HTTPS 服务器测试的证书的标准流程：第1步：生成私钥（Private Key）这是证书安全的基础，必须妥善保管。">
+<meta property="og:description" content="approximate adj.大概的  The approximate time required to complete the tutor is 25-30minutes   execute v.执行  execute command   hint n.暗示，提示  prompt v.(计算机上)提示  shell prompt shell提示   If you have these st">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-04-08T03:04:42.097Z">
-<meta property="article:modified_time" content="2026-06-23T09:59:34.095Z">
+<meta property="article:published_time" content="2026-06-24T02:15:55.425Z">
+<meta property="article:modified_time" content="2026-06-29T08:29:45.000Z">
 <meta property="article:author" content="Homo vexillues">
-<meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="单词">
+<meta property="article:tag" content="English">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>生成SSL自签名证书 - 红石门</title>
+  <title>代码相关英语 - 红石门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="生成SSL自签名证书"></span>
+            <span id="subtitle" data-typed-text="代码相关英语"></span>
           
         </div>
 
@@ -215,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-04-08 11:04" pubdate>
-          2026年4月8日 上午
+        <time datetime="2026-06-24 10:15" pubdate>
+          2026年6月24日 上午
         </time>
       </span>
     
@@ -227,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          995 字
+          564 字
         
       </span>
     
@@ -238,7 +239,7 @@
         
         
         
-          9 分钟
+          5 分钟
         
       </span>
     
@@ -275,44 +276,60 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">生成SSL自签名证书</h1>
+            <h1 id="seo-header">代码相关英语</h1>
             
             
               <div class="markdown-body">
                 
-                <p>大部分Linux发行版配备了OpenSSL工具，可以用来生成自签名SSL证书，如果没有，<code>sudo apt update &amp;&amp; sudo apt install openssl</code><br>生成自签名证书的核心是使用 OpenSSL 的 <code>req</code> 命令。下面是创建一份通用的、可用于 HTTPS 服务器测试的证书的<strong>标准流程</strong>：<br><strong>第1步：生成私钥（Private Key）</strong><br>这是证书安全的基础，必须妥善保管。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl genrsa -out server.key 2048<br></code></pre></td></tr></table></figure>
+                <ul>
+<li><p>approximate adj.大概的</p>
 <ul>
-<li><p><code>genrsa</code>: 生成 RSA 私钥。</p>
-</li>
-<li><p><code>-out server.key</code>: 将私钥保存到 <code>server.key</code> 文件。</p>
-</li>
-<li><p><code>2048</code>: 密钥长度（位），2048 是目前安全与性能兼顾的标准。<br><strong>第2步：生成证书签名请求（CSR - Certificate Signing Request）</strong><br>CSR 包含了你的服务器和公司信息，用于向证书颁发机构（CA）申请签名。在自签名中，我们将用它直接生成证书。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl req -new -key server.key -out server.csr -subj <span class="hljs-string">&quot;/C=CN/ST=YourProvince/L=YourCity/O=YourOrganization/CN=your-domain-or-ip&quot;</span><br></code></pre></td></tr></table></figure></li>
-<li><p><code>req -new</code>: 创建新的 CSR。</p>
-</li>
-<li><p><code>-key server.key</code>: 使用上一步生成的私钥。</p>
-</li>
-<li><p><code>-out server.csr</code>: 输出 CSR 文件。</p>
-</li>
-<li><p><code>-subj “/...”</code>: <strong>关键参数！</strong> 用于预填所有信息，避免交互式提问。请替换其中字段：</p>
-<ul>
-<li><strong><code>C</code></strong>: 国家代码（如 CN 表示中国）。</li>
-<li><strong><code>ST</code></strong>: 州或省。</li>
-<li><strong><code>L</code></strong>: 城市。</li>
-<li><strong><code>O</code></strong>: 组织名称。</li>
-<li><strong><code>CN</code></strong>: <strong>最重要的字段</strong>，必须填写你打算用此证书访问的<strong>域名或IP地址</strong>（例如 <code>localhost</code>、<code>192.168.1.100</code> 或 <code>example.com</code>）。如果 <code>CN</code> 与实际访问地址不匹配，浏览器会报安全错误。<br><strong>第3步：生成自签名证书（CRT）</strong><br>用自己的私钥为自己的 CSR 签名，这样就得到了自签名证书。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl x509 -req -days 365 -<span class="hljs-keyword">in</span> server.csr -signkey server.key -out server.crt<br></code></pre></td></tr></table></figure></li>
+<li>The approximate time required to complete the tutor is 25-30minutes</li>
 </ul>
 </li>
-<li><p><code>x509 -req</code>: 使用 x509 标准处理证书请求。</p>
+<li><p>execute v.执行</p>
+<ul>
+<li>execute command</li>
+</ul>
 </li>
-<li><p><code>-days 365</code>: 证书有效期为 365 天。</p>
+<li><p>hint n.暗示，提示</p>
 </li>
-<li><p><code>-in server.csr</code>: 输入 CSR 文件。</p>
+<li><p>prompt v.(计算机上)提示</p>
+<ul>
+<li>shell prompt shell提示</li>
+</ul>
 </li>
-<li><p><code>-signkey server.key</code>: 使用私钥进行签名。</p>
+<li><p>If you have these steps memorized and confident</p>
+<p>如果你已经记住这些步骤并有信心了</p>
 </li>
-<li><p><code>-out server.crt</code>: 输出最终的证书文件。</p>
+<li><p>discard v.弃置，扔掉</p>
+<ul>
+<li><p>XX discards any changes you made</p>
+<p>XX 会取消你对文本所作的任何改动</p>
+</li>
+</ul>
+</li>
+<li><p>combination n.结合体，组合</p>
+</li>
+<li><p>glitch n.小故障，失灵，短时脉冲波干扰</p>
+</li>
+<li><p>daemon n.守护进程，后台程序</p>
+</li>
+<li><p>prior adj.在先的，在前的，先前的，更重要的</p>
+</li>
+<li><p>prefix n.前缀</p>
+</li>
+<li><p>constructor n. 构造函数；构造器；建造者</p>
+</li>
+<li><p>coordinate<br>  v. 协调，配合；使身体协调；（使颜色、款式、风格等）搭配，配套；给 （原子或分子）配位，与……形成共价键<br>  n. 坐标；配套服装；同等级（或类别）的人（或事物）<br>  adj. 地位相当的，同等重要的；（语法）并列的；（化学）配位的</p>
+</li>
+<li><p><strong>formal parameter</strong> 形式参数</p>
+</li>
+<li><p><strong>call function</strong> 调用函数</p>
+</li>
+<li><p>Closure n. 闭包</p>
+</li>
+<li><p>Polymorphism  n. 多态，多晶性，多形性</p>
 </li>
 </ul>
 
@@ -333,12 +350,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/" class="category-chain-item">工具与环境</a>
+  <a href="/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/" class="category-chain-item">生活杂项</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E7%BD%91%E7%BB%9C%E4%B8%8ESSH/" class="category-chain-item">网络与SSH</a>
+  <a href="/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/" class="category-chain-item">英语学习</a>
   
   
 
@@ -355,7 +372,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="print-no-link">#计算机网络</a>
+        <a href="/tags/%E5%8D%95%E8%AF%8D/" class="print-no-link">#单词</a>
+      
+        <a href="/tags/English/" class="print-no-link">#English</a>
       
     </div>
   
@@ -367,8 +386,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>生成SSL自签名证书</div>
-      <div>https://homovexillues.github.io/2026/04/08/生成SSL自签名证书/</div>
+      <div>代码相关英语</div>
+      <div>https://homovexillues.github.io/2026/06/24/代码相关英语/</div>
     </div>
     <div class="license-meta">
       
@@ -380,7 +399,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年4月8日</div>
+          <div>2026年6月24日</div>
         </div>
       
       
@@ -412,9 +431,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/08/%E5%8F%8C%E6%8B%BC%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/" title="双拼输入法配置">
+                      <a href="/2026/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">双拼输入法配置</span>
+                        <span class="hidden-mobile">计算机网络-串口与物理层</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -422,8 +441,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/04/08/SSH%E5%8F%8D%E5%90%91%E9%9A%A7%E9%81%93/" title="SSH反向隧道">
-                        <span class="hidden-mobile">SSH反向隧道</span>
+                      <a href="/2026/06/23/CPU%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99(Intel%E4%B8%8EAMD)/" title="CPU命名规则(Intel与AMD)">
+                        <span class="hidden-mobile">CPU命名规则(Intel与AMD)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
