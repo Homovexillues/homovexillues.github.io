@@ -111,42 +111,48 @@
       top: 0;
       right: 0;
       left: 0;
-      z-index: 20;
+      z-index: 220;
       transition: background-color .2s ease, box-shadow .2s ease;
     }
 
-    body:has(.home-hero):not(.home-hero-scrolled) #header-desktop,
-    body:has(.home-hero):not(.home-hero-scrolled) #header-mobile {
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) #header-desktop,
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) #header-mobile {
       background: transparent;
       box-shadow: none;
     }
 
     body:has(.home-hero).home-hero-scrolled #header-desktop,
-    body:has(.home-hero).home-hero-scrolled #header-mobile {
+    body:has(.home-hero).home-hero-scrolled #header-mobile,
+    body:has(.home-hero).blur #header-desktop,
+    body:has(.home-hero).blur #header-mobile {
       background: #f8f8f8;
     }
 
     [theme=dark] body:has(.home-hero).home-hero-scrolled #header-desktop,
     [theme=dark] body:has(.home-hero).home-hero-scrolled #header-mobile,
+    [theme=dark] body:has(.home-hero).blur #header-desktop,
+    [theme=dark] body:has(.home-hero).blur #header-mobile,
     [data-theme=dark] body:has(.home-hero).home-hero-scrolled #header-desktop,
-    [data-theme=dark] body:has(.home-hero).home-hero-scrolled #header-mobile {
+    [data-theme=dark] body:has(.home-hero).home-hero-scrolled #header-mobile,
+    [data-theme=dark] body:has(.home-hero).blur #header-desktop,
+    [data-theme=dark] body:has(.home-hero).blur #header-mobile {
       background: #252627;
     }
 
-    body:has(.home-hero):not(.home-hero-scrolled) .header-wrapper {
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) .header-wrapper {
       background: transparent;
       box-shadow: none;
       border: 0;
       backdrop-filter: none;
     }
 
-    body:has(.home-hero):not(.home-hero-scrolled) .header-title a,
-    body:has(.home-hero):not(.home-hero-scrolled) .header-title-text,
-    body:has(.home-hero):not(.home-hero-scrolled) .menu-link,
-    body:has(.home-hero):not(.home-hero-scrolled) .menu-item i,
-    body:has(.home-hero):not(.home-hero-scrolled) .theme-switch,
-    body:has(.home-hero):not(.home-hero-scrolled) .search-button,
-    body:has(.home-hero):not(.home-hero-scrolled) #menu-toggle-mobile {
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) .header-title a,
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) .header-title-text,
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) .menu-link,
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) .menu-item i,
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) .theme-switch,
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) .search-button,
+    body:has(.home-hero):not(.home-hero-scrolled):not(.blur) #menu-toggle-mobile {
       color: #fff;
       text-shadow: 0 1px 5px rgba(0, 0, 0, .55);
     }
