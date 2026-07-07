@@ -4,44 +4,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>引擎、库与运行时的区别 - 红石门</title><meta name="author" content="">
-<meta name="description" content="引擎到底是一种什么东西?是一些库吗?还是一些现成的工具?如果是库的话，引擎和运行时有什么区别了? 引擎（Engine）在软件开发领域中通常是指一种能够执行特定任务或处理特定类型数据的核心组件，它可以是一套库（Library）、框架（Framework）或工具（Tool）的集合，具体取决于它的设计目标和实现方式。下面用通俗的语言来区分引擎、库、运行时的概念。
+    <title>目前主流编程语言的初衷是什么？ - 红石门</title><meta name="author" content="">
+<meta name="description" content="C 创造者：丹尼斯·里奇（Dennis Ritchie） 初衷：C语言是在1970年代早期由贝尔实验室的丹尼斯·里奇开发的，目的是为开发UNIX操作系统提供一种高效且灵活的语言。C语言继承了B语言的某些特性，并增加了类型系统以提高编程的安全性和表达能力。 评价：丹尼斯·里奇认为，C语言成功地达到了他的目标，即提供了一种既接近硬件又适合高级程序设计的语言。它的简单性和效率使其成为系统编程和嵌入式编程的主流语言之一。
 "><meta name="keywords" content='问答'>
-	<meta itemprop="name" content="引擎、库与运行时的区别">
-	<meta itemprop="description" content="引擎到底是一种什么东西?是一些库吗?还是一些现成的工具?如果是库的话，引擎和运行时有什么区别了? 引擎（Engine）在软件开发领域中通常是指一种能够执行特定任务或处理特定类型数据的核心组件，它可以是一套库（Library）、框架（Framework）或工具（Tool）的集合，具体取决于它的设计目标和实现方式。下面用通俗的语言来区分引擎、库、运行时的概念。">
-	<meta itemprop="datePublished" content="2026-06-24T03:33:21+08:00">
-	<meta itemprop="dateModified" content="2026-07-07T13:28:48+08:00">
-	<meta itemprop="wordCount" content="1425">
-	<meta itemprop="keywords" content="问答"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB/">
+	<meta itemprop="name" content="目前主流编程语言的初衷是什么？">
+	<meta itemprop="description" content="C 创造者：丹尼斯·里奇（Dennis Ritchie） 初衷：C语言是在1970年代早期由贝尔实验室的丹尼斯·里奇开发的，目的是为开发UNIX操作系统提供一种高效且灵活的语言。C语言继承了B语言的某些特性，并增加了类型系统以提高编程的安全性和表达能力。 评价：丹尼斯·里奇认为，C语言成功地达到了他的目标，即提供了一种既接近硬件又适合高级程序设计的语言。它的简单性和效率使其成为系统编程和嵌入式编程的主流语言之一。">
+	<meta itemprop="datePublished" content="2026-07-07T14:11:58+08:00">
+	<meta itemprop="dateModified" content="2026-07-07T14:21:03+08:00">
+	<meta itemprop="wordCount" content="1636">
+	<meta itemprop="keywords" content="问答"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%9B%AE%E5%89%8D%E4%B8%BB%E6%B5%81%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E4%BB%80%E4%B9%88/">
 	<meta property="og:site_name" content="红石门">
-	<meta property="og:title" content="引擎、库与运行时的区别">
-	<meta property="og:description" content="引擎到底是一种什么东西?是一些库吗?还是一些现成的工具?如果是库的话，引擎和运行时有什么区别了? 引擎（Engine）在软件开发领域中通常是指一种能够执行特定任务或处理特定类型数据的核心组件，它可以是一套库（Library）、框架（Framework）或工具（Tool）的集合，具体取决于它的设计目标和实现方式。下面用通俗的语言来区分引擎、库、运行时的概念。">
+	<meta property="og:title" content="目前主流编程语言的初衷是什么？">
+	<meta property="og:description" content="C 创造者：丹尼斯·里奇（Dennis Ritchie） 初衷：C语言是在1970年代早期由贝尔实验室的丹尼斯·里奇开发的，目的是为开发UNIX操作系统提供一种高效且灵活的语言。C语言继承了B语言的某些特性，并增加了类型系统以提高编程的安全性和表达能力。 评价：丹尼斯·里奇认为，C语言成功地达到了他的目标，即提供了一种既接近硬件又适合高级程序设计的语言。它的简单性和效率使其成为系统编程和嵌入式编程的主流语言之一。">
 	<meta property="og:locale" content="zh_CN">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="编程通用">
-		<meta property="article:published_time" content="2026-06-24T03:33:21+08:00">
-		<meta property="article:modified_time" content="2026-07-07T13:28:48+08:00">
+		<meta property="article:published_time" content="2026-07-07T14:11:58+08:00">
+		<meta property="article:modified_time" content="2026-07-07T14:21:03+08:00">
 		<meta property="article:tag" content="问答">
 
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="引擎、库与运行时的区别">
-	<meta name="twitter:description" content="引擎到底是一种什么东西?是一些库吗?还是一些现成的工具?如果是库的话，引擎和运行时有什么区别了? 引擎（Engine）在软件开发领域中通常是指一种能够执行特定任务或处理特定类型数据的核心组件，它可以是一套库（Library）、框架（Framework）或工具（Tool）的集合，具体取决于它的设计目标和实现方式。下面用通俗的语言来区分引擎、库、运行时的概念。">
+	<meta name="twitter:title" content="目前主流编程语言的初衷是什么？">
+	<meta name="twitter:description" content="C 创造者：丹尼斯·里奇（Dennis Ritchie） 初衷：C语言是在1970年代早期由贝尔实验室的丹尼斯·里奇开发的，目的是为开发UNIX操作系统提供一种高效且灵活的语言。C语言继承了B语言的某些特性，并增加了类型系统以提高编程的安全性和表达能力。 评价：丹尼斯·里奇认为，C语言成功地达到了他的目标，即提供了一种既接近硬件又适合高级程序设计的语言。它的简单性和效率使其成为系统编程和嵌入式编程的主流语言之一。">
 <meta name="application-name" content="Hugo FixIt Lite">
 <meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB/" title="引擎、库与运行时的区别 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/%E6%B3%9B%E5%9E%8B%E7%9A%84%E6%9C%AC%E8%B4%A8%E4%B8%8E%E5%AE%9E%E7%8E%B0/" title="泛型的本质与实现" /><link rel="next" type="text/html" href="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%86%E7%B1%BB/" title="虚拟化与虚拟机的分类" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%9B%AE%E5%89%8D%E4%B8%BB%E6%B5%81%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E4%BB%80%E4%B9%88/" title="目前主流编程语言的初衷是什么？ - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%8D%9A%E5%AE%A2/hexo%E5%8D%9A%E5%AE%A2%E8%BD%AC%E5%90%91hugo%E8%AE%B0%E5%BD%95/" title="hexo博客转向hugo记录" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "引擎、库与运行时的区别",
+    "headline": "目前主流编程语言的初衷是什么？",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB\/"
-    },"genre": "编程通用","keywords": "问答","wordcount":  1425 ,
-    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB\/","datePublished": "2026-06-24T03:33:21+08:00","dateModified": "2026-07-07T13:28:48+08:00","publisher": {
+      "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E7%9B%AE%E5%89%8D%E4%B8%BB%E6%B5%81%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E4%BB%80%E4%B9%88\/"
+    },"genre": "编程通用","keywords": "问答","wordcount":  1636 ,
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E7%9B%AE%E5%89%8D%E4%B8%BB%E6%B5%81%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E4%BB%80%E4%B9%88\/","datePublished": "2026-07-07T14:11:58+08:00","dateModified": "2026-07-07T14:21:03+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -119,7 +119,7 @@
         <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
       <div class="details-content related-content">
         <ul class="related-list"><li class="related-item">
-              <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%9B%AE%E5%89%8D%E4%B8%BB%E6%B5%81%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E4%BB%80%E4%B9%88/" title="目前主流编程语言的初衷是什么？">目前主流编程语言的初衷是什么？</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB/" title="引擎、库与运行时的区别">引擎、库与运行时的区别</a></li><li class="related-item">
               <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E9%97%AE%E7%AD%94/" title="编程概念问答">编程概念问答</a></li><li class="related-item">
               <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/" title="软件工程实践问答">软件工程实践问答</a></li><li class="related-item">
               <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/" title="C# 问答补遗">C# 问答补遗</a></li><li class="related-item">
@@ -128,10 +128,10 @@
     </div></aside>
 
   <article class="page single special">
-    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">引擎、库与运行时的区别</h1><div class="post-meta"><div class="post-meta-line">
-              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/">编程通用</a> / <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/">原理</a></span>
-            </div><div class="post-meta-line"><span title="创建时间：2026-06-24 03:33:21 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-06-24">2026-06-24</time></span>&nbsp;<span title="最后修改：2026-07-07 13:28:48 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-07">2026-07-07</time></span>&nbsp;<span title="1425 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 1500 字</span>&nbsp;
-          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 3 分钟</span>
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">目前主流编程语言的初衷是什么？</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/">编程通用</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-07-07 14:11:58 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-07-07">2026-07-07</time></span>&nbsp;<span title="最后修改：2026-07-07 14:21:03 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-07">2026-07-07</time></span>&nbsp;<span title="1636 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 1700 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 4 分钟</span>
         </div><div class="post-meta-line post-tag-list">
               <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E9%97%AE%E7%AD%94/">问答</a></span>
             </div></div>
@@ -142,141 +142,69 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#引擎到底是一种什么东西是一些库吗还是一些现成的工具如果是库的话引擎和运行时有什么区别了">引擎到底是一种什么东西?是一些库吗?还是一些现成的工具?如果是库的话，引擎和运行时有什么区别了?</a>
-      <ul>
-        <li><a href="#1-引擎是什么"><strong>1. 引擎是什么？</strong></a></li>
-        <li><a href="#2-引擎和库library的区别"><strong>2. 引擎和库（Library）的区别</strong></a></li>
-        <li><a href="#3-引擎和运行时runtime的区别"><strong>3. 引擎和运行时（Runtime）的区别</strong></a></li>
-        <li><a href="#总结"><strong>总结</strong></a></li>
-      </ul>
-    </li>
+    <li><a href="#c">C</a></li>
+    <li><a href="#java">Java</a></li>
+    <li><a href="#python">Python</a></li>
+    <li><a href="#javascript">JavaScript</a></li>
+    <li><a href="#c-1">C++</a></li>
+    <li><a href="#ruby">Ruby</a></li>
+    <li><a href="#swift">Swift</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><h2 class="heading-element" id="引擎到底是一种什么东西是一些库吗还是一些现成的工具如果是库的话引擎和运行时有什么区别了"><span>引擎到底是一种什么东西?是一些库吗?还是一些现成的工具?如果是库的话，引擎和运行时有什么区别了?</span>
-  <a href="#%e5%bc%95%e6%93%8e%e5%88%b0%e5%ba%95%e6%98%af%e4%b8%80%e7%a7%8d%e4%bb%80%e4%b9%88%e4%b8%9c%e8%a5%bf%e6%98%af%e4%b8%80%e4%ba%9b%e5%ba%93%e5%90%97%e8%bf%98%e6%98%af%e4%b8%80%e4%ba%9b%e7%8e%b0%e6%88%90%e7%9a%84%e5%b7%a5%e5%85%b7%e5%a6%82%e6%9e%9c%e6%98%af%e5%ba%93%e7%9a%84%e8%af%9d%e5%bc%95%e6%93%8e%e5%92%8c%e8%bf%90%e8%a1%8c%e6%97%b6%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab%e4%ba%86" class="heading-mark">
+      </div><div class="content" id="content"><h2 class="heading-element" id="c"><span>C</span>
+  <a href="#c" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><p>引擎（Engine）在软件开发领域中通常是指一种能够执行特定任务或处理特定类型数据的核心组件，它可以是一套库（Library）、框架（Framework）或工具（Tool）的集合，具体取决于它的设计目标和实现方式。下面用通俗的语言来区分引擎、库、运行时的概念。</p>
-<hr>
-<hr>
-<h3 class="heading-element" id="1-引擎是什么"><span><strong>1. 引擎是什么？</strong></span>
-  <a href="#1-%e5%bc%95%e6%93%8e%e6%98%af%e4%bb%80%e4%b9%88" class="heading-mark">
+</h2><p><strong>创造者</strong>：丹尼斯·里奇（Dennis Ritchie）
+<strong>初衷</strong>：C语言是在1970年代早期由贝尔实验室的丹尼斯·里奇开发的，目的是为开发UNIX操作系统提供一种高效且灵活的语言。C语言继承了B语言的某些特性，并增加了类型系统以提高编程的安全性和表达能力。
+<strong>评价</strong>：丹尼斯·里奇认为，C语言成功地达到了他的目标，即提供了一种既接近硬件又适合高级程序设计的语言。它的简单性和效率使其成为系统编程和嵌入式编程的主流语言之一。</p>
+<h2 class="heading-element" id="java"><span>Java</span>
+  <a href="#java" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><p>引擎是一种更“高层次”的概念，它是为了解决特定问题而提供的一个综合性核心组件，通常是预先设计好并高度集成的一整套功能或模块。以下是一些常见类型的引擎：</p>
-<ul>
-<li><strong>游戏引擎（Game Engine）</strong>： 提供渲染、物理计算、音效处理、AI、脚本等功能，如 Unity、Unreal Engine。</li>
-<li><strong>图形引擎（Graphics Engine）</strong>： 专注于图像或视频渲染，比如 OpenGL、DirectX。</li>
-<li><strong>物理引擎（Physics Engine）</strong>： 模拟现实世界中的物理行为，如 Box2D、PhysX。</li>
-<li><strong>搜索引擎（Search Engine）</strong>： 用于索引和快速检索信息，如 Elasticsearch、Google。</li>
-</ul>
-<p>引擎通常具有以下特性：</p>
-<ol>
-<li><strong>综合性</strong>：它往往不局限于单一功能，而是整合了多种相关功能模块。</li>
-<li><strong>可扩展性</strong>：用户可以在引擎的基础上进行自定义开发。</li>
-<li><strong>抽象层</strong>：引擎隐藏了底层实现细节，开发者直接调用接口即可完成复杂任务。</li>
-</ol>
-<hr>
-<hr>
-<h3 class="heading-element" id="2-引擎和库library的区别"><span><strong>2. 引擎和库（Library）的区别</strong></span>
-  <a href="#2-%e5%bc%95%e6%93%8e%e5%92%8c%e5%ba%93library%e7%9a%84%e5%8c%ba%e5%88%ab" class="heading-mark">
+</h2><p><strong>创造者</strong>：詹姆斯·高斯林（James Gosling）
+<strong>初衷</strong>：Java语言最初于1990年代初在Sun Microsystems开发，目标是创建一种跨平台的编程语言，能够在不同的设备和操作系统上运行。Java的设计哲学是“写一次，运行到处”（Write Once, Run Anywhere），并且注重安全性和稳定性。
+<strong>评价</strong>：詹姆斯·高斯林对Java的评价是，它成功地实现了跨平台的目标，并成为了互联网时代的关键编程语言之一。尽管随着时间推移，Java面临了一些新的挑战和竞争，但其核心理念和影响力依然强大。</p>
+<h2 class="heading-element" id="python"><span>Python</span>
+  <a href="#python" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><ul>
-<li>
-<p>**库（Library）**是一组预定义的函数、类、工具的集合，用来简化特定功能的实现，比如 JSON 解析库、数学计算库等。</p>
-<ul>
-<li>
-<p>特点</p>
-<p>：</p>
-<ul>
-<li>单一性：通常是为了解决某一类问题（如文件操作、数据分析）。</li>
-<li>被动性：需要开发者显式调用。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>**引擎（Engine）**则是更完整的系统，可能内含多个库，但比单纯的库功能更多、更复杂。</p>
-<ul>
-<li>
-<p>特点</p>
-<p>：</p>
-<ul>
-<li>高度集成：涵盖多个功能模块，提供“一站式”解决方案。</li>
-<li>主动性：通常提供一个运行机制（Loop 或事件驱动），开发者配置好后可以自动运行。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>例子</strong>：</p>
-<ul>
-<li>JSON 库是一种库，只提供 JSON 解析或生成功能。</li>
-<li>游戏引擎可能包含多个库（如渲染、物理计算），并在此基础上提供完整的游戏开发工作流。</li>
-</ul>
-<hr>
-<hr>
-<h3 class="heading-element" id="3-引擎和运行时runtime的区别"><span><strong>3. 引擎和运行时（Runtime）的区别</strong></span>
-  <a href="#3-%e5%bc%95%e6%93%8e%e5%92%8c%e8%bf%90%e8%a1%8c%e6%97%b6runtime%e7%9a%84%e5%8c%ba%e5%88%ab" class="heading-mark">
+</h2><p><strong>创造者</strong>：吉多·范罗苏姆（Guido van Rossum）
+<strong>初衷</strong>：Python语言于1980年代末至1990年代初由吉多·范罗苏姆开发，目的是创建一种易于阅读和使用的编程语言，能够帮助程序员快速开发和调试代码。Python强调简洁和可读性，力求减少程序员的认知负担。
+<strong>评价</strong>：吉多·范罗苏姆对Python的发展表示满意，他认为Python在保持简单和易用的同时，已经发展成为一个功能强大的语言，广泛应用于数据科学、人工智能、Web开发等领域。</p>
+<h2 class="heading-element" id="javascript"><span>JavaScript</span>
+  <a href="#javascript" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><ul>
-<li>
-<p>**运行时（Runtime）**是指程序运行期间提供支持的软件层，通常与语言或平台相关。</p>
-<ul>
-<li>
-<p>特点</p>
-<p>：</p>
-<ul>
-<li>管理程序的执行：包括内存分配、垃圾回收、线程调度等。</li>
-<li>依赖平台：运行时与底层硬件或操作系统紧密结合。</li>
-<li>非开发工具：它不直接提供开发者使用的接口，而是运行时的功能由编译器、框架等间接调用。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>引擎和运行时的主要区别在于：</strong></p>
-<ol>
-<li>
-<p>目标不同</p>
-<p>：</p>
-<ul>
-<li>引擎关注“功能实现”，比如游戏中的渲染和物理。</li>
-<li>运行时关注“执行支持”，确保程序能够被操作系统和硬件正确运行。</li>
-</ul>
-</li>
-<li>
-<p>开发者交互</p>
-<p>：</p>
-<ul>
-<li>引擎直接提供 API 接口给开发者使用。</li>
-<li>运行时通常是透明的，用户无需直接与之交互。</li>
-</ul>
-</li>
-</ol>
-<p><strong>例子</strong>：</p>
-<ul>
-<li>.NET 的运行时是 CLR（Common Language Runtime），管理 .NET 程序的执行。</li>
-<li>Unity 引擎基于 Mono 或 IL2CPP 运行时，这些运行时支持 Unity 脚本的执行。</li>
-</ul>
-<hr>
-<hr>
-<h3 class="heading-element" id="总结"><span><strong>总结</strong></span>
-  <a href="#%e6%80%bb%e7%bb%93" class="heading-mark">
+</h2><p><strong>创造者</strong>：布兰登·艾克（Brendan Eich）
+<strong>初衷</strong>：JavaScript于1995年由布兰登·艾克在Netscape公司开发，目标是为Web浏览器添加一种轻量级的脚本语言，以便于处理用户交互和动态内容。JavaScript的设计注重简便和灵活性。
+<strong>评价</strong>：布兰登·艾克认为，尽管JavaScript起初面临许多批评和挑战，但它已经成长为一种重要的编程语言，推动了Web技术的发展。如今，JavaScript不仅在客户端编程中占据主导地位，还扩展到了服务器端（如Node.js）。</p>
+<h2 class="heading-element" id="c-1"><span>C++</span>
+  <a href="#c-1" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><ul>
-<li><strong>库</strong>是工具箱，提供独立功能的模块，开发者按需调用。</li>
-<li><strong>引擎</strong>是一个高度模块化、功能集成的核心组件，其开放接口让开发者可以自由调用其功能或进行扩展。因此，<strong>引擎本质上可以被视为一个开放接口的软件，它是开发工具与底层实现之间的桥梁，极大地提高了开发效率和灵活性</strong>。。</li>
-<li><strong>运行时</strong>是程序的“运行支撑层”，负责管理程序与硬件/操作系统的交互。</li>
-</ul>
-<p>引擎本身可能包含运行时（如游戏引擎带有脚本运行时）和多个库，它是开发者与底层技术之间的桥梁，用于快速构建复杂的系统或应用。</p>
+</h2><p><strong>创造者</strong>：比雅尼·斯特劳斯特鲁普（Bjarne Stroustrup）
+<strong>初衷</strong>：C++是在1980年代由比雅尼·斯特劳斯特鲁普开发的，目的是在C语言的基础上增加面向对象编程的特性，从而提高程序的模块化和可维护性。C++兼顾了系统编程的效率和高级程序设计的灵活性。
+<strong>评价</strong>：比雅尼·斯特劳斯特鲁普认为，C++成功地达到了他的设计目标，并且在工业界和学术界得到了广泛应用。他对C++的演变和持续发展表示欣慰，并认为它在现代软件开发中仍然具有重要地位。</p>
+<h2 class="heading-element" id="ruby"><span>Ruby</span>
+  <a href="#ruby" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><strong>创造者</strong>：松本行弘（Yukihiro &ldquo;Matz&rdquo; Matsumoto）
+<strong>初衷</strong>：Ruby语言于1990年代中期由松本行弘开发，目标是创建一种简洁且强大的编程语言，使程序员在编程时感到愉悦和高效。Ruby融合了多种编程范式，强调优雅和简便。
+<strong>评价</strong>：松本行弘对Ruby的成功感到高兴，尤其是在Web开发领域（如Ruby on Rails的影响）。他认为Ruby实现了他当初的设计理念，让编程变得更有乐趣和创造性。</p>
+<h2 class="heading-element" id="swift"><span>Swift</span>
+  <a href="#swift" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><strong>创造者</strong>：克里斯·拉特纳（Chris Lattner）
+<strong>初衷</strong>：Swift语言由克里斯·拉特纳在苹果公司主导开发，发布于2014年，目的是取代Objective-C，提供一种现代、安全、快速的编程语言，适用于iOS和macOS应用开发。Swift结合了现代编程语言的最佳特性，注重安全性和性能。
+<strong>评价</strong>：克里斯·拉特纳对Swift的评价非常正面，他认为Swift在简化开发过程、提高代码安全性和执行性能方面表现出色。Swift的快速普及和广泛应用表明它达到了预期的目标。</p>
+<p>这些编程语言的创造者普遍认为，他们的语言在实现最初的设计目标方面取得了成功，并且在各自的应用领域内产生了深远的影响。尽管随着时间的推移，每种语言都面临新的挑战和竞争，但其核心理念和影响力依然显著。</p>
 </div><hr class="awesome-hr" />
     <h2 id="see-also">相关内容</h2>
     <ul><li>
-          <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%9B%AE%E5%89%8D%E4%B8%BB%E6%B5%81%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E4%BB%80%E4%B9%88/" title="目前主流编程语言的初衷是什么？">目前主流编程语言的初衷是什么？</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB/" title="引擎、库与运行时的区别">引擎、库与运行时的区别</a></li><li>
           <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E9%97%AE%E7%AD%94/" title="编程概念问答">编程概念问答</a></li><li>
           <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/" title="软件工程实践问答">软件工程实践问答</a></li><li>
           <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/" title="C# 问答补遗">C# 问答补遗</a></li><li>
@@ -288,14 +216,13 @@
         <h2 class="toc-title">目录</h2>
         <div class="toc-content" id="toc-content-drawer"><nav >
   <ul>
-    <li><a href="#引擎到底是一种什么东西是一些库吗还是一些现成的工具如果是库的话引擎和运行时有什么区别了">引擎到底是一种什么东西?是一些库吗?还是一些现成的工具?如果是库的话，引擎和运行时有什么区别了?</a>
-      <ul>
-        <li><a href="#1-引擎是什么"><strong>1. 引擎是什么？</strong></a></li>
-        <li><a href="#2-引擎和库library的区别"><strong>2. 引擎和库（Library）的区别</strong></a></li>
-        <li><a href="#3-引擎和运行时runtime的区别"><strong>3. 引擎和运行时（Runtime）的区别</strong></a></li>
-        <li><a href="#总结"><strong>总结</strong></a></li>
-      </ul>
-    </li>
+    <li><a href="#c">C</a></li>
+    <li><a href="#java">Java</a></li>
+    <li><a href="#python">Python</a></li>
+    <li><a href="#javascript">JavaScript</a></li>
+    <li><a href="#c-1">C++</a></li>
+    <li><a href="#ruby">Ruby</a></li>
+    <li><a href="#swift">Swift</a></li>
   </ul>
 </nav></div>
       </div>
@@ -305,5 +232,5 @@
   </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/ff099bf5620a72631b9187c7d48c205e.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/00df7b0302c5a0287b08178d7299141f.js" defer></script><script src="/js/theme.min.js" defer></script></body>
 </html>
