@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K8S - 标签 - 红石门</title>
+    <link>http://localhost:1313/tags/k8s/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:23:31 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes(K8S)相关问题</title>
+      <link>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%AE%B9%E5%99%A8/kubernetesk8s%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 22 Nov 2025 12:56:37 +0800</pubDate>
+      <guid>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%AE%B9%E5%99%A8/kubernetesk8s%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</guid>
+      <category domain="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83---%E5%AE%B9%E5%99%A8/">工具与环境 - 容器</category>
+      <description>&lt;p&gt;本视频笔记及图片来自&lt;a href=&#34;https://www.bilibili.com/video/BV1Du4m137pK/?spm_id_from=333.1387.collection.video_card.click&amp;amp;vd_source=4232358e8919921a1c230128d2e71794&#34; target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;k8s是什么？Kubernetes是什么？架构是怎么样的？6分钟快速入门_哔哩哔哩_bilibili&lt;/a&gt;&#xA;K8S会将服务器分为两部分，&lt;strong&gt;控制平面(Control Plane)&lt;/strong&gt; 和&lt;strong&gt;节点(Node)&lt;/strong&gt;,控制平面管理各个Node，而Node运行各个服务&#xA;就像是Nginx里的Master和Worker，是一种非常经典的主从架构&#xA;&lt;img loading=&#34;lazy&#34; src=&#39;http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%AE%B9%E5%99%A8/kubernetesk8s%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/images/Kubernetes%28K8S%29%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/Pasted-image-20251122211723.png&#39; alt=&#34;/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%AE%B9%E5%99%A8/kubernetesk8s%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/images/Kubernetes%28K8S%29%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/Pasted-image-20251122211723.png&#34; height=&#34;62&#34; width=&#34;632&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

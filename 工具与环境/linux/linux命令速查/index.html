@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Linux命令速查 - 红石门</title><meta name="author" content="">
+<meta name="description" content="关机/重启/注销
+常用命令 作用 shutdown -h now 即刻关机 shutdown -h 10 10分钟后关机 shutdown -h 11:00 11：00关机 shutdown -h &#43;10 预定时间关机（10分钟后） shutdown -c 取消指定时间关机 shutdown -r now 重启 shutdown -r 10 10分钟之后重启 shutdown -r 11:00 定时重启 reboot 重启 init 6 重启 init 0 ⽴刻关机 telinit 0 关机 poweroff ⽴刻关机 halt 关机 sync buff数据同步到磁盘 logout 退出登录Shell 系统信息和性能查看
+"><meta name="keywords" content='Linux, 速查'>
+	<meta itemprop="name" content="Linux命令速查">
+	<meta itemprop="description" content="关机/重启/注销
+常用命令 作用 shutdown -h now 即刻关机 shutdown -h 10 10分钟后关机 shutdown -h 11:00 11：00关机 shutdown -h &#43;10 预定时间关机（10分钟后） shutdown -c 取消指定时间关机 shutdown -r now 重启 shutdown -r 10 10分钟之后重启 shutdown -r 11:00 定时重启 reboot 重启 init 6 重启 init 0 ⽴刻关机 telinit 0 关机 poweroff ⽴刻关机 halt 关机 sync buff数据同步到磁盘 logout 退出登录Shell 系统信息和性能查看">
+	<meta itemprop="datePublished" content="2024-11-02T20:09:48+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:31+08:00">
+	<meta itemprop="wordCount" content="3499">
+	<meta itemprop="keywords" content="Linux,速查"><meta property="og:url" content="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/linux%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="Linux命令速查">
+	<meta property="og:description" content="关机/重启/注销
+常用命令 作用 shutdown -h now 即刻关机 shutdown -h 10 10分钟后关机 shutdown -h 11:00 11：00关机 shutdown -h &#43;10 预定时间关机（10分钟后） shutdown -c 取消指定时间关机 shutdown -r now 重启 shutdown -r 10 10分钟之后重启 shutdown -r 11:00 定时重启 reboot 重启 init 6 重启 init 0 ⽴刻关机 telinit 0 关机 poweroff ⽴刻关机 halt 关机 sync buff数据同步到磁盘 logout 退出登录Shell 系统信息和性能查看">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="工具与环境">
+		<meta property="article:published_time" content="2024-11-02T20:09:48+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:31+08:00">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="速查">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Linux命令速查">
+	<meta name="twitter:description" content="关机/重启/注销
+常用命令 作用 shutdown -h now 即刻关机 shutdown -h 10 10分钟后关机 shutdown -h 11:00 11：00关机 shutdown -h &#43;10 预定时间关机（10分钟后） shutdown -c 取消指定时间关机 shutdown -r now 重启 shutdown -r 10 10分钟之后重启 shutdown -r 11:00 定时重启 reboot 重启 init 6 重启 init 0 ⽴刻关机 telinit 0 关机 poweroff ⽴刻关机 halt 关机 sync buff数据同步到磁盘 logout 退出登录Shell 系统信息和性能查看">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/linux%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" title="Linux命令速查 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9/" title="计算机网络零碎知识点" /><link rel="next" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E6%9D%82%E8%B0%88/gpt4o%E9%97%AE%E7%AD%94-%E7%BC%96%E7%A8%8B%E7%AF%87/" title="GPT4o问答-编程篇" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Linux命令速查",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/linux\/linux%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5\/"
+    },"genre": "工具与环境","keywords": "Linux, 速查","wordcount":  3499 ,
+    "url": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/linux\/linux%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5\/","datePublished": "2024-11-02T20:09:48+08:00","dateModified": "2026-07-06T17:23:31+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/arch-linux%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/" title="Arch Linux 安装过程记录">Arch Linux 安装过程记录</a></li><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/systemd%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/" title="Systemd服务配置">Systemd服务配置</a></li><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/wsl%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" title="WSL安装及配置">WSL安装及配置</a></li><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85code-server/" title="Linux服务器安装code-Server">Linux服务器安装code-Server</a></li><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter%E6%9C%8D%E5%8A%A1/" title="Linux服务器安装Jupyter服务">Linux服务器安装Jupyter服务</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Linux命令速查</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/">工具与环境</a> / <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/">Linux</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2024-11-02 20:09:48 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2024-11-02">2024-11-02</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:31 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="3499 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 3500 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 7 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/linux/">Linux</a> / <a href="/tags/%E9%80%9F%E6%9F%A5/">速查</a></span>
+            </div></div>
+    </div><div class="content" id="content"><p><strong>关机/重启/注销</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>shutdown -h now</td>
+            <td>即刻关机</td>
+        </tr>
+        <tr>
+            <td>shutdown -h 10</td>
+            <td>10分钟后关机</td>
+        </tr>
+        <tr>
+            <td>shutdown -h 11:00</td>
+            <td>11：00关机</td>
+        </tr>
+        <tr>
+            <td>shutdown -h +10</td>
+            <td>预定时间关机（10分钟后）</td>
+        </tr>
+        <tr>
+            <td>shutdown -c</td>
+            <td>取消指定时间关机</td>
+        </tr>
+        <tr>
+            <td>shutdown -r now</td>
+            <td>重启</td>
+        </tr>
+        <tr>
+            <td>shutdown -r 10</td>
+            <td>10分钟之后重启</td>
+        </tr>
+        <tr>
+            <td>shutdown -r 11:00</td>
+            <td>定时重启</td>
+        </tr>
+        <tr>
+            <td>reboot</td>
+            <td>重启</td>
+        </tr>
+        <tr>
+            <td>init 6</td>
+            <td>重启</td>
+        </tr>
+        <tr>
+            <td>init 0</td>
+            <td>⽴刻关机</td>
+        </tr>
+        <tr>
+            <td>telinit 0</td>
+            <td>关机</td>
+        </tr>
+        <tr>
+            <td>poweroff</td>
+            <td>⽴刻关机</td>
+        </tr>
+        <tr>
+            <td>halt</td>
+            <td>关机</td>
+        </tr>
+        <tr>
+            <td>sync</td>
+            <td>buff数据同步到磁盘</td>
+        </tr>
+        <tr>
+            <td>logout</td>
+            <td>退出登录Shell</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>系统信息和性能查看</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>uname -a</td>
+            <td>查看内核/OS/CPU信息</td>
+        </tr>
+        <tr>
+            <td>uname -r</td>
+            <td>查看内核版本</td>
+        </tr>
+        <tr>
+            <td>uname -m</td>
+            <td>查看处理器架构</td>
+        </tr>
+        <tr>
+            <td>arch</td>
+            <td>查看处理器架构</td>
+        </tr>
+        <tr>
+            <td>hostname</td>
+            <td>查看计算机名</td>
+        </tr>
+        <tr>
+            <td>who</td>
+            <td>显示当前登录系统的⽤户</td>
+        </tr>
+        <tr>
+            <td>who am i</td>
+            <td>显示登录时的⽤户名</td>
+        </tr>
+        <tr>
+            <td>whoami</td>
+            <td>显示当前⽤户名</td>
+        </tr>
+        <tr>
+            <td>cat /proc/version</td>
+            <td>查看linux版本信息</td>
+        </tr>
+        <tr>
+            <td>cat /proc/cpuinfo</td>
+            <td>查看CPU信息</td>
+        </tr>
+        <tr>
+            <td>cat /proc/interrupts</td>
+            <td>查看中断</td>
+        </tr>
+        <tr>
+            <td>cat /proc/loadavg</td>
+            <td>查看系统负载</td>
+        </tr>
+        <tr>
+            <td>uptime</td>
+            <td>查看系统运⾏时间、⽤户数、负载</td>
+        </tr>
+        <tr>
+            <td>env</td>
+            <td>查看系统的环境变量</td>
+        </tr>
+        <tr>
+            <td>lsusb -tv</td>
+            <td>查看系统USB设备信息</td>
+        </tr>
+        <tr>
+            <td>lspci -tv</td>
+            <td>查看系统PCI设备信息</td>
+        </tr>
+        <tr>
+            <td>lsmod</td>
+            <td>查看已加载的系统模块</td>
+        </tr>
+        <tr>
+            <td>grep MemTotal /proc/meminfo</td>
+            <td>查看内存总量</td>
+        </tr>
+        <tr>
+            <td>grep MemFree /proc/meminfo</td>
+            <td>查看空闲内存量</td>
+        </tr>
+        <tr>
+            <td>free -m</td>
+            <td>查看内存⽤量和交换区⽤量</td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>显示系统⽇期时间</td>
+        </tr>
+        <tr>
+            <td>cal 2021</td>
+            <td>显示2021⽇历表</td>
+        </tr>
+        <tr>
+            <td>top</td>
+            <td>动态显示cpu/内存/进程等情况</td>
+        </tr>
+        <tr>
+            <td>vmstat 1 20</td>
+            <td>每1秒采⼀次系统状态，采20次</td>
+        </tr>
+        <tr>
+            <td>iostat</td>
+            <td>查看io读写/cpu使⽤情况</td>
+        </tr>
+        <tr>
+            <td>查看io读写/cpu使⽤情况</td>
+            <td>查询cpu使⽤情况（1秒⼀次，共10次）</td>
+        </tr>
+        <tr>
+            <td>sar -d 1 10</td>
+            <td>查询磁盘性能</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>磁盘和分区</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>fdisk -l</td>
+            <td>查看所有磁盘分区</td>
+        </tr>
+        <tr>
+            <td>swapon -s</td>
+            <td>查看所有交换分区</td>
+        </tr>
+        <tr>
+            <td>df -h</td>
+            <td>查看磁盘使⽤情况及挂载点</td>
+        </tr>
+        <tr>
+            <td>df -hl</td>
+            <td>同上</td>
+        </tr>
+        <tr>
+            <td>du -sh /dir</td>
+            <td>查看指定某个⽬录的⼤⼩</td>
+        </tr>
+        <tr>
+            <td>du -sk * | sort -rn</td>
+            <td>从⾼到低依次显示⽂件和⽬录⼤⼩</td>
+        </tr>
+        <tr>
+            <td>mount /dev/hda2 /mnt/hda2</td>
+            <td>挂载hda2盘</td>
+        </tr>
+        <tr>
+            <td>mount -t ntfs /dev/sdc1 /mnt/usbhd1</td>
+            <td>指定⽂件系统类型挂载（如ntfs）</td>
+        </tr>
+        <tr>
+            <td>mount -o loop xxx.iso /mnt/cdrom</td>
+            <td>挂 载 iso ⽂ 件</td>
+        </tr>
+        <tr>
+            <td>umount -v /dev/sda1</td>
+            <td>通过设备名卸载</td>
+        </tr>
+        <tr>
+            <td>umount -v /mnt/mymnt</td>
+            <td>通过挂载点卸载</td>
+        </tr>
+        <tr>
+            <td>fuser -km /mnt/hda1</td>
+            <td>强制卸载(慎⽤)</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>⽤户和⽤户组</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>useradd codesheep</td>
+            <td>创建⽤户</td>
+        </tr>
+        <tr>
+            <td>userdel -r codesheep</td>
+            <td>删除⽤户</td>
+        </tr>
+        <tr>
+            <td>usermod -g group_name user_name</td>
+            <td>修改⽤户的组</td>
+        </tr>
+        <tr>
+            <td>usermod -aG group_name user_name</td>
+            <td>将⽤户添加到组</td>
+        </tr>
+        <tr>
+            <td>usermod -s /bin/ksh -d /home/codepig –g dev codesheep</td>
+            <td>修改⽤户codesheep的登录Shell、主⽬录以及⽤户组</td>
+        </tr>
+        <tr>
+            <td>groups test</td>
+            <td>查看test⽤户所在的组</td>
+        </tr>
+        <tr>
+            <td>groupadd group_name</td>
+            <td>创建⽤户组</td>
+        </tr>
+        <tr>
+            <td>groupdel group_name</td>
+            <td>删除⽤户组</td>
+        </tr>
+        <tr>
+            <td>groupmod -n new_name old_name</td>
+            <td>重命名⽤户组</td>
+        </tr>
+        <tr>
+            <td>su - user_name</td>
+            <td>su - user_name</td>
+        </tr>
+        <tr>
+            <td>passwd</td>
+            <td>修改⼝令</td>
+        </tr>
+        <tr>
+            <td>passwd codesheep</td>
+            <td>修改某⽤户的⼝令</td>
+        </tr>
+        <tr>
+            <td>w</td>
+            <td>查看活动⽤户</td>
+        </tr>
+        <tr>
+            <td>id codesheep</td>
+            <td>查看指定⽤户codesheep信息</td>
+        </tr>
+        <tr>
+            <td>last</td>
+            <td>查看⽤户登录⽇志</td>
+        </tr>
+        <tr>
+            <td>crontab -l</td>
+            <td>查看当前⽤户的计划任务</td>
+        </tr>
+        <tr>
+            <td>cut -d: -f1 /etc/passwd</td>
+            <td>查看系统所有⽤户</td>
+        </tr>
+        <tr>
+            <td>cut -d: -f1 /etc/group</td>
+            <td>查看系统所有组</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>⽹络和进程管理</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ifconfig</td>
+            <td>查看⽹络接⼝属性</td>
+        </tr>
+        <tr>
+            <td>ifconfig eth0</td>
+            <td>查看某⽹卡的配置</td>
+        </tr>
+        <tr>
+            <td>route -n</td>
+            <td>查看路由表</td>
+        </tr>
+        <tr>
+            <td>netstat -lntp</td>
+            <td>查看所有监听端⼝</td>
+        </tr>
+        <tr>
+            <td>netstat -antp</td>
+            <td>查看已经建⽴的TCP连接</td>
+        </tr>
+        <tr>
+            <td>netstat -lutp</td>
+            <td>查看TCP/UDP的状态信息</td>
+        </tr>
+        <tr>
+            <td>ifup eth0</td>
+            <td>启⽤eth0⽹络设备</td>
+        </tr>
+        <tr>
+            <td>ifdown eth0</td>
+            <td>禁⽤eth0⽹络设备</td>
+        </tr>
+        <tr>
+            <td>iptables -L</td>
+            <td>查看iptables规则</td>
+        </tr>
+        <tr>
+            <td>ifconfig eth0 192.168.1.1 netmask 255.255.255.0</td>
+            <td>配置ip地址</td>
+        </tr>
+        <tr>
+            <td>dhclient eth0</td>
+            <td>以dhcp模式启⽤eth0</td>
+        </tr>
+        <tr>
+            <td>route add -net 0/0 gw Gateway_IP</td>
+            <td>配置默认⽹关</td>
+        </tr>
+        <tr>
+            <td>route add -net 192.168.0.0 netmask 255.255.0.0 gw  192.168.1.1</td>
+            <td>配置静态路由到达⽹络'192.168.0.0/16'</td>
+        </tr>
+        <tr>
+            <td>route del 0/0 gw Gateway_IP</td>
+            <td>删除静态路由</td>
+        </tr>
+        <tr>
+            <td>hostname</td>
+            <td>查看主机名</td>
+        </tr>
+        <tr>
+            <td>host <a href="http://www.baidu.com" target="_blank" rel="external nofollow noopener noreferrer">www.baidu.com</a></td>
+            <td>解析主机名</td>
+        </tr>
+        <tr>
+            <td>nslookup <a href="http://www.baidu.com" target="_blank" rel="external nofollow noopener noreferrer">www.baidu.com</a></td>
+            <td>查询DNS记录，查看域名解析是否正常</td>
+        </tr>
+        <tr>
+            <td>ps -ef</td>
+            <td>查看所有进程</td>
+        </tr>
+        <tr>
+            <td>ps -ef | grep codesheep</td>
+            <td>过滤出你需要的进程</td>
+        </tr>
+        <tr>
+            <td>kill -s name</td>
+            <td>kill指定名称的进程</td>
+        </tr>
+        <tr>
+            <td>kill -s pid</td>
+            <td>kill指定pid的进程</td>
+        </tr>
+        <tr>
+            <td>top</td>
+            <td>实时显示进程状态</td>
+        </tr>
+        <tr>
+            <td>vmstat 1 20</td>
+            <td>每1秒采⼀次系统状态，采20次</td>
+        </tr>
+        <tr>
+            <td>iostat</td>
+            <td>iostat</td>
+        </tr>
+        <tr>
+            <td>sar -u 1 10</td>
+            <td>查询cpu使⽤情况（1秒⼀次，共10次）</td>
+        </tr>
+        <tr>
+            <td>sar -d 1 10</td>
+            <td>查询磁盘性能</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>常⻅系统服务命令</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>chkconfig &ndash;list</td>
+            <td>列出系统服务</td>
+        </tr>
+        <tr>
+            <td>service &lt;服务名&gt; status</td>
+            <td>查看某个服务</td>
+        </tr>
+        <tr>
+            <td>service &lt;服务名&gt; start</td>
+            <td>启动某个服务</td>
+        </tr>
+        <tr>
+            <td>service &lt;服务名&gt; stop</td>
+            <td>终⽌某个服务</td>
+        </tr>
+        <tr>
+            <td>service &lt;服务名&gt; restart</td>
+            <td>重启某个服务</td>
+        </tr>
+        <tr>
+            <td>systemctl status &lt;服务名&gt;</td>
+            <td>查看某个服务</td>
+        </tr>
+        <tr>
+            <td>systemctl start &lt;服务名&gt;</td>
+            <td>启动某个服务</td>
+        </tr>
+        <tr>
+            <td>systemctl stop &lt;服务名&gt;</td>
+            <td>终⽌某个服务</td>
+        </tr>
+        <tr>
+            <td>systemctl restart &lt;服务名&gt;</td>
+            <td>重启某个服务</td>
+        </tr>
+        <tr>
+            <td>systemctl enable &lt;服务名&gt;</td>
+            <td>关闭⾃启动</td>
+        </tr>
+        <tr>
+            <td>systemctl disable &lt;服务名&gt;</td>
+            <td>关闭⾃启动</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>⽂件和⽬录操作</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>cd &lt;⽬录名&gt;</td>
+            <td>进⼊某个⽬录</td>
+        </tr>
+        <tr>
+            <td>cd ..</td>
+            <td>回上级⽬录</td>
+        </tr>
+        <tr>
+            <td>cd ../..</td>
+            <td>回上两级⽬录</td>
+        </tr>
+        <tr>
+            <td>cd</td>
+            <td>进个⼈主⽬录</td>
+        </tr>
+        <tr>
+            <td>cd -</td>
+            <td>回上⼀步所在⽬录</td>
+        </tr>
+        <tr>
+            <td>pwd</td>
+            <td>显示当前路径</td>
+        </tr>
+        <tr>
+            <td>ls</td>
+            <td>查看⽂件⽬录列表</td>
+        </tr>
+        <tr>
+            <td>ls -F</td>
+            <td>查看⽬录中内容（显示是⽂件还是⽬录）</td>
+        </tr>
+        <tr>
+            <td>ls -l</td>
+            <td>查看⽂件和⽬录的详情列表</td>
+        </tr>
+        <tr>
+            <td>ls -a</td>
+            <td>查看隐藏⽂件</td>
+        </tr>
+        <tr>
+            <td>ls -lh</td>
+            <td>查看⽂件和⽬录的详情列表（增强⽂件⼤⼩易读性）</td>
+        </tr>
+        <tr>
+            <td>ls -lSr</td>
+            <td>查看⽂件和⽬录列表（以⽂件⼤⼩升序查看）</td>
+        </tr>
+        <tr>
+            <td>tree</td>
+            <td>查看⽂件和⽬录的树形结构</td>
+        </tr>
+        <tr>
+            <td>mkdir &lt;⽬录名&gt;</td>
+            <td>创建⽬录</td>
+        </tr>
+        <tr>
+            <td>mkdir dir1 dir2</td>
+            <td>同时创建两个⽬录</td>
+        </tr>
+        <tr>
+            <td>mkdir -p /tmp/dir1/dir2</td>
+            <td>创建⽬录树</td>
+        </tr>
+        <tr>
+            <td>rm -f file1</td>
+            <td>删除&rsquo;file1&rsquo;⽂件</td>
+        </tr>
+        <tr>
+            <td>rmdir dir1</td>
+            <td>删除&rsquo;dir1&rsquo;⽬录</td>
+        </tr>
+        <tr>
+            <td>rm -rf dir1</td>
+            <td>删除&rsquo;dir1&rsquo;⽬录和其内容</td>
+        </tr>
+        <tr>
+            <td>rm -rf dir1 dir2</td>
+            <td>同时删除两个⽬录及其内容</td>
+        </tr>
+        <tr>
+            <td>mv old_dir new_dir</td>
+            <td>重命名/移动⽬录</td>
+        </tr>
+        <tr>
+            <td>cp file1 file2</td>
+            <td>复制⽂件</td>
+        </tr>
+        <tr>
+            <td>cp dir/* .</td>
+            <td>复制某⽬录下的所有⽂件⾄当前⽬录</td>
+        </tr>
+        <tr>
+            <td>cp -a dir1 dir2</td>
+            <td>复制⽬录</td>
+        </tr>
+        <tr>
+            <td>cp -a /tmp/dir1 .</td>
+            <td>复制⼀个⽬录⾄当前⽬录</td>
+        </tr>
+        <tr>
+            <td>ln -s file1 link1</td>
+            <td>创建指向⽂件/⽬录的软链接</td>
+        </tr>
+        <tr>
+            <td>ln file1 lnk1</td>
+            <td>创建指向⽂件/⽬录的物理链接</td>
+        </tr>
+        <tr>
+            <td>find / -name file1</td>
+            <td>从跟⽬录开始搜索⽂件/⽬录</td>
+        </tr>
+        <tr>
+            <td>find / -user user1</td>
+            <td>搜索⽤户user1的⽂件/⽬录</td>
+        </tr>
+        <tr>
+            <td>find /dir -name *.bin</td>
+            <td>在⽬录/dir中搜带有.bin后缀的⽂件</td>
+        </tr>
+        <tr>
+            <td>locate &lt;关键词&gt;</td>
+            <td>快速定位⽂件</td>
+        </tr>
+        <tr>
+            <td>locate *.mp4</td>
+            <td>寻找.mp4结尾的⽂件</td>
+        </tr>
+        <tr>
+            <td>whereis &lt;关键词&gt;</td>
+            <td>显示某⼆进制⽂件/可执⾏⽂件的路径</td>
+        </tr>
+        <tr>
+            <td>which &lt;关键词&gt;</td>
+            <td>查找系统⽬录下某的⼆进制⽂件</td>
+        </tr>
+        <tr>
+            <td>chmod ugo+rwx dir1</td>
+            <td>设置⽬录所有者(u)、群组(g)及其他⼈(o)的读（r）写(w)执⾏(x)权限</td>
+        </tr>
+        <tr>
+            <td>chmod go-rwx dir1</td>
+            <td>移除群组(g)与其他⼈(o)对⽬录的读写执⾏权限</td>
+        </tr>
+        <tr>
+            <td>chown user1 file1</td>
+            <td>改变⽂件的所有者属性</td>
+        </tr>
+        <tr>
+            <td>chown -R user1 dir1</td>
+            <td>改变⽬录的所有者属性</td>
+        </tr>
+        <tr>
+            <td>chgrp group1 file1</td>
+            <td>改变⽂件群组</td>
+        </tr>
+        <tr>
+            <td>chown user1:group1 file1</td>
+            <td>改变⽂件的所有⼈和群组</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>⽂件查看和处理</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>cat file1</td>
+            <td>查看⽂件内容</td>
+        </tr>
+        <tr>
+            <td>cat -n file1</td>
+            <td>查看内容并标示⾏数</td>
+        </tr>
+        <tr>
+            <td>tac file1</td>
+            <td>从最后⼀⾏开始反看⽂件内容</td>
+        </tr>
+        <tr>
+            <td>more file1</td>
+            <td>more file1</td>
+        </tr>
+        <tr>
+            <td>less file1</td>
+            <td>类似more命令，但允许反向操作</td>
+        </tr>
+        <tr>
+            <td>head -2 file1</td>
+            <td>查看⽂件前两⾏</td>
+        </tr>
+        <tr>
+            <td>tail -2 file1</td>
+            <td>查看⽂件后两⾏</td>
+        </tr>
+        <tr>
+            <td>tail -f /log/msg</td>
+            <td>实时查看添加到⽂件中的内容</td>
+        </tr>
+        <tr>
+            <td>grep codesheep hello.txt</td>
+            <td>在⽂件hello.txt中查找关键词codesheep</td>
+        </tr>
+        <tr>
+            <td>grep ^sheep hello.txt</td>
+            <td>在⽂件hello.txt中查找以sheep开头的内容</td>
+        </tr>
+        <tr>
+            <td>grep [0-9] hello.txt</td>
+            <td>选择hello.txt⽂件中所有包含数字的⾏</td>
+        </tr>
+        <tr>
+            <td>sed &rsquo;s/s1/s2/g&rsquo; hello.txt</td>
+            <td>将hello.txt⽂件中的s1替换成s2</td>
+        </tr>
+        <tr>
+            <td>sed &lsquo;/^$/d&rsquo; hello.txt</td>
+            <td>从hello.txt⽂件中删除所有空⽩⾏</td>
+        </tr>
+        <tr>
+            <td>sed &lsquo;/ *#/d; /^$/d&rsquo; hello.txt</td>
+            <td>从hello.txt⽂件中删除所有注释和空⽩⾏</td>
+        </tr>
+        <tr>
+            <td>sed -e &lsquo;1d&rsquo; hello.txt</td>
+            <td>从⽂件hello.txt 中排除第⼀⾏</td>
+        </tr>
+        <tr>
+            <td>sed -n &lsquo;/s1/p&rsquo; hello.txt</td>
+            <td>查看只包含关键词&quot;s1&quot;的⾏</td>
+        </tr>
+        <tr>
+            <td>sed -e &rsquo;s/ *$//&rsquo; hello.txt</td>
+            <td>删除每⼀⾏最后的空⽩字符</td>
+        </tr>
+        <tr>
+            <td>sed -e &rsquo;s/s1//g&rsquo; hello.txt</td>
+            <td>从⽂档中只删除词汇s1并保留剩余全部</td>
+        </tr>
+        <tr>
+            <td>sed -n &lsquo;1,5p;5q&rsquo; hello.txt</td>
+            <td>查看从第⼀⾏到第5⾏内容</td>
+        </tr>
+        <tr>
+            <td>sed -n &lsquo;5p;5q&rsquo; hello.txt</td>
+            <td>查看第5⾏</td>
+        </tr>
+        <tr>
+            <td>paste file1 file2</td>
+            <td>合并两个⽂件或两栏的内容</td>
+        </tr>
+        <tr>
+            <td>paste -d &lsquo;+&rsquo; file1 file2</td>
+            <td>合并两个⽂件或两栏的内容，中间⽤&quot;+&ldquo;区分</td>
+        </tr>
+        <tr>
+            <td>sort file1 file2</td>
+            <td>排序两个⽂件的内容</td>
+        </tr>
+        <tr>
+            <td>comm -1 file1 file2</td>
+            <td>⽐较两个⽂件的内容(去除&rsquo;file1&rsquo;所含内容)</td>
+        </tr>
+        <tr>
+            <td>comm -2 file1 file2</td>
+            <td>⽐较两个⽂件的内容(去除&rsquo;file2&rsquo;所含内容</td>
+        </tr>
+        <tr>
+            <td>comm -3 file1 file2</td>
+            <td>⽐较两个⽂件的内容(去除两⽂件共有部分)</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>打包和解压</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>zip xxx.zip file</td>
+            <td>压缩⾄zip包</td>
+        </tr>
+        <tr>
+            <td>zip -r xxx.zip file1 file2 dir1</td>
+            <td>将多个⽂件+⽬录压成zip包</td>
+        </tr>
+        <tr>
+            <td>unzip xxx.zip</td>
+            <td>解压zip包</td>
+        </tr>
+        <tr>
+            <td>tar -cvf xxx.tar file</td>
+            <td>创建⾮压缩tar包</td>
+        </tr>
+        <tr>
+            <td>tar -cvf xxx.tar file1 file2 dir1</td>
+            <td>将多个⽂件+⽬录打tar包</td>
+        </tr>
+        <tr>
+            <td>tar -tf xxx.tar</td>
+            <td>查看tar包的内容</td>
+        </tr>
+        <tr>
+            <td>tar -xvf xxx.tar</td>
+            <td>解压tar包</td>
+        </tr>
+        <tr>
+            <td>tar -xvf xxx.tar -C /dir</td>
+            <td>将tar包解压⾄指定⽬录</td>
+        </tr>
+        <tr>
+            <td>tar -cvfj xxx.tar.bz2 dir</td>
+            <td>创建bz2压缩包</td>
+        </tr>
+        <tr>
+            <td>tar -jxvf xxx.tar.bz2</td>
+            <td>解压bz2压缩包</td>
+        </tr>
+        <tr>
+            <td>tar -cvfz xxx.tar.gz dir</td>
+            <td>创建gzip压缩包</td>
+        </tr>
+        <tr>
+            <td>tar -zxvf xxx.tar.gz</td>
+            <td>解压gzip压缩包</td>
+        </tr>
+        <tr>
+            <td>bunzip2 xxx.bz2</td>
+            <td>解压bz2压缩包</td>
+        </tr>
+        <tr>
+            <td>bzip2 filename</td>
+            <td>压缩⽂件</td>
+        </tr>
+        <tr>
+            <td>gunzip xxx.gz</td>
+            <td>解压gzip压缩包</td>
+        </tr>
+        <tr>
+            <td>gzip filename</td>
+            <td>压缩⽂件</td>
+        </tr>
+        <tr>
+            <td>gzip -9 filename</td>
+            <td>最⼤程度压缩</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>RPM包管理命令</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>rpm -qa</td>
+            <td>查看已安装的rpm包</td>
+        </tr>
+        <tr>
+            <td>rpm -q pkg_name</td>
+            <td>查询某个rpm包</td>
+        </tr>
+        <tr>
+            <td>rpm -q &ndash;whatprovides xxx</td>
+            <td>显示xxx功能是由哪个包提供的</td>
+        </tr>
+        <tr>
+            <td>rpm -q &ndash;whatrequires xxx</td>
+            <td>显示xxx功能被哪个程序包依赖的</td>
+        </tr>
+        <tr>
+            <td>rpm -q &ndash;changelog xxx</td>
+            <td>显示xxx包的更改记录</td>
+        </tr>
+        <tr>
+            <td>rpm -qi pkg_name</td>
+            <td>查看⼀个包的详细信息</td>
+        </tr>
+        <tr>
+            <td>rpm -qd pkg_name</td>
+            <td>查询⼀个包所提供的⽂档</td>
+        </tr>
+        <tr>
+            <td>rpm -qc pkg_name</td>
+            <td>查看已安装rpm包提供的配置⽂件</td>
+        </tr>
+        <tr>
+            <td>rpm -ql pkg_name</td>
+            <td>查看⼀个包安装了哪些⽂件</td>
+        </tr>
+        <tr>
+            <td>rpm -qf filename</td>
+            <td>查看某个⽂件属于哪个包</td>
+        </tr>
+        <tr>
+            <td>rpm -qR pkg_name</td>
+            <td>查询包的依赖关系</td>
+        </tr>
+        <tr>
+            <td>rpm -ivh xxx.rpm</td>
+            <td>安装rpm包</td>
+        </tr>
+        <tr>
+            <td>rpm -ivh &ndash;test xxx.rpm</td>
+            <td>测试安装rpm包</td>
+        </tr>
+        <tr>
+            <td>rpm -ivh &ndash;nodeps xxx.rpm</td>
+            <td>安装rpm包时忽略依赖关系</td>
+        </tr>
+        <tr>
+            <td>rpm -e xxx</td>
+            <td>卸载程序包</td>
+        </tr>
+        <tr>
+            <td>rpm -Fvh pkg_name</td>
+            <td>升级确定已安装的rpm包</td>
+        </tr>
+        <tr>
+            <td>rpm -Uvh pkg_name</td>
+            <td>升级rpm包(若未安装则会安装)</td>
+        </tr>
+        <tr>
+            <td>rpm -V pkg_name</td>
+            <td>RPM包详细信息校验</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>YUM包管理命令</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>yum repolist enabled</td>
+            <td>显示可⽤的源仓库</td>
+        </tr>
+        <tr>
+            <td>yum search pkg_name</td>
+            <td>搜索软件包</td>
+        </tr>
+        <tr>
+            <td>yum install pkg_name</td>
+            <td>下载并安装软件包</td>
+        </tr>
+        <tr>
+            <td>yum install &ndash;downloadonly pkg_name</td>
+            <td>只 下 载 不 安 装</td>
+        </tr>
+        <tr>
+            <td>yum list</td>
+            <td>显示所有程序包</td>
+        </tr>
+        <tr>
+            <td>yum list installed</td>
+            <td>查看当前系统已安装包</td>
+        </tr>
+        <tr>
+            <td>yum list updates</td>
+            <td>查看可以更新的包列表</td>
+        </tr>
+        <tr>
+            <td>yum check-update</td>
+            <td>查看可升级的软件包</td>
+        </tr>
+        <tr>
+            <td>yum update</td>
+            <td>更新所有软件包</td>
+        </tr>
+        <tr>
+            <td>yum update pkg_name</td>
+            <td>升级指定软件包</td>
+        </tr>
+        <tr>
+            <td>yum deplist pkg_name</td>
+            <td>列出软件包依赖关系</td>
+        </tr>
+        <tr>
+            <td>yum remove pkg_name</td>
+            <td>删除软件包</td>
+        </tr>
+        <tr>
+            <td>yum clean all</td>
+            <td>清除缓存</td>
+        </tr>
+        <tr>
+            <td>yum clean packages</td>
+            <td>清除缓存的软件包</td>
+        </tr>
+        <tr>
+            <td>yum clean headers</td>
+            <td>清除缓存的header</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>DPKG包管理命令</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>dpkg -c xxx.deb</td>
+            <td>列出deb包的内容</td>
+        </tr>
+        <tr>
+            <td>dpkg -i xxx.deb</td>
+            <td>安装/更新deb包</td>
+        </tr>
+        <tr>
+            <td>dpkg -r pkg_name</td>
+            <td>移除deb包</td>
+        </tr>
+        <tr>
+            <td>dpkg -P pkg_name</td>
+            <td>移除deb包(不保留配置)</td>
+        </tr>
+        <tr>
+            <td>dpkg -l</td>
+            <td>查看系统中已安装deb包</td>
+        </tr>
+        <tr>
+            <td>dpkg -l pkg_name</td>
+            <td>显示包的⼤致信息</td>
+        </tr>
+        <tr>
+            <td>dpkg -L pkg_name</td>
+            <td>查看deb包安装的⽂件</td>
+        </tr>
+        <tr>
+            <td>dpkg -s pkg_name</td>
+            <td>查看包的详细信息</td>
+        </tr>
+        <tr>
+            <td>dpkg –unpack xxx.deb</td>
+            <td>解开deb包的内容</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>APT软件⼯具</strong></p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>常用命令</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>apt-cache search pkg_name</td>
+            <td>搜索程序包</td>
+        </tr>
+        <tr>
+            <td>apt-cache show pkg_name</td>
+            <td>获取包的概览信息</td>
+        </tr>
+        <tr>
+            <td>apt-get install pkg_name</td>
+            <td>安装/升级软件包</td>
+        </tr>
+        <tr>
+            <td>apt-get purge pkg_name</td>
+            <td>卸载软件（包括配置）</td>
+        </tr>
+        <tr>
+            <td>apt-get remove pkg_name</td>
+            <td>卸载软件（不包括配置）</td>
+        </tr>
+        <tr>
+            <td>apt-get update</td>
+            <td>更新包索引信息</td>
+        </tr>
+        <tr>
+            <td>apt-get upgrade</td>
+            <td>更新已安装软件包</td>
+        </tr>
+        <tr>
+            <td>apt-get clean</td>
+            <td>清理缓存</td>
+        </tr>
+    </tbody>
+  </table>
+</div></div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/arch-linux%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/" title="Arch Linux 安装过程记录">Arch Linux 安装过程记录</a></li><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/systemd%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/" title="Systemd服务配置">Systemd服务配置</a></li><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/wsl%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" title="WSL安装及配置">WSL安装及配置</a></li><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85code-server/" title="Linux服务器安装code-Server">Linux服务器安装code-Server</a></li><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter%E6%9C%8D%E5%8A%A1/" title="Linux服务器安装Jupyter服务">Linux服务器安装Jupyter服务</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/0f0cdf3e17812e91101004d9de716944.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

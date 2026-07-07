@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>经验 - 标签 - 红石门</title>
+    <link>http://localhost:1313/tags/%E7%BB%8F%E9%AA%8C/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:23:31 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>终端相关问题</title>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%BB%88%E7%AB%AF%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 03 Jul 2026 07:28:11 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%BB%88%E7%AB%AF%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</guid>
+      <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8---%E5%8E%9F%E7%90%86/">编程通用 - 原理</category>
+      <description>&lt;h1 class=&#34;heading-element&#34; id=&#34;altscreen是什么&#34;&gt;&lt;span&gt;AltScreen是什么&lt;/span&gt;&#xA;  &lt;a href=&#34;#altscreen%e6%98%af%e4%bb%80%e4%b9%88&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;终端有两块画面缓存：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;主缓冲区域(Main Screen)&lt;/strong&gt;&#xA;平时用的终端，敲命令的地方，包括历史输出什么的，这个页面&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;备用缓冲区(Alternate Screen/AltScreen)&lt;/strong&gt;&#xA;独立空白画布，开启之后：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;清空当前终端，独占整个窗口&lt;/li&gt;&#xA;&lt;li&gt;程序的所有渲染都只在这块缓冲绘制&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;程序退出之后自动切回主缓冲区&lt;/strong&gt;，之前的命令行，日志等会全部还原，不会被程序输出污染&#xA;像是Vim，htop等，都是走的这一块，所以像是开启了一个新窗口一样，退出之后终端还是依旧&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Redis安装及使用</title>
+      <link>http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93/redis%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sun, 08 Mar 2026 17:25:31 +0800</pubDate>
+      <guid>http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93/redis%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <category domain="http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80---%E6%95%B0%E6%8D%AE%E5%BA%93/">计算机基础 - 数据库</category>
+      <description>&lt;h2 class=&#34;heading-element&#34; id=&#34;安装&#34;&gt;&lt;span&gt;安装&lt;/span&gt;&#xA;  &lt;a href=&#34;#%e5%ae%89%e8%a3%85&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 class=&#34;heading-element&#34; id=&#34;linux&#34;&gt;&lt;span&gt;Linux&lt;/span&gt;&#xA;  &lt;a href=&#34;#linux&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;Ubuntu24.04下可以直接从apt的默认源安装&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>接口相关问题</title>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 08 Mar 2026 15:47:43 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</guid>
+      <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8---%E5%8E%9F%E7%90%86/">编程通用 - 原理</category>
+      <description>&lt;h1 class=&#34;heading-element&#34; id=&#34;什么是幂等性&#34;&gt;&lt;span&gt;什么是幂等性？&lt;/span&gt;&#xA;  &lt;a href=&#34;#%e4%bb%80%e4%b9%88%e6%98%af%e5%b9%82%e7%ad%89%e6%80%a7&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;接口幂等性&lt;/strong&gt;指的是：&lt;strong&gt;同一个请求被执行一次或多次，最终对系统产生的影响是一样的&lt;/strong&gt;（结果与副作用一致）。&lt;br&gt;&#xA;常见例子：同一笔支付请求重复提交多次，&lt;strong&gt;最终只会产生一笔扣款记录&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一些编程经验记录</title>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E7%BB%8F%E9%AA%8C/%E4%B8%80%E4%BA%9B%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 31 May 2024 03:32:36 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E7%BB%8F%E9%AA%8C/%E4%B8%80%E4%BA%9B%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E8%AE%B0%E5%BD%95/</guid>
+      <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8---%E7%BB%8F%E9%AA%8C/">编程通用 - 经验</category>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;越是来不及就越是不能能跑就行，不然后面会埋更大的坑&lt;/li&gt;&#xA;&lt;li&gt;中断工作的时候要有一个中断的标注状态，以便于之后的自己接手&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

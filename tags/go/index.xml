@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go - 标签 - 红石门</title>
+    <link>http://localhost:1313/tags/go/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:23:31 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go知识点</title>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/go%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <pubDate>Fri, 22 May 2026 00:16:50 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/go%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80---go/">编程语言 - Go</category>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;gopls Go语言官方的语言服务器&lt;/li&gt;&#xA;&lt;li&gt;Go的&lt;code&gt;:=&lt;/code&gt;有几个含义:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;类型推导&lt;/strong&gt;，省的我手写变量类型了&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;强制变量使用&lt;/strong&gt;，防止僵尸代码，至少用 _ = err来处理一下&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;声明作用域，声明+赋值，会创造新的变量&lt;/strong&gt;，如下面这个经典例子：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code&gt;package main&#xA;import &amp;#34;fmt&amp;#34;&#xA;func main() {&#xA;    x := 1       // 声明一个外层变量 x&#xA;    if true {&#xA;        x := 2   // 又声明了一个新的内层变量 x！&#xA;        fmt.Println(&amp;#34;内部 x:&amp;#34;, x) // 输出：内部 x: 2&#xA;    }&#xA;    fmt.Println(&amp;#34;外部 x:&amp;#34;, x) // 输出：外部 x: 1（外层变量没有被修改）&#xA;}&#x9;&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&#xA;&lt;li&gt;另外写的时候千万注意，x := xxx和x := xxx{}是不一样的，一个没有初始化默认nil，一个初始化了有默认值&lt;/li&gt;&#xA;&lt;li&gt;Go和C#一样也用帕斯卡命名法来命名，但是更加极端，直接用首字母大小写来控制可见性：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code&gt;首字母大写 = 公开（exported）  → Write, Server, Timeout&#xA;首字母小写 = 私有（unexported）→ write, server, timeout&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这既是命名风格，也是访问控制。没有 public/private 关键字。&#xA;再就是根据变量的作用范围来调整命名长度，比如函数里用的局域变量一遍也就&lt;code&gt;cnn&lt;/code&gt;,库里要用的连接字段则是&lt;code&gt;Conn&lt;/code&gt;,靠上下文来表示代码含义&amp;hellip;怎么这里你又不降低心智负担了喂&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

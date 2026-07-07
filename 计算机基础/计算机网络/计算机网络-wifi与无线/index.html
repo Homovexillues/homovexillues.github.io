@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>计算机网络-WiFi与无线 - 红石门</title><meta name="author" content="">
+<meta name="description" content="常见WIFI加密方式及发展历史 WEP
+因为每个包都会以某种形式带有密码，收集足够多的包之后比对重复内容，直接获得 WPA2
+"><meta name="keywords" content='计算机网络, 问题'>
+	<meta itemprop="name" content="计算机网络-WiFi与无线">
+	<meta itemprop="description" content="常见WIFI加密方式及发展历史 WEP
+因为每个包都会以某种形式带有密码，收集足够多的包之后比对重复内容，直接获得 WPA2">
+	<meta itemprop="datePublished" content="2026-06-24T03:19:18+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:30+08:00">
+	<meta itemprop="wordCount" content="2657">
+	<meta itemprop="keywords" content="计算机网络,问题"><meta property="og:url" content="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="计算机网络-WiFi与无线">
+	<meta property="og:description" content="常见WIFI加密方式及发展历史 WEP
+因为每个包都会以某种形式带有密码，收集足够多的包之后比对重复内容，直接获得 WPA2">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="计算机基础">
+		<meta property="article:published_time" content="2026-06-24T03:19:18+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:30+08:00">
+		<meta property="article:tag" content="计算机网络">
+		<meta property="article:tag" content="问题">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="计算机网络-WiFi与无线">
+	<meta name="twitter:description" content="常见WIFI加密方式及发展历史 WEP
+因为每个包都会以某种形式带有密码，收集足够多的包之后比对重复内容，直接获得 WPA2">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层" /><link rel="next" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "计算机网络-WiFi与无线",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF\/"
+    },"genre": "计算机基础","keywords": "计算机网络, 问题","wordcount":  2657 ,
+    "url": "http:\/\/localhost:1313\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF\/","datePublished": "2026-06-24T03:19:18+08:00","dateModified": "2026-07-06T17:23:30+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议">计算机网络-HTTP与Web协议</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">计算机网络-IP地址与子网</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%8A%93%E5%8C%85%E4%B8%8E%E7%BD%91%E5%8D%A1/" title="计算机网络-抓包与网卡">计算机网络-抓包与网卡</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">计算机网络-WiFi与无线</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a> / <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-06-24 03:19:18 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-06-24">2026-06-24</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:30 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="2657 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 2700 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 6 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a> / <a href="/tags/%E9%97%AE%E9%A2%98/">问题</a></span>
+            </div></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#常见wifi加密方式及发展历史">常见WIFI加密方式及发展历史</a></li>
+    <li><a href="#wifi的ssid是什么">Wifi的SSID是什么?</a>
+      <ul>
+        <li><a href="#-举例说明">✅ 举例说明</a></li>
+        <li><a href="#-更具体一些">🔧 更具体一些：</a></li>
+        <li><a href="#-小知识">🧠 小知识：</a></li>
+      </ul>
+    </li>
+    <li><a href="#那么为什么手机上获取ssid需要位置权限呢">那么，为什么手机上获取SSID需要位置权限呢?</a>
+      <ul>
+        <li><a href="#-详细解释如下">🧠 详细解释如下：</a></li>
+        <li><a href="#-1-wi-fi-ssid-是地理位置的线索">✅ 1. <strong>Wi-Fi SSID 是地理位置的“线索”</strong></a></li>
+        <li><a href="#-2-googleapple-建了wi-fi-定位数据库">✅ 2. <strong>Google/Apple 建了“Wi-Fi 定位数据库”</strong></a></li>
+        <li><a href="#-3-操作系统强制权限控制从-android-6--ios-13-开始">✅ 3. <strong>操作系统强制权限控制（从 Android 6 / iOS 13 开始）</strong></a></li>
+        <li><a href="#-总结">✅ 总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#lot-wi-fi是啥物联网wi-fi有什么功能">loT Wi-Fi是啥？物联网Wi-Fi？有什么功能？</a>
+      <ul>
+        <li><a href="#iot-wi-fi-的核心功能与特点">IoT Wi-Fi 的核心功能与特点</a>
+          <ul>
+            <li><a href="#1-海量设备连接能力">1. 海量设备连接能力</a></li>
+            <li><a href="#2-低功耗与电源管理">2. 低功耗与电源管理</a></li>
+            <li><a href="#3-增强的安全性与隔离">3. 增强的安全性与隔离</a></li>
+            <li><a href="#4-简化的配网流程">4. 简化的配网流程</a></li>
+            <li><a href="#5-更好的网络稳定性与覆盖">5. 更好的网络稳定性与覆盖</a></li>
+            <li><a href="#6-集中管理与控制">6. 集中管理与控制</a></li>
+          </ul>
+        </li>
+        <li><a href="#如何实现-iot-wi-fi">如何实现 IoT Wi-Fi？</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 class="heading-element" id="常见wifi加密方式及发展历史"><span>常见WIFI加密方式及发展历史</span>
+  <a href="#%e5%b8%b8%e8%a7%81wifi%e5%8a%a0%e5%af%86%e6%96%b9%e5%bc%8f%e5%8f%8a%e5%8f%91%e5%b1%95%e5%8e%86%e5%8f%b2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>
+<p>WEP</p>
+<ul>
+<li>因为每个包都会以某种形式带有密码，收集足够多的包之后比对重复内容，直接获得</li>
+</ul>
+</li>
+<li>
+<p>WPA2</p>
+<ul>
+<li>不再持续发包，而是简化为了四步握手</li>
+<li>获取到足够多的锁和钥匙之后依旧可以</li>
+</ul>
+</li>
+<li>
+<p>WPA3</p>
+<ul>
+<li>使用Dragonfly算法，旨在大幅增加观察到这个握手过程</li>
+<li>问题是，如果网络中有任何WPA2设备，路由器就会退回WPA2状态</li>
+</ul>
+</li>
+</ul>
+<h2 class="heading-element" id="wifi的ssid是什么"><span>Wifi的SSID是什么?</span>
+  <a href="#wifi%e7%9a%84ssid%e6%98%af%e4%bb%80%e4%b9%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Wi-Fi 的 <strong>SSID</strong> 是指：</p>
+<blockquote>
+<p><strong>Service Set Identifier（服务集标识符）</strong></p>
+</blockquote>
+<p>简单来说，它就是：</p>
+<blockquote>
+<p>📡 <strong>你看到的 Wi-Fi 名称</strong></p>
+</blockquote>
+<hr>
+<h3 class="heading-element" id="-举例说明"><span>✅ 举例说明</span>
+  <a href="#-%e4%b8%be%e4%be%8b%e8%af%b4%e6%98%8e" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>假设你用手机连接 Wi-Fi 时，看到这些名称：</p>
+<ul>
+<li><code>Home_WiFi_5G</code></li>
+<li><code>Starbucks_Free_WiFi</code></li>
+<li><code>TP-Link_301</code></li>
+<li><code>Johns-iPhone</code></li>
+</ul>
+<p>这些名字就是对应的 <strong>SSID</strong>。</p>
+<hr>
+<h3 class="heading-element" id="-更具体一些"><span>🔧 更具体一些：</span>
+  <a href="#-%e6%9b%b4%e5%85%b7%e4%bd%93%e4%b8%80%e4%ba%9b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>一个 Wi-Fi 路由器可以广播一个或多个 SSID；</li>
+<li>你连接 Wi-Fi 时选择的就是 SSID；</li>
+<li>每个 SSID 可以设置不同密码和权限（比如访客网络）；</li>
+<li>SSID 最长可以是 <strong>32 个字符</strong>；</li>
+<li>你可以选择 <strong>隐藏 SSID</strong>，这样设备就不会自动广播它，连接时需要手动输入。</li>
+</ul>
+<hr>
+<h3 class="heading-element" id="-小知识"><span>🧠 小知识：</span>
+  <a href="#-%e5%b0%8f%e7%9f%a5%e8%af%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>SSID ≠ MAC 地址</strong>：SSID 是网络名，MAC 是设备硬件地址；</li>
+<li><strong>多个路由器可用相同 SSID</strong>：比如你家有多个 Mesh 节点，名称可以统一为 <code>MyHomeWiFi</code>；</li>
+<li><strong>一个 SSID 下可以有多个 BSSID（MAC 地址）</strong>：BSSID 是每个接入点的唯一标识。</li>
+</ul>
+<hr>
+<h2 class="heading-element" id="那么为什么手机上获取ssid需要位置权限呢"><span>那么，为什么手机上获取SSID需要位置权限呢?</span>
+  <a href="#%e9%82%a3%e4%b9%88%e4%b8%ba%e4%bb%80%e4%b9%88%e6%89%8b%e6%9c%ba%e4%b8%8a%e8%8e%b7%e5%8f%96ssid%e9%9c%80%e8%a6%81%e4%bd%8d%e7%bd%ae%e6%9d%83%e9%99%90%e5%91%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>这是一个常见但很容易让人疑惑的问题。简单来说：</p>
+<blockquote>
+<p>📱<strong>手机上获取 Wi-Fi SSID 需要位置权限，是因为操作系统（如 Android 和 iOS）认为 Wi-Fi SSID 能间接暴露你的地理位置。</strong></p>
+</blockquote>
+<hr>
+<h3 class="heading-element" id="-详细解释如下"><span>🧠 详细解释如下：</span>
+  <a href="#-%e8%af%a6%e7%bb%86%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h3 class="heading-element" id="-1-wi-fi-ssid-是地理位置的线索"><span>✅ 1. <strong>Wi-Fi SSID 是地理位置的“线索”</strong></span>
+  <a href="#-1-wi-fi-ssid-%e6%98%af%e5%9c%b0%e7%90%86%e4%bd%8d%e7%bd%ae%e7%9a%84%e7%ba%bf%e7%b4%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Wi-Fi 热点（SSID）通常是<strong>固定的物理位置</strong>，比如：</p>
+<ul>
+<li>你家路由器的 SSID 是 <code>JohnHomeWiFi</code>，只出现在你家；</li>
+<li>星巴克的 SSID 是 <code>Starbucks_Wifi</code>，只能在那家门店附近看到。</li>
+</ul>
+<p>因此：</p>
+<blockquote>
+<p>如果一个 App 能扫描到附近有哪些 SSID，它基本就能<strong>推测你在什么地方</strong>（甚至不需要 GPS）。</p>
+</blockquote>
+<hr>
+<h3 class="heading-element" id="-2-googleapple-建了wi-fi-定位数据库"><span>✅ 2. <strong>Google/Apple 建了“Wi-Fi 定位数据库”</strong></span>
+  <a href="#-2-googleapple-%e5%bb%ba%e4%ba%86wi-fi-%e5%ae%9a%e4%bd%8d%e6%95%b0%e6%8d%ae%e5%ba%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>Google 和 Apple 都维护了一个庞大的 <strong>SSID → 地理坐标</strong> 的数据库；</li>
+<li>当手机搜索到某些 Wi-Fi 热点，即便你没有打开 GPS，也可以精确定位（就是所谓的 “Wi-Fi 定位”）；</li>
+<li>所以系统默认把 <strong>扫描 Wi-Fi 热点</strong> 也视为 <strong>位置访问行为</strong>。</li>
+</ul>
+<hr>
+<h3 class="heading-element" id="-3-操作系统强制权限控制从-android-6--ios-13-开始"><span>✅ 3. <strong>操作系统强制权限控制（从 Android 6 / iOS 13 开始）</strong></span>
+  <a href="#-3-%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%bc%ba%e5%88%b6%e6%9d%83%e9%99%90%e6%8e%a7%e5%88%b6%e4%bb%8e-android-6--ios-13-%e5%bc%80%e5%a7%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>平台</th>
+            <th>要求位置权限的行为</th>
+            <th>起始版本</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Android</td>
+            <td>获取当前连接的 SSID / 扫描 Wi-Fi</td>
+            <td>Android 6.0（API 23）起</td>
+        </tr>
+        <tr>
+            <td>iOS</td>
+            <td>获取 SSID（即使只获取当前连接）</td>
+            <td>iOS 13 起</td>
+        </tr>
+    </tbody>
+  </table>
+</div><blockquote>
+<p>🛡️ 这不是因为硬件或 API 本身需要位置，而是<strong>操作系统为了保护隐私，强制开发者声明位置权限</strong>。</p>
+</blockquote>
+<hr>
+<p>3## ❓那我只想获取“当前连接的 Wi-Fi 名称”，也要位置权限？</p>
+<p>是的，<strong>即便你只想获取当前连接的 Wi-Fi（不是扫描附近的），操作系统仍然要求位置权限</strong>，因为这同样具有定位潜力。</p>
+<hr>
+<h3 class="heading-element" id="-总结"><span>✅ 总结</span>
+  <a href="#-%e6%80%bb%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>问题</th>
+            <th>原因</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>为什么获取 SSID 需要位置权限？</td>
+            <td>因为 Wi-Fi 名称能间接泄露用户位置</td>
+        </tr>
+        <tr>
+            <td>是技术需要吗？</td>
+            <td>❌不是，是出于隐私政策</td>
+        </tr>
+        <tr>
+            <td>哪些平台强制这么做？</td>
+            <td>Android 6+、iOS 13+</td>
+        </tr>
+    </tbody>
+  </table>
+</div><hr>
+<p>如果你是开发者，想要获取当前 Wi-Fi SSID，我可以给你一个适配平台和权限的示例代码（比如 Android Java/Kotlin 或 iOS Swift）— 需要的话告诉我你的平台就行。</p>
+<h2 class="heading-element" id="lot-wi-fi是啥物联网wi-fi有什么功能"><span>loT Wi-Fi是啥？物联网Wi-Fi？有什么功能？</span>
+  <a href="#lot-wi-fi%e6%98%af%e5%95%a5%e7%89%a9%e8%81%94%e7%bd%91wi-fi%e6%9c%89%e4%bb%80%e4%b9%88%e5%8a%9f%e8%83%bd" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>您好！您理解得非常准确！</p>
+<p><strong>IoT Wi-Fi 指的就是“物联网 Wi-Fi”</strong>。它并不是一种全新的、物理上独立的Wi-Fi技术（比如像 Wi-Fi 6 或 Wi-Fi 7 那样的标准），而是指<strong>专门为物联网设备的需求而设计、优化和管理的Wi-Fi网络解决方案</strong>。</p>
+<p>您可以把它想象成在您家里或企业的主Wi-Fi网络之外，专门为物联网设备开辟的一条“专用车道”。这条车道有更适合这些小设备的交通规则，从而让整个网络更高效、更安全。</p>
+<hr>
+<h3 class="heading-element" id="iot-wi-fi-的核心功能与特点"><span>IoT Wi-Fi 的核心功能与特点</span>
+  <a href="#iot-wi-fi-%e7%9a%84%e6%a0%b8%e5%bf%83%e5%8a%9f%e8%83%bd%e4%b8%8e%e7%89%b9%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>与传统Wi-Fi主要为手机、电脑、平板等高速设备服务不同，IoT Wi-Fi 主要针对的是那些需要持续在线、但数据量很小、对功耗敏感的设备。其主要功能和特点包括：</p>
+<h4 class="heading-element" id="1-海量设备连接能力"><span>1. 海量设备连接能力</span>
+  <a href="#1-%e6%b5%b7%e9%87%8f%e8%ae%be%e5%a4%87%e8%bf%9e%e6%8e%a5%e8%83%bd%e5%8a%9b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li><strong>传统Wi-Fi</strong>：普通家用路由器同时连接20-30个设备可能就会变得不稳定、卡顿。</li>
+<li><strong>IoT Wi-Fi</strong>：通过优化协议和算法，可以稳定地支持上百甚至上千台设备同时在线。这对于智能家居、智能办公室、智能酒店等场景至关重要。</li>
+</ul>
+<h4 class="heading-element" id="2-低功耗与电源管理"><span>2. 低功耗与电源管理</span>
+  <a href="#2-%e4%bd%8e%e5%8a%9f%e8%80%97%e4%b8%8e%e7%94%b5%e6%ba%90%e7%ae%a1%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li>很多物联网设备（如传感器、门锁）使用电池供电，需要持续工作数月甚至数年。</li>
+<li>IoT Wi-Fi 技术支持 <strong>Wi-Fi HaLow (802.11ah)</strong> 等标准，或者通过优化协议，允许设备大部分时间处于“睡眠”状态，只在需要发送数据时才短暂连接，极大地延长了电池寿命。</li>
+</ul>
+<h4 class="heading-element" id="3-增强的安全性与隔离"><span>3. 增强的安全性与隔离</span>
+  <a href="#3-%e5%a2%9e%e5%bc%ba%e7%9a%84%e5%ae%89%e5%85%a8%e6%80%a7%e4%b8%8e%e9%9a%94%e7%a6%bb" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li>这是最关键的功能之一。IoT设备通常安全性较弱，容易成为黑客攻击的跳板。</li>
+<li><strong>设备隔离（网络分段）</strong>：IoT Wi-Fi 可以将所有物联网设备隔离在一个独立的子网（VLAN）中。即使某个智能灯泡被黑客攻破，也无法访问您的主网络（包含电脑、手机、NAS等有重要数据的设备）。</li>
+<li><strong>专属安全策略</strong>：可以为IoT网络设置更严格的上网规则，例如禁止IoT设备访问互联网，只允许它们与本地服务器（如智能家居中枢）通信，或者限制其访问特定端口，极大减少被攻击的风险。</li>
+</ul>
+<h4 class="heading-element" id="4-简化的配网流程"><span>4. 简化的配网流程</span>
+  <a href="#4-%e7%ae%80%e5%8c%96%e7%9a%84%e9%85%8d%e7%bd%91%e6%b5%81%e7%a8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li>传统Wi-Fi配网需要输入复杂的密码，对没有屏幕的设备（如一个灯泡）来说非常困难。</li>
+<li>IoT Wi-Fi 广泛支持 <strong>Wi-Fi Easy Connect (WPS3)</strong> 等简化配网协议。您可以用手机扫描设备上的二维码，或者通过蓝牙/NFC“碰一碰”，就能安全地将设备接入网络，用户体验大大提升。</li>
+</ul>
+<h4 class="heading-element" id="5-更好的网络稳定性与覆盖"><span>5. 更好的网络稳定性与覆盖</span>
+  <a href="#5-%e6%9b%b4%e5%a5%bd%e7%9a%84%e7%bd%91%e7%bb%9c%e7%a8%b3%e5%ae%9a%e6%80%a7%e4%b8%8e%e8%a6%86%e7%9b%96" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li>针对物联网设备可能分布在角落、信号较弱的情况（如门外的摄像头、车库的传感器），IoT Wi-Fi 系统（如Mesh网络）会优化连接路径，确保这些低数据率的设备也能稳定在线，不会频繁掉线。</li>
+</ul>
+<h4 class="heading-element" id="6-集中管理与控制"><span>6. 集中管理与控制</span>
+  <a href="#6-%e9%9b%86%e4%b8%ad%e7%ae%a1%e7%90%86%e4%b8%8e%e6%8e%a7%e5%88%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li>提供统一的管理界面，可以看到所有连接的物联网设备，并能方便地对它们进行分组、设置访问权限、检查状态和进行固件更新。</li>
+</ul>
+<hr>
+<h3 class="heading-element" id="如何实现-iot-wi-fi"><span>如何实现 IoT Wi-Fi？</span>
+  <a href="#%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0-iot-wi-fi" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>普通用户可以通过以下方式获得类似“IoT Wi-Fi”的功能：</p>
+<ol>
+<li><strong>购买支持“IoT模式”或“智能家居Wi-Fi”的高端路由器/Mesh系统</strong>：许多品牌（如TP-Link Deco, ASUS, Netgear等）的新款路由器都内置了专门为IoT设备优化的功能，只需在App中一键开启即可。</li>
+<li><strong>手动设置“访客网络”</strong>：这是一个简单有效的方法。将您的物联网设备都连接到“访客网络”，大多数访客网络默认就开启了设备隔离功能，实现了与主网络的基本隔离。</li>
+<li><strong>使用支持VLAN功能的企业级/Prosumer级设备</strong>：例如Ubiquiti UniFi, TP-Link Omada, MikroTik等系统，可以创建复杂的网络规则，实现更精细化的IoT网络管理。</li>
+</ol>
+<h3 class="heading-element" id="总结"><span>总结</span>
+  <a href="#%e6%80%bb%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>IoT Wi-Fi 的本质是一个为物联网设备优化过的专用网络环境</strong>，其核心价值在于：</p>
+<ul>
+<li><strong>容量大</strong>：能连接更多设备。</li>
+<li><strong>更安全</strong>：通过隔离保护核心数据和设备。</li>
+<li><strong>更省电</strong>：延长电池供电设备的寿命。</li>
+<li><strong>更稳定</strong>：确保智能设备始终在线。</li>
+<li><strong>更易用</strong>：简化添加新设备的流程。</li>
+</ul>
+<p>随着智能家居设备的普及，为自己的物联网设备建立一个专用的Wi-Fi网络，已经成为提升家庭网络安全和稳定性的最佳实践。</p>
+<div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table></div>
+</div>
+</div></div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议">计算机网络-HTTP与Web协议</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">计算机网络-IP地址与子网</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%8A%93%E5%8C%85%E4%B8%8E%E7%BD%91%E5%8D%A1/" title="计算机网络-抓包与网卡">计算机网络-抓包与网卡</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#常见wifi加密方式及发展历史">常见WIFI加密方式及发展历史</a></li>
+    <li><a href="#wifi的ssid是什么">Wifi的SSID是什么?</a>
+      <ul>
+        <li><a href="#-举例说明">✅ 举例说明</a></li>
+        <li><a href="#-更具体一些">🔧 更具体一些：</a></li>
+        <li><a href="#-小知识">🧠 小知识：</a></li>
+      </ul>
+    </li>
+    <li><a href="#那么为什么手机上获取ssid需要位置权限呢">那么，为什么手机上获取SSID需要位置权限呢?</a>
+      <ul>
+        <li><a href="#-详细解释如下">🧠 详细解释如下：</a></li>
+        <li><a href="#-1-wi-fi-ssid-是地理位置的线索">✅ 1. <strong>Wi-Fi SSID 是地理位置的“线索”</strong></a></li>
+        <li><a href="#-2-googleapple-建了wi-fi-定位数据库">✅ 2. <strong>Google/Apple 建了“Wi-Fi 定位数据库”</strong></a></li>
+        <li><a href="#-3-操作系统强制权限控制从-android-6--ios-13-开始">✅ 3. <strong>操作系统强制权限控制（从 Android 6 / iOS 13 开始）</strong></a></li>
+        <li><a href="#-总结">✅ 总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#lot-wi-fi是啥物联网wi-fi有什么功能">loT Wi-Fi是啥？物联网Wi-Fi？有什么功能？</a>
+      <ul>
+        <li><a href="#iot-wi-fi-的核心功能与特点">IoT Wi-Fi 的核心功能与特点</a>
+          <ul>
+            <li><a href="#1-海量设备连接能力">1. 海量设备连接能力</a></li>
+            <li><a href="#2-低功耗与电源管理">2. 低功耗与电源管理</a></li>
+            <li><a href="#3-增强的安全性与隔离">3. 增强的安全性与隔离</a></li>
+            <li><a href="#4-简化的配网流程">4. 简化的配网流程</a></li>
+            <li><a href="#5-更好的网络稳定性与覆盖">5. 更好的网络稳定性与覆盖</a></li>
+            <li><a href="#6-集中管理与控制">6. 集中管理与控制</a></li>
+          </ul>
+        </li>
+        <li><a href="#如何实现-iot-wi-fi">如何实现 IoT Wi-Fi？</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/b69ecad4e8b80a15018b3bfaacb37194.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

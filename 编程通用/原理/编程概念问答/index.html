@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>编程概念问答 - 红石门</title><meta name="author" content="">
+<meta name="description" content="方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C&#43;&#43;中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法 C语言有没有修饰访问符？C语言该如何进行封装？ C语言没有修饰访问符 什么是匿名函数？ .text和.txt有什么区别？ 没啥区别，文件扩展名不是文件格式，扩展名只是为了方便人快速识别文件格式和Windows上用于关联打开程序，只是一种约定而已，不代表文件本身格式，就像是将.zip文件扩展名改为.txt一样，不会影响文件本身内容 原语是什么意思？ - 在计算机科学中，原语通常是指操作系统提供的一些基本的、不可分割的操作，这些操作作为系统调用供用户程序使用。如进程控制、信号、文件操作等可以被视为原语。 - 在编程语言中，原语也可以指最基本的操作或函数，它们是构建更复杂程序的基础。 什么是组件的连接字（Component Connector）？ 一个软件架构和设计模式中的术语，形容不同组件或模块之间相互连接和通信的机制或接口
+"><meta name="keywords" content='问答'>
+	<meta itemprop="name" content="编程概念问答">
+	<meta itemprop="description" content="方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C&#43;&#43;中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法 C语言有没有修饰访问符？C语言该如何进行封装？ C语言没有修饰访问符 什么是匿名函数？ .text和.txt有什么区别？ 没啥区别，文件扩展名不是文件格式，扩展名只是为了方便人快速识别文件格式和Windows上用于关联打开程序，只是一种约定而已，不代表文件本身格式，就像是将.zip文件扩展名改为.txt一样，不会影响文件本身内容 原语是什么意思？ - 在计算机科学中，原语通常是指操作系统提供的一些基本的、不可分割的操作，这些操作作为系统调用供用户程序使用。如进程控制、信号、文件操作等可以被视为原语。 - 在编程语言中，原语也可以指最基本的操作或函数，它们是构建更复杂程序的基础。 什么是组件的连接字（Component Connector）？ 一个软件架构和设计模式中的术语，形容不同组件或模块之间相互连接和通信的机制或接口">
+	<meta itemprop="datePublished" content="2026-06-24T03:40:33+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:31+08:00">
+	<meta itemprop="wordCount" content="9703">
+	<meta itemprop="keywords" content="问答"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E9%97%AE%E7%AD%94/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="编程概念问答">
+	<meta property="og:description" content="方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C&#43;&#43;中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法 C语言有没有修饰访问符？C语言该如何进行封装？ C语言没有修饰访问符 什么是匿名函数？ .text和.txt有什么区别？ 没啥区别，文件扩展名不是文件格式，扩展名只是为了方便人快速识别文件格式和Windows上用于关联打开程序，只是一种约定而已，不代表文件本身格式，就像是将.zip文件扩展名改为.txt一样，不会影响文件本身内容 原语是什么意思？ - 在计算机科学中，原语通常是指操作系统提供的一些基本的、不可分割的操作，这些操作作为系统调用供用户程序使用。如进程控制、信号、文件操作等可以被视为原语。 - 在编程语言中，原语也可以指最基本的操作或函数，它们是构建更复杂程序的基础。 什么是组件的连接字（Component Connector）？ 一个软件架构和设计模式中的术语，形容不同组件或模块之间相互连接和通信的机制或接口">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="编程通用">
+		<meta property="article:published_time" content="2026-06-24T03:40:33+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:31+08:00">
+		<meta property="article:tag" content="问答">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="编程概念问答">
+	<meta name="twitter:description" content="方法和函数的区别是什么？ 一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据 仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据 在C&#43;&#43;中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法 C语言有没有修饰访问符？C语言该如何进行封装？ C语言没有修饰访问符 什么是匿名函数？ .text和.txt有什么区别？ 没啥区别，文件扩展名不是文件格式，扩展名只是为了方便人快速识别文件格式和Windows上用于关联打开程序，只是一种约定而已，不代表文件本身格式，就像是将.zip文件扩展名改为.txt一样，不会影响文件本身内容 原语是什么意思？ - 在计算机科学中，原语通常是指操作系统提供的一些基本的、不可分割的操作，这些操作作为系统调用供用户程序使用。如进程控制、信号、文件操作等可以被视为原语。 - 在编程语言中，原语也可以指最基本的操作或函数，它们是构建更复杂程序的基础。 什么是组件的连接字（Component Connector）？ 一个软件架构和设计模式中的术语，形容不同组件或模块之间相互连接和通信的机制或接口">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E9%97%AE%E7%AD%94/" title="编程概念问答 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%8D%8F%E8%AE%AE/%E5%B7%A5%E4%B8%9A%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%97%AE%E7%AD%94/" title="工业控制与机器人问答(OPC UA·执行器·ROS·数据回写)" /><link rel="next" type="text/html" href="http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%B8%B8%E6%88%8F/fallout%E7%B3%BB%E5%88%97%E7%AE%80%E5%8F%B2/" title="Fallout 系列简史" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "编程概念问答",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E9%97%AE%E7%AD%94\/"
+    },"genre": "编程通用","keywords": "问答","wordcount":  9703 ,
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E9%97%AE%E7%AD%94\/","datePublished": "2026-06-24T03:40:33+08:00","dateModified": "2026-07-06T17:23:31+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/" title="软件工程实践问答">软件工程实践问答</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB/" title="引擎、库与运行时的区别">引擎、库与运行时的区别</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/" title="C# 问答补遗">C# 问答补遗</a></li><li class="related-item">
+              <a href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%8D%8F%E8%AE%AE/%E5%B7%A5%E4%B8%9A%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%97%AE%E7%AD%94/" title="工业控制与机器人问答(OPC UA·执行器·ROS·数据回写)">工业控制与机器人问答(OPC UA·执行器·ROS·数据回写)</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%97%AE%E7%AD%94/" title="数据结构问答(Hashset·SortedSet等)">数据结构问答(Hashset·SortedSet等)</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">编程概念问答</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/">编程通用</a> / <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/">原理</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-06-24 03:40:33 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-06-24">2026-06-24</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:31 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="9703 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 9800 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 20 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E9%97%AE%E7%AD%94/">问答</a></span>
+            </div></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#方法和函数的区别是什么">方法和函数的区别是什么？</a></li>
+    <li><a href="#c语言有没有修饰访问符c语言该如何进行封装">C语言有没有修饰访问符？C语言该如何进行封装？</a></li>
+    <li><a href="#什么是匿名函数">什么是匿名函数？</a></li>
+    <li><a href="#text和txt有什么区别">.text和.txt有什么区别？</a></li>
+    <li><a href="#原语是什么意思">原语是什么意思？</a></li>
+    <li><a href="#什么是组件的连接字component-connector">什么是组件的连接字（Component Connector）？</a></li>
+    <li><a href="#什么是套接字socket">什么是套接字（Socket）？</a></li>
+    <li><a href="#什么是上位机">什么是上位机？</a></li>
+    <li><a href="#什么是端口转发什么是内网穿透二者有什么异同">什么是端口转发？什么是内网穿透？二者有什么异同？</a></li>
+    <li><a href="#什么是注册表">什么是注册表？</a></li>
+    <li><a href="#windows的回收站是个什么设定">Windows的回收站是个什么设定？</a></li>
+    <li><a href="#linux是否有回收站机制">Linux是否有回收站机制？</a></li>
+    <li><a href="#什么是缓存锁cache-locking">什么是缓存锁（Cache Locking）？</a></li>
+    <li><a href="#什么是双向转发two-way-forwarding">什么是双向转发（Two-way Forwarding）？</a></li>
+    <li><a href="#什么是有限状态机">什么是有限状态机？</a>
+      <ul>
+        <li><a href="#mqtt-broker-的工作原理">MQTT Broker 的工作原理</a></li>
+        <li><a href="#qos服务质量等级">QoS（服务质量）等级</a></li>
+        <li><a href="#常见的-mqtt-broker-实现">常见的 MQTT Broker 实现</a></li>
+        <li><a href="#使用场景">使用场景</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#什么是分治divide-and-conquer">什么是分治（Divide and Conquer）</a></li>
+    <li><a href="#什么是安装证书">什么是安装证书</a>
+      <ul>
+        <li><a href="#安装证书的常见场景">安装证书的常见场景</a></li>
+        <li><a href="#安装证书的步骤">安装证书的步骤</a></li>
+        <li><a href="#代码部分解释">代码部分解释</a></li>
+        <li><a href="#详细说明">详细说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#如何获取元组中的变量">如何获取元组中的变量？</a>
+      <ul>
+        <li><a href="#一般性解释">一般性解释</a></li>
+        <li><a href="#示例堆栈跟踪">示例堆栈跟踪</a></li>
+        <li><a href="#分析堆栈跟踪">分析堆栈跟踪</a></li>
+      </ul>
+    </li>
+    <li><a href="#目前主流的编程语言的初衷是什么它们的创造者现在如何评价它们">目前主流的编程语言的初衷是什么？它们的创造者现在如何评价它们？</a>
+      <ul>
+        <li><a href="#1-c">1. C</a></li>
+        <li><a href="#2-java">2. Java</a></li>
+        <li><a href="#3-python">3. Python</a></li>
+        <li><a href="#4-javascript">4. JavaScript</a></li>
+        <li><a href="#5-c">5. C++</a></li>
+        <li><a href="#6-ruby">6. Ruby</a></li>
+        <li><a href="#7-swift">7. Swift</a></li>
+      </ul>
+    </li>
+    <li><a href="#什么是构析函数destructor">什么是构析函数（Destructor）？</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#特点">特点：</a></li>
+            <li><a href="#示例">示例：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#正则表达式的语法是什么样的">正则表达式的语法是什么样的？</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是回调函数"><strong>什么是回调函数？</strong></a></li>
+        <li><a href="#回调函数的特点"><strong>回调函数的特点</strong></a></li>
+        <li><a href="#回调函数的应用场景"><strong>回调函数的应用场景</strong></a></li>
+        <li><a href="#c-中的回调函数实现"><strong>C# 中的回调函数实现</strong></a>
+          <ul>
+            <li><a href="#1-使用委托实现回调"><strong>1. 使用委托实现回调</strong></a></li>
+            <li><a href="#2-使用匿名方法或-lambda-表达式实现回调"><strong>2. 使用匿名方法或 Lambda 表达式实现回调</strong></a></li>
+            <li><a href="#3-使用接口实现回调"><strong>3. 使用接口实现回调</strong></a></li>
+            <li><a href="#4-使用"><strong>4. 使用 <code>Action</code> 和 <code>Func</code> 简化回调</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#总结-1"><strong>总结</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-四加盐哈希的好处">✅ 四、加盐哈希的好处</a></li>
+    <li><a href="#-五哈希加盐的存储方式">🛠 五、哈希加盐的存储方式</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 class="heading-element" id="方法和函数的区别是什么"><span>方法和函数的区别是什么？</span>
+  <a href="#%e6%96%b9%e6%b3%95%e5%92%8c%e5%87%bd%e6%95%b0%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>一般在面向对象的语言中，这个被称为方法，面向过程语言中被称为函数，没啥太大区别，都是接收输入的数据并返回数据</li>
+<li>仅有的一点区别是：方法与其被调用的对象实例相关联，方法仅限于在其所包含的类中操作数据</li>
+<li>在C++中可以创建与对象关联的函数，被称为成员函数，在其它语言中就是方法</li>
+</ul>
+<h2 class="heading-element" id="c语言有没有修饰访问符c语言该如何进行封装"><span>C语言有没有修饰访问符？C语言该如何进行封装？</span>
+  <a href="#c%e8%af%ad%e8%a8%80%e6%9c%89%e6%b2%a1%e6%9c%89%e4%bf%ae%e9%a5%b0%e8%ae%bf%e9%97%ae%e7%ac%a6c%e8%af%ad%e8%a8%80%e8%af%a5%e5%a6%82%e4%bd%95%e8%bf%9b%e8%a1%8c%e5%b0%81%e8%a3%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>C语言没有修饰访问符</li>
+</ul>
+<h2 class="heading-element" id="什么是匿名函数"><span>什么是匿名函数？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%8c%bf%e5%90%8d%e5%87%bd%e6%95%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h2 class="heading-element" id="text和txt有什么区别"><span>.text和.txt有什么区别？</span>
+  <a href="#text%e5%92%8ctxt%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>没啥区别，文件扩展名不是文件格式，扩展名只是为了方便人快速识别文件格式和Windows上用于关联打开程序，只是一种约定而已，不代表文件本身格式，就像是将.zip文件扩展名改为.txt一样，不会影响文件本身内容</li>
+</ul>
+<h2 class="heading-element" id="原语是什么意思"><span>原语是什么意思？</span>
+  <a href="#%e5%8e%9f%e8%af%ad%e6%98%af%e4%bb%80%e4%b9%88%e6%84%8f%e6%80%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><pre><code>- 在计算机科学中，原语通常是指操作系统提供的一些基本的、不可分割的操作，这些操作作为系统调用供用户程序使用。如进程控制、信号、文件操作等可以被视为原语。
+
+
+- 在编程语言中，原语也可以指最基本的操作或函数，它们是构建更复杂程序的基础。
+</code></pre>
+<h2 class="heading-element" id="什么是组件的连接字component-connector"><span>什么是组件的连接字（Component Connector）？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%bb%84%e4%bb%b6%e7%9a%84%e8%bf%9e%e6%8e%a5%e5%ad%97component-connector" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>
+<p>一个软件架构和设计模式中的术语，形容不同组件或模块之间相互连接和通信的机制或接口</p>
+<ul>
+<li><strong>接口（Interface）</strong>：
+<ul>
+<li>在面向对象编程中，接口定义了一组方法和属性，组件通过实现这些接口来进行通信。</li>
+</ul>
+</li>
+<li><strong>API（应用程序编程接口）</strong>：
+<ul>
+<li>API是一组预定义的函数、协议和工具，用于构建软件应用。组件通过调用API来实现交互。</li>
+</ul>
+</li>
+<li><strong>服务（Service）</strong>：
+<ul>
+<li>在服务导向架构（SOA）或微服务架构中，服务作为独立的业务功能单元，组件通过服务调用来交互。</li>
+</ul>
+</li>
+<li><strong>消息队列（Message Queue）</strong>：
+<ul>
+<li>组件通过发送和接收消息来进行异步通信，消息队列是这种通信方式的典型实现。</li>
+</ul>
+</li>
+<li><strong>事件（Event）</strong>：
+<ul>
+<li>组件可以基于事件来通信，其中某个组件触发事件，其他组件监听并响应这些事件。</li>
+</ul>
+</li>
+<li><strong>管道（Pipe）</strong>：
+<ul>
+<li>在某些系统设计中，管道可以作为进程间通信的手段，允许数据从一个进程流向另一个进程。</li>
+</ul>
+</li>
+<li><strong>套接字（Socket）</strong>：
+<ul>
+<li>网络编程中，套接字用于在网络中的不同主机上的组件之间建立通信。</li>
+</ul>
+</li>
+<li><strong>数据库（Database）</strong>：
+<ul>
+<li>组件可以通过数据库来共享数据，数据库作为一个共享的存储机制，允许组件进行读写操作。</li>
+</ul>
+</li>
+<li><strong>文件系统（File System）</strong>：
+<ul>
+<li>组件可以通过读写文件来交换数据，文件系统在这里充当连接字的角色。</li>
+</ul>
+</li>
+<li><strong>通信协议（Communication Protocol）</strong>：
+<ul>
+<li>在网络通信中，如TCP/IP、HTTP等协议定义了数据传输的规则，是组件间通信的基础。</li>
+</ul>
+</li>
+<li><strong>中间件（Middleware）</strong>：
+<ul>
+<li>中间件提供了一种在不同系统或组件之间传递数据的方法，它可以处理不同系统之间的通信细节。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>在DBeaver上配置数据库到底是怎样的过程？DBeaver这个软件的作用又是什么？</p>
+<ul>
+<li>商业版本可以支持各种 NoSQL 和大数据平台：MongoDB、InfluxDB、Apache Cassandra、Redis、Apache Hive 等。</li>
+</ul>
+<h2 class="heading-element" id="什么是套接字socket"><span>什么是套接字（Socket）？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%a5%97%e6%8e%a5%e5%ad%97socket" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>是网络通信的一个基本概念和工具，它提供了在计算机网络中进行数据交换的端点</li>
+</ul>
+<h2 class="heading-element" id="什么是上位机"><span>什么是上位机？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e4%b8%8a%e4%bd%8d%e6%9c%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h2 class="heading-element" id="什么是端口转发什么是内网穿透二者有什么异同"><span>什么是端口转发？什么是内网穿透？二者有什么异同？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%ab%af%e5%8f%a3%e8%bd%ac%e5%8f%91%e4%bb%80%e4%b9%88%e6%98%af%e5%86%85%e7%bd%91%e7%a9%bf%e9%80%8f%e4%ba%8c%e8%80%85%e6%9c%89%e4%bb%80%e4%b9%88%e5%bc%82%e5%90%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>端口转发 （Port ForWarding）</li>
+</ul>
+<h2 class="heading-element" id="什么是注册表"><span>什么是注册表？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e6%b3%a8%e5%86%8c%e8%a1%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>一个硬盘上的数据库，存着window和安装的软件的设置</li>
+</ul>
+<h2 class="heading-element" id="windows的回收站是个什么设定"><span>Windows的回收站是个什么设定？</span>
+  <a href="#windows%e7%9a%84%e5%9b%9e%e6%94%b6%e7%ab%99%e6%98%af%e4%b8%aa%e4%bb%80%e4%b9%88%e8%ae%be%e5%ae%9a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>每个盘符有一定的空间存放，文件被删除后不是直接从硬盘上消失，而是被标注为可覆盖</li>
+</ul>
+<h2 class="heading-element" id="linux是否有回收站机制"><span>Linux是否有回收站机制？</span>
+  <a href="#linux%e6%98%af%e5%90%a6%e6%9c%89%e5%9b%9e%e6%94%b6%e7%ab%99%e6%9c%ba%e5%88%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>无</li>
+</ul>
+<h2 class="heading-element" id="什么是缓存锁cache-locking"><span>什么是缓存锁（Cache Locking）？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%bc%93%e5%ad%98%e9%94%81cache-locking" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>一种用于控制对共享资源的访问机制，特别是在多线程或分布式系统中。当多个进程或线程需要访问相同的数据时，缓存锁可以确保</li>
+</ul>
+<h2 class="heading-element" id="什么是双向转发two-way-forwarding"><span>什么是双向转发（Two-way Forwarding）？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%8f%8c%e5%90%91%e8%bd%ac%e5%8f%91two-way-forwarding" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>双向转发通常是在网络通信中，数据可以在两个方向上进行传输，即发送</li>
+</ul>
+<h2 class="heading-element" id="什么是有限状态机"><span>什么是有限状态机？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%89%e9%99%90%e7%8a%b6%e6%80%81%e6%9c%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>有限状态机（Finite State Machine，FSM）是一种计算模型，它由一组状态以及在这些状态之间的转移组成。</li>
+</ul>
+</li>
+<li>
+<p>vs中打包和生成的区别是什么？</p>
+<ul>
+<li><strong>主要区别</strong>:
+<ul>
+<li><strong>范围</strong>：生成通常只涉及编译源代码，而打包涉及更全面的部署准备过程</li>
+<li><strong>依赖项</strong>:打包过程会考虑应用程序的所有依赖性，并确保它们被包含在部署包中</li>
+<li><strong>部署</strong>：打包通常是为了直接支持部署，而生成是为了确保代码可以编译成功</li>
+<li><strong>配置</strong>:打包可以包含特定的配置选项，如发布配置、目标框架、运行时标识符等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>MQTT Broker</strong> 是一种服务器，它负责接收来自发布者（Publishers）的消息，并将这些消息分发给订阅了相应主题（Topics）的订阅者（Subscribers）。它的主要功能包括：</p>
+<ol>
+<li>
+<p><strong>消息路由</strong>：接收发布者发送的消息，并根据订阅者的订阅主题将消息路由到正确的订阅者。</p>
+</li>
+<li>
+<p><strong>会话管理</strong>：维护客户端连接的会话信息，包括连接状态、订阅信息和消息队列。</p>
+</li>
+<li>
+<p><strong>消息存储</strong>：存储持久化消息，以便在订阅者不可用时保留消息，并在订阅者恢复连接时传递消息。</p>
+</li>
+<li>
+<p><strong>质量保证</strong>：根据 QoS（Quality of Service）等级，确保消息按规定的可靠性传递。</p>
+<h3 class="heading-element" id="mqtt-broker-的工作原理"><span>MQTT Broker 的工作原理</span>
+  <a href="#mqtt-broker-%e7%9a%84%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li><strong>客户端连接</strong>：客户端（包括发布者和订阅者）通过网络连接到 Broker。连接建立后，客户端可以发布消息或订阅主题。</li>
+<li><strong>消息发布</strong>：发布者将消息发送到 Broker，并指定一个或多个主题。消息可以携带不同的 QoS 等级，决定消息的传递可靠性。</li>
+<li><strong>消息订阅</strong>：订阅者向 Broker 订阅感兴趣的主题。订阅请求可以指定 QoS 等级，决定订阅者希望接收消息的可靠性。</li>
+<li><strong>消息路由和分发</strong>：Broker 接收到消息后，根据订阅者的订阅信息，将消息分发给相应的订阅者。</li>
+</ol>
+<h3 class="heading-element" id="qos服务质量等级"><span>QoS（服务质量）等级</span>
+  <a href="#qos%e6%9c%8d%e5%8a%a1%e8%b4%a8%e9%87%8f%e7%ad%89%e7%ba%a7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>MQTT 定义了三个 QoS 等级，以满足不同的可靠性需求：</p>
+<ul>
+<li><strong>QoS 0</strong>：至多一次（At most once），消息发送但不确认，不保证消息到达（“最佳努力”传递）。</li>
+<li><strong>QoS 1</strong>：至少一次（At least once），消息发送并确认，确保消息至少到达一次，但可能会有重复。</li>
+<li><strong>QoS 2</strong>：仅一次（Exactly once），消息发送并通过四步握手确认，确保消息仅到达一次，最可靠但开销最大。</li>
+</ul>
+<h3 class="heading-element" id="常见的-mqtt-broker-实现"><span>常见的 MQTT Broker 实现</span>
+  <a href="#%e5%b8%b8%e8%a7%81%e7%9a%84-mqtt-broker-%e5%ae%9e%e7%8e%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>有许多开源和商业的 MQTT Broker 实现，以下是一些常见的 MQTT Broker：</p>
+<ul>
+<li><strong>Mosquitto</strong>：一个轻量级的开源 MQTT Broker，适合嵌入式设备和小型物联网项目。</li>
+<li><strong>EMQX</strong>：一个高性能的开源 MQTT Broker，支持大规模并发连接，适合大型物联网项目。</li>
+<li><strong>HiveMQ</strong>：一个商业 MQTT Broker，提供企业级功能和支持。</li>
+<li><strong>Eclipse Paho</strong>：Eclipse 基金会下的一个开源 MQTT 客户端库和 Broker 项目。</li>
+</ul>
+<h3 class="heading-element" id="使用场景"><span>使用场景</span>
+  <a href="#%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>MQTT Broker 被广泛应用于物联网（IoT）场景中，包括但不限于：</p>
+<ul>
+<li><strong>智能家居</strong>：设备之间的通信和控制，如智能灯、智能插座等。</li>
+<li><strong>工业自动化</strong>：机器和传感器之间的数据传输和监控。</li>
+<li><strong>车联网</strong>：车辆数据的采集和实时传输。</li>
+<li><strong>医疗健康</strong>：医疗设备的数据传输和监控。</li>
+</ul>
+<h3 class="heading-element" id="总结"><span>总结</span>
+  <a href="#%e6%80%bb%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>MQTT Broker 是 MQTT 协议的核心组件，负责管理消息的传递和分发。通过支持发布/订阅模式、QoS 等级和会话管理，MQTT Broker 提供了高效可靠的消息传输机制，适用于各种物联网应用场景。选择合适的 MQTT Broker 取决于项目的规模、性能要求和特定功能需求。</p>
+</li>
+</ol>
+<h2 class="heading-element" id="什么是分治divide-and-conquer"><span>什么是分治（Divide and Conquer）</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%88%86%e6%b2%bbdivide-and-conquer" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>是一种算法设计范式，通过将问题分解为更小的子问题来解决，然后递归地解决这些子问题，并最终将子问题的解结合并形成原问题的解。</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 class="heading-element" id="什么是安装证书"><span>什么是安装证书</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%ae%89%e8%a3%85%e8%af%81%e4%b9%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>
+<p>安装证书通常指的是在计算机或设备上添加<strong>数字证书</strong>的过程。数字证书是一种用于加密和验证通信的安全性工具，通常用于加密和保护网络通信、网站身份验证等方面。在安装证书的过程中，用户将数字证书文件添加到其操作系统、浏览器或应用程序的信任存储中，以确保与其他实体的安全通信。</p>
+<h3 class="heading-element" id="安装证书的常见场景"><span>安装证书的常见场景</span>
+  <a href="#%e5%ae%89%e8%a3%85%e8%af%81%e4%b9%a6%e7%9a%84%e5%b8%b8%e8%a7%81%e5%9c%ba%e6%99%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li><strong>网站身份验证</strong>：Web 浏览器通常会使用数字证书来验证网站的身份。当用户访问一个使用 HTTPS 协议的网站时，网站会向浏览器发送其数字证书，浏览器会验证证书的有效性，并确定是否与信任的证书颁发机构相关联。</li>
+<li><strong>电子邮件加密</strong>：在电子邮件通信中，数字证书可以用于加密和签名邮件，确保邮件内容的保密性和完整性。</li>
+<li><strong>VPN 连接</strong>：VPN（Virtual Private Network）连接通常需要数字证书来验证用户的身份和加密通信。</li>
+</ol>
+</li>
+</ul>
+<ol start="4">
+<li><strong>客户端身份验证</strong>：在某些系统中，客户端需要提供数字证书来验证其身份，以访问受限资源或服务。</li>
+</ol>
+<h3 class="heading-element" id="安装证书的步骤"><span>安装证书的步骤</span>
+  <a href="#%e5%ae%89%e8%a3%85%e8%af%81%e4%b9%a6%e7%9a%84%e6%ad%a5%e9%aa%a4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><pre><code>安装数字证书通常涉及以下步骤：
+</code></pre>
+<ol>
+<li><strong>获取证书</strong>：用户需要获取数字证书文件，通常是由可信任的证书颁发机构（CA）签发的。这些证书可以是网站的 SSL 证书、电子邮件签名证书等。
+2. <strong>导入证书</strong>：用户需要将数字证书导入其操作系统、浏览器或应用程序的证书存储中。导入证书的方法取决于所使用的操作系统和软件。</li>
+<li><strong>信任证书</strong>：一旦证书被导入，用户可能需要手动将其标记为受信任的证书。这样做可以确保系统或软件信任证书颁发机构签发的证书，并在与其他实体通信时使用它们。
+4. <strong>配置选项</strong>：有时，用户可能需要在操作系统、浏览器或应用程序中配置一些选项，以确保数字证书被正确地使用和管理。</li>
+</ol>
+<pre><code>### 安全考虑
+</code></pre>
+<p>在安装数字证书时，需要注意以下安全考虑：</p>
+<ul>
+<li>
+<p><strong>来源可信性</strong>：确保从可信任的来源获取数字证书，避免使用来自不可信任或未知来源的证书。</p>
+<ul>
+<li><strong>验证证书有效性</strong>：在安装证书之前，用户应该验证证书的有效性，包括证书的有效期、签发者等信息。</li>
+</ul>
+</li>
+<li>
+<p><strong>保护私钥</strong>：如果证书包含私钥，则需要确保私钥的保密性，以防止未经授权的访问或使用。</p>
+<ul>
+<li><strong>定期更新</strong>：定期检查和更新证书，以确保其仍然有效，并且与安全最佳实践保持一致。</li>
+</ul>
+<p>通过正确地安装和管理数字证书，用户可以增强其网络通信的安全性和可信度，并确保与其他实体的安全通信。</p>
+</li>
+<li>
+<p>var parts = content.Split(new string[] { &ldquo;&amp;&amp;&rdquo; }, StringSplitOptions.None); 这句话是什么意思</p>
+</li>
+</ul>
+<h3 class="heading-element" id="代码部分解释"><span>代码部分解释</span>
+  <a href="#%e4%bb%a3%e7%a0%81%e9%83%a8%e5%88%86%e8%a7%a3%e9%87%8a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">csharp</span>
+</span></span><span class="line"><span class="cl"><span class="err">复制代码</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="n">parts</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">new</span> <span class="n">string</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">&#34;&amp;&amp;&#34;</span> <span class="p">},</span> <span class="n">StringSplitOptions</span><span class="o">.</span><span class="n">None</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><h3 class="heading-element" id="详细说明"><span>详细说明</span>
+  <a href="#%e8%af%a6%e7%bb%86%e8%af%b4%e6%98%8e" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li><strong><code>content</code></strong>:
+<ul>
+<li>这是一个字符串变量，包含需要分割的原始字符串内容。在你的示例中，它是去掉包头和包尾后的HJ212数据字符串。</li>
+</ul>
+</li>
+<li><strong><code>Split</code>方法</strong>:
+<ul>
+<li><code>Split</code>方法是C#中用于将字符串分割成子字符串数组的方法。</li>
+</ul>
+</li>
+<li><strong><code>new string[] { &quot;&amp;&amp;&quot; }</code></strong>:
+<ul>
+<li>这是指定的分隔符数组。在这里，<code>&quot;&amp;&amp;&quot;</code>是用来分割字符串的特定子字符串。</li>
+<li><code>new string[] { &quot;&amp;&amp;&quot; }</code>表示创建一个包含一个元素的字符串数组，该元素是<code>&quot;&amp;&amp;&quot;</code>。</li>
+</ul>
+</li>
+<li><strong><code>StringSplitOptions.None</code></strong>:
+<ul>
+<li>这是一个枚举值，指定在分割操作中不忽略空条目。如果指定为<code>StringSplitOptions.RemoveEmptyEntries</code>，则会忽略结果数组中的空字符串。</li>
+</ul>
+</li>
+</ol>
+<h2 class="heading-element" id="如何获取元组中的变量"><span>如何获取元组中的变量？</span>
+  <a href="#%e5%a6%82%e4%bd%95%e8%8e%b7%e5%8f%96%e5%85%83%e7%bb%84%e4%b8%ad%e7%9a%84%e5%8f%98%e9%87%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-c#"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kt">var</span> <span class="p">(</span><span class="n">Rtd</span><span class="p">,</span><span class="n">Flag</span><span class="p">)</span> <span class="p">=</span> <span class="n">tuple</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//解构元组</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><ul>
+<li>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-c#"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">FiTools</span><span class="p">.</span><span class="n">BridgeManager</span><span class="p">.</span><span class="n">Bridge</span><span class="p">:</span> <span class="n">System</span><span class="p">.</span><span class="n">OperationCanceledException</span><span class="p">:</span> <span class="n">The</span> <span class="n">operation</span> <span class="n">was</span> <span class="n">canceled</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">   <span class="n">at</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">CancellationToken</span><span class="p">.</span><span class="n">ThrowOperationCanceledException</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">   <span class="n">at</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">CancellationToken</span><span class="p">.</span><span class="n">ThrowIfCancellationRequested</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">   <span class="n">at</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">Sockets</span><span class="p">.</span><span class="n">Socket</span><span class="p">.</span><span class="n">AwaitableSocketAsyncEventArgs</span><span class="p">.</span><span class="n">ThrowException</span><span class="p">(</span><span class="n">SocketError</span> <span class="n">error</span><span class="p">,</span> <span class="n">CancellationToken</span> <span class="n">cancellationToken</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="n">at</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">Sockets</span><span class="p">.</span><span class="n">Socket</span><span class="p">.</span><span class="n">AwaitableSocketAsyncEventArgs</span><span class="p">.</span><span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Tasks</span><span class="p">.</span><span class="n">Sources</span><span class="p">.</span><span class="n">IValueTaskSource</span><span class="p">&lt;</span><span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">Sockets</span><span class="p">.</span><span class="n">Socket</span><span class="p">&gt;.</span><span class="n">GetResult</span><span class="p">(</span><span class="n">Int16</span> <span class="n">token</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="n">at</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">Sockets</span><span class="p">.</span><span class="n">TcpListener</span><span class="p">.&lt;</span><span class="n">AcceptTcpClientAsync</span><span class="p">&gt;</span><span class="n">g__WaitAndWrap</span><span class="p">|</span><span class="m">32_0</span><span class="p">(</span><span class="n">ValueTask</span><span class="err">`</span><span class="m">1</span> <span class="n">task</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="n">at</span> <span class="n">FiTools</span><span class="p">.</span><span class="n">BridgeManager</span><span class="p">.</span><span class="n">Bridge</span><span class="p">.</span><span class="n">BeginTcpProxy</span><span class="p">()</span> <span class="k">in</span> <span class="n">C</span><span class="p">:</span><span class="err">\</span><span class="n">uzone</span><span class="err">\项目\</span><span class="m">2024</span><span class="err">\</span><span class="m">2024</span><span class="p">-</span><span class="m">01</span> <span class="err">山东港口集团日照港</span> <span class="err">智慧环保一期\代码\</span><span class="n">BridgeManager</span><span class="err">\</span><span class="n">Bridge</span><span class="p">.</span><span class="n">cs</span><span class="p">:</span><span class="n">line</span> <span class="m">75</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>一般这种报错，有多行at的这种是什么原因？要怎么看才能更直观的获得信息？</p>
+<ul>
+<li>
+<p>在 C# 程序中，当异常发生时，通常会有一个堆栈跟踪（stack trace），它列出了异常抛出时调用堆栈的内容。每行 <code>at</code> 都表示一个方法调用，从最内层的方法开始，一直到异常抛出的位置。通过分析堆栈跟踪，可以更直观地了解异常是在哪里发生的，以及调用链中的哪些方法可能导致了这个异常。</p>
+<h3 class="heading-element" id="一般性解释"><span>一般性解释</span>
+  <a href="#%e4%b8%80%e8%88%ac%e6%80%a7%e8%a7%a3%e9%87%8a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>堆栈跟踪的每一行 <code>at</code> 表示调用堆栈中的一个方法。堆栈跟踪从内到外显示方法调用顺序，最后一行通常是最外层方法，第一行是最内层方法（即异常实际抛出的地方）。</p>
+<h3 class="heading-element" id="示例堆栈跟踪"><span>示例堆栈跟踪</span>
+  <a href="#%e7%a4%ba%e4%be%8b%e5%a0%86%e6%a0%88%e8%b7%9f%e8%b8%aa" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">plaintext复制代码System.OperationCanceledException: The operation was canceled.
+</span></span><span class="line"><span class="cl">   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+</span></span><span class="line"><span class="cl">   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+</span></span><span class="line"><span class="cl">   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+</span></span><span class="line"><span class="cl">   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource&lt;System.Net.Sockets.Socket&gt;.GetResult(Int16 token)
+</span></span><span class="line"><span class="cl">   at System.Net.Sockets.TcpListener.&lt;AcceptTcpClientAsync&gt;g__WaitAndWrap|32_0(ValueTask`1 task)
+</span></span><span class="line"><span class="cl">   at FiTools.BridgeManager.Bridge.BeginTcpProxy() in C:\uzone\项目\2024\2024-01 山东港口集团日照港 智慧环保一期\代码\BridgeManager\Bridge.cs:line 75</span></span></code></pre></td></tr></table></div>
+</div>
+</div><h3 class="heading-element" id="分析堆栈跟踪"><span>分析堆栈跟踪</span>
+  <a href="#%e5%88%86%e6%9e%90%e5%a0%86%e6%a0%88%e8%b7%9f%e8%b8%aa" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>
+<p><strong>异常类型和消息</strong>：</p>
+<ul>
+<li><code>System.OperationCanceledException: The operation was canceled.</code> 表示抛出了一个操作取消异常，通常由取消标记（<code>CancellationToken</code>）引发。</li>
+</ul>
+</li>
+<li>
+<p><strong>堆栈跟踪行</strong>：</p>
+<ul>
+<li>
+<p><code>at System.Threading.CancellationToken.ThrowOperationCanceledException()</code> 表示异常在 <code>ThrowOperationCanceledException</code> 方法中抛出。</p>
+</li>
+<li>
+<p>其他</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">at</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>行表示调用链中的方法，依次为：</p>
+<ul>
+<li><code>System.Threading.CancellationToken.ThrowIfCancellationRequested()</code></li>
+<li><code>System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)</code></li>
+<li><code>System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource&lt;System.Net.Sockets.Socket&gt;.GetResult(Int16 token)</code></li>
+<li><code>System.Net.Sockets.TcpListener.&lt;AcceptTcpClientAsync&gt;g__WaitAndWrap|32_0(ValueTask</code>1 task)`</li>
+<li><code>FiTools.BridgeManager.Bridge.BeginTcpProxy() in C:\uzone\项目\2024\2024-01 山东港口集团日照港 智慧环保一期\代码\BridgeManager\Bridge.cs:line 75</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>源代码位置</strong>：</p>
+<ul>
+<li>最后一行 <code>at FiTools.BridgeManager.Bridge.BeginTcpProxy() in C:\uzone\项目\2024\2024-01 山东港口集团日照港 智慧环保一期\代码\BridgeManager\Bridge.cs:line 75</code> 提供了源代码文件的路径和行号，表明异常在 <code>Bridge.cs</code> 文件的第 75 行发生。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="heading-element" id="目前主流的编程语言的初衷是什么它们的创造者现在如何评价它们"><span>目前主流的编程语言的初衷是什么？它们的创造者现在如何评价它们？</span>
+  <a href="#%e7%9b%ae%e5%89%8d%e4%b8%bb%e6%b5%81%e7%9a%84%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80%e7%9a%84%e5%88%9d%e8%a1%b7%e6%98%af%e4%bb%80%e4%b9%88%e5%ae%83%e4%bb%ac%e7%9a%84%e5%88%9b%e9%80%a0%e8%80%85%e7%8e%b0%e5%9c%a8%e5%a6%82%e4%bd%95%e8%af%84%e4%bb%b7%e5%ae%83%e4%bb%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="1-c"><span>1. C</span>
+  <a href="#1-c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>创造者</strong>：丹尼斯·里奇（Dennis Ritchie）
+<strong>初衷</strong>：C语言是在1970年代早期由贝尔实验室的丹尼斯·里奇开发的，目的是为开发UNIX操作系统提供一种高效且灵活的语言。C语言继承了B语言的某些特性，并增加了类型系统以提高编程的安全性和表达能力。
+<strong>评价</strong>：丹尼斯·里奇认为，C语言成功地达到了他的目标，即提供了一种既接近硬件又适合高级程序设计的语言。它的简单性和效率使其成为系统编程和嵌入式编程的主流语言之一。</p>
+<h3 class="heading-element" id="2-java"><span>2. Java</span>
+  <a href="#2-java" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>创造者</strong>：詹姆斯·高斯林（James Gosling）
+<strong>初衷</strong>：Java语言最初于1990年代初在Sun Microsystems开发，目标是创建一种跨平台的编程语言，能够在不同的设备和操作系统上运行。Java的设计哲学是“写一次，运行到处”（Write Once, Run Anywhere），并且注重安全性和稳定性。
+<strong>评价</strong>：詹姆斯·高斯林对Java的评价是，它成功地实现了跨平台的目标，并成为了互联网时代的关键编程语言之一。尽管随着时间推移，Java面临了一些新的挑战和竞争，但其核心理念和影响力依然强大。</p>
+<h3 class="heading-element" id="3-python"><span>3. Python</span>
+  <a href="#3-python" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>创造者</strong>：吉多·范罗苏姆（Guido van Rossum）
+<strong>初衷</strong>：Python语言于1980年代末至1990年代初由吉多·范罗苏姆开发，目的是创建一种易于阅读和使用的编程语言，能够帮助程序员快速开发和调试代码。Python强调简洁和可读性，力求减少程序员的认知负担。
+<strong>评价</strong>：吉多·范罗苏姆对Python的发展表示满意，他认为Python在保持简单和易用的同时，已经发展成为一个功能强大的语言，广泛应用于数据科学、人工智能、Web开发等领域。</p>
+<h3 class="heading-element" id="4-javascript"><span>4. JavaScript</span>
+  <a href="#4-javascript" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>创造者</strong>：布兰登·艾克（Brendan Eich）
+<strong>初衷</strong>：JavaScript于1995年由布兰登·艾克在Netscape公司开发，目标是为Web浏览器添加一种轻量级的脚本语言，以便于处理用户交互和动态内容。JavaScript的设计注重简便和灵活性。
+<strong>评价</strong>：布兰登·艾克认为，尽管JavaScript起初面临许多批评和挑战，但它已经成长为一种重要的编程语言，推动了Web技术的发展。如今，JavaScript不仅在客户端编程中占据主导地位，还扩展到了服务器端（如Node.js）。</p>
+<h3 class="heading-element" id="5-c"><span>5. C++</span>
+  <a href="#5-c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>创造者</strong>：比雅尼·斯特劳斯特鲁普（Bjarne Stroustrup）
+<strong>初衷</strong>：C++是在1980年代由比雅尼·斯特劳斯特鲁普开发的，目的是在C语言的基础上增加面向对象编程的特性，从而提高程序的模块化和可维护性。C++兼顾了系统编程的效率和高级程序设计的灵活性。
+<strong>评价</strong>：比雅尼·斯特劳斯特鲁普认为，C++成功地达到了他的设计目标，并且在工业界和学术界得到了广泛应用。他对C++的演变和持续发展表示欣慰，并认为它在现代软件开发中仍然具有重要地位。</p>
+<h3 class="heading-element" id="6-ruby"><span>6. Ruby</span>
+  <a href="#6-ruby" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>创造者</strong>：松本行弘（Yukihiro &ldquo;Matz&rdquo; Matsumoto）
+<strong>初衷</strong>：Ruby语言于1990年代中期由松本行弘开发，目标是创建一种简洁且强大的编程语言，使程序员在编程时感到愉悦和高效。Ruby融合了多种编程范式，强调优雅和简便。
+<strong>评价</strong>：松本行弘对Ruby的成功感到高兴，尤其是在Web开发领域（如Ruby on Rails的影响）。他认为Ruby实现了他当初的设计理念，让编程变得更有乐趣和创造性。</p>
+<h3 class="heading-element" id="7-swift"><span>7. Swift</span>
+  <a href="#7-swift" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>创造者</strong>：克里斯·拉特纳（Chris Lattner）
+<strong>初衷</strong>：Swift语言由克里斯·拉特纳在苹果公司主导开发，发布于2014年，目的是取代Objective-C，提供一种现代、安全、快速的编程语言，适用于iOS和macOS应用开发。Swift结合了现代编程语言的最佳特性，注重安全性和性能。
+<strong>评价</strong>：克里斯·拉特纳对Swift的评价非常正面，他认为Swift在简化开发过程、提高代码安全性和执行性能方面表现出色。Swift的快速普及和广泛应用表明它达到了预期的目标。</p>
+<p>这些编程语言的创造者普遍认为，他们的语言在实现最初的设计目标方面取得了成功，并且在各自的应用领域内产生了深远的影响。尽管随着时间的推移，每种语言都面临新的挑战和竞争，但其核心理念和影响力依然显著。</p>
+<h2 class="heading-element" id="什么是构析函数destructor"><span>什么是构析函数（Destructor）？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e6%9e%84%e6%9e%90%e5%87%bd%e6%95%b0destructor" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>析构函数是类的特殊方法，当对象被垃圾回收时调用。它用于清理资源（如关闭文件、释放内存）。析构函数的名称与类名相同，并且前面加上波浪号（<code>~</code>）。</p>
+<h4 class="heading-element" id="特点"><span>特点：</span>
+  <a href="#%e7%89%b9%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li>名称与类名相同，前面加上波浪号（<code>~</code>）。</li>
+<li>没有参数和返回类型。</li>
+<li>每个类最多只有一个析构函数，不能重载。</li>
+<li>由垃圾回收器（GC）调用，不确定何时调用。</li>
+</ul>
+<h4 class="heading-element" id="示例"><span>示例：</span>
+  <a href="#%e7%a4%ba%e4%be%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-c#"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Resource</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 析构函数</span>
+</span></span><span class="line"><span class="cl">    <span class="p">~</span><span class="n">Resource</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 清理资源的代码</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Destructor called&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><h2 class="heading-element" id="正则表达式的语法是什么样的"><span>正则表达式的语法是什么样的？</span>
+  <a href="#%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e7%9a%84%e8%af%ad%e6%b3%95%e6%98%af%e4%bb%80%e4%b9%88%e6%a0%b7%e7%9a%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>正则表达式由普通字符（例如字母和数字）和特殊字符组成。特殊字符包括：</p>
+<ul>
+<li><code>.</code>：点字符可以匹配任何单个字符（除了换行符）。</li>
+<li><code>*</code>：星号表示前面的元素可以出现零次或多次。</li>
+<li><code>^</code>: 字符串的开头</li>
+<li><code>$</code>: 字符串的结尾</li>
+<li><code>+</code>：加号表示前面的元素至少出现一次。</li>
+<li><code>?</code>：问号表示前面的元素可以出现零次或一次。</li>
+<li><code>[]</code>：方括号定义一个字符集合，匹配其中的任意一个字符。</li>
+<li><code>()</code>：圆括号用于分组，也用于捕获匹配的文本。</li>
+<li><code>|</code>：竖线表示逻辑“或”，匹配两个或多个选项中的一个。</li>
+<li><code>\d</code>：匹配任意数字，等同于 <code>[0-9]</code>。</li>
+<li><code>\w</code>：匹配任意字母数字字符，包括下划线。</li>
+<li><code>\s</code>：匹配任何空白字符（空格、制表符、换行符等）。</li>
+</ul>
+<h1 class="heading-element" id="接口和抽象类的区别到底是啥有的编程语言抽象类不能多继承吗所有编程语言都支持接口多继承接口的多继承就是所谓的优先使用组合而非继承"><span>接口和抽象类的区别到底是啥？有的编程语言抽象类不能多继承吗？所有编程语言都支持接口多继承？接口的多继承就是所谓的优先使用组合而非继承？</span>
+  <a href="#%e6%8e%a5%e5%8f%a3%e5%92%8c%e6%8a%bd%e8%b1%a1%e7%b1%bb%e7%9a%84%e5%8c%ba%e5%88%ab%e5%88%b0%e5%ba%95%e6%98%af%e5%95%a5%e6%9c%89%e7%9a%84%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80%e6%8a%bd%e8%b1%a1%e7%b1%bb%e4%b8%8d%e8%83%bd%e5%a4%9a%e7%bb%a7%e6%89%bf%e5%90%97%e6%89%80%e6%9c%89%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80%e9%83%bd%e6%94%af%e6%8c%81%e6%8e%a5%e5%8f%a3%e5%a4%9a%e7%bb%a7%e6%89%bf%e6%8e%a5%e5%8f%a3%e7%9a%84%e5%a4%9a%e7%bb%a7%e6%89%bf%e5%b0%b1%e6%98%af%e6%89%80%e8%b0%93%e7%9a%84%e4%bc%98%e5%85%88%e4%bd%bf%e7%94%a8%e7%bb%84%e5%90%88%e8%80%8c%e9%9d%9e%e7%bb%a7%e6%89%bf" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><p>抽象类是一种可以支持实现一定方法并继承的接口</p>
+<h1 class="heading-element" id="回调函数是啥有什么用"><span>回调函数是啥？有什么用？</span>
+  <a href="#%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0%e6%98%af%e5%95%a5%e6%9c%89%e4%bb%80%e4%b9%88%e7%94%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h3 class="heading-element" id="什么是回调函数"><span><strong>什么是回调函数？</strong></span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>回调函数（Callback Function）是一种编程技术，是指将一个函数作为参数传递给另一个函数，当某些特定事件发生或某个操作完成时，由这个函数（即回调函数）被调用，从而实现动态执行逻辑。</p>
+<p>通俗地讲，回调函数就像是一种“预约机制”，你告诉某个函数：“一旦发生某件事情，记得调用我传给你的这个函数。”</p>
+<hr>
+<h3 class="heading-element" id="回调函数的特点"><span><strong>回调函数的特点</strong></span>
+  <a href="#%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0%e7%9a%84%e7%89%b9%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li><strong>延迟执行</strong>：回调函数不是立即执行，而是在某个事件发生或条件满足后才被调用。</li>
+<li><strong>动态行为</strong>：主函数的行为可以根据传入的回调函数不同而发生变化。</li>
+<li><strong>解耦设计</strong>：通过回调函数，可以将主逻辑与特定行为分离，增强代码的可扩展性。</li>
+</ol>
+<hr>
+<h3 class="heading-element" id="回调函数的应用场景"><span><strong>回调函数的应用场景</strong></span>
+  <a href="#%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0%e7%9a%84%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>
+<p>异步操作</p>
+<p>：</p>
+<ul>
+<li>例如文件读取完成后，通知用户数据已经准备好。</li>
+</ul>
+</li>
+<li>
+<p>事件驱动编程</p>
+<p>：</p>
+<ul>
+<li>鼠标点击、按键触发等。</li>
+</ul>
+</li>
+<li>
+<p>算法设计</p>
+<p>：</p>
+<ul>
+<li>例如排序算法中自定义比较逻辑。</li>
+</ul>
+</li>
+<li>
+<p>框架与库设计</p>
+<p>：</p>
+<ul>
+<li>通过回调函数，用户可以在库函数执行时插入自己的逻辑。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 class="heading-element" id="c-中的回调函数实现"><span><strong>C# 中的回调函数实现</strong></span>
+  <a href="#c-%e4%b8%ad%e7%9a%84%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0%e5%ae%9e%e7%8e%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>在 C# 中，回调函数通常通过以下三种方式实现：</p>
+<ol>
+<li><strong>委托（Delegate）</strong></li>
+<li><strong>匿名函数（Anonymous Method）和 Lambda 表达式</strong></li>
+<li><strong>接口（Interface）</strong></li>
+</ol>
+<hr>
+<h4 class="heading-element" id="1-使用委托实现回调"><span><strong>1. 使用委托实现回调</strong></span>
+  <a href="#1-%e4%bd%bf%e7%94%a8%e5%a7%94%e6%89%98%e5%ae%9e%e7%8e%b0%e5%9b%9e%e8%b0%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>委托是 C# 中的一个类型，用于封装方法。它是实现回调函数最常见的方式。</p>
+<p><strong>示例：用委托实现简单回调</strong></p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-csharp"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 定义一个委托</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">delegate</span> <span class="k">void</span> <span class="n">CallbackDelegate</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 主函数：接受回调函数</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">DoSomething</span><span class="p">(</span><span class="n">CallbackDelegate</span> <span class="n">callback</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;开始执行操作...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 模拟操作完成后调用回调函数</span>
+</span></span><span class="line"><span class="cl">        <span class="n">callback</span><span class="p">(</span><span class="s">&#34;操作已完成！&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 定义回调函数</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CallbackDelegate</span> <span class="n">myCallback</span> <span class="p">=</span> <span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;回调消息：{message}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 将回调函数传递给主函数</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DoSomething</span><span class="p">(</span><span class="n">myCallback</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="展开或折叠代码块" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
+</div>
+</div><p><strong>运行结果</strong>：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">开始执行操作...
+</span></span><span class="line"><span class="cl">回调消息：操作已完成！</span></span></code></pre></td></tr></table></div>
+</div>
+</div><hr>
+<h4 class="heading-element" id="2-使用匿名方法或-lambda-表达式实现回调"><span><strong>2. 使用匿名方法或 Lambda 表达式实现回调</strong></span>
+  <a href="#2-%e4%bd%bf%e7%94%a8%e5%8c%bf%e5%90%8d%e6%96%b9%e6%b3%95%e6%88%96-lambda-%e8%a1%a8%e8%be%be%e5%bc%8f%e5%ae%9e%e7%8e%b0%e5%9b%9e%e8%b0%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>在 C# 中，匿名方法和 Lambda 表达式可以用作回调函数，语法更简洁。</p>
+<p><strong>示例：用 Lambda 表达式实现回调</strong></p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-csharp"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">delegate</span> <span class="k">void</span> <span class="n">CallbackDelegate</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">DoSomething</span><span class="p">(</span><span class="n">CallbackDelegate</span> <span class="n">callback</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;执行一些操作...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">callback</span><span class="p">(</span><span class="s">&#34;操作完成，Lambda 表达式回调成功！&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 使用 Lambda 表达式直接传递回调</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DoSomething</span><span class="p">((</span><span class="n">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;回调消息：{message}&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><hr>
+<h4 class="heading-element" id="3-使用接口实现回调"><span><strong>3. 使用接口实现回调</strong></span>
+  <a href="#3-%e4%bd%bf%e7%94%a8%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0%e5%9b%9e%e8%b0%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>通过接口实现回调是一种面向对象的方式，通常用于设计更复杂的场景。</p>
+<p><strong>示例：用接口实现回调</strong></p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-csharp"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">interface</span> <span class="nc">ICallback</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">OnComplete</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Worker</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">ICallback</span> <span class="n">_callback</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Worker</span><span class="p">(</span><span class="n">ICallback</span> <span class="n">callback</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_callback</span> <span class="p">=</span> <span class="n">callback</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">DoWork</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;正在工作...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 模拟工作完成后调用回调</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_callback</span><span class="p">.</span><span class="n">OnComplete</span><span class="p">(</span><span class="s">&#34;工作完成，接口回调成功！&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span> <span class="p">:</span> <span class="n">ICallback</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 实现回调接口</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">OnComplete</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;回调收到消息：{message}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 创建回调实现类</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Program</span> <span class="n">program</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Program</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 创建 Worker 并传入回调</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Worker</span> <span class="n">worker</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Worker</span><span class="p">(</span><span class="n">program</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 执行任务</span>
+</span></span><span class="line"><span class="cl">        <span class="n">worker</span><span class="p">.</span><span class="n">DoWork</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="展开或折叠代码块" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
+</div>
+</div><p><strong>运行结果</strong>：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">正在工作...
+</span></span><span class="line"><span class="cl">回调收到消息：工作完成，接口回调成功！</span></span></code></pre></td></tr></table></div>
+</div>
+</div><hr>
+<h4 class="heading-element" id="4-使用"><span><strong>4. 使用 <code>Action</code> 和 <code>Func</code> 简化回调</strong></span>
+  <a href="#4-%e4%bd%bf%e7%94%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>在 C# 中，<code>Action</code> 和 <code>Func</code> 是内置的委托类型，通常用于更简洁的回调函数定义。</p>
+<p><strong>示例：使用 <code>Action</code> 实现回调</strong></p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-csharp"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">DoSomething</span><span class="p">(</span><span class="n">Action</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">callback</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;操作进行中...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">callback</span><span class="p">(</span><span class="s">&#34;使用 Action 进行回调&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DoSomething</span><span class="p">((</span><span class="n">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;回调消息：{message}&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p><strong>示例：使用 <code>Func</code> 实现回调</strong></p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-csharp"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">Execute</span><span class="p">(</span><span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;</span> <span class="n">operation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">result</span> <span class="p">=</span> <span class="n">operation</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;计算结果：{result}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 使用 Func 定义回调</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Execute</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="n">y</span><span class="p">);</span>  <span class="c1">// 输出：计算结果：30</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><hr>
+<h3 class="heading-element" id="总结-1"><span><strong>总结</strong></span>
+  <a href="#%e6%80%bb%e7%bb%93-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>回调函数</strong>是通过动态传递逻辑来实现程序灵活性和解耦的重要工具。</li>
+<li>在 C# 中，回调函数可以通过委托、Lambda 表达式、接口等方式实现。</li>
+<li><code>Action</code> 和 <code>Func</code> 提供了更加简洁的回调机制，非常适合现代开发场景。</li>
+<li>根据需求选择合适的实现方式，委托适合简单场景，接口适合复杂设计，而 <code>Action</code> 和 <code>Func</code> 更加高效便捷。</li>
+</ul>
+<h1 class="heading-element" id="什么是强类型语法"><span>什么是强类型语法？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%bc%ba%e7%b1%bb%e5%9e%8b%e8%af%ad%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h1 class="heading-element" id="抽象类和接口的区别是什么"><span>抽象类和接口的区别是什么？</span>
+  <a href="#%e6%8a%bd%e8%b1%a1%e7%b1%bb%e5%92%8c%e6%8e%a5%e5%8f%a3%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><p>接口只规定不实现，抽象类可以实现，而且还带访问封装，接口没有封装。</p>
+<p>设计理念
+接口的设计理念：
+•	契约导向：接口强调的是行为契约，任何实现接口的类都必须提供接口中定义的方法。
+•	解耦和灵活性：接口使得代码更加解耦和灵活，便于单元测试和依赖注入。
+抽象类的设计理念：
+•	代码复用：抽象类允许在基类中提供一些默认的实现，从而减少代码重复。
+•	层次结构：抽象类适用于具有层次结构的场景，提供了一种在基类和派生类之间共享代码的方式。
+选择指南
+•	使用接口：当你需要定义一组不相关类的共同行为，或者需要实现多重继承时。
+•	使用抽象类：当你需要为一组相关类提供一个共同的基类，并且希望在基类中提供一些默认的实现时。</p>
+<h1 class="heading-element" id="什么是哈希加盐"><span>什么是哈希加盐?</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%93%88%e5%b8%8c%e5%8a%a0%e7%9b%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><p>**加盐（Salting）*<em>就是给原始密码*<em>添加一段随机字符串</em></em>，然后再进行哈希，以增加破解的难度。</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">plaintext复制编辑原始密码：123456
+</span></span><span class="line"><span class="cl">随机盐：  x7!@K2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">加盐后：  &#34;123456x7!@K2&#34;
+</span></span><span class="line"><span class="cl">哈希值：  MD5(&#34;123456x7!@K2&#34;) =&gt; 9f1a3e...（不同了）</span></span></code></pre></td></tr></table></div>
+</div>
+</div><ul>
+<li>盐是<strong>每个用户随机生成的</strong>，并和哈希值一起存储在数据库中。</li>
+<li>即使两个用户用相同密码，因为盐不同，最终哈希值也不同。</li>
+</ul>
+<hr>
+<h2 class="heading-element" id="-四加盐哈希的好处"><span>✅ 四、加盐哈希的好处</span>
+  <a href="#-%e5%9b%9b%e5%8a%a0%e7%9b%90%e5%93%88%e5%b8%8c%e7%9a%84%e5%a5%bd%e5%a4%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>问题</th>
+            <th>加盐能解决吗？</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>彩虹表攻击</td>
+            <td>✅ 防止</td>
+            <td>因为每次加盐都不同，彩虹表无法预制所有组合</td>
+        </tr>
+        <tr>
+            <td>相同密码哈希相同</td>
+            <td>✅ 防止</td>
+            <td>即使密码一样，加了不同的盐也会得出不同哈希</td>
+        </tr>
+        <tr>
+            <td>被盗哈希后能反推密码</td>
+            <td>❌ 不能完全防止</td>
+            <td>加盐只是增加破解难度，不能让哈希变得可逆</td>
+        </tr>
+    </tbody>
+  </table>
+</div><hr>
+<h2 class="heading-element" id="-五哈希加盐的存储方式"><span>🛠 五、哈希加盐的存储方式</span>
+  <a href="#-%e4%ba%94%e5%93%88%e5%b8%8c%e5%8a%a0%e7%9b%90%e7%9a%84%e5%ad%98%e5%82%a8%e6%96%b9%e5%bc%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>数据库通常会<strong>同时存盐和哈希值</strong>：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">plaintext复制编辑用户名 | 盐（Salt） | 哈希值
+</span></span><span class="line"><span class="cl">-------|------------|----------------------------
+</span></span><span class="line"><span class="cl">Alice  | x7!@K2     | 9f1a3ec1d...
+</span></span><span class="line"><span class="cl">Bob    | Pz#09d     | 3ae2b1e3f...</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>验证密码时：</p>
+<ol>
+<li>拿出用户的盐</li>
+<li>拼接输入的密码</li>
+<li>再哈希</li>
+<li>和数据库中哈希值对比</li>
+</ol>
+</div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/" title="软件工程实践问答">软件工程实践问答</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB/" title="引擎、库与运行时的区别">引擎、库与运行时的区别</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/" title="C# 问答补遗">C# 问答补遗</a></li><li>
+          <a href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%8D%8F%E8%AE%AE/%E5%B7%A5%E4%B8%9A%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%97%AE%E7%AD%94/" title="工业控制与机器人问答(OPC UA·执行器·ROS·数据回写)">工业控制与机器人问答(OPC UA·执行器·ROS·数据回写)</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%97%AE%E7%AD%94/" title="数据结构问答(Hashset·SortedSet等)">数据结构问答(Hashset·SortedSet等)</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#方法和函数的区别是什么">方法和函数的区别是什么？</a></li>
+    <li><a href="#c语言有没有修饰访问符c语言该如何进行封装">C语言有没有修饰访问符？C语言该如何进行封装？</a></li>
+    <li><a href="#什么是匿名函数">什么是匿名函数？</a></li>
+    <li><a href="#text和txt有什么区别">.text和.txt有什么区别？</a></li>
+    <li><a href="#原语是什么意思">原语是什么意思？</a></li>
+    <li><a href="#什么是组件的连接字component-connector">什么是组件的连接字（Component Connector）？</a></li>
+    <li><a href="#什么是套接字socket">什么是套接字（Socket）？</a></li>
+    <li><a href="#什么是上位机">什么是上位机？</a></li>
+    <li><a href="#什么是端口转发什么是内网穿透二者有什么异同">什么是端口转发？什么是内网穿透？二者有什么异同？</a></li>
+    <li><a href="#什么是注册表">什么是注册表？</a></li>
+    <li><a href="#windows的回收站是个什么设定">Windows的回收站是个什么设定？</a></li>
+    <li><a href="#linux是否有回收站机制">Linux是否有回收站机制？</a></li>
+    <li><a href="#什么是缓存锁cache-locking">什么是缓存锁（Cache Locking）？</a></li>
+    <li><a href="#什么是双向转发two-way-forwarding">什么是双向转发（Two-way Forwarding）？</a></li>
+    <li><a href="#什么是有限状态机">什么是有限状态机？</a>
+      <ul>
+        <li><a href="#mqtt-broker-的工作原理">MQTT Broker 的工作原理</a></li>
+        <li><a href="#qos服务质量等级">QoS（服务质量）等级</a></li>
+        <li><a href="#常见的-mqtt-broker-实现">常见的 MQTT Broker 实现</a></li>
+        <li><a href="#使用场景">使用场景</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#什么是分治divide-and-conquer">什么是分治（Divide and Conquer）</a></li>
+    <li><a href="#什么是安装证书">什么是安装证书</a>
+      <ul>
+        <li><a href="#安装证书的常见场景">安装证书的常见场景</a></li>
+        <li><a href="#安装证书的步骤">安装证书的步骤</a></li>
+        <li><a href="#代码部分解释">代码部分解释</a></li>
+        <li><a href="#详细说明">详细说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#如何获取元组中的变量">如何获取元组中的变量？</a>
+      <ul>
+        <li><a href="#一般性解释">一般性解释</a></li>
+        <li><a href="#示例堆栈跟踪">示例堆栈跟踪</a></li>
+        <li><a href="#分析堆栈跟踪">分析堆栈跟踪</a></li>
+      </ul>
+    </li>
+    <li><a href="#目前主流的编程语言的初衷是什么它们的创造者现在如何评价它们">目前主流的编程语言的初衷是什么？它们的创造者现在如何评价它们？</a>
+      <ul>
+        <li><a href="#1-c">1. C</a></li>
+        <li><a href="#2-java">2. Java</a></li>
+        <li><a href="#3-python">3. Python</a></li>
+        <li><a href="#4-javascript">4. JavaScript</a></li>
+        <li><a href="#5-c">5. C++</a></li>
+        <li><a href="#6-ruby">6. Ruby</a></li>
+        <li><a href="#7-swift">7. Swift</a></li>
+      </ul>
+    </li>
+    <li><a href="#什么是构析函数destructor">什么是构析函数（Destructor）？</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#特点">特点：</a></li>
+            <li><a href="#示例">示例：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#正则表达式的语法是什么样的">正则表达式的语法是什么样的？</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是回调函数"><strong>什么是回调函数？</strong></a></li>
+        <li><a href="#回调函数的特点"><strong>回调函数的特点</strong></a></li>
+        <li><a href="#回调函数的应用场景"><strong>回调函数的应用场景</strong></a></li>
+        <li><a href="#c-中的回调函数实现"><strong>C# 中的回调函数实现</strong></a>
+          <ul>
+            <li><a href="#1-使用委托实现回调"><strong>1. 使用委托实现回调</strong></a></li>
+            <li><a href="#2-使用匿名方法或-lambda-表达式实现回调"><strong>2. 使用匿名方法或 Lambda 表达式实现回调</strong></a></li>
+            <li><a href="#3-使用接口实现回调"><strong>3. 使用接口实现回调</strong></a></li>
+            <li><a href="#4-使用"><strong>4. 使用 <code>Action</code> 和 <code>Func</code> 简化回调</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#总结-1"><strong>总结</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-四加盐哈希的好处">✅ 四、加盐哈希的好处</a></li>
+    <li><a href="#-五哈希加盐的存储方式">🛠 五、哈希加盐的存储方式</a></li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/1247fe6efecc7126b727125427f2c5d1.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

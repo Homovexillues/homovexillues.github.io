@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git - 标签 - 红石门</title>
+    <link>http://localhost:1313/tags/git/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:22:41 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git相关问题</title>
+      <link>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 23 Nov 2025 07:28:11 +0800</pubDate>
+      <guid>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</guid>
+      <category domain="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/">工具与环境</category>
+      <category domain="http://localhost:1313/categories/git/">Git</category>
+      <description>&lt;h1 class=&#34;heading-element&#34; id=&#34;git的使用流程是啥&#34;&gt;&lt;span&gt;Git的使用流程是啥？&lt;/span&gt;&#xA;  &lt;a href=&#34;#git%e7%9a%84%e4%bd%bf%e7%94%a8%e6%b5%81%e7%a8%8b%e6%98%af%e5%95%a5&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&lt;h2 class=&#34;heading-element&#34; id=&#34;git-的三个区域&#34;&gt;&lt;span&gt;Git 的三个区域&lt;/span&gt;&#xA;  &lt;a href=&#34;#git-%e7%9a%84%e4%b8%89%e4%b8%aa%e5%8c%ba%e5%9f%9f&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Git 的工作流程涉及三个核心区域：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Git基本操作</title>
+      <link>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Wed, 15 May 2024 06:43:27 +0800</pubDate>
+      <guid>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+      <category domain="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83---git/">工具与环境 - Git</category>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#39;http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png&#39; alt=&#34;image-20240515144600594&#34; height=&#34;844&#34; width=&#34;1865&#34;&gt;&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。&#xA;git checkout .&#xA;# --progress 显示进度信息&#xA;# -- branch x 从指定的名为x的分支拉取&#xA;# -v verbos模式，输出更详细的信息&#xA;# -- 选项分隔符，告诉git之后的内容是路径/参数，不要当成选项来解析&#xA;git clone --progress --branch x -v -- &amp;#34;https/git&amp;#34; &amp;#34;path&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#39;http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/Pasted-image-20260518141003.png&#39; alt=&#34;/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/Pasted-image-20260518141003.png&#34; height=&#34;427&#34; width=&#34;612&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

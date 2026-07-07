@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>C# 问答补遗 - 红石门</title><meta name="author" content="">
+<meta name="description" content="///&lt;summary&gt;...&lt;/summary&gt;写法是什么意思？ 这是一种特殊的注释，被称为XML文档注释，这种注释可以被VisualStudio的IntelliSense（智能感知）和其他工具用来生成代码的文档 可以在属性、方法等前面输入///来自动生成这种注 当前上下文中不存在名称“Console.WriteLine”是什么情况 命名空间未被引用——开头没有using System
+"><meta name="keywords" content='C-sharp, 问答'>
+	<meta itemprop="name" content="C# 问答补遗">
+	<meta itemprop="description" content="///&lt;summary&gt;...&lt;/summary&gt;写法是什么意思？ 这是一种特殊的注释，被称为XML文档注释，这种注释可以被VisualStudio的IntelliSense（智能感知）和其他工具用来生成代码的文档 可以在属性、方法等前面输入///来自动生成这种注 当前上下文中不存在名称“Console.WriteLine”是什么情况 命名空间未被引用——开头没有using System">
+	<meta itemprop="datePublished" content="2026-06-24T03:40:35+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:31+08:00">
+	<meta itemprop="wordCount" content="4502">
+	<meta itemprop="keywords" content="C-Sharp,问答"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="C# 问答补遗">
+	<meta property="og:description" content="///&lt;summary&gt;...&lt;/summary&gt;写法是什么意思？ 这是一种特殊的注释，被称为XML文档注释，这种注释可以被VisualStudio的IntelliSense（智能感知）和其他工具用来生成代码的文档 可以在属性、方法等前面输入///来自动生成这种注 当前上下文中不存在名称“Console.WriteLine”是什么情况 命名空间未被引用——开头没有using System">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="编程语言">
+		<meta property="article:published_time" content="2026-06-24T03:40:35+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:31+08:00">
+		<meta property="article:tag" content="C-Sharp">
+		<meta property="article:tag" content="问答">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="C# 问答补遗">
+	<meta name="twitter:description" content="///&lt;summary&gt;...&lt;/summary&gt;写法是什么意思？ 这是一种特殊的注释，被称为XML文档注释，这种注释可以被VisualStudio的IntelliSense（智能感知）和其他工具用来生成代码的文档 可以在属性、方法等前面输入///来自动生成这种注 当前上下文中不存在名称“Console.WriteLine”是什么情况 命名空间未被引用——开头没有using System">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/" title="C# 问答补遗 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%B8%B8%E6%88%8F/fallout%E7%B3%BB%E5%88%97%E7%AE%80%E5%8F%B2/" title="Fallout 系列简史" /><link rel="next" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/cron%E8%AF%AD%E6%B3%95/" title="Cron语法" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "C# 问答补遗",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/c-sharp\/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97\/"
+    },"genre": "编程语言","keywords": "C-sharp, 问答","wordcount":  4502 ,
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/c-sharp\/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97\/","datePublished": "2026-06-24T03:40:35+08:00","dateModified": "2026-07-06T17:23:31+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-%E5%A7%94%E6%89%98%E4%B8%8E%E4%BA%8B%E4%BB%B6/" title="C# 委托与事件">C# 委托与事件</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-linq/" title="C# LINQ">C# LINQ</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="C# 基础语法">C# 基础语法</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-%E5%B0%81%E8%A3%85%E4%B8%8E%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="C# 封装与访问修饰符">C# 封装与访问修饰符</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-%E5%BC%82%E6%AD%A5%E4%B8%8E%E7%BA%BF%E7%A8%8B/" title="C# 异步与线程">C# 异步与线程</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">C# 问答补遗</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a> / <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/">C-sharp</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-06-24 03:40:35 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-06-24">2026-06-24</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:31 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="4502 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 4600 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 9 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/c-sharp/">C-sharp</a> / <a href="/tags/%E9%97%AE%E7%AD%94/">问答</a></span>
+            </div></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#summarysummary写法是什么意思"><code>///&lt;summary&gt;...&lt;/summary&gt;</code>写法是什么意思？</a></li>
+    <li><a href="#当前上下文中不存在名称consolewriteline是什么情况">当前上下文中不存在名称“Console.WriteLine”是什么情况</a></li>
+    <li><a href="#什么是横切关注点cross-cutting-conerns">什么是横切关注点（Cross-cutting conerns）？</a></li>
+    <li><a href="#什么是网桥">什么是网桥</a></li>
+    <li><a href="#什么是4g模块">什么是4G模块</a></li>
+    <li><a href="#什么是调制解调器modem">什么是调制解调器（Modem）？</a></li>
+    <li><a href="#为什么4g模块每次上线都会获得一个新的ip地址">为什么4G模块每次上线都会获得一个新的IP地址</a></li>
+    <li><a href="#mqtt是什么">MQTT是什么？</a></li>
+    <li><a href="#什么是寄存器register">什么是寄存器（Register）？</a></li>
+    <li><a href="#什么是plcprogrammable-logic-controller">什么是PLC（Programmable Logic Controller）？</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#为什么会这样">为什么会这样？</a></li>
+    <li><a href="#如果想获取所有进程信息该怎么做">如果想获取所有进程信息，该怎么做？</a></li>
+    <li><a href="#结论">结论</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 class="heading-element" id="summarysummary写法是什么意思"><span><code>///&lt;summary&gt;...&lt;/summary&gt;</code>写法是什么意思？</span>
+  <a href="#summarysummary%e5%86%99%e6%b3%95%e6%98%af%e4%bb%80%e4%b9%88%e6%84%8f%e6%80%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>这是一种特殊的注释，被称为XML文档注释，这种注释可以被VisualStudio的IntelliSense（智能感知）和其他工具用来生成代码的文档</li>
+<li>可以在属性、方法等前面输入///来自动生成这种注</li>
+</ul>
+<h2 class="heading-element" id="当前上下文中不存在名称consolewriteline是什么情况"><span>当前上下文中不存在名称“Console.WriteLine”是什么情况</span>
+  <a href="#%e5%bd%93%e5%89%8d%e4%b8%8a%e4%b8%8b%e6%96%87%e4%b8%ad%e4%b8%8d%e5%ad%98%e5%9c%a8%e5%90%8d%e7%a7%b0consolewriteline%e6%98%af%e4%bb%80%e4%b9%88%e6%83%85%e5%86%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>
+<p>命名空间未被引用——开头没有using System</p>
+</li>
+<li>
+<p>大小写拼写错误</p>
+</li>
+<li>
+<p>错误的上下文使用：Console.WriteLine是一个静态方法，它只能在方法内部使用，如果在类的定义中，但不在任何方法体内部去使用它，就会收到这个错误。</p>
+</li>
+<li></li>
+<li>
+<p>什么是回写？</p>
+<ul>
+<li>将数据读到内存上处理，处理之后写到硬盘上，这就是回写。</li>
+</ul>
+</li>
+<li>
+<p>.dll文件和python库之间有什么关系？</p>
+<ul>
+<li>.dll文件是动态链接库（Dynamic Link Library）的缩写，它包含了可以被多个程序共享的代码和数据。这些库通常是用C或C++编写的。</li>
+<li>如<code>numpy</code>库的源代码中有大量的C代码，这些代码在安装numpy库的时候会被编译为动态链接库。然后在python中通过import numpy调用库的时候，python会加载动态链接库，并将其中国的函数和数据结构结构映射到python的命名空间中。</li>
+<li>如调用numpy.arrary()的时候，实际上是在调用一个C语言实现的函数。这个函数会在C语言的环境中执行，然后将结果返回给python。</li>
+</ul>
+</li>
+<li>
+<p>在判断中，is not null和!=null有什么区别吗？</p>
+<ul>
+<li>
+<p>在大多数编程语言中没啥区别</p>
+</li>
+<li>
+<p>在SQL中，这两者有重要区别。NULL是一种特殊的值，表示未知或缺失的数据。因此，NULL与任何值，包括NULL自己的比较结果都是未知的，即<code>NULL=NULL</code>和<code>NULL!=NULL</code>都不会返回<code>true</code></p>
+</li>
+<li>
+<p>因此当想要检查一个字段是否为<code>NULL</code>的时候，应该用<code>IS NULL</code>或<code>IS NOT NULL</code>。</p>
+</li>
+<li>
+<p>如<code>WHERE column IS NOT NULL</code>会选取那些column字段不为NULL的行。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>.yaml .json .xml文件格式各自用于做什么？有什么使用上要注意的事？</p>
+<ul>
+<li><strong>JSON（JavaScript Object Notation）</strong>：json简介易读，适用于API的请求和响应。它是一种轻量级的数据交换格式，易于人阅读和编写，同时也易于机器解析和生成。JSON采用完全独立于语言的文本格式，使得JSON成为理想的数据交换语言。</li>
+<li><strong>XML(eXtensible Markup Language)</strong>: XML具有跨平台和跨语言的优点，适用于Web服务和RSS源。它是一种标记语言，可以用来编码文档和数据。XML的设计目标是强调通用性和简单性。尽管XML的使用在web上的数据序列化的用途已经减少，但它仍然被广泛用于存储和传输数据。</li>
+<li><strong>YAML(YAML Ain&rsquo;t Markup Language)</strong>：YAML适合用于需要人类可读的数据表示场景，如配置文件和日志文件。YAML是一种人类友好的数据序列化标注，它允许在不同语言之间交换数据。<strong>YAML是对JSON的超集，因此任何JSON文件都应该能够用YAML解析器解析</strong>。</li>
+<li>XML用<strong>标记</strong>来定义结构数据，就像html那样</li>
+<li>YAML使用<strong>缩进</strong>来定义结构化数据。就像python</li>
+<li>JSON使用的是<strong>冒号和大括号</strong>来定义结构化数据</li>
+<li><strong>数据传输</strong>的时候，XML和JSON很常见，尤其是<strong>JSON</strong>，在<strong>API</strong>的开发中变得非常普及</li>
+<li><strong>文件大小</strong>上来说，同样的<strong>数据集</strong>。<strong>YAML文件最小，JSON次之，XML最大</strong></li>
+<li><strong>学习难度上来说</strong>，<strong>YAML最难，JSON和XML相对简单</strong></li>
+</ul>
+</li>
+<li>
+<p>目前的这些主流语言的设计目的和初衷都是什么？</p>
+</li>
+<li>
+<p>.ico文件和.resx文件是啥？.config文件一般是什么格式的？</p>
+<ul>
+<li><strong>.ico</strong>:图标文件</li>
+<li><strong>.resx</strong>:资源文件格式，用于存储本地化字符串、图像和其他资源。通常用于.NET Framework应用程序，以便用于管理和本地化应用程序的资源。</li>
+<li><strong>.config</strong>:在.NET应用程序中，包含应用程序的设置，如数据库连接字符串，应用该程序设置等。XML格式，允许开发者以结构化的方式定义配置选项。</li>
+</ul>
+</li>
+<li>
+<p>什么是组件？</p>
+</li>
+<li>
+<p>什么是fody框架？</p>
+<ul>
+<li>一个针对.NET平台的IL（intermediate language）编织工具，允许开发人员在代码编译过程中对代码进行自动化的注入和修改，以实现一些常见的横切关注点</li>
+</ul>
+</li>
+<li>
+<h2 class="heading-element" id="什么是横切关注点cross-cutting-conerns"><span>什么是横切关注点（Cross-cutting conerns）？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e6%a8%aa%e5%88%87%e5%85%b3%e6%b3%a8%e7%82%b9cross-cutting-conerns" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2></li>
+<li>
+<p>什么是ping&amp;pong?(计算机网络相关，非游戏)</p>
+<ul>
+<li>用来描述一种简单的请求/响应模式，其中两个<strong>设备</strong>或<strong>进程</strong>之间进行基本的通信。</li>
+<li>涉及到以下几个概念：
+<ul>
+<li><strong>ICMP回显请求/回显应答</strong>：
+<ul>
+<li>最常见的ping-pong是ICMP（Internet control message protocol）的ping命令。一台设备发送一个ICMP回显请求消息给另一台设备，接收设备在收到请求后返返回一个ICMP回显应答消息。</li>
+</ul>
+</li>
+<li><strong>TCP握手过程</strong>:
+<ul>
+<li>在TCP（Transmission Control Protocol）连接建立过程中，也有ping-pong操作。最著名的是三次握手过程，客户端发送一个SYN（Synchronize Sequence Numbers）同步序列编号消息给服务器以开始连接服务器回复一个SYN-ACK同步-确认消息，最后客户端发送ACK确认消息完成连接建立</li>
+</ul>
+</li>
+<li><strong>应用层协议</strong>:
+<ul>
+<li>许多应用层协议，如HTTP或FTP，也使用请求/响应模式。客户端发送一个请求到服务器，服务器处理请求并返回一个响应。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="heading-element" id="什么是网桥"><span>什么是网桥</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%bd%91%e6%a1%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>
+<p>一种网络设备，用于连接两个或多个局域网LAN并转发数据帧frame。网桥工作在OSI参考模型的数据链路层，主要用于在同一网络协议下连接两个或多个局域网，使他们成为一个逻辑上的网络。</p>
+</li>
+<li>
+<p>没错，看完了上面的定义会让人想起交换机，现代网络中，网桥通常被交换机取代，交换机具有与网桥类似的功能，但性能更好、管理更简单。概念上，交换机可以看作是多端口的网桥。</p>
+</li>
+<li>
+<p><strong>主要功能包括</strong>:</p>
+<ul>
+<li><strong>帧过滤</strong>：</li>
+<li><strong>学习</strong></li>
+<li><strong>转发</strong></li>
+<li><strong>环路检测</strong></li>
+<li><strong>隔离</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>主要工作流程:</p>
+<ul>
+<li><strong>学习阶段</strong>
+<ul>
+<li>当网桥首次启动时，它开始学习阶段，通过接收网络上的数据帧来学习每个设备的MAC地址</li>
+<li>网桥通过检查进入数据帧中的源MAC地址来学习这些地址，并记录这些MAC地址与数据帧到达的端口之间的关联。</li>
+</ul>
+</li>
+</ul>
+<h2 class="heading-element" id="什么是4g模块"><span>什么是4G模块</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af4g%e6%a8%a1%e5%9d%97" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><img loading="lazy" src='/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/v2-86d3f4d428d8e1664d59c97ee6ff909d_1440w-1715759664937-3.webp' alt="img" height="1080" width="1440"></p>
+<ul>
+<li>
+<p>4G模块是一种用于实现无线网络连接的设备，它可以让设备通过4G网络（第四代移动通信技术）进行数据通信。这种模块通常被集成到设备中，例如智能手机、平板电脑、物联网设备等，以实现无线互联网连接。</p>
+</li>
+<li>
+<p>4G模块通常包括:</p>
+<ul>
+<li><strong>调制解调器</strong></li>
+<li><strong>天线</strong></li>
+<li><strong>SIM卡槽</strong></li>
+<li><strong>处理器和存储器</strong></li>
+</ul>
+</li>
+</ul>
+<h2 class="heading-element" id="什么是调制解调器modem"><span>什么是调制解调器（Modem）？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e8%b0%83%e5%88%b6%e8%a7%a3%e8%b0%83%e5%99%a8modem" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>将数字信号转换为模拟信号（<strong>调制</strong>）将模拟信号转换为数字信号（<strong>解调</strong>）</li>
+<li>在数字通信中，数据通常是以数字形式存在的，如二进制数据，但是，许多通信介质（电话线、光纤、无线电波）中，传递的是模拟信号，要转这么一手。</li>
+</ul>
+<h2 class="heading-element" id="为什么4g模块每次上线都会获得一个新的ip地址"><span>为什么4G模块每次上线都会获得一个新的IP地址</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%884g%e6%a8%a1%e5%9d%97%e6%af%8f%e6%ac%a1%e4%b8%8a%e7%ba%bf%e9%83%bd%e4%bc%9a%e8%8e%b7%e5%be%97%e4%b8%80%e4%b8%aa%e6%96%b0%e7%9a%84ip%e5%9c%b0%e5%9d%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>在移动通信网络中，运营山通常采用动态IP地址分配的方式，即每次设备连接到网络时，运营商会从其IP地址池中动态分配一个可用的IP地址给设备使用。这种动态分配的IP地址通常具有一定的生命周期，一旦设备断开连接或一段时间未使用，分配的IP地址就会被释放，返回到IP地址池中供其他设备使用。</li>
+</ul>
+<h2 class="heading-element" id="mqtt是什么"><span>MQTT是什么？</span>
+  <a href="#mqtt%e6%98%af%e4%bb%80%e4%b9%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>
+<p>Message Queuing Telemetry Transport 消息队列遥测传输，在应用层</p>
+</li>
+<li>
+<p>一种轻量级的、开放式的、基于发布/订阅模式的通信协议，用于物联网(loT)和机器到机器（M2M）通信。</p>
+</li>
+<li>
+<p>MQTT协议的特点包括：</p>
+<ol>
+<li><strong>轻量级</strong>：MQTT协议设计简洁，通信开销小，适用于资源受限的设备和网络环境，如传感器、嵌入式设备、移动设备等。</li>
+<li><strong>发布/订阅模式</strong>：MQTT使用发布/订阅模式进行消息传递，消息发送者（发布者）将消息发布到特定的主题（Topic），消息接收者（订阅者）通过订阅特定的主题来接收消息。这种模式使得设备之间可以进行松耦合的通信，易于扩展和管理。</li>
+<li><strong>可靠性</strong>：MQTT支持不同级别的消息传递质量（QoS），包括最多一次（QoS 0）、至少一次（QoS 1）和仅一次（QoS 2），可根据应用需求选择适当的消息传递质量级别。</li>
+<li><strong>持久性</strong>：MQTT支持持久会话和持久订阅，使得设备断线后可以恢复之前的会话状态和订阅关系。</li>
+<li><strong>安全性</strong>：MQTT协议支持基于TLS/SSL的加密通信和基于用户名和密码的身份认证，保障通信的安全性和隐私性。</li>
+</ol>
+</li>
+</ul>
+<h2 class="heading-element" id="什么是寄存器register"><span>什么是寄存器（Register）？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%af%84%e5%ad%98%e5%99%a8register" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h2 class="heading-element" id="什么是plcprogrammable-logic-controller"><span>什么是PLC（Programmable Logic Controller）？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%afplcprogrammable-logic-controller" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><pre><code>- 一种借鉴了冯诺依曼机的专为工业自动化控制设计和优化的专用计算设备
+</code></pre>
+</li>
+</ul>
+<h1 class="heading-element" id="externpartial字段都是什么意思为什么他俩和abstract字段标记可以没有方法主体"><span>extern,partial字段都是什么意思？为什么他俩和abstract字段标记可以没有方法主体？</span>
+  <a href="#externpartial%e5%ad%97%e6%ae%b5%e9%83%bd%e6%98%af%e4%bb%80%e4%b9%88%e6%84%8f%e6%80%9d%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bb%96%e4%bf%a9%e5%92%8cabstract%e5%ad%97%e6%ae%b5%e6%a0%87%e8%ae%b0%e5%8f%af%e4%bb%a5%e6%b2%a1%e6%9c%89%e6%96%b9%e6%b3%95%e4%b8%bb%e4%bd%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h1 class="heading-element" id="委托是个什么设定"><span>委托是个什么设定？</span>
+  <a href="#%e5%a7%94%e6%89%98%e6%98%af%e4%b8%aa%e4%bb%80%e4%b9%88%e8%ae%be%e5%ae%9a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><p>虽然委托一开始创建的时候是要传入一个函数的，但并不一定的不空的，如果空的话可以直接==null的</p>
+<h1 class="heading-element" id="为什么在maui应用中使用processgetprocesses方法无法获得所有的进程信息"><span>为什么在MAUI应用中使用Process.GetProcesses()方法无法获得所有的进程信息?</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%9c%a8maui%e5%ba%94%e7%94%a8%e4%b8%ad%e4%bd%bf%e7%94%a8processgetprocesses%e6%96%b9%e6%b3%95%e6%97%a0%e6%b3%95%e8%8e%b7%e5%be%97%e6%89%80%e6%9c%89%e7%9a%84%e8%bf%9b%e7%a8%8b%e4%bf%a1%e6%81%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><p>在 Android 设备上使用 <code>Process.GetProcesses()</code> 只能获取到<strong>自己所在的进程</strong>或是非常有限的信息，这是由 Android 的沙盒和权限机制所决定的。和传统桌面或服务器环境的 .NET 不同，Android 并不允许普通应用程序访问系统中所有进程的详细信息。</p>
+<h2 class="heading-element" id="为什么会这样"><span>为什么会这样？</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e8%bf%99%e6%a0%b7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ol>
+<li><strong>Android 沙盒机制</strong>
+每个 Android 应用都运行在自己的“应用沙盒”中，进程之间隔离很严格。应用无权直接访问其他进程的信息，除非拥有系统级权限或特定的授权。</li>
+<li><strong>权限限制</strong>
+Android 并没有对普通第三方应用开放类似于在桌面系统上遍历所有进程的接口。即使你调用了 <code>Process.GetProcesses()</code>，最终底层的实现也只能让你看到自己进程的基本信息。</li>
+<li><strong>安全策略</strong>
+出于安全和隐私的考虑，Android 系统对进程、文件等访问做了严格的限制，防止不同应用之间互相窥探或干扰。</li>
+</ol>
+<h2 class="heading-element" id="如果想获取所有进程信息该怎么做"><span>如果想获取所有进程信息，该怎么做？</span>
+  <a href="#%e5%a6%82%e6%9e%9c%e6%83%b3%e8%8e%b7%e5%8f%96%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%e4%bf%a1%e6%81%af%e8%af%a5%e6%80%8e%e4%b9%88%e5%81%9a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>一般来说，在<strong>非 Root 环境</strong>下，普通应用几乎没有办法获取系统中所有进程的详细信息。以下是一些可能但并不一定可行的途径：</p>
+<ol>
+<li><strong>Root 权限</strong>
+<ul>
+<li>如果设备已经 Root，那么可以通过访问 <code>/proc</code> 文件系统或使用一些系统级命令（如 <code>ps</code>、<code>top</code> 等）来获取所有进程信息。</li>
+<li>但是这会导致应用只能在 Root 后的设备上运行，并且在官方应用商店上架会遇到限制。</li>
+</ul>
+</li>
+<li><strong>系统签名 / 定制 ROM</strong>
+<ul>
+<li>如果你在开发系统应用（即使用了与系统相同的签名）或是开发针对定制 ROM 的特权应用，则可以使用 Android 的系统 API（如 <code>ActivityManagerService</code>）来获取所有进程信息。</li>
+<li>这通常只适用于设备厂商或在特殊场景（比如企业、特定硬件项目）下定制的 Android 系统。</li>
+</ul>
+</li>
+<li><strong>ActivityManager APIs（有限信息）</strong>
+<ul>
+<li>有些情况下，可以用 <code>Android.App.ActivityManager</code>（Java / Xamarin.Android）获取<strong>部分</strong>正在运行的任务/服务信息，不过从 Android 5.0 开始，能获取到的信息也变得非常有限，且通常只能拿到应用层级的概览（比如包名、进程计数），而非完整进程列表。</li>
+</ul>
+</li>
+<li><strong>Shell 命令（有限，且受权限限制）</strong>
+<ul>
+<li>即使你执行类似 <code>Runtime.getRuntime().exec(&quot;ps&quot;)</code> 的命令，若没有 Root 权限，也只能查看到<strong>自己所在应用</strong>及部分系统可见的进程。</li>
+</ul>
+</li>
+</ol>
+<h2 class="heading-element" id="结论"><span>结论</span>
+  <a href="#%e7%bb%93%e8%ae%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li><strong>在普通的 Android 应用环境下，无法用 <code>Process.GetProcesses()</code> 获取所有进程。</strong></li>
+<li>这并不是 .NET 或 C# 的问题，而是 Android 操作系统本身的安全沙盒设计导致的行为。</li>
+<li>如果确有需要（比如做系统工具、ROM 定制、设备管理等），就必须获得更高权限（Root 或系统签名），然后才能使用系统底层接口或 Shell 命令来获取全部进程信息。</li>
+</ul>
+<p>因此，如果只是做一般的 App 开发，往往只能获取到<strong>自己</strong>的进程信息，这在移动平台上是标准且合规的行为。</p>
+</div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-%E5%A7%94%E6%89%98%E4%B8%8E%E4%BA%8B%E4%BB%B6/" title="C# 委托与事件">C# 委托与事件</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-linq/" title="C# LINQ">C# LINQ</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="C# 基础语法">C# 基础语法</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-%E5%B0%81%E8%A3%85%E4%B8%8E%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="C# 封装与访问修饰符">C# 封装与访问修饰符</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-%E5%BC%82%E6%AD%A5%E4%B8%8E%E7%BA%BF%E7%A8%8B/" title="C# 异步与线程">C# 异步与线程</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#summarysummary写法是什么意思"><code>///&lt;summary&gt;...&lt;/summary&gt;</code>写法是什么意思？</a></li>
+    <li><a href="#当前上下文中不存在名称consolewriteline是什么情况">当前上下文中不存在名称“Console.WriteLine”是什么情况</a></li>
+    <li><a href="#什么是横切关注点cross-cutting-conerns">什么是横切关注点（Cross-cutting conerns）？</a></li>
+    <li><a href="#什么是网桥">什么是网桥</a></li>
+    <li><a href="#什么是4g模块">什么是4G模块</a></li>
+    <li><a href="#什么是调制解调器modem">什么是调制解调器（Modem）？</a></li>
+    <li><a href="#为什么4g模块每次上线都会获得一个新的ip地址">为什么4G模块每次上线都会获得一个新的IP地址</a></li>
+    <li><a href="#mqtt是什么">MQTT是什么？</a></li>
+    <li><a href="#什么是寄存器register">什么是寄存器（Register）？</a></li>
+    <li><a href="#什么是plcprogrammable-logic-controller">什么是PLC（Programmable Logic Controller）？</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#为什么会这样">为什么会这样？</a></li>
+    <li><a href="#如果想获取所有进程信息该怎么做">如果想获取所有进程信息，该怎么做？</a></li>
+    <li><a href="#结论">结论</a></li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/5d392f32f3756f6ddfd798a9e52debd3.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

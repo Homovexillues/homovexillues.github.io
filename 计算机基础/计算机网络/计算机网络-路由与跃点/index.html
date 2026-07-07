@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>计算机网络-路由与跃点 - 红石门</title><meta name="author" content="">
+<meta name="description" content="为什么在插入网线之后WiFi断连了？ 当在插有便携 WiFi 的设备上插入网线时，路由冲突的原因主要与网络适配器的优先级、默认网关的选择和IP 地址分配有关。详细原因如下：
+"><meta name="keywords" content='计算机网络, 问题'>
+	<meta itemprop="name" content="计算机网络-路由与跃点">
+	<meta itemprop="description" content="为什么在插入网线之后WiFi断连了？ 当在插有便携 WiFi 的设备上插入网线时，路由冲突的原因主要与网络适配器的优先级、默认网关的选择和IP 地址分配有关。详细原因如下：">
+	<meta itemprop="datePublished" content="2026-06-24T03:19:15+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:29+08:00">
+	<meta itemprop="wordCount" content="2625">
+	<meta itemprop="keywords" content="计算机网络,问题"><meta property="og:url" content="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E8%B7%AF%E7%94%B1%E4%B8%8E%E8%B7%83%E7%82%B9/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="计算机网络-路由与跃点">
+	<meta property="og:description" content="为什么在插入网线之后WiFi断连了？ 当在插有便携 WiFi 的设备上插入网线时，路由冲突的原因主要与网络适配器的优先级、默认网关的选择和IP 地址分配有关。详细原因如下：">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="计算机基础">
+		<meta property="article:published_time" content="2026-06-24T03:19:15+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:29+08:00">
+		<meta property="article:tag" content="计算机网络">
+		<meta property="article:tag" content="问题">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="计算机网络-路由与跃点">
+	<meta name="twitter:description" content="为什么在插入网线之后WiFi断连了？ 当在插有便携 WiFi 的设备上插入网线时，路由冲突的原因主要与网络适配器的优先级、默认网关的选择和IP 地址分配有关。详细原因如下：">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E8%B7%AF%E7%94%B1%E4%B8%8E%E8%B7%83%E7%82%B9/" title="计算机网络-路由与跃点 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B/" title="计算机网络-通信模型" /><link rel="next" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%8A%93%E5%8C%85%E4%B8%8E%E7%BD%91%E5%8D%A1/" title="计算机网络-抓包与网卡" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "计算机网络-路由与跃点",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E8%B7%AF%E7%94%B1%E4%B8%8E%E8%B7%83%E7%82%B9\/"
+    },"genre": "计算机基础","keywords": "计算机网络, 问题","wordcount":  2625 ,
+    "url": "http:\/\/localhost:1313\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E8%B7%AF%E7%94%B1%E4%B8%8E%E8%B7%83%E7%82%B9\/","datePublished": "2026-06-24T03:19:15+08:00","dateModified": "2026-07-06T17:23:29+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议">计算机网络-HTTP与Web协议</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">计算机网络-IP地址与子网</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线">计算机网络-WiFi与无线</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">计算机网络-路由与跃点</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a> / <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-06-24 03:19:15 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-06-24">2026-06-24</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:29 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="2625 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 2700 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 6 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a> / <a href="/tags/%E9%97%AE%E9%A2%98/">问题</a></span>
+            </div></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#为什么在插入网线之后wifi断连了">为什么在插入网线之后WiFi断连了？</a>
+      <ul>
+        <li><a href="#1-网络适配器优先级和默认网关冲突">1. <strong>网络适配器优先级和默认网关冲突</strong></a></li>
+        <li><a href="#2-ip-地址和网段冲突">2. <strong>IP 地址和网段冲突</strong></a></li>
+        <li><a href="#3-操作系统的网络切换机制">3. <strong>操作系统的网络切换机制</strong></a></li>
+        <li><a href="#4-dns-配置和路由表冲突">4. <strong>DNS 配置和路由表冲突</strong></a></li>
+        <li><a href="#解决方法"><strong>解决方法</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#什么是跃点">什么是跃点?</a>
+      <ul>
+        <li><a href="#关键点">关键点：</a></li>
+        <li><a href="#跃点数的意义">跃点数的意义：</a></li>
+        <li><a href="#示例">示例：</a></li>
+      </ul>
+    </li>
+    <li><a href="#无线网络的跃点数为什么会是自动的呢它不应该是通过无线通讯直接连接到无线路由器的吗跃点数应该是固定的啊为什么会是自动跃点">无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗?跃点数应该是固定的啊?为什么会是自动跃点？</a>
+      <ul>
+        <li><a href="#固定跃点数的情况">固定跃点数的情况</a></li>
+      </ul>
+    </li>
+    <li><a href="#是不是可以通过设置跃点数的方法来给windows上的所有网络适配器设置优先级手动设置网络适配器的跃点数是否会导致网络连接出现问题">是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级?手动设置网络适配器的跃点数是否会导致网络连接出现问题?</a>
+      <ul>
+        <li><a href="#设置网络适配器优先级">设置网络适配器优先级</a></li>
+        <li><a href="#手动设置-interface-metric-的注意事项">手动设置 <code>Interface Metric</code> 的注意事项</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 class="heading-element" id="为什么在插入网线之后wifi断连了"><span>为什么在插入网线之后WiFi断连了？</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%9c%a8%e6%8f%92%e5%85%a5%e7%bd%91%e7%ba%bf%e4%b9%8b%e5%90%8ewifi%e6%96%ad%e8%bf%9e%e4%ba%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>当在插有便携 WiFi 的设备上插入网线时，路由冲突的原因主要与<strong>网络适配器的优先级、默认网关的选择</strong>和<strong>IP 地址分配</strong>有关。详细原因如下：</p>
+<h3 class="heading-element" id="1-网络适配器优先级和默认网关冲突"><span>1. <strong>网络适配器优先级和默认网关冲突</strong></span>
+  <a href="#1-%e7%bd%91%e7%bb%9c%e9%80%82%e9%85%8d%e5%99%a8%e4%bc%98%e5%85%88%e7%ba%a7%e5%92%8c%e9%bb%98%e8%ae%a4%e7%bd%91%e5%85%b3%e5%86%b2%e7%aa%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>操作系统通常根据适配器的优先级来决定网络路由，当插入网线时，<strong>有线网络优先级往往比无线网络高</strong>，因此系统会选择有线网络的路由和网关作为默认路由。</li>
+<li>此时，系统默认的网络路由会自动切换到网线连接，而 WiFi 适配器的路由可能被忽略或被系统暂时断开，以避免流量同时经过两个网关。这种切换可能导致 WiFi 掉线或暂时无法访问网络。</li>
+</ul>
+<h3 class="heading-element" id="2-ip-地址和网段冲突"><span>2. <strong>IP 地址和网段冲突</strong></span>
+  <a href="#2-ip-%e5%9c%b0%e5%9d%80%e5%92%8c%e7%bd%91%e6%ae%b5%e5%86%b2%e7%aa%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>如果便携 WiFi 和有线网络分配的 IP 地址在同一网段（例如，两个网络的 IP 都在 <code>192.168.1.x</code>），系统可能出现 IP 地址和路由的混乱，从而导致路由冲突。</li>
+<li>系统可能会尝试将同一个网关分配给两个适配器，这样一来就会导致数据包的去向无法确定，网络连接出现异常。</li>
+</ul>
+<h3 class="heading-element" id="3-操作系统的网络切换机制"><span>3. <strong>操作系统的网络切换机制</strong></span>
+  <a href="#3-%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e7%9a%84%e7%bd%91%e7%bb%9c%e5%88%87%e6%8d%a2%e6%9c%ba%e5%88%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>部分操作系统在检测到新的有线连接时，可能会默认断开现有的 WiFi 连接，以节约资源或保证网络的稳定性。这种情况下，插入网线会自动触发 WiFi 断开，导致网络连接看似“掉线”。</li>
+<li>有些便携 WiFi 适配器也有类似设计，当检测到有线网络时可能会自动断开 WiFi。</li>
+</ul>
+<h3 class="heading-element" id="4-dns-配置和路由表冲突"><span>4. <strong>DNS 配置和路由表冲突</strong></span>
+  <a href="#4-dns-%e9%85%8d%e7%bd%ae%e5%92%8c%e8%b7%af%e7%94%b1%e8%a1%a8%e5%86%b2%e7%aa%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>插入网线后，系统的 DNS 配置和路由表可能会自动刷新，优先使用有线连接的 DNS 服务器。如果有线网络的 DNS 解析不稳定或与无线网络冲突，可能会导致无法正常访问 WiFi 网络上的资源。</li>
+<li>当路由表中的默认路由切换到有线连接时，WiFi 的路由可能被移除或不再被优先使用，这就会造成 WiFi 网络不可用的情况。</li>
+</ul>
+<h3 class="heading-element" id="解决方法"><span><strong>解决方法</strong></span>
+  <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>可以通过以下方式避免此类冲突：</p>
+<ul>
+<li><strong>确保两个网络的 IP 不同网段</strong>，如 WiFi 在 <code>192.168.0.x</code>、有线网络在 <code>192.168.1.x</code>。</li>
+<li><strong>手动调整适配器优先级</strong>，让 WiFi 优先于有线网络，或调整默认路由。</li>
+<li><strong>使用不同的 DNS 配置</strong>，保证两个网络的 DNS 服务器不会冲突。</li>
+</ul>
+<p>这种情况在系统默认的网络切换机制下是常见的，但可以通过手动配置适配器和网络优先级来实现并行连接。</p>
+<h2 class="heading-element" id="什么是跃点"><span>什么是跃点?</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e8%b7%83%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>“跃点”（Hop）是网络中数据从一个设备（通常是路由器或交换机）传递到下一个设备的过程。每经过一个设备就算一个“跃点”。跃点数量用于衡量数据在网络中的传输路径长度，从发送方到接收方需要经过多少个中间设备。</p>
+<h3 class="heading-element" id="关键点"><span>关键点：</span>
+  <a href="#%e5%85%b3%e9%94%ae%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>
+<p><strong>定义</strong>：跃点指的是数据在网络中从一个节点（例如路由器）传递到下一个节点的过程。</p>
+</li>
+<li>
+<p><strong>用途</strong>：跃点数可以帮助判断网络路径的长短和延迟。网络管理工具如 <code>tracert</code> 或 <code>traceroute</code> 命令会显示从起始设备到目的设备的跃点数。</p>
+</li>
+<li>
+<p><strong>TTL（Time to Live）与跃点</strong>：每个数据包都有一个 TTL 值，表示数据包在网络中允许的最大跃点数，每经过一个跃点这个值就减1。当 TTL 变为0时，数据包会被丢弃，防止它在网络中无限循环。</p>
+</li>
+</ol>
+<h3 class="heading-element" id="跃点数的意义"><span>跃点数的意义：</span>
+  <a href="#%e8%b7%83%e7%82%b9%e6%95%b0%e7%9a%84%e6%84%8f%e4%b9%89" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>路由效率</strong>：跃点数越少，通常意味着数据的传输路径越短，网络的传输效率越高。</li>
+<li><strong>故障排查</strong>：通过检查跃点数，可以定位网络问题发生在哪个设备上。</li>
+</ul>
+<h3 class="heading-element" id="示例"><span>示例：</span>
+  <a href="#%e7%a4%ba%e4%be%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>假设你在一个公司网络内访问外部服务器，数据包可能会经过：</p>
+<ul>
+<li>内部路由器 -&gt; 防火墙 -&gt; ISP 路由器 -&gt; 若干个中间网络路由 -&gt; 目标服务器。</li>
+</ul>
+<p>假如经过了7个节点到达目标服务器，这7个节点就是7个跃点。</p>
+<h2 class="heading-element" id="无线网络的跃点数为什么会是自动的呢它不应该是通过无线通讯直接连接到无线路由器的吗跃点数应该是固定的啊为什么会是自动跃点"><span>无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗?跃点数应该是固定的啊?为什么会是自动跃点？</span>
+  <a href="#%e6%97%a0%e7%ba%bf%e7%bd%91%e7%bb%9c%e7%9a%84%e8%b7%83%e7%82%b9%e6%95%b0%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e6%98%af%e8%87%aa%e5%8a%a8%e7%9a%84%e5%91%a2%e5%ae%83%e4%b8%8d%e5%ba%94%e8%af%a5%e6%98%af%e9%80%9a%e8%bf%87%e6%97%a0%e7%ba%bf%e9%80%9a%e8%ae%af%e7%9b%b4%e6%8e%a5%e8%bf%9e%e6%8e%a5%e5%88%b0%e6%97%a0%e7%ba%bf%e8%b7%af%e7%94%b1%e5%99%a8%e7%9a%84%e5%90%97%e8%b7%83%e7%82%b9%e6%95%b0%e5%ba%94%e8%af%a5%e6%98%af%e5%9b%ba%e5%ae%9a%e7%9a%84%e5%95%8a%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e6%98%af%e8%87%aa%e5%8a%a8%e8%b7%83%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>无线网络的跃点数设为“自动”是因为跃点数不仅考虑物理连接的直接性（即从设备到无线路由器的路径），还考虑整体网络路径的复杂性和灵活性。以下是为什么会存在“自动”跃点数设置的主要原因：</p>
+<ol>
+<li>
+<p><strong>动态网络路径</strong>：<br>
+尽管设备是直接通过无线电波连接到无线路由器，但数据包的最终传输路径可能会随着网络环境的变化而不同。例如，在连接到互联网的路径上，数据可能会经过多个不同的网络节点、交换机和路由器，这些路径的跃点数可能因网络状态变化而不同。</p>
+</li>
+<li>
+<p><strong>多网关场景</strong>：<br>
+在一些网络配置中，尤其是公司或大型局域网中，可能存在多个路由器或网关，这些路由器或网关有不同的网络路径选择。如果有多个路由器提供了不同的默认网关，跃点数会用来帮助系统选择“更优”的路径。</p>
+</li>
+<li>
+<p><strong>自动优化</strong>：<br>
+操作系统的“自动”跃点数配置可以动态调整网络优先级，以便根据网络状况（如路由器负载、网络流量等）选择合适的路由。这种自动化能够让系统在不同的网络环境下做出更智能的选择，以获得更好的连接稳定性和速度。</p>
+</li>
+<li>
+<p><strong>灵活性与兼容性</strong>：<br>
+自动跃点允许设备在不固定网络架构的环境中（如加入新路由器、扩展网络）灵活适配。这种灵活性在移动设备上尤为重要，因为它们可能随时切换不同的网络或路由路径。</p>
+</li>
+</ol>
+<h3 class="heading-element" id="固定跃点数的情况"><span>固定跃点数的情况</span>
+  <a href="#%e5%9b%ba%e5%ae%9a%e8%b7%83%e7%82%b9%e6%95%b0%e7%9a%84%e6%83%85%e5%86%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>在某些简单网络（例如只有一个路由器的家庭网络）中，跃点数确实可以被认为是固定的，因为连接路径唯一且简明。但在更复杂的网络环境中，自动跃点数可以提高网络适应性。</p>
+<h2 class="heading-element" id="是不是可以通过设置跃点数的方法来给windows上的所有网络适配器设置优先级手动设置网络适配器的跃点数是否会导致网络连接出现问题"><span>是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级?手动设置网络适配器的跃点数是否会导致网络连接出现问题?</span>
+  <a href="#%e6%98%af%e4%b8%8d%e6%98%af%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e8%ae%be%e7%bd%ae%e8%b7%83%e7%82%b9%e6%95%b0%e7%9a%84%e6%96%b9%e6%b3%95%e6%9d%a5%e7%bb%99windows%e4%b8%8a%e7%9a%84%e6%89%80%e6%9c%89%e7%bd%91%e7%bb%9c%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%be%e7%bd%ae%e4%bc%98%e5%85%88%e7%ba%a7%e6%89%8b%e5%8a%a8%e8%ae%be%e7%bd%ae%e7%bd%91%e7%bb%9c%e9%80%82%e9%85%8d%e5%99%a8%e7%9a%84%e8%b7%83%e7%82%b9%e6%95%b0%e6%98%af%e5%90%a6%e4%bc%9a%e5%af%bc%e8%87%b4%e7%bd%91%e7%bb%9c%e8%bf%9e%e6%8e%a5%e5%87%ba%e7%8e%b0%e9%97%ae%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>是的，通过调整“跃点数”（即 TTL，Time to Live）或“接口跃点数” (<code>Interface Metric</code>) 可以设置 Windows 上不同网络适配器的优先级。设置优先级通常是为了控制在多网络环境下哪个网络适配器应当被优先使用。对于网络适配器的优先级，<code>Interface Metric</code> 是直接影响优先选择的指标，比 TTL 更常用于适配器优先级配置。</p>
+<h3 class="heading-element" id="设置网络适配器优先级"><span>设置网络适配器优先级</span>
+  <a href="#%e8%ae%be%e7%bd%ae%e7%bd%91%e7%bb%9c%e9%80%82%e9%85%8d%e5%99%a8%e4%bc%98%e5%85%88%e7%ba%a7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>在 Windows 中，<code>Interface Metric</code> 是网络适配器的成本值，Windows 会优先选择成本较低的接口进行数据传输。因此，您可以通过以下方式手动设置优先级：</p>
+<ol>
+<li>
+<p>打开 <strong>网络连接</strong>：</p>
+<ul>
+<li>Win + R，输入 <code>ncpa.cpl</code>，回车。</li>
+</ul>
+</li>
+<li>
+<p>选择目标网络适配器，右键点击选择 <strong>属性</strong>。</p>
+</li>
+<li>
+<p>在 <strong>Internet 协议版本 4 (TCP/IPv4)</strong> 中点击 <strong>属性</strong>，然后点击 <strong>高级</strong>。</p>
+</li>
+<li>
+<p>在“高级 TCP/IP 设置”中，勾选 <strong>自动跃点数</strong> 的勾选框，输入一个较低的值（例如 1 或 2）以增加优先级，输入较高的值以降低优先级。</p>
+</li>
+</ol>
+<h3 class="heading-element" id="手动设置-interface-metric-的注意事项"><span>手动设置 <code>Interface Metric</code> 的注意事项</span>
+  <a href="#%e6%89%8b%e5%8a%a8%e8%ae%be%e7%bd%ae-interface-metric-%e7%9a%84%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>
+<p><strong>优先级冲突</strong>：如果多个适配器被设置为相同的 <code>Interface Metric</code> 值，Windows 可能会随机选择一个适配器来发送流量，这可能会导致意外的网络切换或连接不稳定。</p>
+</li>
+<li>
+<p><strong>网络连接延迟</strong>：如果将主要适配器的 <code>Interface Metric</code> 设置得过高，可能导致系统默认选择次要或速度较慢的网络适配器，影响网络性能。</p>
+</li>
+<li>
+<p><strong>网络配置复杂性</strong>：手动调整适配器的优先级和跃点数可能导致在复杂的多网环境中不易追踪的问题，特别是在频繁切换网络或使用 VPN 时，配置不当可能造成连接失败或不稳定。</p>
+</li>
+</ol>
+<h3 class="heading-element" id="总结"><span>总结</span>
+  <a href="#%e6%80%bb%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>手动调整网络适配器的 <code>Interface Metric</code> 是一种可靠的方法来设置优先级，适用于多网络环境。只要合理配置，通常不会导致网络连接问题，但建议测试每个适配器的设置，以确保不会影响到网络连接的稳定性和速度。</p>
+</div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议">计算机网络-HTTP与Web协议</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">计算机网络-IP地址与子网</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线">计算机网络-WiFi与无线</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#为什么在插入网线之后wifi断连了">为什么在插入网线之后WiFi断连了？</a>
+      <ul>
+        <li><a href="#1-网络适配器优先级和默认网关冲突">1. <strong>网络适配器优先级和默认网关冲突</strong></a></li>
+        <li><a href="#2-ip-地址和网段冲突">2. <strong>IP 地址和网段冲突</strong></a></li>
+        <li><a href="#3-操作系统的网络切换机制">3. <strong>操作系统的网络切换机制</strong></a></li>
+        <li><a href="#4-dns-配置和路由表冲突">4. <strong>DNS 配置和路由表冲突</strong></a></li>
+        <li><a href="#解决方法"><strong>解决方法</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#什么是跃点">什么是跃点?</a>
+      <ul>
+        <li><a href="#关键点">关键点：</a></li>
+        <li><a href="#跃点数的意义">跃点数的意义：</a></li>
+        <li><a href="#示例">示例：</a></li>
+      </ul>
+    </li>
+    <li><a href="#无线网络的跃点数为什么会是自动的呢它不应该是通过无线通讯直接连接到无线路由器的吗跃点数应该是固定的啊为什么会是自动跃点">无线网络的跃点数为什么会是自动的呢？它不应该是通过无线通讯直接连接到无线路由器的吗?跃点数应该是固定的啊?为什么会是自动跃点？</a>
+      <ul>
+        <li><a href="#固定跃点数的情况">固定跃点数的情况</a></li>
+      </ul>
+    </li>
+    <li><a href="#是不是可以通过设置跃点数的方法来给windows上的所有网络适配器设置优先级手动设置网络适配器的跃点数是否会导致网络连接出现问题">是不是可以通过设置跃点数的方法来给Windows上的所有网络适配器设置优先级?手动设置网络适配器的跃点数是否会导致网络连接出现问题?</a>
+      <ul>
+        <li><a href="#设置网络适配器优先级">设置网络适配器优先级</a></li>
+        <li><a href="#手动设置-interface-metric-的注意事项">手动设置 <code>Interface Metric</code> 的注意事项</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/c9791d31a67bd6f7fd06b988b5b3296b.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

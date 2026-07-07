@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程通用 - 分类 - 红石门</title>
+    <link>http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:24:43 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cron语法</title>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/cron%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 24 Jun 2026 05:52:48 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/cron%E8%AF%AD%E6%B3%95/</guid>
+      <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/">编程通用</category>
+      <description>&lt;p&gt;本文部分内容摘抄自&lt;a href=&#34;https://www.runoob.com/linux/linux-comm-crontab.html&#34; target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Linux crontab 命令 | 菜鸟教程&lt;/a&gt;及&lt;a href=&#34;https://opensource.com/sites/default/files/gated-content/osdc_cheatsheet-cron-2021.11.01.pdf#1#1&#34; target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Cron cheatsheet from opensource.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;*    *    *    *    *&#xD;&#xA;-    -    -    -    -&#xD;&#xA;|    |    |    |    |&#xD;&#xA;|    |    |    |    &amp;#43;----- 星期中星期几 (0 - 6) (星期天 为0)&#xD;&#xA;|    |    |    &amp;#43;---------- 月份 (1 - 12) &#xD;&#xA;|    |    &amp;#43;--------------- 一个月中的第几天 (1 - 31)&#xD;&#xA;|    &amp;#43;-------------------- 小时 (0 - 23)&#xD;&#xA;&amp;#43;------------------------- 分钟 (0 - 59)&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#39;http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/cron%E8%AF%AD%E6%B3%95/images/Cron%E8%AF%AD%E6%B3%95/EfG2i-BUMAAp_C1.jpeg&#39; alt=&#34;img&#34; height=&#34;1225&#34; width=&#34;2281&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSH - 标签 - 红石门</title>
+    <link>http://localhost:1313/tags/ssh/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:23:31 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH反向隧道</title>
+      <link>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E7%BD%91%E7%BB%9C%E4%B8%8Essh/ssh%E5%8F%8D%E5%90%91%E9%9A%A7%E9%81%93/</link>
+      <pubDate>Sun, 21 Dec 2025 09:19:01 +0800</pubDate>
+      <guid>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E7%BD%91%E7%BB%9C%E4%B8%8Essh/ssh%E5%8F%8D%E5%90%91%E9%9A%A7%E9%81%93/</guid>
+      <category domain="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83---%E7%BD%91%E7%BB%9C%E4%B8%8Essh/">工具与环境 - 网络与SSH</category>
+      <description>&lt;p&gt;在有一个性能比较差的公网IP服务器的情况下，做SSH反向隧道将内网设备连接到公网IP服务器上，以此方案进行内网穿透，公网访问部署做内网的服务和资源&#xA;目前尝试将WSL与公网Linux服务器相连，WSL需安装autossh来实现自动重连功能&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;sudo apt install autossh&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;为了安全，要进制密码登录，用ssh-key来登录&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

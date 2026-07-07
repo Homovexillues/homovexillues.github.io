@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>心理学 - 标签 - 红石门</title>
+    <link>http://localhost:1313/tags/%E5%BF%83%E7%90%86%E5%AD%A6/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:23:31 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%BF%83%E7%90%86%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>人格面具与扮演法</title>
+      <link>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E5%88%9B%E4%BD%9C%E4%B8%8Etrpg/%E4%BA%BA%E6%A0%BC%E9%9D%A2%E5%85%B7%E4%B8%8E%E6%89%AE%E6%BC%94%E6%B3%95/</link>
+      <pubDate>Mon, 20 Nov 2023 01:55:05 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E5%88%9B%E4%BD%9C%E4%B8%8Etrpg/%E4%BA%BA%E6%A0%BC%E9%9D%A2%E5%85%B7%E4%B8%8E%E6%89%AE%E6%BC%94%E6%B3%95/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E5%88%9B%E4%BD%9C%E4%B8%8Etrpg/">生活杂项 - 创作与TRPG</category>
+      <description>&lt;p&gt;人格面具理论是荣格提出的，是一种关于自我认知和表达的理论，本文旨在讨论此理论与广为传播的网络小说《诡秘之主》中的“扮演法”概念与《赛博英雄传》中的“人格覆面”概念，以及卢梭的剧场理论等概念形成的有趣化学反应。&lt;/p&gt;&#xA;&lt;p&gt;在开始文章的讨论之前，先介绍一下设定：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

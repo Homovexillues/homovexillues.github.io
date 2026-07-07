@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>梗 - 标签 - 红石门</title>
+    <link>http://localhost:1313/tags/%E6%A2%97/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:23:31 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%A2%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>梗与解构主义</title>
+      <link>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%80%9D%E8%BE%A8/%E6%A2%97%E4%B8%8E%E8%A7%A3%E6%9E%84%E4%B8%BB%E4%B9%89/</link>
+      <pubDate>Sun, 19 Nov 2023 13:55:14 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%80%9D%E8%BE%A8/%E6%A2%97%E4%B8%8E%E8%A7%A3%E6%9E%84%E4%B8%BB%E4%B9%89/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E6%80%9D%E8%BE%A8/">生活杂项 - 思辨</category>
+      <description>&lt;p&gt;网络用语和梗是一种新时代的切口和赛博黑话，而这种梗的创作是新时代的个体对新时代话语权的争夺和对权威的消解，而梗小鬼和烂梗和云的出现正是年轻的个体急于融入互联网团体又东施效颦的写照,本文旨在收集整理一些日常生活中可能会用到的梗和一些有趣的使用场景，以达到信手拈来的目的。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>计算机网络-HTTP与Web协议 - 红石门</title><meta name="author" content="">
+<meta name="description" content="在向接口发送GET请求时发生了什么？ 构建请求： 客户端（例如浏览器或HTTP客户端）构建一个GET请求。这个请求包含请求行、请求头以及可能的查询参数。 发送请求： 请求通过网络传输到服务器。这个过程可能经过多个网络节点和路由器。 服务器接收请求： 服务器的Web服务器（如Apache、Nginx或IIS）接收这个请求。Web服务器负责解析请求，并将其传递给处理该请求的应用程序。 请求处理： 应用程序读取请求的详细信息，包括URL、请求头和查询参数。然后根据请求URL和参数执行特定的逻辑。例如，从数据库中获取数据、进行计算、调用其他服务等。 生成响应： 应用程序生成一个响应，通常包括状态码、响应头和响应体。响应体可能包含客户端请求的数据、错误信息或其他内容。 发送响应： 响应通过网络返回到客户端。客户端接收到响应后，处理和显示返回的数据。 Http常见的错误码有哪些？都是什么意思？ HTTP错误码，也称为HTTP状态码，是服务器在响应HTTP请求时返回的代码，用于表示请求的结果状态。常见的HTTP错误码及其含义如下：
+"><meta name="keywords" content='计算机网络, 问题'>
+	<meta itemprop="name" content="计算机网络-HTTP与Web协议">
+	<meta itemprop="description" content="在向接口发送GET请求时发生了什么？ 构建请求： 客户端（例如浏览器或HTTP客户端）构建一个GET请求。这个请求包含请求行、请求头以及可能的查询参数。 发送请求： 请求通过网络传输到服务器。这个过程可能经过多个网络节点和路由器。 服务器接收请求： 服务器的Web服务器（如Apache、Nginx或IIS）接收这个请求。Web服务器负责解析请求，并将其传递给处理该请求的应用程序。 请求处理： 应用程序读取请求的详细信息，包括URL、请求头和查询参数。然后根据请求URL和参数执行特定的逻辑。例如，从数据库中获取数据、进行计算、调用其他服务等。 生成响应： 应用程序生成一个响应，通常包括状态码、响应头和响应体。响应体可能包含客户端请求的数据、错误信息或其他内容。 发送响应： 响应通过网络返回到客户端。客户端接收到响应后，处理和显示返回的数据。 Http常见的错误码有哪些？都是什么意思？ HTTP错误码，也称为HTTP状态码，是服务器在响应HTTP请求时返回的代码，用于表示请求的结果状态。常见的HTTP错误码及其含义如下：">
+	<meta itemprop="datePublished" content="2026-06-24T03:19:19+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:30+08:00">
+	<meta itemprop="wordCount" content="4681">
+	<meta itemprop="keywords" content="计算机网络,问题"><meta property="og:url" content="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="计算机网络-HTTP与Web协议">
+	<meta property="og:description" content="在向接口发送GET请求时发生了什么？ 构建请求： 客户端（例如浏览器或HTTP客户端）构建一个GET请求。这个请求包含请求行、请求头以及可能的查询参数。 发送请求： 请求通过网络传输到服务器。这个过程可能经过多个网络节点和路由器。 服务器接收请求： 服务器的Web服务器（如Apache、Nginx或IIS）接收这个请求。Web服务器负责解析请求，并将其传递给处理该请求的应用程序。 请求处理： 应用程序读取请求的详细信息，包括URL、请求头和查询参数。然后根据请求URL和参数执行特定的逻辑。例如，从数据库中获取数据、进行计算、调用其他服务等。 生成响应： 应用程序生成一个响应，通常包括状态码、响应头和响应体。响应体可能包含客户端请求的数据、错误信息或其他内容。 发送响应： 响应通过网络返回到客户端。客户端接收到响应后，处理和显示返回的数据。 Http常见的错误码有哪些？都是什么意思？ HTTP错误码，也称为HTTP状态码，是服务器在响应HTTP请求时返回的代码，用于表示请求的结果状态。常见的HTTP错误码及其含义如下：">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="计算机基础">
+		<meta property="article:published_time" content="2026-06-24T03:19:19+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:30+08:00">
+		<meta property="article:tag" content="计算机网络">
+		<meta property="article:tag" content="问题">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="计算机网络-HTTP与Web协议">
+	<meta name="twitter:description" content="在向接口发送GET请求时发生了什么？ 构建请求： 客户端（例如浏览器或HTTP客户端）构建一个GET请求。这个请求包含请求行、请求头以及可能的查询参数。 发送请求： 请求通过网络传输到服务器。这个过程可能经过多个网络节点和路由器。 服务器接收请求： 服务器的Web服务器（如Apache、Nginx或IIS）接收这个请求。Web服务器负责解析请求，并将其传递给处理该请求的应用程序。 请求处理： 应用程序读取请求的详细信息，包括URL、请求头和查询参数。然后根据请求URL和参数执行特定的逻辑。例如，从数据库中获取数据、进行计算、调用其他服务等。 生成响应： 应用程序生成一个响应，通常包括状态码、响应头和响应体。响应体可能包含客户端请求的数据、错误信息或其他内容。 发送响应： 响应通过网络返回到客户端。客户端接收到响应后，处理和显示返回的数据。 Http常见的错误码有哪些？都是什么意思？ HTTP错误码，也称为HTTP状态码，是服务器在响应HTTP请求时返回的代码，用于表示请求的结果状态。常见的HTTP错误码及其含义如下：">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网" /><link rel="next" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp-%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81/" title="C# 继承与多态" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "计算机网络-HTTP与Web协议",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE\/"
+    },"genre": "计算机基础","keywords": "计算机网络, 问题","wordcount":  4681 ,
+    "url": "http:\/\/localhost:1313\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE\/","datePublished": "2026-06-24T03:19:19+08:00","dateModified": "2026-07-06T17:23:30+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">计算机网络-IP地址与子网</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线">计算机网络-WiFi与无线</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%8A%93%E5%8C%85%E4%B8%8E%E7%BD%91%E5%8D%A1/" title="计算机网络-抓包与网卡">计算机网络-抓包与网卡</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">计算机网络-HTTP与Web协议</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a> / <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-06-24 03:19:19 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-06-24">2026-06-24</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:30 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="4681 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 4700 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 10 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a> / <a href="/tags/%E9%97%AE%E9%A2%98/">问题</a></span>
+            </div></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#在向接口发送get请求时发生了什么">在向接口发送GET请求时发生了什么？</a></li>
+    <li><a href="#http常见的错误码有哪些都是什么意思">Http常见的错误码有哪些？都是什么意思？</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1xx-informational-信息性状态码">1xx Informational (信息性状态码)</a></li>
+            <li><a href="#2xx-success-成功状态码">2xx Success (成功状态码)</a></li>
+            <li><a href="#3xx-redirection-重定向状态码">3xx Redirection (重定向状态码)</a></li>
+            <li><a href="#4xx-client-errors-客户端错误状态码">4xx Client Errors (客户端错误状态码)</a></li>
+            <li><a href="#5xx-server-errors-服务器错误状态码">5xx Server Errors (服务器错误状态码)</a></li>
+            <li><a href="#常见错误码解释">常见错误码解释</a></li>
+            <li><a href="#如何处理这些错误码">如何处理这些错误码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#常见http请求方法">常见HTTP请求方法</a></li>
+    <li><a href="#websocket-是什么">WebSocket 是什么？</a>
+      <ul>
+        <li><a href="#与传统-http-的主要区别">与传统 HTTP 的主要区别：</a></li>
+        <li><a href="#websocket-如何工作">WebSocket 如何工作？</a></li>
+        <li><a href="#websocket-的常见应用场景">WebSocket 的常见应用场景：</a></li>
+        <li><a href="#总结-websocket-的优势">总结 WebSocket 的优势：</a></li>
+      </ul>
+    </li>
+    <li><a href="#qps是啥">qps是啥？</a>
+      <ul>
+        <li><a href="#-qps-是什么">🎯 QPS 是什么？</a></li>
+        <li><a href="#-理解-5w-qps">📊 理解 5W QPS</a></li>
+        <li><a href="#-实际例子感受一下">🌰 实际例子感受一下</a>
+          <ul>
+            <li><a href="#场景1电商秒杀">场景1：电商秒杀</a></li>
+            <li><a href="#场景2api-服务">场景2：API 服务</a></li>
+          </ul>
+        </li>
+        <li><a href="#-qps-的性能级别参考">📈 QPS 的性能级别参考</a></li>
+        <li><a href="#-相关概念对比">🔄 相关概念对比</a></li>
+        <li><a href="#-技术实现-5w-qps-的挑战">💻 技术实现 5w QPS 的挑战</a>
+          <ul>
+            <li><a href="#架构层面">架构层面：</a></li>
+            <li><a href="#技术栈">技术栈：</a></li>
+          </ul>
+        </li>
+        <li><a href="#-总结">🏆 总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 class="heading-element" id="在向接口发送get请求时发生了什么"><span>在向接口发送GET请求时发生了什么？</span>
+  <a href="#%e5%9c%a8%e5%90%91%e6%8e%a5%e5%8f%a3%e5%8f%91%e9%80%81get%e8%af%b7%e6%b1%82%e6%97%b6%e5%8f%91%e7%94%9f%e4%ba%86%e4%bb%80%e4%b9%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ol>
+<li><strong>构建请求</strong>：
+<ul>
+<li>客户端（例如浏览器或HTTP客户端）构建一个GET请求。这个请求包含请求行、请求头以及可能的查询参数。</li>
+</ul>
+</li>
+<li><strong>发送请求</strong>：
+<ul>
+<li>请求通过网络传输到服务器。这个过程可能经过多个网络节点和路由器。</li>
+</ul>
+</li>
+<li><strong>服务器接收请求</strong>：
+<ul>
+<li>服务器的Web服务器（如Apache、Nginx或IIS）接收这个请求。Web服务器负责解析请求，并将其传递给处理该请求的应用程序。</li>
+</ul>
+</li>
+<li><strong>请求处理</strong>：
+<ul>
+<li>应用程序读取请求的详细信息，包括URL、请求头和查询参数。然后根据请求URL和参数执行特定的逻辑。例如，从数据库中获取数据、进行计算、调用其他服务等。</li>
+</ul>
+</li>
+<li><strong>生成响应</strong>：
+<ul>
+<li>应用程序生成一个响应，通常包括状态码、响应头和响应体。响应体可能包含客户端请求的数据、错误信息或其他内容。</li>
+</ul>
+</li>
+<li><strong>发送响应</strong>：
+<ul>
+<li>响应通过网络返回到客户端。客户端接收到响应后，处理和显示返回的数据。</li>
+</ul>
+</li>
+</ol>
+<h2 class="heading-element" id="http常见的错误码有哪些都是什么意思"><span>Http常见的错误码有哪些？都是什么意思？</span>
+  <a href="#http%e5%b8%b8%e8%a7%81%e7%9a%84%e9%94%99%e8%af%af%e7%a0%81%e6%9c%89%e5%93%aa%e4%ba%9b%e9%83%bd%e6%98%af%e4%bb%80%e4%b9%88%e6%84%8f%e6%80%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>HTTP错误码，也称为HTTP状态码，是服务器在响应HTTP请求时返回的代码，用于表示请求的结果状态。常见的HTTP错误码及其含义如下：</p>
+<h4 class="heading-element" id="1xx-informational-信息性状态码"><span>1xx Informational (信息性状态码)</span>
+  <a href="#1xx-informational-%e4%bf%a1%e6%81%af%e6%80%a7%e7%8a%b6%e6%80%81%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li><strong>100 Continue</strong>：客户端应该继续请求。如果已经完成请求，则忽略此消息。</li>
+<li><strong>101 Switching Protocols</strong>：服务器根据客户端的请求切换协议。</li>
+</ul>
+<h4 class="heading-element" id="2xx-success-成功状态码"><span>2xx Success (成功状态码)</span>
+  <a href="#2xx-success-%e6%88%90%e5%8a%9f%e7%8a%b6%e6%80%81%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li><strong>200 OK</strong>：请求成功，并返回所请求的资源。</li>
+<li><strong>201 Created</strong>：请求成功并且服务器创建了新的资源。</li>
+<li><strong>202 Accepted</strong>：服务器已接受请求，但尚未处理。</li>
+<li><strong>204 No Content</strong>：请求成功但没有内容返回。</li>
+<li><strong>205 Reset Content</strong>：请求成功，请重置视图。</li>
+</ul>
+<h4 class="heading-element" id="3xx-redirection-重定向状态码"><span>3xx Redirection (重定向状态码)</span>
+  <a href="#3xx-redirection-%e9%87%8d%e5%ae%9a%e5%90%91%e7%8a%b6%e6%80%81%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li><strong>301 Moved Permanently</strong>：请求的资源已被永久移动到新的URL。</li>
+<li><strong>302 Found</strong>：请求的资源临时从不同的URL响应。</li>
+<li><strong>304 Not Modified</strong>：资源未被修改，自上次请求以来没有变化。</li>
+<li><strong>307 Temporary Redirect</strong>：请求的资源临时从不同的URL响应，但必须使用原有的方法请求。</li>
+</ul>
+<h4 class="heading-element" id="4xx-client-errors-客户端错误状态码"><span>4xx Client Errors (客户端错误状态码)</span>
+  <a href="#4xx-client-errors-%e5%ae%a2%e6%88%b7%e7%ab%af%e9%94%99%e8%af%af%e7%8a%b6%e6%80%81%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li><strong>400 Bad Request</strong>：服务器无法理解请求的格式，客户端应修改请求。</li>
+<li><strong>401 Unauthorized</strong>：请求需要用户认证。</li>
+<li><strong>403 Forbidden</strong>：服务器理解请求，但拒绝执行。</li>
+<li><strong>404 Not Found</strong>：请求的资源不存在。</li>
+<li><strong>405 Method Not Allowed</strong>：请求方法不被允许。</li>
+<li><strong>406 Not Acceptable</strong>：请求的资源不符合客户端的条件。</li>
+<li><strong>408 Request Timeout</strong>：请求超时，服务器等待客户端发送请求数据超时。</li>
+<li><strong>409 Conflict</strong>：请求与服务器的状态冲突。</li>
+<li><strong>410 Gone</strong>：请求的资源永久删除。</li>
+<li><strong>411 Length Required</strong>：服务器要求在请求中包含Content-Length头。</li>
+<li><strong>413 Payload Too Large</strong>：请求实体过大，服务器无法处理。</li>
+<li><strong>414 URI Too Long</strong>：请求的URI过长，服务器无法处理。</li>
+<li><strong>415 Unsupported Media Type</strong>：请求的媒体格式不受支持。</li>
+<li><strong>429 Too Many Requests</strong>：客户端发送的请求次数超过限额。</li>
+</ul>
+<h4 class="heading-element" id="5xx-server-errors-服务器错误状态码"><span>5xx Server Errors (服务器错误状态码)</span>
+  <a href="#5xx-server-errors-%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%94%99%e8%af%af%e7%8a%b6%e6%80%81%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li><strong>500 Internal Server Error</strong>：服务器遇到错误，无法完成请求。</li>
+<li><strong>501 Not Implemented</strong>：服务器不支持请求的方法。</li>
+<li><strong>502 Bad Gateway</strong>：服务器作为网关或代理，从上游服务器收到无效响应。</li>
+<li><strong>503 Service Unavailable</strong>：服务器暂时不可用，通常是由于过载或维护。</li>
+<li><strong>504 Gateway Timeout</strong>：服务器作为网关或代理，未能及时从上游服务器收到响应。</li>
+<li><strong>505 HTTP Version Not Supported</strong>：服务器不支持请求所用的HTTP版本。</li>
+</ul>
+<h4 class="heading-element" id="常见错误码解释"><span>常见错误码解释</span>
+  <a href="#%e5%b8%b8%e8%a7%81%e9%94%99%e8%af%af%e7%a0%81%e8%a7%a3%e9%87%8a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><h5 class="heading-element" id="404-not-found"><span>404 Not Found</span>
+  <a href="#404-not-found" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><ul>
+<li><strong>解释</strong>：服务器找不到请求的资源。这通常是因为URL错误或资源已被删除。</li>
+<li><strong>例子</strong>：访问一个不存在的网页时，会返回404错误。</li>
+</ul>
+<h5 class="heading-element" id="500-internal-server-error"><span>500 Internal Server Error</span>
+  <a href="#500-internal-server-error" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><ul>
+<li><strong>解释</strong>：服务器遇到意外情况，无法完成请求。这通常是由于服务器端代码错误或配置问题。</li>
+<li><strong>例子</strong>：服务器端脚本执行错误，会导致返回500错误。</li>
+</ul>
+<h5 class="heading-element" id="403-forbidden"><span>403 Forbidden</span>
+  <a href="#403-forbidden" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><ul>
+<li><strong>解释</strong>：服务器理解请求，但拒绝执行。这通常是因为权限问题。</li>
+<li><strong>例子</strong>：试图访问没有权限查看的目录或文件时，会返回403错误。</li>
+</ul>
+<h4 class="heading-element" id="如何处理这些错误码"><span>如何处理这些错误码</span>
+  <a href="#%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e8%bf%99%e4%ba%9b%e9%94%99%e8%af%af%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li><strong>客户端方面</strong>：
+<ul>
+<li>检查并确保URL正确。</li>
+<li>确认请求方法（GET、POST等）是否正确。</li>
+<li>验证请求头和参数是否正确。</li>
+<li>对需要身份认证的请求，确保提供正确的认证信息。</li>
+</ul>
+</li>
+<li><strong>服务器方面</strong>：
+<ul>
+<li>查看服务器日志，确定错误原因。</li>
+<li>检查服务器配置，确保正确处理请求。</li>
+<li>确认资源存在且路径正确。</li>
+<li>对于频繁出现的错误，可以添加自定义错误页面，提供更友好的错误信息。</li>
+</ul>
+</li>
+</ul>
+<h2 class="heading-element" id="常见http请求方法"><span>常见HTTP请求方法</span>
+  <a href="#%e5%b8%b8%e8%a7%81http%e8%af%b7%e6%b1%82%e6%96%b9%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ol>
+<li>
+<p><strong>GET</strong>：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：请求从服务器检索数据。</p>
+</li>
+<li>
+<p><strong>功能</strong>：GET请求通过URL传递参数，并从服务器获取响应数据。它通常用于获取数据而不进行任何数据修改。</p>
+</li>
+<li>
+<p><strong>特性</strong>：GET请求是幂等的（同样的请求多次执行效果相同）和安全的（不会对服务器数据进行修改）。</p>
+</li>
+<li>
+<p>示例</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">GET</span> <span class="nn">/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.example.com</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>POST</strong>：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：将数据提交到服务器，通常用于表单提交或上传文件。</p>
+</li>
+<li>
+<p><strong>功能</strong>：POST请求通过请求体传递数据，服务器处理数据并返回响应。它通常用于创建或更新资源。</p>
+</li>
+<li>
+<p><strong>特性</strong>：POST请求不是幂等的（同样的请求多次执行可能会导致不同的效果），可以对服务器资源进行修改。</p>
+</li>
+<li>
+<p>示例</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">POST</span> <span class="nn">/submit-form</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.example.com</span>
+</span></span><span class="line"><span class="cl"><span class="n">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+</span></span><span class="line"><span class="cl"><span class="n">Content-Length</span><span class="o">:</span> <span class="l">27</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">name=John&amp;age=30</span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>PUT</strong>：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：将数据上传到服务器，通常用于更新资源。</p>
+</li>
+<li>
+<p><strong>功能</strong>：PUT请求通过请求体传递数据，服务器用传递的数据替换目标资源的内容。</p>
+</li>
+<li>
+<p><strong>特性</strong>：PUT请求是幂等的。</p>
+</li>
+<li>
+<p>示例</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">PUT</span> <span class="nn">/users/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.example.com</span>
+</span></span><span class="line"><span class="cl"><span class="n">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</span></span><span class="line"><span class="cl"><span class="n">Content-Length</span><span class="o">:</span> <span class="l">18</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;John&#34;</span><span class="p">,</span><span class="nt">&#34;age&#34;</span><span class="p">:</span><span class="mi">30</span><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>DELETE</strong>：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：请求服务器删除指定的资源。</p>
+</li>
+<li>
+<p><strong>功能</strong>：DELETE请求删除指定的资源，服务器返回删除结果。</p>
+</li>
+<li>
+<p><strong>特性</strong>：DELETE请求是幂等的。</p>
+</li>
+<li>
+<p>示例</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">DELETE</span> <span class="nn">/users/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.example.com</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>HEAD</strong>：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：与GET请求类似，但服务器仅返回响应头，不返回响应体。</p>
+</li>
+<li>
+<p><strong>功能</strong>：用于检查资源的元数据（如响应头信息）而不获取实际数据。</p>
+</li>
+<li>
+<p><strong>特性</strong>：HEAD请求是幂等的。</p>
+</li>
+<li>
+<p>示例</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">HEAD</span> <span class="nn">/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.example.com</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>OPTIONS</strong>：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：查询服务器支持的请求方法和选项。</p>
+</li>
+<li>
+<p><strong>功能</strong>：用于检查服务器允许的HTTP方法、CORS设置等。</p>
+</li>
+<li>
+<p><strong>特性</strong>：OPTIONS请求是幂等的。</p>
+</li>
+<li>
+<p>示例</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">OPTIONS</span> <span class="nn">/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.example.com</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>PATCH</strong>：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：部分更新资源。</p>
+</li>
+<li>
+<p><strong>功能</strong>：PATCH请求通过请求体传递数据，仅修改目标资源的部分内容。</p>
+</li>
+<li>
+<p><strong>特性</strong>：PATCH请求不是幂等的。</p>
+</li>
+<li>
+<p>示例</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">PATCH</span> <span class="nn">/users/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.example.com</span>
+</span></span><span class="line"><span class="cl"><span class="n">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</span></span><span class="line"><span class="cl"><span class="n">Content-Length</span><span class="o">:</span> <span class="l">18</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;age&#34;</span><span class="p">:</span><span class="mi">31</span><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>CONNECT</strong>：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：用于建立隧道连接，如通过HTTP代理建立SSL隧道。</p>
+</li>
+<li>
+<p><strong>功能</strong>：通常用于HTTPS请求，通过HTTP代理进行中继。</p>
+</li>
+<li>
+<p><strong>特性</strong>：CONNECT请求不是幂等的。</p>
+</li>
+<li>
+<p>示例</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">CONNECT</span> <span class="nn">www.example.com:443</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.example.com</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>TRACE</strong>：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：回显服务器收到的请求，主要用于诊断和调试。</p>
+</li>
+<li>
+<p><strong>功能</strong>：服务器将收到的请求内容原样返回给客户端。</p>
+</li>
+<li>
+<p><strong>特性</strong>：TRACE请求是幂等的。</p>
+</li>
+<li>
+<p>示例</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">TRACE</span> <span class="nn">/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.example.com</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+</li>
+</ol>
+<h2 class="heading-element" id="websocket-是什么"><span>WebSocket 是什么？</span>
+  <a href="#websocket-%e6%98%af%e4%bb%80%e4%b9%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>WebSocket 是一种在单个 TCP 连接上进行<strong>全双工通信</strong>的网络协议。它允许服务器和客户端之间进行持久性的、双向的实时数据交换。</p>
+<p>可以把它想象成在客户端（比如你的浏览器）和服务器之间建立了一条专门的“电话线”。一旦这条线接通，双方都可以随时通过这条线互相发送信息，而不需要每次都重新“拨号”（像传统的HTTP请求那样）。</p>
+<h3 class="heading-element" id="与传统-http-的主要区别"><span>与传统 HTTP 的主要区别：</span>
+  <a href="#%e4%b8%8e%e4%bc%a0%e7%bb%9f-http-%e7%9a%84%e4%b8%bb%e8%a6%81%e5%8c%ba%e5%88%ab" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>
+<p><strong>持久连接 (Persistent Connection)</strong>：</p>
+<ul>
+<li><strong>HTTP</strong>: 通常是“请求-响应”模式。客户端发送一个请求，服务器响应后连接就可能关闭（HTTP/1.0）或在一段时间后关闭（HTTP/1.1 Keep-Alive）。如果客户端需要新数据，必须再次发起请求。</li>
+<li><strong>WebSocket</strong>: 一旦建立连接（通过一个初始的HTTP握手），连接会保持打开状态，直到客户端或服务器明确关闭它。</li>
+</ul>
+</li>
+<li>
+<p><strong>全双工通信 (Full-Duplex Communication)</strong>：</p>
+<ul>
+<li><strong>HTTP</strong>: 基本上是半双工的。客户端请求，服务器响应。服务器不能主动向客户端发送数据，除非客户端先发起请求（有一些变通方法如长轮询、SSE，但WebSocket更直接）。</li>
+<li><strong>WebSocket</strong>: 客户端和服务器都可以独立地、同时地向对方发送数据。服务器可以主动推送信息给客户端，客户端也可以随时发送信息给服务器。</li>
+</ul>
+</li>
+<li>
+<p><strong>低延迟 (Low Latency)</strong>：</p>
+<ul>
+<li>由于连接是持久的，并且数据帧的头部开销比HTTP小得多，WebSocket 在数据传输时延迟更低。这对于需要快速响应的应用（如在线游戏、实时聊天）非常重要。</li>
+</ul>
+</li>
+<li>
+<p><strong>协议开销小 (Reduced Overhead)</strong>：</p>
+<ul>
+<li>初始连接建立后，后续的数据帧头部信息非常小（通常只有几个字节），而HTTP请求每次都需要携带完整的头部信息，开销较大。</li>
+</ul>
+</li>
+</ol>
+<h3 class="heading-element" id="websocket-如何工作"><span>WebSocket 如何工作？</span>
+  <a href="#websocket-%e5%a6%82%e4%bd%95%e5%b7%a5%e4%bd%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>
+<p><strong>握手 (Handshake)</strong>：</p>
+<ul>
+<li>WebSocket 连接的建立始于一个标准的 HTTP 请求，这个请求包含一些特殊的头部信息（如 <code>Upgrade: websocket</code> 和 <code>Connection: Upgrade</code>）。</li>
+<li>如果服务器支持 WebSocket，它会响应一个 HTTP 101 Switching Protocols 状态码，表示同意将连接从 HTTP 升级到 WebSocket。</li>
+<li>一旦握手成功，底层的 TCP 连接就被用于 WebSocket 通信了，不再遵循 HTTP 协议。</li>
+</ul>
+</li>
+<li>
+<p><strong>数据传输 (Data Transfer)</strong>：</p>
+<ul>
+<li>握手成功后，客户端和服务器就可以通过这个连接双向发送 WebSocket 数据帧。</li>
+<li>数据可以是文本（通常是UTF-8编码）或二进制数据。</li>
+</ul>
+</li>
+<li>
+<p><strong>关闭连接 (Closing Connection)</strong>：</p>
+<ul>
+<li>任何一方都可以发起关闭连接的请求。</li>
+</ul>
+</li>
+</ol>
+<h3 class="heading-element" id="websocket-的常见应用场景"><span>WebSocket 的常见应用场景：</span>
+  <a href="#websocket-%e7%9a%84%e5%b8%b8%e8%a7%81%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>实时聊天应用</strong>：如微信网页版、Slack等，消息可以即时推送到所有客户端。</li>
+<li><strong>在线多人游戏</strong>：玩家的动作和游戏状态需要快速同步。</li>
+<li><strong>实时数据仪表盘</strong>：如股票行情、系统监控数据等需要实时更新。</li>
+<li><strong>协作编辑工具</strong>：如 Google Docs，多个用户可以同时编辑文档并看到对方的修改。</li>
+<li><strong>通知系统</strong>：服务器可以即时向客户端推送通知。</li>
+<li><strong>体育赛事直播更新</strong>：实时更新比分和赛况。</li>
+</ul>
+<h3 class="heading-element" id="总结-websocket-的优势"><span>总结 WebSocket 的优势：</span>
+  <a href="#%e6%80%bb%e7%bb%93-websocket-%e7%9a%84%e4%bc%98%e5%8a%bf" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>真正的双向通信</strong>：服务器可以主动向客户端推送数据。</li>
+<li><strong>低延迟</strong>：快速的数据交换。</li>
+<li><strong>减少网络流量</strong>：头部开销小。</li>
+<li><strong>保持连接状态</strong>：避免了重复建立连接的开销。</li>
+</ul>
+<p>总而言之，WebSocket 提供了一种高效的方式来实现客户端和服务器之间的实时、双向通信，是构建现代交互式Web应用的强大工具。</p>
+<p>​</p>
+<h2 class="heading-element" id="qps是啥"><span>qps是啥？</span>
+  <a href="#qps%e6%98%af%e5%95%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>好的，这是一个在讨论系统性能时非常核心的术语。</p>
+<h3 class="heading-element" id="-qps-是什么"><span>🎯 QPS 是什么？</span>
+  <a href="#-qps-%e6%98%af%e4%bb%80%e4%b9%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>QPS</strong> 的全称是 <strong>Queries Per Second（每秒查询率）</strong>。</p>
+<p>它指的是一个系统在 <strong>1秒钟</strong> 内能够成功处理的请求数量。</p>
+<p><strong>简单来说：QPS 是衡量系统处理能力的关键指标。</strong></p>
+<hr>
+<h3 class="heading-element" id="-理解-5w-qps"><span>📊 理解 5W QPS</span>
+  <a href="#-%e7%90%86%e8%a7%a3-5w-qps" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>你看到的 <strong>&ldquo;5w QPS&rdquo;</strong> 就是指 <strong>每秒处理 50,000 个请求</strong>。</p>
+<ul>
+<li><strong>5w</strong> = 50,000（中文里&quot;万&quot;的缩写）</li>
+<li><strong>QPS</strong> = 每秒请求数</li>
+</ul>
+<p>所以 <strong>5w QPS = 50,000 请求/秒</strong></p>
+<hr>
+<h3 class="heading-element" id="-实际例子感受一下"><span>🌰 实际例子感受一下</span>
+  <a href="#-%e5%ae%9e%e9%99%85%e4%be%8b%e5%ad%90%e6%84%9f%e5%8f%97%e4%b8%80%e4%b8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="场景1电商秒杀"><span>场景1：电商秒杀</span>
+  <a href="#%e5%9c%ba%e6%99%af1%e7%94%b5%e5%95%86%e7%a7%92%e6%9d%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li>某个热门商品在晚上8点开售</li>
+<li>在开始的第1秒内，系统收到了 <strong>50,000 次</strong> &ldquo;立即购买&quot;的请求</li>
+<li>如果系统能处理完这些请求，它的 QPS 就达到了 <strong>5w</strong></li>
+</ul>
+<h4 class="heading-element" id="场景2api-服务"><span>场景2：API 服务</span>
+  <a href="#%e5%9c%ba%e6%99%af2api-%e6%9c%8d%e5%8a%a1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li>你有一个提供天气查询的 API</li>
+<li>在暴雨天气时，大量用户同时查询天气</li>
+<li>系统在峰值时每秒处理了 <strong>50,000 次</strong> API 调用</li>
+<li>这就是 5w QPS</li>
+</ul>
+<hr>
+<h3 class="heading-element" id="-qps-的性能级别参考"><span>📈 QPS 的性能级别参考</span>
+  <a href="#-qps-%e7%9a%84%e6%80%a7%e8%83%bd%e7%ba%a7%e5%88%ab%e5%8f%82%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>为了让你理解 5w QPS 是什么水平：</p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>QPS 范围</th>
+            <th>系统级别</th>
+            <th>典型例子</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>几十 - 几百</td>
+            <td>小型系统</td>
+            <td>个人博客、企业内部系统</td>
+        </tr>
+        <tr>
+            <td>几千</td>
+            <td>中型系统</td>
+            <td>小型电商、SaaS服务</td>
+        </tr>
+        <tr>
+            <td><strong>几万 (5w)</strong></td>
+            <td><strong>大型系统</strong></td>
+            <td><strong>主流电商平台、社交应用</strong></td>
+        </tr>
+        <tr>
+            <td>几十万</td>
+            <td>超大型系统</td>
+            <td>双十一的淘宝、微信红包</td>
+        </tr>
+        <tr>
+            <td>百万+</td>
+            <td>顶级系统</td>
+            <td>谷歌搜索、Facebook</td>
+        </tr>
+    </tbody>
+  </table>
+</div><hr>
+<h3 class="heading-element" id="-相关概念对比"><span>🔄 相关概念对比</span>
+  <a href="#-%e7%9b%b8%e5%85%b3%e6%a6%82%e5%bf%b5%e5%af%b9%e6%af%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>经常与 QPS 一起出现的还有：</p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>指标</th>
+            <th>含义</th>
+            <th>关注点</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>QPS</strong></td>
+            <td>每秒查询数</td>
+            <td><strong>系统处理能力</strong></td>
+        </tr>
+        <tr>
+            <td><strong>TPS</strong></td>
+            <td>每秒事务数</td>
+            <td>数据库、业务逻辑复杂度</td>
+        </tr>
+        <tr>
+            <td><strong>并发数</strong></td>
+            <td>同时处理的请求数</td>
+            <td>系统资源占用</td>
+        </tr>
+        <tr>
+            <td><strong>响应时间</strong></td>
+            <td>处理单个请求耗时</td>
+            <td>用户体验</td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><strong>重要关系：</strong></p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">QPS = 并发数 ÷ 平均响应时间</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>举例：</p>
+<ul>
+<li>如果系统能同时处理 1000 个请求（并发数）</li>
+<li>每个请求平均耗时 20ms（0.02秒）</li>
+<li>那么 QPS = 1000 ÷ 0.02 = 50,000 QPS</li>
+</ul>
+<hr>
+<h3 class="heading-element" id="-技术实现-5w-qps-的挑战"><span>💻 技术实现 5w QPS 的挑战</span>
+  <a href="#-%e6%8a%80%e6%9c%af%e5%ae%9e%e7%8e%b0-5w-qps-%e7%9a%84%e6%8c%91%e6%88%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>要达到 5w QPS，通常需要：</p>
+<h4 class="heading-element" id="架构层面"><span>架构层面：</span>
+  <a href="#%e6%9e%b6%e6%9e%84%e5%b1%82%e9%9d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
+<li><strong>负载均衡</strong>：用 Nginx/LB 分散流量</li>
+<li><strong>分布式架构</strong>：多台服务器共同处理</li>
+<li><strong>缓存层</strong>：Redis 等缓存热点数据</li>
+<li><strong>数据库优化</strong>：分库分表、读写分离</li>
+</ul>
+<h4 class="heading-element" id="技术栈"><span>技术栈：</span>
+  <a href="#%e6%8a%80%e6%9c%af%e6%a0%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-yaml"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">前端</span><span class="p">:</span><span class="w"> </span><span class="l">CDN加速、静态资源优化</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">网关</span><span class="p">:</span><span class="w"> </span><span class="l">Nginx/API Gateway</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">应用</span><span class="p">:</span><span class="w"> </span><span class="l">多实例、微服务架构</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">缓存</span><span class="p">:</span><span class="w"> </span><span class="l">Redis集群</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">数据库</span><span class="p">:</span><span class="w"> </span><span class="l">MySQL集群/NoSQL</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><hr>
+<h3 class="heading-element" id="-总结"><span>🏆 总结</span>
+  <a href="#-%e6%80%bb%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>QPS = 每秒处理的请求数</strong></li>
+<li><strong>5w QPS = 50,000 请求/秒</strong></li>
+<li>这是一个 <strong>相当高的性能指标</strong>，代表系统能处理大规模并发</li>
+<li>通常需要精心设计的分布式架构才能达到</li>
+</ul>
+<p>这个指标在评估网站性能、API服务能力、数据库性能时都非常重要！</p>
+<p>很好的问题！TUN/TAP 是 Linux 虚拟网络的核心。让我为你详细解释：</p>
+</div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">计算机网络-IP地址与子网</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线">计算机网络-WiFi与无线</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%8A%93%E5%8C%85%E4%B8%8E%E7%BD%91%E5%8D%A1/" title="计算机网络-抓包与网卡">计算机网络-抓包与网卡</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#在向接口发送get请求时发生了什么">在向接口发送GET请求时发生了什么？</a></li>
+    <li><a href="#http常见的错误码有哪些都是什么意思">Http常见的错误码有哪些？都是什么意思？</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1xx-informational-信息性状态码">1xx Informational (信息性状态码)</a></li>
+            <li><a href="#2xx-success-成功状态码">2xx Success (成功状态码)</a></li>
+            <li><a href="#3xx-redirection-重定向状态码">3xx Redirection (重定向状态码)</a></li>
+            <li><a href="#4xx-client-errors-客户端错误状态码">4xx Client Errors (客户端错误状态码)</a></li>
+            <li><a href="#5xx-server-errors-服务器错误状态码">5xx Server Errors (服务器错误状态码)</a></li>
+            <li><a href="#常见错误码解释">常见错误码解释</a></li>
+            <li><a href="#如何处理这些错误码">如何处理这些错误码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#常见http请求方法">常见HTTP请求方法</a></li>
+    <li><a href="#websocket-是什么">WebSocket 是什么？</a>
+      <ul>
+        <li><a href="#与传统-http-的主要区别">与传统 HTTP 的主要区别：</a></li>
+        <li><a href="#websocket-如何工作">WebSocket 如何工作？</a></li>
+        <li><a href="#websocket-的常见应用场景">WebSocket 的常见应用场景：</a></li>
+        <li><a href="#总结-websocket-的优势">总结 WebSocket 的优势：</a></li>
+      </ul>
+    </li>
+    <li><a href="#qps是啥">qps是啥？</a>
+      <ul>
+        <li><a href="#-qps-是什么">🎯 QPS 是什么？</a></li>
+        <li><a href="#-理解-5w-qps">📊 理解 5W QPS</a></li>
+        <li><a href="#-实际例子感受一下">🌰 实际例子感受一下</a>
+          <ul>
+            <li><a href="#场景1电商秒杀">场景1：电商秒杀</a></li>
+            <li><a href="#场景2api-服务">场景2：API 服务</a></li>
+          </ul>
+        </li>
+        <li><a href="#-qps-的性能级别参考">📈 QPS 的性能级别参考</a></li>
+        <li><a href="#-相关概念对比">🔄 相关概念对比</a></li>
+        <li><a href="#-技术实现-5w-qps-的挑战">💻 技术实现 5w QPS 的挑战</a>
+          <ul>
+            <li><a href="#架构层面">架构层面：</a></li>
+            <li><a href="#技术栈">技术栈：</a></li>
+          </ul>
+        </li>
+        <li><a href="#-总结">🏆 总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/f34790a0a644f08bda9be9e36abcdc78.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

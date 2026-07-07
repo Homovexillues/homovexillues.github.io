@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程通用 - 数据格式 - 分类 - 红石门</title>
+    <link>http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8---%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:23:31 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8---%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XML知识点</title>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/xml%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <pubDate>Tue, 14 May 2024 07:41:11 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/xml%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8---%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/">编程通用 - 数据格式</category>
+      <description>&lt;p&gt;基本结构是&lt;strong&gt;标签(element)&lt;/strong&gt;、&lt;strong&gt;属性(attribute)&lt;/strong&gt;、&lt;strong&gt;文本内容(text content)&lt;/strong&gt;、**注释(comment)**组成&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;&amp;lt;bookstore&amp;gt;&#xA;  &amp;lt;book category=&amp;#34;fiction&amp;#34;&amp;gt;&#xA;    &amp;lt;title lang=&amp;#34;en&amp;#34;&amp;gt;Harry Potter&amp;lt;/title&amp;gt;&#xA;    &amp;lt;author&amp;gt;J.K. Rowling&amp;lt;/author&amp;gt;&#xA;    &amp;lt;price&amp;gt;29.99&amp;lt;/price&amp;gt;&#xA;  &amp;lt;/book&amp;gt;&#xA;  &amp;lt;book category=&amp;#34;fiction&amp;#34;&amp;gt;&#xA;    &amp;lt;title lang=&amp;#34;en&amp;#34;&amp;gt;The Hobbit&amp;lt;/title&amp;gt;&#xA;    &amp;lt;author&amp;gt;J.R.R. Tolkien&amp;lt;/author&amp;gt;&#xA;    &amp;lt;price&amp;gt;19.99&amp;lt;/price&amp;gt;&#xA;  &amp;lt;/book&amp;gt;&#xA;&amp;lt;/bookstore&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在上述例子中，&lt;code&gt;&amp;lt;bookstore&amp;gt;&lt;/code&gt; 是根元素，包含了两个 &lt;code&gt;&amp;lt;book&amp;gt;&lt;/code&gt; 元素，每个 &lt;code&gt;&amp;lt;book&amp;gt;&lt;/code&gt; 元素又包含了 &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;author&amp;gt;&lt;/code&gt; 和 &lt;code&gt;&amp;lt;price&amp;gt;&lt;/code&gt; 元素。&lt;code&gt;&amp;lt;book&amp;gt;&lt;/code&gt; 元素的 &lt;code&gt;category&lt;/code&gt; 属性表示书籍的分类，而 &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; 元素的 &lt;code&gt;lang&lt;/code&gt; 属性表示书名的语言。&#xA;或者使用xml来描述用户界面的布局和外观&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

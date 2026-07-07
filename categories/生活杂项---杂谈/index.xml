@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>生活杂项 - 杂谈 - 分类 - 红石门</title>
+    <link>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E6%9D%82%E8%B0%88/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2026 17:23:31 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>杂项问答</title>
+      <link>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E6%9D%82%E9%A1%B9%E9%97%AE%E7%AD%94/</link>
+      <pubDate>Wed, 24 Jun 2026 03:40:31 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E6%9D%82%E9%A1%B9%E9%97%AE%E7%AD%94/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E6%9D%82%E8%B0%88/">生活杂项 - 杂谈</category>
+      <description>&lt;h2 class=&#34;heading-element&#34; id=&#34;什么是生成叙事&#34;&gt;&lt;span&gt;什么是生成叙事？&lt;/span&gt;&#xA;  &lt;a href=&#34;#%e4%bb%80%e4%b9%88%e6%98%af%e7%94%9f%e6%88%90%e5%8f%99%e4%ba%8b&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;你在游戏里和别的玩家交互，你被K了头，这个就是生成叙事。它是多人游戏特有的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>历法知识</title>
+      <link>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E5%8E%86%E6%B3%95%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Sun, 10 Nov 2024 15:56:47 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E5%8E%86%E6%B3%95%E7%9F%A5%E8%AF%86/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E6%9D%82%E8%B0%88/">生活杂项 - 杂谈</category>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;黄白赤道面&lt;/strong&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;地球绕太阳转是在黄道平面上进行的&lt;/li&gt;&#xA;&lt;li&gt;月亮绕地球转是在白道平面上进行的&lt;/li&gt;&#xA;&lt;li&gt;地球自转是在赤道平面上进行的&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;当前历法&lt;/strong&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;公历(格里高利历):2024/11/11&lt;/li&gt;&#xA;&lt;li&gt;农历:十月十一&#xA;&lt;ul&gt;&#xA;&lt;li&gt;一种阴阳合历&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;历法根据制定方式分为三种，&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;阳历&#xA;&lt;ul&gt;&#xA;&lt;li&gt;靠太阳&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;阴历&#xA;&lt;ul&gt;&#xA;&lt;li&gt;靠月亮&lt;/li&gt;&#xA;&lt;li&gt;月亮从刚能看到叫望，最满叫朔，消失叫晦&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;星辰历&#xA;&lt;ul&gt;&#xA;&lt;li&gt;靠北斗七星&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;公历的发展是这么个过程:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一星期的七天都有着什么意象</title>
+      <link>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E4%B8%80%E6%98%9F%E6%9C%9F%E7%9A%84%E4%B8%83%E5%A4%A9%E9%83%BD%E6%9C%89%E7%9D%80%E4%BB%80%E4%B9%88%E6%84%8F%E8%B1%A1/</link>
+      <pubDate>Mon, 28 Oct 2024 16:46:13 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E4%B8%80%E6%98%9F%E6%9C%9F%E7%9A%84%E4%B8%83%E5%A4%A9%E9%83%BD%E6%9C%89%E7%9D%80%E4%BB%80%E4%B9%88%E6%84%8F%E8%B1%A1/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E6%9D%82%E8%B0%88/">生活杂项 - 杂谈</category>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.gcores.com/videos/119831&#34; target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;一星期的七天都各自代表着哪位神明呢？ | 机核 GCORES&lt;/a&gt;本文基本为该视频的总结版。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Sunday&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;赫利俄斯之日&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Monday&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;塞勒涅之日&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Tuesday&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;提尔之日&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Wendy&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;奥丁之日（奥丁在英语里称Woden）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Thursday&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;索尔之日&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Friday&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;芙利嘉之日&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Saturday&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;萨图恩之日（农神，克洛诺斯的某些设定来自于他）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>螳螂在后的抽象文章分享</title>
+      <link>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E8%9E%B3%E8%9E%82%E5%9C%A8%E5%90%8E%E7%9A%84%E6%8A%BD%E8%B1%A1%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Wed, 15 May 2024 06:57:59 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E8%9E%B3%E8%9E%82%E5%9C%A8%E5%90%8E%E7%9A%84%E6%8A%BD%E8%B1%A1%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E6%9D%82%E8%B0%88/">生活杂项 - 杂谈</category>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/300803311/answer/2338198897&#34; target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;自然界中，哪种动物活得最惬意？&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>杂记-2</title>
+      <link>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E6%9D%82%E8%AE%B0-2/</link>
+      <pubDate>Wed, 15 May 2024 06:54:17 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E6%9D%82%E8%AE%B0-2/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E6%9D%82%E8%B0%88/">生活杂项 - 杂谈</category>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#39;http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E6%9D%82%E8%AE%B0-2/images/%E6%9D%82%E8%AE%B0-2/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17157560101563.png&#39; alt=&#34;企业微信截图_17157560101563&#34; height=&#34;2685&#34; width=&#34;3524&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>杂记</title>
+      <link>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E6%9D%82%E8%AE%B0/</link>
+      <pubDate>Sat, 11 Nov 2023 17:07:48 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E6%9D%82%E8%B0%88/%E6%9D%82%E8%AE%B0/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9---%E6%9D%82%E8%B0%88/">生活杂项 - 杂谈</category>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;阿克琉斯值剑就是科幻小说&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;主人公和父亲置气，爬上了一棵树并发誓不下来，直到他垂垂老矣，一个热气球为了采集气象信息，抛下了一根锚，他看到这根从热气球上垂下来的绳子，就扑上去抓住它，最后随着热气球飞走了。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;记录一个地狱笑话&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Level 1 Installing Arch While Parents are Arguing&lt;/li&gt;&#xA;&lt;li&gt;Level 2 Install Gentoo in family court&lt;/li&gt;&#xA;&lt;li&gt;Level 3 Open bsd in the orphanage&lt;/li&gt;&#xA;&lt;li&gt;Level 4 Temple OS in the depression clinic&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;日本女排吉村志惠&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

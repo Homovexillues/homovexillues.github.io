@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>计算机网络-IP地址与子网 - 红石门</title><meta name="author" content="">
+<meta name="description" content="我是否可以认为，172.21.10.1这个网关地址就是我在无线网络连接的路由器的公网ip地址? 不完全是这样。
+172.21.10.1 并不是你的路由器的公网 IP 地址。它只是你本地网络（局域网）内的一个私有 IP 地址，是你设备在局域网内连接到路由器的入口。以下是它的意义和作用：
+"><meta name="keywords" content='计算机网络, 问题'>
+	<meta itemprop="name" content="计算机网络-IP地址与子网">
+	<meta itemprop="description" content="我是否可以认为，172.21.10.1这个网关地址就是我在无线网络连接的路由器的公网ip地址? 不完全是这样。
+172.21.10.1 并不是你的路由器的公网 IP 地址。它只是你本地网络（局域网）内的一个私有 IP 地址，是你设备在局域网内连接到路由器的入口。以下是它的意义和作用：">
+	<meta itemprop="datePublished" content="2026-06-24T03:19:18+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:30+08:00">
+	<meta itemprop="wordCount" content="5263">
+	<meta itemprop="keywords" content="计算机网络,问题"><meta property="og:url" content="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="计算机网络-IP地址与子网">
+	<meta property="og:description" content="我是否可以认为，172.21.10.1这个网关地址就是我在无线网络连接的路由器的公网ip地址? 不完全是这样。
+172.21.10.1 并不是你的路由器的公网 IP 地址。它只是你本地网络（局域网）内的一个私有 IP 地址，是你设备在局域网内连接到路由器的入口。以下是它的意义和作用：">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="计算机基础">
+		<meta property="article:published_time" content="2026-06-24T03:19:18+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:30+08:00">
+		<meta property="article:tag" content="计算机网络">
+		<meta property="article:tag" content="问题">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="计算机网络-IP地址与子网">
+	<meta name="twitter:description" content="我是否可以认为，172.21.10.1这个网关地址就是我在无线网络连接的路由器的公网ip地址? 不完全是这样。
+172.21.10.1 并不是你的路由器的公网 IP 地址。它只是你本地网络（局域网）内的一个私有 IP 地址，是你设备在局域网内连接到路由器的入口。以下是它的意义和作用：">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线" /><link rel="next" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "计算机网络-IP地址与子网",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91\/"
+    },"genre": "计算机基础","keywords": "计算机网络, 问题","wordcount":  5263 ,
+    "url": "http:\/\/localhost:1313\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91\/","datePublished": "2026-06-24T03:19:18+08:00","dateModified": "2026-07-06T17:23:30+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议">计算机网络-HTTP与Web协议</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线">计算机网络-WiFi与无线</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%8A%93%E5%8C%85%E4%B8%8E%E7%BD%91%E5%8D%A1/" title="计算机网络-抓包与网卡">计算机网络-抓包与网卡</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">计算机网络-IP地址与子网</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a> / <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-06-24 03:19:18 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-06-24">2026-06-24</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:30 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="5263 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 5300 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 11 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a> / <a href="/tags/%E9%97%AE%E9%A2%98/">问题</a></span>
+            </div></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#我是否可以认为17221101这个网关地址就是我在无线网络连接的路由器的公网ip地址">我是否可以认为，172.21.10.1这个网关地址就是我在无线网络连接的路由器的公网ip地址?</a></li>
+    <li><a href="#我还见过很多局域网内的地址是192168xx开头的地址这好像不在你所说的私有ip地址范围中这是什么情况">我还见过很多局域网内的地址是192.168.xx开头的地址，这好像不在你所说的私有IP地址范围中，这是什么情况?</a>
+      <ul>
+        <li><a href="#为什么会有不同的私有-ip-范围">为什么会有不同的私有 IP 范围？</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#我发现你在每段网络ip地址的范围后面括号中还有1921680016这样的内容这是什么意思">我发现你在每段网络ip地址的范围后面括号中还有（192.168.0.0/16）这样的内容，这是什么意思?</a>
+      <ul>
+        <li><a href="#举例说明-1921680016">举例说明 <code>192.168.0.0/16</code></a></li>
+        <li><a href="#其他示例">其他示例</a></li>
+        <li><a href="#为什么使用-cidr-表示法">为什么使用 CIDR 表示法</a></li>
+        <li><a href="#总结-1">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#fe80ab30c6f7f5b059d8-ipv6地址为什么是这么表示的这是十六进制数吗">fe80::ab30:c6f7:f5b0:59d%8 ipv6地址为什么是这么表示的？这是十六进制数吗?</a>
+      <ul>
+        <li><a href="#ipv6-地址表示法解析">IPv6 地址表示法解析</a></li>
+        <li><a href="#地址缩写规则">地址缩写规则</a></li>
+        <li><a href="#ipv6-地址的组成">IPv6 地址的组成</a></li>
+        <li><a href="#总结-2">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#你的设备在网络中的地址是-172211067子网掩码是-2552552550这个子网掩码意味着-1722110x-这一整个范围的ip地址都在同一个子网中-你上面提到了这样的内容为什么有这个子网掩码意味着这个信息呢子网掩码又是什么意思">你的设备在网络中的地址是 172.21.10.67，子网掩码是 255.255.255.0。这个子网掩码意味着 172.21.10.x 这一整个范围的IP地址都在同一个子网中。 你上面提到了这样的内容，为什么有这个子网掩码意味着这个信息呢?子网掩码又是什么意思?</a>
+      <ul>
+        <li><a href="#子网掩码的原理">子网掩码的原理</a>
+          <ul>
+            <li><a href="#例子解释">例子解释</a></li>
+          </ul>
+        </li>
+        <li><a href="#子网掩码的作用">子网掩码的作用</a></li>
+        <li><a href="#子网掩码的简写cidr">子网掩码的简写（CIDR）</a></li>
+        <li><a href="#通过子网掩码得知同一子网范围的原因">通过子网掩码得知同一子网范围的原因</a></li>
+      </ul>
+    </li>
+    <li><a href="#那么如果子网掩码这么写2552552000是不是意味着有17151个ip地址分配给了局域网中的设备其余地址分配给了网络">那么，如果子网掩码这么写255.255.200.0是不是意味着有17151个ip地址分配给了局域网中的设备，其余地址分配给了网络?</a>
+      <ul>
+        <li><a href="#为什么子网掩码必须是连续的-1-和-0">为什么子网掩码必须是连续的 <code>1</code> 和 <code>0</code></a></li>
+        <li><a href="#标准子网掩码格式">标准子网掩码格式</a></li>
+        <li><a href="#如何计算一个子网的-ip-地址数量">如何计算一个子网的 IP 地址数量</a></li>
+        <li><a href="#总结-3">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#掩码mask是什么意思">掩码(Mask)是什么意思</a>
+      <ul>
+        <li><a href="#子网掩码subnet-mask">子网掩码（Subnet Mask）</a>
+          <ul>
+            <li><a href="#用途">用途：</a></li>
+            <li><a href="#表示方式">表示方式：</a></li>
+            <li><a href="#工作原理">工作原理：</a></li>
+            <li><a href="#示例">示例：</a></li>
+          </ul>
+        </li>
+        <li><a href="#位掩码bit-mask">位掩码（Bit Mask）</a>
+          <ul>
+            <li><a href="#用途-1">用途：</a></li>
+            <li><a href="#表示方式-1">表示方式：</a></li>
+            <li><a href="#工作原理-1">工作原理：</a></li>
+            <li><a href="#示例-1">示例：</a></li>
+          </ul>
+        </li>
+        <li><a href="#网络掩码network-mask">网络掩码（Network Mask）</a>
+          <ul>
+            <li><a href="#用途-2">用途：</a></li>
+            <li><a href="#表示方式-2">表示方式：</a></li>
+            <li><a href="#工作原理-2">工作原理：</a></li>
+          </ul>
+        </li>
+        <li><a href="#acl-掩码access-control-list-mask">ACL 掩码（Access Control List Mask）</a>
+          <ul>
+            <li><a href="#用途-3">用途：</a></li>
+            <li><a href="#表示方式-3">表示方式：</a></li>
+            <li><a href="#工作原理-3">工作原理：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 class="heading-element" id="我是否可以认为17221101这个网关地址就是我在无线网络连接的路由器的公网ip地址"><span>我是否可以认为，172.21.10.1这个网关地址就是我在无线网络连接的路由器的公网ip地址?</span>
+  <a href="#%e6%88%91%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e8%ae%a4%e4%b8%ba17221101%e8%bf%99%e4%b8%aa%e7%bd%91%e5%85%b3%e5%9c%b0%e5%9d%80%e5%b0%b1%e6%98%af%e6%88%91%e5%9c%a8%e6%97%a0%e7%ba%bf%e7%bd%91%e7%bb%9c%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%b7%af%e7%94%b1%e5%99%a8%e7%9a%84%e5%85%ac%e7%bd%91ip%e5%9c%b0%e5%9d%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>不完全是这样。</p>
+<p><strong><code>172.21.10.1</code> 并不是你的路由器的公网 IP 地址</strong>。它只是你本地网络（局域网）内的一个<strong>私有 IP 地址</strong>，是你设备在局域网内连接到路由器的入口。以下是它的意义和作用：</p>
+<ol>
+<li>
+<p><strong>局域网内的路由器地址</strong>：<code>172.21.10.1</code> 是你局域网中（无线网络）路由器的网关 IP 地址，允许局域网中的设备通过它连接到外部网络。你的设备通过这个地址来进行网络请求，并由路由器转发这些请求到外部网络（如互联网）。</p>
+</li>
+<li>
+<p><strong>私有 IP 地址 vs 公网 IP 地址</strong>：<code>172.21.10.1</code> 属于<strong>私有 IP 地址范围</strong>（172.16.0.0 - 172.31.255.255），这类地址只能在局域网内使用，不能直接在互联网中访问。你的路由器实际上有两个 IP 地址：</p>
+<ul>
+<li><strong>局域网（LAN）IP</strong>：在你的局域网中提供给设备使用，例如 <code>172.21.10.1</code>。</li>
+<li><strong>广域网（WAN）IP</strong>（公网 IP）：这是路由器连接到互联网时向外部展示的 IP 地址，通常是由你的 ISP（互联网服务提供商）分配的，你可以用在线服务来查看该地址（如“我的 IP”查询工具）。</li>
+</ul>
+</li>
+<li>
+<p><strong>网络地址转换（NAT）</strong>：你的路由器会使用 NAT（网络地址转换）技术，把你局域网内设备的私有 IP 地址（如 <code>172.21.10.67</code>）映射到一个公网 IP 地址，从而让多个设备共享同一个公网 IP 与互联网通信。</p>
+</li>
+</ol>
+<p>所以，总结来说，<strong><code>172.21.10.1</code> 是你路由器在局域网内的网关地址，并不是路由器的公网 IP 地址</strong>。你的实际公网 IP 地址是分配给你路由器的 WAN 端口的，用于互联网连接，但它和局域网内的私有 IP 地址是不同的。</p>
+<h2 class="heading-element" id="我还见过很多局域网内的地址是192168xx开头的地址这好像不在你所说的私有ip地址范围中这是什么情况"><span>我还见过很多局域网内的地址是192.168.xx开头的地址，这好像不在你所说的私有IP地址范围中，这是什么情况?</span>
+  <a href="#%e6%88%91%e8%bf%98%e8%a7%81%e8%bf%87%e5%be%88%e5%a4%9a%e5%b1%80%e5%9f%9f%e7%bd%91%e5%86%85%e7%9a%84%e5%9c%b0%e5%9d%80%e6%98%af192168xx%e5%bc%80%e5%a4%b4%e7%9a%84%e5%9c%b0%e5%9d%80%e8%bf%99%e5%a5%bd%e5%83%8f%e4%b8%8d%e5%9c%a8%e4%bd%a0%e6%89%80%e8%af%b4%e7%9a%84%e7%a7%81%e6%9c%89ip%e5%9c%b0%e5%9d%80%e8%8c%83%e5%9b%b4%e4%b8%ad%e8%bf%99%e6%98%af%e4%bb%80%e4%b9%88%e6%83%85%e5%86%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>实际上，<strong><code>192.168.xx.xx</code> 开头的 IP 地址也是私有 IP 地址</strong>，属于<strong>私有 IP 地址范围</strong>的一部分。根据 <a href="https://tools.ietf.org/html/rfc1918" target="_blank" rel="external nofollow noopener noreferrer">RFC 1918</a>，私有 IP 地址范围有三段，每段都是专门保留给局域网使用的，不会在公网中出现：</p>
+<ol>
+<li><strong>10.0.0.0 - 10.255.255.255</strong>（10.0.0.0/8）：适用于大规模的私有网络（例如大型企业内部网络）。</li>
+<li><strong>172.16.0.0 - 172.31.255.255</strong>（172.16.0.0/12）：适用于中等规模的私有网络。</li>
+<li><strong>192.168.0.0 - 192.168.255.255</strong>（192.168.0.0/16）：适用于小型私有网络，也是最常见的家用和小型办公室网络范围。</li>
+</ol>
+<p>其中，<strong><code>192.168.xx.xx</code></strong> 是我们最常见的局域网 IP 地址范围，通常用于家庭路由器和小型办公室网络。例如，家庭网络中经常使用的网段是 <code>192.168.0.0/24</code> 或 <code>192.168.1.0/24</code>，这样可以分配 <code>192.168.0.1</code> 到 <code>192.168.0.254</code> 或 <code>192.168.1.1</code> 到 <code>192.168.1.254</code> 的 IP 地址给设备。</p>
+<h3 class="heading-element" id="为什么会有不同的私有-ip-范围"><span>为什么会有不同的私有 IP 范围？</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e6%9c%89%e4%b8%8d%e5%90%8c%e7%9a%84%e7%a7%81%e6%9c%89-ip-%e8%8c%83%e5%9b%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>这些私有 IP 地址范围是为了满足不同规模的网络需求，使用范围较小的段（如 <code>192.168.xx.xx</code>）可以减少地址管理的复杂性。因此，路由器和网络管理员可以根据网络规模和用途选择不同的私有 IP 地址段。</p>
+<h3 class="heading-element" id="总结"><span>总结</span>
+  <a href="#%e6%80%bb%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>192.168.xx.xx</strong> 也是一个私有 IP 地址范围，常用于家庭和小型局域网。</li>
+<li>所有 <strong>10.x.x.x</strong>、<strong>172.16.x.x - 172.31.x.x</strong> 和 <strong>192.168.x.x</strong> 的 IP 地址都是私有 IP 地址，只能在局域网内部使用，不能直接在互联网中使用。</li>
+<li>路由器会用 NAT 把局域网的私有 IP 转换成一个公共 IP，以连接到互联网。</li>
+</ul>
+<h2 class="heading-element" id="我发现你在每段网络ip地址的范围后面括号中还有1921680016这样的内容这是什么意思"><span>我发现你在每段网络ip地址的范围后面括号中还有（192.168.0.0/16）这样的内容，这是什么意思?</span>
+  <a href="#%e6%88%91%e5%8f%91%e7%8e%b0%e4%bd%a0%e5%9c%a8%e6%af%8f%e6%ae%b5%e7%bd%91%e7%bb%9cip%e5%9c%b0%e5%9d%80%e7%9a%84%e8%8c%83%e5%9b%b4%e5%90%8e%e9%9d%a2%e6%8b%ac%e5%8f%b7%e4%b8%ad%e8%bf%98%e6%9c%891921680016%e8%bf%99%e6%a0%b7%e7%9a%84%e5%86%85%e5%ae%b9%e8%bf%99%e6%98%af%e4%bb%80%e4%b9%88%e6%84%8f%e6%80%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>括号中的 <strong><code>192.168.0.0/16</code></strong> 是一种表示 IP 地址范围的<strong>网络前缀表示法</strong>，称为 <strong>CIDR（Classless Inter-Domain Routing，无类别域间路由）表示法</strong>。在这种表示法中：</p>
+<ul>
+<li><strong>前面的 IP 地址</strong>（如 <code>192.168.0.0</code>）表示<strong>网络的起始地址</strong>。</li>
+<li>斜杠后的数字 <strong>/16</strong> 表示<strong>网络前缀长度</strong>，指明了 IP 地址中有多少位是固定的，用于定义网络部分。</li>
+</ul>
+<p>在 IP 地址（IPv4）的表示中，地址共有 <strong>32 位</strong>，每一位可以是 0 或 1。<code>/16</code> 意味着<strong>前 16 位被用作网络前缀</strong>，剩下的 16 位可以用来分配主机地址。</p>
+<h3 class="heading-element" id="举例说明-1921680016"><span>举例说明 <code>192.168.0.0/16</code></span>
+  <a href="#%e4%b8%be%e4%be%8b%e8%af%b4%e6%98%8e-1921680016" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>
+<p><strong>网络前缀</strong>：<code>192.168.0.0/16</code> 表示前 16 位是固定的，网络范围是 <code>192.168.x.x</code>，可以分配给局域网的设备。</p>
+</li>
+<li>
+<p><strong>主机部分</strong>：剩下的 16 位可以用来分配主机地址，这意味着 <code>192.168.0.0/16</code> 包含了从 <strong><code>192.168.0.0</code> 到 <code>192.168.255.255</code></strong> 的所有 IP 地址。这共计 <strong>2^16 = 65536</strong> 个地址。</p>
+</li>
+</ol>
+<h3 class="heading-element" id="其他示例"><span>其他示例</span>
+  <a href="#%e5%85%b6%e4%bb%96%e7%a4%ba%e4%be%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><code>10.0.0.0/8</code> 表示前 8 位是网络前缀，因此地址范围是 <strong><code>10.0.0.0</code> 到 <code>10.255.255.255</code></strong>，共计 <strong>2^24 = 16777216</strong> 个地址。</li>
+<li><code>172.16.0.0/12</code> 表示前 12 位是网络前缀，因此地址范围是 <strong><code>172.16.0.0</code> 到 <code>172.31.255.255</code></strong>，共计 <strong>2^20 = 1048576</strong> 个地址。</li>
+</ul>
+<h3 class="heading-element" id="为什么使用-cidr-表示法"><span>为什么使用 CIDR 表示法</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%bf%e7%94%a8-cidr-%e8%a1%a8%e7%a4%ba%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>CIDR 表示法的好处在于可以灵活划分网络，而不受传统 A 类、B 类、C 类地址分类的限制。它让网络管理员可以更精确地分配地址，减少地址浪费，增强了 IP 地址管理的灵活性。</p>
+<h3 class="heading-element" id="总结-1"><span>总结</span>
+  <a href="#%e6%80%bb%e7%bb%93-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>CIDR 表示法</strong>中的 <code>/n</code> 表示网络前缀的长度，即 IP 地址中有多少位是固定的网络部分。</li>
+<li>例如，<code>192.168.0.0/16</code> 表示前 16 位是网络部分，后 16 位用于分配主机。</li>
+<li>CIDR 使网络划分更灵活，允许更有效地管理 IP 地址。</li>
+</ul>
+<h2 class="heading-element" id="fe80ab30c6f7f5b059d8-ipv6地址为什么是这么表示的这是十六进制数吗"><span>fe80::ab30:c6f7:f5b0:59d%8 ipv6地址为什么是这么表示的？这是十六进制数吗?</span>
+  <a href="#fe80ab30c6f7f5b059d8-ipv6%e5%9c%b0%e5%9d%80%e4%b8%ba%e4%bb%80%e4%b9%88%e6%98%af%e8%bf%99%e4%b9%88%e8%a1%a8%e7%a4%ba%e7%9a%84%e8%bf%99%e6%98%af%e5%8d%81%e5%85%ad%e8%bf%9b%e5%88%b6%e6%95%b0%e5%90%97" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>是的，IPv6 地址的表示确实使用了<strong>十六进制</strong>。IPv6 地址采用 128 位的地址长度，为了更简洁地表示这些地址，IPv6 使用了<strong>冒号分隔的十六进制</strong>表示法。</p>
+<h3 class="heading-element" id="ipv6-地址表示法解析"><span>IPv6 地址表示法解析</span>
+  <a href="#ipv6-%e5%9c%b0%e5%9d%80%e8%a1%a8%e7%a4%ba%e6%b3%95%e8%a7%a3%e6%9e%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>一个完整的 IPv6 地址包含 128 位，分为 8 组，每组 16 位，每组之间用冒号 <code>:</code> 分隔。每组的 16 位用<strong>四个十六进制数</strong>来表示。</p>
+<p>例如，IPv6 地址 <code>fe80::ab30:c6f7:f5b0:59d%8</code> 可以分为以下部分：</p>
+<ul>
+<li><strong>fe80</strong> : <strong>0000</strong> : <strong>0000</strong> : <strong>0000</strong> : <strong>ab30</strong> : <strong>c6f7</strong> : <strong>f5b0</strong> : <strong>0059</strong></li>
+</ul>
+<h3 class="heading-element" id="地址缩写规则"><span>地址缩写规则</span>
+  <a href="#%e5%9c%b0%e5%9d%80%e7%bc%a9%e5%86%99%e8%a7%84%e5%88%99" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>为了简化表示，IPv6 允许几种缩写规则：</p>
+<ol>
+<li>
+<p><strong>去掉前导零</strong>：每一组的十六进制数前导零可以省略。例如，<code>0059</code> 可以写作 <code>59</code>。</p>
+</li>
+<li>
+<p><strong>双冒号 <code>::</code> 表示连续的零</strong>：如果一段地址中有连续的 <code>0000</code>，可以用双冒号 <code>::</code> 来代替。但双冒号在同一个地址中只能使用一次，以避免歧义。例如：</p>
+<ul>
+<li><code>fe80:0:0:0:ab30:c6f7:f5b0:59d</code> 可以写成 <code>fe80::ab30:c6f7:f5b0:59d</code>。</li>
+</ul>
+<p>在这个例子中，<code>::</code> 表示有 3 组 <code>0000</code>。</p>
+</li>
+<li>
+<p><strong>范围指示符 <code>%</code></strong>：在本地链路（link-local）IPv6 地址中，<code>%</code> 后面的数字 <code>8</code> 表示<strong>网络接口标识符</strong>，即在该设备上用于区分不同的网络接口。例如，在 <code>fe80::ab30:c6f7:f5b0:59d%8</code> 中，<code>%8</code> 表示这是第 8 个网络接口。</p>
+</li>
+</ol>
+<h3 class="heading-element" id="ipv6-地址的组成"><span>IPv6 地址的组成</span>
+  <a href="#ipv6-%e5%9c%b0%e5%9d%80%e7%9a%84%e7%bb%84%e6%88%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>IPv6 地址由两部分组成：</p>
+<ol>
+<li><strong>网络前缀</strong>：前 64 位通常用于指定网络部分。</li>
+<li><strong>主机标识</strong>：后 64 位通常用于标识特定设备（主机）在网络中的唯一性。</li>
+</ol>
+<p>例如，<code>fe80::/64</code> 是本地链路地址的网络前缀，而后面的部分（<code>ab30:c6f7:f5b0:59d</code>）用来唯一标识特定主机。</p>
+<h3 class="heading-element" id="总结-2"><span>总结</span>
+  <a href="#%e6%80%bb%e7%bb%93-2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>IPv6 地址使用 <strong>128 位</strong>，每 16 位一组，用十六进制表示。</li>
+<li>IPv6 地址的表示允许缩写，如省略前导零和使用双冒号 <code>::</code> 表示连续的零。</li>
+<li><code>%</code> 后面的数字表示<strong>网络接口标识符</strong>，仅用于本地链路地址。</li>
+</ul>
+<h2 class="heading-element" id="你的设备在网络中的地址是-172211067子网掩码是-2552552550这个子网掩码意味着-1722110x-这一整个范围的ip地址都在同一个子网中-你上面提到了这样的内容为什么有这个子网掩码意味着这个信息呢子网掩码又是什么意思"><span>你的设备在网络中的地址是 172.21.10.67，子网掩码是 255.255.255.0。这个子网掩码意味着 172.21.10.x 这一整个范围的IP地址都在同一个子网中。 你上面提到了这样的内容，为什么有这个子网掩码意味着这个信息呢?子网掩码又是什么意思?</span>
+  <a href="#%e4%bd%a0%e7%9a%84%e8%ae%be%e5%a4%87%e5%9c%a8%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%9c%b0%e5%9d%80%e6%98%af-172211067%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e6%98%af-2552552550%e8%bf%99%e4%b8%aa%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e6%84%8f%e5%91%b3%e7%9d%80-1722110x-%e8%bf%99%e4%b8%80%e6%95%b4%e4%b8%aa%e8%8c%83%e5%9b%b4%e7%9a%84ip%e5%9c%b0%e5%9d%80%e9%83%bd%e5%9c%a8%e5%90%8c%e4%b8%80%e4%b8%aa%e5%ad%90%e7%bd%91%e4%b8%ad-%e4%bd%a0%e4%b8%8a%e9%9d%a2%e6%8f%90%e5%88%b0%e4%ba%86%e8%bf%99%e6%a0%b7%e7%9a%84%e5%86%85%e5%ae%b9%e4%b8%ba%e4%bb%80%e4%b9%88%e6%9c%89%e8%bf%99%e4%b8%aa%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e6%84%8f%e5%91%b3%e7%9d%80%e8%bf%99%e4%b8%aa%e4%bf%a1%e6%81%af%e5%91%a2%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e5%8f%88%e6%98%af%e4%bb%80%e4%b9%88%e6%84%8f%e6%80%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>子网掩码（subnet mask）是一种用于区分<strong>网络部分</strong>和<strong>主机部分</strong>的地址标识。它告诉设备哪一部分 IP 地址用于表示网络，哪一部分用于标识网络内的设备（主机）。</p>
+<h3 class="heading-element" id="子网掩码的原理"><span>子网掩码的原理</span>
+  <a href="#%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e7%9a%84%e5%8e%9f%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>在 IPv4 地址中（例如 172.21.10.67），一个 IP 地址由 32 位组成，通常分成 4 组，每组 8 位（1 个字节），用十进制表示成 <code>x.x.x.x</code> 的形式。</p>
+<p>子网掩码也是一个 32 位的数字，它用来遮蔽 IP 地址的前几位以表示网络部分。子网掩码中的每个 <code>1</code> 表示网络部分，每个 <code>0</code> 表示主机部分。例如，<code>255.255.255.0</code> 的二进制形式是 <code>11111111.11111111.11111111.00000000</code>，表示前 24 位（即前三组 8 位）属于网络部分，最后 8 位属于主机部分。</p>
+<h4 class="heading-element" id="例子解释"><span>例子解释</span>
+  <a href="#%e4%be%8b%e5%ad%90%e8%a7%a3%e9%87%8a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>对于 IP 地址 <code>172.21.10.67</code> 和子网掩码 <code>255.255.255.0</code>，转换为二进制为：</p>
+<ul>
+<li>IP 地址：<code>10101100.00010101.00001010.01000011</code></li>
+<li>子网掩码：<code>11111111.11111111.11111111.00000000</code></li>
+</ul>
+<p>根据子网掩码的设置，前 24 位是网络部分，后 8 位是主机部分。因此：</p>
+<ul>
+<li><strong>网络部分</strong>：<code>10101100.00010101.00001010</code>（即 <code>172.21.10</code>）</li>
+<li><strong>主机部分</strong>：<code>01000011</code>（即 <code>67</code>）</li>
+</ul>
+<p>这意味着在 <code>172.21.10.x</code> 这个范围内的所有 IP 地址都属于同一个子网，因为它们共享相同的网络部分（前 24 位）。</p>
+<h3 class="heading-element" id="子网掩码的作用"><span>子网掩码的作用</span>
+  <a href="#%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e7%9a%84%e4%bd%9c%e7%94%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>
+<p><strong>标识同一子网的范围</strong>：子网掩码决定了网络的大小和结构。例如，<code>255.255.255.0</code> 表示同一个子网内有 256 个 IP 地址（从 <code>172.21.10.0</code> 到 <code>172.21.10.255</code>），其中 <code>172.21.10.1</code> 到 <code>172.21.10.254</code> 可以分配给主机，而 <code>172.21.10.0</code> 是网络地址，<code>172.21.10.255</code> 是广播地址。</p>
+</li>
+<li>
+<p><strong>帮助设备区分本地和外部网络</strong>：设备在通信时，会使用子网掩码来判断目标 IP 是否在同一子网内。如果是，则可以直接通信；如果不在同一子网内，则数据会通过网关发送到外部网络。</p>
+</li>
+</ol>
+<h3 class="heading-element" id="子网掩码的简写cidr"><span>子网掩码的简写（CIDR）</span>
+  <a href="#%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e7%9a%84%e7%ae%80%e5%86%99cidr" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>子网掩码也可以用一种简写形式，称为 CIDR 表示法（Classless Inter-Domain Routing）。例如，<code>255.255.255.0</code> 可以表示为 <code>/24</code>，因为它有 24 位是 <code>1</code>。同理：</p>
+<ul>
+<li><code>255.255.255.0</code> = <code>/24</code></li>
+<li><code>255.255.0.0</code> = <code>/16</code></li>
+<li><code>255.0.0.0</code> = <code>/8</code></li>
+</ul>
+<h3 class="heading-element" id="通过子网掩码得知同一子网范围的原因"><span>通过子网掩码得知同一子网范围的原因</span>
+  <a href="#%e9%80%9a%e8%bf%87%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e5%be%97%e7%9f%a5%e5%90%8c%e4%b8%80%e5%ad%90%e7%bd%91%e8%8c%83%e5%9b%b4%e7%9a%84%e5%8e%9f%e5%9b%a0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>因为子网掩码中的 <code>1</code> 位指定了 IP 地址的网络部分，同一网络的设备需要具有相同的网络部分（即相同的子网掩码和网络地址），才能被视为在同一子网中。例如：</p>
+<ul>
+<li>IP 地址 <code>172.21.10.67</code> 和 <code>172.21.10.100</code> 在子网掩码 <code>255.255.255.0</code> 下同属一个子网，因为它们的网络部分（<code>172.21.10</code>）相同。</li>
+</ul>
+<p>因此，有了子网掩码 <code>255.255.255.0</code>，我们就知道 IP 地址 <code>172.21.10.x</code> 属于同一子网。</p>
+<h2 class="heading-element" id="那么如果子网掩码这么写2552552000是不是意味着有17151个ip地址分配给了局域网中的设备其余地址分配给了网络"><span>那么，如果子网掩码这么写255.255.200.0是不是意味着有17151个ip地址分配给了局域网中的设备，其余地址分配给了网络?</span>
+  <a href="#%e9%82%a3%e4%b9%88%e5%a6%82%e6%9e%9c%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e8%bf%99%e4%b9%88%e5%86%992552552000%e6%98%af%e4%b8%8d%e6%98%af%e6%84%8f%e5%91%b3%e7%9d%80%e6%9c%8917151%e4%b8%aaip%e5%9c%b0%e5%9d%80%e5%88%86%e9%85%8d%e7%bb%99%e4%ba%86%e5%b1%80%e5%9f%9f%e7%bd%91%e4%b8%ad%e7%9a%84%e8%ae%be%e5%a4%87%e5%85%b6%e4%bd%99%e5%9c%b0%e5%9d%80%e5%88%86%e9%85%8d%e7%bb%99%e4%ba%86%e7%bd%91%e7%bb%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>其实，子网掩码写成 <code>255.255.200.0</code> 并不会产生你所说的 17151 个 IP 地址可分配。这种子网掩码并不符合标准的连续 <code>1</code> 位和 <code>0</code> 位的规则。</p>
+<h3 class="heading-element" id="为什么子网掩码必须是连续的-1-和-0"><span>为什么子网掩码必须是连续的 <code>1</code> 和 <code>0</code></span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e5%bf%85%e9%a1%bb%e6%98%af%e8%bf%9e%e7%bb%ad%e7%9a%84-1-%e5%92%8c-0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>在 IPv4 中，子网掩码需要由连续的 <code>1</code> 和连续的 <code>0</code> 组成。像 <code>255.255.200.0</code> 这种子网掩码，转换为二进制是 <code>11111111.11111111.11001000.00000000</code>，<code>1</code> 和 <code>0</code> 并不连续，这样的子网掩码会导致网络计算上的问题。因此，这样的子网掩码并不被支持，也不会产生有效的 IP 地址范围。</p>
+<h3 class="heading-element" id="标准子网掩码格式"><span>标准子网掩码格式</span>
+  <a href="#%e6%a0%87%e5%87%86%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81%e6%a0%bc%e5%bc%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>标准的子网掩码格式只允许使用以下形式：</p>
+<ul>
+<li><code>255.0.0.0</code> (即 <code>/8</code>)</li>
+<li><code>255.255.0.0</code> (即 <code>/16</code>)</li>
+<li><code>255.255.255.0</code> (即 <code>/24</code>)</li>
+<li>以及其他以 <code>1</code> 位连续、<code>0</code> 位连续的格式，比如 <code>255.255.252.0</code> (即 <code>/22</code>)</li>
+</ul>
+<h3 class="heading-element" id="如何计算一个子网的-ip-地址数量"><span>如何计算一个子网的 IP 地址数量</span>
+  <a href="#%e5%a6%82%e4%bd%95%e8%ae%a1%e7%ae%97%e4%b8%80%e4%b8%aa%e5%ad%90%e7%bd%91%e7%9a%84-ip-%e5%9c%b0%e5%9d%80%e6%95%b0%e9%87%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>如果使用标准的子网掩码，可以用以下公式计算同一子网内的可用 IP 地址数：
+</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>可用 IP 地址数</mtext><mo>=</mo><msup><mn>2</mn><mrow><mo stretchy="false">(</mo><mn>32</mn><mo>−</mo><mtext>子网掩码中的1的数量</mtext><mo stretchy="false">)</mo></mrow></msup><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">
+\text{可用 IP 地址数} = 2^{(32 - \text{子网掩码中的1的数量})} - 2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord cjk_fallback">可用</span><span class="mord"> IP </span><span class="mord cjk_fallback">地址数</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0213em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">32</span><span class="mbin mtight">−</span><span class="mord text mtight"><span class="mord cjk_fallback mtight">子网掩码中的</span><span class="mord mtight">1</span><span class="mord cjk_fallback mtight">的数量</span></span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></span><p>
+例如：</p>
+<ul>
+<li><strong><code>255.255.255.0</code></strong> (<code>/24</code>)：32 - 24 = 8，所以可用 IP 数是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>8</mn></msup><mo>−</mo><mn>2</mn><mo>=</mo><mn>256</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>254</mn></mrow><annotation encoding="application/x-tex"> 2^8 - 2 = 256 - 2 = 254 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">256</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">254</span></span></span></span></li>
+<li><strong><code>255.255.252.0</code></strong> (<code>/22</code>)：32 - 22 = 10，所以可用 IP 数是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>10</mn></msup><mo>−</mo><mn>2</mn><mo>=</mo><mn>1024</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>1022</mn></mrow><annotation encoding="application/x-tex"> 2^{10} - 2 = 1024 - 2 = 1022 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1024</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1022</span></span></span></span></li>
+</ul>
+<h3 class="heading-element" id="总结-3"><span>总结</span>
+  <a href="#%e6%80%bb%e7%bb%93-3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>子网掩码必须由连续的 <code>1</code> 和 <code>0</code> 位组成，像 <code>255.255.200.0</code> 这种格式是无效的。有效的子网掩码会产生固定数量的 IP 地址范围，具体数量取决于子网掩码的位数。</p>
+<h2 class="heading-element" id="掩码mask是什么意思"><span>掩码(Mask)是什么意思</span>
+  <a href="#%e6%8e%a9%e7%a0%81mask%e6%98%af%e4%bb%80%e4%b9%88%e6%84%8f%e6%80%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>
+<h3 class="heading-element" id="子网掩码subnet-mask"><span>子网掩码（Subnet Mask）</span>
+  <a href="#%e5%ad%90%e7%bd%91%e6%8e%a9%e7%a0%81subnet-mask" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="用途"><span>用途：</span>
+  <a href="#%e7%94%a8%e9%80%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>子网掩码用于区分 IP 地址中的网络部分和主机部分。它与 IP 地址结合使用，以确定一个特定的 IP 地址属于哪个子网。</p>
+<h4 class="heading-element" id="表示方式"><span>表示方式：</span>
+  <a href="#%e8%a1%a8%e7%a4%ba%e6%96%b9%e5%bc%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>子网掩码通常以点分十进制形式表示，例如：255.255.255.0。</p>
+<h4 class="heading-element" id="工作原理"><span>工作原理：</span>
+  <a href="#%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>子网掩码中的每个“1”表示网络部分，每个“0”表示主机部分。例如，子网掩码 255.255.255.0 转换为二进制是 11111111.11111111.11111111.00000000，这表示前24位是网络部分，后8位是主机部分。</p>
+<h4 class="heading-element" id="示例"><span>示例：</span>
+  <a href="#%e7%a4%ba%e4%be%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>假设 IP 地址是 192.168.1.10，子网掩码是 255.255.255.0，则网络部分是 192.168.1，主机部分是 10。</p>
+</li>
+<li>
+<h3 class="heading-element" id="位掩码bit-mask"><span>位掩码（Bit Mask）</span>
+  <a href="#%e4%bd%8d%e6%8e%a9%e7%a0%81bit-mask" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="用途-1"><span>用途：</span>
+  <a href="#%e7%94%a8%e9%80%94-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>在编程中，位掩码用于<strong>对二进制数据进行位级操作</strong>，如设置、清除、切换特定位或检查特定位的状态。</p>
+<h4 class="heading-element" id="表示方式-1"><span>表示方式：</span>
+  <a href="#%e8%a1%a8%e7%a4%ba%e6%96%b9%e5%bc%8f-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>位掩码通常以二进制或十六进制形式表示。例如，位掩码 0xFF 表示二进制的 11111111。</p>
+<h4 class="heading-element" id="工作原理-1"><span>工作原理：</span>
+  <a href="#%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>位掩码通过按位与、按位或、按位异或等操作，对目标数据进行位操作。</p>
+<h4 class="heading-element" id="示例-1"><span>示例：</span>
+  <a href="#%e7%a4%ba%e4%be%8b-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>假设有一个8位的数据 0b11001100（204 十进制），你想清除最低的4位。你可以使用位掩码 0b11110000（240 十进制），通过按位与操作实现：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">python复制代码data = 0b11001100
+</span></span><span class="line"><span class="cl">mask = 0b11110000
+</span></span><span class="line"><span class="cl">result = data &amp; mask  # 结果是 0b11000000</span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+<li>
+<h3 class="heading-element" id="网络掩码network-mask"><span>网络掩码（Network Mask）</span>
+  <a href="#%e7%bd%91%e7%bb%9c%e6%8e%a9%e7%a0%81network-mask" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="用途-2"><span>用途：</span>
+  <a href="#%e7%94%a8%e9%80%94-2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>在网络配置中，网络掩码用于指定网络前缀的长度。与子网掩码类似，但常用于 CIDR（无类别域间路由）表示法。</p>
+<h4 class="heading-element" id="表示方式-2"><span>表示方式：</span>
+  <a href="#%e8%a1%a8%e7%a4%ba%e6%96%b9%e5%bc%8f-2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>网络掩码通常以斜杠加上网络前缀长度的形式表示，例如：192.168.1.0/24。</p>
+<h4 class="heading-element" id="工作原理-2"><span>工作原理：</span>
+  <a href="#%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86-2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>网络掩码指定了网络前缀的长度，例如 /24 表示网络前缀长度为 24 位，等价于子网掩码 255.255.255.0。</p>
+</li>
+<li>
+<h3 class="heading-element" id="acl-掩码access-control-list-mask"><span>ACL 掩码（Access Control List Mask）</span>
+  <a href="#acl-%e6%8e%a9%e7%a0%81access-control-list-mask" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="用途-3"><span>用途：</span>
+  <a href="#%e7%94%a8%e9%80%94-3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>在访问控制列表（ACL）中，掩码用于指定哪些位应该被检查，以确定访问权限。</p>
+<h4 class="heading-element" id="表示方式-3"><span>表示方式：</span>
+  <a href="#%e8%a1%a8%e7%a4%ba%e6%96%b9%e5%bc%8f-3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>ACL 掩码通常以二进制或十六进制表示，每一位表示相应权限位是否应该被检查。</p>
+<h4 class="heading-element" id="工作原理-3"><span>工作原理：</span>
+  <a href="#%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86-3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>ACL 掩码通过与权限位进行按位与操作，决定哪些位应该被应用。例如，掩码 0xF0 表示只检查高4位。</p>
+</li>
+</ul>
+</div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议">计算机网络-HTTP与Web协议</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线">计算机网络-WiFi与无线</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%8A%93%E5%8C%85%E4%B8%8E%E7%BD%91%E5%8D%A1/" title="计算机网络-抓包与网卡">计算机网络-抓包与网卡</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#我是否可以认为17221101这个网关地址就是我在无线网络连接的路由器的公网ip地址">我是否可以认为，172.21.10.1这个网关地址就是我在无线网络连接的路由器的公网ip地址?</a></li>
+    <li><a href="#我还见过很多局域网内的地址是192168xx开头的地址这好像不在你所说的私有ip地址范围中这是什么情况">我还见过很多局域网内的地址是192.168.xx开头的地址，这好像不在你所说的私有IP地址范围中，这是什么情况?</a>
+      <ul>
+        <li><a href="#为什么会有不同的私有-ip-范围">为什么会有不同的私有 IP 范围？</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#我发现你在每段网络ip地址的范围后面括号中还有1921680016这样的内容这是什么意思">我发现你在每段网络ip地址的范围后面括号中还有（192.168.0.0/16）这样的内容，这是什么意思?</a>
+      <ul>
+        <li><a href="#举例说明-1921680016">举例说明 <code>192.168.0.0/16</code></a></li>
+        <li><a href="#其他示例">其他示例</a></li>
+        <li><a href="#为什么使用-cidr-表示法">为什么使用 CIDR 表示法</a></li>
+        <li><a href="#总结-1">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#fe80ab30c6f7f5b059d8-ipv6地址为什么是这么表示的这是十六进制数吗">fe80::ab30:c6f7:f5b0:59d%8 ipv6地址为什么是这么表示的？这是十六进制数吗?</a>
+      <ul>
+        <li><a href="#ipv6-地址表示法解析">IPv6 地址表示法解析</a></li>
+        <li><a href="#地址缩写规则">地址缩写规则</a></li>
+        <li><a href="#ipv6-地址的组成">IPv6 地址的组成</a></li>
+        <li><a href="#总结-2">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#你的设备在网络中的地址是-172211067子网掩码是-2552552550这个子网掩码意味着-1722110x-这一整个范围的ip地址都在同一个子网中-你上面提到了这样的内容为什么有这个子网掩码意味着这个信息呢子网掩码又是什么意思">你的设备在网络中的地址是 172.21.10.67，子网掩码是 255.255.255.0。这个子网掩码意味着 172.21.10.x 这一整个范围的IP地址都在同一个子网中。 你上面提到了这样的内容，为什么有这个子网掩码意味着这个信息呢?子网掩码又是什么意思?</a>
+      <ul>
+        <li><a href="#子网掩码的原理">子网掩码的原理</a>
+          <ul>
+            <li><a href="#例子解释">例子解释</a></li>
+          </ul>
+        </li>
+        <li><a href="#子网掩码的作用">子网掩码的作用</a></li>
+        <li><a href="#子网掩码的简写cidr">子网掩码的简写（CIDR）</a></li>
+        <li><a href="#通过子网掩码得知同一子网范围的原因">通过子网掩码得知同一子网范围的原因</a></li>
+      </ul>
+    </li>
+    <li><a href="#那么如果子网掩码这么写2552552000是不是意味着有17151个ip地址分配给了局域网中的设备其余地址分配给了网络">那么，如果子网掩码这么写255.255.200.0是不是意味着有17151个ip地址分配给了局域网中的设备，其余地址分配给了网络?</a>
+      <ul>
+        <li><a href="#为什么子网掩码必须是连续的-1-和-0">为什么子网掩码必须是连续的 <code>1</code> 和 <code>0</code></a></li>
+        <li><a href="#标准子网掩码格式">标准子网掩码格式</a></li>
+        <li><a href="#如何计算一个子网的-ip-地址数量">如何计算一个子网的 IP 地址数量</a></li>
+        <li><a href="#总结-3">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#掩码mask是什么意思">掩码(Mask)是什么意思</a>
+      <ul>
+        <li><a href="#子网掩码subnet-mask">子网掩码（Subnet Mask）</a>
+          <ul>
+            <li><a href="#用途">用途：</a></li>
+            <li><a href="#表示方式">表示方式：</a></li>
+            <li><a href="#工作原理">工作原理：</a></li>
+            <li><a href="#示例">示例：</a></li>
+          </ul>
+        </li>
+        <li><a href="#位掩码bit-mask">位掩码（Bit Mask）</a>
+          <ul>
+            <li><a href="#用途-1">用途：</a></li>
+            <li><a href="#表示方式-1">表示方式：</a></li>
+            <li><a href="#工作原理-1">工作原理：</a></li>
+            <li><a href="#示例-1">示例：</a></li>
+          </ul>
+        </li>
+        <li><a href="#网络掩码network-mask">网络掩码（Network Mask）</a>
+          <ul>
+            <li><a href="#用途-2">用途：</a></li>
+            <li><a href="#表示方式-2">表示方式：</a></li>
+            <li><a href="#工作原理-2">工作原理：</a></li>
+          </ul>
+        </li>
+        <li><a href="#acl-掩码access-control-list-mask">ACL 掩码（Access Control List Mask）</a>
+          <ul>
+            <li><a href="#用途-3">用途：</a></li>
+            <li><a href="#表示方式-3">表示方式：</a></li>
+            <li><a href="#工作原理-3">工作原理：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/js/config/1a1edeaefc2db0b0a4ef7b4fc942d5ed.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

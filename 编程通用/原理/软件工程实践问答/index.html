@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>软件工程实践问答 - 红石门</title><meta name="author" content="">
+<meta name="description" content="热更新热重载是怎么做到的?是什么原理? “热更新”(Hot Update) 或“热重载”(Hot Reload) 指的是在应用程序运行时，对代码或资源文件的修改能够实时(或接近实时) 地在应用中生效，而无需完全重启应用的技术。不同的平台和框架有不同的实现方式，但总体思路是一致的：监听到代码或资源文件有改动，就把改动后的部分重新加载并替换原有的逻辑或内容，从而使运行中的程序能即时应用新代码。
+"><meta name="keywords" content='问答'>
+	<meta itemprop="name" content="软件工程实践问答">
+	<meta itemprop="description" content="热更新热重载是怎么做到的?是什么原理? “热更新”(Hot Update) 或“热重载”(Hot Reload) 指的是在应用程序运行时，对代码或资源文件的修改能够实时(或接近实时) 地在应用中生效，而无需完全重启应用的技术。不同的平台和框架有不同的实现方式，但总体思路是一致的：监听到代码或资源文件有改动，就把改动后的部分重新加载并替换原有的逻辑或内容，从而使运行中的程序能即时应用新代码。">
+	<meta itemprop="datePublished" content="2026-06-24T03:40:29+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:31+08:00">
+	<meta itemprop="wordCount" content="2908">
+	<meta itemprop="keywords" content="问答"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="软件工程实践问答">
+	<meta property="og:description" content="热更新热重载是怎么做到的?是什么原理? “热更新”(Hot Update) 或“热重载”(Hot Reload) 指的是在应用程序运行时，对代码或资源文件的修改能够实时(或接近实时) 地在应用中生效，而无需完全重启应用的技术。不同的平台和框架有不同的实现方式，但总体思路是一致的：监听到代码或资源文件有改动，就把改动后的部分重新加载并替换原有的逻辑或内容，从而使运行中的程序能即时应用新代码。">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="编程通用">
+		<meta property="article:published_time" content="2026-06-24T03:40:29+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:31+08:00">
+		<meta property="article:tag" content="问答">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="软件工程实践问答">
+	<meta name="twitter:description" content="热更新热重载是怎么做到的?是什么原理? “热更新”(Hot Update) 或“热重载”(Hot Reload) 指的是在应用程序运行时，对代码或资源文件的修改能够实时(或接近实时) 地在应用中生效，而无需完全重启应用的技术。不同的平台和框架有不同的实现方式，但总体思路是一致的：监听到代码或资源文件有改动，就把改动后的部分重新加载并替换原有的逻辑或内容，从而使运行中的程序能即时应用新代码。">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/" title="软件工程实践问答 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F-lambda%E6%BC%94%E7%AE%97%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BC%8F/" title="编程范式：lambda 演算、函数式与面向对象" /><link rel="next" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1ipc/" title="进程间通信(IPC)" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "软件工程实践问答",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94\/"
+    },"genre": "编程通用","keywords": "问答","wordcount":  2908 ,
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94\/","datePublished": "2026-06-24T03:40:29+08:00","dateModified": "2026-07-06T17:23:31+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E9%97%AE%E7%AD%94/" title="编程概念问答">编程概念问答</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB/" title="引擎、库与运行时的区别">引擎、库与运行时的区别</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/" title="C# 问答补遗">C# 问答补遗</a></li><li class="related-item">
+              <a href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%8D%8F%E8%AE%AE/%E5%B7%A5%E4%B8%9A%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%97%AE%E7%AD%94/" title="工业控制与机器人问答(OPC UA·执行器·ROS·数据回写)">工业控制与机器人问答(OPC UA·执行器·ROS·数据回写)</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%97%AE%E7%AD%94/" title="数据结构问答(Hashset·SortedSet等)">数据结构问答(Hashset·SortedSet等)</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">软件工程实践问答</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/">编程通用</a> / <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/">原理</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-06-24 03:40:29 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-06-24">2026-06-24</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:31 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="2908 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 3000 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 6 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E9%97%AE%E7%AD%94/">问答</a></span>
+            </div></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一在-net--c-中的-hot-reload-原理">一、在 .NET / C# 中的 Hot Reload 原理</a>
+      <ul>
+        <li><a href="#1-编辑并继续edit-and-continue-技术的演进">1. “编辑并继续”(Edit and Continue) 技术的演进</a></li>
+        <li><a href="#2-xaml-hot-reload-wpf--xamarin--maui">2. XAML Hot Reload (WPF / Xamarin / MAUI)</a></li>
+      </ul>
+    </li>
+    <li><a href="#二在前端框架中的-hot-reload--hot-module-replacement">二、在前端框架中的 Hot Reload / Hot Module Replacement</a>
+      <ul>
+        <li><a href="#1-webpack-的-hmr-hot-module-replacement">1. Webpack 的 HMR (Hot Module Replacement)</a></li>
+        <li><a href="#2-react-refresh--vue-hot-reload">2. React Refresh / Vue Hot Reload</a></li>
+      </ul>
+    </li>
+    <li><a href="#三在移动端的-hot-reload-react-native--flutter">三、在移动端的 Hot Reload (React Native / Flutter)</a>
+      <ul>
+        <li><a href="#1-react-native">1. React Native</a></li>
+        <li><a href="#2-flutter">2. Flutter</a></li>
+      </ul>
+    </li>
+    <li><a href="#四总体机制与原理">四、总体机制与原理</a>
+      <ul>
+        <li><a href="#核心要点">核心要点</a></li>
+      </ul>
+    </li>
+    <li><a href="#五cookie-效果之类的常见误解">五、Cookie 效果之类的常见误解</a></li>
+    <li><a href="#六小结">六、小结</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#为什么gc垃圾回收是独立组件">为什么GC(垃圾回收)是独立组件？</a></li>
+    <li><a href="#什么是通用框架">什么是通用框架？</a></li>
+    <li><a href="#什么是规则引擎">什么是规则引擎？</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 class="heading-element" id="热更新热重载是怎么做到的是什么原理"><span>热更新热重载是怎么做到的?是什么原理?</span>
+  <a href="#%e7%83%ad%e6%9b%b4%e6%96%b0%e7%83%ad%e9%87%8d%e8%bd%bd%e6%98%af%e6%80%8e%e4%b9%88%e5%81%9a%e5%88%b0%e7%9a%84%e6%98%af%e4%bb%80%e4%b9%88%e5%8e%9f%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><p>“热更新”(Hot Update) 或“热重载”(Hot Reload) 指的是在应用程序<strong>运行时</strong>，对代码或资源文件的修改能够<strong>实时</strong>(或接近实时) 地在应用中生效，而<strong>无需完全重启</strong>应用的技术。不同的平台和框架有不同的实现方式，但总体思路是一致的：<strong>监听到代码或资源文件有改动，就把改动后的部分重新加载并替换原有的逻辑或内容</strong>，从而使运行中的程序能即时应用新代码。</p>
+<p>下面以常见的场景来举例说明原理。</p>
+<hr>
+<h2 class="heading-element" id="一在-net--c-中的-hot-reload-原理"><span>一、在 .NET / C# 中的 Hot Reload 原理</span>
+  <a href="#%e4%b8%80%e5%9c%a8-net--c-%e4%b8%ad%e7%9a%84-hot-reload-%e5%8e%9f%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="1-编辑并继续edit-and-continue-技术的演进"><span>1. “编辑并继续”(Edit and Continue) 技术的演进</span>
+  <a href="#1-%e7%bc%96%e8%be%91%e5%b9%b6%e7%bb%a7%e7%bb%adedit-and-continue-%e6%8a%80%e6%9c%af%e7%9a%84%e6%bc%94%e8%bf%9b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>早在 Visual Studio 里就有 “Edit and Continue” 功能：当你在调试（Debug）过程中修改了某些 C# 代码，VS 会尝试把修改过的<strong>方法体</strong>重新编译成 IL(中间语言)，并把它<strong>注入</strong>到正在调试的进程中，从而实现“无需停止调试就能应用新代码”的效果。</p>
+<p>.NET 6+ 将此功能推广为更通用的 “Hot Reload”：</p>
+<ol>
+<li><strong>实时监视源码文件变动</strong>：VS/CLI 的监视器(FileWatcher)发现文件更新后触发事件。</li>
+<li><strong>重新编译仅修改的部分</strong>：只编译你刚改的类或方法，得到新的 IL。</li>
+<li><strong>将新 IL 注入到运行中的程序</strong>：.NET 运行时（通过元数据和IL定位）找到对应的类或方法，替换其方法体。</li>
+</ol>
+<p><strong>局限</strong>：</p>
+<ul>
+<li>只能修改<strong>方法的实现</strong>、局部变量、表达式等；</li>
+<li><strong>无法</strong>轻易修改方法签名、类的继承结构、泛型定义等较大范围的结构性更改；</li>
+<li>如果改动超出“Hot Reload”可处理的范围，就需要重启或重新编译整个应用。</li>
+</ul>
+<h3 class="heading-element" id="2-xaml-hot-reload-wpf--xamarin--maui"><span>2. XAML Hot Reload (WPF / Xamarin / MAUI)</span>
+  <a href="#2-xaml-hot-reload-wpf--xamarin--maui" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>针对 UI 层(XAML)的修改，如调整控件布局、样式等，也可以在运行时注入新的 XAML 资源，刷新 UI 视图。</li>
+<li>实现思路：监听到 XAML 文件改动，重新编译 XAML-&gt;BAML(或生成 C# UI 代码)，调用运行时的刷新机制来动态更新界面树。</li>
+</ul>
+<hr>
+<h2 class="heading-element" id="二在前端框架中的-hot-reload--hot-module-replacement"><span>二、在前端框架中的 Hot Reload / Hot Module Replacement</span>
+  <a href="#%e4%ba%8c%e5%9c%a8%e5%89%8d%e7%ab%af%e6%a1%86%e6%9e%b6%e4%b8%ad%e7%9a%84-hot-reload--hot-module-replacement" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="1-webpack-的-hmr-hot-module-replacement"><span>1. Webpack 的 HMR (Hot Module Replacement)</span>
+  <a href="#1-webpack-%e7%9a%84-hmr-hot-module-replacement" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>前端构建工具（如 Webpack、Vite）会在开发模式下启动一个 <strong>dev server</strong> 并监控(<code>watch</code>) 源文件的变动。</li>
+<li>一旦检测到文件更新，会<strong>只重新编译改动的模块</strong>，并通过 WebSocket 等方式将“更新的模块包”推送到浏览器。</li>
+<li>浏览器端有一个运行时（HMR Runtime），会<strong>替换</strong>对应模块的旧代码，而无需刷新整个网页。</li>
+<li>对于 React/Vue 等框架，如果能保持组件状态，就可实现真正“局部更新、不刷新、不丢失状态”的热重载。</li>
+</ul>
+<h3 class="heading-element" id="2-react-refresh--vue-hot-reload"><span>2. React Refresh / Vue Hot Reload</span>
+  <a href="#2-react-refresh--vue-hot-reload" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>React Refresh 利用 Babel 在编译时给组件插桩(instrument)，在运行时检测到代码更新后<strong>只替换对应组件的渲染逻辑</strong>。</li>
+<li>Vue 的单文件组件(.vue)编译后也带有 HMR hook，检测到更新就只替换该组件的部分，不用刷新整页。</li>
+</ul>
+<hr>
+<h2 class="heading-element" id="三在移动端的-hot-reload-react-native--flutter"><span>三、在移动端的 Hot Reload (React Native / Flutter)</span>
+  <a href="#%e4%b8%89%e5%9c%a8%e7%a7%bb%e5%8a%a8%e7%ab%af%e7%9a%84-hot-reload-react-native--flutter" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="1-react-native"><span>1. React Native</span>
+  <a href="#1-react-native" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>Metro bundler 监听 JavaScript/TypeScript 文件更新，重新打包相应模块，利用 “Fast Refresh” (类似 HMR) 向运行中的 APP 注入。</li>
+<li>RN 遍历组件树，只重绘受影响的组件，不用重启整个原生应用。</li>
+</ul>
+<h3 class="heading-element" id="2-flutter"><span>2. Flutter</span>
+  <a href="#2-flutter" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>Dart VM 提供了 “hot reload/hot restart” 能力。</li>
+<li><strong>hot reload</strong>：在 Dart 层可以将修改过的代码注入到正在运行的 Dart VM 中，Flutter 框架会重建 widget 树并渲染更新，但不会丢失原有状态(如变量、路由栈)。</li>
+<li><strong>hot restart</strong>：比 hot reload范围更大，会完全重启 Dart isolate，但依旧不需要重新启动整个原生进程。</li>
+</ul>
+<hr>
+<h2 class="heading-element" id="四总体机制与原理"><span>四、总体机制与原理</span>
+  <a href="#%e5%9b%9b%e6%80%bb%e4%bd%93%e6%9c%ba%e5%88%b6%e4%b8%8e%e5%8e%9f%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>无论是后端(.NET Java)、前端(Webpack、Vite)还是移动端(Flutter、RN)，它们的做法可归纳为：</p>
+<ol>
+<li><strong>监控源码或资源文件改动</strong>：文件系统监听(File System Watcher)或特殊插件(DevServer)发现你保存了文件。</li>
+<li><strong>局部编译/增量编译</strong>：只编译改动过的源码模块/方法/资源，得到新的字节码(IL、JS bundle)或UI资源(XAML、CSS)。</li>
+<li><strong>动态加载并替换</strong>：将新编译的结果注入到内存中，替换掉原有的部分。</li>
+<li><strong>框架层做状态管理</strong>：许多框架会尽可能保持原来的运行状态(变量值、组件状态等)，只更新逻辑或视图，从而达到“热更新”效果。</li>
+</ol>
+<h3 class="heading-element" id="核心要点"><span>核心要点</span>
+  <a href="#%e6%a0%b8%e5%bf%83%e8%a6%81%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>编译器或打包器层面</strong>支持增量编译。</li>
+<li><strong>运行时</strong>需要可以“热插拔”新的代码或资源。</li>
+<li>有些变化（比如大范围结构性修改）必须要重新启动，因为运行时无法动态地“改血统、改签名”。</li>
+<li>很多框架为了让开发体验更好，会尽可能地支持“状态保留”，这样你就不必每次改完代码后重新手动执行一系列操作(如登录、跳到某个流程等)。</li>
+</ul>
+<hr>
+<h2 class="heading-element" id="五cookie-效果之类的常见误解"><span>五、Cookie 效果之类的常见误解</span>
+  <a href="#%e4%ba%94cookie-%e6%95%88%e6%9e%9c%e4%b9%8b%e7%b1%bb%e7%9a%84%e5%b8%b8%e8%a7%81%e8%af%af%e8%a7%a3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>“热重载”是针对应用本身的代码或资源进行替换，与<strong>Cookie/Session</strong>这类网络状态无关。</li>
+<li>如果应用中维护某些会话或数据状态，只要运行时不会被重启，这些状态就可被保留。在做前端 HMR/后端 Hot Reload 时，Cookie/Session 信息仍然可以在请求中正常传递。</li>
+</ul>
+<hr>
+<h2 class="heading-element" id="六小结"><span>六、小结</span>
+  <a href="#%e5%85%ad%e5%b0%8f%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><strong>热更新、热重载的本质</strong>：在<strong>不重启进程</strong>(或者不刷新整个页面/应用)的前提下，<strong>动态替换</strong>部分已编译（或已加载）的代码/资源，以实现更快的开发调试迭代。</p>
+<ul>
+<li>在 <strong>.NET</strong> 中，主要利用了 <strong>Edit and Continue</strong> / <strong>Hot Reload</strong> 的机制来对方法体或 XAML 进行动态更新；</li>
+<li>在 <strong>Web</strong> 前端，主要利用 <strong>HMR(Hot Module Replacement)</strong>，通过增量打包+运行时替换来只更新改动的模块；</li>
+<li>在 <strong>Flutter / React Native</strong> 中，利用虚拟机或 bundler 的能力将修改后的 Dart/JS 代码注入运行时，并进行局部重渲染。</li>
+</ul>
+<p><strong>收益</strong>：开发者可以<strong>大大减少编译、启动、登录等步骤</strong>，快速看到最新修改的效果，提高开发效率。</p>
+<p>这就是热更新/热重载“能做到且如何做到”的基本原理。</p>
+<h1 class="heading-element" id="为什么gc是独立组件通用框架又是什么什么又是规则引擎"><span>为什么GC是独立组件?通用框架又是什么?什么又是规则引擎?</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88gc%e6%98%af%e7%8b%ac%e7%ab%8b%e7%bb%84%e4%bb%b6%e9%80%9a%e7%94%a8%e6%a1%86%e6%9e%b6%e5%8f%88%e6%98%af%e4%bb%80%e4%b9%88%e4%bb%80%e4%b9%88%e5%8f%88%e6%98%af%e8%a7%84%e5%88%99%e5%bc%95%e6%93%8e" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h1 class="heading-element" id="关于gc通用框架和规则引擎的解释"><span>关于GC、通用框架和规则引擎的解释</span>
+  <a href="#%e5%85%b3%e4%ba%8egc%e9%80%9a%e7%94%a8%e6%a1%86%e6%9e%b6%e5%92%8c%e8%a7%84%e5%88%99%e5%bc%95%e6%93%8e%e7%9a%84%e8%a7%a3%e9%87%8a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h2 class="heading-element" id="为什么gc垃圾回收是独立组件"><span>为什么GC(垃圾回收)是独立组件？</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88gc%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6%e6%98%af%e7%8b%ac%e7%ab%8b%e7%bb%84%e4%bb%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>GC(垃圾回收)作为独立组件存在有几个重要原因：</p>
+<ol>
+<li><strong>关注点分离</strong>：GC专注于内存管理这一单一职责，与程序的核心逻辑分离</li>
+<li><strong>复杂性封装</strong>：垃圾回收算法复杂(如标记-清除、分代收集等)，独立封装便于维护</li>
+<li><strong>可替换性</strong>：不同应用场景可能需要不同的GC策略(如实时系统用增量GC，服务器用并行GC)</li>
+<li><strong>跨语言通用性</strong>：类似JVM、.NET CLR等运行时环境可以共享GC组件</li>
+</ol>
+<h2 class="heading-element" id="什么是通用框架"><span>什么是通用框架？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e9%80%9a%e7%94%a8%e6%a1%86%e6%9e%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>通用框架是指为解决某一类问题而设计的基础软件结构，具有以下特点：</p>
+<ol>
+<li><strong>可扩展性</strong>：通过继承、组合等方式扩展功能</li>
+<li><strong>可配置性</strong>：通过参数或配置文件调整行为</li>
+<li><strong>重用性</strong>：为多个具体应用提供共用基础</li>
+<li><strong>控制反转</strong>：框架控制程序流程，开发者填充具体逻辑</li>
+</ol>
+<p>例如：Spring(Java)、Django(Python)、React(前端)等都是通用框架</p>
+<h2 class="heading-element" id="什么是规则引擎"><span>什么是规则引擎？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e8%a7%84%e5%88%99%e5%bc%95%e6%93%8e" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>规则引擎是一种将业务规则与应用程序代码分离的系统，特点包括：</p>
+<ol>
+<li><strong>业务逻辑外部化</strong>：规则通常存储在数据库或配置文件中</li>
+<li><strong>声明式编程</strong>：关注&quot;做什么&quot;而非&quot;如何做&quot;</li>
+<li><strong>推理引擎</strong>：使用算法(如Rete)高效匹配和执行规则</li>
+<li><strong>动态更新</strong>：无需重新部署即可修改规则</li>
+</ol>
+<p>常见规则引擎：Drools、Jess、IBM ODM等</p>
+<p>三者关系：GC保障内存安全，通用框架提供应用基础结构，规则引擎处理灵活的业务逻辑，它们共同构建健壮的软件系统。</p>
+<h1 class="heading-element" id="为什么trycatchthrow不是一个好的做法"><span>为什么try{}catch{throw}不是一个好的做法?</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88trycatchthrow%e4%b8%8d%e6%98%af%e4%b8%80%e4%b8%aa%e5%a5%bd%e7%9a%84%e5%81%9a%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><p><img loading="lazy" src='/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231632185.png' alt="image-20250329231632185" height="790" width="1594"></p>
+<p><img loading="lazy" src='/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231714549.png' alt="image-20250329231714549" height="816" width="1522"></p>
+<p><img loading="lazy" src='/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E9%97%AE%E7%AD%94/images/%E9%97%AE%E9%A2%98&%E8%A7%A3%E5%86%B3/image-20250329231736194.png' alt="image-20250329231736194" height="788" width="1608"></p>
+<p>KVS key value store</p>
+<h1 class="heading-element" id="什么是mock和fake对象"><span>什么是Mock和Fake对象?</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%afmock%e5%92%8cfake%e5%af%b9%e8%b1%a1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><p>这两个概念主要用于单元测试，用于替代真实依赖，方便测试和验证。</p>
+<ul>
+<li>Mock（模拟对象）：用来验证行为，比如“这个方法有没有被调用、调用了几次、参数是什么”。常用 Moq、NSubstitute 等库生成。</li>
+<li>Fake（伪对象）：有简单实现的假对象，能返回预设数据，但不验证行为。比如内存数据库、内存队列等。</li>
+</ul>
+</div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E9%97%AE%E7%AD%94/" title="编程概念问答">编程概念问答</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E5%BC%95%E6%93%8E-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB/" title="引擎、库与运行时的区别">引擎、库与运行时的区别</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E9%97%AE%E7%AD%94%E8%A1%A5%E9%81%97/" title="C# 问答补遗">C# 问答补遗</a></li><li>
+          <a href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%8D%8F%E8%AE%AE/%E5%B7%A5%E4%B8%9A%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%97%AE%E7%AD%94/" title="工业控制与机器人问答(OPC UA·执行器·ROS·数据回写)">工业控制与机器人问答(OPC UA·执行器·ROS·数据回写)</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%97%AE%E7%AD%94/" title="数据结构问答(Hashset·SortedSet等)">数据结构问答(Hashset·SortedSet等)</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#一在-net--c-中的-hot-reload-原理">一、在 .NET / C# 中的 Hot Reload 原理</a>
+      <ul>
+        <li><a href="#1-编辑并继续edit-and-continue-技术的演进">1. “编辑并继续”(Edit and Continue) 技术的演进</a></li>
+        <li><a href="#2-xaml-hot-reload-wpf--xamarin--maui">2. XAML Hot Reload (WPF / Xamarin / MAUI)</a></li>
+      </ul>
+    </li>
+    <li><a href="#二在前端框架中的-hot-reload--hot-module-replacement">二、在前端框架中的 Hot Reload / Hot Module Replacement</a>
+      <ul>
+        <li><a href="#1-webpack-的-hmr-hot-module-replacement">1. Webpack 的 HMR (Hot Module Replacement)</a></li>
+        <li><a href="#2-react-refresh--vue-hot-reload">2. React Refresh / Vue Hot Reload</a></li>
+      </ul>
+    </li>
+    <li><a href="#三在移动端的-hot-reload-react-native--flutter">三、在移动端的 Hot Reload (React Native / Flutter)</a>
+      <ul>
+        <li><a href="#1-react-native">1. React Native</a></li>
+        <li><a href="#2-flutter">2. Flutter</a></li>
+      </ul>
+    </li>
+    <li><a href="#四总体机制与原理">四、总体机制与原理</a>
+      <ul>
+        <li><a href="#核心要点">核心要点</a></li>
+      </ul>
+    </li>
+    <li><a href="#五cookie-效果之类的常见误解">五、Cookie 效果之类的常见误解</a></li>
+    <li><a href="#六小结">六、小结</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#为什么gc垃圾回收是独立组件">为什么GC(垃圾回收)是独立组件？</a></li>
+    <li><a href="#什么是通用框架">什么是通用框架？</a></li>
+    <li><a href="#什么是规则引擎">什么是规则引擎？</a></li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/316060b72ddb2f8a783253319093f440.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Go知识点 - 红石门</title><meta name="author" content="">
+<meta name="description" content=" gopls Go语言官方的语言服务器 Go的:=有几个含义: 类型推导，省的我手写变量类型了 强制变量使用，防止僵尸代码，至少用 _ = err来处理一下 声明作用域，声明&#43;赋值，会创造新的变量，如下面这个经典例子： 1 2 3 4 5 6 7 8 9 10 package main import &#34;fmt&#34; func main() { x := 1 // 声明一个外层变量 x if true { x := 2 // 又声明了一个新的内层变量 x！ fmt.Println(&#34;内部 x:&#34;, x) // 输出：内部 x: 2 } fmt.Println(&#34;外部 x:&#34;, x) // 输出：外部 x: 1（外层变量没有被修改） }	另外写的时候千万注意，x := xxx和x := xxx{}是不一样的，一个没有初始化默认nil，一个初始化了有默认值 Go和C#一样也用帕斯卡命名法来命名，但是更加极端，直接用首字母大小写来控制可见性： 1 2 首字母大写 = 公开（exported） → Write, Server, Timeout 首字母小写 = 私有（unexported）→ write, server, timeout 这既是命名风格，也是访问控制。没有 public/private 关键字。 再就是根据变量的作用范围来调整命名长度，比如函数里用的局域变量一遍也就cnn,库里要用的连接字段则是Conn,靠上下文来表示代码含义&hellip;怎么这里你又不降低心智负担了喂
+"><meta name="keywords" content='Go, 问题'>
+	<meta itemprop="name" content="Go知识点">
+	<meta itemprop="description" content="gopls Go语言官方的语言服务器 Go的:=有几个含义: 类型推导，省的我手写变量类型了 强制变量使用，防止僵尸代码，至少用 _ = err来处理一下 声明作用域，声明&#43;赋值，会创造新的变量，如下面这个经典例子： 1 2 3 4 5 6 7 8 9 10 package main import &#34;fmt&#34; func main() { x := 1 // 声明一个外层变量 x if true { x := 2 // 又声明了一个新的内层变量 x！ fmt.Println(&#34;内部 x:&#34;, x) // 输出：内部 x: 2 } fmt.Println(&#34;外部 x:&#34;, x) // 输出：外部 x: 1（外层变量没有被修改） }	另外写的时候千万注意，x := xxx和x := xxx{}是不一样的，一个没有初始化默认nil，一个初始化了有默认值 Go和C#一样也用帕斯卡命名法来命名，但是更加极端，直接用首字母大小写来控制可见性： 1 2 首字母大写 = 公开（exported） → Write, Server, Timeout 首字母小写 = 私有（unexported）→ write, server, timeout 这既是命名风格，也是访问控制。没有 public/private 关键字。 再就是根据变量的作用范围来调整命名长度，比如函数里用的局域变量一遍也就cnn,库里要用的连接字段则是Conn,靠上下文来表示代码含义…怎么这里你又不降低心智负担了喂">
+	<meta itemprop="datePublished" content="2026-05-22T00:16:50+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:31+08:00">
+	<meta itemprop="wordCount" content="4350">
+	<meta itemprop="keywords" content="Go,问题"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/go%E7%9F%A5%E8%AF%86%E7%82%B9/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="Go知识点">
+	<meta property="og:description" content="gopls Go语言官方的语言服务器 Go的:=有几个含义: 类型推导，省的我手写变量类型了 强制变量使用，防止僵尸代码，至少用 _ = err来处理一下 声明作用域，声明&#43;赋值，会创造新的变量，如下面这个经典例子： 1 2 3 4 5 6 7 8 9 10 package main import &#34;fmt&#34; func main() { x := 1 // 声明一个外层变量 x if true { x := 2 // 又声明了一个新的内层变量 x！ fmt.Println(&#34;内部 x:&#34;, x) // 输出：内部 x: 2 } fmt.Println(&#34;外部 x:&#34;, x) // 输出：外部 x: 1（外层变量没有被修改） }	另外写的时候千万注意，x := xxx和x := xxx{}是不一样的，一个没有初始化默认nil，一个初始化了有默认值 Go和C#一样也用帕斯卡命名法来命名，但是更加极端，直接用首字母大小写来控制可见性： 1 2 首字母大写 = 公开（exported） → Write, Server, Timeout 首字母小写 = 私有（unexported）→ write, server, timeout 这既是命名风格，也是访问控制。没有 public/private 关键字。 再就是根据变量的作用范围来调整命名长度，比如函数里用的局域变量一遍也就cnn,库里要用的连接字段则是Conn,靠上下文来表示代码含义…怎么这里你又不降低心智负担了喂">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="编程语言">
+		<meta property="article:published_time" content="2026-05-22T00:16:50+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:31+08:00">
+		<meta property="article:tag" content="Go">
+		<meta property="article:tag" content="问题">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Go知识点">
+	<meta name="twitter:description" content="gopls Go语言官方的语言服务器 Go的:=有几个含义: 类型推导，省的我手写变量类型了 强制变量使用，防止僵尸代码，至少用 _ = err来处理一下 声明作用域，声明&#43;赋值，会创造新的变量，如下面这个经典例子： 1 2 3 4 5 6 7 8 9 10 package main import &#34;fmt&#34; func main() { x := 1 // 声明一个外层变量 x if true { x := 2 // 又声明了一个新的内层变量 x！ fmt.Println(&#34;内部 x:&#34;, x) // 输出：内部 x: 2 } fmt.Println(&#34;外部 x:&#34;, x) // 输出：外部 x: 1（外层变量没有被修改） }	另外写的时候千万注意，x := xxx和x := xxx{}是不一样的，一个没有初始化默认nil，一个初始化了有默认值 Go和C#一样也用帕斯卡命名法来命名，但是更加极端，直接用首字母大小写来控制可见性： 1 2 首字母大写 = 公开（exported） → Write, Server, Timeout 首字母小写 = 私有（unexported）→ write, server, timeout 这既是命名风格，也是访问控制。没有 public/private 关键字。 再就是根据变量的作用范围来调整命名长度，比如函数里用的局域变量一遍也就cnn,库里要用的连接字段则是Conn,靠上下文来表示代码含义…怎么这里你又不降低心智负担了喂">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/go%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Go知识点 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="编译原理相关问题" /><link rel="next" type="text/html" href="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E7%BB%88%E7%AB%AF/tmux%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/" title="Tmux安装及使用" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Go知识点",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/go\/go%E7%9F%A5%E8%AF%86%E7%82%B9\/"
+    },"genre": "编程语言","keywords": "Go, 问题","wordcount":  4350 ,
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/go\/go%E7%9F%A5%E8%AF%86%E7%82%B9\/","datePublished": "2026-05-22T00:16:50+08:00","dateModified": "2026-07-06T17:23:31+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议">计算机网络-HTTP与Web协议</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">计算机网络-IP地址与子网</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线">计算机网络-WiFi与无线</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li class="related-item">
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Go知识点</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a> / <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">Go</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-05-22 00:16:50 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-05-22">2026-05-22</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:31 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="4350 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 4400 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 9 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/go/">Go</a> / <a href="/tags/%E9%97%AE%E9%A2%98/">问题</a></span>
+            </div></div>
+    </div><div class="content" id="content"><ul>
+<li>gopls Go语言官方的语言服务器</li>
+<li>Go的<code>:=</code>有几个含义:
+<ul>
+<li><strong>类型推导</strong>，省的我手写变量类型了</li>
+<li><strong>强制变量使用</strong>，防止僵尸代码，至少用 _ = err来处理一下</li>
+<li><strong>声明作用域，声明+赋值，会创造新的变量</strong>，如下面这个经典例子：</li>
+</ul>
+</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="s">&#34;fmt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="w">       </span><span class="c1">// 声明一个外层变量 x</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">x</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="c1">// 又声明了一个新的内层变量 x！</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;内部 x:&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">// 输出：内部 x: 2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;外部 x:&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">// 输出：外部 x: 1（外层变量没有被修改）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">	</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><ul>
+<li>另外写的时候千万注意，x := xxx和x := xxx{}是不一样的，一个没有初始化默认nil，一个初始化了有默认值</li>
+<li>Go和C#一样也用帕斯卡命名法来命名，但是更加极端，直接用首字母大小写来控制可见性：</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="err">首字母大写</span> <span class="o">=</span> <span class="err">公开（</span><span class="n">exported</span><span class="err">）</span>  <span class="err">→</span> <span class="n">Write</span><span class="p">,</span> <span class="n">Server</span><span class="p">,</span> <span class="n">Timeout</span>
+</span></span><span class="line"><span class="cl"><span class="err">首字母小写</span> <span class="o">=</span> <span class="err">私有（</span><span class="n">unexported</span><span class="err">）→</span> <span class="n">write</span><span class="p">,</span> <span class="n">server</span><span class="p">,</span> <span class="n">timeout</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>这既是命名风格，也是访问控制。没有 public/private 关键字。
+再就是根据变量的作用范围来调整命名长度，比如函数里用的局域变量一遍也就<code>cnn</code>,库里要用的连接字段则是<code>Conn</code>,靠上下文来表示代码含义&hellip;怎么这里你又不降低心智负担了喂</p>
+<p>另外事后发现，Go的封装等级没有private一说，因为只有值类型struct没有class嘛，所以实际上Go只有public/interval两种封装级别</p>
+<hr>
+<ul>
+<li>怪不得说Go是无趣的语言，Go语言把继承砍了，但是留下了组合，如果说别的语言是告诉你组合大于继承，Go就是只让你可以用组合，不能继承，用<strong>duck typing</strong>来组织逻辑链条，梗的当然就是那个鸭子理论，用std的net库举例:</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="c1">// Addr represents a network end point address.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// The two methods [Addr.Network] and [Addr.String] conventionally return strings</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// that can be passed as the arguments to [Dial], but the exact form</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// and meaning of the strings is up to the implementation.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">type</span><span class="w"> </span><span class="nx">Addr</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nf">Network</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="c1">// name of the network (for example, &#34;tcp&#34;, &#34;udp&#34;)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nf">String</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w">  </span><span class="c1">// string form of address (for example, &#34;192.0.2.1:25&#34;, &#34;[2001:db8::1]:80&#34;)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">  </span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>只要<strong>隐式满足(implicit satisfaction)</strong> 这个接口的定义即会被视为Addr，例如：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="kd">type</span><span class="w"> </span><span class="nx">Monster</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">ip</span><span class="w">   </span><span class="kt">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="nx">Monster</span><span class="p">)</span><span class="w"> </span><span class="nf">Network</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&#34;tcp&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="nx">Monster</span><span class="p">)</span><span class="w"> </span><span class="nf">String</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">ip</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="nx">Monster</span><span class="p">)</span><span class="w"> </span><span class="nf">EatPeople</span><span class="p">()</span><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 吃人 */</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="nx">Monster</span><span class="p">)</span><span class="w"> </span><span class="nf">Fly</span><span class="p">()</span><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 飞 */</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ... 再多方法都可以</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>只要它部分满足，它就可以是鸭子，或者地址，或者什么别的东西，一个struct可以同时满足几十个毫不相干的接口，因此这功能就可以让代码非常解耦，比如下面这个场景:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// 标准库database/sql 定义了 Scanner 接口
+</span></span><span class="line"><span class="cl">// 某第三方库的作者自己定义的奇形怪状的功能实现了Scanner的方法
+</span></span><span class="line"><span class="cl">// 但我的项目里的SQL部分某功能的逻辑链条上同样走的Scanner接口
+</span></span><span class="line"><span class="cl">// 我拉他的库可以直接插到现有代码里用，不用纠结他这个类是怎么定义的，那个类是怎么定义的</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>相当于<strong>方法之间靠行为来构筑逻辑链条而不是带状态的类</strong></p>
+<ul>
+<li>Go的int选择是跟机器字长一致，64位系统上就是8字节，32位系统上就是4字节</li>
+<li>Go有个神奇的关键字，<code>defer</code>,在代码块退出前执行操作，就是C++的RAII，C#/JAVA的using机制，在资源用完的时候记得释放，不过这个关键字可以用在任意函数里,Go的使用习惯一般是申请资源之后立刻释放，如:</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="nx">f</span><span class="p">,</span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="s">&#34;b.txt&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">defer</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>值得一提的是，多行defer的执行顺序是栈顺序</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="k">defer</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;1&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">defer</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;11&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">defer</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;111&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 输出</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="mi">111</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="mi">11</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="mi">1</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><ul>
+<li>Go默认使用UTF-8编码，所以<code>len(&quot;中&quot;)</code>的输出长度是3</li>
+<li>我靠，在Go的类型系统里，数组的数据类型居然和长度有关，<code>[2]int</code>和<code>[5]int</code>不是一个数据类型&hellip;</li>
+<li>Go里有个常用概念，slice，其实就是C#里的<code>Span&lt;T&gt;</code>,C++里的<code>std::span</code>,一个指向内存地址的指针抽象，你传什么数组进来这个指针就指向什么数组，不过是这个数组里的一段连续内存，要在这个数据结构里指定好头和长度，大概是这样:</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="kd">type</span><span class="w"> </span><span class="nx">slice</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">ptr</span><span class="w">  </span><span class="o">*</span><span class="nx">元素类型</span><span class="w">  </span><span class="c1">// 指向底层数组</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">len</span><span class="w">  </span><span class="kt">int</span><span class="w">       </span><span class="c1">// 当前有几个元素</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">cap</span><span class="w">  </span><span class="kt">int</span><span class="w">       </span><span class="c1">// 底层数组还剩多少坑位</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">array</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span><span class="p">:</span><span class="w">  </span><span class="err">┌─────────────────────────────┐</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="err">│</span><span class="w">  </span><span class="mi">1</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="mi">3</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="mi">4</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="mi">5</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">←</span><span class="w"> </span><span class="nx">这块堆内存是</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="nx">的</span><span class="err">，</span><span class="nx">它死了就回收</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="err">└─────────────────────────────┘</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">slice</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="p">:</span><span class="w">   </span><span class="err">┌─────┬─────┬─────┐</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="err">│</span><span class="w"> </span><span class="nx">ptr</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="nx">len</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="nx">cap</span><span class="w"> </span><span class="err">│</span><span class="w">  </span><span class="err">←</span><span class="w"> </span><span class="mi">16</span><span class="nx">字节栈内存</span><span class="err">，</span><span class="nx">放</span><span class="w"> </span><span class="nx">ptr</span><span class="o">/</span><span class="nx">len</span><span class="o">/</span><span class="nx">cap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="err">└──┬──┴─────┴─────┘</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="err">│</span><span class="w">  </span><span class="nx">指过去</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="err">▼</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="err">┌─────────────────────────────┐</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="err">│</span><span class="w">  </span><span class="mi">1</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="mi">3</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="mi">4</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="mi">5</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">←</span><span class="w"> </span><span class="nx">这块元素内存是底层数组的</span><span class="err">，</span><span class="nx">slice</span><span class="w"> </span><span class="nx">不管回收</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="err">└─────────────────────────────┘</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>slice实际上是指向底层匿名数组的一个指针抽象
+不过还有slice指向的数组当然不会被回收，不然slice就成了野指针了,所以记得用完了切片之后要<code>slice = nil</code></p>
+<ul>
+<li>你以为这就完了吗？并没有，<strong>slice在Go语言里还实际上担任了动态数组的功能</strong>，因为底层的类型系统带上了长度，规定死了真-不可变长的数组，所以实际上需要用到动态数组的地方都会这么定义:</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="nx">slice</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">slice</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">slice</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">slice</span><span class="p">,[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">})</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 头插性能太差，少用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">slice</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="nx">slice</span><span class="p">)</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>在长度不够需要扩容的时候，实际上还是动了底层的匿名数组，扩容就创建个新的大小2倍的数组然后将旧数组的数据移过去
+另外如果对slice做了扩容操作，超出了原有的数组长度，那么实际上会分配一个新的数组来让slice指向新数组，这时候你再对slice做的任何操作都不会指向原数组了，事实上，最佳实践就是用原数据的slice做处理，然后返回一个新的slice指向的数组，而<strong>不是</strong>直接修改原数据。这其实就是函数式的思想，<strong>不可变数据</strong>要求了元数据不可变，但是给你开放了可变的空间，靠规范来要求你不要动原数据，想动还是可以动的，而<strong>Rust</strong>就是更加激进的直接在编译器层面做了语法上的处理，如果你借用了不可变的数据但是内部动了会直接给你报错。
+另外，Rust还限制同一时间只能存在一个可变引用，即同时只能存在一个slice指针或者能修改元数据的指针存在，以此保证编译期的内存安全。而Go是用GC来规避了这一切，在运行时会有GC来给乱玩指针的程序员兜底，这样保留了灵活性，也防止了悬空指针，不过<strong>数据竞争</strong>得程序员自己管了，Rust这些靠借用检查器在编译期就拦掉了。
+我必须玩这个梗──<strong>但这一切值得吗？</strong></p>
+<hr>
+<ul>
+<li>Go的make传递的是引用项，是指针，但是在go里定义的chan传递的又是值拷贝，那么就会出现这样的情况：</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="kd">type</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="kd">struct</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">outgoing</span><span class="w"> </span><span class="kd">chan</span><span class="w"> </span><span class="kt">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">channel</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="nx">client</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">cl</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">{</span><span class="nx">outgoing</span><span class="p">:</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">string</span><span class="p">)}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">channel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nx">cl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">channel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nx">cl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">channel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nx">cl</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>这三个传递的cl是三个不同的值拷贝不错，但是outgoing是引用，所以它拷贝完了之后这三个传递的client实例的outgoing指向同一个底层的channel而不是三个</p>
+<hr>
+<ul>
+<li>Go的goroutine是不是GC的可回收对象，一个正在阻塞等待channel的goroutine有引用根（活跃的栈），GC就不会回收它，所以如果因为什么写法导致一堆goroutine永久阻塞下去了，那么包括他们里面引用的上下文，buffer等都不会被释放。</li>
+</ul>
+<hr>
+<ul>
+<li>Go语言里有这么个select关键字，专门用来处理channel，可以理解为处理channel的Switch，每次处理一个case就退出，所以一般搭配for循环来使用，内部实现用算法保证case被选中的概率是严格相等的，所以如果多个case都有消息，它会随机选一个执行</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="k">for</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">select</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nx">channel</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nx">channel</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><hr>
+<ul>
+<li>Go语言的枚举不存在对应关键字，底层用int实现，定义的时候需要这么做&hellip;</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="kd">type</span><span class="w"> </span><span class="nx">Message</span><span class="w"> </span><span class="kt">int</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">const</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">Disconnected</span><span class="w"> </span><span class="nx">Message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">iota</span><span class="w"> </span><span class="c1">// 预定义标识符，每次在const里出现就重置为0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">Connected</span><span class="w"> </span><span class="c1">// 隐式沿用上一行的表达式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">NewMessage</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 或者</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">const</span><span class="p">(</span><span class="nx">Disconnected</span><span class="w"> </span><span class="nx">Message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">iota</span><span class="p">;</span><span class="nx">Connected</span><span class="p">;</span><span class="nx">NewMessage</span><span class="p">)</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p><strong>才怪！</strong>
+值得注意的是，Go语言的枚举类型用的是const约束，也就是说无论你定义在哪儿，最后在编译器层面是会铺开到同一层的，用法也是直接用定义的常量名，也就是这样：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="nx">status</span><span class="w"> </span><span class="nx">Status</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">NewMessage</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>项目里的枚举写得一多，根本没法自动补全，所以Go的枚举最佳实践目前是这样的：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="kd">type</span><span class="w"> </span><span class="nx">Message</span><span class="w"> </span><span class="kt">int</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">const</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">MessageDisconnected</span><span class="w"> </span><span class="nx">Message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">iota</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">MessageConnected</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">MessageNewMessage</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>把常量名带上枚举名的前缀，以便于自动补全&hellip;
+虽然我目前依然觉得这个设计还是够用就行，不过考虑到C#里那种顺滑的语法，不奇怪大家骂go语言的枚举实现很糟糕&hellip;</p>
+<hr>
+<ul>
+<li>卧槽了Go语言没有函数重载&hellip;为啥啊？？完全不必要的麻烦啊这个</li>
+</ul>
+<hr>
+<ul>
+<li>go的args继承了C的传统，毕竟Go的设计者还是Ken Thompson、Rob Pike这老哥俩</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-c"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="c1">// C 语言从 1970 年代就是这样的
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// argv[0] = &#34;./zwhich&#34;   ← 程序名
+</span></span></span><span class="line"><span class="cl">    <span class="c1">// argv[1] = &#34;go&#34;         ← 第一个参数
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>所以记得用Go的参数的时候这么判断：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">)</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 长度小于2相当于没有输入参数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>PS. Unix 系语言（C、C++、Go、Rust、Python 的 <code>sys.argv</code>、Node 的 <code>process.argv</code>）全是带程序名的</p>
+</blockquote>
+<hr>
+<ul>
+<li>Go语言也继承了C语言的格式化语法</li>
+<li>Go的核心思想就一句话，<strong>代码是给人读的，不是给人写的</strong>，你写起来巨难受的代码，比如显式处理错误，这样写起来很难受，但是你能没什么心智负担的看懂，不过这点我真的存疑，这种写法极大的增加了代码的码量，读起来真的能降低心智负担吗？</li>
+</ul>
+<hr>
+<ul>
+<li>Go语言里的函数是一等公民，可以直接定义函数类型的变量或者参数：</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-go"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="kd">type</span><span class="w"> </span><span class="nx">MonitorCallback</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">msg</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">type</span><span class="w"> </span><span class="nx">Assistant</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">onHighCPU</span><span class="w">   </span><span class="nx">MonitorCallback</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">onProcessDied</span><span class="w"> </span><span class="nx">MonitorCallback</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">Assistant</span><span class="p">)</span><span class="w"> </span><span class="nf">checkCPU</span><span class="p">(</span><span class="nx">cpu</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">cpu</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="mi">90</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">a</span><span class="p">.</span><span class="nf">onHighCPU</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;CPU 飙升: %.2f%%&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">cpu</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>其实就是用结构体包了一层，实际上的行为就是传了两个<code>func(msg string)</code>类型的函数参数到<code>checkCPU</code>函数里</p>
+<hr>
+<ul>
+<li>Do not communicate by sharing memory; share memory by communicating
+<ul>
+<li>就是说，Go倾向于不直接在线程间共享一个全局的字段或者变量来通信，go更倾向于在不同的线程中各自维护自己的状态，然后通过线程安全的channel来传递</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Go 语言不支持任何的运算符重载</li>
+</ul>
+<hr>
+<ul>
+<li>Go 的Json序列化反序列化匹配大小写不敏感</li>
+</ul>
+<hr>
+<ul>
+<li>Go里有这么个设定<code>interface{}</code>,叫空接口，默认所有的类型都自动实现它，也是是说传个什么都可以</li>
+</ul>
+<hr>
+<ul>
+<li><code>&lt;-chan xxx</code>在Go里代表只读通道，<code>chan&lt;- xxx</code>是只写通道，默认啥符号没有就是双向通道<code>chan xxx</code></li>
+</ul>
+<hr>
+<ul>
+<li>如果之前没提到过，那么这里提一下，Go的goroutine并非真实线程，实际用户态线程，结构如下：</li>
+</ul>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-text"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">    G   G   G   G   G   G   G   G   G   G   G   G   G   G
+</span></span><span class="line"><span class="cl">     \  |  /       \  |  /        \  |  /        \  |  /
+</span></span><span class="line"><span class="cl">       P1             P2             P3             P4
+</span></span><span class="line"><span class="cl">       │              │              │              │
+</span></span><span class="line"><span class="cl">       M1             M2             M3             M4
+</span></span><span class="line"><span class="cl">       │              │              │              │
+</span></span><span class="line"><span class="cl">    CPU 核心 1     CPU 核心 2     CPU 核心 3     CPU 核心 4</span></span></code></pre></td></tr></table></div>
+</div>
+</div><div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th>缩写</th>
+            <th>全称</th>
+            <th>是什么</th>
+            <th>数量</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>G</strong></td>
+            <td>Goroutine</td>
+            <td>你的 <code>go func()</code> 创建的任务</td>
+            <td>成千上万，无限</td>
+        </tr>
+        <tr>
+            <td><strong>M</strong></td>
+            <td>Machine / OS Thread</td>
+            <td>真正的操作系统线程</td>
+            <td>由 Go 调度器管理，通常等于核心数</td>
+        </tr>
+        <tr>
+            <td><strong>P</strong></td>
+            <td>Processor</td>
+            <td>逻辑处理器 + 调度上下文</td>
+            <td><code>GOMAXPROCS</code> 决定，默认 = CPU 核心数</td>
+        </tr>
+        <tr>
+            <td>这就是所谓的Go的G-M-P调度器模型，不过实际上的顺序是G-P-M-CPU，也有说法叫M:N调度器，即将M个goroutine映射到N个OS线程上运行</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+  </table>
+</div><hr>
+<ul>
+<li>Go提供了一个神奇的语法糖，每个包可以写多个的<code>func init(){}</code>,这个函数相当于提供给用户的重载，加载库的时候会自动执行，多个init的话就根据依赖关系顺序执行</li>
+</ul>
+</div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-http%E4%B8%8Eweb%E5%8D%8F%E8%AE%AE/" title="计算机网络-HTTP与Web协议">计算机网络-HTTP与Web协议</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ip%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%AD%90%E7%BD%91/" title="计算机网络-IP地址与子网">计算机网络-IP地址与子网</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-wifi%E4%B8%8E%E6%97%A0%E7%BA%BF/" title="计算机网络-WiFi与无线">计算机网络-WiFi与无线</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%B2%E5%8F%A3%E4%B8%8E%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络-串口与物理层">计算机网络-串口与物理层</a></li><li>
+          <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%9D%82%E9%A1%B9/" title="计算机网络-杂项">计算机网络-杂项</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/3fccae9922220d87b0c84f0f2f7739f7.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

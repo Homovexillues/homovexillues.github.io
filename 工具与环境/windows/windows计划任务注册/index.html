@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Windows计划任务注册 - 红石门</title><meta name="author" content="">
+<meta name="description" content="schtasks 是 Windows 系统自带的命令行工具，功能与图形化的“任务计划程序”完全一致，让你可以直接在终端里创建、修改、查询和删除计划任务。
+它的基本命令结构如下：
+1 schtasks [参数] 其中，最常用的几个操作是 create（创建）、query（查询）、change（修改）、run（立即运行）和 delete（删除）。
+"><meta name="keywords" content='Windows'>
+	<meta itemprop="name" content="Windows计划任务注册">
+	<meta itemprop="description" content="schtasks 是 Windows 系统自带的命令行工具，功能与图形化的“任务计划程序”完全一致，让你可以直接在终端里创建、修改、查询和删除计划任务。
+它的基本命令结构如下：
+1 schtasks [参数] 其中，最常用的几个操作是 create（创建）、query（查询）、change（修改）、run（立即运行）和 delete（删除）。">
+	<meta itemprop="datePublished" content="2026-06-10T15:21:30+08:00">
+	<meta itemprop="dateModified" content="2026-07-06T17:23:31+08:00">
+	<meta itemprop="wordCount" content="1293">
+	<meta itemprop="keywords" content="Windows"><meta property="og:url" content="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%B3%A8%E5%86%8C/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="Windows计划任务注册">
+	<meta property="og:description" content="schtasks 是 Windows 系统自带的命令行工具，功能与图形化的“任务计划程序”完全一致，让你可以直接在终端里创建、修改、查询和删除计划任务。
+它的基本命令结构如下：
+1 schtasks [参数] 其中，最常用的几个操作是 create（创建）、query（查询）、change（修改）、run（立即运行）和 delete（删除）。">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="工具与环境">
+		<meta property="article:published_time" content="2026-06-10T15:21:30+08:00">
+		<meta property="article:modified_time" content="2026-07-06T17:23:31+08:00">
+		<meta property="article:tag" content="Windows">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Windows计划任务注册">
+	<meta name="twitter:description" content="schtasks 是 Windows 系统自带的命令行工具，功能与图形化的“任务计划程序”完全一致，让你可以直接在终端里创建、修改、查询和删除计划任务。
+它的基本命令结构如下：
+1 schtasks [参数] 其中，最常用的几个操作是 create（创建）、query（查询）、change（修改）、run（立即运行）和 delete（删除）。">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%B3%A8%E5%86%8C/" title="Windows计划任务注册 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/windows%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/" title="Windows后台服务注册" /><link rel="next" type="text/html" href="http://localhost:1313/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3%E8%8B%B1%E8%AF%AD/" title="代码相关英语" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Windows计划任务注册",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/windows\/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%B3%A8%E5%86%8C\/"
+    },"genre": "工具与环境","keywords": "Windows","wordcount":  1293 ,
+    "url": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/windows\/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%B3%A8%E5%86%8C\/","datePublished": "2026-06-10T15:21:30+08:00","dateModified": "2026-07-06T17:23:31+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/windows%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/" title="Windows后台服务注册">Windows后台服务注册</a></li><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/windows%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BC%98%E5%85%88%E7%BA%A7/" title="Windows设置网络优先级">Windows设置网络优先级</a></li><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/powershell%E7%9F%A5%E8%AF%86%E7%82%B9/" title="PowerShell知识点">PowerShell知识点</a></li><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/windows%E5%91%BD%E4%BB%A4/" title="Windows CMD命令">Windows CMD命令</a></li><li class="related-item">
+              <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E7%BB%88%E7%AB%AF/windows-terminal-%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="Windows Terminal 配置及快捷键">Windows Terminal 配置及快捷键</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Windows计划任务注册</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/">工具与环境</a> / <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/">Windows</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-06-10 15:21:30 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-06-10">2026-06-10</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:31 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="1293 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 1300 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 3 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/windows/">Windows</a></span>
+            </div></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-核心命令与通用参数">📋 核心命令与通用参数</a>
+          <ul>
+            <li><a href="#schtasks-create---创建计划任务"><code>schtasks /create</code> - 创建计划任务</a></li>
+            <li><a href="#schtasks-query---查询计划任务"><code>schtasks /query</code> - 查询计划任务</a></li>
+            <li><a href="#其他常用命令">其他常用命令</a></li>
+          </ul>
+        </li>
+        <li><a href="#-使用示例与场景">💡 使用示例与场景</a>
+          <ul>
+            <li><a href="#1-创建每天定时关机的任务">1. 创建每天定时关机的任务</a></li>
+            <li><a href="#2-创建每周运行一次的维护脚本">2. 创建每周运行一次的维护脚本</a></li>
+            <li><a href="#3-查询并验证任务是否成功创建">3. 查询并验证任务是否成功创建</a></li>
+          </ul>
+        </li>
+        <li><a href="#-注意事项">⚠️ 注意事项</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><code>schtasks</code> 是 Windows 系统自带的命令行工具，功能与图形化的“任务计划程序”完全一致，让你可以直接在终端里创建、修改、查询和删除计划任务。</p>
+<p>它的基本命令结构如下：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-cmd"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">schtasks [参数]</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>其中，最常用的几个操作是 <code>create</code>（创建）、<code>query</code>（查询）、<code>change</code>（修改）、<code>run</code>（立即运行）和 <code>delete</code>（删除）。</p>
+<h3 class="heading-element" id="-核心命令与通用参数"><span>📋 核心命令与通用参数</span>
+  <a href="#-%e6%a0%b8%e5%bf%83%e5%91%bd%e4%bb%a4%e4%b8%8e%e9%80%9a%e7%94%a8%e5%8f%82%e6%95%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="schtasks-create---创建计划任务"><span><code>schtasks /create</code> - 创建计划任务</span>
+  <a href="#schtasks-create---%e5%88%9b%e5%bb%ba%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>这是最核心、最复杂的命令。以下是创建任务时最常用到的参数：</p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th style="text-align: left">参数</th>
+            <th style="text-align: left">说明</th>
+            <th style="text-align: left">示例</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: left"><code>/tn</code></td>
+            <td style="text-align: left"><strong>任务名称</strong>（必填）。不能和已有任务重名。</td>
+            <td style="text-align: left"><code>/tn &quot;MyTask&quot;</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/tr</code></td>
+            <td style="text-align: left"><strong>要运行的程序或命令</strong>（必填）。需要填写完整的路径。</td>
+            <td style="text-align: left"><code>/tr &quot;C:\Scripts\backup.bat&quot;</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/sc</code></td>
+            <td style="text-align: left"><strong>计划频率</strong>（必填）。这是最重要的参数之一。</td>
+            <td style="text-align: left"><code>/sc daily</code> (每天)</td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/mo</code></td>
+            <td style="text-align: left"><strong>运行间隔</strong>。与 <code>/sc</code> 配合使用，指定每几天/几周等。</td>
+            <td style="text-align: left"><code>/mo 2</code> (每2天/周/月)</td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/d</code></td>
+            <td style="text-align: left"><strong>在一周或一月中的特定几天运行</strong>。</td>
+            <td style="text-align: left"><code>/d MON,WED,FRI</code> (周一、三、五)<br><code>/d 1,15</code> (每月1号和15号)</td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/st</code></td>
+            <td style="text-align: left"><strong>开始时间</strong>。24小时制。</td>
+            <td style="text-align: left"><code>/st 14:30</code> (下午2:30)</td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/sd</code></td>
+            <td style="text-align: left"><strong>开始日期</strong>。</td>
+            <td style="text-align: left"><code>/sd 2024/12/01</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/ru</code></td>
+            <td style="text-align: left"><strong>任务运行所用的账户</strong>。</td>
+            <td style="text-align: left"><code>/ru SYSTEM</code> (系统账户)<br><code>/ru &quot;DOMAIN\User&quot;</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/rp</code></td>
+            <td style="text-align: left"><strong><code>/ru</code> 指定账户的密码</strong>。如果使用 <code>SYSTEM</code> 账户则不需密码。</td>
+            <td style="text-align: left"><code>/rp &quot;MyPassword&quot;</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/f</code></td>
+            <td style="text-align: left"><strong>强制创建</strong>。如果任务已存在，则强制覆盖。</td>
+            <td style="text-align: left"><code>/f</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/rl</code></td>
+            <td style="text-align: left"><strong>设置任务运行级别</strong>。<code>HIGHEST</code> 表示以最高权限运行。</td>
+            <td style="text-align: left"><code>/rl HIGHEST</code></td>
+        </tr>
+    </tbody>
+  </table>
+</div><h4 class="heading-element" id="schtasks-query---查询计划任务"><span><code>schtasks /query</code> - 查询计划任务</span>
+  <a href="#schtasks-query---%e6%9f%a5%e8%af%a2%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>用于查看已经创建的任务。</p>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th style="text-align: left">参数</th>
+            <th style="text-align: left">说明</th>
+            <th style="text-align: left">示例</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: left"><code>/tn</code></td>
+            <td style="text-align: left"><strong>指定要查询的任务名称</strong>。如果不加，则列出所有任务。</td>
+            <td style="text-align: left"><code>/tn &quot;MyTask&quot;</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/fo</code></td>
+            <td style="text-align: left"><strong>输出格式</strong>。可设为 <code>TABLE</code>(表格)、<code>LIST</code>(列表) 或 <code>CSV</code>。</td>
+            <td style="text-align: left"><code>/fo CSV</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/v</code></td>
+            <td style="text-align: left"><strong>显示详细属性</strong>。包含更多高级信息。</td>
+            <td style="text-align: left"><code>/v</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>/nh</code></td>
+            <td style="text-align: left"><strong>不显示列标题</strong>。常与 <code>/fo TABLE</code> 或 <code>/fo CSV</code> 一起用。</td>
+            <td style="text-align: left"><code>/nh</code></td>
+        </tr>
+    </tbody>
+  </table>
+</div><h4 class="heading-element" id="其他常用命令"><span>其他常用命令</span>
+  <a href="#%e5%85%b6%e4%bb%96%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th style="text-align: left">命令</th>
+            <th style="text-align: left">说明</th>
+            <th style="text-align: left">示例</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: left"><code>schtasks /change</code></td>
+            <td style="text-align: left"><strong>修改现有任务的属性</strong>。可以改 <code>/tn</code>、<code>/tr</code>、<code>/ru</code> 等。</td>
+            <td style="text-align: left"><code>schtasks /change /tn &quot;MyTask&quot; /ru &quot;SYSTEM&quot;</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>schtasks /run</code></td>
+            <td style="text-align: left"><strong>立即运行指定的任务</strong>。忽略预设的排程。</td>
+            <td style="text-align: left"><code>schtasks /run /tn &quot;MyTask&quot;</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>schtasks /end</code></td>
+            <td style="text-align: left"><strong>停止由任务启动的程序</strong>。</td>
+            <td style="text-align: left"><code>schtasks /end /tn &quot;MyTask&quot;</code></td>
+        </tr>
+        <tr>
+            <td style="text-align: left"><code>schtasks /delete</code></td>
+            <td style="text-align: left"><strong>删除计划任务</strong>。</td>
+            <td style="text-align: left"><code>schtasks /delete /tn &quot;MyTask&quot; /f</code></td>
+        </tr>
+    </tbody>
+  </table>
+</div><h3 class="heading-element" id="-使用示例与场景"><span>💡 使用示例与场景</span>
+  <a href="#-%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b%e4%b8%8e%e5%9c%ba%e6%99%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="1-创建每天定时关机的任务"><span>1. 创建每天定时关机的任务</span>
+  <a href="#1-%e5%88%9b%e5%bb%ba%e6%af%8f%e5%a4%a9%e5%ae%9a%e6%97%b6%e5%85%b3%e6%9c%ba%e7%9a%84%e4%bb%bb%e5%8a%a1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>这个例子会创建一个名为 <code>DailyShutdown</code> 的任务，在每天23:30执行关机命令。</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-cmd"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">schtasks /create /tn <span class="s2">&#34;DailyShutdown&#34;</span> /tr <span class="s2">&#34;shutdown /s /f /t 0&#34;</span> /sc daily /st 23:30</span></span></code></pre></td></tr></table></div>
+</div>
+</div><ul>
+<li><code>/tr &quot;shutdown /s /f /t 0&quot;</code>：<code>/s</code> 是关机，<code>/f</code> 强制关闭应用，<code>/t 0</code> 是立即执行。</li>
+<li><code>/sc daily /st 23:30</code>：设置计划为每天 (<code>daily</code>) 的23:30开始。</li>
+</ul>
+<h4 class="heading-element" id="2-创建每周运行一次的维护脚本"><span>2. 创建每周运行一次的维护脚本</span>
+  <a href="#2-%e5%88%9b%e5%bb%ba%e6%af%8f%e5%91%a8%e8%bf%90%e8%a1%8c%e4%b8%80%e6%ac%a1%e7%9a%84%e7%bb%b4%e6%8a%a4%e8%84%9a%e6%9c%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>这个例子会创建一个在每周日凌晨3点运行一个维护脚本的任务。</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-cmd"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">schtasks /create /tn <span class="s2">&#34;WeeklyMaintenance&#34;</span> /tr <span class="s2">&#34;D:\Scripts\cleanup.bat&#34;</span> /sc weekly /d SUN /st 03:00 /ru SYSTEM</span></span></code></pre></td></tr></table></div>
+</div>
+</div><ul>
+<li><code>/sc weekly /d SUN</code>：设置为每周 (<code>weekly</code>) 的周日 (<code>SUN</code>) 运行。</li>
+<li><code>/ru SYSTEM</code>：使用具有更高权限的系统账户 (<code>SYSTEM</code>) 来运行脚本，避免权限不足。</li>
+</ul>
+<h4 class="heading-element" id="3-查询并验证任务是否成功创建"><span>3. 查询并验证任务是否成功创建</span>
+  <a href="#3-%e6%9f%a5%e8%af%a2%e5%b9%b6%e9%aa%8c%e8%af%81%e4%bb%bb%e5%8a%a1%e6%98%af%e5%90%a6%e6%88%90%e5%8a%9f%e5%88%9b%e5%bb%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>使用 <code>/query</code> 可以查看任务状态。如果想看详细信息，可以加上 <code>/v</code> 和 <code>/fo LIST</code> 参数。</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-cmd"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">schtasks /query /tn <span class="s2">&#34;DailyShutdown&#34;</span> /fo LIST /v</span></span></code></pre></td></tr></table></div>
+</div>
+</div><h3 class="heading-element" id="-注意事项"><span>⚠️ 注意事项</span>
+  <a href="#-%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li><strong>管理员权限</strong>：执行 <code>schtasks</code> 来创建、修改或删除任务时，<strong>必须以管理员身份运行命令提示符或PowerShell</strong>，否则会提示“拒绝访问”。</li>
+<li><strong>任务名称唯一性</strong>：每个计划任务的名称 (<code>/tn</code>) 在系统中必须是唯一的。</li>
+<li><strong>引号使用</strong>：如果任务名称、路径或参数中包含空格，请务必使用英文双引号 <code>&quot;</code> 将它们括起来。</li>
+<li><strong>编码问题</strong>：在某些系统上运行 <code>schtasks /query</code> 时，可能会遇到“无法加载列资源”的错误。这通常是CMD的代码页设置问题，可以先执行 <code>chcp 437</code> 将代码页切换到美国英语，查询完成后再用 <code>chcp 936</code> 切换回简体中文。</li>
+</ol>
+<p><code>schtasks</code> 的参数虽然多，但掌握 <code>/create</code>、<code>/query</code> 和 <code>/delete</code> 这几个核心参数，再配合 <code>/sc</code>、<code>/tn</code>、<code>/tr</code>、<code>/st</code> 这些常用选项，就能覆盖绝大部分的自动化需求了。</p>
+</div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/windows%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/" title="Windows后台服务注册">Windows后台服务注册</a></li><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/windows%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BC%98%E5%85%88%E7%BA%A7/" title="Windows设置网络优先级">Windows设置网络优先级</a></li><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/powershell%E7%9F%A5%E8%AF%86%E7%82%B9/" title="PowerShell知识点">PowerShell知识点</a></li><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/windows/windows%E5%91%BD%E4%BB%A4/" title="Windows CMD命令">Windows CMD命令</a></li><li>
+          <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E7%BB%88%E7%AB%AF/windows-terminal-%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="Windows Terminal 配置及快捷键">Windows Terminal 配置及快捷键</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-核心命令与通用参数">📋 核心命令与通用参数</a>
+          <ul>
+            <li><a href="#schtasks-create---创建计划任务"><code>schtasks /create</code> - 创建计划任务</a></li>
+            <li><a href="#schtasks-query---查询计划任务"><code>schtasks /query</code> - 查询计划任务</a></li>
+            <li><a href="#其他常用命令">其他常用命令</a></li>
+          </ul>
+        </li>
+        <li><a href="#-使用示例与场景">💡 使用示例与场景</a>
+          <ul>
+            <li><a href="#1-创建每天定时关机的任务">1. 创建每天定时关机的任务</a></li>
+            <li><a href="#2-创建每周运行一次的维护脚本">2. 创建每周运行一次的维护脚本</a></li>
+            <li><a href="#3-查询并验证任务是否成功创建">3. 查询并验证任务是否成功创建</a></li>
+          </ul>
+        </li>
+        <li><a href="#-注意事项">⚠️ 注意事项</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/459c124ea41241d96e487a7bebb63d72.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>
