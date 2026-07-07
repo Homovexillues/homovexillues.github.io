@@ -12,7 +12,7 @@
 	<meta itemprop="description" content="什么是幂等性？ 接口幂等性指的是：同一个请求被执行一次或多次，最终对系统产生的影响是一样的（结果与副作用一致）。
 常见例子：同一笔支付请求重复提交多次，最终只会产生一笔扣款记录。">
 	<meta itemprop="datePublished" content="2026-03-08T15:47:43+08:00">
-	<meta itemprop="dateModified" content="2026-07-06T17:23:31+08:00">
+	<meta itemprop="dateModified" content="2026-07-07T13:28:01+08:00">
 	<meta itemprop="wordCount" content="964">
 	<meta itemprop="keywords" content="经验"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
 	<meta property="og:site_name" content="红石门">
@@ -23,7 +23,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="编程通用">
 		<meta property="article:published_time" content="2026-03-08T15:47:43+08:00">
-		<meta property="article:modified_time" content="2026-07-06T17:23:31+08:00">
+		<meta property="article:modified_time" content="2026-07-07T13:28:01+08:00">
 		<meta property="article:tag" content="经验">
 
 	<meta name="twitter:card" content="summary">
@@ -45,7 +45,7 @@
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98\/"
     },"genre": "编程通用","keywords": "经验","wordcount":  964 ,
-    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98\/","datePublished": "2026-03-08T15:47:43+08:00","dateModified": "2026-07-06T17:23:31+08:00","publisher": {
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%8E%9F%E7%90%86\/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98\/","datePublished": "2026-03-08T15:47:43+08:00","dateModified": "2026-07-07T13:28:01+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -134,7 +134,7 @@
   <article class="page single special">
     <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">接口相关问题</h1><div class="post-meta"><div class="post-meta-line">
               <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/">编程通用</a> / <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/">原理</a></span>
-            </div><div class="post-meta-line"><span title="创建时间：2026-03-08 15:47:43 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-03-08">2026-03-08</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:31 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="964 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 1000 字</span>&nbsp;
+            </div><div class="post-meta-line"><span title="创建时间：2026-03-08 15:47:43 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-03-08">2026-03-08</time></span>&nbsp;<span title="最后修改：2026-07-07 13:28:01 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-07">2026-07-07</time></span>&nbsp;<span title="964 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 1000 字</span>&nbsp;
           <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 2 分钟</span>
         </div><div class="post-meta-line post-tag-list">
               <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E7%BB%8F%E9%AA%8C/">经验</a></span>
@@ -263,7 +263,7 @@ JWT 的本质是<strong>一段加密的 JSON 字符串</strong>，由服务端�
 <li><strong>Header（头部）</strong>：声明加密算法（如 HS256）和令牌类型（JWT），Base64 编码（可解码，非加密）；</li>
 <li><strong>Payload（载荷）</strong>：存储核心身份信息（如用户 ID、设备 ID、权限范围、过期时间），Base64 编码（可解码，<strong>不要存密码等敏感信息</strong>）；</li>
 <li><strong>Signature（签名）</strong>：服务端用「Header+Payload + 密钥（Secret）」按声明的算法加密生成，是 JWT 的核心安全保障。
-<img loading="lazy" src='/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/images/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/Pasted-image-20260308235210.png' alt="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%8E%9F%E7%90%86/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/images/%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/Pasted-image-20260308235210.png" height="936" width="1891"></li>
+<img loading="lazy" src='images/接口相关问题/Pasted-image-20260308235210.png' alt="images/接口相关问题/Pasted-image-20260308235210.png"></li>
 </ul>
 </div><hr class="awesome-hr" />
     <h2 id="see-also">相关内容</h2>
@@ -311,5 +311,5 @@ JWT 的本质是<strong>一段加密的 JSON 字符串</strong>，由服务端�
   </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/5f4fc2b2f766a8324c4f83a7f620ff03.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/dc00b50471525f5e3fecd13a2c95f1a9.js" defer></script><script src="/js/theme.min.js" defer></script></body>
 </html>

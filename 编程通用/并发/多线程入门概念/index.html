@@ -10,7 +10,7 @@
 	<meta itemprop="name" content="多线程入门概念">
 	<meta itemprop="description" content="基本概念 什么是线程？ 线程是操作系统中能够独立运行的最小单位，也是程序中能够并发执行的一段指令序列。 线程是进程的一部分，一个进程可以包含多个线程，这些线程共享进程的资源。 比如现在写了一个控制台程序，在运行之后它就会变成一个进程，入口函数所在的线程就会成为主线程或者入口线程，如果在主线程中创建了其他线程，这个进程就会包含不止一个线程，这些线程都可以访问进程中的资源。 进程有入口线程，也可以创建更多的线程。 为什么需要多线程？ 批量重复任务希望同时进行（比如对数组中每个元素进行相同且耗时的操作） 多个不同任务希望同时进行，互不干扰（比如有多个后才线程需要做轮询等操作时） 什么是线程池？ 一组预先创建的线程，可以被重复使用来执行多个任务 线程的创建和删除等，生命周期比较耗时 避免频繁地创建和销毁线程，从而减少了线程创建和销毁的开销，提高了系统的性能和效率 异步编程默认使用线程池 什么是线程安全？ 线程安全">
 	<meta itemprop="datePublished" content="2024-04-29T03:21:14+08:00">
-	<meta itemprop="dateModified" content="2026-07-06T17:23:31+08:00">
+	<meta itemprop="dateModified" content="2026-07-07T13:28:01+08:00">
 	<meta itemprop="wordCount" content="1562">
 	<meta itemprop="keywords" content="操作系统"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%B9%B6%E5%8F%91/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5/">
 	<meta property="og:site_name" content="红石门">
@@ -20,7 +20,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="编程通用">
 		<meta property="article:published_time" content="2024-04-29T03:21:14+08:00">
-		<meta property="article:modified_time" content="2026-07-06T17:23:31+08:00">
+		<meta property="article:modified_time" content="2026-07-07T13:28:01+08:00">
 		<meta property="article:tag" content="操作系统">
 
 	<meta name="twitter:card" content="summary">
@@ -41,7 +41,7 @@
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%B9%B6%E5%8F%91\/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5\/"
     },"genre": "编程通用","keywords": "操作系统","wordcount":  1562 ,
-    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%B9%B6%E5%8F%91\/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5\/","datePublished": "2024-04-29T03:21:14+08:00","dateModified": "2026-07-06T17:23:31+08:00","publisher": {
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8\/%E5%B9%B6%E5%8F%91\/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%E6%A6%82%E5%BF%B5\/","datePublished": "2024-04-29T03:21:14+08:00","dateModified": "2026-07-07T13:28:01+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -128,7 +128,7 @@
   <article class="page single special">
     <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">多线程入门概念</h1><div class="post-meta"><div class="post-meta-line">
               <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/">编程通用</a> / <a href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E5%B9%B6%E5%8F%91/">并发</a></span>
-            </div><div class="post-meta-line"><span title="创建时间：2024-04-29 03:21:14 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2024-04-29">2024-04-29</time></span>&nbsp;<span title="最后修改：2026-07-06 17:23:31 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-06">2026-07-06</time></span>&nbsp;<span title="1562 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 1600 字</span>&nbsp;
+            </div><div class="post-meta-line"><span title="创建时间：2024-04-29 03:21:14 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2024-04-29">2024-04-29</time></span>&nbsp;<span title="最后修改：2026-07-07 13:28:01 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-07">2026-07-07</time></span>&nbsp;<span title="1562 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 1600 字</span>&nbsp;
           <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 4 分钟</span>
         </div><div class="post-meta-line post-tag-list">
               <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span>
@@ -424,5 +424,5 @@
   </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/1236b89d83b023c752832cf880ddcf3a.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/4dd1b9990b45beb3430bd21f0f69c41c.js" defer></script><script src="/js/theme.min.js" defer></script></body>
 </html>

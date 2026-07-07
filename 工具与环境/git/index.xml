@@ -6,7 +6,7 @@
     <description>个人知识库 Hugo 迁移演示</description>
     <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 06 Jul 2026 17:22:41 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 13:29:08 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git相关问题</title>
@@ -23,7 +23,7 @@
       <pubDate>Wed, 15 May 2024 06:43:27 +0800</pubDate>
       <guid>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
       <category domain="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83---git/">工具与环境 - Git</category>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#39;http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20240515144600594.png&#39; alt=&#34;image-20240515144600594&#34; height=&#34;844&#34; width=&#34;1865&#34;&gt;&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。&#xA;git checkout .&#xA;# --progress 显示进度信息&#xA;# -- branch x 从指定的名为x的分支拉取&#xA;# -v verbos模式，输出更详细的信息&#xA;# -- 选项分隔符，告诉git之后的内容是路径/参数，不要当成选项来解析&#xA;git clone --progress --branch x -v -- &amp;#34;https/git&amp;#34; &amp;#34;path&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#39;http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/Pasted-image-20260518141003.png&#39; alt=&#34;/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/git/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/Pasted-image-20260518141003.png&#34; height=&#34;427&#34; width=&#34;612&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#39;images/Git基本操作/image-20240515144600594.png&#39; alt=&#34;image-20240515144600594&#34;&gt;&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# 丢弃工作区中所有未暂存的修改，将文件恢复到最近一次提交的状态。&#xA;git checkout .&#xA;# --progress 显示进度信息&#xA;# -- branch x 从指定的名为x的分支拉取&#xA;# -v verbos模式，输出更详细的信息&#xA;# -- 选项分隔符，告诉git之后的内容是路径/参数，不要当成选项来解析&#xA;git clone --progress --branch x -v -- &amp;#34;https/git&amp;#34; &amp;#34;path&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#39;images/Git基本操作/Pasted-image-20260518141003.png&#39; alt=&#34;images/Git基本操作/Pasted-image-20260518141003.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

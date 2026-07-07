@@ -6,13 +6,13 @@
     <description>个人知识库 Hugo 迁移演示</description>
     <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 06 Jul 2026 17:23:31 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 13:28:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43;知识点</title>
-      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-c&#43;&#43;/c&#43;&#43;%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-c-plus-plus/c-plus-plus%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
       <pubDate>Fri, 24 Oct 2025 02:01:59 +0800</pubDate>
-      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-c&#43;&#43;/c&#43;&#43;%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-c-plus-plus/c-plus-plus%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
       <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80---c-c&#43;&#43;/">编程语言 - C-C&#43;&#43;</category>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;和C#的函数默认支持多态不同，C++需要显式virtual关键字声明才能支持多态&lt;/li&gt;&#xA;&lt;li&gt;C++的类型转换可以但是不推荐使用&lt;code&gt;int(x)&lt;/code&gt;或者&lt;code&gt;(int)x&lt;/code&gt;的写法，这种C like写法在C++里不提供任何报错，它会自动遍历&lt;code&gt;static_cast&lt;/code&gt; / &lt;code&gt;dynamic_cast&lt;/code&gt; / &lt;code&gt;const_cast&lt;/code&gt; / &lt;code&gt;reinterpret_cast&lt;/code&gt;这四种转换类型，直到能转换为止，所以写的时候还是要显式的使用这四种转换&lt;/li&gt;&#xA;&lt;li&gt;C/C++里，头文件里的挺多错误编译器是不会管的，比如这种：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code&gt;// header.h&#xA;void swap(int b, int a);   // 头文件说：第一个参数叫 b，第二个叫 a&#xA;&#xA;// source.cpp&#xA;void swap(int a, int b) {  // 源文件说：第一个参数叫 a，第二个叫 b&#xA;    // 你以为在交换 a 和 b，和调用方的理解完全不同&#xA;}&#x9;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;实际上是完全相同的，因为符号匹配只看 &lt;code&gt;void(int, int)&lt;/code&gt; 和 &lt;code&gt;void(int, int)&lt;/code&gt;，参数名不参与 mangling&lt;/p&gt;</description>
     </item>

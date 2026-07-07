@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>所有about - 红石门</title>
+    <link>http://localhost:1313/about/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 07 Jul 2026 13:21:04 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>你好，朋友</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 05 Nov 2023 19:49:12 +0800</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;欢迎来到我的博客 &lt;a href=&#34;https://homovexillues.github.io/&#34; target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;红石门&lt;/a&gt;！&lt;/p&gt;&#xA;&lt;p&gt;这是我的第一个博客，用 Hexo 搭建在 GitHub 上，用来放一些我写的文章、笔记、小说，还有一些共享资源什么的。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;2026-07-07 10:35:09&lt;/p&gt;&#xA;&lt;p&gt;算是对旧博客进行了一个迁移，这算是第1.5个博客了？新博客用了hugo来搭建，对老的博客文章也做了个分类整理。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

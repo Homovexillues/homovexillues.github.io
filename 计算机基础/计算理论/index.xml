@@ -6,7 +6,7 @@
     <description>个人知识库 Hugo 迁移演示</description>
     <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 06 Jul 2026 17:23:29 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 13:28:01 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>有限状态自动机</title>
@@ -14,7 +14,7 @@
       <pubDate>Sun, 14 Dec 2025 16:55:24 +0800</pubDate>
       <guid>http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA/</guid>
       <category domain="http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80---%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">计算机基础 - 计算理论</category>
-      <description>&lt;p&gt;一个简单的规则，一直抛硬币，H为正面，T为背面，根据硬币的状态修改当前状态&#xA;&lt;img loading=&#34;lazy&#34; src=&#39;http://localhost:1313/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA/images/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA/Pasted-image-20251215005537.png&#39; alt=&#34;/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA/images/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA/Pasted-image-20251215005537.png&#34; height=&#34;1436&#34; width=&#34;2518&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;一个简单的规则，一直抛硬币，H为正面，T为背面，根据硬币的状态修改当前状态&#xA;&lt;img loading=&#34;lazy&#34; src=&#39;images/有限状态自动机/Pasted-image-20251215005537.png&#39; alt=&#34;images/有限状态自动机/Pasted-image-20251215005537.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
