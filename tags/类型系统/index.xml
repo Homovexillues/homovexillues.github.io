@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>类型系统 - 标签 - 红石门</title>
+    <link>http://localhost:1313/tags/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F/</link>
+    <description>个人知识库 Hugo 迁移演示</description>
+    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 10 Jul 2026 15:58:40 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>根类型和泛型</title>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/%E6%A0%B9%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Fri, 10 Jul 2026 11:08:04 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/%E6%A0%B9%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B3%9B%E5%9E%8B/</guid>
+      <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category>
+      <description>&lt;p&gt;根类型和泛型的区别在于&lt;strong&gt;谁在什么时候用这个类型信息&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;他们二者都提供&lt;strong&gt;对任意类型的抽象&lt;/strong&gt;，只不过区别在于：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;根类型提供的是&lt;strong&gt;运行时值抽象&lt;/strong&gt;，在编译期他的类型就是根类型本身&lt;/li&gt;&#xA;&lt;li&gt;泛型提供的是&lt;strong&gt;编译期类型抽象&lt;/strong&gt;，在编译期他就知道类型信息&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;而正是因为二者&lt;strong&gt;在程序的不同阶段起作用&lt;/strong&gt;，二者的使用领域也不相同。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
