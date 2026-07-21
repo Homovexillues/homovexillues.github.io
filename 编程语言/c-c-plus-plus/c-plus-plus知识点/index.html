@@ -10,8 +10,8 @@
 	<meta itemprop="name" content="C&#43;&#43;知识点">
 	<meta itemprop="description" content="和C#的函数默认支持多态不同，C&#43;&#43;需要显式virtual关键字声明才能支持多态 C&#43;&#43;的类型转换可以但是不推荐使用int(x)或者(int)x的写法，这种C like写法在C&#43;&#43;里不提供任何报错，它会自动遍历static_cast / dynamic_cast / const_cast / reinterpret_cast这四种转换类型，直到能转换为止，所以写的时候还是要显式的使用这四种转换 C/C&#43;&#43;里，头文件里的挺多错误编译器是不会管的，比如这种： 1 2 3 4 5 6 7 // header.h void swap(int b, int a); // 头文件说：第一个参数叫 b，第二个叫 a // source.cpp void swap(int a, int b) { // 源文件说：第一个参数叫 a，第二个叫 b // 你以为在交换 a 和 b，和调用方的理解完全不同 }	实际上是完全相同的，因为符号匹配只看 void(int, int) 和 void(int, int)，参数名不参与 mangling">
 	<meta itemprop="datePublished" content="2025-10-24T02:01:59+08:00">
-	<meta itemprop="dateModified" content="2026-07-20T16:53:14+08:00">
-	<meta itemprop="wordCount" content="4839">
+	<meta itemprop="dateModified" content="2026-07-21T14:49:16+08:00">
+	<meta itemprop="wordCount" content="5328">
 	<meta itemprop="keywords" content="C&#43;&#43;,知识点"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-c-plus-plus/c-plus-plus%E7%9F%A5%E8%AF%86%E7%82%B9/">
 	<meta property="og:site_name" content="红石门">
 	<meta property="og:title" content="C&#43;&#43;知识点">
@@ -20,7 +20,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="编程语言">
 		<meta property="article:published_time" content="2025-10-24T02:01:59+08:00">
-		<meta property="article:modified_time" content="2026-07-20T16:53:14+08:00">
+		<meta property="article:modified_time" content="2026-07-21T14:49:16+08:00">
 		<meta property="article:tag" content="C&#43;&#43;">
 		<meta property="article:tag" content="知识点">
 
@@ -41,8 +41,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/c-c-plus-plus\/c-plus-plus%E7%9F%A5%E8%AF%86%E7%82%B9\/"
-    },"genre": "编程语言","keywords": "C\u002b\u002b, 知识点","wordcount":  4839 ,
-    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/c-c-plus-plus\/c-plus-plus%E7%9F%A5%E8%AF%86%E7%82%B9\/","datePublished": "2025-10-24T02:01:59+08:00","dateModified": "2026-07-20T16:53:14+08:00","publisher": {
+    },"genre": "编程语言","keywords": "C\u002b\u002b, 知识点","wordcount":  5328 ,
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/c-c-plus-plus\/c-plus-plus%E7%9F%A5%E8%AF%86%E7%82%B9\/","datePublished": "2025-10-24T02:01:59+08:00","dateModified": "2026-07-21T14:49:16+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -128,8 +128,8 @@
   <article class="page single special">
     <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">C&#43;&#43;知识点</h1><div class="post-meta"><div class="post-meta-line">
               <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a> / <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-c&#43;&#43;/">C-C&#43;&#43;</a></span>
-            </div><div class="post-meta-line"><span title="创建时间：2025-10-24 02:01:59 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2025-10-24">2025-10-24</time></span>&nbsp;<span title="最后修改：2026-07-20 16:53:14 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-20">2026-07-20</time></span>&nbsp;<span title="4839 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 4900 字</span>&nbsp;
-          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 10 分钟</span>
+            </div><div class="post-meta-line"><span title="创建时间：2025-10-24 02:01:59 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2025-10-24">2025-10-24</time></span>&nbsp;<span title="最后修改：2026-07-21 14:49:16 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-21">2026-07-21</time></span>&nbsp;<span title="5328 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 5400 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 11 分钟</span>
         </div><div class="post-meta-line post-tag-list">
               <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/c&#43;&#43;/">C&#43;&#43;</a> / <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/">知识点</a></span>
             </div></div>
@@ -509,8 +509,23 @@
 </span></span><span class="line"><span class="cl">  <span class="err">│</span>         <span class="err">└─</span> <span class="err">函数名，同时表示转换目标是</span> <span class="kt">bool</span>
 </span></span><span class="line"><span class="cl">  <span class="err">└─</span> <span class="err">禁止随意发生隐式转换</span></span></span></code></pre></td></tr></table></div>
 </div>
-</div><p>这是一个<strong>类型转换运算符函数</strong>，它把它所在的类在运算规则上和bool等价了，不过explicit要求了它必须用于布尔类型的表达式运算，不然的话C++甚至可以定义出一个看上去几乎是动态类型的写法出来</p>
-</li>
+</div><p>这是一个<strong>类型转换运算符函数</strong>，它把它所在的类在运算规则上和bool等价了，不过explicit要求了它必须用于布尔类型的表达式运算(因为不能直接隐式转换嘛)，不然的话C++甚至可以定义出一个看上去几乎是动态类型的写法出来,比如:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-c++"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Sth</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    	<span class="k">operator</span> <span class="kt">bool</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Sth</span> <span class="n">sth</span> <span class="o">=</span> <span class="k">new</span><span class="p">();</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
 </ul>
 <hr>
 <ul>
@@ -645,7 +660,42 @@
 </div><p>首先解引用符跟着<code>p1</code>走，所以<code>p1</code>是指针而<code>p2</code>不是，对，这里的指针定义不是一种类型，而是<strong>跟着变量走</strong>的</p>
 <p>其次<code>*const</code>这里代表的是一个不能修改引用，但是可以修改指向的值的指针，对，这里又他妈的<strong>跟着关键字走了</strong></p>
 <p>以此类推，从右向左看，<code>p4</code>就是一个可以修改引用，但是不能修改指向的值的指针，<code>p5</code>就是一个二者都不能修改的指针</p>
-<p>也就是说这短短5行代码里，这特么的指针定义范式变了两次，阅读方向要从右向左</p>
+<p>也就是说这短短5行代码里，这特么的指针定义范式变了两次，阅读方向要转成从右向左，太精妙了这设计，哪个酒蒙子想出来的</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>clang安装会自带一个叫clang-repl的工具，C++的交互终端，学习语法做小的验证很方便啊</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>C++由于能摆弄裸指针，会在各种地方遇到奇怪的小问题，比如克隆的时候:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-c++"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">STH</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    	<span class="kt">int</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">some_func</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">	<span class="n">STH</span> <span class="n">first</span><span class="p">();</span>   
+</span></span><span class="line"><span class="cl">	<span class="n">STH</span> <span class="n">second</span> <span class="o">=</span> <span class="n">first</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>假设有这么个类，里面的构造，析构函数等都自动生成，它里面有个私有的指针成员变量，那么在复制构造的时候，显然它也会自动将其复制给second，目前为止一切正常。</p>
+<p>但是一旦退出了这个函数，离开作用域两个对象自动析构，second首先析构，释放了data指针，然后等到first析构的时候，爽到了，data指针已经被放掉了，再释放一次，也就是<strong>double free</strong>,直接出现未定义行为</p>
+<p>正确的做法是用诸如<code>std::vector&lt;T&gt;</code>之类的容器，不要用裸指针，编译器就会在编译的时候自动配合处理这些特殊函数，这就是所谓的<strong>Rule of five</strong>到<strong>Rule of Zero</strong></p>
+<p>实话讲感觉就是屎山太大了，程序员写的话心智复杂度过高了，然后把烂摊子直接扔给编译器，靠编译器魔法解决问题（</p>
 </li>
 </ul>
 </div><hr class="awesome-hr" />
