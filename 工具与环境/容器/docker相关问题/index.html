@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>Docker相关问题 - 红石门</title><meta name="author" content="">
-<meta name="description" content="一个docker的container为[程序，环境]，而环境又是[操作系统，用户配置] 而操作系统又分为了[用户空间，内核空间]，应用程序运行在用户空间，而作为一个虚拟机，它不真的需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境
+<meta name="description" content="Docker容器和虚拟机的区别是啥？ 一个docker的container为**[程序，环境]，而环境又是[操作系统，用户配置]** 而操作系统又分为了**[用户空间，内核空间]，应用程序运行在用户空间**，而作为一个容器，它不真的像是虚拟机一样需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境。
 "><meta name="keywords" content='Docker, 虚拟机'>
 	<meta itemprop="name" content="Docker相关问题">
-	<meta itemprop="description" content="一个docker的container为[程序，环境]，而环境又是[操作系统，用户配置] 而操作系统又分为了[用户空间，内核空间]，应用程序运行在用户空间，而作为一个虚拟机，它不真的需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境">
+	<meta itemprop="description" content="Docker容器和虚拟机的区别是啥？ 一个docker的container为**[程序，环境]，而环境又是[操作系统，用户配置]** 而操作系统又分为了**[用户空间，内核空间]，应用程序运行在用户空间**，而作为一个容器，它不真的像是虚拟机一样需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境。">
 	<meta itemprop="datePublished" content="2025-11-22T12:57:41+08:00">
-	<meta itemprop="dateModified" content="2026-07-07T13:28:00+08:00">
-	<meta itemprop="wordCount" content="188">
+	<meta itemprop="dateModified" content="2026-08-05T15:13:28+08:00">
+	<meta itemprop="wordCount" content="1557">
 	<meta itemprop="keywords" content="Docker,虚拟机"><meta property="og:url" content="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%AE%B9%E5%99%A8/docker%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
 	<meta property="og:site_name" content="红石门">
 	<meta property="og:title" content="Docker相关问题">
-	<meta property="og:description" content="一个docker的container为[程序，环境]，而环境又是[操作系统，用户配置] 而操作系统又分为了[用户空间，内核空间]，应用程序运行在用户空间，而作为一个虚拟机，它不真的需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境">
+	<meta property="og:description" content="Docker容器和虚拟机的区别是啥？ 一个docker的container为**[程序，环境]，而环境又是[操作系统，用户配置]** 而操作系统又分为了**[用户空间，内核空间]，应用程序运行在用户空间**，而作为一个容器，它不真的像是虚拟机一样需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境。">
 	<meta property="og:locale" content="zh_CN">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="工具与环境">
 		<meta property="article:published_time" content="2025-11-22T12:57:41+08:00">
-		<meta property="article:modified_time" content="2026-07-07T13:28:00+08:00">
+		<meta property="article:modified_time" content="2026-08-05T15:13:28+08:00">
 		<meta property="article:tag" content="Docker">
 		<meta property="article:tag" content="虚拟机">
 
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="Docker相关问题">
-	<meta name="twitter:description" content="一个docker的container为[程序，环境]，而环境又是[操作系统，用户配置] 而操作系统又分为了[用户空间，内核空间]，应用程序运行在用户空间，而作为一个虚拟机，它不真的需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境">
+	<meta name="twitter:description" content="Docker容器和虚拟机的区别是啥？ 一个docker的container为**[程序，环境]，而环境又是[操作系统，用户配置]** 而操作系统又分为了**[用户空间，内核空间]，应用程序运行在用户空间**，而作为一个容器，它不真的像是虚拟机一样需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境。">
 <meta name="application-name" content="Hugo FixIt Lite">
 <meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
@@ -41,8 +41,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/%E5%AE%B9%E5%99%A8\/docker%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98\/"
-    },"genre": "工具与环境","keywords": "Docker, 虚拟机","wordcount":  188 ,
-    "url": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/%E5%AE%B9%E5%99%A8\/docker%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98\/","datePublished": "2025-11-22T12:57:41+08:00","dateModified": "2026-07-07T13:28:00+08:00","publisher": {
+    },"genre": "工具与环境","keywords": "Docker, 虚拟机","wordcount":  1557 ,
+    "url": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/%E5%AE%B9%E5%99%A8\/docker%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98\/","datePublished": "2025-11-22T12:57:41+08:00","dateModified": "2026-08-05T15:13:28+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -130,14 +130,125 @@
   <article class="page single special">
     <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Docker相关问题</h1><div class="post-meta"><div class="post-meta-line">
               <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/">工具与环境</a> / <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%AE%B9%E5%99%A8/">容器</a></span>
-            </div><div class="post-meta-line"><span title="创建时间：2025-11-22 12:57:41 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2025-11-22">2025-11-22</time></span>&nbsp;<span title="最后修改：2026-07-07 13:28:00 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-07">2026-07-07</time></span>&nbsp;<span title="188 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 200 字</span>&nbsp;
-          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 1 分钟</span>
+            </div><div class="post-meta-line"><span title="创建时间：2025-11-22 12:57:41 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2025-11-22">2025-11-22</time></span>&nbsp;<span title="最后修改：2026-08-05 15:13:28 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-08-05">2026-08-05</time></span>&nbsp;<span title="1557 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 1600 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 4 分钟</span>
         </div><div class="post-meta-line post-tag-list">
               <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/docker/">Docker</a> / <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a></span>
             </div></div>
-    </div><div class="content" id="content"><p>一个docker的container为[程序，环境]，而环境又是[操作系统，用户配置]
-而操作系统又分为了[用户空间，内核空间]，应用程序运行在用户空间，而作为一个虚拟机，它不真的需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境</p>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#docker容器和虚拟机的区别是啥">Docker容器和虚拟机的区别是啥？</a></li>
+        <li><a href="#什么是多阶段构建">什么是多阶段构建？</a></li>
+        <li><a href="#什么是镜像层和构建缓存">什么是镜像层和构建缓存？</a></li>
+        <li><a href="#为啥不把程序依赖的服务比如数据库反向代理啥的都打包进一个镜像里">为啥不把程序依赖的服务比如数据库，反向代理啥的都打包进一个镜像里？</a></li>
+        <li><a href="#什么是build-context">什么是build context?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h3 class="heading-element" id="docker容器和虚拟机的区别是啥"><span>Docker容器和虚拟机的区别是啥？</span>
+  <a href="#docker%e5%ae%b9%e5%99%a8%e5%92%8c%e8%99%9a%e6%8b%9f%e6%9c%ba%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e5%95%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>一个docker的container为**[程序，环境]<strong>，而环境又是</strong>[操作系统，用户配置]**
+而操作系统又分为了**[用户空间，内核空间]<strong>，应用程序运行在</strong>用户空间**，而作为一个容器，它不真的像是虚拟机一样需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境。</p>
+<p>打比方就像是小别墅和居民楼，一个小别墅有自己的水电煤气这些基建，这就是虚拟机，而公寓则是共享整个楼里的水电煤气等基建，自己没有单独的基建。</p>
 <p>dockerfile就是写好了从系统开始到运行我所需的程序所需要的所有操作，定义了环境，创建文件夹，等等</p>
+<p>镜像就像是一个自带运行环境的程序安装包，而容器则是这个安装包启动的进程实例，即：</p>
+<ul>
+<li>镜像为<strong>只读模板</strong></li>
+<li>容器为<strong>镜像+临时可写层+主进程</strong></li>
+</ul>
+<h3 class="heading-element" id="什么是多阶段构建"><span>什么是多阶段构建？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%a4%9a%e9%98%b6%e6%ae%b5%e6%9e%84%e5%bb%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>比如一个Go的程序，<strong>普通构建</strong>可能<strong>把编译环境和运行环境打包在一起</strong>，但是实际上对于编译型的语言，可以不用带编译器，程序运行实际上只需要二进制文件和一些所需信息啥的，而<strong>多阶段构建</strong>则是使用多个FROM一起搭建的：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-dockerfile"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="c"># 第一阶段 编译</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.26</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">builder</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> . .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> go build -o /out/butler .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 第二阶段 运行</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">alpine</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> --from<span class="o">=</span>builder /out/butler /usr/local/bin/butler<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;butler&#34;</span><span class="p">,</span><span class="s2">&#34;serve&#34;</span><span class="p">]</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>这样<strong>第一阶段</strong>的builder负责生成butler二进制文件，而<strong>第二阶段</strong>只从他那里拿最终产物，这样就能打出一个更小，更安全的镜像出来</p>
+<h3 class="heading-element" id="什么是镜像层和构建缓存"><span>什么是镜像层和构建缓存？</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e9%95%9c%e5%83%8f%e5%b1%82%e5%92%8c%e6%9e%84%e5%bb%ba%e7%bc%93%e5%ad%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>docker中的涉及环境和文件的命令基本上都会产生一个镜像层,在构建的时候Docker对每条指令会算一个<strong>缓存键</strong>，这个键包含三样：</p>
+<ul>
+<li>指令本身，如<code>RUN go mod download</code></li>
+<li>父层的ID</li>
+<li>这条指令的输入，比如COPY会输入文件内容的哈希，RUN会输入父层的内容</li>
+</ul>
+<p>而一旦在构建的时候发现上一层变了，后几层的镜像都会随之被放弃重新申请，所以语句的顺序就很重要，可能会出现这种情况：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-dockerfile"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="c"># 错误示范</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> . . <span class="c1"># 复制项目</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> go mod download <span class="c1"># 下载依赖</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> go build -o butler .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 正确示范</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> go.mod go.sum ./ <span class="c1"># 只复制依赖清单</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> go mod downlaod <span class="c1"># 下载依赖</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> . . <span class="c1"># 复制源码</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> go build -o butler .</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>上面的错误示范里，如果项目里的任意代码文件修改了，再打包镜像就会直接报废之后的下载依赖步骤，要重新下载依赖</p>
+<p>而下面的正确示范里，由于是后复制文件，那么上面的下载依赖的镜像层得以保留，就不用重新下载了，在打包大的项目的时候这个顺序还挺重要的来着</p>
+<p>另外这里还有个经典的坑：</p>
+<p>执行apt update的时候，由于实际上变更了网络的内容，但是由于指令文本完全一致，它可能会给你一个缓存了的过期包列表，所以构建的时候要记得加<code>--no-cache</code></p>
+<h3 class="heading-element" id="为啥不把程序依赖的服务比如数据库反向代理啥的都打包进一个镜像里"><span>为啥不把程序依赖的服务比如数据库，反向代理啥的都打包进一个镜像里？</span>
+  <a href="#%e4%b8%ba%e5%95%a5%e4%b8%8d%e6%8a%8a%e7%a8%8b%e5%ba%8f%e4%be%9d%e8%b5%96%e7%9a%84%e6%9c%8d%e5%8a%a1%e6%af%94%e5%a6%82%e6%95%b0%e6%8d%ae%e5%ba%93%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86%e5%95%a5%e7%9a%84%e9%83%bd%e6%89%93%e5%8c%85%e8%bf%9b%e4%b8%80%e4%b8%aa%e9%95%9c%e5%83%8f%e9%87%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>技术上是可以跑在一个容器里啦，但是实际上不应该这么做，这样塞到一起的话就会出现这么个情况：</p>
+<ul>
+<li>一个服务要升级，整个镜像得重建</li>
+<li>进程崩溃的时候错误信息难以定义，比如你镜像里塞了3个进程，然后其中一个挂了，这错误状态debug起来就享受到了(</li>
+<li>无法分别扩容，其实也是第一条的问题，这里的所有服务，任意一个你需要改动，你就得把整个镜像给干掉</li>
+</ul>
+<h3 class="heading-element" id="什么是build-context"><span>什么是build context?</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%afbuild-context" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>就构建上下文嘛，字面义，不过这里需要解释的其实主要不是这个，而是Docker的运行模式，安装了之后Docker会先开起来一个<strong>Docker daemon</strong>,即后台的服务，这个服务主要用来维护正在运行的镜像等等，而执行Dockerfile的时候，其实就是把这些上下文文件发给这个Docker daemon，然后由它来打包，而我们用的docker命令，实际上是docker的client，docker是个经典的<strong>C/S</strong>架构的软件</p>
+<p>而为了防止在把构建上下文里掺入一些敏感文件一并发给Docker daemon来打包成镜像，就需要写**.dockerignore**文件来排除一些比如.git文件，含有个人信息的配置文件等。</p>
 </div><hr class="awesome-hr" />
     <h2 id="see-also">相关内容</h2>
     <ul><li>
@@ -146,10 +257,28 @@
           <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%86%E7%B1%BB/" title="虚拟化与虚拟机的分类">虚拟化与虚拟机的分类</a></li><li>
           <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%AE%B9%E5%99%A8/kubernetesk8s%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="Kubernetes(K8S)相关问题">Kubernetes(K8S)相关问题</a></li></ul></article>
 
-  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#docker容器和虚拟机的区别是啥">Docker容器和虚拟机的区别是啥？</a></li>
+        <li><a href="#什么是多阶段构建">什么是多阶段构建？</a></li>
+        <li><a href="#什么是镜像层和构建缓存">什么是镜像层和构建缓存？</a></li>
+        <li><a href="#为啥不把程序依赖的服务比如数据库反向代理啥的都打包进一个镜像里">为啥不把程序依赖的服务比如数据库，反向代理啥的都打包进一个镜像里？</a></li>
+        <li><a href="#什么是build-context">什么是build context?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.163.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div></div>
-  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
 </div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/b4fd93d10fc977d1ee809cfdcb8fc97f.js" defer></script><script src="/js/theme.min.js" defer></script></body>
