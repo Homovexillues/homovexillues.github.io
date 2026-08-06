@@ -10,8 +10,8 @@
 	<meta itemprop="name" content="Docker相关问题">
 	<meta itemprop="description" content="Docker容器和虚拟机的区别是啥？ 一个docker的container为**[程序，环境]，而环境又是[操作系统，用户配置]** 而操作系统又分为了**[用户空间，内核空间]，应用程序运行在用户空间**，而作为一个容器，它不真的像是虚拟机一样需要操作系统内核空间的部分，只需要阉割掉内核空间，只保留用户空间，就能构建出程序运行所需的环境。">
 	<meta itemprop="datePublished" content="2025-11-22T12:57:41+08:00">
-	<meta itemprop="dateModified" content="2026-08-05T15:13:28+08:00">
-	<meta itemprop="wordCount" content="1557">
+	<meta itemprop="dateModified" content="2026-08-06T13:38:55+08:00">
+	<meta itemprop="wordCount" content="3210">
 	<meta itemprop="keywords" content="Docker,虚拟机"><meta property="og:url" content="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%AE%B9%E5%99%A8/docker%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
 	<meta property="og:site_name" content="红石门">
 	<meta property="og:title" content="Docker相关问题">
@@ -20,7 +20,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="工具与环境">
 		<meta property="article:published_time" content="2025-11-22T12:57:41+08:00">
-		<meta property="article:modified_time" content="2026-08-05T15:13:28+08:00">
+		<meta property="article:modified_time" content="2026-08-06T13:38:55+08:00">
 		<meta property="article:tag" content="Docker">
 		<meta property="article:tag" content="虚拟机">
 
@@ -41,8 +41,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/%E5%AE%B9%E5%99%A8\/docker%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98\/"
-    },"genre": "工具与环境","keywords": "Docker, 虚拟机","wordcount":  1557 ,
-    "url": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/%E5%AE%B9%E5%99%A8\/docker%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98\/","datePublished": "2025-11-22T12:57:41+08:00","dateModified": "2026-08-05T15:13:28+08:00","publisher": {
+    },"genre": "工具与环境","keywords": "Docker, 虚拟机","wordcount":  3210 ,
+    "url": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/%E5%AE%B9%E5%99%A8\/docker%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98\/","datePublished": "2025-11-22T12:57:41+08:00","dateModified": "2026-08-06T13:38:55+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -130,8 +130,8 @@
   <article class="page single special">
     <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Docker相关问题</h1><div class="post-meta"><div class="post-meta-line">
               <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/">工具与环境</a> / <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%AE%B9%E5%99%A8/">容器</a></span>
-            </div><div class="post-meta-line"><span title="创建时间：2025-11-22 12:57:41 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2025-11-22">2025-11-22</time></span>&nbsp;<span title="最后修改：2026-08-05 15:13:28 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-08-05">2026-08-05</time></span>&nbsp;<span title="1557 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 1600 字</span>&nbsp;
-          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 4 分钟</span>
+            </div><div class="post-meta-line"><span title="创建时间：2025-11-22 12:57:41 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2025-11-22">2025-11-22</time></span>&nbsp;<span title="最后修改：2026-08-06 13:38:55 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-08-06">2026-08-06</time></span>&nbsp;<span title="3210 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 3300 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 7 分钟</span>
         </div><div class="post-meta-line post-tag-list">
               <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/docker/">Docker</a> / <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a></span>
             </div></div>
@@ -145,10 +145,16 @@
     <li>
       <ul>
         <li><a href="#docker容器和虚拟机的区别是啥">Docker容器和虚拟机的区别是啥？</a></li>
+        <li><a href="#为啥运行容器不能默认用root">为啥运行容器不能默认用Root？</a></li>
         <li><a href="#什么是多阶段构建">什么是多阶段构建？</a></li>
         <li><a href="#什么是镜像层和构建缓存">什么是镜像层和构建缓存？</a></li>
         <li><a href="#为啥不把程序依赖的服务比如数据库反向代理啥的都打包进一个镜像里">为啥不把程序依赖的服务比如数据库，反向代理啥的都打包进一个镜像里？</a></li>
         <li><a href="#什么是build-context">什么是build context?</a></li>
+        <li><a href="#为啥配置和密钥不能放进镜像里">为啥配置和密钥不能放进镜像里？</a></li>
+        <li><a href="#docker-run-xxxlatest-这个latest是啥">docker run xxx:latest 这个:latest是啥？</a></li>
+        <li><a href="#dockerfile有个entrypoint也有个cmd这俩有区别吗">dockerfile有个ENTRYPOINT，也有个CMD，这俩有区别吗？</a></li>
+        <li><a href="#docker里的pid-1是啥">Docker里的PID 1是啥？</a></li>
+        <li><a href="#为啥数据不能只写进容器文件系统">为啥数据不能只写进容器文件系统</a></li>
       </ul>
     </li>
   </ul>
@@ -166,6 +172,12 @@
 <li>镜像为<strong>只读模板</strong></li>
 <li>容器为<strong>镜像+临时可写层+主进程</strong></li>
 </ul>
+<h3 class="heading-element" id="为啥运行容器不能默认用root"><span>为啥运行容器不能默认用Root？</span>
+  <a href="#%e4%b8%ba%e5%95%a5%e8%bf%90%e8%a1%8c%e5%ae%b9%e5%99%a8%e4%b8%8d%e8%83%bd%e9%bb%98%e8%ae%a4%e7%94%a8root" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>这就接了上面的问题，因为Docker维护的是容器而不是虚拟机，它是共享系统内核的，所以都不用提如果镜像本身有什么远程控制漏洞之类的问题，就最基本的，容器访问宿主机文件的时候是靠直接挂载在宿主机上实现的，一旦挂载语句写错了，写了个类似<code>-v /:/host</code>之类的语句，这个程序就直接拥有root权限然后可以在你的根目录下想干嘛就干嘛</p>
+<p>所以其实编译的时候用个root问题不大，因为你编译的行为也不会进入最终运行的环境，但是最后运行时用root就比较危险了</p>
 <h3 class="heading-element" id="什么是多阶段构建"><span>什么是多阶段构建？</span>
   <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%a4%9a%e9%98%b6%e6%ae%b5%e6%9e%84%e5%bb%ba" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -249,6 +261,125 @@
   </a>
 </h3><p>就构建上下文嘛，字面义，不过这里需要解释的其实主要不是这个，而是Docker的运行模式，安装了之后Docker会先开起来一个<strong>Docker daemon</strong>,即后台的服务，这个服务主要用来维护正在运行的镜像等等，而执行Dockerfile的时候，其实就是把这些上下文文件发给这个Docker daemon，然后由它来打包，而我们用的docker命令，实际上是docker的client，docker是个经典的<strong>C/S</strong>架构的软件</p>
 <p>而为了防止在把构建上下文里掺入一些敏感文件一并发给Docker daemon来打包成镜像，就需要写**.dockerignore**文件来排除一些比如.git文件，含有个人信息的配置文件等。</p>
+<h3 class="heading-element" id="为啥配置和密钥不能放进镜像里"><span>为啥配置和密钥不能放进镜像里？</span>
+  <a href="#%e4%b8%ba%e5%95%a5%e9%85%8d%e7%bd%ae%e5%92%8c%e5%af%86%e9%92%a5%e4%b8%8d%e8%83%bd%e6%94%be%e8%bf%9b%e9%95%9c%e5%83%8f%e9%87%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>这里就涉及到之前的镜像层知识点了，首先你都打包成镜像了，你一定要假设这东西是公开的，隐私信息一定不能掺进去，其次是关于之前的分层结构，Dockerfile执行的时候每一层都会分一个层，哪怕你在父层导入了配置，然后在下一层就删除了配置，这个配置的缓存还是在的，完全有可能会被恢复。</p>
+<p>另外ARG和ENV也不行，ARG的语句可能会进入构建历史，而ENV会直接将数据保存在镜像元数据和容器环境中。</p>
+<h3 class="heading-element" id="docker-run-xxxlatest-这个latest是啥"><span>docker run xxx:latest 这个:latest是啥？</span>
+  <a href="#docker-run-xxxlatest-%e8%bf%99%e4%b8%aalatest%e6%98%af%e5%95%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>镜像引用</strong>，完整格式为<code>[仓库地址/]镜像名[:标签]</code>，比如：</p>
+<p><code>docker build -t butler:latest</code> 构建的时候打的标签就是“latest”，而默认标签就是latest，不指定标签直接写<code>docker run xxx</code>的时候跑的就是latest版</p>
+<h3 class="heading-element" id="dockerfile有个entrypoint也有个cmd这俩有区别吗"><span>dockerfile有个ENTRYPOINT，也有个CMD，这俩有区别吗？</span>
+  <a href="#dockerfile%e6%9c%89%e4%b8%aaentrypoint%e4%b9%9f%e6%9c%89%e4%b8%aacmd%e8%bf%99%e4%bf%a9%e6%9c%89%e5%8c%ba%e5%88%ab%e5%90%97" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>这就和上面的那条有关了，比如写了这么个配置:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-dockerfile"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;butler&#34;</span><span class="p">,</span><span class="s2">&#34;serve&#34;</span><span class="p">]</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>那运行<code>docker run butler</code>（这里的butler是镜像名）的时候确实是能跑，但是如果这么写:</p>
+<p><code>docker run butler tree</code>,在没有EntryPoint的情况下它会默认把tree当成参数，整体替换调CMD，然后找不到tree命令，报错</p>
+<p>所以一般情况下，都是用<strong>ENTRYPOINT指定默认运行哪个程序</strong>，用<strong>CMD指定默认给这个程序什么参数</strong>，也就是这样：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-dockerfile"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;butler&#34;</span><span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;serve&#34;</span><span class="p">]</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>这样再执行<code>docker run butler:latest tree</code>的时候，执行的就是butler tree了，而不是直接报错，当然docker其实也提供了参数可以让你绕过默认的ENTRYPOINT<code>docker run --entrypoint /bin/sh butler:dev</code></p>
+<p>再就是为啥推荐写成JSON数组形式而不是<code>CMD butler serve</code>类似的写法呢？因为这种写法就会被识别成shell form,即理解成<code>/bin/sh -c &quot;butler serve&quot;</code>,所以最好写成“exec form”,即那种JSON数组的格式</p>
+<h3 class="heading-element" id="docker里的pid-1是啥"><span>Docker里的PID 1是啥？</span>
+  <a href="#docker%e9%87%8c%e7%9a%84pid-1%e6%98%af%e5%95%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>容器启动后有个主进程，通常PID是1，容器关闭的时候，会先向这个PID 1发送一个<code>SIGTERM</code>,等一段时间，如果还没退出，则发送<code>SIGKILL</code></p>
+<p>即如果程序不处理<code>SIGTERM</code>,则Docker会到超时后强制杀死它</p>
+<h3 class="heading-element" id="为啥数据不能只写进容器文件系统"><span>为啥数据不能只写进容器文件系统</span>
+  <a href="#%e4%b8%ba%e5%95%a5%e6%95%b0%e6%8d%ae%e4%b8%8d%e8%83%bd%e5%8f%aa%e5%86%99%e8%bf%9b%e5%ae%b9%e5%99%a8%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>容器运行时会在镜像上增加一个临时可写层，向<code>/app/state.json</code>写入内容时，就是在写这一层容器可写层</p>
+<p>同一个容器停止再启动，文件通常还在，但是如果删除容器再用镜像开起来，则原容器的可写层就消失了，因此需要持久化的数据就要写到：</p>
+<ul>
+<li>
+<p>bind mount</p>
+<p><code>docker run -v /home/homovexillues/config:/app/config butler</code></p>
+<p>即将宿主机上的指定目录挂载到容器里的指定地址</p>
+</li>
+<li>
+<p>Docker volume</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-bash"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker volume create butler-data
+</span></span><span class="line"><span class="cl">docker run -v butler-data:/app/data butler</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>Docker托管的仓库，即Docker管理的卷，实际在<code>/var/lib/docker/volumes/butler-data/</code>下</p>
+<p>这就是Dockerfile里<code>VOLUME</code>关键字的用法,不过这个关键字有个问题，即它只是声明地址必须为挂载点，但是你如果启动容器的时候没有显式的声明挂载，那么它就会自动创建一个名称为随机64位哈希的名字来当卷，像这样：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-bash"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">homovexillues@xxxxxxxx ~&gt; docker volume ls
+</span></span><span class="line"><span class="cl">DRIVER    VOLUME NAME
+</span></span><span class="line"><span class="cl"><span class="nb">local</span>     961dffacaceb4b80ad3990519e57aeeb8ceb73ff937abace7710c302b29327a8
+</span></span><span class="line"><span class="cl"><span class="nb">local</span>     n8n_data
+</span></span><span class="line"><span class="cl"><span class="nb">local</span>     plane-app_logs_api</span></span></code></pre></td></tr></table></div>
+</div>
+</div></li>
+<li>
+<p>K8s存储申请单</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-yaml"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">PersistentVolumeClaim</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">butler-pvc</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">accessModes</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;ReadriteOnce&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nt">requests</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l">10Gi</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>在K8s里，Pod要存数据，不能直接写&quot;挂载 /dev/sdb&quot;,而是提交一份申请单(PVC),声明要10G，可读写存储，K8S收到申请后取分配一个实际的PersistentVolume，它背后可能是本地盘、云盘、NFS等，然后把Pod再挂上去</p>
+</li>
+<li>
+<p>外部数据库</p>
+</li>
+<li>
+<p>外部对象存储</p>
+</li>
+</ul>
 </div><hr class="awesome-hr" />
     <h2 id="see-also">相关内容</h2>
     <ul><li>
@@ -266,10 +397,16 @@
     <li>
       <ul>
         <li><a href="#docker容器和虚拟机的区别是啥">Docker容器和虚拟机的区别是啥？</a></li>
+        <li><a href="#为啥运行容器不能默认用root">为啥运行容器不能默认用Root？</a></li>
         <li><a href="#什么是多阶段构建">什么是多阶段构建？</a></li>
         <li><a href="#什么是镜像层和构建缓存">什么是镜像层和构建缓存？</a></li>
         <li><a href="#为啥不把程序依赖的服务比如数据库反向代理啥的都打包进一个镜像里">为啥不把程序依赖的服务比如数据库，反向代理啥的都打包进一个镜像里？</a></li>
         <li><a href="#什么是build-context">什么是build context?</a></li>
+        <li><a href="#为啥配置和密钥不能放进镜像里">为啥配置和密钥不能放进镜像里？</a></li>
+        <li><a href="#docker-run-xxxlatest-这个latest是啥">docker run xxx:latest 这个:latest是啥？</a></li>
+        <li><a href="#dockerfile有个entrypoint也有个cmd这俩有区别吗">dockerfile有个ENTRYPOINT，也有个CMD，这俩有区别吗？</a></li>
+        <li><a href="#docker里的pid-1是啥">Docker里的PID 1是啥？</a></li>
+        <li><a href="#为啥数据不能只写进容器文件系统">为啥数据不能只写进容器文件系统</a></li>
       </ul>
     </li>
   </ul>
