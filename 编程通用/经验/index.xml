@@ -6,8 +6,16 @@
     <description>个人知识库 Hugo 迁移演示</description>
     <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 07 Jul 2026 13:28:48 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 15:19:04 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>分代GC导致的内存占用问题</title>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E7%BB%8F%E9%AA%8C/%E5%88%86%E4%BB%A3gc%E5%AF%BC%E8%87%B4%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 07 Aug 2026 11:25:42 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E7%BB%8F%E9%AA%8C/%E5%88%86%E4%BB%A3gc%E5%AF%BC%E8%87%B4%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
+      <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8---%E7%BB%8F%E9%AA%8C/">编程通用 - 经验</category>
+      <description>&lt;p&gt;最近遇到了个奇怪的问题，公司的屎代码在运行的时候出现了这么个情况，随着程序运行，托管内存不断上涨，不断上涨，而且逐渐涨到了几百个MB，一开始我本以为是公司的屎山哪里又漏了屎出来，结果发现我自己改过的代码跑在现场也有这个问题，而且奇怪的是这些内存占用还会随着设备的不同而停在不同的峰值，有些是300MB左右，有些设备上则是100多MB。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>一些编程经验记录</title>
       <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E7%BB%8F%E9%AA%8C/%E4%B8%80%E4%BA%9B%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E8%AE%B0%E5%BD%95/</link>
