@@ -4,44 +4,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Python库-Shutil - 红石门</title><meta name="author" content="">
-<meta name="description" content=" 1 2 3 4 5 6 7 8 9 10 11 #将文件复制到指定位置 &gt;&gt;&gt;shutil.copy(&#39;test.py&#39;,&#39;toast_picture&#39;) &#39;toast_picture\\test.py&#39; #将整个文件夹复制到指定位置 &gt;&gt;&gt;shutil.copytree(&#39;toast_picture&#39;,&#39;toast_picture_backup&#39;) &#39;toast_picture_backup&#39; #将文件移动到指定位置 &gt;&gt;&gt;shutil.move(&#39;test.py&#39;,&#39;toast_picture&#39;) &#39;toast_picture\\test.py&#39; #shutil.rmtree(path)将删除path处的文件夹，包括子文件 &gt;&gt;&gt;shutil.rmtree(&#39;toast_picture_backup&#39;) "><meta name="keywords" content='Python, Python库'>
-	<meta itemprop="name" content="Python库-shutil">
-	<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 #将文件复制到指定位置 &gt;&gt;&gt;shutil.copy(&#39;test.py&#39;,&#39;toast_picture&#39;) &#39;toast_picture\\test.py&#39; #将整个文件夹复制到指定位置 &gt;&gt;&gt;shutil.copytree(&#39;toast_picture&#39;,&#39;toast_picture_backup&#39;) &#39;toast_picture_backup&#39; #将文件移动到指定位置 &gt;&gt;&gt;shutil.move(&#39;test.py&#39;,&#39;toast_picture&#39;) &#39;toast_picture\\test.py&#39; #shutil.rmtree(path)将删除path处的文件夹，包括子文件 &gt;&gt;&gt;shutil.rmtree(&#39;toast_picture_backup&#39;)">
-	<meta itemprop="datePublished" content="2024-03-31T04:16:15+08:00">
-	<meta itemprop="dateModified" content="2026-07-07T13:28:48+08:00">
-	<meta itemprop="wordCount" content="92">
-	<meta itemprop="keywords" content="Python,Python库"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-shutil/">
+    <title>Python解释器结构 - 红石门</title><meta name="author" content="">
+<meta name="description" content="以Windows平台为例：
+python.exe：命令行解释器入口。 pythonw.exe：不显示控制台窗口的解释器入口，通常用于 GUI 程序。 python313.dll：CPython 3.13 的核心运行库。解释器的大部分功能实际上都在这里，python.exe 只是一个较小的启动程序。 python3.dll：主要提供跨 Python 3.x 的稳定 ABI 接口，供部分嵌入式程序或扩展使用。 *.pyd：Windows 平台的 Python 原生扩展模块，本质上是特殊形式的 DLL。例如 _ssl.pyd、sqlite3.pyd 等会被 import 机制直接加载。它们通常和 Python 版本、CPU 架构绑定。 *.dll：Python 或扩展模块依赖的动态链接库，例如微软 C/C&#43;&#43; 运行库、OpenSSL、SQLite 等。 python313.zip：压缩后的 Python 标准库。Python 可以直接从 ZIP 中导入模块，不需要先解压。 *.pyc：Python 字节码，即 .py 源代码编译后的中间形式。它不是机器码，也不是加密文件，只是让解释器无需每次重新解析源码。Python 3.13 的 .pyc 通常不能直接交给其他 Python 版本使用。 python313._pth：嵌入式版本非常关键的模块搜索路径配置文件。 "><meta name="keywords" content='Python, Python库'>
+	<meta itemprop="name" content="Python解释器结构">
+	<meta itemprop="description" content="以Windows平台为例：
+python.exe：命令行解释器入口。 pythonw.exe：不显示控制台窗口的解释器入口，通常用于 GUI 程序。 python313.dll：CPython 3.13 的核心运行库。解释器的大部分功能实际上都在这里，python.exe 只是一个较小的启动程序。 python3.dll：主要提供跨 Python 3.x 的稳定 ABI 接口，供部分嵌入式程序或扩展使用。 *.pyd：Windows 平台的 Python 原生扩展模块，本质上是特殊形式的 DLL。例如 _ssl.pyd、sqlite3.pyd 等会被 import 机制直接加载。它们通常和 Python 版本、CPU 架构绑定。 *.dll：Python 或扩展模块依赖的动态链接库，例如微软 C/C&#43;&#43; 运行库、OpenSSL、SQLite 等。 python313.zip：压缩后的 Python 标准库。Python 可以直接从 ZIP 中导入模块，不需要先解压。 *.pyc：Python 字节码，即 .py 源代码编译后的中间形式。它不是机器码，也不是加密文件，只是让解释器无需每次重新解析源码。Python 3.13 的 .pyc 通常不能直接交给其他 Python 版本使用。 python313._pth：嵌入式版本非常关键的模块搜索路径配置文件。">
+	<meta itemprop="datePublished" content="2026-09-03T09:52:26+08:00">
+	<meta itemprop="dateModified" content="2026-09-03T10:08:34+08:00">
+	<meta itemprop="wordCount" content="485">
+	<meta itemprop="keywords" content="Python,Python库"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%BB%93%E6%9E%84/">
 	<meta property="og:site_name" content="红石门">
-	<meta property="og:title" content="Python库-shutil">
-	<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 #将文件复制到指定位置 &gt;&gt;&gt;shutil.copy(&#39;test.py&#39;,&#39;toast_picture&#39;) &#39;toast_picture\\test.py&#39; #将整个文件夹复制到指定位置 &gt;&gt;&gt;shutil.copytree(&#39;toast_picture&#39;,&#39;toast_picture_backup&#39;) &#39;toast_picture_backup&#39; #将文件移动到指定位置 &gt;&gt;&gt;shutil.move(&#39;test.py&#39;,&#39;toast_picture&#39;) &#39;toast_picture\\test.py&#39; #shutil.rmtree(path)将删除path处的文件夹，包括子文件 &gt;&gt;&gt;shutil.rmtree(&#39;toast_picture_backup&#39;)">
+	<meta property="og:title" content="Python解释器结构">
+	<meta property="og:description" content="以Windows平台为例：
+python.exe：命令行解释器入口。 pythonw.exe：不显示控制台窗口的解释器入口，通常用于 GUI 程序。 python313.dll：CPython 3.13 的核心运行库。解释器的大部分功能实际上都在这里，python.exe 只是一个较小的启动程序。 python3.dll：主要提供跨 Python 3.x 的稳定 ABI 接口，供部分嵌入式程序或扩展使用。 *.pyd：Windows 平台的 Python 原生扩展模块，本质上是特殊形式的 DLL。例如 _ssl.pyd、sqlite3.pyd 等会被 import 机制直接加载。它们通常和 Python 版本、CPU 架构绑定。 *.dll：Python 或扩展模块依赖的动态链接库，例如微软 C/C&#43;&#43; 运行库、OpenSSL、SQLite 等。 python313.zip：压缩后的 Python 标准库。Python 可以直接从 ZIP 中导入模块，不需要先解压。 *.pyc：Python 字节码，即 .py 源代码编译后的中间形式。它不是机器码，也不是加密文件，只是让解释器无需每次重新解析源码。Python 3.13 的 .pyc 通常不能直接交给其他 Python 版本使用。 python313._pth：嵌入式版本非常关键的模块搜索路径配置文件。">
 	<meta property="og:locale" content="zh_CN">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="编程语言">
-		<meta property="article:published_time" content="2024-03-31T04:16:15+08:00">
-		<meta property="article:modified_time" content="2026-07-07T13:28:48+08:00">
+		<meta property="article:published_time" content="2026-09-03T09:52:26+08:00">
+		<meta property="article:modified_time" content="2026-09-03T10:08:34+08:00">
 		<meta property="article:tag" content="Python">
 		<meta property="article:tag" content="Python库">
 
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Python库-shutil">
-	<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 #将文件复制到指定位置 &gt;&gt;&gt;shutil.copy(&#39;test.py&#39;,&#39;toast_picture&#39;) &#39;toast_picture\\test.py&#39; #将整个文件夹复制到指定位置 &gt;&gt;&gt;shutil.copytree(&#39;toast_picture&#39;,&#39;toast_picture_backup&#39;) &#39;toast_picture_backup&#39; #将文件移动到指定位置 &gt;&gt;&gt;shutil.move(&#39;test.py&#39;,&#39;toast_picture&#39;) &#39;toast_picture\\test.py&#39; #shutil.rmtree(path)将删除path处的文件夹，包括子文件 &gt;&gt;&gt;shutil.rmtree(&#39;toast_picture_backup&#39;)">
+	<meta name="twitter:title" content="Python解释器结构">
+	<meta name="twitter:description" content="以Windows平台为例：
+python.exe：命令行解释器入口。 pythonw.exe：不显示控制台窗口的解释器入口，通常用于 GUI 程序。 python313.dll：CPython 3.13 的核心运行库。解释器的大部分功能实际上都在这里，python.exe 只是一个较小的启动程序。 python3.dll：主要提供跨 Python 3.x 的稳定 ABI 接口，供部分嵌入式程序或扩展使用。 *.pyd：Windows 平台的 Python 原生扩展模块，本质上是特殊形式的 DLL。例如 _ssl.pyd、sqlite3.pyd 等会被 import 机制直接加载。它们通常和 Python 版本、CPU 架构绑定。 *.dll：Python 或扩展模块依赖的动态链接库，例如微软 C/C&#43;&#43; 运行库、OpenSSL、SQLite 等。 python313.zip：压缩后的 Python 标准库。Python 可以直接从 ZIP 中导入模块，不需要先解压。 *.pyc：Python 字节码，即 .py 源代码编译后的中间形式。它不是机器码，也不是加密文件，只是让解释器无需每次重新解析源码。Python 3.13 的 .pyc 通常不能直接交给其他 Python 版本使用。 python313._pth：嵌入式版本非常关键的模块搜索路径配置文件。">
 <meta name="application-name" content="Hugo FixIt Lite">
 <meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-shutil/" title="Python库-shutil - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-os/" title="Python库-os" /><link rel="next" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-json/" title="Python库-json" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%BB%93%E6%9E%84/" title="Python解释器结构 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/fhs%E6%A0%87%E5%87%86%E4%B8%8Exdg%E8%A7%84%E8%8C%83/" title="FHS标准与XDG规范" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Python库-shutil",
+    "headline": "Python解释器结构",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/python\/python%E5%BA%93-shutil\/"
-    },"genre": "编程语言","keywords": "Python, Python库","wordcount":  92 ,
-    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/python\/python%E5%BA%93-shutil\/","datePublished": "2024-03-31T04:16:15+08:00","dateModified": "2026-07-07T13:28:48+08:00","publisher": {
+      "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/python\/python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%BB%93%E6%9E%84\/"
+    },"genre": "编程语言","keywords": "Python, Python库","wordcount":  485 ,
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/python\/python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%BB%93%E6%9E%84\/","datePublished": "2026-09-03T09:52:26+08:00","dateModified": "2026-09-03T10:08:34+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -120,55 +124,40 @@
       <div class="details-content related-content">
         <ul class="related-list"><li class="related-item">
               <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-json/" title="Python库-Json">Python库-Json</a></li><li class="related-item">
+              <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-shutil/" title="Python库-Shutil">Python库-Shutil</a></li><li class="related-item">
               <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-os/" title="Python库-Os">Python库-Os</a></li><li class="related-item">
               <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-openpyxl/" title="Python库-Openpyxl">Python库-Openpyxl</a></li><li class="related-item">
-              <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%BB%93%E6%9E%84/" title="Python解释器结构">Python解释器结构</a></li><li class="related-item">
               <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-time/" title="Python库-Time">Python库-Time</a></li></ul>
       </div>
     </div></aside>
 
   <article class="page single special">
-    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Python库-Shutil</h1><div class="post-meta"><div class="post-meta-line">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Python解释器结构</h1><div class="post-meta"><div class="post-meta-line">
               <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a> / <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/">Python</a></span>
-            </div><div class="post-meta-line"><span title="创建时间：2024-03-31 04:16:15 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2024-03-31">2024-03-31</time></span>&nbsp;<span title="最后修改：2026-07-07 13:28:48 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-07">2026-07-07</time></span>&nbsp;<span title="92 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 100 字</span>&nbsp;
+            </div><div class="post-meta-line"><span title="创建时间：2026-09-03 09:52:26 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-09-03">2026-09-03</time></span>&nbsp;<span title="最后修改：2026-09-03 10:08:34 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-09-03">2026-09-03</time></span>&nbsp;<span title="485 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 500 字</span>&nbsp;
           <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 1 分钟</span>
         </div><div class="post-meta-line post-tag-list">
               <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/python/">Python</a> / <a href="/tags/python%E5%BA%93/">Python库</a></span>
             </div></div>
-    </div><div class="content" id="content"><div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
-<div class="code-header language-python"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="2" style="--fi-max-shown-lines:20;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#将文件复制到指定位置</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span><span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;test.py&#39;</span><span class="p">,</span><span class="s1">&#39;toast_picture&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;toast_picture</span><span class="se">\\</span><span class="s1">test.py&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#将整个文件夹复制到指定位置</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span><span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="s1">&#39;toast_picture&#39;</span><span class="p">,</span><span class="s1">&#39;toast_picture_backup&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;toast_picture_backup&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#将文件移动到指定位置</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span><span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="s1">&#39;test.py&#39;</span><span class="p">,</span><span class="s1">&#39;toast_picture&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;toast_picture</span><span class="se">\\</span><span class="s1">test.py&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#shutil.rmtree(path)将删除path处的文件夹，包括子文件</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span><span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="s1">&#39;toast_picture_backup&#39;</span><span class="p">)</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div></div><hr class="awesome-hr" />
+    </div><div class="content" id="content"><p>以Windows平台为例：</p>
+<ul>
+<li><code>python.exe</code>：命令行解释器入口。</li>
+<li><code>pythonw.exe</code>：不显示控制台窗口的解释器入口，通常用于 GUI 程序。</li>
+<li><code>python313.dll</code>：<code>CPython</code> 3.13 的核心运行库。解释器的大部分功能实际上都在这里，<code>python.exe</code> 只是一个较小的启动程序。</li>
+<li><code>python3.dll</code>：主要提供跨 Python 3.x 的稳定 ABI 接口，供部分嵌入式程序或扩展使用。</li>
+<li><code>*.pyd</code>：Windows 平台的 Python 原生扩展模块，本质上是特殊形式的 DLL。例如 <code>_ssl.pyd</code>、<code>sqlite3.pyd</code> 等会被 import 机制直接加载。它们通常和 Python 版本、CPU 架构绑定。</li>
+<li><code>*.dll</code>：Python 或扩展模块依赖的动态链接库，例如微软 C/C++ 运行库、OpenSSL、SQLite 等。</li>
+<li><code>python313.zip</code>：压缩后的 Python 标准库。Python 可以直接从 ZIP 中导入模块，不需要先解压。</li>
+<li><code>*.pyc</code>：Python 字节码，即 <code>.py</code> 源代码编译后的中间形式。它不是机器码，也不是加密文件，只是让解释器无需每次重新解析源码。Python 3.13 的 <code>.pyc</code> 通常不能直接交给其他 Python 版本使用。</li>
+<li>python313._pth：嵌入式版本非常关键的模块搜索路径配置文件。</li>
+</ul>
+</div><hr class="awesome-hr" />
     <h2 id="see-also">相关内容</h2>
     <ul><li>
           <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-json/" title="Python库-Json">Python库-Json</a></li><li>
+          <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-shutil/" title="Python库-Shutil">Python库-Shutil</a></li><li>
           <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-os/" title="Python库-Os">Python库-Os</a></li><li>
           <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-openpyxl/" title="Python库-Openpyxl">Python库-Openpyxl</a></li><li>
-          <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%BB%93%E6%9E%84/" title="Python解释器结构">Python解释器结构</a></li><li>
           <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/python%E5%BA%93-time/" title="Python库-Time">Python库-Time</a></li></ul></article>
 
   <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
@@ -177,5 +166,5 @@
   </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/0456aab5b589b6184abeaf31c48fd950.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</div><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/js/config/dd3b3953d3e872707d1cc184f82e2638.js" defer></script><script src="/js/theme.min.js" defer></script></body>
 </html>
