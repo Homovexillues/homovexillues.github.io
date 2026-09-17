@@ -4,7 +4,7 @@
     <title>问答 - 标签 - 红石门</title>
     <link>http://localhost:1313/tags/%E9%97%AE%E7%AD%94/</link>
     <description>个人知识库 Hugo 迁移演示</description>
-    <generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator>
+    <generator>Hugo 0.165.0 &amp; FixIt v0.4.5</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 07 Jul 2026 14:23:24 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/%E9%97%AE%E7%AD%94/index.xml" rel="self" type="application/rss+xml" />
