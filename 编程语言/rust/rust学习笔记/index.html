@@ -10,8 +10,8 @@
 	<meta itemprop="name" content="Rust学习笔记">
 	<meta itemprop="description" content="Cargo 由于cargo编译速度不够，所以cargo支持了一个cargo check命令，可以快速过一遍代码，看看能不能通过编译">
 	<meta itemprop="datePublished" content="2026-05-15T09:04:17+08:00">
-	<meta itemprop="dateModified" content="2026-07-07T13:28:00+08:00">
-	<meta itemprop="wordCount" content="106">
+	<meta itemprop="dateModified" content="2026-09-20T17:13:18+08:00">
+	<meta itemprop="wordCount" content="269">
 	<meta itemprop="keywords" content="Rust"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/rust/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 	<meta property="og:site_name" content="红石门">
 	<meta property="og:title" content="Rust学习笔记">
@@ -20,7 +20,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="编程语言">
 		<meta property="article:published_time" content="2026-05-15T09:04:17+08:00">
-		<meta property="article:modified_time" content="2026-07-07T13:28:00+08:00">
+		<meta property="article:modified_time" content="2026-09-20T17:13:18+08:00">
 		<meta property="article:tag" content="Rust">
 
 	<meta name="twitter:card" content="summary">
@@ -40,8 +40,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/rust\/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
-    },"genre": "编程语言","keywords": "Rust","wordcount":  106 ,
-    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/rust\/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2026-05-15T09:04:17+08:00","dateModified": "2026-07-07T13:28:00+08:00","publisher": {
+    },"genre": "编程语言","keywords": "Rust","wordcount":  269 ,
+    "url": "http:\/\/localhost:1313\/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80\/rust\/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2026-05-15T09:04:17+08:00","dateModified": "2026-09-20T17:13:18+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -118,7 +118,7 @@
   <article class="page single special">
     <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Rust学习笔记</h1><div class="post-meta"><div class="post-meta-line">
               <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a> / <a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/rust/">Rust</a></span>
-            </div><div class="post-meta-line"><span title="创建时间：2026-05-15 09:04:17 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-05-15">2026-05-15</time></span>&nbsp;<span title="最后修改：2026-07-07 13:28:00 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-07">2026-07-07</time></span>&nbsp;<span title="106 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 200 字</span>&nbsp;
+            </div><div class="post-meta-line"><span title="创建时间：2026-05-15 09:04:17 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-05-15">2026-05-15</time></span>&nbsp;<span title="最后修改：2026-09-20 17:13:18 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-09-20">2026-09-20</time></span>&nbsp;<span title="269 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 300 字</span>&nbsp;
           <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 1 分钟</span>
         </div><div class="post-meta-line post-tag-list">
               <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/rust/">Rust</a></span>
@@ -133,6 +133,7 @@
     <li>
       <ul>
         <li><a href="#cargo">Cargo</a></li>
+        <li><a href="#string">String</a></li>
       </ul>
     </li>
   </ul>
@@ -142,7 +143,11 @@
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>由于cargo编译速度不够，所以cargo支持了一个<code>cargo check</code>命令，可以快速过一遍代码，看看能不能通过编译</p>
-<p>首先看文档里给的第一个例子就有点迷惑了，为啥String是个结构体而不是值类型的？</p>
+<h3 class="heading-element" id="string"><span>String</span>
+  <a href="#string" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>首先看文档里给的第一个例子就有点迷惑了，为啥String是值类型的？</p>
 <div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
 <div class="code-header language-rust"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -150,7 +155,34 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Rust" data-lang="Rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span></span></span></code></pre></td></tr></table></div>
 </div>
-</div></div></article>
+</div><p>本质和C++一路，字符串不走引用类型，不过Rust是有所有权系统的，所以它默认的语义就是move，且会在编译器层面就防止你用被move的变量，比如下面的这个例子：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-rust"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Rust" data-lang="Rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello,world&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// 默认move语义
+</span></span></span><span class="line"><span class="cl"><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// 编程器会直接报错
+</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>但是如果是C++</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-c++"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="action-btn line-nos-btn" aria-label="切换行号" role="button" title="切换行号" data-ct-tooltip><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="action-btn line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行" data-ct-tooltip><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="action-btn copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板" data-copied-text="已复制" data-ct-tooltip><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="20" data-line-digit="1" style="--fi-max-shown-lines:20;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&#34;hi&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span> <span class="c1">// a是完全可以随便用的
+</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>感觉Rust真是看了一眼克苏鲁C++之后疯了的调查员啊</p>
+</div></article>
 
   <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
@@ -161,6 +193,7 @@
     <li>
       <ul>
         <li><a href="#cargo">Cargo</a></li>
+        <li><a href="#string">String</a></li>
       </ul>
     </li>
   </ul>
