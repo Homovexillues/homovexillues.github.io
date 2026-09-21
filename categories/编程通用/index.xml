@@ -6,8 +6,16 @@
     <description>个人知识库 Hugo 迁移演示</description>
     <generator>Hugo 0.165.0 &amp; FixIt v0.4.5</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 07 Jul 2026 13:28:48 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 11:48:22 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>断点与调试</title>
+      <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E6%96%AD%E7%82%B9%E4%B8%8E%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Mon, 21 Sep 2026 11:07:16 +0800</pubDate>
+      <guid>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/%E6%96%AD%E7%82%B9%E4%B8%8E%E8%B0%83%E8%AF%95/</guid>
+      <category domain="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/">编程通用</category>
+      <description>&lt;p&gt;从入行起就开始用IDE的程序员可能会问出这样的一个问题:&amp;quot;&lt;strong&gt;话说在IDE出现之前，人们是怎么打断点的？&lt;/strong&gt;&amp;quot;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;编译型语言断点依赖的是操作系统底层的调试API&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Unix是ptrace&lt;/li&gt;&#xA;&lt;li&gt;Windows是Debug API&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;而解释型语言/脚本语言，调试依赖&lt;strong&gt;解释器内置钩子&lt;/strong&gt;，不是CPU内置陷阱指令&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;内核调试会更麻烦&lt;/strong&gt;：用户态ptrace不能调试内核，要用&lt;code&gt;kgdb&lt;/code&gt;，或者硬件调试器(JTAG)&lt;/li&gt;&#xA;&lt;li&gt;调试符号&#xA;&lt;ul&gt;&#xA;&lt;li&gt;调试符号记录了&lt;strong&gt;行号、变量名——&amp;gt;对应机器码地址&lt;/strong&gt;。&lt;/li&gt;&#xA;&lt;li&gt;如C#这种，在编译程序的时候会生成一个&lt;code&gt;.pdb&lt;/code&gt;文件，即调试符号文件&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;软件断点&#xA;&lt;ul&gt;&#xA;&lt;li&gt;调试器直接修改目标进程内存：把断点位置的CPU指令替换成一条&lt;strong&gt;陷阱指令&lt;/strong&gt;（x86是&lt;code&gt;int3&lt;/code&gt;,0xCC),CPU执行到这里的时候触发异常，操作系统暂停进程，把控制权交还给调试器，调试器此时把指令换回原来的代码，就可以看到寄存器，内存，单步&lt;/li&gt;&#xA;&lt;li&gt;可以直接用调试器来单步调试，比如最著名的GNU的gdb，就是个交互式的纯终端调试器&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code&gt;# 编译时带上调试信息 -g,调试符号直接附加在可执行文件上，不带这个参数就默认不附加&#xA;&amp;gt;&amp;gt;&amp;gt; gcc -g test.c -o test &#xA;&amp;gt;&amp;gt;&amp;gt; gdb ./test &#xA;# 在main第20行打断点&#xA;&amp;gt;&amp;gt;&amp;gt; (gdb) b main:20  &#xA;&amp;gt;&amp;gt;&amp;gt; (gdb) run &#xA;# next单步 &#xA;&amp;gt;&amp;gt;&amp;gt; (gdb) n &#xA;# print变量x &#xA;&amp;gt;&amp;gt;&amp;gt; (gdb) p x&#xA;# 打印调用栈 &#xA;&amp;gt;&amp;gt;&amp;gt; (gdb) bt &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;下面是我对一个简单的C程序的调试示例：&#xA;原程序:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Cron语法</title>
       <link>http://localhost:1313/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/cron%E8%AF%AD%E6%B3%95/</link>
