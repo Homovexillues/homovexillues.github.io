@@ -12,8 +12,8 @@
 	<meta itemprop="description" content="文件系统的组成 一切皆文件
 不仅普通的文件和目录，包括块设备、管道，socket等一切都交给文件系统管理。">
 	<meta itemprop="datePublished" content="2023-11-11T17:07:49+08:00">
-	<meta itemprop="dateModified" content="2026-07-07T13:28:00+08:00">
-	<meta itemprop="wordCount" content="2231">
+	<meta itemprop="dateModified" content="2026-09-22T11:50:03+08:00">
+	<meta itemprop="wordCount" content="2474">
 	<meta itemprop="keywords" content="Linux"><meta property="og:url" content="http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">
 	<meta property="og:site_name" content="红石门">
 	<meta property="og:title" content="Linux文件系统">
@@ -23,7 +23,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="工具与环境">
 		<meta property="article:published_time" content="2023-11-11T17:07:49+08:00">
-		<meta property="article:modified_time" content="2026-07-07T13:28:00+08:00">
+		<meta property="article:modified_time" content="2026-09-22T11:50:03+08:00">
 		<meta property="article:tag" content="Linux">
 
 	<meta name="twitter:card" content="summary">
@@ -44,8 +44,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/linux\/linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F\/"
-    },"genre": "工具与环境","keywords": "Linux","wordcount":  2231 ,
-    "url": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/linux\/linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F\/","datePublished": "2023-11-11T17:07:49+08:00","dateModified": "2026-07-07T13:28:00+08:00","publisher": {
+    },"genre": "工具与环境","keywords": "Linux","wordcount":  2474 ,
+    "url": "http:\/\/localhost:1313\/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83\/linux\/linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F\/","datePublished": "2023-11-11T17:07:49+08:00","dateModified": "2026-09-22T11:50:03+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -134,7 +134,7 @@
   <article class="page single special">
     <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Linux文件系统</h1><div class="post-meta"><div class="post-meta-line">
               <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/">工具与环境</a> / <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/linux/">Linux</a></span>
-            </div><div class="post-meta-line"><span title="创建时间：2023-11-11 17:07:49 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2023-11-11">2023-11-11</time></span>&nbsp;<span title="最后修改：2026-07-07 13:28:00 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-07-07">2026-07-07</time></span>&nbsp;<span title="2231 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 2300 字</span>&nbsp;
+            </div><div class="post-meta-line"><span title="创建时间：2023-11-11 17:07:49 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2023-11-11">2023-11-11</time></span>&nbsp;<span title="最后修改：2026-09-22 11:50:03 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-09-22">2026-09-22</time></span>&nbsp;<span title="2474 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 2500 字</span>&nbsp;
           <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 5 分钟</span>
         </div><div class="post-meta-line post-tag-list">
               <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/linux/">Linux</a></span>
@@ -533,7 +533,12 @@ cat-concatenate v.连接 adj.连接的</p>
   <a href="#proc" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><h3 class="heading-element" id="root"><span>root</span>
+</h3><p>一个<strong>虚拟文件系统(procfs)</strong>,内核在内存里动态生成，<strong>不占用磁盘空间</strong>。
+<strong>内核把进程、硬件、系统全局状态，以文件/目录的形式暴露给用户态程序</strong>
+读取<code>/proc/xxx</code>的时候，并非读取磁盘，而是实时<strong>向内核查询信息</strong>，写入部分文件就相当于直接向内核发送配置指令，文件只是<strong>伪装成文件的内核接口</strong>
+像是<code>htop</code>,<code>top</code>,<code>ps</code>,<code>uptime</code>这些工具，底层实际上全部都是读取<code>/proc</code>拿数据</p>
+<p>实际上它是Process FileSystem，进程文件系统，<code>/proc</code>就是它的挂载点，是一个Linux的经典虚拟文件系统</p>
+<h3 class="heading-element" id="root"><span>root</span>
   <a href="#root" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
