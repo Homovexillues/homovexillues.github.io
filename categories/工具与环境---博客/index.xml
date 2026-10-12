@@ -4,7 +4,7 @@
     <title>工具与环境 - 博客 - 分类 - 红石门</title>
     <link>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83---%E5%8D%9A%E5%AE%A2/</link>
     <description>个人知识库 Hugo 迁移演示</description>
-    <generator>Hugo 0.165.0 &amp; FixIt v0.4.5</generator>
+    <generator>Hugo 0.167.0 &amp; FixIt v0.4.5</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 07 Jul 2026 13:49:27 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83---%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +14,7 @@
       <pubDate>Mon, 06 Jul 2026 17:33:11 +0800</pubDate>
       <guid>http://localhost:1313/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E5%8D%9A%E5%AE%A2/hexo%E5%8D%9A%E5%AE%A2%E8%BD%AC%E5%90%91hugo%E8%AE%B0%E5%BD%95/</guid>
       <category domain="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83---%E5%8D%9A%E5%AE%A2/">工具与环境 - 博客</category>
-      <description>&lt;p&gt;在极端情况下，只需保留这些文件即可编译出hugo博客&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;content/&lt;/code&gt;：我的文章、分类文件夹、page bundle 图片资源。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;static/&lt;/code&gt;：站点级静态资源，比如 站点标签页图标、首页图。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;layouts/&lt;/code&gt;：该项目的所有自定义模板都在这里，首页 hero、文件夹页排序、文章页标签/时间显示都靠它。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在极端情况下，只需保留这些文件即可编译出hugo博客&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;content/&lt;/code&gt;：我的文章、分类文件夹、page bundle 图片资源。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;static/&lt;/code&gt;：站点级静态资源，比如 站点标签页图标、首页图。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;layouts/&lt;/code&gt;：该项目的所有自定义模板都在这里，首页 hero、文件夹页排序、文章页标签/时间显示都靠它。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;hugo.toml&lt;/code&gt;：站点配置、菜单、搜索、主题参数、数学公式、相关内容等都在这里。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;themes/FixIt/&lt;/code&gt;：主题本体。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>hexo&#43;Github搭建博客记录</title>

@@ -6,16 +6,30 @@
     <meta name="robots" content="noodp" />
     <title>C#相关问题 - 红石门</title><meta name="author" content="">
 <meta name="description" content="C#中$@&ldquo;字符串&quot;是什么意思 $表示{}内的内容会被替换为变量的值 @表示将后面字符串内的转义字符当作普通字符对待 C#中[STATHread]是什么意思？ [STAThread]是一个特性，用于指示应用程序的默认线程是单线程单元(STA),多用在程序的入口方法上 STA即Single Thread Apartment，是一种线程模型，在这个模型中，每个线程都有自己的单独的消息队列，用于处理Windows消息。这种模型对于需要处理用户界面的线程非常有用，因为用户界面通常需要在单个线程上进行操作以避免并发问题 [STATHread]特性在使用COM Interop(托管代码与非托管代码之间的协同过程)的应用程序中非常重要。如果应用程序实际调用了COM组件，则仅为COM interop初始化该线程，如果没有使用COM interop,则不初始化该线程。 #region&hellip;#endregion是什么意思？ 在C#中，#region和#endregion是预处理指令，用于在VisualStudio中标记一块可以折叠和展开的代码区域，可以在#region后添加任意描述文字，以便记住此区域的用途，不会影响代码执行，只是提升可读性 using关键字有什么用 导入命名空间，这样就可以在代码中直接使用该命名空间中的类型，如using System后不用写System.Console.WriteLine() var是什么意思 var是一个关键字，用于声明变量，var关键字告诉编译器，希望它根据变量的初始化表达式来推断变量类型。这被称为类型推断。
-"><meta name="keywords" content='C-sharp, 问题'>
+如var total =0;编译器会推断出total是一个int类型的变量，因为它被初始化为一个整数。
+var声明的变量必须在声明的时候进行初始化
+var只能用于局部变量的声明，不能在类的级别使用var来声明字段。
+怎么在C#方法的头尾添加计时
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 using System.Diagnostics; public void YourMethod() { //创建Stopwatch实例 Stopwatch stopwatch = new Stopwatch(); //开始计时 stopwatch.Start(); //代码本体 //停止计时 stopwatch.Stop(); //获取经过的时间 TimeSpan elapsed = stopwatch.Elapsed; //打印经过时间 Console.WriteLine($&#34;程序共运行了{elapsed.TotalMilliseconds}毫秒&#34;); } "><meta name="keywords" content='C-sharp, 问题'>
 	<meta itemprop="name" content="C#相关问题">
-	<meta itemprop="description" content="C#中$@“字符串&#34;是什么意思 $表示{}内的内容会被替换为变量的值 @表示将后面字符串内的转义字符当作普通字符对待 C#中[STATHread]是什么意思？ [STAThread]是一个特性，用于指示应用程序的默认线程是单线程单元(STA),多用在程序的入口方法上 STA即Single Thread Apartment，是一种线程模型，在这个模型中，每个线程都有自己的单独的消息队列，用于处理Windows消息。这种模型对于需要处理用户界面的线程非常有用，因为用户界面通常需要在单个线程上进行操作以避免并发问题 [STATHread]特性在使用COM Interop(托管代码与非托管代码之间的协同过程)的应用程序中非常重要。如果应用程序实际调用了COM组件，则仅为COM interop初始化该线程，如果没有使用COM interop,则不初始化该线程。 #region…#endregion是什么意思？ 在C#中，#region和#endregion是预处理指令，用于在VisualStudio中标记一块可以折叠和展开的代码区域，可以在#region后添加任意描述文字，以便记住此区域的用途，不会影响代码执行，只是提升可读性 using关键字有什么用 导入命名空间，这样就可以在代码中直接使用该命名空间中的类型，如using System后不用写System.Console.WriteLine() var是什么意思 var是一个关键字，用于声明变量，var关键字告诉编译器，希望它根据变量的初始化表达式来推断变量类型。这被称为类型推断。">
+	<meta itemprop="description" content="C#中$@“字符串&#34;是什么意思 $表示{}内的内容会被替换为变量的值 @表示将后面字符串内的转义字符当作普通字符对待 C#中[STATHread]是什么意思？ [STAThread]是一个特性，用于指示应用程序的默认线程是单线程单元(STA),多用在程序的入口方法上 STA即Single Thread Apartment，是一种线程模型，在这个模型中，每个线程都有自己的单独的消息队列，用于处理Windows消息。这种模型对于需要处理用户界面的线程非常有用，因为用户界面通常需要在单个线程上进行操作以避免并发问题 [STATHread]特性在使用COM Interop(托管代码与非托管代码之间的协同过程)的应用程序中非常重要。如果应用程序实际调用了COM组件，则仅为COM interop初始化该线程，如果没有使用COM interop,则不初始化该线程。 #region…#endregion是什么意思？ 在C#中，#region和#endregion是预处理指令，用于在VisualStudio中标记一块可以折叠和展开的代码区域，可以在#region后添加任意描述文字，以便记住此区域的用途，不会影响代码执行，只是提升可读性 using关键字有什么用 导入命名空间，这样就可以在代码中直接使用该命名空间中的类型，如using System后不用写System.Console.WriteLine() var是什么意思 var是一个关键字，用于声明变量，var关键字告诉编译器，希望它根据变量的初始化表达式来推断变量类型。这被称为类型推断。
+如var total =0;编译器会推断出total是一个int类型的变量，因为它被初始化为一个整数。
+var声明的变量必须在声明的时候进行初始化
+var只能用于局部变量的声明，不能在类的级别使用var来声明字段。
+怎么在C#方法的头尾添加计时
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 using System.Diagnostics; public void YourMethod() { //创建Stopwatch实例 Stopwatch stopwatch = new Stopwatch(); //开始计时 stopwatch.Start(); //代码本体 //停止计时 stopwatch.Stop(); //获取经过的时间 TimeSpan elapsed = stopwatch.Elapsed; //打印经过时间 Console.WriteLine($&#34;程序共运行了{elapsed.TotalMilliseconds}毫秒&#34;); }">
 	<meta itemprop="datePublished" content="2024-10-17T05:36:26+08:00">
 	<meta itemprop="dateModified" content="2026-07-07T13:28:00+08:00">
 	<meta itemprop="wordCount" content="5805">
 	<meta itemprop="keywords" content="C-Sharp,问题"><meta property="og:url" content="http://localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-sharp/c-sharp%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
 	<meta property="og:site_name" content="红石门">
 	<meta property="og:title" content="C#相关问题">
-	<meta property="og:description" content="C#中$@“字符串&#34;是什么意思 $表示{}内的内容会被替换为变量的值 @表示将后面字符串内的转义字符当作普通字符对待 C#中[STATHread]是什么意思？ [STAThread]是一个特性，用于指示应用程序的默认线程是单线程单元(STA),多用在程序的入口方法上 STA即Single Thread Apartment，是一种线程模型，在这个模型中，每个线程都有自己的单独的消息队列，用于处理Windows消息。这种模型对于需要处理用户界面的线程非常有用，因为用户界面通常需要在单个线程上进行操作以避免并发问题 [STATHread]特性在使用COM Interop(托管代码与非托管代码之间的协同过程)的应用程序中非常重要。如果应用程序实际调用了COM组件，则仅为COM interop初始化该线程，如果没有使用COM interop,则不初始化该线程。 #region…#endregion是什么意思？ 在C#中，#region和#endregion是预处理指令，用于在VisualStudio中标记一块可以折叠和展开的代码区域，可以在#region后添加任意描述文字，以便记住此区域的用途，不会影响代码执行，只是提升可读性 using关键字有什么用 导入命名空间，这样就可以在代码中直接使用该命名空间中的类型，如using System后不用写System.Console.WriteLine() var是什么意思 var是一个关键字，用于声明变量，var关键字告诉编译器，希望它根据变量的初始化表达式来推断变量类型。这被称为类型推断。">
+	<meta property="og:description" content="C#中$@“字符串&#34;是什么意思 $表示{}内的内容会被替换为变量的值 @表示将后面字符串内的转义字符当作普通字符对待 C#中[STATHread]是什么意思？ [STAThread]是一个特性，用于指示应用程序的默认线程是单线程单元(STA),多用在程序的入口方法上 STA即Single Thread Apartment，是一种线程模型，在这个模型中，每个线程都有自己的单独的消息队列，用于处理Windows消息。这种模型对于需要处理用户界面的线程非常有用，因为用户界面通常需要在单个线程上进行操作以避免并发问题 [STATHread]特性在使用COM Interop(托管代码与非托管代码之间的协同过程)的应用程序中非常重要。如果应用程序实际调用了COM组件，则仅为COM interop初始化该线程，如果没有使用COM interop,则不初始化该线程。 #region…#endregion是什么意思？ 在C#中，#region和#endregion是预处理指令，用于在VisualStudio中标记一块可以折叠和展开的代码区域，可以在#region后添加任意描述文字，以便记住此区域的用途，不会影响代码执行，只是提升可读性 using关键字有什么用 导入命名空间，这样就可以在代码中直接使用该命名空间中的类型，如using System后不用写System.Console.WriteLine() var是什么意思 var是一个关键字，用于声明变量，var关键字告诉编译器，希望它根据变量的初始化表达式来推断变量类型。这被称为类型推断。
+如var total =0;编译器会推断出total是一个int类型的变量，因为它被初始化为一个整数。
+var声明的变量必须在声明的时候进行初始化
+var只能用于局部变量的声明，不能在类的级别使用var来声明字段。
+怎么在C#方法的头尾添加计时
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 using System.Diagnostics; public void YourMethod() { //创建Stopwatch实例 Stopwatch stopwatch = new Stopwatch(); //开始计时 stopwatch.Start(); //代码本体 //停止计时 stopwatch.Stop(); //获取经过的时间 TimeSpan elapsed = stopwatch.Elapsed; //打印经过时间 Console.WriteLine($&#34;程序共运行了{elapsed.TotalMilliseconds}毫秒&#34;); }">
 	<meta property="og:locale" content="zh_CN">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="编程语言">
@@ -26,7 +40,12 @@
 
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="C#相关问题">
-	<meta name="twitter:description" content="C#中$@“字符串&#34;是什么意思 $表示{}内的内容会被替换为变量的值 @表示将后面字符串内的转义字符当作普通字符对待 C#中[STATHread]是什么意思？ [STAThread]是一个特性，用于指示应用程序的默认线程是单线程单元(STA),多用在程序的入口方法上 STA即Single Thread Apartment，是一种线程模型，在这个模型中，每个线程都有自己的单独的消息队列，用于处理Windows消息。这种模型对于需要处理用户界面的线程非常有用，因为用户界面通常需要在单个线程上进行操作以避免并发问题 [STATHread]特性在使用COM Interop(托管代码与非托管代码之间的协同过程)的应用程序中非常重要。如果应用程序实际调用了COM组件，则仅为COM interop初始化该线程，如果没有使用COM interop,则不初始化该线程。 #region…#endregion是什么意思？ 在C#中，#region和#endregion是预处理指令，用于在VisualStudio中标记一块可以折叠和展开的代码区域，可以在#region后添加任意描述文字，以便记住此区域的用途，不会影响代码执行，只是提升可读性 using关键字有什么用 导入命名空间，这样就可以在代码中直接使用该命名空间中的类型，如using System后不用写System.Console.WriteLine() var是什么意思 var是一个关键字，用于声明变量，var关键字告诉编译器，希望它根据变量的初始化表达式来推断变量类型。这被称为类型推断。">
+	<meta name="twitter:description" content="C#中$@“字符串&#34;是什么意思 $表示{}内的内容会被替换为变量的值 @表示将后面字符串内的转义字符当作普通字符对待 C#中[STATHread]是什么意思？ [STAThread]是一个特性，用于指示应用程序的默认线程是单线程单元(STA),多用在程序的入口方法上 STA即Single Thread Apartment，是一种线程模型，在这个模型中，每个线程都有自己的单独的消息队列，用于处理Windows消息。这种模型对于需要处理用户界面的线程非常有用，因为用户界面通常需要在单个线程上进行操作以避免并发问题 [STATHread]特性在使用COM Interop(托管代码与非托管代码之间的协同过程)的应用程序中非常重要。如果应用程序实际调用了COM组件，则仅为COM interop初始化该线程，如果没有使用COM interop,则不初始化该线程。 #region…#endregion是什么意思？ 在C#中，#region和#endregion是预处理指令，用于在VisualStudio中标记一块可以折叠和展开的代码区域，可以在#region后添加任意描述文字，以便记住此区域的用途，不会影响代码执行，只是提升可读性 using关键字有什么用 导入命名空间，这样就可以在代码中直接使用该命名空间中的类型，如using System后不用写System.Console.WriteLine() var是什么意思 var是一个关键字，用于声明变量，var关键字告诉编译器，希望它根据变量的初始化表达式来推断变量类型。这被称为类型推断。
+如var total =0;编译器会推断出total是一个int类型的变量，因为它被初始化为一个整数。
+var声明的变量必须在声明的时候进行初始化
+var只能用于局部变量的声明，不能在类的级别使用var来声明字段。
+怎么在C#方法的头尾添加计时
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 using System.Diagnostics; public void YourMethod() { //创建Stopwatch实例 Stopwatch stopwatch = new Stopwatch(); //开始计时 stopwatch.Start(); //代码本体 //停止计时 stopwatch.Stop(); //获取经过的时间 TimeSpan elapsed = stopwatch.Elapsed; //打印经过时间 Console.WriteLine($&#34;程序共运行了{elapsed.TotalMilliseconds}毫秒&#34;); }">
 <meta name="application-name" content="Hugo FixIt Lite">
 <meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
@@ -845,7 +864,7 @@
 </nav></div>
       </div>
     </dialog></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.165.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.167.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>

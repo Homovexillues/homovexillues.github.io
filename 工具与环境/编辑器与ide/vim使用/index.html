@@ -19,6 +19,31 @@ gg到文本首行
 number motion执行几次行动
 38j向下移动38次 dd删除一整行
 p在光标处粘贴先前删除的文本
+r以替换光标处的字符
+移动光标到第一个错误，键入r和要更正的字符 ce删除直到单词末尾的内容并进入编辑模式
+cw删除整个单词并进入编辑模式 c$删除直到行末并进入编辑模式 Ctrl&#43;G显示你在文档中的位置
+number&#43;G前往第数字行
+/&#43;搜索的单词
+向下搜索下一个单词n 向上搜索下一个单词N ？&#43;向上搜索的单词
+Ctrl&#43;O回到之前的那个位置，Ctrl&#43;I前进位置
+%将光标移动到它对应的匹配括号上
+:/s/old/new/g将一行中的old替换为new
+:/#,#s/old/new/g其中#,#是更改的行号范围
+:/%s/old/new/g更改全文件的old内容
+:/%s/old/new/gc更改全文及的old内容，并给出替换与否的提示
+:! 执行外部命令，如:!ls或者:!dir
+:w Filename.**保存文件并更改文件名或者类型
+v按住以选择
+o光标下插入新的一行
+O光标上插入新的一行
+A在一句的末尾开始插入内容
+R插入不止一句内容
+y复制用v的选中内容，用p粘贴内容
+选中后U将内容变成大写，u将内容变成小写，~将大小翻转
+:e ~/.vimrc 编辑Unix依赖
+:e $VIM/_vimrc编辑Windows依赖
+:cd %:h 全局切换
+:lcd %:h &quot; 仅当前窗口切换（推荐）
 "><meta name="keywords" content='Vim'>
 	<meta itemprop="name" content="Vim使用">
 	<meta itemprop="description" content="x键删除字符
@@ -34,7 +59,32 @@ G到文本最好一行首
 gg到文本首行
 number motion执行几次行动
 38j向下移动38次 dd删除一整行
-p在光标处粘贴先前删除的文本">
+p在光标处粘贴先前删除的文本
+r以替换光标处的字符
+移动光标到第一个错误，键入r和要更正的字符 ce删除直到单词末尾的内容并进入编辑模式
+cw删除整个单词并进入编辑模式 c$删除直到行末并进入编辑模式 Ctrl&#43;G显示你在文档中的位置
+number&#43;G前往第数字行
+/&#43;搜索的单词
+向下搜索下一个单词n 向上搜索下一个单词N ？&#43;向上搜索的单词
+Ctrl&#43;O回到之前的那个位置，Ctrl&#43;I前进位置
+%将光标移动到它对应的匹配括号上
+:/s/old/new/g将一行中的old替换为new
+:/#,#s/old/new/g其中#,#是更改的行号范围
+:/%s/old/new/g更改全文件的old内容
+:/%s/old/new/gc更改全文及的old内容，并给出替换与否的提示
+:! 执行外部命令，如:!ls或者:!dir
+:w Filename.**保存文件并更改文件名或者类型
+v按住以选择
+o光标下插入新的一行
+O光标上插入新的一行
+A在一句的末尾开始插入内容
+R插入不止一句内容
+y复制用v的选中内容，用p粘贴内容
+选中后U将内容变成大写，u将内容变成小写，~将大小翻转
+:e ~/.vimrc 编辑Unix依赖
+:e $VIM/_vimrc编辑Windows依赖
+:cd %:h 全局切换
+:lcd %:h &#34; 仅当前窗口切换（推荐）">
 	<meta itemprop="datePublished" content="2023-11-11T17:07:49+08:00">
 	<meta itemprop="dateModified" content="2026-07-07T13:28:00+08:00">
 	<meta itemprop="wordCount" content="643">
@@ -54,7 +104,32 @@ G到文本最好一行首
 gg到文本首行
 number motion执行几次行动
 38j向下移动38次 dd删除一整行
-p在光标处粘贴先前删除的文本">
+p在光标处粘贴先前删除的文本
+r以替换光标处的字符
+移动光标到第一个错误，键入r和要更正的字符 ce删除直到单词末尾的内容并进入编辑模式
+cw删除整个单词并进入编辑模式 c$删除直到行末并进入编辑模式 Ctrl&#43;G显示你在文档中的位置
+number&#43;G前往第数字行
+/&#43;搜索的单词
+向下搜索下一个单词n 向上搜索下一个单词N ？&#43;向上搜索的单词
+Ctrl&#43;O回到之前的那个位置，Ctrl&#43;I前进位置
+%将光标移动到它对应的匹配括号上
+:/s/old/new/g将一行中的old替换为new
+:/#,#s/old/new/g其中#,#是更改的行号范围
+:/%s/old/new/g更改全文件的old内容
+:/%s/old/new/gc更改全文及的old内容，并给出替换与否的提示
+:! 执行外部命令，如:!ls或者:!dir
+:w Filename.**保存文件并更改文件名或者类型
+v按住以选择
+o光标下插入新的一行
+O光标上插入新的一行
+A在一句的末尾开始插入内容
+R插入不止一句内容
+y复制用v的选中内容，用p粘贴内容
+选中后U将内容变成大写，u将内容变成小写，~将大小翻转
+:e ~/.vimrc 编辑Unix依赖
+:e $VIM/_vimrc编辑Windows依赖
+:cd %:h 全局切换
+:lcd %:h &#34; 仅当前窗口切换（推荐）">
 	<meta property="og:locale" content="zh_CN">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="工具与环境">
@@ -77,7 +152,32 @@ G到文本最好一行首
 gg到文本首行
 number motion执行几次行动
 38j向下移动38次 dd删除一整行
-p在光标处粘贴先前删除的文本">
+p在光标处粘贴先前删除的文本
+r以替换光标处的字符
+移动光标到第一个错误，键入r和要更正的字符 ce删除直到单词末尾的内容并进入编辑模式
+cw删除整个单词并进入编辑模式 c$删除直到行末并进入编辑模式 Ctrl&#43;G显示你在文档中的位置
+number&#43;G前往第数字行
+/&#43;搜索的单词
+向下搜索下一个单词n 向上搜索下一个单词N ？&#43;向上搜索的单词
+Ctrl&#43;O回到之前的那个位置，Ctrl&#43;I前进位置
+%将光标移动到它对应的匹配括号上
+:/s/old/new/g将一行中的old替换为new
+:/#,#s/old/new/g其中#,#是更改的行号范围
+:/%s/old/new/g更改全文件的old内容
+:/%s/old/new/gc更改全文及的old内容，并给出替换与否的提示
+:! 执行外部命令，如:!ls或者:!dir
+:w Filename.**保存文件并更改文件名或者类型
+v按住以选择
+o光标下插入新的一行
+O光标上插入新的一行
+A在一句的末尾开始插入内容
+R插入不止一句内容
+y复制用v的选中内容，用p粘贴内容
+选中后U将内容变成大写，u将内容变成小写，~将大小翻转
+:e ~/.vimrc 编辑Unix依赖
+:e $VIM/_vimrc编辑Windows依赖
+:cd %:h 全局切换
+:lcd %:h &#34; 仅当前窗口切换（推荐）">
 <meta name="application-name" content="Hugo FixIt Lite">
 <meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
@@ -336,7 +436,7 @@ p在光标处粘贴先前删除的文本">
           <a href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8Eide/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="Vscode快捷键">Vscode快捷键</a></li></ul></article>
 
   <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.165.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.167.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
