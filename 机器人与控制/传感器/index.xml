@@ -4,10 +4,18 @@
     <title>传感器 - 红石门</title>
     <link>http://localhost:1313/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E4%BC%A0%E6%84%9F%E5%99%A8/</link>
     <description>个人知识库 Hugo 迁移演示</description>
-    <generator>Hugo 0.167.0 &amp; FixIt v0.4.5</generator>
+    <generator>Hugo 0.169.0 &amp; FixIt v0.4.5</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 07 Jul 2026 13:28:48 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 21:47:53 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E4%BC%A0%E6%84%9F%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>激光雷达点云相关问题</title>
+      <link>http://localhost:1313/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E4%BC%A0%E6%84%9F%E5%99%A8/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%82%B9%E4%BA%91%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 11 Nov 2026 14:31:01 +0800</pubDate>
+      <guid>http://localhost:1313/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E4%BC%A0%E6%84%9F%E5%99%A8/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%82%B9%E4%BA%91%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</guid>
+      <category domain="http://localhost:1313/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6---%E4%BC%A0%E6%84%9F%E5%99%A8/">机器人与控制 - 传感器</category>
+      <description>&lt;h3 class=&#34;heading-element&#34; id=&#34;什么是tf树&#34;&gt;&lt;span&gt;什么是TF树？&lt;/span&gt;&#xA;  &lt;a href=&#34;#%e4%bb%80%e4%b9%88%e6%98%aftf%e6%a0%91&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;TF 树是 ROS / ROS2 里用来管理一堆坐标系之间位姿变换的有根树；每个节点 = 一个坐标系，每条边 =「父 → 子」的带时间戳的空间变换（平移 + 旋转）&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>陀螺仪相关问题</title>
       <link>http://localhost:1313/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/%E4%BC%A0%E6%84%9F%E5%99%A8/%E9%99%80%E8%9E%BA%E4%BB%AA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
