@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>线性代数 - 红石门</title><meta name="author" content="">
+<meta name="description" content="向量空间 **每个向量空间都必须有零向量。**通常记作：
+0 \mathbf 0 0 它满足：
+"><meta name="keywords" content='代数'>
+	<meta itemprop="name" content="线性代数">
+	<meta itemprop="description" content="向量空间 **每个向量空间都必须有零向量。**通常记作：
+0 \mathbf 0 0 它满足：">
+	<meta itemprop="datePublished" content="2026-11-13T10:13:55+08:00">
+	<meta itemprop="dateModified" content="2026-11-13T11:13:10+08:00">
+	<meta itemprop="wordCount" content="755">
+	<meta itemprop="keywords" content="代数"><meta property="og:url" content="http://localhost:1313/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+	<meta property="og:site_name" content="红石门">
+	<meta property="og:title" content="线性代数">
+	<meta property="og:description" content="向量空间 **每个向量空间都必须有零向量。**通常记作：
+0 \mathbf 0 0 它满足：">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="数学">
+		<meta property="article:published_time" content="2026-11-13T10:13:55+08:00">
+		<meta property="article:modified_time" content="2026-11-13T11:13:10+08:00">
+		<meta property="article:tag" content="代数">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="线性代数">
+	<meta name="twitter:description" content="向量空间 **每个向量空间都必须有零向量。**通常记作：
+0 \mathbf 0 0 它满足：">
+<meta name="application-name" content="Hugo FixIt Lite">
+<meta name="apple-mobile-web-app-title" content="Hugo FixIt Lite"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260706" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260706">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260706"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260706"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数 - 红石门" /><link rel="prev" type="text/html" href="http://localhost:1313/%E6%95%B0%E5%AD%A6/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" title="三角函数" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "线性代数",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/%E6%95%B0%E5%AD%A6\/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0\/"
+    },"genre": "数学","keywords": "代数","wordcount":  755 ,
+    "url": "http:\/\/localhost:1313\/%E6%95%B0%E5%AD%A6\/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0\/","datePublished": "2026-11-13T10:13:55+08:00","dateModified": "2026-11-13T11:13:10+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item">
+              <a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item">
+              <a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索标题和正文" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="红石门"><span class="header-title-text">红石门</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索标题和正文" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-code fa-sm" aria-hidden="true"></i> 编程语言</a></li><li class="menu-item"><a class="menu-link" href="/%E7%BC%96%E7%A8%8B%E9%80%9A%E7%94%A8/"><i class="fa-solid fa-diagram-project fa-sm" aria-hidden="true"></i> 编程通用</a></li><li class="menu-item"><a class="menu-link" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-microchip fa-sm" aria-hidden="true"></i> 计算机基础</a></li><li class="menu-item"><a class="menu-link" href="/%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-screwdriver-wrench fa-sm" aria-hidden="true"></i> 工具与环境</a></li><li class="menu-item"><a class="menu-link" href="/%E6%95%B0%E5%AD%A6/"><i class="fa-solid fa-square-root-variable fa-sm" aria-hidden="true"></i> 数学</a></li><li class="menu-item"><a class="menu-link" href="/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-robot fa-sm" aria-hidden="true"></i> 机器人与控制</a></li><li class="menu-item"><a class="menu-link" href="/%E7%94%9F%E6%B4%BB%E6%9D%82%E9%A1%B9/"><i class="fa-solid fa-leaf fa-sm" aria-hidden="true"></i> 生活杂项</a></li><li class="menu-item"><a class="menu-link" href="/about/"><i class="fa-solid fa-circle-info fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger" aria-hidden="true"></i>
+        <span class="related-title">相关内容</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/%E6%95%B0%E5%AD%A6/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" title="三角函数">三角函数</a></li><li class="related-item">
+              <a href="/%E6%95%B0%E5%AD%A6/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/" title="泰勒展开及其应用场景">泰勒展开及其应用场景</a></li><li class="related-item">
+              <a href="/%E6%95%B0%E5%AD%A6/%E7%90%83%E5%86%A0%EF%BC%8C%E7%90%83%E7%BC%BA%E5%92%8C%E7%90%83%E9%94%A5/" title="球冠，球缺和球锥">球冠，球缺和球锥</a></li><li class="related-item">
+              <a href="/%E6%95%B0%E5%AD%A6/%E5%A4%9A%E4%B8%AA%E7%82%B9%E7%9A%84%E8%B4%A8%E5%BF%83%E7%89%B9%E6%80%A7/" title="多个点的质心特性">多个点的质心特性</a></li><li class="related-item">
+              <a href="/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E4%B8%8E%E7%A7%AF%E5%88%86/" title="微分与积分">微分与积分</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">线性代数</h1><div class="post-meta"><div class="post-meta-line">
+              <span title="上级文件夹"><i class="fa-regular fa-folder-open me-1" aria-hidden="true"></i><a href="/%E6%95%B0%E5%AD%A6/">数学</a></span>
+            </div><div class="post-meta-line"><span title="创建时间：2026-11-13 10:13:55 &#43;08:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i>创建&nbsp;<time datetime="2026-11-13">2026-11-13</time></span>&nbsp;<span title="最后修改：2026-11-13 11:13:10 &#43;08:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i>修改&nbsp;<time datetime="2026-11-13">2026-11-13</time></span>&nbsp;<span title="755 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>字数&nbsp;约 800 字</span>&nbsp;
+          <span title="预计阅读时间"><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>阅读&nbsp;预计阅读 2 分钟</span>
+        </div><div class="post-meta-line post-tag-list">
+              <span title="标签"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i>标签&nbsp;<a href="/tags/%E4%BB%A3%E6%95%B0/">代数</a></span>
+            </div></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#向量空间">向量空间</a></li>
+        <li><a href="#仿射空间">仿射空间</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h3 class="heading-element" id="向量空间"><span>向量空间</span>
+  <a href="#%e5%90%91%e9%87%8f%e7%a9%ba%e9%97%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>**每个向量空间都必须有零向量。**通常记作：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn mathvariant="bold">0</mn></mrow><annotation encoding="application/x-tex"> \mathbf 0 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord mathbf">0</span></span></span></span></span><p>它满足：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="bold">v</mi><mo>+</mo><mn mathvariant="bold">0</mn><mo>=</mo><mi mathvariant="bold">v</mi></mrow><annotation encoding="application/x-tex"> \mathbf v+\mathbf 0=\mathbf v </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathbf" style="margin-right:0.016em;">v</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord mathbf">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.016em;">v</span></span></span></span></span><p>也就是说，无论什么向量，加上零向量都不会发生变化。对于普通三维欧氏向量空间：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn mathvariant="bold">0</mn><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex"> \mathbf 0= \begin{bmatrix} 0\\0\\0 \end{bmatrix} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord mathbf">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:3.6em;vertical-align:-1.55em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.6em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="3.6em" viewBox="0 0 667 3600"><path d="M403 1759 V84 H666 V0 H319 V1759 v0 v1759 v84 h347 v-84
+H403z M403 1759 V0 H319 V1759 v0 v1759 v84 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.6em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="3.6em" viewBox="0 0 667 3600"><path d="M347 1759 V0 H0 V84 H263 V1759 v0 v1759 H0 v84 H347z
+M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span></span></span></span></span><p>它的长度是：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">∥</mi><mn mathvariant="bold">0</mn><mi mathvariant="normal">∥</mi><mo>=</mo><msqrt><mrow><msup><mn>0</mn><mn>2</mn></msup><mo>+</mo><msup><mn>0</mn><mn>2</mn></msup><mo>+</mo><msup><mn>0</mn><mn>2</mn></msup></mrow></msqrt><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex"> \|\mathbf 0\|=\sqrt{0^2+0^2+0^2}=0 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∥</span><span class="mord mathbf">0</span><span class="mord">∥</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.24em;vertical-align:-0.1777em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0623em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.0223em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice"><path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></span><p><strong>零向量没有确定的方向</strong>，因为我们通常用单位向量表示方向：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mi mathvariant="bold">v</mi><mo>^</mo></mover><mo>=</mo><mfrac><mi mathvariant="bold">v</mi><mrow><mi mathvariant="normal">∥</mi><mi mathvariant="bold">v</mi><mi mathvariant="normal">∥</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex"> \hat{\mathbf v}=\frac{\mathbf v}{\|\mathbf v\|} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7079em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.016em;">v</span></span><span style="top:-3.0134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.0574em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∥</span><span class="mord mathbf" style="margin-right:0.016em;">v</span><span class="mord">∥</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf" style="margin-right:0.016em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><p>但是对零向量：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mn mathvariant="bold">0</mn><mo>^</mo></mover><mo>=</mo><mfrac><mn mathvariant="bold">0</mn><mn>0</mn></mfrac></mrow><annotation encoding="application/x-tex"> \hat{\mathbf 0}=\frac{\mathbf 0}{0} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.9079em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">0</span></span><span style="top:-3.2134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><p>这里发生了除以零，所以没有定义。从几何上理解，零向量意味着根本没有发生位移。既然没有移动，也就不存在一个确定的移动方向。</p>
+<h3 class="heading-element" id="仿射空间"><span>仿射空间</span>
+  <a href="#%e4%bb%bf%e5%b0%84%e7%a9%ba%e9%97%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>仿射空间是以向量空间为基础，额外引入一组点，并规定点与向量之间如何相互作用的数学结构。</strong></p>
+<p><strong>点之间的位移关系并不依赖于我们把哪里规定为原点。</strong></p>
+<ul>
+<li>向量空间研究的是向量及其线性运算。</li>
+<li>仿射空间研究的是点，以及点之间的位移关系。</li>
+</ul>
+<p>例如，我们有三个点 A、B、C，它们的位置分别是什么并不重要。我们只关心：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mrow><mi>A</mi><mi>B</mi></mrow><mo stretchy="true">→</mo></mover><mo>=</mo><mi mathvariant="bold">u</mi></mrow><annotation encoding="application/x-tex"> \overrightarrow{AB}=\mathbf u </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.2053em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.2053em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span><span class="svg-align" style="top:-3.6833em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.522em" viewBox="0 0 400000 522" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z"/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.4444em;"></span><span class="mord mathbf">u</span></span></span></span></span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mrow><mi>B</mi><mi>C</mi></mrow><mo stretchy="true">→</mo></mover><mo>=</mo><mi mathvariant="bold">v</mi></mrow><annotation encoding="application/x-tex"> \overrightarrow{BC}=\mathbf v </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.2053em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.2053em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span><span class="svg-align" style="top:-3.6833em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.522em" viewBox="0 0 400000 522" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z"/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.016em;">v</span></span></span></span></span><p>那么一定有：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mrow><mi>A</mi><mi>C</mi></mrow><mo stretchy="true">→</mo></mover><mo>=</mo><mi mathvariant="bold">u</mi><mo>+</mo><mi mathvariant="bold">v</mi></mrow><annotation encoding="application/x-tex"> \overrightarrow{AC}=\mathbf u+\mathbf v </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.2053em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.2053em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span><span class="svg-align" style="top:-3.6833em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.522em" viewBox="0 0 400000 522" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z"/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathbf">u</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.016em;">v</span></span></span></span></span><p><img loading="lazy" src='data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%20340%20180%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3Cmarker%20id%3D%22arr1%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223.5%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%200%20L7%203.5%20L0%207Z%22%20fill%3D%22%230D9488%22%3E%3C%2Fpath%3E%3C%2Fmarker%3E%3Cmarker%20id%3D%22arr2%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223.5%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%200%20L7%203.5%20L0%207Z%22%20fill%3D%22%23D97706%22%3E%3C%2Fpath%3E%3C%2Fmarker%3E%3Cmarker%20id%3D%22arr3%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223.5%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%200%20L7%203.5%20L0%207Z%22%20fill%3D%22%232563EB%22%3E%3C%2Fpath%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M42%20145%20L164%20145%22%20stroke%3D%22%230D9488%22%20stroke-width%3D%223%22%20marker-end%3D%22url(%23arr1)%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M165%20145%20L267%2036%22%20stroke%3D%22%23D97706%22%20stroke-width%3D%223%22%20marker-end%3D%22url(%23arr2)%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M42%20145%20L267%2036%22%20stroke%3D%22%232563EB%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%227%205%22%20marker-end%3D%22url(%23arr3)%22%3E%3C%2Fpath%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%22145%22%20r%3D%224%22%20fill%3D%22currentColor%22%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%22165%22%20cy%3D%22145%22%20r%3D%224%22%20fill%3D%22currentColor%22%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%22267%22%20cy%3D%2236%22%20r%3D%224%22%20fill%3D%22currentColor%22%3E%3C%2Fcircle%3E%3Ctext%20x%3D%2230%22%20y%3D%22161%22%20font-size%3D%2213%22%20fill%3D%22currentColor%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22162%22%20y%3D%22164%22%20font-size%3D%2213%22%20fill%3D%22currentColor%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%22277%22%20y%3D%2230%22%20font-size%3D%2213%22%20fill%3D%22currentColor%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%2295%22%20y%3D%22136%22%20font-size%3D%2213%22%20fill%3D%22%230D9488%22%3Eu%3C%2Ftext%3E%3Ctext%20x%3D%22225%22%20y%3D%22112%22%20font-size%3D%2213%22%20fill%3D%22%23D97706%22%3Ev%3C%2Ftext%3E%3Ctext%20x%3D%22119%22%20y%3D%2274%22%20font-size%3D%2213%22%20fill%3D%22%232563EB%22%3Eu%20%2B%20v%3C%2Ftext%3E%3C%2Fsvg%3E' alt="Image generated by the assistant"></p>
+<p>不是说点之间不能直接发生任何运算，而是仿射空间只天然定义了某些运算。例如：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>B</mi><mo>−</mo><mi>A</mi><mo>=</mo><mi mathvariant="bold">v</mi></mrow><annotation encoding="application/x-tex"> B-A=\mathbf v </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.016em;">v</span></span></span></span></span><p>这是有意义的。</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mo>+</mo><mi mathvariant="bold">v</mi><mo>=</mo><mi>B</mi></mrow><annotation encoding="application/x-tex"> A+\mathbf v=B </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.016em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span></span><p>也是有意义的。但：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mo>+</mo><mi>B</mi></mrow><annotation encoding="application/x-tex"> A+B </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span></span><p>一般没有天然定义。<strong>因为它无法给出一个不依赖原点选择的结果</strong>。</p>
+<p><strong>仿射空间没有天然的零点，这个空间就只关心点的位置和向量的关系</strong>，但是在实际使用中，<strong>可以在仿射空间中人为选择一个点作为原点</strong>，这个原点<strong>不像是向量空间中的零向量一样有特殊意义，就单纯是一个人为选择的位置参考。</strong></p>
+<p>而选择了原点之后，就可以<strong>把仿射空间和向量空间建立对应</strong>，即选定点 </p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>O</mi></mrow><annotation encoding="application/x-tex">O</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span></span></span></span></span><p> 后，就可以<strong>把任意点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span> 对应到位置向量</strong>：</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>⟷</mo><mover accent="true"><mrow><mi>O</mi><mi>P</mi></mrow><mo stretchy="true">→</mo></mover></mrow><annotation encoding="application/x-tex"> P\longleftrightarrow\overrightarrow{OP} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6943em;vertical-align:-0.011em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟷</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2053em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.2053em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span><span class="svg-align" style="top:-3.6833em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.522em" viewBox="0 0 400000 522" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z"/></svg></span></span></span></span></span></span></span></span></span></span><p>这就是为什么我们平时在笛卡尔坐标系中，几乎<strong>感觉不到点和向量之间的区别</strong>，因为我们<strong>早就偷偷选择了一个原点，把它们关联起来了。</strong></p>
+</div><hr class="awesome-hr" />
+    <h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/%E6%95%B0%E5%AD%A6/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" title="三角函数">三角函数</a></li><li>
+          <a href="/%E6%95%B0%E5%AD%A6/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/" title="泰勒展开及其应用场景">泰勒展开及其应用场景</a></li><li>
+          <a href="/%E6%95%B0%E5%AD%A6/%E7%90%83%E5%86%A0%EF%BC%8C%E7%90%83%E7%BC%BA%E5%92%8C%E7%90%83%E9%94%A5/" title="球冠，球缺和球锥">球冠，球缺和球锥</a></li><li>
+          <a href="/%E6%95%B0%E5%AD%A6/%E5%A4%9A%E4%B8%AA%E7%82%B9%E7%9A%84%E8%B4%A8%E5%BF%83%E7%89%B9%E6%80%A7/" title="多个点的质心特性">多个点的质心特性</a></li><li>
+          <a href="/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E4%B8%8E%E7%A7%AF%E5%88%86/" title="微分与积分">微分与积分</a></li></ul></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#向量空间">向量空间</a></li>
+        <li><a href="#仿射空间">仿射空间</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.169.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/js/config/c11c841fd68399cedc8d7a78a84083bf.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>
